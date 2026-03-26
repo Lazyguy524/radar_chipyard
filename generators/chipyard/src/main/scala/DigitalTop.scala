@@ -35,6 +35,7 @@ class DigitalTop(implicit p: Parameters) extends ChipyardSystem
   with chipyard.example.CanHavePeripheryStreamingFIR // Enables optionally adding the DSPTools FIR example widget
   with chipyard.example.CanHavePeripheryStreamingPassthrough // Enables optionally adding the DSPTools streaming-passthrough example widget
   with nvidia.blocks.dla.CanHavePeripheryNVDLA // Enables optionally having an NVDLA
+  with chipyard.radar.CanHavePeripheryGenericRadarShell // Enables optionally adding the generic radar FPGA shell
   with chipyard.clocking.HasChipyardPRCI // Use Chipyard reset/clock distribution
   with chipyard.clocking.CanHaveClockTap // Enables optionally adding a clock tap output port
   with fftgenerator.CanHavePeripheryFFT // Enables optionally having an MMIO-based FFT block

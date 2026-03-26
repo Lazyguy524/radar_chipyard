@@ -1,0 +1,21 @@
+diff --git a/src/main/scala/devices/xilinx/xilinxnexysvideomig/XilinxNexysVideoMIG.scala b/src/main/scala/devices/xilinx/xilinxnexysvideomig/XilinxNexysVideoMIG.scala
+index 07aceda..66405aa 100644
+--- a/src/main/scala/devices/xilinx/xilinxnexysvideomig/XilinxNexysVideoMIG.scala
++++ b/src/main/scala/devices/xilinx/xilinxnexysvideomig/XilinxNexysVideoMIG.scala
+@@ -155,10 +155,15 @@ class XilinxNexysVideoMIG(c: XilinxNexysVideoMIGParams, crossing: ClockCrossingT
+   val indexer = LazyModule(new AXI4IdIndexer(idBits = 4))
+   val deint   = LazyModule(new AXI4Deinterleaver(p(CacheBlockBytes)))
+   val yank    = LazyModule(new AXI4UserYanker)
++  val xbar    = AXI4Xbar()
+   val island  = LazyModule(new XilinxNexysVideoMIGIsland(c, crossing))
+ 
++  val axiNode: AXI4InwardNode = xbar
+   val node: TLInwardNode =
+-    island.crossAXI4In(island.node) := yank.node := deint.node := indexer.node := toaxi4.node := buffer.node
++    buffer.node
++
++  island.crossAXI4In(island.node) := AXI4Buffer() := xbar
++  xbar := yank.node := deint.node := indexer.node := toaxi4.node := buffer.node
+ 
+   lazy val module = new Impl
+   class Impl extends LazyModuleImp(this) {

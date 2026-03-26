@@ -6,7 +6,7 @@ import chisel3.util._
 import freechips.rocketchip.diplomacy._
 import org.chipsalliance.cde.config.{Parameters}
 import freechips.rocketchip.tilelink._
-import freechips.rocketchip.subsystem.{SystemBusKey}
+import freechips.rocketchip.subsystem.{SystemBusKey, ExtBus}
 import freechips.rocketchip.prci._
 import sifive.fpgashells.shell.xilinx._
 import sifive.fpgashells.shell._
@@ -37,12 +37,21 @@ class NexysVideoHarness(override implicit val p: Parameters) extends NexysVideoS
 
   // Optional DDR
   val ddrOverlay = if (p(NexysVideoShellDDR)) Some(dp(DDROverlayKey).head.place(DDRDesignInput(dp(ExtTLMem).get.master.base, dutWrangler.node, harnessSysPLLNode)).asInstanceOf[DDRNexysVideoPlacedOverlay]) else None
+  val ddrXbar = if (p(NexysVideoShellDDR)) Some(LazyModule(new TLXbar)) else None
   val ddrClient = if (p(NexysVideoShellDDR)) Some(TLClientNode(Seq(TLMasterPortParameters.v1(Seq(TLMasterParameters.v1(
     name = "chip_ddr",
     sourceId = IdRange(0, 1 << dp(ExtTLMem).get.master.idBits)
   )))))) else None
   val ddrBlockDuringReset = if (p(NexysVideoShellDDR)) Some(LazyModule(new TLBlockDuringReset(4))) else None
-  if (p(NexysVideoShellDDR)) { ddrOverlay.get.overlayOutput.ddr := ddrBlockDuringReset.get.node := ddrClient.get }
+  val radarDMA = if (p(NexysVideoShellDDR) && p(ExtBus).nonEmpty) Some(LazyModule(new RadarAXIDMA)) else None
+  if (p(NexysVideoShellDDR)) {
+    ddrOverlay.get.overlayOutput.ddr := ddrBlockDuringReset.get.node := ddrXbar.get.node
+    ddrXbar.get.node := ddrClient.get
+    radarDMA.foreach { dma =>
+      ddrOverlay.get.mig.axiNode := dma.mm2sNode
+      ddrOverlay.get.mig.axiNode := dma.s2mmNode
+    }
+  }
 
   val ledOverlays = dp(LEDOverlayKey).map(_.place(LEDDesignInput()))
   val all_leds = ledOverlays.map(_.overlayOutput.led)

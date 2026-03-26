@@ -109,6 +109,7 @@ fpga_common_script_dir := $(fpga_dir)/common/tcl
 # copy files but ignore *.h files in *.f (match vcs)
 $(sim_files): $(SIM_FILE_REQS) $(ALL_MODS_FILELIST) | $(GEN_COLLATERAL_DIR)
 	-cp -f $(SIM_FILE_REQS) $(GEN_COLLATERAL_DIR)
+	rm -f $@
 	touch $@
 	$(foreach file,\
 		$(SIM_FILE_REQS),\
@@ -133,6 +134,7 @@ all_vsrcs := \
 # combine all sources into single .f
 synth_list_f := $(build_dir)/$(long_name).vsrcs.f
 $(synth_list_f): $(sim_common_files) $(all_vsrcs)
+	rm -f $@
 	$(foreach file,$(all_vsrcs),echo "$(file)" >> $@;)
 	cat $(sim_common_files) >> $@
 

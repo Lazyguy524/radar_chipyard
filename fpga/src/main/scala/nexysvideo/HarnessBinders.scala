@@ -36,3 +36,13 @@ class WithNexysVideoDDRTL extends HarnessBinder({
     ddrClientBundle <> port.io
   }
 })
+
+class WithNexysVideoAXI4MMIO extends HarnessBinder({
+  case (th: HasHarnessInstantiators, port: AXI4MMIOPort, chipId: Int) => {
+    val nexysTh = th.asInstanceOf[LazyRawModuleImp].wrapper.asInstanceOf[NexysVideoHarness]
+    val dma = nexysTh.radarDMA.get
+    dma.module.ctrlClock := port.io.clock
+    dma.module.ctrlResetN := !th.harnessBinderReset.asBool
+    dma.module.ctrl <> port.io.bits
+  }
+})

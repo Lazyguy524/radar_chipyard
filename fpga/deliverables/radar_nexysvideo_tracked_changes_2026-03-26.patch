@@ -1,0 +1,222 @@
+diff --git a/build.sbt b/build.sbt
+index c5602ab3..4b3aa6b4 100644
+--- a/build.sbt
++++ b/build.sbt
+@@ -342,8 +342,10 @@ lazy val firechip = (project in file("generators/firechip"))
+ lazy val fpga_shells = (project in file("./fpga/fpga-shells"))
+   .dependsOn(rocketchip, rocketchip_blocks)
+   .settings(libraryDependencies ++= rocketLibDeps.value)
++  .settings(chiselSettings)
+   .settings(commonSettings)
+ 
+ lazy val chipyard_fpga = (project in file("./fpga"))
+   .dependsOn(chipyard, fpga_shells)
++  .settings(chiselSettings)
+   .settings(commonSettings)
+diff --git a/fpga/Makefile b/fpga/Makefile
+index 23616710..4d1cf100 100644
+--- a/fpga/Makefile
++++ b/fpga/Makefile
+@@ -109,6 +109,7 @@ fpga_common_script_dir := $(fpga_dir)/common/tcl
+ # copy files but ignore *.h files in *.f (match vcs)
+ $(sim_files): $(SIM_FILE_REQS) $(ALL_MODS_FILELIST) | $(GEN_COLLATERAL_DIR)
+ 	-cp -f $(SIM_FILE_REQS) $(GEN_COLLATERAL_DIR)
++	rm -f $@
+ 	touch $@
+ 	$(foreach file,\
+ 		$(SIM_FILE_REQS),\
+@@ -133,6 +134,7 @@ all_vsrcs := \
+ # combine all sources into single .f
+ synth_list_f := $(build_dir)/$(long_name).vsrcs.f
+ $(synth_list_f): $(sim_common_files) $(all_vsrcs)
++	rm -f $@
+ 	$(foreach file,$(all_vsrcs),echo "$(file)" >> $@;)
+ 	cat $(sim_common_files) >> $@
+ 
+diff --git a/fpga/src/main/scala/nexysvideo/Configs.scala b/fpga/src/main/scala/nexysvideo/Configs.scala
+index 2aa241c7..544f55a8 100644
+--- a/fpga/src/main/scala/nexysvideo/Configs.scala
++++ b/fpga/src/main/scala/nexysvideo/Configs.scala
+@@ -1,6 +1,7 @@
+ // See LICENSE for license details.
+ package chipyard.fpga.nexysvideo
+ 
++import gemmini._
+ import org.chipsalliance.cde.config._
+ import freechips.rocketchip.subsystem._
+ import freechips.rocketchip.devices.debug._
+@@ -21,6 +22,14 @@ class WithNoDesignKey extends Config((site, here, up) => {
+   case DesignKey => (p: Parameters) => new SimpleLazyRawModule()(p)
+ })
+ 
++object RadarAXIMMIOAddressMap {
++  val PreprocBase  = 0x60000000L
++  val ClusterBase  = 0x60001000L
++  val DetectBase   = 0x60002000L
++  val ReservedBase = 0x60003000L
++  val WindowSize   = 0x00010000L
++}
++
+ // DOC include start: WithNexysVideoTweaks and Rocket
+ class WithNexysVideoTweaks extends Config(
+   new WithNexysVideoUARTTSI ++
+@@ -71,4 +80,79 @@ class TinyRocketNexysVideoConfig extends Config(
+   new WithTinyNexysVideoTweaks ++
+   new chipyard.config.WithBroadcastManager ++ // no l2
+   new chipyard.TinyRocketConfig)
+-  // DOC include end: WithTinyNexysVideoTweaks and Rocket
++// DOC include end: WithTinyNexysVideoTweaks and Rocket
++
++// DOC include start: WithNexysVideoTweaks and Rocket
++class WithRadarNexysVideoTweaks(freqMHz: Double = 50) extends Config(
++  new WithNexysVideoUARTTSI ++
++  new WithNexysVideoDDRTL ++
++  new WithNoDesignKey ++
++  new testchipip.tsi.WithUARTTSIClient ++
++  new chipyard.harness.WithSerialTLTiedOff ++
++  new chipyard.harness.WithHarnessBinderClockFreqMHz(50) ++
++  new chipyard.config.WithMemoryBusFrequency(50.0) ++
++  new chipyard.config.WithFrontBusFrequency(50.0) ++
++  new chipyard.config.WithSystemBusFrequency(50.0) ++
++  new chipyard.config.WithPeripheryBusFrequency(50.0) ++
++  new chipyard.config.WithControlBusFrequency(50.0) ++
++  new chipyard.harness.WithAllClocksFromHarnessClockInstantiator ++
++  new chipyard.clocking.WithPassthroughClockGenerator ++
++  new chipyard.config.WithNoDebug ++ // no jtag
++  new chipyard.config.WithNoUART ++ // use UART for the UART-TSI thing instad
++  new chipyard.config.WithTLBackingMemory ++ // FPGA-shells converts the AXI to TL for us
++  new freechips.rocketchip.subsystem.WithExtMemSize(BigInt(512) << 20) ++ // 512mb on Nexys Video
++  new freechips.rocketchip.subsystem.WithoutTLMonitors)
++
++class WithRadarRocketCore extends Config((site, here, up) => {  
++  case TilesLocated(InSubsystem) => up(TilesLocated(InSubsystem)) map {  
++    case tp: RocketTileAttachParams => tp.copy(tileParams = tp.tileParams.copy(  
++      core = tp.tileParams.core.copy(fpu = None)  // 移除 FPU  
++    ))  
++    case other => other  
++  }  
++}) 
++
++class RadarNexysVideoConfig extends Config(
++  new gemmini.LeanGemminiConfig ++
++  new WithRadarNexysVideoTweaks ++
++  new chipyard.config.WithBroadcastManager ++ // no l2
++  //new WithRadarRocketCore ++ //remove FPU
++  new chipyard.RocketConfig)
++// DOC include end: WithNexysVideoTweaks and Rocket
++
++class GenericRadarNexysVideoConfig extends Config(
++  new WithNexysVideoTweaks ++
++  new chipyard.radar.WithGenericRadarShell ++
++  new chipyard.config.WithBroadcastManager ++ // no l2
++  new freechips.rocketchip.rocket.WithoutFPU ++
++  new freechips.rocketchip.rocket.WithNSmallCores(1) ++
++  new chipyard.config.AbstractConfig)
++
++class RadarAXIMMIONexysVideoConfig extends Config(
++  new WithNexysVideoAXI4MMIO ++
++  new freechips.rocketchip.subsystem.WithCustomMMIOPort(
++    RadarAXIMMIOAddressMap.PreprocBase,
++    RadarAXIMMIOAddressMap.WindowSize,
++    64,
++    4,
++    8) ++
++  new WithNexysVideoTweaks ++
++  new testchipip.soc.WithNoScratchpads ++
++  new chipyard.config.WithBroadcastManager ++
++  new freechips.rocketchip.rocket.WithoutFPU ++
++  new freechips.rocketchip.rocket.WithNSmallCores(1) ++
++  new chipyard.config.AbstractConfig)
++
++class RadarAXIMMIOSimConfig extends Config(
++  new freechips.rocketchip.subsystem.WithCustomMMIOPort(
++    RadarAXIMMIOAddressMap.PreprocBase,
++    RadarAXIMMIOAddressMap.WindowSize,
++    64,
++    4,
++    8) ++
++  new freechips.rocketchip.subsystem.WithExtMemSize(BigInt(512) << 20) ++
++  new testchipip.soc.WithNoScratchpads ++
++  new chipyard.config.WithBroadcastManager ++
++  new freechips.rocketchip.rocket.WithoutFPU ++
++  new freechips.rocketchip.rocket.WithNSmallCores(1) ++
++  new chipyard.config.AbstractConfig)
+diff --git a/fpga/src/main/scala/nexysvideo/Harness.scala b/fpga/src/main/scala/nexysvideo/Harness.scala
+index c9583f0e..c0b4e14c 100644
+--- a/fpga/src/main/scala/nexysvideo/Harness.scala
++++ b/fpga/src/main/scala/nexysvideo/Harness.scala
+@@ -6,7 +6,7 @@ import chisel3.util._
+ import freechips.rocketchip.diplomacy._
+ import org.chipsalliance.cde.config.{Parameters}
+ import freechips.rocketchip.tilelink._
+-import freechips.rocketchip.subsystem.{SystemBusKey}
++import freechips.rocketchip.subsystem.{SystemBusKey, ExtBus}
+ import freechips.rocketchip.prci._
+ import sifive.fpgashells.shell.xilinx._
+ import sifive.fpgashells.shell._
+@@ -37,12 +37,21 @@ class NexysVideoHarness(override implicit val p: Parameters) extends NexysVideoS
+ 
+   // Optional DDR
+   val ddrOverlay = if (p(NexysVideoShellDDR)) Some(dp(DDROverlayKey).head.place(DDRDesignInput(dp(ExtTLMem).get.master.base, dutWrangler.node, harnessSysPLLNode)).asInstanceOf[DDRNexysVideoPlacedOverlay]) else None
++  val ddrXbar = if (p(NexysVideoShellDDR)) Some(LazyModule(new TLXbar)) else None
+   val ddrClient = if (p(NexysVideoShellDDR)) Some(TLClientNode(Seq(TLMasterPortParameters.v1(Seq(TLMasterParameters.v1(
+     name = "chip_ddr",
+     sourceId = IdRange(0, 1 << dp(ExtTLMem).get.master.idBits)
+   )))))) else None
+   val ddrBlockDuringReset = if (p(NexysVideoShellDDR)) Some(LazyModule(new TLBlockDuringReset(4))) else None
+-  if (p(NexysVideoShellDDR)) { ddrOverlay.get.overlayOutput.ddr := ddrBlockDuringReset.get.node := ddrClient.get }
++  val radarDMA = if (p(NexysVideoShellDDR) && p(ExtBus).nonEmpty) Some(LazyModule(new RadarAXIDMA)) else None
++  if (p(NexysVideoShellDDR)) {
++    ddrOverlay.get.overlayOutput.ddr := ddrBlockDuringReset.get.node := ddrXbar.get.node
++    ddrXbar.get.node := ddrClient.get
++    radarDMA.foreach { dma =>
++      ddrOverlay.get.mig.axiNode := dma.mm2sNode
++      ddrOverlay.get.mig.axiNode := dma.s2mmNode
++    }
++  }
+ 
+   val ledOverlays = dp(LEDOverlayKey).map(_.place(LEDDesignInput()))
+   val all_leds = ledOverlays.map(_.overlayOutput.led)
+diff --git a/fpga/src/main/scala/nexysvideo/HarnessBinders.scala b/fpga/src/main/scala/nexysvideo/HarnessBinders.scala
+index 722971a1..b95d7275 100644
+--- a/fpga/src/main/scala/nexysvideo/HarnessBinders.scala
++++ b/fpga/src/main/scala/nexysvideo/HarnessBinders.scala
+@@ -36,3 +36,13 @@ class WithNexysVideoDDRTL extends HarnessBinder({
+     ddrClientBundle <> port.io
+   }
+ })
++
++class WithNexysVideoAXI4MMIO extends HarnessBinder({
++  case (th: HasHarnessInstantiators, port: AXI4MMIOPort, chipId: Int) => {
++    val nexysTh = th.asInstanceOf[LazyRawModuleImp].wrapper.asInstanceOf[NexysVideoHarness]
++    val dma = nexysTh.radarDMA.get
++    dma.module.ctrlClock := port.io.clock
++    dma.module.ctrlResetN := !th.harnessBinderReset.asBool
++    dma.module.ctrl <> port.io.bits
++  }
++})
+diff --git a/generators/chipyard/src/main/scala/DigitalTop.scala b/generators/chipyard/src/main/scala/DigitalTop.scala
+index c4fa17aa..f0b1196f 100644
+--- a/generators/chipyard/src/main/scala/DigitalTop.scala
++++ b/generators/chipyard/src/main/scala/DigitalTop.scala
+@@ -35,6 +35,7 @@ class DigitalTop(implicit p: Parameters) extends ChipyardSystem
+   with chipyard.example.CanHavePeripheryStreamingFIR // Enables optionally adding the DSPTools FIR example widget
+   with chipyard.example.CanHavePeripheryStreamingPassthrough // Enables optionally adding the DSPTools streaming-passthrough example widget
+   with nvidia.blocks.dla.CanHavePeripheryNVDLA // Enables optionally having an NVDLA
++  with chipyard.radar.CanHavePeripheryGenericRadarShell // Enables optionally adding the generic radar FPGA shell
+   with chipyard.clocking.HasChipyardPRCI // Use Chipyard reset/clock distribution
+   with chipyard.clocking.CanHaveClockTap // Enables optionally adding a clock tap output port
+   with fftgenerator.CanHavePeripheryFFT // Enables optionally having an MMIO-based FFT block
+diff --git a/tests/Makefile b/tests/Makefile
+index 1c6df31b..9746838a 100644
+--- a/tests/Makefile
++++ b/tests/Makefile
+@@ -29,7 +29,7 @@ include libgloss.mk
+ 
+ PROGRAMS = pwm blkdev accum charcount nic-loopback big-blkdev pingd \
+            streaming-passthrough streaming-fir nvdla spiflashread spiflashwrite fft gcd \
+-           hello mt-hello symmetric
++           hello mt-hello symmetric radar-axi-dma-loopback
+ 
+ 
+ .DEFAULT_GOAL := default
