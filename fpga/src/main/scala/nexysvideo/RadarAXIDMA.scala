@@ -40,118 +40,206 @@ class RadarAXI4ToAXI4LiteBridge(params: RadarAXIDMAControlParams, liteAddrBits: 
     addrBits = params.addrBits,
     dataBits = params.dataBits,
     idBits   = params.idBits)
+  private val wordSize = log2Ceil(4).U
 
   val io = IO(new Bundle {
     val in   = Flipped(new AXI4Bundle(full))
     val lite = new RadarAXI4LiteMasterIO(liteAddrBits)
   })
 
-  val awHeld    = RegInit(false.B)
-  val wHeld     = RegInit(false.B)
-  val awSent    = RegInit(false.B)
-  val wSent     = RegInit(false.B)
-  val bPending  = RegInit(false.B)
-  val awAddrReg = Reg(UInt(params.addrBits.W))
-  val awIdReg   = Reg(UInt(params.idBits.W))
-  val wDataReg  = Reg(UInt(params.dataBits.W))
-  val wStrbReg  = Reg(UInt((params.dataBits / 8).W))
+  val sIdle :: sWriteCollect :: sWriteIssue :: sWriteResp :: sReadIssue :: sReadResp :: Nil = Enum(6)
+  val state = RegInit(sIdle)
 
-  val arHeld    = RegInit(false.B)
-  val arSent    = RegInit(false.B)
-  val rPending  = RegInit(false.B)
-  val arAddrReg = Reg(UInt(params.addrBits.W))
-  val arIdReg   = Reg(UInt(params.idBits.W))
-  val rDataReg  = Reg(UInt(32.W))
-  val rRespReg  = Reg(UInt(2.W))
+  val awCaptured = RegInit(false.B)
+  val wCaptured  = RegInit(false.B)
+  val awIssued   = RegInit(false.B)
+  val wIssued    = RegInit(false.B)
+  val awAddrReg  = Reg(UInt(params.addrBits.W))
+  val awIdReg    = Reg(UInt(params.idBits.W))
+  val awSizeReg  = Reg(UInt(io.in.aw.bits.size.getWidth.W))
+  val awLenReg   = Reg(UInt(io.in.aw.bits.len.getWidth.W))
+  val wDataReg   = Reg(UInt(params.dataBits.W))
+  val wStrbReg   = Reg(UInt((params.dataBits / 8).W))
+  val wLastReg   = RegInit(false.B)
+  val bRespReg   = Reg(UInt(AXI4Parameters.respBits.W))
+  val bRespValid = RegInit(false.B)
 
-  val writeBusy = awHeld || wHeld || awSent || wSent || bPending
-  val readBusy  = arHeld || arSent || rPending
-
-  io.in.aw.ready := !awHeld && !awSent && !bPending
-  io.in.w.ready  := !wHeld && !wSent && !bPending
-  io.in.ar.ready := !arHeld && !arSent && !rPending
-
-  when (io.in.aw.fire) {
-    awHeld    := true.B
-    awAddrReg := io.in.aw.bits.addr
-    awIdReg   := io.in.aw.bits.id
-  }
-
-  when (io.in.w.fire) {
-    wHeld    := true.B
-    wDataReg := io.in.w.bits.data
-    wStrbReg := io.in.w.bits.strb
-  }
+  val arIssued   = RegInit(false.B)
+  val arAddrReg  = Reg(UInt(params.addrBits.W))
+  val arIdReg    = Reg(UInt(params.idBits.W))
+  val arSizeReg  = Reg(UInt(io.in.ar.bits.size.getWidth.W))
+  val arLenReg   = Reg(UInt(io.in.ar.bits.len.getWidth.W))
+  val rDataReg   = Reg(UInt(params.dataBits.W))
+  val rRespReg   = Reg(UInt(AXI4Parameters.respBits.W))
+  val rRespValid = RegInit(false.B)
 
   val writeUpperWord = awAddrReg(2)
+  val writeLowerStrb = wStrbReg(3, 0)
+  val writeUpperStrb = wStrbReg(7, 4)
   val liteWriteData  = Mux(writeUpperWord, wDataReg(63, 32), wDataReg(31, 0))
-  val liteWriteStrb  = Mux(writeUpperWord, wStrbReg(7, 4), wStrbReg(3, 0))
+  val liteWriteStrb  = Mux(writeUpperWord, writeUpperStrb, writeLowerStrb)
+  val expectedLaneStrb = Mux(writeUpperWord, "hF0".U(8.W), "h0F".U(8.W))
+  val writeForward = awLenReg === 0.U &&
+    awSizeReg === wordSize &&
+    awAddrReg(1, 0) === 0.U &&
+    wLastReg &&
+    wStrbReg === expectedLaneStrb &&
+    liteWriteStrb === "hF".U
 
-  io.lite.awvalid := awHeld && !awSent
-  io.lite.awaddr  := awAddrReg(liteAddrBits - 1, 0)
-  io.lite.wvalid  := wHeld && !wSent
-  io.lite.wdata   := liteWriteData
-  io.lite.wstrb   := liteWriteStrb
-  io.lite.bready  := !bPending
+  val readForward = arLenReg === 0.U &&
+    arSizeReg === wordSize &&
+    arAddrReg(1, 0) === 0.U
+  val steeredReadData = Mux(arAddrReg(2), Cat(io.lite.rdata, 0.U(32.W)), Cat(0.U(32.W), io.lite.rdata))
 
-  when (io.lite.awvalid && io.lite.awready) {
-    awSent := true.B
-    awHeld := false.B
-  }
+  io.in.aw.ready := false.B
+  io.in.w.ready  := false.B
+  io.in.ar.ready := false.B
 
-  when (io.lite.wvalid && io.lite.wready) {
-    wSent := true.B
-    wHeld := false.B
-  }
-
-  when (!bPending && awSent && wSent) {
-    bPending := true.B
-  }
-
-  io.in.b.valid := bPending && io.lite.bvalid
+  io.in.b.valid := state === sWriteResp && bRespValid
   io.in.b.bits.id := awIdReg
-  io.in.b.bits.resp := io.lite.bresp
+  io.in.b.bits.resp := bRespReg
   io.in.b.bits.user := DontCare
 
-  when (io.in.b.fire) {
-    awSent   := false.B
-    wSent    := false.B
-    bPending := false.B
-  }
-
-  io.lite.arvalid := arHeld && !arSent
-  io.lite.araddr  := arAddrReg(liteAddrBits - 1, 0)
-  io.lite.rready  := !rPending
-
-  when (io.in.ar.fire) {
-    arHeld    := true.B
-    arSent    := false.B
-    arAddrReg := io.in.ar.bits.addr
-    arIdReg   := io.in.ar.bits.id
-  }
-
-  when (io.lite.arvalid && io.lite.arready) {
-    arSent := true.B
-    arHeld := false.B
-  }
-
-  when (!rPending && arSent && io.lite.rvalid) {
-    rPending := true.B
-    rDataReg := io.lite.rdata
-    rRespReg := io.lite.rresp
-  }
-
-  val replicatedReadData = Cat(rDataReg, rDataReg)
-  io.in.r.valid := rPending
+  io.in.r.valid := state === sReadResp && rRespValid
   io.in.r.bits.id := arIdReg
-  io.in.r.bits.data := replicatedReadData
+  io.in.r.bits.data := rDataReg
   io.in.r.bits.resp := rRespReg
   io.in.r.bits.last := true.B
   io.in.r.bits.user := DontCare
 
-  when (io.in.r.fire) {
-    arSent   := false.B
-    rPending := false.B
+  io.lite.awvalid := state === sWriteIssue && writeForward && awCaptured && !awIssued
+  io.lite.awaddr  := awAddrReg(liteAddrBits - 1, 0)
+  io.lite.wvalid  := state === sWriteIssue && writeForward && wCaptured && !wIssued
+  io.lite.wdata   := liteWriteData
+  io.lite.wstrb   := liteWriteStrb
+  io.lite.bready  := state === sWriteIssue && writeForward && !bRespValid
+
+  io.lite.arvalid := state === sReadIssue && readForward && !arIssued
+  io.lite.araddr  := arAddrReg(liteAddrBits - 1, 0)
+  io.lite.rready  := state === sReadIssue && readForward && !rRespValid
+
+  switch (state) {
+    is (sIdle) {
+      when (io.in.aw.valid || io.in.w.valid) {
+        io.in.aw.ready := true.B
+        io.in.w.ready := true.B
+
+        val gotAw = io.in.aw.valid
+        val gotW = io.in.w.valid
+
+        when (io.in.aw.fire) {
+          awCaptured := true.B
+          awAddrReg := io.in.aw.bits.addr
+          awIdReg := io.in.aw.bits.id
+          awSizeReg := io.in.aw.bits.size
+          awLenReg := io.in.aw.bits.len
+        }
+        when (io.in.w.fire) {
+          wCaptured := true.B
+          wDataReg := io.in.w.bits.data
+          wStrbReg := io.in.w.bits.strb
+          wLastReg := io.in.w.bits.last
+        }
+
+        state := Mux(gotAw && gotW, sWriteIssue, sWriteCollect)
+      } .otherwise {
+        io.in.ar.ready := true.B
+        when (io.in.ar.fire) {
+          arAddrReg := io.in.ar.bits.addr
+          arIdReg := io.in.ar.bits.id
+          arSizeReg := io.in.ar.bits.size
+          arLenReg := io.in.ar.bits.len
+          state := sReadIssue
+        }
+      }
+    }
+
+    is (sWriteCollect) {
+      io.in.aw.ready := !awCaptured
+      io.in.w.ready := !wCaptured
+
+      when (io.in.aw.fire) {
+        awCaptured := true.B
+        awAddrReg := io.in.aw.bits.addr
+        awIdReg := io.in.aw.bits.id
+        awSizeReg := io.in.aw.bits.size
+        awLenReg := io.in.aw.bits.len
+      }
+      when (io.in.w.fire) {
+        wCaptured := true.B
+        wDataReg := io.in.w.bits.data
+        wStrbReg := io.in.w.bits.strb
+        wLastReg := io.in.w.bits.last
+      }
+
+      when ((awCaptured || io.in.aw.fire) && (wCaptured || io.in.w.fire)) {
+        state := sWriteIssue
+      }
+    }
+
+    is (sWriteIssue) {
+      val awHandshake = io.lite.awvalid && io.lite.awready
+      val wHandshake = io.lite.wvalid && io.lite.wready
+      val nextAwIssued = awIssued || awHandshake
+      val nextWIssued = wIssued || wHandshake
+      val canCaptureB = !bRespValid && writeForward && nextAwIssued && nextWIssued && io.lite.bvalid
+
+      when (awHandshake) { awIssued := true.B }
+      when (wHandshake) { wIssued := true.B }
+
+      when (!writeForward && !bRespValid) {
+        bRespReg := AXI4Parameters.RESP_SLVERR
+        bRespValid := true.B
+        state := sWriteResp
+      } .elsewhen (canCaptureB) {
+        bRespReg := io.lite.bresp
+        bRespValid := true.B
+        awIssued := nextAwIssued
+        wIssued := nextWIssued
+        state := sWriteResp
+      }
+    }
+
+    is (sWriteResp) {
+      when (io.in.b.fire) {
+        awCaptured := false.B
+        wCaptured := false.B
+        awIssued := false.B
+        wIssued := false.B
+        wLastReg := false.B
+        bRespValid := false.B
+        state := sIdle
+      }
+    }
+
+    is (sReadIssue) {
+      val arHandshake = io.lite.arvalid && io.lite.arready
+      val nextArIssued = arIssued || arHandshake
+      val canCaptureR = !rRespValid && readForward && nextArIssued && io.lite.rvalid
+
+      when (arHandshake) { arIssued := true.B }
+
+      when (!readForward && !rRespValid) {
+        rDataReg := 0.U
+        rRespReg := AXI4Parameters.RESP_SLVERR
+        rRespValid := true.B
+        state := sReadResp
+      } .elsewhen (canCaptureR) {
+        rDataReg := steeredReadData
+        rRespReg := io.lite.rresp
+        rRespValid := true.B
+        arIssued := nextArIssued
+        state := sReadResp
+      }
+    }
+
+    is (sReadResp) {
+      when (io.in.r.fire) {
+        arIssued := false.B
+        rRespValid := false.B
+        state := sIdle
+      }
+    }
   }
 }
 
@@ -272,6 +360,24 @@ class RadarAXIDMA(implicit p: Parameters) extends LazyModule {
   lazy val module = new Impl
 
   class Impl extends LazyRawModuleImp(this) {
+    val debug = IO(Output(new Bundle {
+      val mm2sArFireSeen       = Bool()
+      val mm2sRValidSeen       = Bool()
+      val mm2sRReadySeen       = Bool()
+      val mm2sRFireSeen        = Bool()
+      val mm2sReadBeat16Seen   = Bool()
+      val mm2sReadBeat32Seen   = Bool()
+      val mm2sStreamBeat16Seen = Bool()
+      val mm2sStreamBeat32Seen = Bool()
+      val mm2sTLASTSeen        = Bool()
+      val s2mmWriteBeat16Seen  = Bool()
+      val s2mmWriteBeat32Seen  = Bool()
+      val s2mmWLASTSeen        = Bool()
+      val mm2sPacketEOFSeen    = Bool()
+      val s2mmPacketEOFSeen    = Bool()
+      val mm2sIOCSeen          = Bool()
+      val s2mmIOCSeen          = Bool()
+    }))
     val ctrlClock = IO(Input(Clock()))
     val ctrlResetN = IO(Input(Bool()))
     val ctrl = IO(Flipped(new AXI4Bundle(AXI4BundleParameters(
@@ -313,6 +419,108 @@ class RadarAXIDMA(implicit p: Parameters) extends LazyModule {
     bb.io.s_axi_lite_rready := ctrlBridge.io.lite.rready
     ctrlBridge.io.lite.rdata := bb.io.s_axi_lite_rdata
     ctrlBridge.io.lite.rresp := bb.io.s_axi_lite_rresp
+
+    val (mm2sArFireSeen,
+         mm2sRValidSeen,
+         mm2sRReadySeen,
+         mm2sRFireSeen,
+         mm2sReadBeat16Seen,
+         mm2sReadBeat32Seen,
+         mm2sStreamBeat16Seen,
+         mm2sStreamBeat32Seen,
+         mm2sTLASTSeen,
+         s2mmWriteBeat16Seen,
+         s2mmWriteBeat32Seen,
+         s2mmWLASTSeen,
+         mm2sPacketEOFSeen,
+         s2mmPacketEOFSeen,
+         mm2sIOCSeen,
+         s2mmIOCSeen) = withClockAndReset(ctrlClock, (!ctrlResetN).asAsyncReset) {
+      val mm2sArFireSeen = RegInit(false.B)
+      val mm2sRValidSeen = RegInit(false.B)
+      val mm2sRReadySeen = RegInit(false.B)
+      val mm2sRFireSeen  = RegInit(false.B)
+      val mm2sReadBeat16Seen   = RegInit(false.B)
+      val mm2sReadBeat32Seen   = RegInit(false.B)
+      val mm2sStreamBeat16Seen = RegInit(false.B)
+      val mm2sStreamBeat32Seen = RegInit(false.B)
+      val mm2sTLASTSeen        = RegInit(false.B)
+      val s2mmWriteBeat16Seen  = RegInit(false.B)
+      val s2mmWriteBeat32Seen  = RegInit(false.B)
+      val s2mmWLASTSeen        = RegInit(false.B)
+      val mm2sPacketEOFSeen    = RegInit(false.B)
+      val s2mmPacketEOFSeen    = RegInit(false.B)
+      val mm2sIOCSeen          = RegInit(false.B)
+      val s2mmIOCSeen          = RegInit(false.B)
+      val mm2sReadBeatCount    = RegInit(0.U(6.W))
+      val mm2sStreamBeatCount  = RegInit(0.U(6.W))
+      val s2mmWriteBeatCount   = RegInit(0.U(6.W))
+
+      val mm2sStreamFire = bb.io.m_axis_mm2s_tvalid && bb.io.m_axis_mm2s_tready
+
+      when (mm2s.ar.fire) { mm2sArFireSeen := true.B }
+      when (mm2s.r.valid) { mm2sRValidSeen := true.B }
+      when (mm2s.r.ready) { mm2sRReadySeen := true.B }
+      when (mm2s.r.fire) {
+        mm2sRFireSeen := true.B
+        val nextCount = Mux(mm2sReadBeatCount === 63.U, 63.U, mm2sReadBeatCount + 1.U)
+        mm2sReadBeatCount := nextCount
+        when (nextCount >= 16.U) { mm2sReadBeat16Seen := true.B }
+        when (nextCount >= 32.U) { mm2sReadBeat32Seen := true.B }
+      }
+      when (mm2sStreamFire) {
+        val nextCount = Mux(mm2sStreamBeatCount === 63.U, 63.U, mm2sStreamBeatCount + 1.U)
+        mm2sStreamBeatCount := nextCount
+        when (nextCount >= 16.U) { mm2sStreamBeat16Seen := true.B }
+        when (nextCount >= 32.U) { mm2sStreamBeat32Seen := true.B }
+      }
+      when (mm2sStreamFire && bb.io.m_axis_mm2s_tlast) { mm2sTLASTSeen := true.B }
+      when (s2mm.w.fire) {
+        val nextCount = Mux(s2mmWriteBeatCount === 63.U, 63.U, s2mmWriteBeatCount + 1.U)
+        s2mmWriteBeatCount := nextCount
+        when (nextCount >= 16.U) { s2mmWriteBeat16Seen := true.B }
+        when (nextCount >= 32.U) { s2mmWriteBeat32Seen := true.B }
+      }
+      when (s2mm.w.fire && s2mm.w.bits.last) { s2mmWLASTSeen := true.B }
+      when (bb.io.axi_dma_tstvec(1)) { mm2sPacketEOFSeen := true.B }
+      when (bb.io.axi_dma_tstvec(3)) { s2mmPacketEOFSeen := true.B }
+      when (bb.io.axi_dma_tstvec(4)) { mm2sIOCSeen := true.B }
+      when (bb.io.axi_dma_tstvec(5)) { s2mmIOCSeen := true.B }
+
+      (mm2sArFireSeen,
+       mm2sRValidSeen,
+       mm2sRReadySeen,
+       mm2sRFireSeen,
+       mm2sReadBeat16Seen,
+       mm2sReadBeat32Seen,
+       mm2sStreamBeat16Seen,
+       mm2sStreamBeat32Seen,
+       mm2sTLASTSeen,
+       s2mmWriteBeat16Seen,
+       s2mmWriteBeat32Seen,
+       s2mmWLASTSeen,
+       mm2sPacketEOFSeen,
+       s2mmPacketEOFSeen,
+       mm2sIOCSeen,
+       s2mmIOCSeen)
+    }
+
+    debug.mm2sArFireSeen       := mm2sArFireSeen
+    debug.mm2sRValidSeen       := mm2sRValidSeen
+    debug.mm2sRReadySeen       := mm2sRReadySeen
+    debug.mm2sRFireSeen        := mm2sRFireSeen
+    debug.mm2sReadBeat16Seen   := mm2sReadBeat16Seen
+    debug.mm2sReadBeat32Seen   := mm2sReadBeat32Seen
+    debug.mm2sStreamBeat16Seen := mm2sStreamBeat16Seen
+    debug.mm2sStreamBeat32Seen := mm2sStreamBeat32Seen
+    debug.mm2sTLASTSeen        := mm2sTLASTSeen
+    debug.s2mmWriteBeat16Seen  := s2mmWriteBeat16Seen
+    debug.s2mmWriteBeat32Seen  := s2mmWriteBeat32Seen
+    debug.s2mmWLASTSeen        := s2mmWLASTSeen
+    debug.mm2sPacketEOFSeen    := mm2sPacketEOFSeen
+    debug.s2mmPacketEOFSeen    := s2mmPacketEOFSeen
+    debug.mm2sIOCSeen          := mm2sIOCSeen
+    debug.s2mmIOCSeen          := s2mmIOCSeen
 
     bb.io.m_axis_mm2s_tready := bb.io.s_axis_s2mm_tready
     bb.io.s_axis_s2mm_tdata  := bb.io.m_axis_mm2s_tdata

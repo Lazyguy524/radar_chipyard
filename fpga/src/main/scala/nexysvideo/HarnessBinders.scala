@@ -19,11 +19,11 @@ class WithNexysVideoUARTTSI(uartBaudRate: BigInt = 115200) extends HarnessBinder
   case (th: HasHarnessInstantiators, port: UARTTSIPort, chipId: Int) => {
     val nexysvideoth = th.asInstanceOf[LazyRawModuleImp].wrapper.asInstanceOf[NexysVideoHarness]
     nexysvideoth.io_uart_bb.bundle <> port.io.uart
-    nexysvideoth.other_leds(1) := port.io.dropped
-    nexysvideoth.other_leds(2) := port.io.tsi2tl_state(0)
-    nexysvideoth.other_leds(3) := port.io.tsi2tl_state(1)
-    nexysvideoth.other_leds(4) := port.io.tsi2tl_state(2)
-    nexysvideoth.other_leds(5) := port.io.tsi2tl_state(3)
+    nexysvideoth.other_leds(1) := nexysvideoth.ddrOverlay.map(_.mig.module.io.port.init_calib_complete).getOrElse(false.B)
+    nexysvideoth.other_leds(2) := nexysvideoth.radarDMA.map(_.module.debug.mm2sStreamBeat16Seen).getOrElse(false.B)
+    nexysvideoth.other_leds(3) := nexysvideoth.radarDMA.map(_.module.debug.mm2sStreamBeat32Seen).getOrElse(false.B)
+    nexysvideoth.other_leds(4) := nexysvideoth.radarDMA.map(_.module.debug.s2mmWriteBeat16Seen).getOrElse(false.B)
+    nexysvideoth.other_leds(5) := nexysvideoth.radarDMA.map(_.module.debug.s2mmWriteBeat32Seen).getOrElse(false.B)
   }
 })
 

@@ -1,5 +1,53 @@
 # Radar Nexys Video Phase-1 Work Summary
 
+## Update: 2026-03-28 Runtime Bring-up
+
+Phase-1 integration is still valid, but current board bring-up moved the
+problem statement forward:
+
+- `UART-TSI` is working
+- DDR direct read/write through `uart_tsi` is working
+- `hello.riscv` is working
+- `radar-axi-mmio-smoke.riscv` is working
+- `radar-axi-dma-loopback.riscv` is still failing
+
+The failure is no longer "DMA CSR window completely hangs forever". The control
+path is now good enough to pass a dedicated DMA CSR smoke test.
+
+The current blocker is specifically the MM2S start/run phase:
+
+- MM2S and S2MM reset/programming reads look sane before MM2S starts
+- S2MM channel setup looks sane
+- corruption appears immediately after the `MM2S_LENGTH` write that arms MM2S
+- transient MM2S register reads can show `0xa5a5....` payload-looking values
+- afterward the MM2S control registers settle back, but the channel times out
+- RX buffer remains zero, so no completed loopback writeback is observed
+
+A newer debug bitstream was then generated to expose software-readable DMA
+debug counters for MM2S/S2MM/stream handshakes. That bitstream is the current
+next-stage debug image.
+
+Initial board result for that debug image:
+
+- `hello.riscv` still runs
+- but direct `uart_tsi` init-read behavior became unreliable
+- `0x60000200` did not return a sane debug counter value in first-pass testing
+
+Therefore that debug image should be treated as experimental until the control
+path side effects are corrected.
+
+Latest stable-bit loopback observation:
+
+- S2MM channel setup is clean from reset through `S2MM_LENGTH`
+- MM2S channel setup is clean through `MM2S_SA_MSB`
+- the first bad point is immediately after writing `MM2S_LENGTH`
+- the very next MM2S register dump can transiently show `0xa5a5....` payload-like values
+- after the transient, MM2S control registers settle back to the programmed values
+- final steady state is `MM2S DMASR = 0x00000000`, no RX data written, and loopback times out
+
+This strengthens the current hypothesis that the remaining failure is tied to
+the MM2S launch/run path, not to basic CSR programming or DDR accessibility.
+
 ## 1. 目标与结论
 
 本轮工作的目标是把 AXI DMA 从原来的“可能外露为 FPGA 顶层接口”的状态，改成在 Nexys Video 设计内部完成焊接，并最终产出可直接上板的 bitstream。
