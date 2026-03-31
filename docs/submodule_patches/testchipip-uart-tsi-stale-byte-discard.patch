@@ -1,0 +1,27 @@
+diff --git a/uart_tsi/testchip_uart_tsi.cc b/uart_tsi/testchip_uart_tsi.cc
+index 9d5a56d..6a7730d 100644
+--- a/uart_tsi/testchip_uart_tsi.cc
++++ b/uart_tsi/testchip_uart_tsi.cc
+@@ -139,11 +139,17 @@ bool testchip_uart_tsi_t::handle_uart() {
+ 
+ bool testchip_uart_tsi_t::check_connection() {
+   sleep(1); // sleep for 1 second
+-  uint8_t rdata = 0;
+-  int n = read(ttyfd, &rdata, 1);
+-  if (n > 0) {
+-    printf("Error: Reading unexpected data %c from UART. Abort.\n", rdata);
+-    exit(1);
++  uint8_t rbuf[256];
++  int discarded = 0;
++  for (;;) {
++    int n = read(ttyfd, &rbuf, sizeof(rbuf));
++    if (n <= 0) {
++      break;
++    }
++    discarded += n;
++  }
++  if (discarded > 0) {
++    printf("Warning: Discarded %d stale byte(s) from UART before starting TSI\n", discarded);
+   }
+   return true;
+ }

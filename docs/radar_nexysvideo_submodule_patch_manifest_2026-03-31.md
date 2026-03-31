@@ -29,6 +29,10 @@
 
 没有这部分修改，当前项目不会达到现在的“MM2S 主读口已修通”的状态。
 
+### 已归档补丁
+
+- `docs/submodule_patches/fpga-shells-nexys-mig-idwidth-and-debug.patch`
+
 ---
 
 ## 2. `generators/testchipip`
@@ -45,6 +49,10 @@
 
 这不是 DMA 主链硬件修复，但它明显改善了板级 bring-up 阶段 `uart_tsi` 的稳定性和可重复性。
 
+### 已归档补丁
+
+- `docs/submodule_patches/testchipip-uart-tsi-stale-byte-discard.patch`
+
 ---
 
 ## 3. `toolchains/riscv-tools/riscv-spike-devices`
@@ -60,6 +68,10 @@
 ### 工程意义
 
 这项修改属于工具链支撑层，作用是保证当前开发环境中的相关构建链可持续工作。
+
+### 已归档补丁
+
+- `docs/submodule_patches/spike-devices-fdt-include-path.patch`
 
 ---
 

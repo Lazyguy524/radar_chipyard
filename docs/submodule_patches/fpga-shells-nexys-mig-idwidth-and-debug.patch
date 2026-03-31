@@ -1,0 +1,91 @@
+diff --git a/src/main/scala/devices/xilinx/xilinxnexysvideomig/XilinxNexysVideoMIG.scala b/src/main/scala/devices/xilinx/xilinxnexysvideomig/XilinxNexysVideoMIG.scala
+index 07aceda..6a93ce2 100644
+--- a/src/main/scala/devices/xilinx/xilinxnexysvideomig/XilinxNexysVideoMIG.scala
++++ b/src/main/scala/devices/xilinx/xilinxnexysvideomig/XilinxNexysVideoMIG.scala
+@@ -42,6 +42,12 @@ class XilinxNexysVideoMIGIsland(c: XilinxNexysVideoMIGParams, val crossing: Cloc
+ 
+   lazy val module = new Impl
+   class Impl extends LazyRawModuleImp(this) {
++    val debug = IO(Output(new Bundle {
++      val arFireSeen    = Bool()
++      val rValidSeen    = Bool()
++      val rReadySeen    = Bool()
++      val rFireSeen     = Bool()
++    }))
+     val io = IO(new Bundle {
+       val port = new XilinxNexysVideoMIGIO(depth)
+     })
+@@ -53,6 +59,25 @@ class XilinxNexysVideoMIGIsland(c: XilinxNexysVideoMIGParams, val crossing: Cloc
+     val blackbox = Module(new nexysvideomig(depth))
+     val (axi_async, _) = node.in(0)
+ 
++    val (arFireSeen, rValidSeen, rReadySeen, rFireSeen) = withClockAndReset(io.port.ui_clk, io.port.ui_clk_sync_rst) {
++      val arFireSeen = RegInit(false.B)
++      val rValidSeen = RegInit(false.B)
++      val rReadySeen = RegInit(false.B)
++      val rFireSeen  = RegInit(false.B)
++
++      when (blackbox.io.s_axi_arvalid && blackbox.io.s_axi_arready) { arFireSeen := true.B }
++      when (blackbox.io.s_axi_rvalid) { rValidSeen := true.B }
++      when (blackbox.io.s_axi_rready) { rReadySeen := true.B }
++      when (blackbox.io.s_axi_rvalid && blackbox.io.s_axi_rready) { rFireSeen := true.B }
++
++      (arFireSeen, rValidSeen, rReadySeen, rFireSeen)
++    }
++
++    debug.arFireSeen := arFireSeen
++    debug.rValidSeen := rValidSeen
++    debug.rReadySeen := rReadySeen
++    debug.rFireSeen  := rFireSeen
++
+     //pins to top level
+ 
+     //inouts
+@@ -149,24 +174,45 @@ class XilinxNexysVideoMIGIsland(c: XilinxNexysVideoMIGParams, val crossing: Cloc
+ class XilinxNexysVideoMIG(c: XilinxNexysVideoMIGParams, crossing: ClockCrossingType = AsynchronousCrossing(8))(implicit p: Parameters) extends LazyModule {
+   val ranges = AddressRange.fromSets(c.address)
+   val depth = ranges.head.size
++  private val migAxiIdBits = 4
++  private val tlAxiIdBits = 3
++
++  // The MIG black box only exposes 4 AXI ID bits. This Nexys-specific wrapper
++  // also attaches two 1-ID DMA masters directly to the same xbar, so the TL
++  // path must leave headroom for those extra source prefixes.
++  require((1 << tlAxiIdBits) + 2 <= (1 << migAxiIdBits),
++    "Nexys MIG xbar IDs must fit within the MIG's 4-bit AXI ID field")
+ 
+   val buffer  = LazyModule(new TLBuffer)
+   val toaxi4  = LazyModule(new TLToAXI4(adapterName = Some("mem")))
+-  val indexer = LazyModule(new AXI4IdIndexer(idBits = 4))
++  val indexer = LazyModule(new AXI4IdIndexer(idBits = tlAxiIdBits))
+   val deint   = LazyModule(new AXI4Deinterleaver(p(CacheBlockBytes)))
+   val yank    = LazyModule(new AXI4UserYanker)
++  val xbar    = AXI4Xbar()
+   val island  = LazyModule(new XilinxNexysVideoMIGIsland(c, crossing))
+ 
++  val axiNode: AXI4InwardNode = xbar
+   val node: TLInwardNode =
+-    island.crossAXI4In(island.node) := yank.node := deint.node := indexer.node := toaxi4.node := buffer.node
++    buffer.node
++
++  island.crossAXI4In(island.node) := AXI4Buffer() := xbar
++  xbar := yank.node := deint.node := indexer.node := toaxi4.node := buffer.node
+ 
+   lazy val module = new Impl
+   class Impl extends LazyModuleImp(this) {
++    val debug = IO(Output(new Bundle {
++      val arFireSeen = Bool()
++      val rValidSeen = Bool()
++      val rReadySeen = Bool()
++    }))
+     val io = IO(new Bundle {
+       val port = new XilinxNexysVideoMIGIO(depth)
+     })
+ 
+     io.port <> island.module.io.port
++    debug.arFireSeen := island.module.debug.arFireSeen
++    debug.rValidSeen := island.module.debug.rValidSeen
++    debug.rReadySeen := island.module.debug.rReadySeen
+   }
+ }
+ 

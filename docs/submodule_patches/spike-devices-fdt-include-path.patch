@@ -1,0 +1,13 @@
+diff --git a/Makefile b/Makefile
+index 65ae6ef..6d967fd 100644
+--- a/Makefile
++++ b/Makefile
+@@ -11,7 +11,7 @@ SRCS=$(wildcard $(SRC_DIR)/*.cc)
+ default: libspikedevices.so
+ 
+ libspikedevices.so: $(SRCS)
+-	g++ -L $(RISCV)/lib -Wl,-rpath,$(RISCV)/lib -shared -o $@ -std=c++17 -I $(RISCV)/include -fPIC $^
++	g++ -L $(RISCV)/lib -Wl,-rpath,$(RISCV)/lib -shared -o $@ -std=c++17 -I $(RISCV)/include -I $(RISCV)/include/fdt -fPIC $^
+ 
+ .PHONY: install
+ install: libspikedevices.so
