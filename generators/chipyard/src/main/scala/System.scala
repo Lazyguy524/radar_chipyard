@@ -80,13 +80,39 @@ trait CanHaveMasterTLMemPort { this: BaseSubsystem =>
     }
   }).toList.flatten)
 
-  // disable inwards monitors from node since the class with this trait (i.e. DigitalTop)
-  // doesn't provide an implicit clock to those monitors
-  mbus.coupleTo(s"memory_controller_port_named_$portName") {
-    (DisableMonitors { implicit p => memTLNode :*= TLBuffer() }
-      :*= TLSourceShrinker(1 << idBits)
-      :*= TLWidthWidget(mbus.beatBytes)
-      :*= _)
+  for (_ <- 0 until memTLNode.portParams.size) {
+    val mem_bypass_xbar = mbus { TLXbar() }
+
+    memPortParamsOpt.foreach(memPortParams => {
+      memPortParams.incohBase.foreach(incohBase => {
+        val cohRegion = AddressSet(0, incohBase - 1)
+        val replicator = tlBusWrapperLocationMap(p(TLManagerViewpointLocated(location))) {
+          val replicator = LazyModule(new RegionReplicator(ReplicatedRegion(cohRegion, cohRegion.widen(incohBase))))
+          val prefixSource = BundleBridgeSource[UInt](() => UInt(1.W))
+          replicator.prefix := prefixSource
+          InModuleBody { prefixSource.bundle := 0.U(1.W) }
+          replicator
+        }
+        viewpointBus.coupleTo(s"memory_controller_bypass_port_named_$portName") {
+          (mbus.crossIn(mem_bypass_xbar)(ValName("bus_xing"))(p(SbusToMbusXTypeKey))
+            := TLWidthWidget(viewpointBus.beatBytes)
+            := replicator.node
+            := TLFilter(TLFilter.mSubtract(cohRegion))
+            := TLFilter(TLFilter.mResourceRemover)
+            := _)
+        }
+      })
+    })
+
+    // disable inwards monitors from node since the class with this trait (i.e. DigitalTop)
+    // doesn't provide an implicit clock to those monitors
+    mbus.coupleTo(s"memory_controller_port_named_$portName") {
+      (DisableMonitors { implicit p => memTLNode :*= TLBuffer() }
+        :*= TLSourceShrinker(1 << idBits)
+        :*= mem_bypass_xbar
+        :*= TLWidthWidget(mbus.beatBytes)
+        :*= _)
+    }
   }
 
   val mem_tl = InModuleBody { memTLNode.makeIOs() }

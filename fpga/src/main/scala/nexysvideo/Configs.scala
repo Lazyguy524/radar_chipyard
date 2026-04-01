@@ -30,6 +30,12 @@ object RadarAXIMMIOAddressMap {
   val WindowSize   = 0x00010000L
 }
 
+object RadarDDRAddressMap {
+  val CachedBase        = 0x80000000L
+  val SizeBytes         = 0x20000000L
+  val IncohAliasOffset  = 0x1000000000L
+}
+
 // DOC include start: WithNexysVideoTweaks and Rocket
 class WithNexysVideoTweaks extends Config(
   new WithNexysVideoUARTTSI ++
@@ -48,6 +54,7 @@ class WithNexysVideoTweaks extends Config(
   new chipyard.config.WithNoDebug ++ // no jtag
   new chipyard.config.WithNoUART ++ // use UART for the UART-TSI thing instad
   new chipyard.config.WithTLBackingMemory ++ // FPGA-shells converts the AXI to TL for us
+  new freechips.rocketchip.subsystem.WithExtMemSbusBypass(RadarDDRAddressMap.IncohAliasOffset) ++
   new freechips.rocketchip.subsystem.WithExtMemSize(BigInt(512) << 20) ++ // 512mb on Nexys Video
   new freechips.rocketchip.subsystem.WithoutTLMonitors)
 
@@ -100,6 +107,7 @@ class WithRadarNexysVideoTweaks(freqMHz: Double = 50) extends Config(
   new chipyard.config.WithNoDebug ++ // no jtag
   new chipyard.config.WithNoUART ++ // use UART for the UART-TSI thing instad
   new chipyard.config.WithTLBackingMemory ++ // FPGA-shells converts the AXI to TL for us
+  new freechips.rocketchip.subsystem.WithExtMemSbusBypass(RadarDDRAddressMap.IncohAliasOffset) ++
   new freechips.rocketchip.subsystem.WithExtMemSize(BigInt(512) << 20) ++ // 512mb on Nexys Video
   new freechips.rocketchip.subsystem.WithoutTLMonitors)
 

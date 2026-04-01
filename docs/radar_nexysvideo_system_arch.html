@@ -1,66 +1,56 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Radar NexysVideo System Architecture</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Radar Nexys Video 当前系统架构</title>
   <style>
     :root {
-      --bg: #f3efe6;
-      --panel: #fffaf2;
-      --ink: #1c2430;
-      --muted: #5c6875;
-      --line: #d7c8ae;
-      --accent: #0d5c63;
-      --accent-2: #bd632f;
-      --accent-3: #7a8b24;
-      --ok: #1e6b35;
-      --warn: #8f5a00;
-      --shadow: 0 18px 50px rgba(33, 38, 45, 0.08);
-      --radius: 20px;
+      --bg: #f5f1e8;
+      --panel: #fffdf8;
+      --ink: #1f2430;
+      --muted: #5c6572;
+      --line: #d8ccb7;
+      --teal: #0d5c63;
+      --orange: #b86430;
+      --green: #56732c;
+      --navy: #2d4057;
+      --good: #1f6b38;
+      --warn: #8a5812;
+      --shadow: 0 16px 40px rgba(31, 36, 48, 0.08);
+      --radius: 18px;
     }
 
     * { box-sizing: border-box; }
 
     body {
       margin: 0;
-      font-family: "Avenir Next", "Segoe UI", "PingFang SC", "Hiragino Sans GB", sans-serif;
       color: var(--ink);
+      font-family: "PingFang SC", "Microsoft YaHei", "Noto Sans CJK SC", "Segoe UI", sans-serif;
       background:
-        radial-gradient(circle at top left, rgba(13, 92, 99, 0.10), transparent 28%),
-        radial-gradient(circle at top right, rgba(189, 99, 47, 0.10), transparent 24%),
-        linear-gradient(180deg, #f7f2e8 0%, #f2ede2 100%);
-      line-height: 1.55;
+        radial-gradient(circle at top left, rgba(13, 92, 99, 0.10), transparent 26%),
+        radial-gradient(circle at top right, rgba(184, 100, 48, 0.09), transparent 22%),
+        linear-gradient(180deg, #f7f4ed 0%, #f0eadf 100%);
+      line-height: 1.6;
     }
 
     .page {
-      width: min(1280px, calc(100vw - 32px));
-      margin: 24px auto 48px;
+      width: min(1200px, calc(100vw - 28px));
+      margin: 20px auto 40px;
     }
 
     .hero,
     .panel {
-      background: rgba(255, 250, 242, 0.92);
-      border: 1px solid rgba(215, 200, 174, 0.9);
+      background: rgba(255, 253, 248, 0.94);
+      border: 1px solid rgba(216, 204, 183, 0.95);
       border-radius: var(--radius);
       box-shadow: var(--shadow);
-      backdrop-filter: blur(10px);
     }
 
     .hero {
-      padding: 28px 30px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero::after {
-      content: "";
-      position: absolute;
-      inset: auto -60px -80px auto;
-      width: 240px;
-      height: 240px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(13, 92, 99, 0.16), transparent 70%);
+      padding: 28px;
+      margin-bottom: 18px;
     }
 
     .eyebrow {
@@ -68,54 +58,48 @@
       padding: 6px 10px;
       border-radius: 999px;
       background: rgba(13, 92, 99, 0.10);
-      color: var(--accent);
+      color: var(--teal);
       font-size: 12px;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
       font-weight: 700;
+      letter-spacing: 0.06em;
     }
 
     h1, h2, h3 {
       margin: 0;
-      line-height: 1.15;
-      letter-spacing: -0.02em;
+      line-height: 1.18;
     }
 
     h1 {
       margin-top: 14px;
-      font-size: clamp(34px, 5vw, 58px);
-      max-width: 900px;
+      font-size: clamp(32px, 4.8vw, 52px);
     }
 
     .subtitle {
       margin-top: 14px;
-      max-width: 960px;
       color: var(--muted);
       font-size: 17px;
+      max-width: 980px;
     }
 
-    .chip-row {
-      margin-top: 20px;
+    .chips {
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
+      margin-top: 18px;
     }
 
     .chip {
       padding: 9px 12px;
       border-radius: 999px;
-      border: 1px solid rgba(28, 36, 48, 0.08);
-      background: rgba(255, 255, 255, 0.68);
+      border: 1px solid rgba(31, 36, 48, 0.08);
+      background: rgba(255, 255, 255, 0.7);
       font-size: 14px;
     }
 
-    .chip strong { color: var(--accent); }
-
     .grid {
       display: grid;
-      grid-template-columns: repeat(12, 1fr);
+      grid-template-columns: repeat(12, minmax(0, 1fr));
       gap: 18px;
-      margin-top: 18px;
     }
 
     .panel {
@@ -131,7 +115,7 @@
       display: flex;
       align-items: center;
       gap: 10px;
-      margin-bottom: 14px;
+      margin-bottom: 12px;
       font-size: 22px;
     }
 
@@ -140,12 +124,12 @@
       width: 14px;
       height: 14px;
       border-radius: 4px;
-      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      background: linear-gradient(135deg, var(--teal), var(--orange));
     }
 
     .lede {
       color: var(--muted);
-      margin-bottom: 16px;
+      margin: 0 0 14px;
     }
 
     .stats {
@@ -156,86 +140,99 @@
 
     .stat {
       padding: 16px;
-      border-radius: 16px;
-      background: linear-gradient(180deg, rgba(255,255,255,0.92), rgba(249,243,232,0.92));
-      border: 1px solid rgba(215, 200, 174, 0.95);
+      border: 1px solid rgba(216, 204, 183, 0.95);
+      border-radius: 14px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.95), rgba(248,243,233,0.95));
     }
 
     .stat .label {
+      color: var(--muted);
       font-size: 12px;
       text-transform: uppercase;
       letter-spacing: 0.08em;
-      color: var(--muted);
     }
 
     .stat .value {
       margin-top: 8px;
-      font-size: 24px;
+      font-size: 22px;
       font-weight: 800;
     }
 
     .diagram {
-      width: 100%;
-      overflow: hidden;
-      border-radius: 18px;
-      border: 1px solid rgba(215, 200, 174, 0.95);
-      background:
-        linear-gradient(180deg, rgba(255,255,255,0.85), rgba(246,240,230,0.95));
+      border: 1px solid rgba(216, 204, 183, 0.95);
+      border-radius: 16px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.92), rgba(247,242,232,0.96));
       padding: 16px;
+      overflow: hidden;
     }
 
     svg {
+      display: block;
       width: 100%;
       height: auto;
-      display: block;
     }
 
     .callout {
-      padding: 16px 18px;
-      border-radius: 16px;
-      background: rgba(13, 92, 99, 0.08);
-      border-left: 5px solid var(--accent);
       margin-top: 14px;
+      padding: 16px 18px;
+      border-radius: 14px;
+      border-left: 5px solid var(--teal);
+      background: rgba(13, 92, 99, 0.08);
     }
 
-    .warning {
-      background: rgba(189, 99, 47, 0.08);
-      border-left-color: var(--accent-2);
+    .callout.warn {
+      border-left-color: var(--orange);
+      background: rgba(184, 100, 48, 0.08);
     }
 
-    .success {
-      background: rgba(30, 107, 53, 0.08);
-      border-left-color: var(--ok);
+    .callout.good {
+      border-left-color: var(--good);
+      background: rgba(31, 107, 56, 0.08);
     }
 
     table {
       width: 100%;
       border-collapse: collapse;
       font-size: 14px;
-      overflow: hidden;
-      border-radius: 14px;
     }
 
     th, td {
       padding: 11px 12px;
-      border-bottom: 1px solid rgba(215, 200, 174, 0.7);
+      border-bottom: 1px solid rgba(216, 204, 183, 0.7);
+      text-align: left;
       vertical-align: top;
     }
 
     th {
-      text-align: left;
+      color: var(--teal);
       background: rgba(13, 92, 99, 0.08);
-      color: var(--accent);
     }
 
     tr:last-child td { border-bottom: none; }
 
+    .stack {
+      display: grid;
+      gap: 12px;
+    }
+
+    .mini {
+      padding: 14px 16px;
+      border: 1px solid rgba(216, 204, 183, 0.95);
+      border-radius: 14px;
+      background: rgba(255,255,255,0.74);
+    }
+
+    .mini h3 {
+      font-size: 16px;
+      margin-bottom: 8px;
+    }
+
     code {
-      font-family: "IBM Plex Mono", "SFMono-Regular", "Consolas", monospace;
+      font-family: "IBM Plex Mono", "Consolas", monospace;
       font-size: 0.94em;
-      background: rgba(28, 36, 48, 0.06);
+      background: rgba(31, 36, 48, 0.06);
       padding: 2px 6px;
-      border-radius: 7px;
+      border-radius: 6px;
     }
 
     ul {
@@ -247,25 +244,8 @@
       margin-top: 8px;
     }
 
-    .stack {
-      display: grid;
-      gap: 12px;
-    }
-
-    .mini-card {
-      padding: 14px 16px;
-      border-radius: 14px;
-      border: 1px solid rgba(215, 200, 174, 0.95);
-      background: rgba(255,255,255,0.72);
-    }
-
-    .mini-card h3 {
-      font-size: 16px;
-      margin-bottom: 8px;
-    }
-
-    .footer-note {
-      margin-top: 24px;
+    .footer {
+      margin-top: 22px;
       color: var(--muted);
       font-size: 13px;
     }
@@ -276,140 +256,134 @@
     }
 
     @media (max-width: 640px) {
-      .page { width: min(100vw - 18px, 1280px); }
+      .page { width: min(100vw - 16px, 1200px); }
       .hero, .panel { padding: 18px; }
       .stats { grid-template-columns: 1fr; }
-      h1 { font-size: 32px; }
+      h1 { font-size: 30px; }
     }
   </style>
 </head>
 <body>
   <main class="page">
     <section class="hero">
-      <div class="eyebrow">Nexys Video · Chipyard · Radar AXI DMA</div>
+      <div class="eyebrow">Nexys Video / Chipyard / Rocket / AXI DMA</div>
       <h1>当前系统架构总览</h1>
       <p class="subtitle">
-        这份页面描述的是目前已经在板上跑通的这条主链：<strong>RISC-V CPU + DDR + AXI interconnect + AXI DMA</strong>。
-        它既包含结构图，也把这次调试后最终确认下来的系统约束写清楚，方便你后续继续扩展。
+        这份页面描述的是目前已经在板上跑通的主链路：<strong>RISC-V CPU + DDR + AXI interconnect + AXI DMA</strong>，
+        同时也补上了最新已经验证通过的 <strong>uncached DDR alias</strong> 路径，方便后续把 DMA loopback 升级成真正的雷达预处理或流式硬件加速链。
       </p>
-      <div class="chip-row">
-        <div class="chip"><strong>CPU</strong> 单核 Rocket RV64</div>
-        <div class="chip"><strong>DDR</strong> 512 MiB @ <code>0x8000_0000</code></div>
-        <div class="chip"><strong>DMA CSR</strong> AXI4-MMIO @ <code>0x6000_0000</code></div>
-        <div class="chip"><strong>DMA 数据口</strong> 64-bit MM2S + 64-bit S2MM</div>
-        <div class="chip"><strong>当前状态</strong> 主链已板级跑通</div>
+      <div class="chips">
+        <div class="chip">单核 Rocket RV64</div>
+        <div class="chip">DDR 512 MiB @ <code>0x8000_0000</code></div>
+        <div class="chip">DMA CSR @ <code>0x6000_0000</code></div>
+        <div class="chip">uncached alias @ <code>0x1080_000000</code></div>
+        <div class="chip">当前状态：板级完整通过</div>
       </div>
     </section>
 
     <section class="grid">
       <div class="panel span-12">
-        <div class="section-title">一眼看懂整机链路</div>
+        <div class="section-title">整机链路图</div>
         <p class="lede">
-          下面把 <strong>控制面</strong> 和 <strong>数据面</strong> 放在同一张图里。控制面由 CPU 通过 MMIO 配置 DMA；
-          数据面则是 DMA 直接作为 DDR 主设备去发 AXI 读写事务。
+          上半部分是 CPU 通过 MMIO 配置 DMA 的控制面，下半部分是 DMA 直接访问 DDR 并经内部 AXI-Stream 回环的真实数据面。
         </p>
         <div class="diagram">
-          <svg viewBox="0 0 1200 620" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Radar NexysVideo architecture diagram">
+          <svg viewBox="0 0 1200 720" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="当前系统架构图">
             <defs>
               <linearGradient id="cpuGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stop-color="#0d5c63" stop-opacity="0.95"/>
-                <stop offset="100%" stop-color="#0f6f78" stop-opacity="0.88"/>
-              </linearGradient>
-              <linearGradient id="memGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stop-color="#bd632f" stop-opacity="0.92"/>
-                <stop offset="100%" stop-color="#d37a42" stop-opacity="0.88"/>
-              </linearGradient>
-              <linearGradient id="dmaGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stop-color="#7a8b24" stop-opacity="0.90"/>
-                <stop offset="100%" stop-color="#8fa234" stop-opacity="0.88"/>
+                <stop offset="0%" stop-color="#0d5c63"/>
+                <stop offset="100%" stop-color="#16727a"/>
               </linearGradient>
               <linearGradient id="socGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stop-color="#253342" stop-opacity="0.92"/>
-                <stop offset="100%" stop-color="#34475c" stop-opacity="0.88"/>
+                <stop offset="0%" stop-color="#2d4057"/>
+                <stop offset="100%" stop-color="#415977"/>
               </linearGradient>
-              <marker id="arrowA" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+              <linearGradient id="dmaGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#56732c"/>
+                <stop offset="100%" stop-color="#6d8a37"/>
+              </linearGradient>
+              <linearGradient id="migGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#b86430"/>
+                <stop offset="100%" stop-color="#d07b45"/>
+              </linearGradient>
+              <marker id="arrowTeal" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
                 <path d="M0,0 L10,5 L0,10 z" fill="#0d5c63"/>
               </marker>
-              <marker id="arrowB" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
-                <path d="M0,0 L10,5 L0,10 z" fill="#bd632f"/>
+              <marker id="arrowOrange" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+                <path d="M0,0 L10,5 L0,10 z" fill="#b86430"/>
               </marker>
             </defs>
 
-            <rect x="16" y="16" width="1168" height="588" rx="28" fill="#fff9ef" stroke="#dbc9ac" />
+            <rect x="16" y="16" width="1168" height="688" rx="26" fill="#fffaf1" stroke="#d8ccb7"/>
 
-            <text x="54" y="60" font-size="30" font-weight="800" fill="#1c2430">控制面 + 数据面</text>
-            <text x="54" y="88" font-size="15" fill="#5c6875">上半部分是 CPU 配置链路，下半部分是 DMA 自己走 DDR 的搬运链路</text>
+            <text x="48" y="54" font-size="30" font-weight="800" fill="#1f2430">控制面与数据面</text>
+            <text x="48" y="82" font-size="15" fill="#5c6572">当前已经验证通过的系统结构，不再是单点连线验证，而是完整可运行的数据搬运闭环。</text>
 
-            <rect x="54" y="126" width="220" height="120" rx="20" fill="url(#cpuGrad)"/>
-            <text x="78" y="162" font-size="24" font-weight="800" fill="#fff">Rocket CPU</text>
-            <text x="78" y="190" font-size="15" fill="#e8f3f3">RV64IMAC + Zicsr/Zifencei</text>
-            <text x="78" y="214" font-size="14" fill="#d7ecec">I$ 4 KiB / D$ 4 KiB</text>
-            <text x="78" y="236" font-size="14" fill="#d7ecec">cache line = 64 B</text>
+            <rect x="48" y="118" width="220" height="120" rx="20" fill="url(#cpuGrad)"/>
+            <text x="74" y="154" font-size="25" font-weight="800" fill="#fff">Rocket CPU</text>
+            <text x="74" y="182" font-size="15" fill="#e6f1f2">RV64，I$ 4 KiB，D$ 4 KiB</text>
+            <text x="74" y="206" font-size="14" fill="#d5eaec">既能跑 cache-maint 路径，也能跑 uncached alias 路径</text>
 
-            <rect x="334" y="126" width="260" height="120" rx="20" fill="url(#socGrad)"/>
-            <text x="362" y="162" font-size="24" font-weight="800" fill="#fff">Chipyard SoC Fabric</text>
-            <text x="362" y="190" font-size="15" fill="#dbe5ef">TileLink / bus hierarchy</text>
-            <text x="362" y="214" font-size="14" fill="#dbe5ef">CLINT / PLIC / ROM / boot regs</text>
-            <text x="362" y="236" font-size="14" fill="#dbe5ef">50 MHz bus clocks in current DTS</text>
+            <rect x="320" y="118" width="270" height="120" rx="20" fill="url(#socGrad)"/>
+            <text x="348" y="154" font-size="25" font-weight="800" fill="#fff">Chipyard 总线层</text>
+            <text x="348" y="182" font-size="15" fill="#e1e8f0">TileLink / bus hierarchy / 50 MHz</text>
+            <text x="348" y="206" font-size="14" fill="#d9e2ee">控制面、DDR 主存口、MMIO aperture 都从这里汇合</text>
 
-            <rect x="654" y="126" width="220" height="120" rx="20" fill="url(#dmaGrad)"/>
-            <text x="678" y="162" font-size="24" font-weight="800" fill="#fff">AXI DMA CSR</text>
-            <text x="678" y="190" font-size="15" fill="#eef4cf">AXI4-MMIO control aperture</text>
-            <text x="678" y="214" font-size="14" fill="#eef4cf">base = 0x6000_0000</text>
-            <text x="678" y="236" font-size="14" fill="#eef4cf">MM2S/S2MM reset + start + status</text>
+            <rect x="646" y="118" width="220" height="120" rx="20" fill="url(#dmaGrad)"/>
+            <text x="672" y="154" font-size="25" font-weight="800" fill="#fff">AXI DMA CSR</text>
+            <text x="672" y="182" font-size="15" fill="#edf4d7">MMIO aperture：<tspan font-weight="700">0x6000_0000</tspan></text>
+            <text x="672" y="206" font-size="14" fill="#edf4d7">reset / RS / SA / DA / LENGTH / status</text>
 
-            <rect x="934" y="126" width="190" height="120" rx="20" fill="url(#memGrad)"/>
-            <text x="958" y="162" font-size="24" font-weight="800" fill="#fff">UART TSI</text>
-            <text x="958" y="190" font-size="15" fill="#fff0e6">load / selfcheck / init_read</text>
-            <text x="958" y="214" font-size="14" fill="#fff0e6">debug transport, not data path</text>
+            <rect x="922" y="118" width="220" height="120" rx="20" fill="url(#migGrad)"/>
+            <text x="948" y="154" font-size="25" font-weight="800" fill="#fff">UART-TSI</text>
+            <text x="948" y="182" font-size="15" fill="#fff1e8">程序下载、自检、bring-up 传输</text>
+            <text x="948" y="206" font-size="14" fill="#fff1e8">不是最终运行态的数据通路</text>
 
-            <line x1="274" y1="186" x2="334" y2="186" stroke="#0d5c63" stroke-width="5" marker-end="url(#arrowA)"/>
-            <line x1="594" y1="186" x2="654" y2="186" stroke="#0d5c63" stroke-width="5" marker-end="url(#arrowA)"/>
-            <line x1="934" y1="208" x2="874" y2="208" stroke="#bd632f" stroke-width="4" stroke-dasharray="10 8" marker-end="url(#arrowB)"/>
+            <line x1="268" y1="176" x2="320" y2="176" stroke="#0d5c63" stroke-width="5" marker-end="url(#arrowTeal)"/>
+            <line x1="590" y1="176" x2="646" y2="176" stroke="#0d5c63" stroke-width="5" marker-end="url(#arrowTeal)"/>
+            <line x1="922" y1="206" x2="866" y2="206" stroke="#b86430" stroke-width="4" stroke-dasharray="10 8" marker-end="url(#arrowOrange)"/>
 
-            <text x="286" y="176" font-size="12" fill="#0d5c63">MMIO access</text>
-            <text x="606" y="176" font-size="12" fill="#0d5c63">CSR programming</text>
-            <text x="888" y="225" font-size="12" fill="#bd632f">program load / selfcheck</text>
+            <rect x="48" y="314" width="244" height="180" rx="22" fill="url(#dmaGrad)"/>
+            <text x="76" y="350" font-size="26" font-weight="800" fill="#fff">AXI DMA 核心</text>
+            <text x="76" y="382" font-size="15" fill="#edf4d7">MM2S：DDR 读主口</text>
+            <text x="76" y="406" font-size="15" fill="#edf4d7">S2MM：DDR 写主口</text>
+            <text x="76" y="430" font-size="15" fill="#edf4d7">当前内部接成 AXIS loopback</text>
+            <text x="76" y="454" font-size="14" fill="#edf4d7">AXI / AXIS 数据宽度均为 64 bit</text>
 
-            <rect x="54" y="320" width="240" height="170" rx="24" fill="url(#dmaGrad)"/>
-            <text x="80" y="356" font-size="26" font-weight="800" fill="#fff">AXI DMA Core</text>
-            <text x="80" y="388" font-size="15" fill="#eef4cf">MM2S master: DDR read</text>
-            <text x="80" y="412" font-size="15" fill="#eef4cf">S2MM master: DDR write</text>
-            <text x="80" y="436" font-size="15" fill="#eef4cf">internal AXIS loopback in current test</text>
-            <text x="80" y="460" font-size="14" fill="#eef4cf">data width = 64 bit</text>
+            <rect x="344" y="314" width="220" height="180" rx="22" fill="#fdf8ef" stroke="#ccb998" stroke-width="3"/>
+            <text x="372" y="350" font-size="25" font-weight="800" fill="#1f2430">MM2S → AXIS</text>
+            <text x="372" y="382" font-size="15" fill="#5c6572">从 DDR 读取源 buffer</text>
+            <text x="372" y="406" font-size="15" fill="#5c6572">当前可稳定完成 read 返回</text>
+            <text x="372" y="430" font-size="15" fill="#5c6572">老的 MM2S 启动即炸问题已修掉</text>
 
-            <rect x="352" y="320" width="210" height="170" rx="24" fill="#fdf6e8" stroke="#c8b289" stroke-width="3"/>
-            <text x="382" y="356" font-size="25" font-weight="800" fill="#1c2430">MM2S → AXIS</text>
-            <text x="382" y="388" font-size="15" fill="#5c6875">DDR payload becomes stream beats</text>
-            <text x="382" y="412" font-size="15" fill="#5c6875">observed by beat-count LED probes</text>
-            <text x="382" y="436" font-size="15" fill="#5c6875">TLAST and IOC visible in debug vector</text>
+            <rect x="616" y="314" width="220" height="180" rx="22" fill="#fdf8ef" stroke="#ccb998" stroke-width="3"/>
+            <text x="646" y="350" font-size="25" font-weight="800" fill="#1f2430">S2MM ← AXIS</text>
+            <text x="646" y="382" font-size="15" fill="#5c6572">接收 stream 并回写 DDR</text>
+            <text x="646" y="406" font-size="15" fill="#5c6572">当前可稳定完成写回</text>
+            <text x="646" y="430" font-size="15" fill="#5c6572">多长度 consistency 已板级通过</text>
 
-            <rect x="620" y="320" width="210" height="170" rx="24" fill="#fdf6e8" stroke="#c8b289" stroke-width="3"/>
-            <text x="652" y="356" font-size="25" font-weight="800" fill="#1c2430">S2MM ← AXIS</text>
-            <text x="652" y="388" font-size="15" fill="#5c6875">stream beats re-packed into AXI writes</text>
-            <text x="652" y="412" font-size="15" fill="#5c6875">W channel + WLAST verified on LEDs</text>
-            <text x="652" y="436" font-size="15" fill="#5c6875">destination buffer sits in DDR</text>
+            <rect x="888" y="314" width="254" height="180" rx="22" fill="url(#migGrad)"/>
+            <text x="916" y="350" font-size="26" font-weight="800" fill="#fff">MIG + DDR</text>
+            <text x="916" y="382" font-size="15" fill="#fff1e8">cacheable 视图：<tspan font-weight="700">0x8000_0000</tspan></text>
+            <text x="916" y="406" font-size="15" fill="#fff1e8">uncached alias：<tspan font-weight="700">0x1080_000000</tspan></text>
+            <text x="916" y="430" font-size="15" fill="#fff1e8">物理大小：512 MiB</text>
+            <text x="916" y="454" font-size="14" fill="#fff1e8">两条 CPU 访问视图映射到同一片物理 DDR</text>
 
-            <rect x="888" y="320" width="236" height="170" rx="24" fill="url(#memGrad)"/>
-            <text x="914" y="356" font-size="26" font-weight="800" fill="#fff">MIG + DDR</text>
-            <text x="914" y="388" font-size="15" fill="#fff0e6">DDR base = 0x8000_0000</text>
-            <text x="914" y="412" font-size="15" fill="#fff0e6">size = 0x2000_0000 (512 MiB)</text>
-            <text x="914" y="436" font-size="15" fill="#fff0e6">MM2S reads source buffer</text>
-            <text x="914" y="460" font-size="15" fill="#fff0e6">S2MM writes destination buffer</text>
+            <line x1="292" y1="398" x2="344" y2="398" stroke="#56732c" stroke-width="6" marker-end="url(#arrowTeal)"/>
+            <line x1="564" y1="398" x2="616" y2="398" stroke="#56732c" stroke-width="6" marker-end="url(#arrowTeal)"/>
+            <line x1="836" y1="368" x2="888" y2="368" stroke="#b86430" stroke-width="6" marker-end="url(#arrowOrange)"/>
+            <line x1="888" y1="438" x2="836" y2="438" stroke="#b86430" stroke-width="6" marker-end="url(#arrowOrange)"/>
 
-            <line x1="294" y1="404" x2="352" y2="404" stroke="#7a8b24" stroke-width="6" marker-end="url(#arrowA)"/>
-            <line x1="562" y1="404" x2="620" y2="404" stroke="#7a8b24" stroke-width="6" marker-end="url(#arrowA)"/>
-            <line x1="830" y1="376" x2="888" y2="376" stroke="#bd632f" stroke-width="6" marker-end="url(#arrowB)"/>
-            <line x1="888" y1="436" x2="830" y2="436" stroke="#bd632f" stroke-width="6" marker-end="url(#arrowB)"/>
-
-            <text x="302" y="392" font-size="12" fill="#3b5120">stream path</text>
-            <text x="569" y="392" font-size="12" fill="#3b5120">loopback stream</text>
-            <text x="842" y="364" font-size="12" fill="#8f4d1c">MM2S read</text>
-            <text x="842" y="468" font-size="12" fill="#8f4d1c">S2MM write</text>
+            <rect x="48" y="548" width="1094" height="116" rx="22" fill="#f7f2e7" stroke="#d8ccb7"/>
+            <text x="76" y="584" font-size="24" font-weight="800" fill="#1f2430">当前两条可工作的 DMA buffer 使用路径</text>
+            <text x="76" y="616" font-size="16" fill="#0d5c63">路径 A：cacheable DDR + 软件 cache maintenance</text>
+            <text x="76" y="642" font-size="15" fill="#5c6572">适合保持现有软件模型；当前单 ELF 综合回归已覆盖并通过。</text>
+            <text x="610" y="616" font-size="16" fill="#1f6b38">路径 B：uncached DDR alias + 无需 cache maintenance</text>
+            <text x="610" y="642" font-size="15" fill="#5c6572">适合后续把 DMA buffer 规范化；当前 uncached alias 板测已通过。</text>
           </svg>
         </div>
-        <div class="callout success">
-          当前已经板级验证通过的关键结论是：<strong>CPU 能配 DMA，DMA 能经由 AXI interconnect/MIG 从 DDR 读出，再经内部 stream 回写到 DDR，最终软件比较通过。</strong>
+        <div class="callout good">
+          当前已经板级验证通过的关键结论是：<strong>系统不只具备“cacheable DDR + 软件维护 cache”的可用路径，也已经具备“uncached DDR alias + 无需 cache maintenance”的替代路径。</strong>
         </div>
       </div>
 
@@ -429,98 +403,37 @@
             <div class="value">64 B</div>
           </div>
           <div class="stat">
-            <div class="label">DDR Window</div>
-            <div class="value">0x8000_0000 + 512 MiB</div>
+            <div class="label">DDR</div>
+            <div class="value">512 MiB</div>
           </div>
         </div>
       </div>
 
       <div class="panel span-6">
-        <div class="section-title">控制面</div>
-        <p class="lede">
-          控制面是 CPU 通过 MMIO 寄存器去配置 DMA。这部分在很早之前就已经稳定，后续所有问题都不是出在这里。
-        </p>
-        <table>
-          <thead>
-            <tr>
-              <th>部分</th>
-              <th>作用</th>
-              <th>当前状态</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Rocket CPU</td>
-              <td>执行裸机 C 程序，写 DMA CSR，比较 TX/RX</td>
-              <td>稳定</td>
-            </tr>
-            <tr>
-              <td>DMA CSR 窗口</td>
-              <td>位于 <code>0x6000_0000</code>，用于 reset / RS / SA / DA / LENGTH / status</td>
-              <td>稳定</td>
-            </tr>
-            <tr>
-              <td>UART TSI</td>
-              <td>下载程序、做 <code>selfcheck</code>、必要时 <code>init_read</code></td>
-              <td>稳定</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div class="panel span-6">
-        <div class="section-title">数据面</div>
-        <p class="lede">
-          数据面是真正难的地方。DMA 既是 DDR 的读主设备，也是写主设备，中间还走了一段 AXI-Stream。
-        </p>
-        <table>
-          <thead>
-            <tr>
-              <th>路径</th>
-              <th>方向</th>
-              <th>说明</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>MM2S</td>
-              <td>DDR → Stream</td>
-              <td>AXI Read 从源 buffer 读数据，吐到 <code>m_axis_mm2s</code></td>
-            </tr>
-            <tr>
-              <td>内部 loopback</td>
-              <td>Stream → Stream</td>
-              <td>当前测试里直接把 MM2S stream 接回 S2MM stream</td>
-            </tr>
-            <tr>
-              <td>S2MM</td>
-              <td>Stream → DDR</td>
-              <td>AXI Write 把目的数据写回 RX buffer</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div class="panel span-8">
-        <div class="section-title">当前地址视图</div>
+        <div class="section-title">地址视图</div>
         <table>
           <thead>
             <tr>
               <th>地址范围</th>
-              <th>含义</th>
+              <th>用途</th>
               <th>备注</th>
             </tr>
           </thead>
           <tbody>
             <tr>
               <td><code>0x8000_0000 - 0x9fff_ffff</code></td>
-              <td>DDR 主存</td>
-              <td>DTS 中大小为 <code>0x2000_0000</code></td>
+              <td>DDR cacheable 视图</td>
+              <td>当前 DTS 中正式描述的主存窗口</td>
+            </tr>
+            <tr>
+              <td><code>0x1080_000000 - 0x109f_fffff</code></td>
+              <td>DDR uncached alias 视图</td>
+              <td>当前物理实现中已生效，测试程序直接按约定使用</td>
             </tr>
             <tr>
               <td><code>0x6000_0000 - 0x6000_ffff</code></td>
               <td>AXI4 MMIO 外设窗口</td>
-              <td>DMA CSR 位于这个 aperture 内</td>
+              <td>DMA CSR 位于此窗口</td>
             </tr>
             <tr>
               <td><code>0x8100_0000</code></td>
@@ -533,63 +446,59 @@
               <td>S2MM 目的地址</td>
             </tr>
             <tr>
-              <td><code>0x8101_0000</code></td>
-              <td>cache sweep buffer</td>
-              <td>软件测试中用于把 Rocket D$ 相关行挤出缓存</td>
+              <td><code>0x1081_000000</code></td>
+              <td>TX CPU alias</td>
+              <td>uncached alias 路径下 CPU 访问 TX 的地址</td>
+            </tr>
+            <tr>
+              <td><code>0x1081_001000</code></td>
+              <td>RX CPU alias</td>
+              <td>uncached alias 路径下 CPU 访问 RX 的地址</td>
             </tr>
           </tbody>
         </table>
       </div>
 
-      <div class="panel span-4">
-        <div class="section-title">DMA 本体参数</div>
+      <div class="panel span-6">
+        <div class="section-title">当前回归入口</div>
         <div class="stack">
-          <div class="mini-card">
-            <h3>接口宽度</h3>
-            <div>MM2S AXI data = <code>64 bit</code></div>
-            <div>S2MM AXI data = <code>64 bit</code></div>
-            <div>AXIS data = <code>64 bit</code></div>
+          <div class="mini">
+            <h3><code>radar-axi-mmio-smoke.riscv</code></h3>
+            <div>验证 DMA CSR/reset/config 控制面。</div>
           </div>
-          <div class="mini-card">
-            <h3>模式</h3>
-            <div>当前跑通的是 <strong>simple mode</strong> 风格的单段搬运</div>
+          <div class="mini">
+            <h3><code>radar-axi-dma-uncached-alias.riscv</code></h3>
+            <div>验证 uncached alias 路径下，无 cache maintenance 的 DMA loopback。</div>
           </div>
-          <div class="mini-card">
-            <h3>测试长度</h3>
-            <div>当前 loopback 用的是 <code>64 words = 256 bytes</code></div>
+          <div class="mini">
+            <h3><code>radar-axi-dma-regression.riscv</code></h3>
+            <div>当前推荐的单 ELF 综合回归，已覆盖 MMIO、cache probe、uncached alias、multi-length consistency。</div>
           </div>
         </div>
       </div>
 
       <div class="panel span-6">
-        <div class="section-title">这次真正修掉的硬件问题</div>
-        <p class="lede">
-          初始阶段最致命的 bug 并不是 cache，而是 MM2S 发起 DDR 读之后，返回响应在 MIG wrapper 这一层发生了 ID 宽度不匹配。
-        </p>
+        <div class="section-title">已经修掉的硬件问题</div>
         <ul>
-          <li>MIG 黑盒只有 <code>4-bit AXI ID</code>。</li>
-          <li>共享 xbar 上一度长成了更宽的内部 ID，返回路径因此可能错路由。</li>
-          <li>这会表现成 <code>MM2S_LENGTH</code> 一写下去就立刻报错，早期还伴随 <code>a5a5...</code> 污染读回。</li>
-          <li>修复后，老的“启动即炸”故障消失，MM2S/S2MM 主链路恢复正常。</li>
+          <li>MIG 黑盒只有 <code>4-bit AXI ID</code>，而早期共享 xbar 的内部 ID 一度超出这一范围，导致 MM2S 读返回错路由。</li>
+          <li>修掉这个问题之后，老的“<code>MM2S_LENGTH</code> 一写就炸”和 <code>a5a5...</code> 污染读回现象已经消失。</li>
+          <li>后来为 `ExtTLMem` 增加 uncached alias 时，又出现过一次 `tl_mem source` 宽度在顶层被截断的问题，这一层也已经修正。</li>
         </ul>
         <div class="callout">
-          所以从硬件角度说，<strong>DDR 读返回路由问题已经被明确修掉</strong>，这一步是这次 bring-up 的真正硬件收口点。
+          当前从硬件角度可以明确认为：<strong>DDR 主存口、MM2S 读返回路径、S2MM 写回路径、uncached alias 接法都已经被收口到可用状态。</strong>
         </div>
       </div>
 
       <div class="panel span-6">
-        <div class="section-title">后续才暴露出的软件约束</div>
-        <p class="lede">
-          在硬件问题修掉之后，剩下的 `word 32` 错误并不是 DMA 又坏了，而是 CPU 和 DMA 共享了同一片 <strong>cacheable DDR</strong>。
-        </p>
+        <div class="section-title">仍然成立的系统现实</div>
         <ul>
-          <li>Rocket D$ 是 <code>4 KiB</code>，cache line 是 <code>64 B</code>。</li>
-          <li>DMA 不和 Rocket D$ 自动保持 coherent。</li>
-          <li>CPU 写 TX buffer 后，如果不做 cache maintenance，DMA 可能从 DDR 读到旧值。</li>
-          <li>DMA 写 RX buffer 后，如果 CPU 不做 cache maintenance，再比较时也可能读到 cache 里的旧数据。</li>
+          <li>Rocket D-cache 与 DMA 之间仍然不是自动 coherent 的。</li>
+          <li>如果继续让 CPU 通过 cacheable DDR 视图访问 DMA buffer，就必须做 cache maintenance。</li>
+          <li>如果改用 uncached alias，则可以绕开这条约束，但当前软件需要明确区分 CPU alias 地址和 DMA 原始地址。</li>
+          <li>当前 DTS 里还没有正式描述 uncached alias 视图，这一层后续可以继续工程化。</li>
         </ul>
-        <div class="callout warning">
-          当前系统已经跑通，但它的系统约束是：<strong>CPU 与 DMA 共享 cacheable buffer 时，软件必须显式做 cache maintenance，或者未来引入真正的 coherence/uncached 方案。</strong>
+        <div class="callout warn">
+          当前系统已经跑通，但“是否需要 cache maintenance”取决于你选用哪条 buffer 访问路径，而不是 DMA 本身忽好忽坏。
         </div>
       </div>
 
@@ -626,22 +535,32 @@
             </tr>
             <tr>
               <td>MM2S 读主口</td>
-              <td>DDR 读请求与响应返回路径已修通</td>
-              <td>通过</td>
-            </tr>
-            <tr>
-              <td>AXIS loopback</td>
-              <td>MM2S stream 回接 S2MM stream</td>
+              <td>DDR 读请求与返回路径已修通</td>
               <td>通过</td>
             </tr>
             <tr>
               <td>S2MM 写主口</td>
-              <td>DDR 写回链路可完成</td>
+              <td>DDR 写回链路已修通</td>
               <td>通过</td>
             </tr>
             <tr>
-              <td>端到端 loopback</td>
-              <td>在加入 cache maintenance 后，TX→DDR read→stream→DDR write→RX compare 整体通过</td>
+              <td>AXIS loopback</td>
+              <td>当前 MM2S stream 回接 S2MM stream</td>
+              <td>通过</td>
+            </tr>
+            <tr>
+              <td>cacheable + cache-maint</td>
+              <td>cacheable DDR 路径在软件做 cache maintenance 后完整通过</td>
+              <td>通过</td>
+            </tr>
+            <tr>
+              <td>uncached alias</td>
+              <td>CPU 通过 uncached alias 访问同一物理 DDR buffer，无需 cache maintenance 也可通过</td>
+              <td>通过</td>
+            </tr>
+            <tr>
+              <td>单 ELF 综合回归</td>
+              <td><code>radar-axi-dma-regression.riscv</code> 已同时覆盖 MMIO、cache、uncached、consistency</td>
               <td>通过</td>
             </tr>
           </tbody>
@@ -649,18 +568,18 @@
       </div>
 
       <div class="panel span-12">
-        <div class="section-title">如果你后面要继续扩展，这页最值得记住的几点</div>
+        <div class="section-title">后续最值得记住的几点</div>
         <ul>
-          <li>DMA 控制链和数据链现在都已经能板级跑通，后续扩展更应该关注“系统一致性”和“软件协议”，不只是硬件连线。</li>
-          <li>只要 buffer 还在 Rocket 眼里是 cacheable DDR，CPU 与 DMA 共享它时就要考虑 flush / invalidate / eviction。</li>
-          <li>如果以后要做更像产品级的数据通路，建议尽早决定是走“软件维护 cache”，还是走“uncached buffer / coherent fabric / dedicated DMA memory region”。</li>
-          <li>这套架构已经足以作为下一阶段更复杂 stream 处理或雷达前端数据搬运的基础版本。</li>
+          <li>当前平台已经不是“零散模块打通”，而是一个具备真实 DDR 数据搬运能力的可运行原型。</li>
+          <li>后续如果继续做雷达预处理、NN 加速器或其它 AXIS 算法块，最自然的接入位置就是 MM2S 和 S2MM 之间的 stream 段。</li>
+          <li>当前应该优先把 DMA buffer 使用协议文档化，明确什么时候走 cache-maint 路径，什么时候走 uncached alias 路径。</li>
+          <li>如果后续要继续工程化，可以把 uncached alias 进一步写进设备树、统一封装为固定软件 API，并逐步减少 bring-up 特殊知识。</li>
         </ul>
       </div>
     </section>
 
-    <div class="footer-note">
-      生成时间：2026-03-31。内容基于当前 Nexys Video bring-up 状态、生成的 DTS、DMA RTL 接口和板上通过的 loopback 调试结果整理。
+    <div class="footer">
+      更新时间：2026-04-01。页面使用 UTF-8 编码保存，内容基于当前 Nexys Video 板级验证结果、DMA 回归测试、uncached alias 路径验证和现有 DTS/RTL 结构整理。
     </div>
   </main>
 </body>
