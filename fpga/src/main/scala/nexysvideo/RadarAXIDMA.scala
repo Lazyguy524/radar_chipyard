@@ -35,7 +35,20 @@ class RadarAXI4LiteMasterIO(addrBits: Int) extends Bundle {
   val rresp  = Input(UInt(2.W))
 }
 
-class RadarAXI4ToAXI4LiteBridge(params: RadarAXIDMAControlParams, liteAddrBits: Int = 10) extends Module {
+class RadarLocalCSRPort(addrBits: Int) extends Bundle {
+  val wrEn   = Output(Bool())
+  val wrAddr = Output(UInt(addrBits.W))
+  val wrData = Output(UInt(32.W))
+  val wrStrb = Output(UInt(4.W))
+  val wrResp = Input(UInt(2.W))
+
+  val rdEn   = Output(Bool())
+  val rdAddr = Output(UInt(addrBits.W))
+  val rdData = Input(UInt(32.W))
+  val rdResp = Input(UInt(2.W))
+}
+
+class RadarAXI4ToAXI4LiteBridge(params: RadarAXIDMAControlParams, liteAddrBits: Int = 10, localAddrBits: Int = 8) extends Module {
   private val full = AXI4BundleParameters(
     addrBits = params.addrBits,
     dataBits = params.dataBits,
@@ -45,6 +58,7 @@ class RadarAXI4ToAXI4LiteBridge(params: RadarAXIDMAControlParams, liteAddrBits: 
   val io = IO(new Bundle {
     val in   = Flipped(new AXI4Bundle(full))
     val lite = new RadarAXI4LiteMasterIO(liteAddrBits)
+    val local = new RadarLocalCSRPort(localAddrBits)
   })
 
   val sIdle :: sWriteCollect :: sWriteIssue :: sWriteResp :: sReadIssue :: sReadResp :: Nil = Enum(6)
@@ -85,15 +99,29 @@ class RadarAXI4ToAXI4LiteBridge(params: RadarAXIDMAControlParams, liteAddrBits: 
     wLastReg &&
     wStrbReg === expectedLaneStrb &&
     liteWriteStrb === "hF".U
+  val writeToLocal = awAddrReg(liteAddrBits - 1, localAddrBits) === 2.U
+  val writeLiteForward = writeForward && !writeToLocal
+  val writeLocalForward = writeForward && writeToLocal
 
   val readForward = arLenReg === 0.U &&
     arSizeReg === wordSize &&
     arAddrReg(1, 0) === 0.U
   val steeredReadData = Mux(arAddrReg(2), Cat(io.lite.rdata, 0.U(32.W)), Cat(0.U(32.W), io.lite.rdata))
+  val readToLocal = arAddrReg(liteAddrBits - 1, localAddrBits) === 2.U
+  val readLiteForward = readForward && !readToLocal
+  val readLocalForward = readForward && readToLocal
+  val steeredLocalReadData = Mux(arAddrReg(2), Cat(io.local.rdData, 0.U(32.W)), Cat(0.U(32.W), io.local.rdData))
 
   io.in.aw.ready := false.B
   io.in.w.ready  := false.B
   io.in.ar.ready := false.B
+
+  io.local.wrEn := false.B
+  io.local.wrAddr := awAddrReg(localAddrBits - 1, 0)
+  io.local.wrData := liteWriteData
+  io.local.wrStrb := liteWriteStrb
+  io.local.rdEn := false.B
+  io.local.rdAddr := arAddrReg(localAddrBits - 1, 0)
 
   io.in.b.valid := state === sWriteResp && bRespValid
   io.in.b.bits.id := awIdReg
@@ -107,16 +135,16 @@ class RadarAXI4ToAXI4LiteBridge(params: RadarAXIDMAControlParams, liteAddrBits: 
   io.in.r.bits.last := true.B
   io.in.r.bits.user := DontCare
 
-  io.lite.awvalid := state === sWriteIssue && writeForward && awCaptured && !awIssued
+  io.lite.awvalid := state === sWriteIssue && writeLiteForward && awCaptured && !awIssued
   io.lite.awaddr  := awAddrReg(liteAddrBits - 1, 0)
-  io.lite.wvalid  := state === sWriteIssue && writeForward && wCaptured && !wIssued
+  io.lite.wvalid  := state === sWriteIssue && writeLiteForward && wCaptured && !wIssued
   io.lite.wdata   := liteWriteData
   io.lite.wstrb   := liteWriteStrb
-  io.lite.bready  := state === sWriteIssue && writeForward && !bRespValid
+  io.lite.bready  := state === sWriteIssue && writeLiteForward && !bRespValid
 
-  io.lite.arvalid := state === sReadIssue && readForward && !arIssued
+  io.lite.arvalid := state === sReadIssue && readLiteForward && !arIssued
   io.lite.araddr  := arAddrReg(liteAddrBits - 1, 0)
-  io.lite.rready  := state === sReadIssue && readForward && !rRespValid
+  io.lite.rready  := state === sReadIssue && readLiteForward && !rRespValid
 
   switch (state) {
     is (sIdle) {
@@ -182,13 +210,18 @@ class RadarAXI4ToAXI4LiteBridge(params: RadarAXIDMAControlParams, liteAddrBits: 
       val wHandshake = io.lite.wvalid && io.lite.wready
       val nextAwIssued = awIssued || awHandshake
       val nextWIssued = wIssued || wHandshake
-      val canCaptureB = !bRespValid && writeForward && nextAwIssued && nextWIssued && io.lite.bvalid
+      val canCaptureB = !bRespValid && writeLiteForward && nextAwIssued && nextWIssued && io.lite.bvalid
 
       when (awHandshake) { awIssued := true.B }
       when (wHandshake) { wIssued := true.B }
 
       when (!writeForward && !bRespValid) {
         bRespReg := AXI4Parameters.RESP_SLVERR
+        bRespValid := true.B
+        state := sWriteResp
+      } .elsewhen (writeLocalForward && !bRespValid) {
+        io.local.wrEn := true.B
+        bRespReg := io.local.wrResp
         bRespValid := true.B
         state := sWriteResp
       } .elsewhen (canCaptureB) {
@@ -215,13 +248,19 @@ class RadarAXI4ToAXI4LiteBridge(params: RadarAXIDMAControlParams, liteAddrBits: 
     is (sReadIssue) {
       val arHandshake = io.lite.arvalid && io.lite.arready
       val nextArIssued = arIssued || arHandshake
-      val canCaptureR = !rRespValid && readForward && nextArIssued && io.lite.rvalid
+      val canCaptureR = !rRespValid && readLiteForward && nextArIssued && io.lite.rvalid
 
       when (arHandshake) { arIssued := true.B }
 
       when (!readForward && !rRespValid) {
         rDataReg := 0.U
         rRespReg := AXI4Parameters.RESP_SLVERR
+        rRespValid := true.B
+        state := sReadResp
+      } .elsewhen (readLocalForward && !rRespValid) {
+        io.local.rdEn := true.B
+        rDataReg := steeredLocalReadData
+        rRespReg := io.local.rdResp
         rRespValid := true.B
         state := sReadResp
       } .elsewhen (canCaptureR) {
@@ -241,6 +280,135 @@ class RadarAXI4ToAXI4LiteBridge(params: RadarAXIDMAControlParams, liteAddrBits: 
       }
     }
   }
+}
+
+object RadarAXISPreprocMode {
+  val bypass   = 0.U(3.W)
+  val add32    = 1.U(3.W)
+  val shift16  = 2.U(3.W)
+  val relu16   = 3.U(3.W)
+  val swap32   = 4.U(3.W)
+}
+
+class RadarAXISWord extends Bundle {
+  val data = UInt(64.W)
+  val keep = UInt(8.W)
+  val last = Bool()
+}
+
+class RadarAXISPreprocessor extends Module {
+  val io = IO(new Bundle {
+    val ctrlEnable = Input(Bool())
+    val mode       = Input(UInt(3.W))
+    val param0     = Input(UInt(32.W))
+    val param1     = Input(UInt(32.W))
+
+    val in = Flipped(Decoupled(new RadarAXISWord))
+    val out = Decoupled(new RadarAXISWord)
+
+    val clearCounters = Input(Bool())
+    val inBeats       = Output(UInt(32.W))
+    val outBeats      = Output(UInt(32.W))
+    val frameCount    = Output(UInt(32.W))
+    val lastKeep      = Output(UInt(8.W))
+    val status        = Output(UInt(32.W))
+    val capabilities  = Output(UInt(32.W))
+  })
+
+  private def reverseHalfwords(word: UInt): UInt =
+    Cat(word(15, 0), word(31, 16))
+
+  private def add32(word: UInt, loAdd: UInt, hiAdd: UInt): UInt = {
+    val lo = word(31, 0) + loAdd
+    val hi = word(63, 32) + hiAdd
+    Cat(hi(31, 0), lo(31, 0))
+  }
+
+  private def shift16Ar(word: UInt, shamt: UInt): UInt = {
+    val lanes = Seq.tabulate(4) { i =>
+      val shifted = (word(16 * i + 15, 16 * i).asSInt >> shamt).asUInt
+      shifted(15, 0)
+    }
+    Cat(lanes.reverse)
+  }
+
+  private def relu16(word: UInt, clip: UInt): UInt = {
+    val limit = clip(15, 0)
+    val lanes = Seq.tabulate(4) { i =>
+      val lane = word(16 * i + 15, 16 * i).asSInt
+      val laneUInt = lane.asUInt
+      val zeroed = Mux(lane < 0.S, 0.U(16.W), laneUInt(15, 0))
+      Mux(limit =/= 0.U && zeroed > limit, limit, zeroed)
+    }
+    Cat(lanes.reverse)
+  }
+
+  private def swap32(word: UInt, param: UInt): UInt = {
+    val lo = Mux(param(0), reverseHalfwords(word(31, 0)), word(31, 0))
+    val hi = Mux(param(1), reverseHalfwords(word(63, 32)), word(63, 32))
+    Mux(param(8), Cat(lo, hi), Cat(hi, lo))
+  }
+
+  private def transform(word: UInt): UInt = {
+    val activeMode = Mux(io.ctrlEnable, io.mode, RadarAXISPreprocMode.bypass)
+    MuxLookup(activeMode, word)(Seq(
+      RadarAXISPreprocMode.bypass -> word,
+      RadarAXISPreprocMode.add32  -> add32(word, io.param0, io.param1),
+      RadarAXISPreprocMode.shift16 -> shift16Ar(word, io.param0(3, 0)),
+      RadarAXISPreprocMode.relu16 -> relu16(word, io.param0),
+      RadarAXISPreprocMode.swap32 -> swap32(word, io.param0)))
+  }
+
+  val outValidReg = RegInit(false.B)
+  val outBitsReg  = Reg(new RadarAXISWord)
+  val inBeatsReg  = RegInit(0.U(32.W))
+  val outBeatsReg = RegInit(0.U(32.W))
+  val framesReg   = RegInit(0.U(32.W))
+  val lastKeepReg = RegInit(0.U(8.W))
+
+  when (io.clearCounters) {
+    inBeatsReg := 0.U
+    outBeatsReg := 0.U
+    framesReg := 0.U
+    lastKeepReg := 0.U
+  }
+
+  io.in.ready := !outValidReg || io.out.ready
+  io.out.valid := outValidReg
+  io.out.bits := outBitsReg
+
+  when (io.in.fire) {
+    outBitsReg.data := transform(io.in.bits.data)
+    outBitsReg.keep := io.in.bits.keep
+    outBitsReg.last := io.in.bits.last
+    outValidReg := true.B
+    inBeatsReg := inBeatsReg + 1.U
+    lastKeepReg := io.in.bits.keep
+    when (io.in.bits.last) {
+      framesReg := framesReg + 1.U
+    }
+  } .elsewhen (io.out.fire) {
+    outValidReg := false.B
+  }
+
+  when (io.out.fire) {
+    outBeatsReg := outBeatsReg + 1.U
+  }
+
+  io.inBeats := inBeatsReg
+  io.outBeats := outBeatsReg
+  io.frameCount := framesReg
+  io.lastKeep := lastKeepReg
+  io.status := Cat(
+    0.U(24.W),
+    outValidReg,
+    io.in.ready,
+    io.out.ready,
+    io.out.valid,
+    io.in.valid,
+    io.ctrlEnable,
+    io.mode)
+  io.capabilities := "h0000001f".U
 }
 
 class RadarAXIDMABlackBox extends BlackBox {
@@ -397,7 +565,79 @@ class RadarAXIDMA(implicit p: Parameters) extends LazyModule {
     val ctrlBridge = withClockAndReset(ctrlClock, (!ctrlResetN).asAsyncReset) {
       Module(new RadarAXI4ToAXI4LiteBridge(controlParams))
     }
+    val preproc = withClockAndReset(ctrlClock, (!ctrlResetN).asAsyncReset) {
+      Module(new RadarAXISPreprocessor)
+    }
     ctrlBridge.io.in <> ctrl
+
+    def applyWriteStrobe(prev: UInt, data: UInt, strb: UInt): UInt = {
+      Cat((3 to 0 by -1).map { i =>
+        Mux(strb(i), data(8 * i + 7, 8 * i), prev(8 * i + 7, 8 * i))
+      })
+    }
+
+    ctrlBridge.io.local.wrResp := AXI4Parameters.RESP_OKAY
+    ctrlBridge.io.local.rdResp := AXI4Parameters.RESP_OKAY
+
+    val (preprocCtrlReg,
+         preprocModeReg,
+         preprocParam0Reg,
+         preprocParam1Reg,
+         preprocClearCounters,
+         localReadData) = withClockAndReset(ctrlClock, (!ctrlResetN).asAsyncReset) {
+      val preprocCtrlReg  = RegInit(0.U(32.W))
+      val preprocModeReg  = RegInit(0.U(32.W))
+      val preprocParam0Reg = RegInit(0.U(32.W))
+      val preprocParam1Reg = RegInit(0.U(32.W))
+      val preprocClearCounters = WireDefault(false.B)
+      val localReadData = WireDefault(0.U(32.W))
+
+      when (ctrlBridge.io.local.wrEn) {
+        switch (ctrlBridge.io.local.wrAddr) {
+          is ("h00".U) {
+            val nextCtrl = applyWriteStrobe(preprocCtrlReg, ctrlBridge.io.local.wrData, ctrlBridge.io.local.wrStrb)
+            preprocCtrlReg := nextCtrl & 1.U(32.W)
+            preprocClearCounters := nextCtrl(1)
+          }
+          is ("h04".U) {
+            preprocModeReg := applyWriteStrobe(preprocModeReg, ctrlBridge.io.local.wrData, ctrlBridge.io.local.wrStrb)
+          }
+          is ("h08".U) {
+            preprocParam0Reg := applyWriteStrobe(preprocParam0Reg, ctrlBridge.io.local.wrData, ctrlBridge.io.local.wrStrb)
+          }
+          is ("h0c".U) {
+            preprocParam1Reg := applyWriteStrobe(preprocParam1Reg, ctrlBridge.io.local.wrData, ctrlBridge.io.local.wrStrb)
+          }
+        }
+      }
+
+      switch (ctrlBridge.io.local.rdAddr) {
+        is ("h00".U) { localReadData := preprocCtrlReg }
+        is ("h04".U) { localReadData := preprocModeReg }
+        is ("h08".U) { localReadData := preprocParam0Reg }
+        is ("h0c".U) { localReadData := preprocParam1Reg }
+        is ("h10".U) { localReadData := preproc.io.status }
+        is ("h14".U) { localReadData := preproc.io.inBeats }
+        is ("h18".U) { localReadData := preproc.io.outBeats }
+        is ("h1c".U) { localReadData := preproc.io.frameCount }
+        is ("h20".U) { localReadData := preproc.io.lastKeep }
+        is ("h24".U) { localReadData := preproc.io.capabilities }
+      }
+
+      (preprocCtrlReg,
+       preprocModeReg,
+       preprocParam0Reg,
+       preprocParam1Reg,
+       preprocClearCounters,
+       localReadData)
+    }
+    ctrlBridge.io.local.rdData := localReadData
+
+    preproc.io.ctrlEnable := preprocCtrlReg(0)
+    preproc.io.mode := preprocModeReg(2, 0)
+    preproc.io.param0 := preprocParam0Reg
+    preproc.io.param1 := preprocParam1Reg
+    preproc.io.clearCounters := preprocClearCounters
 
     bb.io.s_axi_lite_awvalid := ctrlBridge.io.lite.awvalid
     ctrlBridge.io.lite.awready := bb.io.s_axi_lite_awready
@@ -522,11 +762,17 @@ class RadarAXIDMA(implicit p: Parameters) extends LazyModule {
     debug.mm2sIOCSeen          := mm2sIOCSeen
     debug.s2mmIOCSeen          := s2mmIOCSeen
 
-    bb.io.m_axis_mm2s_tready := bb.io.s_axis_s2mm_tready
-    bb.io.s_axis_s2mm_tdata  := bb.io.m_axis_mm2s_tdata
-    bb.io.s_axis_s2mm_tkeep  := bb.io.m_axis_mm2s_tkeep
-    bb.io.s_axis_s2mm_tvalid := bb.io.m_axis_mm2s_tvalid
-    bb.io.s_axis_s2mm_tlast  := bb.io.m_axis_mm2s_tlast
+    preproc.io.in.valid := bb.io.m_axis_mm2s_tvalid
+    preproc.io.in.bits.data := bb.io.m_axis_mm2s_tdata
+    preproc.io.in.bits.keep := bb.io.m_axis_mm2s_tkeep
+    preproc.io.in.bits.last := bb.io.m_axis_mm2s_tlast
+    bb.io.m_axis_mm2s_tready := preproc.io.in.ready
+
+    bb.io.s_axis_s2mm_tdata  := preproc.io.out.bits.data
+    bb.io.s_axis_s2mm_tkeep  := preproc.io.out.bits.keep
+    bb.io.s_axis_s2mm_tvalid := preproc.io.out.valid
+    bb.io.s_axis_s2mm_tlast  := preproc.io.out.bits.last
+    preproc.io.out.ready := bb.io.s_axis_s2mm_tready
 
     mm2s.aw.valid := false.B
     mm2s.aw.bits  := DontCare

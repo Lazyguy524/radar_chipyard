@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Radar NexysVideo AXI SoC 框架图</title>
+  <style>
+    :root {
+      --bg: #f5f7fb;
+      --panel: #ffffff;
+      --ink: #16253b;
+      --muted: #607089;
+      --line: #d6dfeb;
+      --shadow: 0 18px 36px rgba(21, 37, 59, 0.08);
+      --blue: #3c5ec7;
+      --blue-soft: #dfe7ff;
+      --bus: #fff1c7;
+      --bus-line: #d8b649;
+      --pink: #ffd8cc;
+      --pink-line: #df8b74;
+      --green: #dff2e7;
+      --green-line: #4a9f6d;
+      --purple: #e7dcff;
+      --purple-line: #8663d9;
+      --gray-soft: #f8fafc;
+      --warn: #c25a15;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      font-family: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+      background:
+        radial-gradient(circle at top right, rgba(223, 231, 255, 0.75), transparent 24%),
+        linear-gradient(180deg, #f9fbff 0%, var(--bg) 100%);
+    }
+
+    .page {
+      max-width: 1680px;
+      margin: 0 auto;
+      padding: 28px 24px 44px;
+    }
+
+    h1 {
+      margin: 0 0 10px;
+      font-size: 32px;
+      line-height: 1.2;
+    }
+
+    .lead {
+      margin: 0 0 18px;
+      max-width: 1280px;
+      color: var(--muted);
+      line-height: 1.75;
+    }
+
+    .sources {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+
+    .src {
+      background: rgba(255,255,255,0.92);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 7px 12px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .mono {
+      font-family: "JetBrains Mono", "Fira Code", monospace;
+      font-size: 0.95em;
+    }
+
+    .card {
+      background: var(--panel);
+      border: 1px solid rgba(214, 223, 235, 0.98);
+      border-radius: 22px;
+      box-shadow: var(--shadow);
+      padding: 18px;
+      margin-bottom: 18px;
+    }
+
+    .card h2 {
+      margin: 0 0 8px;
+      font-size: 22px;
+    }
+
+    .card p {
+      margin: 0 0 14px;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+
+    .legend span {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 10px;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 999px;
+      display: inline-block;
+    }
+
+    .frame {
+      border: 2px dashed #262626;
+      border-radius: 18px;
+      padding: 18px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.95), rgba(249,251,255,1));
+    }
+
+    .top-grid {
+      display: grid;
+      grid-template-columns: 520px 140px 760px;
+      gap: 18px;
+      align-items: stretch;
+    }
+
+    .left-stack,
+    .right-stack {
+      display: grid;
+      gap: 18px;
+    }
+
+    .left-stack {
+      grid-template-rows: 150px 150px 340px;
+    }
+
+    .right-stack {
+      grid-template-rows: 170px 260px 192px;
+    }
+
+    .sysbus-wrap {
+      display: grid;
+      grid-template-rows: 1fr 1fr 1fr;
+      gap: 18px;
+      align-items: stretch;
+      justify-items: center;
+    }
+
+    .sysbus {
+      width: 100%;
+      height: 100%;
+      min-height: 676px;
+      background: var(--bus);
+      border: 3px solid var(--bus-line);
+      border-radius: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 12px;
+      font-size: 34px;
+      line-height: 1.15;
+      font-weight: 800;
+      color: #574200;
+      writing-mode: vertical-rl;
+      text-orientation: mixed;
+      letter-spacing: 1px;
+    }
+
+    .module {
+      background: #fff;
+      border-radius: 18px;
+      padding: 18px 18px 16px;
+      border: 3px solid var(--line);
+      box-shadow: 0 8px 24px rgba(21, 37, 59, 0.05);
+      position: relative;
+    }
+
+    .module h3 {
+      margin: 0 0 10px;
+      font-size: 20px;
+      line-height: 1.25;
+    }
+
+    .module .sub {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.65;
+      font-size: 14px;
+    }
+
+    .mod-blue {
+      background: linear-gradient(180deg, #eef3ff 0%, #dfe7ff 100%);
+      border-color: var(--blue);
+    }
+
+    .mod-pink {
+      background: linear-gradient(180deg, #fff2ed 0%, var(--pink) 100%);
+      border-color: var(--pink-line);
+    }
+
+    .mod-green {
+      background: linear-gradient(180deg, #effbf4 0%, var(--green) 100%);
+      border-color: var(--green-line);
+    }
+
+    .mod-purple {
+      background: linear-gradient(180deg, #f4efff 0%, var(--purple) 100%);
+      border-color: var(--purple-line);
+    }
+
+    .module-title-big {
+      font-size: 22px;
+      font-weight: 800;
+    }
+
+    .cpu-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 12px;
+    }
+
+    .tile {
+      background: rgba(255,255,255,0.78);
+      border: 2px solid rgba(60,94,199,0.35);
+      border-radius: 14px;
+      padding: 12px;
+      min-height: 116px;
+    }
+
+    .tile h4 {
+      margin: 0 0 8px;
+      font-size: 16px;
+    }
+
+    .mini-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+
+    .mini {
+      background: rgba(255,255,255,0.86);
+      border: 1px solid rgba(60,94,199,0.28);
+      border-radius: 10px;
+      padding: 8px;
+      font-size: 12px;
+      line-height: 1.45;
+      color: #38506a;
+      text-align: center;
+    }
+
+    .side-label {
+      position: absolute;
+      right: -140px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 16px;
+      color: #4b5563;
+      line-height: 1.8;
+      text-align: left;
+      width: 120px;
+    }
+
+    .connector-band {
+      display: grid;
+      grid-template-columns: 520px 140px 760px;
+      gap: 18px;
+      margin: 14px 0 0;
+      align-items: center;
+    }
+
+    .conn-row {
+      display: grid;
+      grid-template-columns: 1fr 140px 1fr;
+      gap: 18px;
+      align-items: center;
+      margin-top: 8px;
+    }
+
+    .label-link {
+      background: #fff;
+      border: 2px solid var(--line);
+      border-radius: 14px;
+      min-height: 70px;
+      padding: 10px 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-weight: 700;
+      color: #344256;
+      line-height: 1.45;
+    }
+
+    .arrow-box {
+      min-height: 70px;
+      border-radius: 14px;
+      border: 2px solid var(--line);
+      background: var(--gray-soft);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 8px;
+      color: #475569;
+      font-size: 13px;
+      line-height: 1.45;
+      font-weight: 700;
+    }
+
+    .arrow-box::before {
+      content: "⇄";
+      font-size: 30px;
+      display: block;
+      color: #64748b;
+      margin-bottom: 4px;
+    }
+
+    .subsystem {
+      display: grid;
+      grid-template-columns: 260px 150px 360px 150px 260px;
+      gap: 18px;
+      align-items: stretch;
+      margin-top: 12px;
+    }
+
+    .subcol {
+      display: grid;
+      gap: 16px;
+    }
+
+    .subcol.stream {
+      grid-template-rows: 180px 180px;
+    }
+
+    .subcol.compute {
+      grid-template-rows: 140px 140px 140px;
+    }
+
+    .operator-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .operator {
+      border: 2px solid rgba(223,139,116,0.55);
+      border-radius: 12px;
+      background: rgba(255,255,255,0.76);
+      padding: 10px 8px;
+      text-align: center;
+      font-size: 13px;
+      line-height: 1.45;
+      font-weight: 700;
+      color: #8b4b37;
+    }
+
+    .detail-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-top: 16px;
+    }
+
+    .detail {
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 14px;
+      background: #fff;
+    }
+
+    .detail h3 {
+      margin: 0 0 8px;
+      font-size: 17px;
+    }
+
+    .detail ul {
+      margin: 0;
+      padding-left: 18px;
+      color: var(--muted);
+      line-height: 1.75;
+    }
+
+    @media (max-width: 1500px) {
+      .frame, .card { overflow-x: auto; }
+      .top-grid,
+      .connector-band,
+      .subsystem {
+        min-width: 1450px;
+      }
+    }
+
+    @media (max-width: 980px) {
+      h1 { font-size: 27px; }
+      .detail-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <h1>Radar NexysVideo SoC 全系统框架图</h1>
+    <p class="lead">
+      这是一张重新整理的“块图式”架构页。它不再依赖大面积 SVG 交叉箭头，而是采用分栏、协议带和层次化模块卡片来表达连接关系，
+      目标是更接近你给出的那种顶层框架图，同时保留当前工程的实际连接信息。上半部分是 SoC 顶层系统框图，下半部分是
+      <span class="mono">Radar Preproc</span> 子系统的细化框图。
+    </p>
+
+    <div class="sources">
+      <span class="src">配置：<span class="mono">fpga/src/main/scala/nexysvideo/Configs.scala</span></span>
+      <span class="src">Harness：<span class="mono">fpga/src/main/scala/nexysvideo/Harness.scala</span></span>
+      <span class="src">自定义模块：<span class="mono">fpga/src/main/scala/nexysvideo/RadarAXIDMA.scala</span></span>
+      <span class="src">顶层端口：<span class="mono">gen-collateral/ChipTop.sv</span> / <span class="mono">NexysVideoHarness.sv</span></span>
+    </div>
+
+    <div class="card">
+      <h2>一层：Vivado 顶层 Block Design 风格 SoC 框图</h2>
+      <p>
+        这层只保留大颗粒度黑盒。左边是 SoC 侧资源，中间是中央总线，右边是主存与自定义 Data Path 主设备。
+        连接线不写单个握手信号，只写协议名和用途。
+      </p>
+
+      <div class="legend">
+        <span><i class="dot" style="background: var(--blue);"></i> SoC / CPU / MMIO / 调试</span>
+        <span><i class="dot" style="background: var(--purple);"></i> DDR / 主存访问</span>
+        <span><i class="dot" style="background: var(--pink-line);"></i> 自定义加速 / 数据通路</span>
+        <span><i class="dot" style="background: var(--green-line);"></i> 本地 CSR / 管理逻辑</span>
+        <span><i class="dot" style="background: var(--bus-line);"></i> 中央互连 / System Bus</span>
+      </div>
+
+      <div class="frame">
+        <div class="top-grid">
+          <div class="left-stack">
+            <div class="module mod-blue">
+              <h3 class="module-title-big">Debug / Boot / Control Logic</h3>
+              <p class="sub">
+                无外部 JTAG 调试核，当前主要通过 UART-TSI 负责程序下载、自检和 bring-up。
+                复位、时钟、校准状态也都在这一侧收敛。
+              </p>
+            </div>
+
+            <div class="module mod-blue">
+              <h3 class="module-title-big">Peripherals / Serial Path</h3>
+              <p class="sub">
+                UART 串口、UARTToSerial、SerialTL/UART-TSI 下载链路。<br/>
+                顶层对应 <span class="mono">uart_txd / uart_rxd</span> 引脚。
+              </p>
+            </div>
+
+            <div class="module mod-blue">
+              <h3 class="module-title-big">Rocket CPU Subsystem</h3>
+              <p class="sub">
+                当前为 1 个 Small Rocket。CPU 负责：寄存器配置、DMA 调度、结果比对、软件 cache maintenance 策略以及 bring-up 程序执行。
+              </p>
+              <div class="cpu-grid">
+                <div class="tile">
+                  <h4>Rocket Tile</h4>
+                  <div class="mini-grid">
+                    <div class="mini">Rocket Core</div>
+                    <div class="mini">L1 I-Cache</div>
+                    <div class="mini">L1 D-Cache</div>
+                    <div class="mini">无 FPU</div>
+                  </div>
+                </div>
+                <div class="tile">
+                  <h4>Memory / MMIO 视图</h4>
+                  <div class="mini-grid">
+                    <div class="mini">Cached DDR</div>
+                    <div class="mini">Uncached Alias</div>
+                    <div class="mini">AXI4 MMIO Port</div>
+                    <div class="mini">TL / System Bus 接口</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="sysbus-wrap">
+            <div class="sysbus">System Bus / AXI-TL Interconnect</div>
+          </div>
+
+          <div class="right-stack">
+            <div class="module mod-purple">
+              <h3 class="module-title-big">DDR MIG Controller</h3>
+              <p class="sub">
+                Nexys Video 板载 DDR3 由 MIG 控制。<br/>
+                当前系统是纯 PL 方案，没有 PS DDR。<br/>
+                CPU 主存访问与 DMA 主口都最终落到这里。
+              </p>
+            </div>
+
+            <div class="module mod-pink">
+              <h3 class="module-title-big">Radar Preproc Data Path 主设备</h3>
+              <p class="sub">
+                这是当前的自定义主设备总框，内部集成：
+              </p>
+              <div class="operator-grid">
+                <div class="operator">MM2S DMA<br/>DDR Read Master</div>
+                <div class="operator">AXI4 MMIO /<br/>Local CSR Control</div>
+                <div class="operator">AXI-Stream<br/>Preprocessor</div>
+                <div class="operator">S2MM DMA<br/>DDR Write Master</div>
+              </div>
+              <p class="sub" style="margin-top: 12px;">
+                当前内部链路：<span class="mono">MM2S -&gt; Preproc -&gt; S2MM</span><br/>
+                已板测通过：<span class="mono">ADD32 / RELU16</span>
+              </p>
+              <div class="side-label">
+                当前已实现<br/>
+                雷达前处理<br/>
+                骨架
+              </div>
+            </div>
+
+            <div class="module mod-pink">
+              <h3 class="module-title-big">Future AXI Accelerator Slots</h3>
+              <p class="sub">
+                后续可以沿相同位置继续扩展：<br/>
+                Radar Front-End、CFAR/FFT 类链路、NN Pre/Post、Streaming Buffer/FIFO、算子阵列等。<br/>
+                当前推荐的接法仍然是放在 Data Path 主设备内部，通过 AXI4-Stream 串接。
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="conn-row">
+          <div class="label-link">Rocket CPU Subsystem</div>
+          <div class="arrow-box">M_CPU_MEM / M_CPU_MMIO</div>
+          <div class="label-link">System Bus / 中央互连</div>
+        </div>
+
+        <div class="conn-row">
+          <div class="label-link">Peripherals / UART-TSI</div>
+          <div class="arrow-box">S_UART_DEBUG / SERIAL_TL</div>
+          <div class="label-link">System Bus / 中央互连</div>
+        </div>
+
+        <div class="conn-row">
+          <div class="label-link">System Bus / 中央互连</div>
+          <div class="arrow-box">M_AXI_MEM / TL_MEM</div>
+          <div class="label-link">DDR MIG Controller</div>
+        </div>
+
+        <div class="conn-row">
+          <div class="label-link">System Bus / 中央互连</div>
+          <div class="arrow-box">S_AXI_MMIO_CFG</div>
+          <div class="label-link">Radar Preproc Data Path 主设备</div>
+        </div>
+
+        <div class="conn-row">
+          <div class="label-link">DDR MIG Controller</div>
+          <div class="arrow-box">M_AXI_DDR_READ / M_AXI_DDR_WRITE</div>
+          <div class="label-link">Radar Preproc Data Path 主设备</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>二层：Radar Preproc 子系统细化框图</h2>
+      <p>
+        这一层把上面的 “Radar Preproc Data Path 主设备” 展开成更细的框图。重点仍然保持框图风格，不使用大面积交叉箭头。
+      </p>
+
+      <div class="frame">
+        <div class="subsystem">
+          <div class="subcol">
+            <div class="module mod-blue">
+              <h3 class="module-title-big">AXI4 MMIO Slave</h3>
+              <p class="sub">
+                来自 ChipTop 的 <span class="mono">axi4_mmio_0</span><br/>
+                64-bit 数据、31-bit 地址、4-bit ID。
+              </p>
+            </div>
+
+            <div class="module mod-purple">
+              <h3 class="module-title-big">MM2S AXI4 Master</h3>
+              <p class="sub">
+                协议：<span class="mono">M_AXI_DDR_READ</span><br/>
+                向 DDR 发起 AXI 读事务，取回输入 buffer。
+              </p>
+            </div>
+
+            <div class="module mod-purple">
+              <h3 class="module-title-big">S2MM AXI4 Master</h3>
+              <p class="sub">
+                协议：<span class="mono">M_AXI_DDR_WRITE</span><br/>
+                向 DDR 发起 AXI 写事务，回写处理结果。
+              </p>
+            </div>
+          </div>
+
+          <div class="subcol">
+            <div class="arrow-box">S_AXI_MMIO_CFG</div>
+            <div class="arrow-box">M_AXIS_MM2S<br/>tdata[63:0] / tkeep[7:0] / tlast</div>
+            <div class="arrow-box">S_AXIS_S2MM<br/>tdata[63:0] / tkeep[7:0] / tlast</div>
+          </div>
+
+          <div class="subcol compute">
+            <div class="module mod-blue">
+              <h3 class="module-title-big">RadarAXI4ToAXI4LiteBridge</h3>
+              <p class="sub">
+                64-bit AXI4 MMIO 拆分为两路：<br/>
+                1. <span class="mono">S_AXI_LITE_CONFIG</span> 到 Xilinx DMA CSR<br/>
+                2. <span class="mono">LOCAL_CSR_CFG</span> 到本地寄存器页
+              </p>
+            </div>
+
+            <div class="module mod-green">
+              <h3 class="module-title-big">Local CSR Reg File</h3>
+              <p class="sub">
+                <span class="mono">PREPROC_CTRL / MODE / PARAM0 / PARAM1</span><br/>
+                <span class="mono">STATUS / IN / OUT / FRAMES / KEEP / CAPS</span>
+              </p>
+            </div>
+
+            <div class="module mod-pink">
+              <h3 class="module-title-big">RadarAXISPreprocessor</h3>
+              <p class="sub">
+                输入：Decoupled AXI-Stream beat<br/>
+                中间：模式选择、算子逻辑、1-deep 输出寄存<br/>
+                输出：处理后的 AXI-Stream beat
+              </p>
+              <div class="operator-grid">
+                <div class="operator">BYPASS</div>
+                <div class="operator">ADD32</div>
+                <div class="operator">SHIFT16_AR</div>
+                <div class="operator">RELU16</div>
+                <div class="operator" style="grid-column: span 2;">SWAP32</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="subcol">
+            <div class="arrow-box">S_AXI_LITE_CONFIG<br/>DMA CSR Path</div>
+            <div class="arrow-box">LOCAL_CSR_CFG<br/>CTRL / MODE / PARAM0 / PARAM1</div>
+            <div class="arrow-box">STATUS / IN / OUT / FRAMES / KEEP / CAPS</div>
+          </div>
+
+          <div class="subcol stream">
+            <div class="module mod-blue">
+              <h3 class="module-title-big">Xilinx AXI DMA BlackBox</h3>
+              <p class="sub">
+                内部提供：<br/>
+                MM2S 读主口 + S2MM 写主口<br/>
+                并把两端转换成 AXI4-Stream。
+              </p>
+            </div>
+
+            <div class="module mod-pink">
+              <h3 class="module-title-big">Stream Path 摘要</h3>
+              <p class="sub">
+                <span class="mono">MM2S -&gt; RadarAXISPreprocessor -&gt; S2MM</span><br/>
+                当前板测通过：<span class="mono">ADD32</span> 与 <span class="mono">RELU16</span><br/>
+                计数器会记录 <span class="mono">IN / OUT / FRAMES</span>。
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="detail-grid">
+          <div class="detail">
+            <h3>当前怎么看“功能通过”</h3>
+            <ul>
+              <li>软件先配置 <span class="mono">MODE / PARAM0 / PARAM1 / CTRL</span>。</li>
+              <li>DMA 跑完后，软件用黄金参考逐字比较 RX buffer。</li>
+              <li>同时检查 <span class="mono">IN_BEATS / OUT_BEATS / FRAME_COUNT</span> 是否和期望一致。</li>
+            </ul>
+          </div>
+
+          <div class="detail">
+            <h3>当前怎么看“链路层次”</h3>
+            <ul>
+              <li>控制面：CPU -&gt; System Bus -&gt; AXI4 MMIO -&gt; Bridge -&gt; DMA CSR / Local CSR。</li>
+              <li>数据面：DDR -&gt; MM2S -&gt; AXI4-Stream 算子 -&gt; S2MM -&gt; DDR。</li>
+              <li>因此后续加新算子时，最核心的改动通常只落在中间这段 Stream 处理链。</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

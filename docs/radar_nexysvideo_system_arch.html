@@ -409,6 +409,127 @@
         </div>
       </div>
 
+      <div class="panel span-12">
+        <div class="section-title">为什么这样拆协议</div>
+        <p class="lede">
+          当前工程并不是“整个系统都跑一种 AXI”，而是把不同职责拆给不同协议层：
+          SoC 内部主干仍以 <code>TileLink</code> 为主，
+          边界上再分别使用 <code>AXI4</code>、<code>AXI4-Lite</code> 和 <code>AXI4-Stream</code>。
+          这样做的核心目标不是协议炫技，而是让控制、搬运、计算三类路径各自保持最合适的复杂度。
+        </p>
+        <table>
+          <thead>
+            <tr>
+              <th>协议</th>
+              <th>当前用途</th>
+              <th>为什么这样选</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>AXI4</code></td>
+              <td>DMA 主存搬运口，负责 MM2S 读 DDR、S2MM 写 DDR</td>
+              <td>需要突发、地址、返回通道和完整内存事务语义，适合大块数据搬运。</td>
+            </tr>
+            <tr>
+              <td><code>AXI4-Lite</code></td>
+              <td>DMA CSR 和新增 preprocessor CSR 本地控制页</td>
+              <td>寄存器访问不需要 burst，Lite 更轻、更稳定，也更适合后续扩展配置寄存器。</td>
+            </tr>
+            <tr>
+              <td><code>AXI4-Stream</code></td>
+              <td>MM2S 输出流、预处理模块、S2MM 输入流</td>
+              <td>流式算子不关心地址，只关心 <code>valid/ready/last</code>，非常适合雷达预处理和 NN 前后处理链。</td>
+            </tr>
+            <tr>
+              <td><code>TileLink</code></td>
+              <td>Rocket / Chipyard 内部主干总线</td>
+              <td>这是 Chipyard/Rocket 原生体系，当前工程是在边界上桥接到 AXI 家族，而不是把内核总线整体改成 AXI。</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="callout good">
+          这种拆法的最大好处是：<strong>控制面简单、主存搬运完整、计算数据面纯流式。</strong>
+          后续接雷达预处理或 NN 模块时，通常只需要继续接在 <code>AXI4-Stream</code> 这一段，而不必直接碰复杂的 DDR 主口协议。
+        </div>
+        <div class="callout warn">
+          这也解释了为什么当前项目适合先做“DMA + AXIS 预处理骨架”：对后续加速器来说，最值得复用的是
+          <strong>AXI4 负责搬运、AXI4-Lite 负责配置、AXI4-Stream 负责计算</strong> 这套边界，而不是把所有逻辑都塞进一个统一协议里。
+        </div>
+      </div>
+
+      <div class="panel span-12">
+        <div class="section-title">实现指标摘要</div>
+        <p class="lede">
+          以下数值对应当前已经板级验证通过的 bitstream，来源于同一轮实现报告：
+          <code>obj/report/timing.txt</code>、<code>obj/report/utilization.txt</code>，
+          时间戳为 2026-03-31 21:24 左右。
+        </p>
+        <div class="stats">
+          <div class="stat">
+            <div class="label">主 SoC 时钟</div>
+            <div class="value">50 MHz</div>
+          </div>
+          <div class="stat">
+            <div class="label">Setup Slack</div>
+            <div class="value">WNS 0.555 ns</div>
+          </div>
+          <div class="stat">
+            <div class="label">Hold Slack</div>
+            <div class="value">WHS 0.050 ns</div>
+          </div>
+          <div class="stat">
+            <div class="label">Timing 状态</div>
+            <div class="value">Constraints Met</div>
+          </div>
+        </div>
+        <table style="margin-top: 14px;">
+          <thead>
+            <tr>
+              <th>类别</th>
+              <th>当前值</th>
+              <th>说明</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>顶层 LUT</td>
+              <td>24111</td>
+              <td>资源占用不高，当前主要瓶颈不是 LUT 容量。</td>
+            </tr>
+            <tr>
+              <td>顶层 FF</td>
+              <td>15672</td>
+              <td>寄存器占用仍然比较宽松。</td>
+            </tr>
+            <tr>
+              <td>BRAM</td>
+              <td>2 × RAMB36 + 14 × RAMB18</td>
+              <td>Rocket L1 和 DMA 内部 FIFO 都已体现在这里，但远未逼近板卡上限。</td>
+            </tr>
+            <tr>
+              <td>DSP</td>
+              <td>10</td>
+              <td>当前还没有进入明显的 DSP 紧张区，后续小型流式算子仍有空间。</td>
+            </tr>
+            <tr>
+              <td>主工作频点</td>
+              <td><code>clk_out1_harnessSysPLLNode = 50 MHz</code></td>
+              <td>这是当前 Rocket / 总线 / DMA 主链路实际收敛并板测通过的频点。</td>
+            </tr>
+            <tr>
+              <td>其他相关时钟</td>
+              <td><code>sys_clock = 100 MHz</code>，<code>clk_out2 = 100 MHz</code></td>
+              <td>存在更高频时钟，但当前主系统链路并不是跑在 100 MHz。</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="callout warn">
+          当前实现的判断应写成：<strong>时序已经收敛并可稳定使用，但余量并不算宽松。</strong>
+          资源上还有明显空间，真正更值得谨慎的是主 SoC 域在 50 MHz 下只有约 0.555 ns 的 setup 裕量和 0.050 ns 的 hold 裕量。
+        </div>
+      </div>
+
       <div class="panel span-6">
         <div class="section-title">地址视图</div>
         <table>

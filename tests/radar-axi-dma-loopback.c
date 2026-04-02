@@ -98,6 +98,9 @@ static void dma_start_simple_mm2s_verbose(uintptr_t src_addr, uint32_t length)
 int main(void)
 {
   printf("AXI DMA loopback test start\n");
+  radar_describe_buffer_protocol();
+  preproc_disable();
+  preproc_clear_counters();
   printf("TX_BUFFER_ADDR=0x%08lx RX_BUFFER_ADDR=0x%08lx EVICT_BUFFER_ADDR=0x%08lx\n",
          (unsigned long)TX_BUFFER_ADDR,
          (unsigned long)RX_BUFFER_ADDR,

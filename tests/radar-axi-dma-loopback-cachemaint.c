@@ -3,6 +3,9 @@
 int main(void)
 {
   printf("AXI DMA loopback cache-maint probe start\n");
+  radar_describe_buffer_protocol();
+  preproc_disable();
+  preproc_clear_counters();
   printf("TX_BUFFER_ADDR=0x%08lx RX_BUFFER_ADDR=0x%08lx EVICT_BUFFER_ADDR=0x%08lx\n",
          (unsigned long)TX_BUFFER_ADDR,
          (unsigned long)RX_BUFFER_ADDR,

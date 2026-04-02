@@ -6,9 +6,20 @@
 
 #define DMA_BASE_ADDR      0x60000000UL
 #define DDR_BASE_ADDR      0x80000000UL
-#define TX_BUFFER_ADDR     0x81000000UL
-#define RX_BUFFER_ADDR     0x81001000UL
-#define EVICT_BUFFER_ADDR  0x81010000UL
+#define DDR_UNCACHED_ALIAS_OFFSET 0x1000000000UL
+#define RADAR_BUF_IN_BASE         0x81000000UL
+#define RADAR_BUF_MID0_BASE       0x81800000UL
+#define RADAR_BUF_MID1_BASE       0x82000000UL
+#define RADAR_BUF_OUT_BASE        0x82800000UL
+#define RADAR_BUF_DESC_BASE       0x83000000UL
+#define RADAR_BUF_REGION_BYTES    0x00800000UL
+#define RADAR_BUF_DESC_BYTES      0x00100000UL
+#define RADAR_STAGE_TX_OFFSET     0x00000000UL
+#define RADAR_STAGE_RX_OFFSET     0x00001000UL
+#define RADAR_STAGE_EVICT_OFFSET  0x00010000UL
+#define TX_BUFFER_ADDR            (RADAR_BUF_IN_BASE + RADAR_STAGE_TX_OFFSET)
+#define RX_BUFFER_ADDR            (RADAR_BUF_IN_BASE + RADAR_STAGE_RX_OFFSET)
+#define EVICT_BUFFER_ADDR         (RADAR_BUF_IN_BASE + RADAR_STAGE_EVICT_OFFSET)
 #define TEST_WORD_COUNT    64UL
 #define TEST_BYTE_COUNT    (TEST_WORD_COUNT * sizeof(uint32_t))
 #define EVICT_WORD_COUNT   4096UL
@@ -25,6 +36,26 @@
 #define S2MM_DA      0x48UL
 #define S2MM_DA_MSB  0x4CUL
 #define S2MM_LENGTH  0x58UL
+
+#define PREPROC_CTRL           0x200UL
+#define PREPROC_MODE           0x204UL
+#define PREPROC_PARAM0         0x208UL
+#define PREPROC_PARAM1         0x20CUL
+#define PREPROC_STATUS         0x210UL
+#define PREPROC_IN_BEATS       0x214UL
+#define PREPROC_OUT_BEATS      0x218UL
+#define PREPROC_FRAME_COUNT    0x21CUL
+#define PREPROC_LAST_KEEP      0x220UL
+#define PREPROC_CAPABILITIES   0x224UL
+
+#define PREPROC_CTRL_ENABLE        (1u << 0)
+#define PREPROC_CTRL_CLR_COUNTS    (1u << 1)
+
+#define PREPROC_MODE_BYPASS        0u
+#define PREPROC_MODE_ADD32         1u
+#define PREPROC_MODE_SHIFT16_AR    2u
+#define PREPROC_MODE_RELU16        3u
+#define PREPROC_MODE_SWAP32        4u
 
 #define DMACR_RS         (1u << 0)
 #define DMACR_RESET      (1u << 2)
@@ -55,19 +86,168 @@ static inline void riscv_fence_rw_rw(void)
   asm volatile ("fence rw, rw" ::: "memory");
 }
 
+typedef enum {
+  RADAR_BUF_VIEW_CACHED = 0,
+  RADAR_BUF_VIEW_UNCACHED = 1
+} radar_buffer_view_t;
+
+typedef enum {
+  RADAR_BUF_REGION_IN = 0,
+  RADAR_BUF_REGION_MID0 = 1,
+  RADAR_BUF_REGION_MID1 = 2,
+  RADAR_BUF_REGION_OUT = 3,
+  RADAR_BUF_REGION_DESC = 4
+} radar_buffer_region_t;
+
+typedef struct {
+  const char *name;
+  uintptr_t dma_base;
+  uintptr_t cpu_cached_base;
+  uintptr_t cpu_uncached_base;
+  unsigned long size_bytes;
+} radar_buffer_region_desc_t;
+
+static inline radar_buffer_region_desc_t radar_buffer_region_desc(radar_buffer_region_t region)
+{
+  switch (region) {
+    case RADAR_BUF_REGION_IN:
+      return (radar_buffer_region_desc_t){
+        "buf_in",
+        RADAR_BUF_IN_BASE,
+        RADAR_BUF_IN_BASE,
+        RADAR_BUF_IN_BASE + DDR_UNCACHED_ALIAS_OFFSET,
+        RADAR_BUF_REGION_BYTES
+      };
+    case RADAR_BUF_REGION_MID0:
+      return (radar_buffer_region_desc_t){
+        "buf_mid0",
+        RADAR_BUF_MID0_BASE,
+        RADAR_BUF_MID0_BASE,
+        RADAR_BUF_MID0_BASE + DDR_UNCACHED_ALIAS_OFFSET,
+        RADAR_BUF_REGION_BYTES
+      };
+    case RADAR_BUF_REGION_MID1:
+      return (radar_buffer_region_desc_t){
+        "buf_mid1",
+        RADAR_BUF_MID1_BASE,
+        RADAR_BUF_MID1_BASE,
+        RADAR_BUF_MID1_BASE + DDR_UNCACHED_ALIAS_OFFSET,
+        RADAR_BUF_REGION_BYTES
+      };
+    case RADAR_BUF_REGION_OUT:
+      return (radar_buffer_region_desc_t){
+        "buf_out",
+        RADAR_BUF_OUT_BASE,
+        RADAR_BUF_OUT_BASE,
+        RADAR_BUF_OUT_BASE + DDR_UNCACHED_ALIAS_OFFSET,
+        RADAR_BUF_REGION_BYTES
+      };
+    case RADAR_BUF_REGION_DESC:
+    default:
+      return (radar_buffer_region_desc_t){
+        "desc_ring",
+        RADAR_BUF_DESC_BASE,
+        RADAR_BUF_DESC_BASE,
+        RADAR_BUF_DESC_BASE + DDR_UNCACHED_ALIAS_OFFSET,
+        RADAR_BUF_DESC_BYTES
+      };
+  }
+}
+
+static inline uintptr_t radar_buffer_dma_addr(radar_buffer_region_t region, uintptr_t offset_bytes)
+{
+  radar_buffer_region_desc_t desc = radar_buffer_region_desc(region);
+  return desc.dma_base + offset_bytes;
+}
+
+static inline uintptr_t radar_buffer_cpu_addr(radar_buffer_region_t region,
+                                              radar_buffer_view_t view,
+                                              uintptr_t offset_bytes)
+{
+  radar_buffer_region_desc_t desc = radar_buffer_region_desc(region);
+  return (view == RADAR_BUF_VIEW_UNCACHED ? desc.cpu_uncached_base : desc.cpu_cached_base) + offset_bytes;
+}
+
+static inline volatile uint32_t *radar_buffer_ptr32(radar_buffer_region_t region,
+                                                    radar_buffer_view_t view,
+                                                    uintptr_t offset_bytes)
+{
+  return (volatile uint32_t *)radar_buffer_cpu_addr(region, view, offset_bytes);
+}
+
+static inline void radar_describe_buffer_protocol(void)
+{
+  radar_buffer_region_desc_t in = radar_buffer_region_desc(RADAR_BUF_REGION_IN);
+  radar_buffer_region_desc_t mid0 = radar_buffer_region_desc(RADAR_BUF_REGION_MID0);
+  radar_buffer_region_desc_t mid1 = radar_buffer_region_desc(RADAR_BUF_REGION_MID1);
+  radar_buffer_region_desc_t out = radar_buffer_region_desc(RADAR_BUF_REGION_OUT);
+
+  printf("Buffer protocol: IN=0x%08lx MID0=0x%08lx MID1=0x%08lx OUT=0x%08lx uncached_offset=0x%lx\n",
+         (unsigned long)in.dma_base,
+         (unsigned long)mid0.dma_base,
+         (unsigned long)mid1.dma_base,
+         (unsigned long)out.dma_base,
+         (unsigned long)DDR_UNCACHED_ALIAS_OFFSET);
+}
+
+static inline void preproc_write32(uintptr_t reg_off, uint32_t value)
+{
+  mmio_write32(DMA_BASE_ADDR + reg_off, value);
+}
+
+static inline uint32_t preproc_read32(uintptr_t reg_off)
+{
+  return mmio_read32(DMA_BASE_ADDR + reg_off);
+}
+
+static inline void preproc_clear_counters(void)
+{
+  preproc_write32(PREPROC_CTRL, PREPROC_CTRL_CLR_COUNTS);
+  preproc_write32(PREPROC_CTRL, 0u);
+}
+
+static inline void preproc_configure(uint32_t mode, uint32_t param0, uint32_t param1, int enable)
+{
+  preproc_write32(PREPROC_MODE, mode);
+  preproc_write32(PREPROC_PARAM0, param0);
+  preproc_write32(PREPROC_PARAM1, param1);
+  preproc_write32(PREPROC_CTRL, enable ? PREPROC_CTRL_ENABLE : 0u);
+}
+
+static inline void preproc_disable(void)
+{
+  preproc_configure(PREPROC_MODE_BYPASS, 0u, 0u, 0);
+}
+
+static inline void preproc_dump_status(const char *tag)
+{
+  printf("%s preproc: CTRL=0x%08x MODE=0x%08x PARAM0=0x%08x PARAM1=0x%08x STATUS=0x%08x IN=%u OUT=%u FRAMES=%u KEEP=0x%08x CAPS=0x%08x\n",
+         tag,
+         preproc_read32(PREPROC_CTRL),
+         preproc_read32(PREPROC_MODE),
+         preproc_read32(PREPROC_PARAM0),
+         preproc_read32(PREPROC_PARAM1),
+         preproc_read32(PREPROC_STATUS),
+         preproc_read32(PREPROC_IN_BEATS),
+         preproc_read32(PREPROC_OUT_BEATS),
+         preproc_read32(PREPROC_FRAME_COUNT),
+         preproc_read32(PREPROC_LAST_KEEP),
+         preproc_read32(PREPROC_CAPABILITIES));
+}
+
 static inline volatile uint32_t *tx_buffer(void)
 {
-  return (volatile uint32_t *)TX_BUFFER_ADDR;
+  return radar_buffer_ptr32(RADAR_BUF_REGION_IN, RADAR_BUF_VIEW_CACHED, RADAR_STAGE_TX_OFFSET);
 }
 
 static inline volatile uint32_t *rx_buffer(void)
 {
-  return (volatile uint32_t *)RX_BUFFER_ADDR;
+  return radar_buffer_ptr32(RADAR_BUF_REGION_IN, RADAR_BUF_VIEW_CACHED, RADAR_STAGE_RX_OFFSET);
 }
 
 static inline volatile uint32_t *evict_buffer(void)
 {
-  return (volatile uint32_t *)EVICT_BUFFER_ADDR;
+  return radar_buffer_ptr32(RADAR_BUF_REGION_IN, RADAR_BUF_VIEW_CACHED, RADAR_STAGE_EVICT_OFFSET);
 }
 
 static inline void dma_dump_channel_regs(const char *name,

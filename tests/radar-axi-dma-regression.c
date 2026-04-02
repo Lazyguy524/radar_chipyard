@@ -1,9 +1,5 @@
 #include "radar_axi_dma_common.h"
 
-#define DDR_UNCACHED_ALIAS_OFFSET 0x1000000000UL
-#define TX_BUFFER_CPU_ADDR        (TX_BUFFER_ADDR + DDR_UNCACHED_ALIAS_OFFSET)
-#define RX_BUFFER_CPU_ADDR        (RX_BUFFER_ADDR + DDR_UNCACHED_ALIAS_OFFSET)
-
 typedef struct {
   unsigned long words;
   uint32_t pattern_base;
@@ -23,12 +19,12 @@ static const dma_case_t dma_cases[] = {
 
 static inline volatile uint32_t *tx_buffer_uncached(void)
 {
-  return (volatile uint32_t *)TX_BUFFER_CPU_ADDR;
+  return radar_buffer_ptr32(RADAR_BUF_REGION_IN, RADAR_BUF_VIEW_UNCACHED, RADAR_STAGE_TX_OFFSET);
 }
 
 static inline volatile uint32_t *rx_buffer_uncached(void)
 {
-  return (volatile uint32_t *)RX_BUFFER_CPU_ADDR;
+  return radar_buffer_ptr32(RADAR_BUF_REGION_IN, RADAR_BUF_VIEW_UNCACHED, RADAR_STAGE_RX_OFFSET);
 }
 
 static void fill_tx_pattern_uncached(unsigned long word_count, uint32_t base)
@@ -150,10 +146,13 @@ static int run_cache_probe(void)
 
 static int run_uncached_alias(void)
 {
+  const uintptr_t tx_cpu_addr = radar_buffer_cpu_addr(RADAR_BUF_REGION_IN, RADAR_BUF_VIEW_UNCACHED, RADAR_STAGE_TX_OFFSET);
+  const uintptr_t rx_cpu_addr = radar_buffer_cpu_addr(RADAR_BUF_REGION_IN, RADAR_BUF_VIEW_UNCACHED, RADAR_STAGE_RX_OFFSET);
+
   printf("[UNCACHED] start\n");
   printf("[UNCACHED] TX_CPU=0x%016lx RX_CPU=0x%016lx\n",
-         (unsigned long)TX_BUFFER_CPU_ADDR,
-         (unsigned long)RX_BUFFER_CPU_ADDR);
+         (unsigned long)tx_cpu_addr,
+         (unsigned long)rx_cpu_addr);
 
   fill_tx_pattern_uncached(TEST_WORD_COUNT, 0xD4D40000u);
   clear_rx_uncached(TEST_WORD_COUNT);
@@ -210,6 +209,9 @@ static int run_consistency(void)
 int main(void)
 {
   printf("AXI DMA integrated regression start\n");
+  radar_describe_buffer_protocol();
+  preproc_disable();
+  preproc_clear_counters();
   printf("TX_BUFFER_ADDR=0x%08lx RX_BUFFER_ADDR=0x%08lx EVICT_BUFFER_ADDR=0x%08lx\n",
          (unsigned long)TX_BUFFER_ADDR,
          (unsigned long)RX_BUFFER_ADDR,
