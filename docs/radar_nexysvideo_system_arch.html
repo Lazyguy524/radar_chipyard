@@ -269,14 +269,17 @@
       <div class="eyebrow">Nexys Video / Chipyard / Rocket / AXI DMA</div>
       <h1>当前系统架构总览</h1>
       <p class="subtitle">
-        这份页面描述的是目前已经在板上跑通的主链路：<strong>RISC-V CPU + DDR + AXI interconnect + AXI DMA</strong>，
-        同时也补上了最新已经验证通过的 <strong>uncached DDR alias</strong> 路径，方便后续把 DMA loopback 升级成真正的雷达预处理或流式硬件加速链。
+        这份页面描述的是目前已经在板上跑通的主链路：<strong>RISC-V CPU + DDR + AXI interconnect + AXI DMA + AXI-Stream Preprocessor</strong>，
+        当前已经同时收口了 <strong>cacheable + cache-maint</strong>、<strong>uncached DDR alias</strong>、以及 <strong>MM2S -&gt; Preproc -&gt; S2MM</strong> 三条关键路径。
+        这页作为后续的主记录页使用，优先同步系统结构、实现指标和板测结论。
       </p>
       <div class="chips">
         <div class="chip">单核 Rocket RV64</div>
         <div class="chip">DDR 512 MiB @ <code>0x8000_0000</code></div>
         <div class="chip">DMA CSR @ <code>0x6000_0000</code></div>
+        <div class="chip">Preproc CSR @ <code>0x6000_0200</code></div>
         <div class="chip">uncached alias @ <code>0x1080_000000</code></div>
+        <div class="chip">ADD32 / RELU16：板测通过</div>
         <div class="chip">当前状态：板级完整通过</div>
       </div>
     </section>
@@ -285,7 +288,8 @@
       <div class="panel span-12">
         <div class="section-title">整机链路图</div>
         <p class="lede">
-          上半部分是 CPU 通过 MMIO 配置 DMA 的控制面，下半部分是 DMA 直接访问 DDR 并经内部 AXI-Stream 回环的真实数据面。
+          上半部分是 CPU 通过 MMIO 配置 DMA 与 Preproc 的控制面，下半部分是 DMA 直接访问 DDR，并经
+          <code>MM2S -&gt; RadarAXISPreprocessor -&gt; S2MM</code> 形成的真实数据面。
         </p>
         <div class="diagram">
           <svg viewBox="0 0 1200 720" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="当前系统架构图">
@@ -330,9 +334,9 @@
             <text x="348" y="206" font-size="14" fill="#d9e2ee">控制面、DDR 主存口、MMIO aperture 都从这里汇合</text>
 
             <rect x="646" y="118" width="220" height="120" rx="20" fill="url(#dmaGrad)"/>
-            <text x="672" y="154" font-size="25" font-weight="800" fill="#fff">AXI DMA CSR</text>
-            <text x="672" y="182" font-size="15" fill="#edf4d7">MMIO aperture：<tspan font-weight="700">0x6000_0000</tspan></text>
-            <text x="672" y="206" font-size="14" fill="#edf4d7">reset / RS / SA / DA / LENGTH / status</text>
+            <text x="672" y="154" font-size="25" font-weight="800" fill="#fff">DMA + Preproc CSR</text>
+            <text x="672" y="182" font-size="15" fill="#edf4d7">DMA：<tspan font-weight="700">0x6000_0000</tspan>；Preproc：<tspan font-weight="700">0x6000_0200</tspan></text>
+            <text x="672" y="206" font-size="14" fill="#edf4d7">DMA 配置 + 模式选择 + 参数 + 计数器状态</text>
 
             <rect x="922" y="118" width="220" height="120" rx="20" fill="url(#migGrad)"/>
             <text x="948" y="154" font-size="25" font-weight="800" fill="#fff">UART-TSI</text>
@@ -343,36 +347,43 @@
             <line x1="590" y1="176" x2="646" y2="176" stroke="#0d5c63" stroke-width="5" marker-end="url(#arrowTeal)"/>
             <line x1="922" y1="206" x2="866" y2="206" stroke="#b86430" stroke-width="4" stroke-dasharray="10 8" marker-end="url(#arrowOrange)"/>
 
-            <rect x="48" y="314" width="244" height="180" rx="22" fill="url(#dmaGrad)"/>
+            <rect x="48" y="314" width="210" height="180" rx="22" fill="url(#dmaGrad)"/>
             <text x="76" y="350" font-size="26" font-weight="800" fill="#fff">AXI DMA 核心</text>
             <text x="76" y="382" font-size="15" fill="#edf4d7">MM2S：DDR 读主口</text>
             <text x="76" y="406" font-size="15" fill="#edf4d7">S2MM：DDR 写主口</text>
-            <text x="76" y="430" font-size="15" fill="#edf4d7">当前内部接成 AXIS loopback</text>
-            <text x="76" y="454" font-size="14" fill="#edf4d7">AXI / AXIS 数据宽度均为 64 bit</text>
+            <text x="76" y="430" font-size="15" fill="#edf4d7">AXI4 / AXIS 数据宽度均为 64 bit</text>
+            <text x="76" y="454" font-size="14" fill="#edf4d7">综合回归与 preproc 板测均已通过</text>
 
-            <rect x="344" y="314" width="220" height="180" rx="22" fill="#fdf8ef" stroke="#ccb998" stroke-width="3"/>
-            <text x="372" y="350" font-size="25" font-weight="800" fill="#1f2430">MM2S → AXIS</text>
-            <text x="372" y="382" font-size="15" fill="#5c6572">从 DDR 读取源 buffer</text>
-            <text x="372" y="406" font-size="15" fill="#5c6572">当前可稳定完成 read 返回</text>
-            <text x="372" y="430" font-size="15" fill="#5c6572">老的 MM2S 启动即炸问题已修掉</text>
+            <rect x="290" y="314" width="190" height="180" rx="22" fill="#fdf8ef" stroke="#ccb998" stroke-width="3"/>
+            <text x="316" y="350" font-size="25" font-weight="800" fill="#1f2430">MM2S → AXIS</text>
+            <text x="316" y="382" font-size="15" fill="#5c6572">从 DDR 读取源 buffer</text>
+            <text x="316" y="406" font-size="15" fill="#5c6572">当前可稳定完成 read 返回</text>
+            <text x="316" y="430" font-size="15" fill="#5c6572">ID 宽度修复后主口稳定</text>
 
-            <rect x="616" y="314" width="220" height="180" rx="22" fill="#fdf8ef" stroke="#ccb998" stroke-width="3"/>
-            <text x="646" y="350" font-size="25" font-weight="800" fill="#1f2430">S2MM ← AXIS</text>
-            <text x="646" y="382" font-size="15" fill="#5c6572">接收 stream 并回写 DDR</text>
-            <text x="646" y="406" font-size="15" fill="#5c6572">当前可稳定完成写回</text>
-            <text x="646" y="430" font-size="15" fill="#5c6572">多长度 consistency 已板级通过</text>
+            <rect x="512" y="314" width="190" height="180" rx="22" fill="#f5fbf7" stroke="#a8c6b0" stroke-width="3"/>
+            <text x="538" y="350" font-size="22" font-weight="800" fill="#1f2430">RadarAXISPreprocessor</text>
+            <text x="538" y="382" font-size="15" fill="#5c6572">模式：BYPASS / ADD32 /</text>
+            <text x="538" y="406" font-size="15" fill="#5c6572">SHIFT16_AR / RELU16 / SWAP32</text>
+            <text x="538" y="430" font-size="15" fill="#5c6572">已板测通过：ADD32、RELU16</text>
 
-            <rect x="888" y="314" width="254" height="180" rx="22" fill="url(#migGrad)"/>
-            <text x="916" y="350" font-size="26" font-weight="800" fill="#fff">MIG + DDR</text>
-            <text x="916" y="382" font-size="15" fill="#fff1e8">cacheable 视图：<tspan font-weight="700">0x8000_0000</tspan></text>
-            <text x="916" y="406" font-size="15" fill="#fff1e8">uncached alias：<tspan font-weight="700">0x1080_000000</tspan></text>
-            <text x="916" y="430" font-size="15" fill="#fff1e8">物理大小：512 MiB</text>
-            <text x="916" y="454" font-size="14" fill="#fff1e8">两条 CPU 访问视图映射到同一片物理 DDR</text>
+            <rect x="734" y="314" width="190" height="180" rx="22" fill="#fdf8ef" stroke="#ccb998" stroke-width="3"/>
+            <text x="762" y="350" font-size="25" font-weight="800" fill="#1f2430">S2MM ← AXIS</text>
+            <text x="762" y="382" font-size="15" fill="#5c6572">接收 stream 并回写 DDR</text>
+            <text x="762" y="406" font-size="15" fill="#5c6572">当前可稳定完成写回</text>
+            <text x="762" y="430" font-size="15" fill="#5c6572">多长度 consistency 已板级通过</text>
 
-            <line x1="292" y1="398" x2="344" y2="398" stroke="#56732c" stroke-width="6" marker-end="url(#arrowTeal)"/>
-            <line x1="564" y1="398" x2="616" y2="398" stroke="#56732c" stroke-width="6" marker-end="url(#arrowTeal)"/>
-            <line x1="836" y1="368" x2="888" y2="368" stroke="#b86430" stroke-width="6" marker-end="url(#arrowOrange)"/>
-            <line x1="888" y1="438" x2="836" y2="438" stroke="#b86430" stroke-width="6" marker-end="url(#arrowOrange)"/>
+            <rect x="956" y="314" width="186" height="180" rx="22" fill="url(#migGrad)"/>
+            <text x="984" y="350" font-size="26" font-weight="800" fill="#fff">MIG + DDR</text>
+            <text x="984" y="382" font-size="15" fill="#fff1e8">cacheable：<tspan font-weight="700">0x8000_0000</tspan></text>
+            <text x="984" y="406" font-size="15" fill="#fff1e8">uncached：<tspan font-weight="700">0x1080_000000</tspan></text>
+            <text x="984" y="430" font-size="15" fill="#fff1e8">物理大小：512 MiB</text>
+            <text x="984" y="454" font-size="14" fill="#fff1e8">同一物理 DDR 的双视图</text>
+
+            <line x1="258" y1="398" x2="290" y2="398" stroke="#56732c" stroke-width="6" marker-end="url(#arrowTeal)"/>
+            <line x1="480" y1="398" x2="512" y2="398" stroke="#56732c" stroke-width="6" marker-end="url(#arrowTeal)"/>
+            <line x1="702" y1="398" x2="734" y2="398" stroke="#56732c" stroke-width="6" marker-end="url(#arrowTeal)"/>
+            <line x1="924" y1="368" x2="956" y2="368" stroke="#b86430" stroke-width="6" marker-end="url(#arrowOrange)"/>
+            <line x1="956" y1="438" x2="924" y2="438" stroke="#b86430" stroke-width="6" marker-end="url(#arrowOrange)"/>
 
             <rect x="48" y="548" width="1094" height="116" rx="22" fill="#f7f2e7" stroke="#d8ccb7"/>
             <text x="76" y="584" font-size="24" font-weight="800" fill="#1f2430">当前两条可工作的 DMA buffer 使用路径</text>
@@ -383,7 +394,7 @@
           </svg>
         </div>
         <div class="callout good">
-          当前已经板级验证通过的关键结论是：<strong>系统不只具备“cacheable DDR + 软件维护 cache”的可用路径，也已经具备“uncached DDR alias + 无需 cache maintenance”的替代路径。</strong>
+          当前已经板级验证通过的关键结论是：<strong>系统不只具备“cacheable DDR + 软件维护 cache”的可用路径，也已经具备“uncached DDR alias + 无需 cache maintenance”与“AXIS Preproc 流处理”两条可扩展路径。</strong>
         </div>
       </div>
 
@@ -407,6 +418,45 @@
             <div class="value">512 MiB</div>
           </div>
         </div>
+      </div>
+
+      <div class="panel span-12">
+        <div class="section-title">当前主记录页范围</div>
+        <p class="lede">
+          从这次开始，这个页面不再只放早期 DMA bring-up 结果，而是作为当前工程的总入口页，集中记录：
+          系统结构、地址视图、实现指标、预处理能力、板级验证状态，以及最值得继续沿用的工程约束。
+        </p>
+        <table>
+          <thead>
+            <tr>
+              <th>主题</th>
+              <th>当前主入口</th>
+              <th>说明</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>总架构</td>
+              <td>本页</td>
+              <td>以后优先在这里同步当前 SoC 能力和整体状态。</td>
+            </tr>
+            <tr>
+              <td>Preproc 详细块图</td>
+              <td><code>docs/radar_nexysvideo_axi_preproc_bd.html</code></td>
+              <td>更接近 Vivado BD 风格的子系统图。</td>
+            </tr>
+            <tr>
+              <td>Preproc 说明</td>
+              <td><code>docs/radar_nexysvideo_stream_preproc_2026-04-01.md</code></td>
+              <td>介绍 buffer 协议、模式、CSR 和测试入口。</td>
+            </tr>
+            <tr>
+              <td>RTL 规范</td>
+              <td><code>docs/radar_nexysvideo_rtl_coding_guidelines_2026-04-02.md</code></td>
+              <td>后续雷达/NN 算子模块建议遵守的编码规范。</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
 
       <div class="panel span-12">
@@ -459,11 +509,57 @@
       </div>
 
       <div class="panel span-12">
+        <div class="section-title">当前 Preproc 能力</div>
+        <p class="lede">
+          `RadarAXISPreprocessor` 已经实际插入 DMA 数据面，当前不是“纸面预留位”，而是已经在板上完成了配置、搬运、计算和结果 compare 的完整闭环。
+        </p>
+        <table>
+          <thead>
+            <tr>
+              <th>项目</th>
+              <th>当前状态</th>
+              <th>说明</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>数据路径位置</td>
+              <td><code>MM2S -&gt; RadarAXISPreprocessor -&gt; S2MM</code></td>
+              <td>已替代原来的“纯 AXIS loopback”直通链路。</td>
+            </tr>
+            <tr>
+              <td>CSR 窗口</td>
+              <td><code>0x6000_0200 - 0x6000_0224</code></td>
+              <td>本地控制页已经在板上可读写。</td>
+            </tr>
+            <tr>
+              <td>当前模式</td>
+              <td><code>BYPASS / ADD32 / SHIFT16_AR / RELU16 / SWAP32</code></td>
+              <td>能力寄存器读回为 <code>0x1f</code>。</td>
+            </tr>
+            <tr>
+              <td>板测通过模式</td>
+              <td><code>ADD32</code>、<code>RELU16</code></td>
+              <td>两种模式均确认 <code>in=32</code>、<code>out=32</code>、<code>frames=1</code>。</td>
+            </tr>
+            <tr>
+              <td>当前角色</td>
+              <td>流处理骨架</td>
+              <td>适合作为后续雷达前处理或 NN 前后处理的接入模板。</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="callout good">
+          当前已经可以把这个模块视为“板上可工作的 AXIS 预处理插槽”，而不只是一个离线生成过 RTL 的概念骨架。
+        </div>
+      </div>
+
+      <div class="panel span-12">
         <div class="section-title">实现指标摘要</div>
         <p class="lede">
           以下数值对应当前已经板级验证通过的 bitstream，来源于同一轮实现报告：
           <code>obj/report/timing.txt</code>、<code>obj/report/utilization.txt</code>，
-          时间戳为 2026-03-31 21:24 左右。
+          时间戳为 2026-04-01 21:02 左右，对应已包含 `RadarAXISPreprocessor` 的 preproc 版镜像。
         </p>
         <div class="stats">
           <div class="stat">
@@ -472,7 +568,7 @@
           </div>
           <div class="stat">
             <div class="label">Setup Slack</div>
-            <div class="value">WNS 0.555 ns</div>
+            <div class="value">WNS 0.894 ns</div>
           </div>
           <div class="stat">
             <div class="label">Hold Slack</div>
@@ -494,23 +590,23 @@
           <tbody>
             <tr>
               <td>顶层 LUT</td>
-              <td>24111</td>
-              <td>资源占用不高，当前主要瓶颈不是 LUT 容量。</td>
+              <td>24991</td>
+              <td>引入 preproc 后有所上升，但资源占用仍不高，当前主要瓶颈不是 LUT 容量。</td>
             </tr>
             <tr>
               <td>顶层 FF</td>
-              <td>15672</td>
+              <td>15950</td>
               <td>寄存器占用仍然比较宽松。</td>
             </tr>
             <tr>
               <td>BRAM</td>
               <td>2 × RAMB36 + 14 × RAMB18</td>
-              <td>Rocket L1 和 DMA 内部 FIFO 都已体现在这里，但远未逼近板卡上限。</td>
+              <td>Rocket L1、DMA 和相关缓存都已体现在这里，但远未逼近板卡上限。</td>
             </tr>
             <tr>
               <td>DSP</td>
               <td>10</td>
-              <td>当前还没有进入明显的 DSP 紧张区，后续小型流式算子仍有空间。</td>
+              <td>当前 preproc 版仍未进入明显的 DSP 紧张区，后续小型流式算子仍有空间。</td>
             </tr>
             <tr>
               <td>主工作频点</td>
@@ -526,7 +622,7 @@
         </table>
         <div class="callout warn">
           当前实现的判断应写成：<strong>时序已经收敛并可稳定使用，但余量并不算宽松。</strong>
-          资源上还有明显空间，真正更值得谨慎的是主 SoC 域在 50 MHz 下只有约 0.555 ns 的 setup 裕量和 0.050 ns 的 hold 裕量。
+          资源上还有明显空间；当前这版 preproc 镜像在 50 MHz 下的 setup 裕量约为 0.894 ns，hold 裕量为 0.050 ns。继续扩展复杂流式算子前，仍然应该优先关注时序边界而不是单纯堆资源。
         </div>
       </div>
 
@@ -554,7 +650,12 @@
             <tr>
               <td><code>0x6000_0000 - 0x6000_ffff</code></td>
               <td>AXI4 MMIO 外设窗口</td>
-              <td>DMA CSR 位于此窗口</td>
+              <td>DMA CSR 与 preproc CSR 都位于此窗口</td>
+            </tr>
+            <tr>
+              <td><code>0x6000_0200 - 0x6000_0224</code></td>
+              <td>Preproc CSR 页</td>
+              <td>模式、参数、状态、计数器、capabilities</td>
             </tr>
             <tr>
               <td><code>0x8100_0000</code></td>
@@ -595,6 +696,10 @@
             <h3><code>radar-axi-dma-regression.riscv</code></h3>
             <div>当前推荐的单 ELF 综合回归，已覆盖 MMIO、cache probe、uncached alias、multi-length consistency。</div>
           </div>
+          <div class="mini">
+            <h3><code>radar-axi-dma-preproc.riscv</code></h3>
+            <div>验证 preproc CSR、ADD32、RELU16 和 <code>MM2S -&gt; Preproc -&gt; S2MM</code> 链路。</div>
+          </div>
         </div>
       </div>
 
@@ -604,9 +709,10 @@
           <li>MIG 黑盒只有 <code>4-bit AXI ID</code>，而早期共享 xbar 的内部 ID 一度超出这一范围，导致 MM2S 读返回错路由。</li>
           <li>修掉这个问题之后，老的“<code>MM2S_LENGTH</code> 一写就炸”和 <code>a5a5...</code> 污染读回现象已经消失。</li>
           <li>后来为 `ExtTLMem` 增加 uncached alias 时，又出现过一次 `tl_mem source` 宽度在顶层被截断的问题，这一层也已经修正。</li>
+          <li>在此基础上，新增的本地 preproc CSR 页和流处理骨架也已经完成板测，不再只是离线 RTL 生成结果。</li>
         </ul>
         <div class="callout">
-          当前从硬件角度可以明确认为：<strong>DDR 主存口、MM2S 读返回路径、S2MM 写回路径、uncached alias 接法都已经被收口到可用状态。</strong>
+          当前从硬件角度可以明确认为：<strong>DDR 主存口、MM2S 读返回路径、S2MM 写回路径、uncached alias 接法，以及 MM2S -&gt; Preproc -&gt; S2MM 这条新流处理链都已经被收口到可用状态。</strong>
         </div>
       </div>
 
@@ -666,7 +772,7 @@
             </tr>
             <tr>
               <td>AXIS loopback</td>
-              <td>当前 MM2S stream 回接 S2MM stream</td>
+              <td>当前可通过 preproc 骨架旁路保持 loopback 语义</td>
               <td>通过</td>
             </tr>
             <tr>
@@ -684,6 +790,21 @@
               <td><code>radar-axi-dma-regression.riscv</code> 已同时覆盖 MMIO、cache、uncached、consistency</td>
               <td>通过</td>
             </tr>
+            <tr>
+              <td>Preproc CSR</td>
+              <td>本地 CSR 页 <code>0x6000_0200+</code> 在板上可读写</td>
+              <td>通过</td>
+            </tr>
+            <tr>
+              <td>ADD32</td>
+              <td>预处理链路板测通过，结果 compare 正确</td>
+              <td>通过</td>
+            </tr>
+            <tr>
+              <td>RELU16</td>
+              <td>预处理链路板测通过，结果 compare 正确</td>
+              <td>通过</td>
+            </tr>
           </tbody>
         </table>
       </div>
@@ -692,15 +813,16 @@
         <div class="section-title">后续最值得记住的几点</div>
         <ul>
           <li>当前平台已经不是“零散模块打通”，而是一个具备真实 DDR 数据搬运能力的可运行原型。</li>
-          <li>后续如果继续做雷达预处理、NN 加速器或其它 AXIS 算法块，最自然的接入位置就是 MM2S 和 S2MM 之间的 stream 段。</li>
+          <li>当前已经存在可工作的 AXIS preproc 插槽，后续如果继续做雷达预处理、NN 加速器或其它 AXIS 算法块，最自然的接入位置就是 MM2S 和 S2MM 之间的 stream 段。</li>
           <li>当前应该优先把 DMA buffer 使用协议文档化，明确什么时候走 cache-maint 路径，什么时候走 uncached alias 路径。</li>
           <li>如果后续要继续工程化，可以把 uncached alias 进一步写进设备树、统一封装为固定软件 API，并逐步减少 bring-up 特殊知识。</li>
+          <li>这页以后默认作为“主记录页”，优先同步系统能力、实现指标和已经收口的板测结论。</li>
         </ul>
       </div>
     </section>
 
     <div class="footer">
-      更新时间：2026-04-01。页面使用 UTF-8 编码保存，内容基于当前 Nexys Video 板级验证结果、DMA 回归测试、uncached alias 路径验证和现有 DTS/RTL 结构整理。
+      更新时间：2026-04-02。页面使用 UTF-8 编码保存，内容基于当前 Nexys Video 板级验证结果、uncached alias 路径验证、preproc 板测结果以及 2026-04-01 21:02 这一轮实现报告整理。
     </div>
   </main>
 </body>

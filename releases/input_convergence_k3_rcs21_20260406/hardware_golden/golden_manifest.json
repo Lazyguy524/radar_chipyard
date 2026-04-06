@@ -1,0 +1,23 @@
+{
+  "config": "/home/student/CaiWeijie/project/radar_cluster_rocc_exp/configs/input_convergence_2026-04-06/k3_rcs21.yaml",
+  "checkpoint": "/home/student/CaiWeijie/project/radar_cluster_rocc_exp/logs/input_convergence_2026-04-06/train/k3_rcs21/student_qat.pt",
+  "export_dir": "/home/student/CaiWeijie/project/radar_cluster_rocc_exp/artifacts/input_convergence_2026-04-06/k3_rcs21_export",
+  "output_dir": "/home/student/CaiWeijie/project/radar_cluster_rocc_exp/releases/input_convergence_k3_rcs21_20260406/hardware_golden",
+  "sample_index": 0,
+  "split": "test",
+  "input_dim": 21,
+  "num_classes": 2,
+  "class_names": [
+    "pedestrian",
+    "vehicle"
+  ],
+  "input_file": "golden_input.bin",
+  "input_header": "golden_input.h",
+  "logits_file": "golden_logits.bin",
+  "logits_header": "golden_logits.h",
+  "intermediate_file": "golden_intermediate.json",
+  "label_id": 0,
+  "prediction_id": 0,
+  "label_name": "pedestrian",
+  "prediction_name": "pedestrian"
+}

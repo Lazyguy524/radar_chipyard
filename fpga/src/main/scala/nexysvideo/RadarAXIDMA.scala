@@ -568,6 +568,9 @@ class RadarAXIDMA(implicit p: Parameters) extends LazyModule {
     val preproc = withClockAndReset(ctrlClock, (!ctrlResetN).asAsyncReset) {
       Module(new RadarAXISPreprocessor)
     }
+    val qmlp = withClockAndReset(ctrlClock, (!ctrlResetN).asAsyncReset) {
+      Module(new RadarAXISQMLP)
+    }
     ctrlBridge.io.in <> ctrl
 
     def applyWriteStrobe(prev: UInt, data: UInt, strb: UInt): UInt = {
@@ -584,12 +587,16 @@ class RadarAXIDMA(implicit p: Parameters) extends LazyModule {
          preprocParam0Reg,
          preprocParam1Reg,
          preprocClearCounters,
+         qmlpCtrlReg,
+         qmlpClearCounters,
          localReadData) = withClockAndReset(ctrlClock, (!ctrlResetN).asAsyncReset) {
       val preprocCtrlReg  = RegInit(0.U(32.W))
       val preprocModeReg  = RegInit(0.U(32.W))
       val preprocParam0Reg = RegInit(0.U(32.W))
       val preprocParam1Reg = RegInit(0.U(32.W))
       val preprocClearCounters = WireDefault(false.B)
+      val qmlpCtrlReg = RegInit(0.U(32.W))
+      val qmlpClearCounters = WireDefault(false.B)
       val localReadData = WireDefault(0.U(32.W))
 
       when (ctrlBridge.io.local.wrEn) {
@@ -608,6 +615,11 @@ class RadarAXIDMA(implicit p: Parameters) extends LazyModule {
           is ("h0c".U) {
             preprocParam1Reg := applyWriteStrobe(preprocParam1Reg, ctrlBridge.io.local.wrData, ctrlBridge.io.local.wrStrb)
           }
+          is ("h40".U) {
+            val nextCtrl = applyWriteStrobe(qmlpCtrlReg, ctrlBridge.io.local.wrData, ctrlBridge.io.local.wrStrb)
+            qmlpCtrlReg := nextCtrl & 1.U(32.W)
+            qmlpClearCounters := nextCtrl(1)
+          }
         }
       }
 
@@ -622,6 +634,18 @@ class RadarAXIDMA(implicit p: Parameters) extends LazyModule {
         is ("h1c".U) { localReadData := preproc.io.frameCount }
         is ("h20".U) { localReadData := preproc.io.lastKeep }
         is ("h24".U) { localReadData := preproc.io.capabilities }
+        is ("h40".U) { localReadData := qmlpCtrlReg }
+        is ("h44".U) { localReadData := qmlp.io.status }
+        is ("h48".U) { localReadData := qmlp.io.inBeats }
+        is ("h4c".U) { localReadData := qmlp.io.outBeats }
+        is ("h50".U) { localReadData := qmlp.io.frameCount }
+        is ("h54".U) { localReadData := qmlp.io.lastKeep }
+        is ("h58".U) { localReadData := qmlp.io.lastLogit0.asUInt }
+        is ("h5c".U) { localReadData := qmlp.io.lastLogit1.asUInt }
+        is ("h60".U) { localReadData := qmlp.io.runCycles }
+        is ("h64".U) { localReadData := qmlp.io.capabilities }
+        is ("h68".U) { localReadData := 32.U }
+        is ("h6c".U) { localReadData := 8.U }
       }
 
       (preprocCtrlReg,
@@ -629,6 +653,8 @@ class RadarAXIDMA(implicit p: Parameters) extends LazyModule {
        preprocParam0Reg,
        preprocParam1Reg,
        preprocClearCounters,
+       qmlpCtrlReg,
+       qmlpClearCounters,
        localReadData)
     }
     ctrlBridge.io.local.rdData := localReadData
@@ -638,6 +664,9 @@ class RadarAXIDMA(implicit p: Parameters) extends LazyModule {
     preproc.io.param0 := preprocParam0Reg
     preproc.io.param1 := preprocParam1Reg
     preproc.io.clearCounters := preprocClearCounters
+
+    qmlp.io.ctrlEnable := qmlpCtrlReg(0)
+    qmlp.io.clearCounters := qmlpClearCounters
 
     bb.io.s_axi_lite_awvalid := ctrlBridge.io.lite.awvalid
     ctrlBridge.io.lite.awready := bb.io.s_axi_lite_awready
@@ -762,17 +791,25 @@ class RadarAXIDMA(implicit p: Parameters) extends LazyModule {
     debug.mm2sIOCSeen          := mm2sIOCSeen
     debug.s2mmIOCSeen          := s2mmIOCSeen
 
-    preproc.io.in.valid := bb.io.m_axis_mm2s_tvalid
+    val qmlpEnabled = qmlpCtrlReg(0)
+
+    preproc.io.in.valid := bb.io.m_axis_mm2s_tvalid && !qmlpEnabled
     preproc.io.in.bits.data := bb.io.m_axis_mm2s_tdata
     preproc.io.in.bits.keep := bb.io.m_axis_mm2s_tkeep
     preproc.io.in.bits.last := bb.io.m_axis_mm2s_tlast
-    bb.io.m_axis_mm2s_tready := preproc.io.in.ready
+    preproc.io.out.ready := bb.io.s_axis_s2mm_tready && !qmlpEnabled
 
-    bb.io.s_axis_s2mm_tdata  := preproc.io.out.bits.data
-    bb.io.s_axis_s2mm_tkeep  := preproc.io.out.bits.keep
-    bb.io.s_axis_s2mm_tvalid := preproc.io.out.valid
-    bb.io.s_axis_s2mm_tlast  := preproc.io.out.bits.last
-    preproc.io.out.ready := bb.io.s_axis_s2mm_tready
+    qmlp.io.in.valid := bb.io.m_axis_mm2s_tvalid && qmlpEnabled
+    qmlp.io.in.bits.data := bb.io.m_axis_mm2s_tdata
+    qmlp.io.in.bits.keep := bb.io.m_axis_mm2s_tkeep
+    qmlp.io.in.bits.last := bb.io.m_axis_mm2s_tlast
+    qmlp.io.out.ready := bb.io.s_axis_s2mm_tready && qmlpEnabled
+
+    bb.io.m_axis_mm2s_tready := Mux(qmlpEnabled, qmlp.io.in.ready, preproc.io.in.ready)
+    bb.io.s_axis_s2mm_tdata  := Mux(qmlpEnabled, qmlp.io.out.bits.data, preproc.io.out.bits.data)
+    bb.io.s_axis_s2mm_tkeep  := Mux(qmlpEnabled, qmlp.io.out.bits.keep, preproc.io.out.bits.keep)
+    bb.io.s_axis_s2mm_tvalid := Mux(qmlpEnabled, qmlp.io.out.valid, preproc.io.out.valid)
+    bb.io.s_axis_s2mm_tlast  := Mux(qmlpEnabled, qmlp.io.out.bits.last, preproc.io.out.bits.last)
 
     mm2s.aw.valid := false.B
     mm2s.aw.bits  := DontCare

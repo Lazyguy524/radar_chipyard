@@ -1,0 +1,44 @@
+experiment:
+  seed: 7
+  output_dir: /home/student/CaiWeijie/project/radar_cluster_rocc_exp/logs/input_convergence_2026-04-06/train/k3_rcs21
+  show_progress: false
+  log_every_n_steps: 20
+data:
+  packed_dir: /home/student/CaiWeijie/project/radar_cluster_rocc_exp/logs/input_convergence_2026-04-06/packed/k3_rcs21
+  packed_student_dir: /home/student/CaiWeijie/project/radar_cluster_rocc_exp/logs/input_convergence_2026-04-06/packed/k3_rcs21
+  sample_points: 32
+  point_dim: 3
+  batch_size: 1024
+  num_workers: 8
+  pin_memory: true
+  persistent_workers: true
+  feature_dim: 21
+  num_classes: 2
+  balanced_sampling: true
+  feature_mode: rcs21
+teacher:
+  epochs: 10
+  lr: 0.0012
+  weight_decay: 0.0001
+  hidden_dims:
+  - 64
+  - 128
+  classifier_dims:
+  - 128
+  - 64
+student:
+  epochs: 20
+  lr: 0.0008
+  weight_decay: 0.0001
+  hidden_dims:
+  - 64
+  - 32
+  temperature: 2.0
+  kd_alpha: 0.0
+  quant_bits: 8
+  focal_gamma: 1.25
+export:
+  target_name: radar_mlp_binary_k3_rcs21
+  class_names:
+  - pedestrian
+  - vehicle

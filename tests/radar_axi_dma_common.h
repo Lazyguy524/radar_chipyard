@@ -48,8 +48,24 @@
 #define PREPROC_LAST_KEEP      0x220UL
 #define PREPROC_CAPABILITIES   0x224UL
 
+#define QMLP_CTRL             0x240UL
+#define QMLP_STATUS           0x244UL
+#define QMLP_IN_BEATS         0x248UL
+#define QMLP_OUT_BEATS        0x24CUL
+#define QMLP_FRAME_COUNT      0x250UL
+#define QMLP_LAST_KEEP        0x254UL
+#define QMLP_LAST_LOGIT0      0x258UL
+#define QMLP_LAST_LOGIT1      0x25CUL
+#define QMLP_RUN_CYCLES       0x260UL
+#define QMLP_CAPABILITIES     0x264UL
+#define QMLP_SAMPLE_BYTES     0x268UL
+#define QMLP_OUTPUT_BYTES     0x26CUL
+
 #define PREPROC_CTRL_ENABLE        (1u << 0)
 #define PREPROC_CTRL_CLR_COUNTS    (1u << 1)
+
+#define QMLP_CTRL_ENABLE           (1u << 0)
+#define QMLP_CTRL_CLR_COUNTS       (1u << 1)
 
 #define PREPROC_MODE_BYPASS        0u
 #define PREPROC_MODE_ADD32         1u
@@ -233,6 +249,45 @@ static inline void preproc_dump_status(const char *tag)
          preproc_read32(PREPROC_FRAME_COUNT),
          preproc_read32(PREPROC_LAST_KEEP),
          preproc_read32(PREPROC_CAPABILITIES));
+}
+
+static inline void qmlp_write32(uintptr_t reg_off, uint32_t value)
+{
+  mmio_write32(DMA_BASE_ADDR + reg_off, value);
+}
+
+static inline uint32_t qmlp_read32(uintptr_t reg_off)
+{
+  return mmio_read32(DMA_BASE_ADDR + reg_off);
+}
+
+static inline void qmlp_clear_counters(void)
+{
+  qmlp_write32(QMLP_CTRL, QMLP_CTRL_CLR_COUNTS);
+  qmlp_write32(QMLP_CTRL, 0u);
+}
+
+static inline void qmlp_enable(int enable)
+{
+  qmlp_write32(QMLP_CTRL, enable ? QMLP_CTRL_ENABLE : 0u);
+}
+
+static inline void qmlp_dump_status(const char *tag)
+{
+  printf("%s qmlp: CTRL=0x%08x STATUS=0x%08x IN=%u OUT=%u FRAMES=%u KEEP=0x%08x LOGIT0=%d LOGIT1=%d CYC=%u CAPS=0x%08x SAMPLE=%u OUTPUT=%u\n",
+         tag,
+         qmlp_read32(QMLP_CTRL),
+         qmlp_read32(QMLP_STATUS),
+         qmlp_read32(QMLP_IN_BEATS),
+         qmlp_read32(QMLP_OUT_BEATS),
+         qmlp_read32(QMLP_FRAME_COUNT),
+         qmlp_read32(QMLP_LAST_KEEP),
+         (int32_t)qmlp_read32(QMLP_LAST_LOGIT0),
+         (int32_t)qmlp_read32(QMLP_LAST_LOGIT1),
+         qmlp_read32(QMLP_RUN_CYCLES),
+         qmlp_read32(QMLP_CAPABILITIES),
+         qmlp_read32(QMLP_SAMPLE_BYTES),
+         qmlp_read32(QMLP_OUTPUT_BYTES));
 }
 
 static inline volatile uint32_t *tx_buffer(void)
@@ -431,6 +486,22 @@ static inline int dma_run_loopback_once(uintptr_t src_addr, uintptr_t dst_addr, 
 
   dma_start_simple_s2mm(dst_addr, length);
   dma_start_simple_mm2s(src_addr, length);
+
+  if (dma_wait_done("MM2S", MM2S_DMASR) != 0) return -1;
+  if (dma_wait_done("S2MM", S2MM_DMASR) != 0) return -1;
+  return 0;
+}
+
+static inline int dma_run_stream_once(uintptr_t src_addr,
+                                      uint32_t mm2s_length,
+                                      uintptr_t dst_addr,
+                                      uint32_t s2mm_length)
+{
+  if (dma_reset_channel("MM2S", MM2S_DMACR, MM2S_DMASR) != 0) return -1;
+  if (dma_reset_channel("S2MM", S2MM_DMACR, S2MM_DMASR) != 0) return -1;
+
+  dma_start_simple_s2mm(dst_addr, s2mm_length);
+  dma_start_simple_mm2s(src_addr, mm2s_length);
 
   if (dma_wait_done("MM2S", MM2S_DMASR) != 0) return -1;
   if (dma_wait_done("S2MM", S2MM_DMASR) != 0) return -1;
