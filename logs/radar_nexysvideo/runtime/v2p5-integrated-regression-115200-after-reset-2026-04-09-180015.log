@@ -1,0 +1,203 @@
+[nexysvideo] repo_root=/home/soooarr/chipyard
+[nexysvideo] tty=/dev/ttyUSB0 baudrate=115200
+[nexysvideo] bin=tests/radar-axi-dma-regression.riscv
+[nexysvideo] log=/home/soooarr/chipyard/logs/radar_nexysvideo/runtime/v2p5-integrated-regression-115200-after-reset-2026-04-09-180015.log
+[nexysvideo] 提示: 如需 fresh 状态，请先按板上的 CPU_RESET。
+[nexysvideo] command=/home/soooarr/chipyard/generators/testchipip/uart_tsi/uart_tsi +tty=/dev/ttyUSB0 +baudrate=115200 +selfcheck tests/radar-axi-dma-regression.riscv
+Starting UART-based TSI
+Usage: ./uart_tsi +tty=/dev/pts/xx <PLUSARGS> <bin>
+       ./uart_tsi +tty=/dev/ttyxx  <PLUSARGS> <bin>
+       ./uart_tsi +tty=/dev/ttyxx  +no_hart0_msip +init_write=0x80000000:0xdeadbeef none
+       ./uart_tsi +tty=/dev/ttyxx  +no_hart0_msip +init_read=0x80000000 none
+       ./uart_tsi +tty=/dev/ttyxx  +selfcheck <bin>
+       ./uart_tsi +tty=/dev/ttyxx  +baudrate=921600 <bin>
+Attempting to open TTY at /dev/ttyUSB0
+Checking connection status with /dev/ttyUSB0
+Connection succeeded
+Performing self check
+Self check chunk 80000000 to 80000400
+Self check succeeded chunk 80000000 to 80000400
+Self check chunk 80000400 to 80000800
+Self check succeeded chunk 80000400 to 80000800
+Self check chunk 80000800 to 80000c00
+Self check succeeded chunk 80000800 to 80000c00
+Self check chunk 80000c00 to 80001000
+Self check succeeded chunk 80000c00 to 80001000
+Self check chunk 80001000 to 80001400
+Self check succeeded chunk 80001000 to 80001400
+Self check chunk 80001400 to 80001800
+Self check succeeded chunk 80001400 to 80001800
+Self check chunk 80001800 to 80001c00
+Self check succeeded chunk 80001800 to 80001c00
+Self check chunk 80001c00 to 80002000
+Self check succeeded chunk 80001c00 to 80002000
+Self check chunk 80002000 to 80002400
+Self check succeeded chunk 80002000 to 80002400
+Self check chunk 80002400 to 80002800
+Self check succeeded chunk 80002400 to 80002800
+Self check chunk 80002800 to 80002c00
+Self check succeeded chunk 80002800 to 80002c00
+Self check chunk 80002c00 to 80003000
+Self check succeeded chunk 80002c00 to 80003000
+Self check chunk 80003000 to 80003400
+Self check succeeded chunk 80003000 to 80003400
+Self check chunk 80003400 to 800037d0
+Self check succeeded chunk 80003400 to 800037d0
+Self check success
+AXI DMA integrated regression start
+Buffer protocol: IN=0x81000000 MID0=0x81800000 MID1=0x82000000 OUT=0x82800000 uncached_offset=0x1000000000
+TX_BUFFER_ADDR=0x81000000 RX_BUFFER_ADDR=0x81001000 EVICT_BUFFER_ADDR=0x81010000
+[MMIO] start
+[MMIO] MM2S_DMASR=0x00000001/0x00000001 S2MM_DMASR=0x00000001/0x00000001
+MM2S reset begin
+S2MM reset begin
+[MMIO] passed
+[CACHE] probe start
+MM2S reset begin
+S2MM reset begin
+[CACHE] no-maint mismatch at word 0: tx=0xa5a50000 rx=0x00000000
+[CACHE] pre-only cache sweep complete, accum=0x00000000
+MM2S reset begin
+S2MM reset begin
+[CACHE] pre-only compare passed
+[CACHE] full-pre cache sweep complete, accum=0x00000000
+MM2S reset begin
+S2MM reset begin
+[CACHE] full-post cache sweep complete, accum=0x00000000
+[CACHE] full-maint compare passed
+[CACHE] summary no-maint=0 pre-only=-1 full-maint=-1
+[CACHE] software cache maintenance remains required
+[CACHE] passed
+[UNCACHED] start
+[UNCACHED] TX_CPU=0x0000001081000000 RX_CPU=0x0000001081001000
+MM2S reset begin
+S2MM reset begin
+[UNCACHED] compare passed
+[UNCACHED] passed
+[CONSISTENCY] start
+[CONSISTENCY] case=0 words=4 bytes=16 pattern=0x11000000
+[CONSISTENCY] pre cache sweep complete, accum=0x00000000
+MM2S reset begin
+S2MM reset begin
+[CONSISTENCY] post cache sweep complete, accum=0x00000000
+[CONSISTENCY] compare compare passed
+[CONSISTENCY] case=1 words=8 bytes=32 pattern=0x22000000
+[CONSISTENCY] pre cache sweep complete, accum=0x00000000
+MM2S reset begin
+S2MM reset begin
+[CONSISTENCY] post cache sweep complete, accum=0x00000000
+[CONSISTENCY] compare compare passed
+[CONSISTENCY] case=2 words=15 bytes=60 pattern=0x33000000
+[CONSISTENCY] pre cache sweep complete, accum=0x00000000
+MM2S reset begin
+S2MM reset begin
+[CONSISTENCY] post cache sweep complete, accum=0x00000000
+[CONSISTENCY] compare compare passed
+[CONSISTENCY] case=3 words=16 bytes=64 pattern=0x44000000
+[CONSISTENCY] pre cache sweep complete, accum=0x00000000
+MM2S reset begin
+S2MM reset begin
+[CONSISTENCY] post cache sweep complete, accum=0x00000000
+[CONSISTENCY] compare compare passed
+[CONSISTENCY] case=4 words=31 bytes=124 pattern=0x55000000
+[CONSISTENCY] pre cache sweep complete, accum=0x00000000
+MM2S reset begin
+S2MM reset begin
+[CONSISTENCY] post cache sweep complete, accum=0x00000000
+[CONSISTENCY] compare compare passed
+[CONSISTENCY] case=5 words=32 bytes=128 pattern=0x66000000
+[CONSISTENCY] pre cache sweep complete, accum=0x00000000
+MM2S reset begin
+S2MM reset begin
+[CONSISTENCY] post cache sweep complete, accum=0x00000000
+[CONSISTENCY] compare compare passed
+[CONSISTENCY] case=6 words=33 bytes=132 pattern=0x77000000
+[CONSISTENCY] pre cache sweep complete, accum=0x00000000
+MM2S reset begin
+S2MM reset begin
+[CONSISTENCY] post cache sweep complete, accum=0x00000000
+[CONSISTENCY] compare compare passed
+[CONSISTENCY] case=7 words=63 bytes=252 pattern=0x88000000
+[CONSISTENCY] pre cache sweep complete, accum=0x00000000
+MM2S reset begin
+S2MM reset begin
+[CONSISTENCY] post cache sweep complete, accum=0x00000000
+[CONSISTENCY] compare compare passed
+[CONSISTENCY] case=8 words=64 bytes=256 pattern=0x99000000
+[CONSISTENCY] pre cache sweep complete, accum=0x00000000
+MM2S reset begin
+S2MM reset begin
+[CONSISTENCY] post cache sweep complete, accum=0x00000000
+[CONSISTENCY] compare compare passed
+[CONSISTENCY] passed
+[QMLP] start
+[QMLP] boot qmlp: CTRL=0x00000000 STATUS=0x00000000 IN=0 OUT=0 FRAMES=0 KEEP=0x00000000 LOGIT0=0 LOGIT1=0 CYC=0 CAPS=0x00000411 SAMPLE=32 OUTPUT=8
+[QMLP][case=0][golden_base] configured
+MM2S reset begin
+S2MM reset begin
+[QMLP] done qmlp: CTRL=0x00000001 STATUS=0x000002a0 IN=4 OUT=1 FRAMES=1 KEEP=0x000000ff LOGIT0=855 LOGIT1=-10706 CYC=1301 CAPS=0x00000411 SAMPLE=32 OUTPUT=8
+[QMLP] counters: in=4 out=1 frames=1 keep=0x000000ff sample=32 output=8
+[QMLP] output logits: hw={855, -10706} golden={855, -10706}
+[QMLP] compare passed
+[QMLP][case=0][golden_base] perf hw_cycles=1301 e2e_cycles=8949864 mac_per_cycle_x1000=2656
+[QMLP][case=1][zero] configured
+MM2S reset begin
+S2MM reset begin
+[QMLP] done qmlp: CTRL=0x00000001 STATUS=0x000002a0 IN=4 OUT=1 FRAMES=1 KEEP=0x000000ff LOGIT0=861 LOGIT1=508 CYC=1301 CAPS=0x00000411 SAMPLE=32 OUTPUT=8
+[QMLP] counters: in=4 out=1 frames=1 keep=0x000000ff sample=32 output=8
+[QMLP] output logits: hw={861, 508} golden={861, 508}
+[QMLP] compare passed
+[QMLP][case=1][zero] perf hw_cycles=1301 e2e_cycles=8899712 mac_per_cycle_x1000=2656
+[QMLP][case=2][alternating_perturb] configured
+MM2S reset begin
+S2MM reset begin
+[QMLP] done qmlp: CTRL=0x00000001 STATUS=0x000002a0 IN=4 OUT=1 FRAMES=1 KEEP=0x000000ff LOGIT0=979 LOGIT1=-8599 CYC=1301 CAPS=0x00000411 SAMPLE=32 OUTPUT=8
+[QMLP] counters: in=4 out=1 frames=1 keep=0x000000ff sample=32 output=8
+[QMLP] output logits: hw={979, -8599} golden={979, -8599}
+[QMLP] compare passed
+[QMLP][case=2][alternating_perturb] perf hw_cycles=1301 e2e_cycles=8890865 mac_per_cycle_x1000=2656
+[QMLP][case=3][sparse_keep3] configured
+MM2S reset begin
+S2MM reset begin
+[QMLP] done qmlp: CTRL=0x00000001 STATUS=0x000002a0 IN=4 OUT=1 FRAMES=1 KEEP=0x000000ff LOGIT0=291 LOGIT1=151 CYC=1301 CAPS=0x00000411 SAMPLE=32 OUTPUT=8
+[QMLP] counters: in=4 out=1 frames=1 keep=0x000000ff sample=32 output=8
+[QMLP] output logits: hw={291, 151} golden={291, 151}
+[QMLP] compare passed
+[QMLP][case=3][sparse_keep3] perf hw_cycles=1301 e2e_cycles=8898427 mac_per_cycle_x1000=2656
+[QMLP][case=4][sign_flip_even] configured
+MM2S reset begin
+S2MM reset begin
+[QMLP] done qmlp: CTRL=0x00000001 STATUS=0x000002a0 IN=4 OUT=1 FRAMES=1 KEEP=0x000000ff LOGIT0=-3940 LOGIT1=-5776 CYC=1301 CAPS=0x00000411 SAMPLE=32 OUTPUT=8
+[QMLP] counters: in=4 out=1 frames=1 keep=0x000000ff sample=32 output=8
+[QMLP] output logits: hw={-3940, -5776} golden={-3940, -5776}
+[QMLP] compare passed
+[QMLP][case=4][sign_flip_even] perf hw_cycles=1301 e2e_cycles=8906472 mac_per_cycle_x1000=2656
+[QMLP][case=5][half_scale] configured
+MM2S reset begin
+S2MM reset begin
+[QMLP] done qmlp: CTRL=0x00000001 STATUS=0x000002a0 IN=4 OUT=1 FRAMES=1 KEEP=0x000000ff LOGIT0=905 LOGIT1=-5277 CYC=1301 CAPS=0x00000411 SAMPLE=32 OUTPUT=8
+[QMLP] counters: in=4 out=1 frames=1 keep=0x000000ff sample=32 output=8
+[QMLP] output logits: hw={905, -5277} golden={905, -5277}
+[QMLP] compare passed
+[QMLP][case=5][half_scale] perf hw_cycles=1301 e2e_cycles=8896902 mac_per_cycle_x1000=2656
+[QMLP][case=6][offset_plus] configured
+MM2S reset begin
+S2MM reset begin
+[QMLP] done qmlp: CTRL=0x00000001 STATUS=0x000002a0 IN=4 OUT=1 FRAMES=1 KEEP=0x000000ff LOGIT0=-490 LOGIT1=-9698 CYC=1301 CAPS=0x00000411 SAMPLE=32 OUTPUT=8
+[QMLP] counters: in=4 out=1 frames=1 keep=0x000000ff sample=32 output=8
+[QMLP] output logits: hw={-490, -9698} golden={-490, -9698}
+[QMLP] compare passed
+[QMLP][case=6][offset_plus] perf hw_cycles=1301 e2e_cycles=8941980 mac_per_cycle_x1000=2656
+[QMLP][case=7][offset_minus] configured
+MM2S reset begin
+S2MM reset begin
+[QMLP] done qmlp: CTRL=0x00000001 STATUS=0x000002a0 IN=4 OUT=1 FRAMES=1 KEEP=0x000000ff LOGIT0=-437 LOGIT1=3496 CYC=1301 CAPS=0x00000411 SAMPLE=32 OUTPUT=8
+[QMLP] counters: in=4 out=1 frames=1 keep=0x000000ff sample=32 output=8
+[QMLP] output logits: hw={-437, 3496} golden={-437, 3496}
+[QMLP] compare passed
+[QMLP][case=7][offset_minus] perf hw_cycles=1301 e2e_cycles=8938892 mac_per_cycle_x1000=2656
+[QMLP] multi-sample summary cases=8 hw_cycles_avg=1301 hw_cycles_min=1301 hw_cycles_max=1301 e2e_cycles_avg=8915389 inf_per_sec=38431 input_MBps_x100=122982321
+[QMLP] passed
+AXI_DMA_REGRESSION_PASSED
+Done, shutting down, flushing UART
+WARNING: You should probably reset the target before running this program again

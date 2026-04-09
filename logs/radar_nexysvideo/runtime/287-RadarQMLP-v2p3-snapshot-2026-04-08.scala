@@ -103,9 +103,9 @@ object RadarQMLPK3Rcs21Data {
 
 class RadarAXISQMLP extends Module {
   private val qmlp = RadarQMLPK3Rcs21Data.data
-  // v2.5: keep the 4-lane PE array, but replace small constant requant
-  // multiplies with shift-add logic to reduce DSP/layout disturbance.
-  private val peLanes = 4
+  // v2.2: back off lane parallelism to recover board-level stability while
+  // preserving the staged PE/MAC structure introduced in v2/v2.1.
+  private val peLanes = 2
 
   require(qmlp.l1Weight.size == qmlp.l1Out * qmlp.l1In, "L1 weight shape mismatch")
   require(qmlp.l2Weight.size == qmlp.l2Out * qmlp.l2In, "L2 weight shape mismatch")
@@ -113,10 +113,10 @@ class RadarAXISQMLP extends Module {
 
   private val Seq(
     sIdle, sRecv,
-    sL1Load, sL1Mac, sL1QuantMul, sL1QuantRound, sL1Write,
-    sL2Load, sL2Mac, sL2QuantMul, sL2QuantRound, sL2Write,
+    sL1Load, sL1Mac, sL1Quant, sL1Write,
+    sL2Load, sL2Mac, sL2Quant, sL2Write,
     sL3Load, sL3Mac, sL3Write, sL3Pack,
-    sEmit) = Enum(17)
+    sEmit) = Enum(15)
 
   val io = IO(new Bundle {
     val ctrlEnable = Input(Bool())
@@ -164,24 +164,6 @@ class RadarAXISQMLP extends Module {
     Mux(relu > 127.S, 127.S, relu)
   }
 
-  private def reluClamp8(value: SInt): SInt = {
-    val relu = Mux(value < 0.S, 0.S, value)
-    Mux(relu > 127.S, 127.S, relu)
-  }
-
-  private def constMultiplyShiftAdd(value: SInt, constant: Int, outWidth: Int): SInt = {
-    require(constant >= 0, "Only non-negative requant multipliers are supported")
-    if (constant == 0) {
-      0.S(outWidth.W)
-    } else {
-      val termSeq = (0 until 32).collect {
-        case shift if ((constant >> shift) & 1) == 1 =>
-          (value << shift).asSInt.pad(outWidth)
-      }
-      termSeq.tail.foldLeft(termSeq.head) { (acc, term) => (acc +& term).asSInt.pad(outWidth) }
-    }
-  }
-
   private def sumTree(values: Seq[SInt]): SInt = values.tail.foldLeft(values.head) { (acc, v) => acc +& v }
 
   val state = RegInit(sIdle)
@@ -198,8 +180,7 @@ class RadarAXISQMLP extends Module {
   val outIdx = RegInit(0.U(6.W))
   val inIdx = RegInit(0.U(7.W))
   val accReg = RegInit(0.S(32.W))
-  val quantProductReg = Reg(SInt(64.W))
-  val quantRoundedReg = Reg(SInt(64.W))
+  val quantReg = Reg(SInt(8.W))
 
   val outValidReg = RegInit(false.B)
   val outBitsReg = Reg(new RadarAXISWord)
@@ -305,25 +286,20 @@ class RadarAXISQMLP extends Module {
     val nextAcc = accReg + l1PartialSum
     when (l1TileDone) {
       accReg := nextAcc
-      state := sL1QuantMul
+      state := sL1Quant
     } .otherwise {
       accReg := nextAcc
       inIdx := inIdx + peLanes.U
     }
   }
 
-  when (state === sL1QuantMul) {
-    quantProductReg := constMultiplyShiftAdd(accReg, qmlp.l1Multiplier, 64)
-    state := sL1QuantRound
-  }
-
-  when (state === sL1QuantRound) {
-    quantRoundedReg := bankRoundShift(quantProductReg, qmlp.requantShift)
+  when (state === sL1Quant) {
+    quantReg := requantReluClamp(accReg, qmlp.l1Multiplier).asUInt(7, 0).asSInt
     state := sL1Write
   }
 
   when (state === sL1Write) {
-    l1OutVec(outIdx(5, 0)) := reluClamp8(quantRoundedReg).asUInt(7, 0).asSInt
+    l1OutVec(outIdx(5, 0)) := quantReg
     when (outIdx === (qmlp.l1Out - 1).U) {
       state := sL2Load
       outIdx := 0.U
@@ -346,25 +322,20 @@ class RadarAXISQMLP extends Module {
     val nextAcc = accReg + l2PartialSum
     when (l2TileDone) {
       accReg := nextAcc
-      state := sL2QuantMul
+      state := sL2Quant
     } .otherwise {
       accReg := nextAcc
       inIdx := inIdx + peLanes.U
     }
   }
 
-  when (state === sL2QuantMul) {
-    quantProductReg := constMultiplyShiftAdd(accReg, qmlp.l2Multiplier, 64)
-    state := sL2QuantRound
-  }
-
-  when (state === sL2QuantRound) {
-    quantRoundedReg := bankRoundShift(quantProductReg, qmlp.requantShift)
+  when (state === sL2Quant) {
+    quantReg := requantReluClamp(accReg, qmlp.l2Multiplier).asUInt(7, 0).asSInt
     state := sL2Write
   }
 
   when (state === sL2Write) {
-    l2OutVec(outIdx(4, 0)) := reluClamp8(quantRoundedReg).asUInt(7, 0).asSInt
+    l2OutVec(outIdx(4, 0)) := quantReg
     when (outIdx === (qmlp.l2Out - 1).U) {
       state := sL3Load
       outIdx := 0.U

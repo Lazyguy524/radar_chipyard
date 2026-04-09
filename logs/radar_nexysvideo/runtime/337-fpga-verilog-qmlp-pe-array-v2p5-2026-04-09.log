@@ -1,0 +1,593 @@
+Running with RISCV=/home/soooarr/chipyard/.conda-env/riscv-tools
+/home/soooarr/chipyard/common.mk:119: warning: overriding recipe for target '&'
+/home/soooarr/chipyard/common.mk:113: warning: ignoring old recipe for target '&'
+/home/soooarr/chipyard/common.mk:127: warning: overriding recipe for target '&'
+/home/soooarr/chipyard/common.mk:119: warning: ignoring old recipe for target '&'
+/home/soooarr/chipyard/common.mk:155: warning: overriding recipe for target '&'
+/home/soooarr/chipyard/common.mk:127: warning: ignoring old recipe for target '&'
+/home/soooarr/chipyard/common.mk:186: warning: overriding recipe for target '&'
+/home/soooarr/chipyard/common.mk:155: warning: ignoring old recipe for target '&'
+/home/soooarr/chipyard/common.mk:207: warning: overriding recipe for target '&'
+/home/soooarr/chipyard/common.mk:186: warning: ignoring old recipe for target '&'
+/home/soooarr/chipyard/common.mk:226: warning: overriding recipe for target '&'
+/home/soooarr/chipyard/common.mk:207: warning: ignoring old recipe for target '&'
+/home/soooarr/chipyard/common.mk:237: warning: overriding recipe for target '&'
+/home/soooarr/chipyard/common.mk:226: warning: ignoring old recipe for target '&'
+/home/soooarr/chipyard/common.mk:242: warning: overriding recipe for target '&'
+/home/soooarr/chipyard/common.mk:237: warning: ignoring old recipe for target '&'
+rm -rf /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral
+(set -o pipefail && firtool \
+	--format=fir \
+	--export-module-hierarchy \
+	--verify-each=true \
+	--warn-on-unprocessed-annotations \
+	--disable-annotation-classless \
+	--disable-annotation-unknown \
+	--mlir-timing \
+	--lowering-options=emittedLineLength=2048,noAlwaysComb,disallowLocalVariables,verifLabels,disallowPortDeclSharing,locationInfoStyle=wrapInAtSquareBracket \
+	--repl-seq-mem \
+	--repl-seq-mem-file=/home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig.mems.conf \
+	--annotation-file=/home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig.appended.anno.json \
+	--split-verilog \
+	-o /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral \
+	/home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig.fir |& tee /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig.firtool.log)
+generators/rocket-chip/src/main/scala/tilelink/ToAXI4.scala:103:9: warning: module contains 32 printf-encoded verification operation(s), which are deprecated and will be removed in the future
+generators/rocket-chip/src/main/scala/tilelink/ToAXI4.scala:280:16: note: example printf here, will just be a printf in the future
+generators/rocket-chip/src/main/scala/tilelink/ToAXI4.scala:103:9: note: For more information, see https://github.com/llvm/circt/issues/6970
+generators/rocket-chip/src/main/scala/amba/axi4/Deinterleaver.scala:48:9: warning: module contains 16 printf-encoded verification operation(s), which are deprecated and will be removed in the future
+generators/rocket-chip/src/main/scala/amba/axi4/Deinterleaver.scala:104:20: note: example printf here, will just be a printf in the future
+generators/rocket-chip/src/main/scala/amba/axi4/Deinterleaver.scala:48:9: note: For more information, see https://github.com/llvm/circt/issues/6970
+generators/rocket-chip/src/main/scala/amba/axi4/UserYanker.scala:36:9: warning: module contains 2 printf-encoded verification operation(s), which are deprecated and will be removed in the future
+generators/rocket-chip/src/main/scala/amba/axi4/UserYanker.scala:69:14: note: example printf here, will just be a printf in the future
+generators/rocket-chip/src/main/scala/amba/axi4/UserYanker.scala:36:9: note: For more information, see https://github.com/llvm/circt/issues/6970
+generators/rocket-chip/src/main/scala/amba/axi4/Xbar.scala:60:9: warning: module contains 18 printf-encoded verification operation(s), which are deprecated and will be removed in the future
+generators/rocket-chip/src/main/scala/tilelink/Arbiter.scala:22:12: note: example printf here, will just be a printf in the future
+generators/rocket-chip/src/main/scala/amba/axi4/Xbar.scala:60:9: note: For more information, see https://github.com/llvm/circt/issues/6970
+generators/rocket-chip/src/main/scala/tilelink/Xbar.scala:74:9: warning: module contains 18 printf-encoded verification operation(s), which are deprecated and will be removed in the future
+generators/rocket-chip/src/main/scala/tilelink/Arbiter.scala:22:12: note: example printf here, will just be a printf in the future
+generators/rocket-chip/src/main/scala/tilelink/Xbar.scala:74:9: note: For more information, see https://github.com/llvm/circt/issues/6970
+generators/rocket-chip/src/main/scala/tilelink/RegionReplication.scala:45:9: warning: module contains 1 printf-encoded verification operation(s), which are deprecated and will be removed in the future
+generators/rocket-chip/src/main/scala/tilelink/RegionReplication.scala:54:14: note: example printf here, will just be a printf in the future
+generators/rocket-chip/src/main/scala/tilelink/RegionReplication.scala:45:9: note: For more information, see https://github.com/llvm/circt/issues/6970
+generators/rocket-chip/src/main/scala/amba/axi4/UserYanker.scala:36:9: warning: module contains 2 printf-encoded verification operation(s), which are deprecated and will be removed in the future
+generators/rocket-chip/src/main/scala/amba/axi4/UserYanker.scala:69:14: note: example printf here, will just be a printf in the future
+generators/rocket-chip/src/main/scala/amba/axi4/UserYanker.scala:36:9: note: For more information, see https://github.com/llvm/circt/issues/6970
+generators/rocket-chip/src/main/scala/amba/axi4/Deinterleaver.scala:48:9: warning: module contains 32 printf-encoded verification operation(s), which are deprecated and will be removed in the future
+generators/rocket-chip/src/main/scala/amba/axi4/Deinterleaver.scala:104:20: note: example printf here, will just be a printf in the future
+generators/rocket-chip/src/main/scala/amba/axi4/Deinterleaver.scala:48:9: note: For more information, see https://github.com/llvm/circt/issues/6970
+generators/rocket-chip/src/main/scala/tilelink/ToAXI4.scala:103:9: warning: module contains 40 printf-encoded verification operation(s), which are deprecated and will be removed in the future
+generators/rocket-chip/src/main/scala/tilelink/ToAXI4.scala:280:16: note: example printf here, will just be a printf in the future
+generators/rocket-chip/src/main/scala/tilelink/ToAXI4.scala:103:9: note: For more information, see https://github.com/llvm/circt/issues/6970
+generators/rocket-chip/src/main/scala/tilelink/AtomicAutomata.scala:36:9: warning: module contains 2 printf-encoded verification operation(s), which are deprecated and will be removed in the future
+generators/rocket-chip/src/main/scala/tilelink/Arbiter.scala:77:13: note: example printf here, will just be a printf in the future
+generators/rocket-chip/src/main/scala/tilelink/AtomicAutomata.scala:36:9: note: For more information, see https://github.com/llvm/circt/issues/6970
+generators/rocket-chip/src/main/scala/tilelink/Fragmenter.scala:92:9: warning: module contains 3 printf-encoded verification operation(s), which are deprecated and will be removed in the future
+generators/rocket-chip/src/main/scala/tilelink/Fragmenter.scala:214:16: note: example printf here, will just be a printf in the future
+generators/rocket-chip/src/main/scala/tilelink/Fragmenter.scala:92:9: note: For more information, see https://github.com/llvm/circt/issues/6970
+generators/rocket-chip/src/main/scala/tilelink/Xbar.scala:74:9: warning: module contains 3 printf-encoded verification operation(s), which are deprecated and will be removed in the future
+generators/rocket-chip/src/main/scala/tilelink/Arbiter.scala:22:12: note: example printf here, will just be a printf in the future
+generators/rocket-chip/src/main/scala/tilelink/Xbar.scala:74:9: note: For more information, see https://github.com/llvm/circt/issues/6970
+generators/testchipip/src/main/scala/tsi/TSIToTileLink.scala:36:7: warning: module contains 1 printf-encoded verification operation(s), which are deprecated and will be removed in the future
+generators/testchipip/src/main/scala/tsi/TSIToTileLink.scala:137:15: note: example printf here, will just be a printf in the future
+generators/testchipip/src/main/scala/tsi/TSIToTileLink.scala:36:7: note: For more information, see https://github.com/llvm/circt/issues/6970
+generators/testchipip/src/main/scala/uart/UARTToSerial.scala:8:7: warning: module contains 1 printf-encoded verification operation(s), which are deprecated and will be removed in the future
+generators/testchipip/src/main/scala/uart/UARTToSerial.scala:29:35: note: example printf here, will just be a printf in the future
+generators/testchipip/src/main/scala/uart/UARTToSerial.scala:8:7: note: For more information, see https://github.com/llvm/circt/issues/6970
+generators/rocket-chip/src/main/scala/tilelink/Xbar.scala:74:9: warning: module contains 3 printf-encoded verification operation(s), which are deprecated and will be removed in the future
+generators/rocket-chip/src/main/scala/tilelink/Arbiter.scala:22:12: note: example printf here, will just be a printf in the future
+generators/rocket-chip/src/main/scala/tilelink/Xbar.scala:74:9: note: For more information, see https://github.com/llvm/circt/issues/6970
+generators/rocket-chip/src/main/scala/tilelink/Xbar.scala:74:9: warning: module contains 3 printf-encoded verification operation(s), which are deprecated and will be removed in the future
+generators/rocket-chip/src/main/scala/tilelink/Arbiter.scala:22:12: note: example printf here, will just be a printf in the future
+generators/rocket-chip/src/main/scala/tilelink/Xbar.scala:74:9: note: For more information, see https://github.com/llvm/circt/issues/6970
+generators/rocket-chip/src/main/scala/tilelink/AtomicAutomata.scala:36:9: warning: module contains 2 printf-encoded verification operation(s), which are deprecated and will be removed in the future
+generators/rocket-chip/src/main/scala/tilelink/Arbiter.scala:77:13: note: example printf here, will just be a printf in the future
+generators/rocket-chip/src/main/scala/tilelink/AtomicAutomata.scala:36:9: note: For more information, see https://github.com/llvm/circt/issues/6970
+generators/rocket-chip/src/main/scala/devices/tilelink/Error.scala:21:9: warning: module contains 1 printf-encoded verification operation(s), which are deprecated and will be removed in the future
+generators/rocket-chip/src/main/scala/devices/tilelink/Error.scala:34:12: note: example printf here, will just be a printf in the future
+generators/rocket-chip/src/main/scala/devices/tilelink/Error.scala:21:9: note: For more information, see https://github.com/llvm/circt/issues/6970
+generators/rocket-chip/src/main/scala/tilelink/Fragmenter.scala:92:9: warning: module contains 3 printf-encoded verification operation(s), which are deprecated and will be removed in the future
+generators/rocket-chip/src/main/scala/tilelink/Fragmenter.scala:214:16: note: example printf here, will just be a printf in the future
+generators/rocket-chip/src/main/scala/tilelink/Fragmenter.scala:92:9: note: For more information, see https://github.com/llvm/circt/issues/6970
+generators/rocket-chip/src/main/scala/tilelink/Fragmenter.scala:92:9: warning: module contains 3 printf-encoded verification operation(s), which are deprecated and will be removed in the future
+generators/rocket-chip/src/main/scala/tilelink/Fragmenter.scala:214:16: note: example printf here, will just be a printf in the future
+generators/rocket-chip/src/main/scala/tilelink/Fragmenter.scala:92:9: note: For more information, see https://github.com/llvm/circt/issues/6970
+generators/rocket-chip/src/main/scala/tilelink/Fragmenter.scala:92:9: warning: module contains 3 printf-encoded verification operation(s), which are deprecated and will be removed in the future
+generators/rocket-chip/src/main/scala/tilelink/Fragmenter.scala:214:16: note: example printf here, will just be a printf in the future
+generators/rocket-chip/src/main/scala/tilelink/Fragmenter.scala:92:9: note: For more information, see https://github.com/llvm/circt/issues/6970
+generators/rocket-chip/src/main/scala/tilelink/Xbar.scala:74:9: warning: module contains 3 printf-encoded verification operation(s), which are deprecated and will be removed in the future
+generators/rocket-chip/src/main/scala/tilelink/Arbiter.scala:22:12: note: example printf here, will just be a printf in the future
+generators/rocket-chip/src/main/scala/tilelink/Xbar.scala:74:9: note: For more information, see https://github.com/llvm/circt/issues/6970
+generators/rocket-chip/src/main/scala/tilelink/Broadcast.scala:406:7: warning: module contains 4 printf-encoded verification operation(s), which are deprecated and will be removed in the future
+generators/rocket-chip/src/main/scala/tilelink/Broadcast.scala:446:12: note: example printf here, will just be a printf in the future
+generators/rocket-chip/src/main/scala/tilelink/Broadcast.scala:406:7: note: For more information, see https://github.com/llvm/circt/issues/6970
+generators/rocket-chip/src/main/scala/tilelink/Broadcast.scala:406:7: warning: module contains 4 printf-encoded verification operation(s), which are deprecated and will be removed in the future
+generators/rocket-chip/src/main/scala/tilelink/Broadcast.scala:446:12: note: example printf here, will just be a printf in the future
+generators/rocket-chip/src/main/scala/tilelink/Broadcast.scala:406:7: note: For more information, see https://github.com/llvm/circt/issues/6970
+generators/rocket-chip/src/main/scala/tilelink/Broadcast.scala:406:7: warning: module contains 4 printf-encoded verification operation(s), which are deprecated and will be removed in the future
+generators/rocket-chip/src/main/scala/tilelink/Broadcast.scala:446:12: note: example printf here, will just be a printf in the future
+generators/rocket-chip/src/main/scala/tilelink/Broadcast.scala:406:7: note: For more information, see https://github.com/llvm/circt/issues/6970
+generators/rocket-chip/src/main/scala/tilelink/Broadcast.scala:406:7: warning: module contains 4 printf-encoded verification operation(s), which are deprecated and will be removed in the future
+generators/rocket-chip/src/main/scala/tilelink/Broadcast.scala:446:12: note: example printf here, will just be a printf in the future
+generators/rocket-chip/src/main/scala/tilelink/Broadcast.scala:406:7: note: For more information, see https://github.com/llvm/circt/issues/6970
+generators/rocket-chip/src/main/scala/tilelink/Broadcast.scala:90:9: warning: module contains 6 printf-encoded verification operation(s), which are deprecated and will be removed in the future
+generators/rocket-chip/src/main/scala/tilelink/Broadcast.scala:132:14: note: example printf here, will just be a printf in the future
+generators/rocket-chip/src/main/scala/tilelink/Broadcast.scala:90:9: note: For more information, see https://github.com/llvm/circt/issues/6970
+generators/rocket-chip/src/main/scala/tilelink/Xbar.scala:74:9: warning: module contains 3 printf-encoded verification operation(s), which are deprecated and will be removed in the future
+generators/rocket-chip/src/main/scala/tilelink/Arbiter.scala:22:12: note: example printf here, will just be a printf in the future
+generators/rocket-chip/src/main/scala/tilelink/Xbar.scala:74:9: note: For more information, see https://github.com/llvm/circt/issues/6970
+generators/rocket-chip/src/main/scala/rocket/DCache.scala:101:7: warning: module contains 10 printf-encoded verification operation(s), which are deprecated and will be removed in the future
+generators/rocket-chip/src/main/scala/rocket/DCache.scala:1186:11: note: example printf here, will just be a printf in the future
+generators/rocket-chip/src/main/scala/rocket/DCache.scala:101:7: note: For more information, see https://github.com/llvm/circt/issues/6970
+generators/rocket-chip/src/main/scala/rocket/ICache.scala:251:7: warning: module contains 2 printf-encoded verification operation(s), which are deprecated and will be removed in the future
+generators/rocket-chip/src/main/scala/rocket/ICache.scala:521:9: note: example printf here, will just be a printf in the future
+generators/rocket-chip/src/main/scala/rocket/ICache.scala:251:7: note: For more information, see https://github.com/llvm/circt/issues/6970
+generators/rocket-chip/src/main/scala/rocket/Frontend.scala:82:7: warning: module contains 2 printf-encoded verification operation(s), which are deprecated and will be removed in the future
+generators/rocket-chip/src/main/scala/rocket/Frontend.scala:96:9: note: example printf here, will just be a printf in the future
+generators/rocket-chip/src/main/scala/rocket/Frontend.scala:82:7: note: For more information, see https://github.com/llvm/circt/issues/6970
+generators/rocket-chip/src/main/scala/rocket/PTW.scala:219:7: warning: module contains 5 printf-encoded verification operation(s), which are deprecated and will be removed in the future
+generators/rocket-chip/src/main/scala/rocket/PTW.scala:395:9: note: example printf here, will just be a printf in the future
+generators/rocket-chip/src/main/scala/rocket/PTW.scala:219:7: note: For more information, see https://github.com/llvm/circt/issues/6970
+generators/rocket-chip/src/main/scala/rocket/IBuf.scala:21:7: warning: module contains 1 printf-encoded verification operation(s), which are deprecated and will be removed in the future
+generators/rocket-chip/src/main/scala/rocket/IBuf.scala:79:9: note: example printf here, will just be a printf in the future
+generators/rocket-chip/src/main/scala/rocket/IBuf.scala:21:7: note: For more information, see https://github.com/llvm/circt/issues/6970
+generators/rocket-chip/src/main/scala/rocket/CSR.scala:377:7: warning: module contains 3 printf-encoded verification operation(s), which are deprecated and will be removed in the future
+generators/rocket-chip/src/main/scala/rocket/CSR.scala:1021:9: note: example printf here, will just be a printf in the future
+generators/rocket-chip/src/main/scala/rocket/CSR.scala:377:7: note: For more information, see https://github.com/llvm/circt/issues/6970
+generators/rocket-chip/src/main/scala/util/PlusArg.scala:58:7: warning: module contains 1 printf-encoded verification operation(s), which are deprecated and will be removed in the future
+generators/rocket-chip/src/main/scala/util/PlusArg.scala:64:12: note: example printf here, will just be a printf in the future
+generators/rocket-chip/src/main/scala/util/PlusArg.scala:58:7: note: For more information, see https://github.com/llvm/circt/issues/6970
+generators/rocket-chip/src/main/scala/rocket/RocketCore.scala:150:7: warning: module contains 1 printf-encoded verification operation(s), which are deprecated and will be removed in the future
+generators/rocket-chip/src/main/scala/rocket/RocketCore.scala:842:11: note: example printf here, will just be a printf in the future
+generators/rocket-chip/src/main/scala/rocket/RocketCore.scala:150:7: note: For more information, see https://github.com/llvm/circt/issues/6970
+generators/rocket-chip/src/main/scala/devices/tilelink/Plic.scala:132:9: warning: module contains 3 printf-encoded verification operation(s), which are deprecated and will be removed in the future
+generators/rocket-chip/src/main/scala/devices/tilelink/Plic.scala:251:11: note: example printf here, will just be a printf in the future
+generators/rocket-chip/src/main/scala/devices/tilelink/Plic.scala:132:9: note: For more information, see https://github.com/llvm/circt/issues/6970
+generators/rocket-chip/src/main/scala/tilelink/Xbar.scala:74:9: warning: module contains 3 printf-encoded verification operation(s), which are deprecated and will be removed in the future
+generators/rocket-chip/src/main/scala/tilelink/Arbiter.scala:22:12: note: example printf here, will just be a printf in the future
+generators/rocket-chip/src/main/scala/tilelink/Xbar.scala:74:9: note: For more information, see https://github.com/llvm/circt/issues/6970
+generators/rocket-chip/src/main/scala/tilelink/Fragmenter.scala:92:9: warning: module contains 3 printf-encoded verification operation(s), which are deprecated and will be removed in the future
+generators/rocket-chip/src/main/scala/tilelink/Fragmenter.scala:214:16: note: example printf here, will just be a printf in the future
+generators/rocket-chip/src/main/scala/tilelink/Fragmenter.scala:92:9: note: For more information, see https://github.com/llvm/circt/issues/6970
+generators/rocket-chip/src/main/scala/tilelink/Fragmenter.scala:92:9: warning: module contains 3 printf-encoded verification operation(s), which are deprecated and will be removed in the future
+generators/rocket-chip/src/main/scala/tilelink/Fragmenter.scala:214:16: note: example printf here, will just be a printf in the future
+generators/rocket-chip/src/main/scala/tilelink/Fragmenter.scala:92:9: note: For more information, see https://github.com/llvm/circt/issues/6970
+generators/rocket-chip/src/main/scala/prci/ClockDomain.scala:14:9: warning: unprocessed annotation:'freechips.rocketchip.util.RegFieldDescMappingAnnotation' still remaining after LowerToHW
+generators/rocket-chip/src/main/scala/tile/RocketTile.scala:141:7: warning: unprocessed annotation:'freechips.rocketchip.util.ParamsAnnotation' still remaining after LowerToHW
+generators/chipyard/src/main/scala/DigitalTop.scala:48:7: warning: unprocessed annotation:'freechips.rocketchip.util.AddressMapAnnotation' still remaining after LowerToHW
+generators/rocket-chip/src/main/scala/util/DescribedSRAM.scala:17:26: warning: unprocessed annotation:'freechips.rocketchip.util.SRAMAnnotation' still remaining after LowerToHW
+===-------------------------------------------------------------------------===
+                         ... Execution time report ...
+===-------------------------------------------------------------------------===
+  Total Execution Time: 3.1234 seconds
+
+  ----User Time----  ----Wall Time----  ----Name----
+    0.3292 (  3.9%)    0.3292 ( 10.5%)  FIR Parser
+    0.0270 (  0.3%)    0.0270 (  0.9%)    Parse annotations
+    0.0000 (  0.0%)    0.0000 (  0.0%)    Parse OMIR
+    0.2548 (  3.0%)    0.2548 (  8.2%)    Parse modules
+    0.0378 (  0.4%)    0.0378 (  1.2%)    Verify circuit
+    5.9333 ( 69.7%)    1.8096 ( 57.9%)  'firrtl.circuit' Pipeline
+    0.0038 (  0.0%)    0.0038 (  0.1%)    LowerOpenAggs
+    0.0454 (  0.5%)    0.0454 (  1.5%)    ResolvePaths
+    0.0030 (  0.0%)    0.0030 (  0.1%)      (A) circt::firrtl::InstanceGraph
+    0.0406 (  0.5%)    0.0406 (  1.3%)    LowerFIRRTLAnnotations
+    0.0025 (  0.0%)    0.0025 (  0.1%)    LowerIntmodules
+    0.0025 (  0.0%)    0.0025 (  0.1%)      (A) circt::firrtl::InstanceGraph
+    0.1902 (  2.2%)    0.0124 (  0.4%)    'firrtl.module' Pipeline
+    0.0975 (  1.1%)    0.0077 (  0.2%)      LowerIntrinsics
+    0.0580 (  0.7%)    0.0580 (  1.9%)    LowerSignatures
+    0.0000 (  0.0%)    0.0000 (  0.0%)    InjectDUTHierarchy
+    1.4351 ( 16.9%)    0.1266 (  4.1%)    'firrtl.module' Pipeline
+    0.2183 (  2.6%)    0.0199 (  0.6%)      PassiveWires
+    0.5153 (  6.1%)    0.0517 (  1.7%)      DropName
+    0.3173 (  3.7%)    0.0277 (  0.9%)      CSE
+    0.0192 (  0.2%)    0.0019 (  0.1%)        (A) DominanceInfo
+    0.0836 (  1.0%)    0.0100 (  0.3%)      LowerCHIRRTLPass
+    0.1618 (  1.9%)    0.0143 (  0.5%)      LowerMatches
+    0.0910 (  1.1%)    0.0910 (  2.9%)    InferWidths
+    0.0001 (  0.0%)    0.0001 (  0.0%)      (A) SymbolTable
+    0.0024 (  0.0%)    0.0024 (  0.1%)      (A) circt::hw::InnerSymbolTableCollection
+    0.0354 (  0.4%)    0.0354 (  1.1%)    MemToRegOfVec
+    0.0711 (  0.8%)    0.0711 (  2.3%)    InferResets
+    0.0033 (  0.0%)    0.0033 (  0.1%)      (A) circt::firrtl::InstanceGraph
+    0.0375 (  0.4%)    0.0375 (  1.2%)    DropConst
+    0.0009 (  0.0%)    0.0009 (  0.0%)    HoistPassthrough
+    0.0770 (  0.9%)    0.0770 (  2.5%)    Dedup
+    0.0001 (  0.0%)    0.0001 (  0.0%)      (A) circt::firrtl::NLATable
+    0.0001 (  0.0%)    0.0001 (  0.0%)      (A) SymbolTable
+    0.1448 (  1.7%)    0.0149 (  0.5%)    'firrtl.module' Pipeline
+    0.1360 (  1.6%)    0.0148 (  0.5%)      FlattenMemory
+    0.2044 (  2.4%)    0.2044 (  6.5%)    LowerFIRRTLTypes
+    0.0000 (  0.0%)    0.0000 (  0.0%)      (A) SymbolTable
+    0.2987 (  3.5%)    0.0387 (  1.2%)    'any' Pipeline
+    0.2927 (  3.4%)    0.0385 (  1.2%)      ExpandWhens
+    0.6198 (  7.3%)    0.0659 (  2.1%)    'firrtl.module' Pipeline
+    0.2199 (  2.6%)    0.0268 (  0.9%)      SFCCompat
+    0.1903 (  2.2%)    0.0372 (  1.2%)      LayerMerge
+    0.1838 (  2.2%)    0.0204 (  0.7%)      LayerSink
+    0.0047 (  0.1%)    0.0036 (  0.1%)        (A) DominanceInfo
+    0.0947 (  1.1%)    0.0947 (  3.0%)    LowerLayers
+    0.1429 (  1.7%)    0.1429 (  4.6%)    Inliner
+    0.0000 (  0.0%)    0.0000 (  0.0%)      (A) SymbolTable
+    0.2359 (  2.8%)    0.0285 (  0.9%)    'firrtl.module' Pipeline
+    0.2326 (  2.7%)    0.0284 (  0.9%)      RandomizeRegisterInit
+    0.1060 (  1.2%)    0.1060 (  3.4%)    CheckCombLoops
+    0.0028 (  0.0%)    0.0028 (  0.1%)      (A) circt::firrtl::InstanceGraph
+    1.1991 ( 14.1%)    0.1189 (  3.8%)    'firrtl.module' Pipeline
+    1.1239 ( 13.2%)    0.1119 (  3.6%)      Canonicalizer
+    0.0714 (  0.8%)    0.0094 (  0.3%)      InferReadWrite
+    0.0377 (  0.4%)    0.0377 (  1.2%)    LowerMemory
+    0.0021 (  0.0%)    0.0021 (  0.1%)      (A) circt::firrtl::InstanceGraph
+    0.0001 (  0.0%)    0.0001 (  0.0%)      (A) SymbolTable
+    0.0262 (  0.3%)    0.0262 (  0.8%)    PrefixModules
+    0.0017 (  0.0%)    0.0017 (  0.1%)      (A) circt::firrtl::InstanceGraph
+    0.0000 (  0.0%)    0.0000 (  0.0%)      (A) circt::firrtl::NLATable
+    0.1470 (  1.7%)    0.1470 (  4.7%)    IMConstProp
+    0.0028 (  0.0%)    0.0028 (  0.1%)    HoistPassthrough
+    0.0016 (  0.0%)    0.0016 (  0.1%)      (A) circt::firrtl::InstanceGraph
+    0.1146 (  1.3%)    0.1146 (  3.7%)  IMDeadCodeElim
+    0.0015 (  0.0%)    0.0015 (  0.0%)    (A) circt::firrtl::InstanceGraph
+    0.0000 (  0.0%)    0.0000 (  0.0%)    (A) SymbolTable
+    0.0018 (  0.0%)    0.0018 (  0.1%)    (A) circt::hw::InnerSymbolTableCollection
+    0.0015 (  0.0%)    0.0015 (  0.0%)  'firrtl.circuit' Pipeline
+    0.0015 (  0.0%)    0.0015 (  0.0%)    AddSeqMemPorts
+    0.0013 (  0.0%)    0.0013 (  0.0%)      (A) circt::firrtl::InstanceGraph
+    0.0267 (  0.3%)    0.0267 (  0.9%)  CreateSiFiveMetadata
+    0.0012 (  0.0%)    0.0012 (  0.0%)    (A) circt::firrtl::InstanceGraph
+    0.0810 (  1.0%)    0.0810 (  2.6%)  'firrtl.circuit' Pipeline
+    0.0068 (  0.1%)    0.0068 (  0.2%)    ExtractInstances
+    0.0012 (  0.0%)    0.0012 (  0.0%)      (A) circt::firrtl::InstanceGraph
+    0.0001 (  0.0%)    0.0001 (  0.0%)      (A) circt::firrtl::NLATable
+    0.0000 (  0.0%)    0.0000 (  0.0%)    GrandCentral
+    0.0213 (  0.3%)    0.0213 (  0.7%)    BlackBoxReader
+    0.0529 (  0.6%)    0.0529 (  1.7%)    SymbolDCE
+    0.0415 (  0.5%)    0.0415 (  1.3%)  InnerSymbolDCE
+    0.3291 (  3.9%)    0.1273 (  4.1%)  'firrtl.circuit' Pipeline
+    0.2018 (  2.4%)    0.0178 (  0.6%)    'firrtl.module' Pipeline
+    0.1444 (  1.7%)    0.0155 (  0.5%)      Canonicalizer
+    0.0460 (  0.5%)    0.0045 (  0.1%)      RegisterOptimizer
+    0.0971 (  1.1%)    0.0971 (  3.1%)    IMConstProp
+    0.0015 (  0.0%)    0.0015 (  0.0%)      (A) circt::firrtl::InstanceGraph
+    0.0882 (  1.0%)    0.0882 (  2.8%)  IMDeadCodeElim
+    0.0013 (  0.0%)    0.0013 (  0.0%)    (A) circt::firrtl::InstanceGraph
+    0.0000 (  0.0%)    0.0000 (  0.0%)    (A) SymbolTable
+    0.0012 (  0.0%)    0.0012 (  0.0%)    (A) circt::hw::InnerSymbolTableCollection
+    0.3174 (  3.7%)    0.1364 (  4.4%)  'firrtl.circuit' Pipeline
+    0.0000 (  0.0%)    0.0000 (  0.0%)    EmitOMIR
+    0.1429 (  1.7%)    0.0170 (  0.5%)    'firrtl.module' Pipeline
+    0.0159 (  0.2%)    0.0016 (  0.1%)      MergeConnections
+    0.1129 (  1.3%)    0.0152 (  0.5%)      Vectorization
+    0.0085 (  0.1%)    0.0085 (  0.3%)    ResolveTraces
+    0.0000 (  0.0%)    0.0000 (  0.0%)      (A) circt::firrtl::NLATable
+    0.0017 (  0.0%)    0.0017 (  0.1%)      (A) circt::hw::InnerSymbolTableCollection
+    0.0302 (  0.4%)    0.0302 (  1.0%)    LowerXMR
+    0.0015 (  0.0%)    0.0015 (  0.0%)      (A) circt::firrtl::InstanceGraph
+    0.0476 (  0.6%)    0.0476 (  1.5%)    LowerClasses
+    0.0014 (  0.0%)    0.0014 (  0.0%)      (A) circt::firrtl::InstanceGraph
+    0.0000 (  0.0%)    0.0000 (  0.0%)      (A) SymbolTable
+    0.0013 (  0.0%)    0.0013 (  0.0%)    VerifyObjectFields
+    0.0000 (  0.0%)    0.0000 (  0.0%)      (A) SymbolTable
+    0.0380 (  0.4%)    0.0027 (  0.1%)    'firrtl.module' Pipeline
+    0.0173 (  0.2%)    0.0018 (  0.1%)      Lint
+    0.0947 (  1.1%)    0.0947 (  3.0%)  LowerFIRRTLToHW
+    0.0014 (  0.0%)    0.0014 (  0.0%)    (A) circt::firrtl::InstanceGraph
+    0.0000 (  0.0%)    0.0000 (  0.0%)    (A) circt::firrtl::NLATable
+    0.4129 (  4.9%)    0.0339 (  1.1%)  'hw.module' Pipeline
+    0.0538 (  0.6%)    0.0091 (  0.3%)    CSE
+    0.0013 (  0.0%)    0.0002 (  0.0%)      (A) DominanceInfo
+    0.3533 (  4.2%)    0.0267 (  0.9%)    Canonicalizer
+    0.0014 (  0.0%)    0.0014 (  0.0%)  VerifyInnerRefNamespace
+    0.0029 (  0.0%)    0.0029 (  0.1%)  VerifyObjectFields
+    0.0000 (  0.0%)    0.0000 (  0.0%)    (A) SymbolTable
+    0.0023 (  0.0%)    0.0023 (  0.1%)  ExternalizeClockGate
+    0.0067 (  0.1%)    0.0067 (  0.2%)  LowerSimToSV
+    0.0330 (  0.4%)    0.0330 (  1.1%)  LowerSeqToSV
+    0.0463 (  0.5%)    0.0035 (  0.1%)  'hw.module' Pipeline
+    0.0366 (  0.4%)    0.0033 (  0.1%)    LowerVerifToSV
+    0.0092 (  0.1%)    0.0092 (  0.3%)  HWMemSimImpl
+    0.2292 (  2.7%)    0.0185 (  0.6%)  'hw.module' Pipeline
+    0.0749 (  0.9%)    0.0074 (  0.2%)    CSE
+    0.0079 (  0.1%)    0.0012 (  0.0%)      (A) DominanceInfo
+    0.0736 (  0.9%)    0.0070 (  0.2%)    Canonicalizer
+    0.0359 (  0.4%)    0.0031 (  0.1%)    CSE
+    0.0058 (  0.1%)    0.0019 (  0.1%)      (A) DominanceInfo
+    0.0144 (  0.2%)    0.0015 (  0.0%)    HWCleanup
+    0.0015 (  0.0%)    0.0015 (  0.0%)  VerifyInnerRefNamespace
+    0.0030 (  0.0%)    0.0030 (  0.1%)  VerifyObjectFields
+    0.0000 (  0.0%)    0.0000 (  0.0%)    (A) SymbolTable
+    0.0754 (  0.9%)    0.0054 (  0.2%)  'hw.module' Pipeline
+    0.0140 (  0.2%)    0.0017 (  0.1%)    HWLegalizeModules
+    0.0345 (  0.4%)    0.0036 (  0.1%)    PrettifyVerilog
+    0.0121 (  0.1%)    0.0121 (  0.4%)  StripDebugInfoWithPred
+    0.0102 (  0.1%)    0.0102 (  0.3%)  HWExportModuleHierarchy
+    0.0000 (  0.0%)    0.0000 (  0.0%)    (A) SymbolTable
+    0.0022 (  0.0%)    0.0022 (  0.1%)  VerifyInnerRefNamespace
+    0.0013 (  0.0%)    0.0013 (  0.0%)  VerifyObjectFields
+    0.0813 (  1.0%)    0.0813 (  2.6%)  ExportSplitVerilog
+    0.1487 (  1.7%)    0.0318 (  1.0%)  'builtin.module' Pipeline
+    0.0131 (  0.2%)    0.0131 (  0.4%)    HWLowerInstanceChoices
+    0.1169 (  1.4%)    0.0107 (  0.3%)    'hw.module' Pipeline
+    0.1114 (  1.3%)    0.0106 (  0.3%)      PrepareForEmission
+   -0.0145 ( -0.2%)   -0.0145 ( -0.5%)  Rest
+    8.5106 (100.0%)    3.1234 (100.0%)  Total
+sed -i 's/.*/& /' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig.mems.conf # need trailing space for SFC macrocompiler
+touch /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/firrtl_black_box_resource_files.f # if there are no BB's then the file might not be generated, instead always generate it
+/home/soooarr/chipyard/scripts/uniquify-module-names.py \
+	--model-hier-json /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/model_module_hierarchy.json \
+	--top-hier-json /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/top_module_hierarchy.json \
+	--in-all-filelist /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/filelist.f \
+	--in-bb-filelist /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/firrtl_black_box_resource_files.f \
+	--dut ChipTop \
+	--model NexysVideoHarness \
+	--target-dir /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral \
+	--out-dut-filelist /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig.top.f \
+	--out-model-filelist /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig.model.f \
+	--out-model-hier-json /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/model_module_hierarchy.uniquified.json \
+	--gcpath /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral
+sed -i 's/module\( \+\)plusarg_reader/module\1plusarg_reader_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/plusarg_reader_NexysVideoHarness_UNIQUIFIED.v
+sed -i 's/\( \*\)plusarg_reader\( \+\)/\1plusarg_reader_NexysVideoHarness_UNIQUIFIED\2/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/NexysVideoHarness.sv
+sed -i 's/module\( \+\)ResetCatchAndSync_d3/module\1ResetCatchAndSync_d3_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/ResetCatchAndSync_d3_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/\( \*\)ResetCatchAndSync_d3\( \+\)/\1ResetCatchAndSync_d3_NexysVideoHarness_UNIQUIFIED\2/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/NexysVideoHarness.sv
+sed -i 's/module\( \+\)ResetCatchAndSync_d3/module\1ResetCatchAndSync_d3_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/ResetCatchAndSync_d3_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/\( \*\)ResetCatchAndSync_d3\( \+\)/\1ResetCatchAndSync_d3_NexysVideoHarness_UNIQUIFIED\2/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/ResetWrangler.sv
+sed -i 's/module\( \+\)ResetCatchAndSync_d3/module\1ResetCatchAndSync_d3_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/ResetCatchAndSync_d3_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)ResetCatchAndSync_d3/module\1ResetCatchAndSync_d3_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/ResetCatchAndSync_d3_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)ResetCatchAndSync_d3/module\1ResetCatchAndSync_d3_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/ResetCatchAndSync_d3_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)TLBuffer_a32d64s4k1z3u/module\1TLBuffer_a32d64s4k1z3u_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/TLBuffer_a32d64s4k1z3u_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/\( \*\)TLBuffer_a32d64s4k1z3u\( \+\)/\1TLBuffer_a32d64s4k1z3u_NexysVideoHarness_UNIQUIFIED\2/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/XilinxNexysVideoMIG.sv
+sed -i 's/module\( \+\)AsyncResetSynchronizerShiftReg_w1_d3_i0/module\1AsyncResetSynchronizerShiftReg_w1_d3_i0_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncResetSynchronizerShiftReg_w1_d3_i0_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/\( \*\)AsyncResetSynchronizerShiftReg_w1_d3_i0\( \+\)/\1AsyncResetSynchronizerShiftReg_w1_d3_i0_NexysVideoHarness_UNIQUIFIED\2/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/ResetCatchAndSync_d3_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)AsyncResetSynchronizerShiftReg_w1_d3_i0/module\1AsyncResetSynchronizerShiftReg_w1_d3_i0_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncResetSynchronizerShiftReg_w1_d3_i0_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)AsyncResetSynchronizerShiftReg_w1_d3_i0/module\1AsyncResetSynchronizerShiftReg_w1_d3_i0_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncResetSynchronizerShiftReg_w1_d3_i0_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)AsyncResetSynchronizerShiftReg_w1_d3_i0/module\1AsyncResetSynchronizerShiftReg_w1_d3_i0_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncResetSynchronizerShiftReg_w1_d3_i0_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)AsyncResetSynchronizerShiftReg_w1_d3_i0/module\1AsyncResetSynchronizerShiftReg_w1_d3_i0_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncResetSynchronizerShiftReg_w1_d3_i0_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)Queue2_TLBundleA_a32d64s4k1z3u/module\1Queue2_TLBundleA_a32d64s4k1z3u_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/Queue2_TLBundleA_a32d64s4k1z3u_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/\( \*\)Queue2_TLBundleA_a32d64s4k1z3u\( \+\)/\1Queue2_TLBundleA_a32d64s4k1z3u_NexysVideoHarness_UNIQUIFIED\2/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/TLBuffer_a32d64s4k1z3u_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)Queue2_TLBundleD_a32d64s4k1z3u/module\1Queue2_TLBundleD_a32d64s4k1z3u_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/Queue2_TLBundleD_a32d64s4k1z3u_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/\( \*\)Queue2_TLBundleD_a32d64s4k1z3u\( \+\)/\1Queue2_TLBundleD_a32d64s4k1z3u_NexysVideoHarness_UNIQUIFIED\2/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/TLBuffer_a32d64s4k1z3u_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)Queue1_AXI4BundleW/module\1Queue1_AXI4BundleW_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/Queue1_AXI4BundleW_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/\( \*\)Queue1_AXI4BundleW\( \+\)/\1Queue1_AXI4BundleW_NexysVideoHarness_UNIQUIFIED\2/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/TLToAXI4.sv
+sed -i 's/module\( \+\)Queue2_AXI4BundleW/module\1Queue2_AXI4BundleW_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/Queue2_AXI4BundleW_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/\( \*\)Queue2_AXI4BundleW\( \+\)/\1Queue2_AXI4BundleW_NexysVideoHarness_UNIQUIFIED\2/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AXI4Buffer.sv
+sed -i 's/module\( \+\)Queue2_AXI4BundleB/module\1Queue2_AXI4BundleB_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/Queue2_AXI4BundleB_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/\( \*\)Queue2_AXI4BundleB\( \+\)/\1Queue2_AXI4BundleB_NexysVideoHarness_UNIQUIFIED\2/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AXI4Buffer.sv
+sed -i 's/module\( \+\)Queue2_AXI4BundleR/module\1Queue2_AXI4BundleR_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/Queue2_AXI4BundleR_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/\( \*\)Queue2_AXI4BundleR\( \+\)/\1Queue2_AXI4BundleR_NexysVideoHarness_UNIQUIFIED\2/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AXI4Buffer.sv
+sed -i 's/module\( \+\)AsyncResetSynchronizerPrimitiveShiftReg_d3_i0/module\1AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/\( \*\)AsyncResetSynchronizerPrimitiveShiftReg_d3_i0\( \+\)/\1AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED\2/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncResetSynchronizerShiftReg_w1_d3_i0_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)AsyncResetSynchronizerPrimitiveShiftReg_d3_i0/module\1AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)AsyncResetSynchronizerPrimitiveShiftReg_d3_i0/module\1AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)AsyncResetSynchronizerPrimitiveShiftReg_d3_i0/module\1AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)AsyncResetSynchronizerPrimitiveShiftReg_d3_i0/module\1AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)ram_2x118/module\1ram_2x118_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/ram_2x118_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/\( \*\)ram_2x118\( \+\)/\1ram_2x118_NexysVideoHarness_UNIQUIFIED\2/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/Queue2_TLBundleA_a32d64s4k1z3u_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)ram_2x79/module\1ram_2x79_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/ram_2x79_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/\( \*\)ram_2x79\( \+\)/\1ram_2x79_NexysVideoHarness_UNIQUIFIED\2/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/Queue2_TLBundleD_a32d64s4k1z3u_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)AsyncResetSynchronizerShiftReg_w4_d3_i0/module\1AsyncResetSynchronizerShiftReg_w4_d3_i0_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncResetSynchronizerShiftReg_w4_d3_i0_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/\( \*\)AsyncResetSynchronizerShiftReg_w4_d3_i0\( \+\)/\1AsyncResetSynchronizerShiftReg_w4_d3_i0_NexysVideoHarness_UNIQUIFIED\2/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncQueueSource_AXI4BundleAR.sv
+sed -i 's/module\( \+\)AsyncValidSync/module\1AsyncValidSync_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncValidSync_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/\( \*\)AsyncValidSync\( \+\)/\1AsyncValidSync_NexysVideoHarness_UNIQUIFIED\2/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncQueueSource_AXI4BundleAR.sv
+sed -i 's/module\( \+\)AsyncValidSync/module\1AsyncValidSync_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncValidSync_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)AsyncValidSync/module\1AsyncValidSync_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncValidSync_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)AsyncValidSync/module\1AsyncValidSync_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncValidSync_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)AsyncResetSynchronizerShiftReg_w4_d3_i0/module\1AsyncResetSynchronizerShiftReg_w4_d3_i0_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncResetSynchronizerShiftReg_w4_d3_i0_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/\( \*\)AsyncResetSynchronizerShiftReg_w4_d3_i0\( \+\)/\1AsyncResetSynchronizerShiftReg_w4_d3_i0_NexysVideoHarness_UNIQUIFIED\2/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncQueueSource_AXI4BundleAW.sv
+sed -i 's/module\( \+\)AsyncValidSync/module\1AsyncValidSync_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncValidSync_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/\( \*\)AsyncValidSync\( \+\)/\1AsyncValidSync_NexysVideoHarness_UNIQUIFIED\2/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncQueueSource_AXI4BundleAW.sv
+sed -i 's/module\( \+\)AsyncValidSync/module\1AsyncValidSync_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncValidSync_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)AsyncValidSync/module\1AsyncValidSync_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncValidSync_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)AsyncValidSync/module\1AsyncValidSync_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncValidSync_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)AsyncResetSynchronizerShiftReg_w4_d3_i0/module\1AsyncResetSynchronizerShiftReg_w4_d3_i0_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncResetSynchronizerShiftReg_w4_d3_i0_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/\( \*\)AsyncResetSynchronizerShiftReg_w4_d3_i0\( \+\)/\1AsyncResetSynchronizerShiftReg_w4_d3_i0_NexysVideoHarness_UNIQUIFIED\2/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncQueueSource_AXI4BundleW.sv
+sed -i 's/module\( \+\)AsyncValidSync/module\1AsyncValidSync_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncValidSync_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/\( \*\)AsyncValidSync\( \+\)/\1AsyncValidSync_NexysVideoHarness_UNIQUIFIED\2/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncQueueSource_AXI4BundleW.sv
+sed -i 's/module\( \+\)AsyncValidSync/module\1AsyncValidSync_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncValidSync_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)AsyncValidSync/module\1AsyncValidSync_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncValidSync_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)AsyncValidSync/module\1AsyncValidSync_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncValidSync_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)AsyncResetSynchronizerShiftReg_w4_d3_i0/module\1AsyncResetSynchronizerShiftReg_w4_d3_i0_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncResetSynchronizerShiftReg_w4_d3_i0_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/\( \*\)AsyncResetSynchronizerShiftReg_w4_d3_i0\( \+\)/\1AsyncResetSynchronizerShiftReg_w4_d3_i0_NexysVideoHarness_UNIQUIFIED\2/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncQueueSink_AXI4BundleR.sv
+sed -i 's/module\( \+\)AsyncValidSync/module\1AsyncValidSync_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncValidSync_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/\( \*\)AsyncValidSync\( \+\)/\1AsyncValidSync_NexysVideoHarness_UNIQUIFIED\2/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncQueueSink_AXI4BundleR.sv
+sed -i 's/module\( \+\)AsyncValidSync/module\1AsyncValidSync_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncValidSync_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)AsyncValidSync/module\1AsyncValidSync_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncValidSync_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)AsyncValidSync/module\1AsyncValidSync_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncValidSync_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)AsyncResetSynchronizerShiftReg_w4_d3_i0/module\1AsyncResetSynchronizerShiftReg_w4_d3_i0_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncResetSynchronizerShiftReg_w4_d3_i0_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/\( \*\)AsyncResetSynchronizerShiftReg_w4_d3_i0\( \+\)/\1AsyncResetSynchronizerShiftReg_w4_d3_i0_NexysVideoHarness_UNIQUIFIED\2/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncQueueSink_AXI4BundleB.sv
+sed -i 's/module\( \+\)AsyncValidSync/module\1AsyncValidSync_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncValidSync_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/\( \*\)AsyncValidSync\( \+\)/\1AsyncValidSync_NexysVideoHarness_UNIQUIFIED\2/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncQueueSink_AXI4BundleB.sv
+sed -i 's/module\( \+\)AsyncValidSync/module\1AsyncValidSync_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncValidSync_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)AsyncValidSync/module\1AsyncValidSync_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncValidSync_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)AsyncValidSync/module\1AsyncValidSync_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncValidSync_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)ram_2x73/module\1ram_2x73_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/ram_2x73_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/\( \*\)ram_2x73\( \+\)/\1ram_2x73_NexysVideoHarness_UNIQUIFIED\2/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/Queue2_AXI4BundleW_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)ram_2x6/module\1ram_2x6_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/ram_2x6_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/\( \*\)ram_2x6\( \+\)/\1ram_2x6_NexysVideoHarness_UNIQUIFIED\2/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/Queue2_AXI4BundleB_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)ram_2x71/module\1ram_2x71_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/ram_2x71_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/\( \*\)ram_2x71\( \+\)/\1ram_2x71_NexysVideoHarness_UNIQUIFIED\2/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/Queue2_AXI4BundleR_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)AsyncResetSynchronizerShiftReg_w4_d3_i0/module\1AsyncResetSynchronizerShiftReg_w4_d3_i0_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncResetSynchronizerShiftReg_w4_d3_i0_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/\( \*\)AsyncResetSynchronizerShiftReg_w4_d3_i0\( \+\)/\1AsyncResetSynchronizerShiftReg_w4_d3_i0_NexysVideoHarness_UNIQUIFIED\2/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncQueueSink_AXI4BundleAR.sv
+sed -i 's/module\( \+\)AsyncValidSync/module\1AsyncValidSync_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncValidSync_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/\( \*\)AsyncValidSync\( \+\)/\1AsyncValidSync_NexysVideoHarness_UNIQUIFIED\2/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncQueueSink_AXI4BundleAR.sv
+sed -i 's/module\( \+\)AsyncValidSync/module\1AsyncValidSync_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncValidSync_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)AsyncValidSync/module\1AsyncValidSync_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncValidSync_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)AsyncValidSync/module\1AsyncValidSync_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncValidSync_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)AsyncResetSynchronizerShiftReg_w4_d3_i0/module\1AsyncResetSynchronizerShiftReg_w4_d3_i0_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncResetSynchronizerShiftReg_w4_d3_i0_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/\( \*\)AsyncResetSynchronizerShiftReg_w4_d3_i0\( \+\)/\1AsyncResetSynchronizerShiftReg_w4_d3_i0_NexysVideoHarness_UNIQUIFIED\2/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncQueueSink_AXI4BundleAW.sv
+sed -i 's/module\( \+\)AsyncValidSync/module\1AsyncValidSync_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncValidSync_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/\( \*\)AsyncValidSync\( \+\)/\1AsyncValidSync_NexysVideoHarness_UNIQUIFIED\2/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncQueueSink_AXI4BundleAW.sv
+sed -i 's/module\( \+\)AsyncValidSync/module\1AsyncValidSync_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncValidSync_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)AsyncValidSync/module\1AsyncValidSync_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncValidSync_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)AsyncValidSync/module\1AsyncValidSync_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncValidSync_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)AsyncResetSynchronizerShiftReg_w4_d3_i0/module\1AsyncResetSynchronizerShiftReg_w4_d3_i0_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncResetSynchronizerShiftReg_w4_d3_i0_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/\( \*\)AsyncResetSynchronizerShiftReg_w4_d3_i0\( \+\)/\1AsyncResetSynchronizerShiftReg_w4_d3_i0_NexysVideoHarness_UNIQUIFIED\2/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncQueueSink_AXI4BundleW.sv
+sed -i 's/module\( \+\)AsyncValidSync/module\1AsyncValidSync_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncValidSync_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/\( \*\)AsyncValidSync\( \+\)/\1AsyncValidSync_NexysVideoHarness_UNIQUIFIED\2/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncQueueSink_AXI4BundleW.sv
+sed -i 's/module\( \+\)AsyncValidSync/module\1AsyncValidSync_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncValidSync_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)AsyncValidSync/module\1AsyncValidSync_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncValidSync_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)AsyncValidSync/module\1AsyncValidSync_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncValidSync_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)AsyncResetSynchronizerShiftReg_w4_d3_i0/module\1AsyncResetSynchronizerShiftReg_w4_d3_i0_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncResetSynchronizerShiftReg_w4_d3_i0_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/\( \*\)AsyncResetSynchronizerShiftReg_w4_d3_i0\( \+\)/\1AsyncResetSynchronizerShiftReg_w4_d3_i0_NexysVideoHarness_UNIQUIFIED\2/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncQueueSource_AXI4BundleR.sv
+sed -i 's/module\( \+\)AsyncValidSync/module\1AsyncValidSync_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncValidSync_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/\( \*\)AsyncValidSync\( \+\)/\1AsyncValidSync_NexysVideoHarness_UNIQUIFIED\2/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncQueueSource_AXI4BundleR.sv
+sed -i 's/module\( \+\)AsyncValidSync/module\1AsyncValidSync_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncValidSync_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)AsyncValidSync/module\1AsyncValidSync_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncValidSync_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)AsyncValidSync/module\1AsyncValidSync_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncValidSync_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)AsyncResetSynchronizerShiftReg_w4_d3_i0/module\1AsyncResetSynchronizerShiftReg_w4_d3_i0_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncResetSynchronizerShiftReg_w4_d3_i0_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/\( \*\)AsyncResetSynchronizerShiftReg_w4_d3_i0\( \+\)/\1AsyncResetSynchronizerShiftReg_w4_d3_i0_NexysVideoHarness_UNIQUIFIED\2/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncQueueSource_AXI4BundleB.sv
+sed -i 's/module\( \+\)AsyncValidSync/module\1AsyncValidSync_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncValidSync_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/\( \*\)AsyncValidSync\( \+\)/\1AsyncValidSync_NexysVideoHarness_UNIQUIFIED\2/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncQueueSource_AXI4BundleB.sv
+sed -i 's/module\( \+\)AsyncValidSync/module\1AsyncValidSync_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncValidSync_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)AsyncValidSync/module\1AsyncValidSync_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncValidSync_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)AsyncValidSync/module\1AsyncValidSync_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncValidSync_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)AsyncResetSynchronizerPrimitiveShiftReg_d3_i0/module\1AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/\( \*\)AsyncResetSynchronizerPrimitiveShiftReg_d3_i0\( \+\)/\1AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED\2/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncResetSynchronizerShiftReg_w4_d3_i0_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)AsyncResetSynchronizerPrimitiveShiftReg_d3_i0/module\1AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)AsyncResetSynchronizerPrimitiveShiftReg_d3_i0/module\1AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)AsyncResetSynchronizerPrimitiveShiftReg_d3_i0/module\1AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)AsyncResetSynchronizerShiftReg_w1_d3_i0_4/module\1AsyncResetSynchronizerShiftReg_w1_d3_i0_4_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncResetSynchronizerShiftReg_w1_d3_i0_4_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/\( \*\)AsyncResetSynchronizerShiftReg_w1_d3_i0_4\( \+\)/\1AsyncResetSynchronizerShiftReg_w1_d3_i0_4_NexysVideoHarness_UNIQUIFIED\2/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncValidSync_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)AsyncResetSynchronizerShiftReg_w1_d3_i0_4/module\1AsyncResetSynchronizerShiftReg_w1_d3_i0_4_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncResetSynchronizerShiftReg_w1_d3_i0_4_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)AsyncResetSynchronizerShiftReg_w1_d3_i0_4/module\1AsyncResetSynchronizerShiftReg_w1_d3_i0_4_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncResetSynchronizerShiftReg_w1_d3_i0_4_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)AsyncResetSynchronizerShiftReg_w1_d3_i0_4/module\1AsyncResetSynchronizerShiftReg_w1_d3_i0_4_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncResetSynchronizerShiftReg_w1_d3_i0_4_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)AsyncResetSynchronizerPrimitiveShiftReg_d3_i0/module\1AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)AsyncResetSynchronizerPrimitiveShiftReg_d3_i0/module\1AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)AsyncResetSynchronizerPrimitiveShiftReg_d3_i0/module\1AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)AsyncResetSynchronizerPrimitiveShiftReg_d3_i0/module\1AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)AsyncResetSynchronizerShiftReg_w1_d3_i0_4/module\1AsyncResetSynchronizerShiftReg_w1_d3_i0_4_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncResetSynchronizerShiftReg_w1_d3_i0_4_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)AsyncResetSynchronizerShiftReg_w1_d3_i0_4/module\1AsyncResetSynchronizerShiftReg_w1_d3_i0_4_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncResetSynchronizerShiftReg_w1_d3_i0_4_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)AsyncResetSynchronizerShiftReg_w1_d3_i0_4/module\1AsyncResetSynchronizerShiftReg_w1_d3_i0_4_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncResetSynchronizerShiftReg_w1_d3_i0_4_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)AsyncResetSynchronizerShiftReg_w1_d3_i0_4/module\1AsyncResetSynchronizerShiftReg_w1_d3_i0_4_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncResetSynchronizerShiftReg_w1_d3_i0_4_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)AsyncResetSynchronizerPrimitiveShiftReg_d3_i0/module\1AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)AsyncResetSynchronizerPrimitiveShiftReg_d3_i0/module\1AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)AsyncResetSynchronizerPrimitiveShiftReg_d3_i0/module\1AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)AsyncResetSynchronizerPrimitiveShiftReg_d3_i0/module\1AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)AsyncResetSynchronizerShiftReg_w1_d3_i0_4/module\1AsyncResetSynchronizerShiftReg_w1_d3_i0_4_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncResetSynchronizerShiftReg_w1_d3_i0_4_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)AsyncResetSynchronizerShiftReg_w1_d3_i0_4/module\1AsyncResetSynchronizerShiftReg_w1_d3_i0_4_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncResetSynchronizerShiftReg_w1_d3_i0_4_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)AsyncResetSynchronizerShiftReg_w1_d3_i0_4/module\1AsyncResetSynchronizerShiftReg_w1_d3_i0_4_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncResetSynchronizerShiftReg_w1_d3_i0_4_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)AsyncResetSynchronizerShiftReg_w1_d3_i0_4/module\1AsyncResetSynchronizerShiftReg_w1_d3_i0_4_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncResetSynchronizerShiftReg_w1_d3_i0_4_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)AsyncResetSynchronizerPrimitiveShiftReg_d3_i0/module\1AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)AsyncResetSynchronizerPrimitiveShiftReg_d3_i0/module\1AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)AsyncResetSynchronizerPrimitiveShiftReg_d3_i0/module\1AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)AsyncResetSynchronizerPrimitiveShiftReg_d3_i0/module\1AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)AsyncResetSynchronizerShiftReg_w1_d3_i0_4/module\1AsyncResetSynchronizerShiftReg_w1_d3_i0_4_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncResetSynchronizerShiftReg_w1_d3_i0_4_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)AsyncResetSynchronizerShiftReg_w1_d3_i0_4/module\1AsyncResetSynchronizerShiftReg_w1_d3_i0_4_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncResetSynchronizerShiftReg_w1_d3_i0_4_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)AsyncResetSynchronizerShiftReg_w1_d3_i0_4/module\1AsyncResetSynchronizerShiftReg_w1_d3_i0_4_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncResetSynchronizerShiftReg_w1_d3_i0_4_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)AsyncResetSynchronizerShiftReg_w1_d3_i0_4/module\1AsyncResetSynchronizerShiftReg_w1_d3_i0_4_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncResetSynchronizerShiftReg_w1_d3_i0_4_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)AsyncResetSynchronizerPrimitiveShiftReg_d3_i0/module\1AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)AsyncResetSynchronizerPrimitiveShiftReg_d3_i0/module\1AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)AsyncResetSynchronizerPrimitiveShiftReg_d3_i0/module\1AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)AsyncResetSynchronizerPrimitiveShiftReg_d3_i0/module\1AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)AsyncResetSynchronizerShiftReg_w1_d3_i0_4/module\1AsyncResetSynchronizerShiftReg_w1_d3_i0_4_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncResetSynchronizerShiftReg_w1_d3_i0_4_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)AsyncResetSynchronizerShiftReg_w1_d3_i0_4/module\1AsyncResetSynchronizerShiftReg_w1_d3_i0_4_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncResetSynchronizerShiftReg_w1_d3_i0_4_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)AsyncResetSynchronizerShiftReg_w1_d3_i0_4/module\1AsyncResetSynchronizerShiftReg_w1_d3_i0_4_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncResetSynchronizerShiftReg_w1_d3_i0_4_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)AsyncResetSynchronizerShiftReg_w1_d3_i0_4/module\1AsyncResetSynchronizerShiftReg_w1_d3_i0_4_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncResetSynchronizerShiftReg_w1_d3_i0_4_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)AsyncResetSynchronizerPrimitiveShiftReg_d3_i0/module\1AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)AsyncResetSynchronizerPrimitiveShiftReg_d3_i0/module\1AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)AsyncResetSynchronizerPrimitiveShiftReg_d3_i0/module\1AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)AsyncResetSynchronizerPrimitiveShiftReg_d3_i0/module\1AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)AsyncResetSynchronizerShiftReg_w1_d3_i0_4/module\1AsyncResetSynchronizerShiftReg_w1_d3_i0_4_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncResetSynchronizerShiftReg_w1_d3_i0_4_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)AsyncResetSynchronizerShiftReg_w1_d3_i0_4/module\1AsyncResetSynchronizerShiftReg_w1_d3_i0_4_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncResetSynchronizerShiftReg_w1_d3_i0_4_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)AsyncResetSynchronizerShiftReg_w1_d3_i0_4/module\1AsyncResetSynchronizerShiftReg_w1_d3_i0_4_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncResetSynchronizerShiftReg_w1_d3_i0_4_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)AsyncResetSynchronizerShiftReg_w1_d3_i0_4/module\1AsyncResetSynchronizerShiftReg_w1_d3_i0_4_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncResetSynchronizerShiftReg_w1_d3_i0_4_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)AsyncResetSynchronizerPrimitiveShiftReg_d3_i0/module\1AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)AsyncResetSynchronizerPrimitiveShiftReg_d3_i0/module\1AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)AsyncResetSynchronizerPrimitiveShiftReg_d3_i0/module\1AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)AsyncResetSynchronizerPrimitiveShiftReg_d3_i0/module\1AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)AsyncResetSynchronizerShiftReg_w1_d3_i0_4/module\1AsyncResetSynchronizerShiftReg_w1_d3_i0_4_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncResetSynchronizerShiftReg_w1_d3_i0_4_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)AsyncResetSynchronizerShiftReg_w1_d3_i0_4/module\1AsyncResetSynchronizerShiftReg_w1_d3_i0_4_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncResetSynchronizerShiftReg_w1_d3_i0_4_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)AsyncResetSynchronizerShiftReg_w1_d3_i0_4/module\1AsyncResetSynchronizerShiftReg_w1_d3_i0_4_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncResetSynchronizerShiftReg_w1_d3_i0_4_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)AsyncResetSynchronizerShiftReg_w1_d3_i0_4/module\1AsyncResetSynchronizerShiftReg_w1_d3_i0_4_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncResetSynchronizerShiftReg_w1_d3_i0_4_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)AsyncResetSynchronizerPrimitiveShiftReg_d3_i0/module\1AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)AsyncResetSynchronizerPrimitiveShiftReg_d3_i0/module\1AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)AsyncResetSynchronizerPrimitiveShiftReg_d3_i0/module\1AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)AsyncResetSynchronizerPrimitiveShiftReg_d3_i0/module\1AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)AsyncResetSynchronizerShiftReg_w1_d3_i0_4/module\1AsyncResetSynchronizerShiftReg_w1_d3_i0_4_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncResetSynchronizerShiftReg_w1_d3_i0_4_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)AsyncResetSynchronizerShiftReg_w1_d3_i0_4/module\1AsyncResetSynchronizerShiftReg_w1_d3_i0_4_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncResetSynchronizerShiftReg_w1_d3_i0_4_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)AsyncResetSynchronizerShiftReg_w1_d3_i0_4/module\1AsyncResetSynchronizerShiftReg_w1_d3_i0_4_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncResetSynchronizerShiftReg_w1_d3_i0_4_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)AsyncResetSynchronizerShiftReg_w1_d3_i0_4/module\1AsyncResetSynchronizerShiftReg_w1_d3_i0_4_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncResetSynchronizerShiftReg_w1_d3_i0_4_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)AsyncResetSynchronizerPrimitiveShiftReg_d3_i0/module\1AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)AsyncResetSynchronizerPrimitiveShiftReg_d3_i0/module\1AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)AsyncResetSynchronizerPrimitiveShiftReg_d3_i0/module\1AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)AsyncResetSynchronizerPrimitiveShiftReg_d3_i0/module\1AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)AsyncResetSynchronizerShiftReg_w1_d3_i0_4/module\1AsyncResetSynchronizerShiftReg_w1_d3_i0_4_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncResetSynchronizerShiftReg_w1_d3_i0_4_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)AsyncResetSynchronizerShiftReg_w1_d3_i0_4/module\1AsyncResetSynchronizerShiftReg_w1_d3_i0_4_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncResetSynchronizerShiftReg_w1_d3_i0_4_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)AsyncResetSynchronizerShiftReg_w1_d3_i0_4/module\1AsyncResetSynchronizerShiftReg_w1_d3_i0_4_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncResetSynchronizerShiftReg_w1_d3_i0_4_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)AsyncResetSynchronizerShiftReg_w1_d3_i0_4/module\1AsyncResetSynchronizerShiftReg_w1_d3_i0_4_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncResetSynchronizerShiftReg_w1_d3_i0_4_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)AsyncResetSynchronizerPrimitiveShiftReg_d3_i0/module\1AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)AsyncResetSynchronizerPrimitiveShiftReg_d3_i0/module\1AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)AsyncResetSynchronizerPrimitiveShiftReg_d3_i0/module\1AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)AsyncResetSynchronizerPrimitiveShiftReg_d3_i0/module\1AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)AsyncResetSynchronizerShiftReg_w1_d3_i0_4/module\1AsyncResetSynchronizerShiftReg_w1_d3_i0_4_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncResetSynchronizerShiftReg_w1_d3_i0_4_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)AsyncResetSynchronizerShiftReg_w1_d3_i0_4/module\1AsyncResetSynchronizerShiftReg_w1_d3_i0_4_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncResetSynchronizerShiftReg_w1_d3_i0_4_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)AsyncResetSynchronizerShiftReg_w1_d3_i0_4/module\1AsyncResetSynchronizerShiftReg_w1_d3_i0_4_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncResetSynchronizerShiftReg_w1_d3_i0_4_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)AsyncResetSynchronizerShiftReg_w1_d3_i0_4/module\1AsyncResetSynchronizerShiftReg_w1_d3_i0_4_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncResetSynchronizerShiftReg_w1_d3_i0_4_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)AsyncResetSynchronizerPrimitiveShiftReg_d3_i0/module\1AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/\( \*\)AsyncResetSynchronizerPrimitiveShiftReg_d3_i0\( \+\)/\1AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED\2/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncResetSynchronizerShiftReg_w1_d3_i0_4_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)AsyncResetSynchronizerPrimitiveShiftReg_d3_i0/module\1AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)AsyncResetSynchronizerPrimitiveShiftReg_d3_i0/module\1AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)AsyncResetSynchronizerPrimitiveShiftReg_d3_i0/module\1AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)AsyncResetSynchronizerPrimitiveShiftReg_d3_i0/module\1AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)AsyncResetSynchronizerPrimitiveShiftReg_d3_i0/module\1AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)AsyncResetSynchronizerPrimitiveShiftReg_d3_i0/module\1AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)AsyncResetSynchronizerPrimitiveShiftReg_d3_i0/module\1AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)AsyncResetSynchronizerPrimitiveShiftReg_d3_i0/module\1AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)AsyncResetSynchronizerPrimitiveShiftReg_d3_i0/module\1AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)AsyncResetSynchronizerPrimitiveShiftReg_d3_i0/module\1AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)AsyncResetSynchronizerPrimitiveShiftReg_d3_i0/module\1AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)AsyncResetSynchronizerPrimitiveShiftReg_d3_i0/module\1AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)AsyncResetSynchronizerPrimitiveShiftReg_d3_i0/module\1AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)AsyncResetSynchronizerPrimitiveShiftReg_d3_i0/module\1AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)AsyncResetSynchronizerPrimitiveShiftReg_d3_i0/module\1AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)AsyncResetSynchronizerPrimitiveShiftReg_d3_i0/module\1AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)AsyncResetSynchronizerPrimitiveShiftReg_d3_i0/module\1AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)AsyncResetSynchronizerPrimitiveShiftReg_d3_i0/module\1AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)AsyncResetSynchronizerPrimitiveShiftReg_d3_i0/module\1AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)AsyncResetSynchronizerPrimitiveShiftReg_d3_i0/module\1AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)AsyncResetSynchronizerPrimitiveShiftReg_d3_i0/module\1AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)AsyncResetSynchronizerPrimitiveShiftReg_d3_i0/module\1AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)AsyncResetSynchronizerPrimitiveShiftReg_d3_i0/module\1AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)AsyncResetSynchronizerPrimitiveShiftReg_d3_i0/module\1AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)AsyncResetSynchronizerPrimitiveShiftReg_d3_i0/module\1AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)AsyncResetSynchronizerPrimitiveShiftReg_d3_i0/module\1AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)AsyncResetSynchronizerPrimitiveShiftReg_d3_i0/module\1AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)AsyncResetSynchronizerPrimitiveShiftReg_d3_i0/module\1AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)AsyncResetSynchronizerPrimitiveShiftReg_d3_i0/module\1AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)AsyncResetSynchronizerPrimitiveShiftReg_d3_i0/module\1AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)AsyncResetSynchronizerPrimitiveShiftReg_d3_i0/module\1AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)AsyncResetSynchronizerPrimitiveShiftReg_d3_i0/module\1AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)AsyncResetSynchronizerPrimitiveShiftReg_d3_i0/module\1AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)AsyncResetSynchronizerPrimitiveShiftReg_d3_i0/module\1AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)AsyncResetSynchronizerPrimitiveShiftReg_d3_i0/module\1AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)AsyncResetSynchronizerPrimitiveShiftReg_d3_i0/module\1AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)AsyncResetSynchronizerPrimitiveShiftReg_d3_i0/module\1AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)AsyncResetSynchronizerPrimitiveShiftReg_d3_i0/module\1AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED.sv
+sed -i 's/module\( \+\)AsyncResetSynchronizerPrimitiveShiftReg_d3_i0/module\1AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED/' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/AsyncResetSynchronizerPrimitiveShiftReg_d3_i0_NexysVideoHarness_UNIQUIFIED.sv
+sed -e 's;^;/home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/;' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/firrtl_black_box_resource_files.f > /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig.bb.f
+sed -i 's/\.\///' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig.top.f
+sed -i 's/\.\///' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig.model.f
+sed -i 's/\.\///' /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig.bb.f
+sort -u /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig.top.f /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig.model.f /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig.bb.f > /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig.all.f
+cp -f  /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral
+cp: missing destination file operand after '/home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral'
+Try 'cp --help' for more information.
+make: [Makefile:111: /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/sim_files.f] Error 1 (ignored)
+rm -f /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/sim_files.f
+touch /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/sim_files.f
+/home/soooarr/chipyard/scripts/split-mems-conf.py \
+	--in-smems-conf /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig.mems.conf \
+	--in-model-hrchy-json /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/model_module_hierarchy.uniquified.json \
+	--dut-module-name ChipTop \
+	--model-module-name NexysVideoHarness \
+	--out-dut-smems-conf /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig.top.mems.conf \
+	--out-model-smems-conf /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig.model.mems.conf
+cd /home/soooarr/chipyard && java -cp /home/soooarr/chipyard/.classpath_cache/tapeout.jar tapeout.macros.MacroCompiler -n /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig.top.mems.conf -v /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig.top.mems.v -f /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig.top.mems.fir --mode synflops
+Picked up JAVA_TOOL_OPTIONS: -Xmx8G -Xss8M -Djava.io.tmpdir=/home/soooarr/chipyard/.java_tmp
+touch /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig.top.mems.v /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig.top.mems.fir
+cd /home/soooarr/chipyard && java -cp /home/soooarr/chipyard/.classpath_cache/tapeout.jar tapeout.macros.MacroCompiler  -n /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig.model.mems.conf -v /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig.model.mems.v -f /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig.model.mems.fir --mode synflops
+Picked up JAVA_TOOL_OPTIONS: -Xmx8G -Xss8M -Djava.io.tmpdir=/home/soooarr/chipyard/.java_tmp
+WARNING: Empty *.mems.conf file. No memories generated.
+touch /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig.model.mems.v /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig.model.mems.fir
+rm -f /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/sim_files.common.f
+sort -u /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/sim_files.f /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig.all.f | grep -v '.*\.\(svh\|h\)$' >> /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/sim_files.common.f
+echo "/home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig.top.mems.v" >> /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/sim_files.common.f
+echo "/home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/gen-collateral/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig.model.mems.v" >> /home/soooarr/chipyard/fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideoConfig/sim_files.common.f
