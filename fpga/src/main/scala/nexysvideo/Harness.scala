@@ -43,11 +43,16 @@ class NexysVideoHarness(override implicit val p: Parameters) extends NexysVideoS
     sourceId = IdRange(0, 1 << dp(ExtTLMem).get.master.idBits)
   )))))) else None
   val ddrBlockDuringReset = if (p(NexysVideoShellDDR)) Some(LazyModule(new TLBlockDuringReset(4))) else None
-  val radarDMA = if (p(NexysVideoShellDDR) && p(ExtBus).nonEmpty) Some(LazyModule(new RadarAXIDMA)) else None
+  val radarDMA = if (p(NexysVideoShellDDR) && p(ExtBus).nonEmpty && !p(EnableNexysVideoFullChain)) Some(LazyModule(new RadarAXIDMA)) else None
+  val fullChainDMA = if (p(NexysVideoShellDDR) && p(ExtBus).nonEmpty && p(EnableNexysVideoFullChain)) Some(LazyModule(new FullChainAXIDMA)) else None
   if (p(NexysVideoShellDDR)) {
     ddrOverlay.get.overlayOutput.ddr := ddrBlockDuringReset.get.node := ddrXbar.get.node
     ddrXbar.get.node := ddrClient.get
     radarDMA.foreach { dma =>
+      ddrOverlay.get.mig.axiNode := dma.mm2sNode
+      ddrOverlay.get.mig.axiNode := dma.s2mmNode
+    }
+    fullChainDMA.foreach { dma =>
       ddrOverlay.get.mig.axiNode := dma.mm2sNode
       ddrOverlay.get.mig.axiNode := dma.s2mmNode
     }

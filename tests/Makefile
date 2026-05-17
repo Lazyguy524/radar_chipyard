@@ -43,7 +43,7 @@ PROGRAMS = pwm blkdev accum charcount nic-loopback big-blkdev pingd \
            streaming-passthrough streaming-fir nvdla spiflashread spiflashwrite fft gcd \
            hello mt-hello symmetric radar-axi-mmio-smoke radar-axi-dma-loopback \
            radar-axi-dma-consistency radar-axi-dma-regression radar-axi-dma-uncached-alias \
-           radar-axi-dma-preproc radar-axi-dma-qmlp
+           radar-axi-dma-preproc radar-axi-dma-qmlp radar-fullchain-mmio-smoke
 
 
 .DEFAULT_GOAL := default
@@ -81,6 +81,9 @@ hello.riscv: hello.bringup.o $(BRINGUP_RUNTIME)
 	$(GCC) $(BRINGUP_LDFLAGS) -T $(BRINGUP_LDS) $^ -lgcc -o $@
 
 radar-axi-mmio-smoke.riscv: radar-axi-mmio-smoke.bringup.o $(BRINGUP_RUNTIME)
+	$(GCC) $(BRINGUP_LDFLAGS) -T $(BRINGUP_LDS) $^ -lgcc -o $@
+
+radar-fullchain-mmio-smoke.riscv: radar-fullchain-mmio-smoke.bringup.o $(BRINGUP_RUNTIME)
 	$(GCC) $(BRINGUP_LDFLAGS) -T $(BRINGUP_LDS) $^ -lgcc -o $@
 
 radar-axi-dma-loopback.riscv: radar-axi-dma-loopback.bringup.o $(BRINGUP_RUNTIME)
@@ -124,4 +127,4 @@ default: $(addsuffix .riscv, $(PROGRAMS)) spiflash.img
 dumps: $(addsuffix .dump, $(PROGRAMS))
 
 .PHONY: bringup-binaries
-bringup-binaries: hello.riscv radar-axi-mmio-smoke.riscv radar-axi-dma-loopback.riscv radar-axi-dma-consistency.riscv radar-axi-dma-regression.riscv radar-axi-dma-uncached-alias.riscv radar-axi-dma-preproc.riscv radar-axi-dma-qmlp.riscv
+bringup-binaries: hello.riscv radar-axi-mmio-smoke.riscv radar-fullchain-mmio-smoke.riscv radar-axi-dma-loopback.riscv radar-axi-dma-consistency.riscv radar-axi-dma-regression.riscv radar-axi-dma-uncached-alias.riscv radar-axi-dma-preproc.riscv radar-axi-dma-qmlp.riscv

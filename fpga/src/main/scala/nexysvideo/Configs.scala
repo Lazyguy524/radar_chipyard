@@ -164,3 +164,38 @@ class RadarAXIMMIOSimConfig extends Config(
   new freechips.rocketchip.rocket.WithoutFPU ++
   new freechips.rocketchip.rocket.WithNSmallCores(1) ++
   new chipyard.config.AbstractConfig)
+
+class WithNexysVideoFullChain extends Config((site, here, up) => {
+  case EnableNexysVideoFullChain => true
+})
+
+class FullChainAXIMMIONexysVideoConfig extends Config(
+  new WithNexysVideoFullChainAXI4MMIO ++
+  new freechips.rocketchip.subsystem.WithCustomMMIOPort(
+    FullChainAXIMMIOAddressMap.Base,
+    FullChainAXIMMIOAddressMap.WindowSize,
+    64,
+    4,
+    8) ++
+  new WithNexysVideoFullChain ++
+  new WithNexysVideoTweaks ++
+  new testchipip.soc.WithNoScratchpads ++
+  new chipyard.config.WithBroadcastManager ++
+  new freechips.rocketchip.rocket.WithoutFPU ++
+  new freechips.rocketchip.rocket.WithNSmallCores(1) ++
+  new chipyard.config.AbstractConfig)
+
+class FullChainAXIMMIOSimConfig extends Config(
+  new freechips.rocketchip.subsystem.WithCustomMMIOPort(
+    FullChainAXIMMIOAddressMap.Base,
+    FullChainAXIMMIOAddressMap.WindowSize,
+    64,
+    4,
+    8) ++
+  new WithNexysVideoFullChain ++
+  new freechips.rocketchip.subsystem.WithExtMemSize(BigInt(512) << 20) ++
+  new testchipip.soc.WithNoScratchpads ++
+  new chipyard.config.WithBroadcastManager ++
+  new freechips.rocketchip.rocket.WithoutFPU ++
+  new freechips.rocketchip.rocket.WithNSmallCores(1) ++
+  new chipyard.config.AbstractConfig)
