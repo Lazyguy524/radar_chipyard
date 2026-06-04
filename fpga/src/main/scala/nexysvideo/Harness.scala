@@ -8,6 +8,7 @@ import org.chipsalliance.cde.config.{Parameters}
 import freechips.rocketchip.tilelink._
 import freechips.rocketchip.subsystem.{SystemBusKey, ExtBus}
 import freechips.rocketchip.prci._
+import freechips.rocketchip.util.ResetCatchAndSync
 import sifive.fpgashells.shell.xilinx._
 import sifive.fpgashells.shell._
 import sifive.fpgashells.clocks._
@@ -23,7 +24,7 @@ class NexysVideoHarness(override implicit val p: Parameters) extends NexysVideoS
   val clockOverlay = dp(ClockInputOverlayKey).map(_.place(ClockInputDesignInput())).head
   val harnessSysPLL = dp(PLLFactoryKey)
   val harnessSysPLLNode = harnessSysPLL()
-  val dutFreqMHz = (dp(SystemBusKey).dtsFrequency.get / (1000 * 1000)).toInt
+  val dutFreqMHz = dp(SystemBusKey).dtsFrequency.get.toDouble / 1.0e6
   val dutClock = ClockSinkNode(freqMHz = dutFreqMHz)
   println(s"NexysVideo FPGA Base Clock Freq: ${dutFreqMHz} MHz")
   val dutWrangler = LazyModule(new ResetWrangler())
@@ -66,9 +67,11 @@ class NexysVideoHarness(override implicit val p: Parameters) extends NexysVideoS
     clockOverlay.overlayOutput.node.out(0)._1.reset := ~resetPin
 
     val clk_100mhz = clockOverlay.overlayOutput.node.out.head._1.clock
+    val clk_100mhz_reset = clockOverlay.overlayOutput.node.out.head._1.reset.asBool
+    val statusLedReset = ResetCatchAndSync(clk_100mhz, clk_100mhz_reset, "status_led_reset")
 
     // Blink the status LEDs for sanity
-    withClockAndReset(clk_100mhz, dutClock.in.head._1.reset) {
+    withClockAndReset(clk_100mhz, statusLedReset) {
       val period = (BigInt(100) << 20) / status_leds.size
       val counter = RegInit(0.U(log2Ceil(period).W))
       val on = RegInit(0.U(log2Ceil(status_leds.size).W))

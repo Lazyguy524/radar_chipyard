@@ -37,18 +37,18 @@ object RadarDDRAddressMap {
 }
 
 // DOC include start: WithNexysVideoTweaks and Rocket
-class WithNexysVideoTweaks extends Config(
+class WithNexysVideoTweaks(freqMHz: Double = 50.0) extends Config(
   new WithNexysVideoUARTTSI ++
   new WithNexysVideoDDRTL ++
   new WithNoDesignKey ++
   new testchipip.tsi.WithUARTTSIClient ++
   new chipyard.harness.WithSerialTLTiedOff ++
-  new chipyard.harness.WithHarnessBinderClockFreqMHz(50) ++
-  new chipyard.config.WithMemoryBusFrequency(50.0) ++
-  new chipyard.config.WithFrontBusFrequency(50.0) ++
-  new chipyard.config.WithSystemBusFrequency(50.0) ++
-  new chipyard.config.WithPeripheryBusFrequency(50.0) ++
-  new chipyard.config.WithControlBusFrequency(50.0) ++
+  new chipyard.harness.WithHarnessBinderClockFreqMHz(freqMHz) ++
+  new chipyard.config.WithMemoryBusFrequency(freqMHz) ++
+  new chipyard.config.WithFrontBusFrequency(freqMHz) ++
+  new chipyard.config.WithSystemBusFrequency(freqMHz) ++
+  new chipyard.config.WithPeripheryBusFrequency(freqMHz) ++
+  new chipyard.config.WithControlBusFrequency(freqMHz) ++
   new chipyard.harness.WithAllClocksFromHarnessClockInstantiator ++
   new chipyard.clocking.WithPassthroughClockGenerator ++
   new chipyard.config.WithNoDebug ++ // no jtag
@@ -65,18 +65,18 @@ class RocketNexysVideoConfig extends Config(
 // DOC include end: WithNexysVideoTweaks and Rocket
 
 // DOC include start: WithTinyNexysVideoTweaks and Rocket
-class WithTinyNexysVideoTweaks extends Config(
+class WithTinyNexysVideoTweaks(freqMHz: Double = 50.0) extends Config(
   new WithNexysVideoUARTTSI ++
   new WithNoDesignKey ++
   new sifive.fpgashells.shell.xilinx.WithNoNexysVideoShellDDR ++ // no DDR
   new testchipip.tsi.WithUARTTSIClient ++
   new chipyard.harness.WithSerialTLTiedOff ++
-  new chipyard.harness.WithHarnessBinderClockFreqMHz(50) ++
-  new chipyard.config.WithMemoryBusFrequency(50.0) ++
-  new chipyard.config.WithFrontBusFrequency(50.0) ++
-  new chipyard.config.WithSystemBusFrequency(50.0) ++
-  new chipyard.config.WithPeripheryBusFrequency(50.0) ++
-  new chipyard.config.WithControlBusFrequency(50.0) ++
+  new chipyard.harness.WithHarnessBinderClockFreqMHz(freqMHz) ++
+  new chipyard.config.WithMemoryBusFrequency(freqMHz) ++
+  new chipyard.config.WithFrontBusFrequency(freqMHz) ++
+  new chipyard.config.WithSystemBusFrequency(freqMHz) ++
+  new chipyard.config.WithPeripheryBusFrequency(freqMHz) ++
+  new chipyard.config.WithControlBusFrequency(freqMHz) ++
   new chipyard.harness.WithAllClocksFromHarnessClockInstantiator ++
   new chipyard.clocking.WithPassthroughClockGenerator ++
   new chipyard.config.WithNoDebug ++ // no jtag
@@ -96,12 +96,12 @@ class WithRadarNexysVideoTweaks(freqMHz: Double = 50) extends Config(
   new WithNoDesignKey ++
   new testchipip.tsi.WithUARTTSIClient ++
   new chipyard.harness.WithSerialTLTiedOff ++
-  new chipyard.harness.WithHarnessBinderClockFreqMHz(50) ++
-  new chipyard.config.WithMemoryBusFrequency(50.0) ++
-  new chipyard.config.WithFrontBusFrequency(50.0) ++
-  new chipyard.config.WithSystemBusFrequency(50.0) ++
-  new chipyard.config.WithPeripheryBusFrequency(50.0) ++
-  new chipyard.config.WithControlBusFrequency(50.0) ++
+  new chipyard.harness.WithHarnessBinderClockFreqMHz(freqMHz) ++
+  new chipyard.config.WithMemoryBusFrequency(freqMHz) ++
+  new chipyard.config.WithFrontBusFrequency(freqMHz) ++
+  new chipyard.config.WithSystemBusFrequency(freqMHz) ++
+  new chipyard.config.WithPeripheryBusFrequency(freqMHz) ++
+  new chipyard.config.WithControlBusFrequency(freqMHz) ++
   new chipyard.harness.WithAllClocksFromHarnessClockInstantiator ++
   new chipyard.clocking.WithPassthroughClockGenerator ++
   new chipyard.config.WithNoDebug ++ // no jtag
@@ -136,7 +136,7 @@ class GenericRadarNexysVideoConfig extends Config(
   new freechips.rocketchip.rocket.WithNSmallCores(1) ++
   new chipyard.config.AbstractConfig)
 
-class RadarAXIMMIONexysVideoConfig extends Config(
+class RadarAXIMMIONexysVideoFreqConfig(freqMHz: Double = 50.0) extends Config(
   new WithNexysVideoAXI4MMIO ++
   new freechips.rocketchip.subsystem.WithCustomMMIOPort(
     RadarAXIMMIOAddressMap.PreprocBase,
@@ -144,12 +144,20 @@ class RadarAXIMMIONexysVideoConfig extends Config(
     64,
     4,
     8) ++
-  new WithNexysVideoTweaks ++
+  new WithNexysVideoTweaks(freqMHz = freqMHz) ++
   new testchipip.soc.WithNoScratchpads ++
   new chipyard.config.WithBroadcastManager ++
   new freechips.rocketchip.rocket.WithoutFPU ++
   new freechips.rocketchip.rocket.WithNSmallCores(1) ++
   new chipyard.config.AbstractConfig)
+
+class RadarAXIMMIONexysVideoConfig extends RadarAXIMMIONexysVideoFreqConfig(50.0)
+class RadarAXIMMIONexysVideo51p282MHzConfig extends RadarAXIMMIONexysVideoFreqConfig(51.282051)
+class RadarAXIMMIONexysVideo55MHzConfig extends RadarAXIMMIONexysVideoFreqConfig(55.0)
+class RadarAXIMMIONexysVideo60MHzConfig extends RadarAXIMMIONexysVideoFreqConfig(60.0)
+class RadarAXIMMIONexysVideo65MHzConfig extends RadarAXIMMIONexysVideoFreqConfig(65.0)
+class RadarAXIMMIONexysVideo66p667MHzConfig extends RadarAXIMMIONexysVideoFreqConfig(66.666667)
+class RadarAXIMMIONexysVideo75MHzConfig extends RadarAXIMMIONexysVideoFreqConfig(75.0)
 
 class RadarAXIMMIOSimConfig extends Config(
   new freechips.rocketchip.subsystem.WithCustomMMIOPort(
