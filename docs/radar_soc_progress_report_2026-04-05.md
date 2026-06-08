@@ -1,8 +1,41 @@
 # 雷达微系统 SoC 阶段性总结
 
-更新时间：2026-04-05
+更新时间：2026-04-10
 
 本文档按当前阶段已经完成的设计、验证、纠错和板级结果进行总结，不展开过多意义分析，重点记录系统现状、做过什么、验证到了什么程度，以及当前可确认的性能边界。
+
+---
+
+## 0. 快速入口
+
+如果只想先抓当前主线，建议按下面顺序看：
+
+1. 当前总览  
+   - [radar_project_status_index_2026-04-09.md](/home/soooarr/chipyard/docs/radar_project_status_index_2026-04-09.md)
+
+2. 当前主记录页  
+   - [radar_soc_progress_report_2026-04-05.md](/home/soooarr/chipyard/docs/radar_soc_progress_report_2026-04-05.md)
+
+3. QMLP 加速器设计说明  
+   - [radar_nexysvideo_qmlp_accelerator_2026-04-06.md](/home/soooarr/chipyard/docs/radar_nexysvideo_qmlp_accelerator_2026-04-06.md)
+
+4. PE 阵列演进路线  
+   - [radar_qmlp_pe_array_prototype_2026-04-06.md](/home/soooarr/chipyard/docs/radar_qmlp_pe_array_prototype_2026-04-06.md)
+
+5. 当前最好用的 PE 版本离线结果  
+   - [339-qmlp-pe-array-v2p5-bitstream-summary-2026-04-09.md](/home/soooarr/chipyard/logs/radar_nexysvideo/runtime/339-qmlp-pe-array-v2p5-bitstream-summary-2026-04-09.md)
+
+6. 当前最好用的 PE 版本板级结果  
+   - [344-v2p5-board-pass-summary-2026-04-09.md](/home/soooarr/chipyard/logs/radar_nexysvideo/runtime/344-v2p5-board-pass-summary-2026-04-09.md)
+
+7. 当前 batch e2e 优化结果
+   - [421-v2p8-batch-pass-summary-2026-04-10.md](/home/soooarr/chipyard/logs/radar_nexysvideo/runtime/421-v2p8-batch-pass-summary-2026-04-10.md)
+
+补充说明：
+
+- `docs/` 里优先看“总览”和“主记录页”
+- `logs/.../runtime/` 里优先看带编号的 `*.md` 摘要
+- 没有编号、名字较长的 `*.log` 一般是脚本直接生成的原始日志
 
 ---
 
@@ -404,12 +437,65 @@ AXI DMA preprocessor PASSED
 - 单 ELF 综合回归通过
 - `ADD32` 板测通过
 - `RELU16` 板测通过
+- 固定 `INT8 QMLP` baseline 板测通过
+- `4-lane PE QMLP v2.5` 板测通过
+- `v2.8 batch-only e2e` 板测通过
 
 这说明当前系统已经具备：
 
 - 主存到流计算链的数据搬运能力
 - 流式算子接入能力
 - 软件到硬件再回软件的完整校验闭环
+- 固定模型 NN 推理加速能力
+
+其中当前 `QMLP PE v2.5` 的 kernel 结果为：
+
+- `hw_cycles_avg = 1301`
+- `e2e_cycles_avg = 8915389`
+- `QMLP kernel latency ≈ 26.02 us @ 50 MHz`
+- `system end-to-end latency ≈ 178.31 ms @ 50 MHz`
+
+而当前最新的 `v2.8 batch-only e2e` 结果为：
+
+- `hw_cycles_avg = 1301`
+- `e2e_cycles_avg = 1157261`
+- `QMLP kernel latency ≈ 26.02 us @ 50 MHz`
+- `reset_batch_per_sample e2e latency ≈ 23.145 ms @ 50 MHz`
+
+另外，本轮还补充完成了 `Rocket CPU-only pure forward` 基准：
+
+- `CPU-only pure forward ≈ 3306.86 us @ 50 MHz`
+
+对应摘要：
+
+- [350-qmlp-cpu-only-pure-forward-summary-2026-04-09.md](/home/soooarr/chipyard/logs/radar_nexysvideo/runtime/350-qmlp-cpu-only-pure-forward-summary-2026-04-09.md)
+
+因此当前同口径下，可以给出：
+
+- `CPU-only pure forward ≈ 3306.86 us`
+- `QMLP hardware kernel ≈ 26.02 us`
+- 算子本体加速比约：
+  - `127.1x`
+
+对应摘要：
+
+- [339-qmlp-pe-array-v2p5-bitstream-summary-2026-04-09.md](/home/soooarr/chipyard/logs/radar_nexysvideo/runtime/339-qmlp-pe-array-v2p5-bitstream-summary-2026-04-09.md)
+- [344-v2p5-board-pass-summary-2026-04-09.md](/home/soooarr/chipyard/logs/radar_nexysvideo/runtime/344-v2p5-board-pass-summary-2026-04-09.md)
+- [421-v2p8-batch-pass-summary-2026-04-10.md](/home/soooarr/chipyard/logs/radar_nexysvideo/runtime/421-v2p8-batch-pass-summary-2026-04-10.md)
+
+补充说明：
+
+- 当前已经完成的是 `QMLP kernel latency` 优化
+- 当前也已经开始拿到 `system e2e latency` 的 batch 优化结果
+- 但完整的 `legacy / noreset / batch8 / batch64` 多路径收口还没有全部完成
+- 因此当前端到端优化可以确认“方向成立”，但还没有完全结束
+
+从数据上看，当前最重要的边界可以写成：
+
+- `v2.5` 单样本 e2e：约 `178.31 ms`
+- `v2.8 batch-only` 平均每样本 e2e：约 `23.145 ms`
+
+这说明当前已经不是“只有 kernel 变快”，而是 batch 数据流优化已经开始实质性降低系统端到端延迟。
 
 ### 3.2 当前已实现的资源与时序结果
 

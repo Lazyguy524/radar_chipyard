@@ -1,0 +1,20 @@
+{
+  "samples": 1000,
+  "repeat": 200,
+  "checksum": 24911800,
+  "feature21_only_avg_us": 0.837143,
+  "feature14_quant_avg_us": 1.056318,
+  "feature18_quant_avg_us": 0.898794,
+  "feature21_quant_avg_us": 0.887023,
+  "complex7_proxy_avg_us": 0.836348,
+  "platform": {
+    "cpu_model": "Intel(R) Xeon(R) Gold 6258R CPU @ 2.70GHz",
+    "implementation": "x86_64 C -O3 benchmark, data preloaded from binary files; timing excludes file I/O and model loading",
+    "clock_note": "host CPU dynamic frequency; not bare-metal FPGA timing"
+  },
+  "limitations": [
+    "The benchmark input is already fused point sets; it does not include filesystem/raw-index loading.",
+    "k=7 target association/history-buffer maintenance is not separately timed here.",
+    "All feature modes currently call the same compute21 core then select subsets, so this is a conservative software proxy for hardware cost."
+  ]
+}

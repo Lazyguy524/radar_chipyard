@@ -1,0 +1,499 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Radar RISC-V QMLP Hardware PPT Diagrams</title>
+  <style>
+    :root {
+      --ink: #17212b;
+      --muted: #5f6f7e;
+      --paper: #f7f3ea;
+      --card: #fffdf8;
+      --line: #d8c9aa;
+      --blue: #235789;
+      --teal: #1c7c74;
+      --amber: #c47c1b;
+      --red: #9a3b3b;
+      --green: #4b8b3b;
+      --shadow: rgba(45, 36, 22, 0.15);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background:
+        radial-gradient(circle at 12% 8%, rgba(196, 124, 27, 0.14), transparent 28rem),
+        radial-gradient(circle at 88% 18%, rgba(28, 124, 116, 0.16), transparent 30rem),
+        linear-gradient(135deg, #f8f0df 0%, #eef4f2 100%);
+      color: var(--ink);
+      font-family: "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+      line-height: 1.55;
+    }
+
+    main {
+      width: min(1180px, calc(100vw - 48px));
+      margin: 0 auto;
+      padding: 36px 0 64px;
+    }
+
+    section {
+      margin: 26px 0;
+      padding: 28px;
+      border: 1px solid rgba(114, 95, 61, 0.24);
+      border-radius: 28px;
+      background: rgba(255, 253, 248, 0.86);
+      box-shadow: 0 22px 50px var(--shadow);
+      overflow: hidden;
+    }
+
+    h1, h2, h3 {
+      margin: 0 0 14px;
+      line-height: 1.15;
+    }
+
+    h1 {
+      font-size: 38px;
+      letter-spacing: 0.02em;
+    }
+
+    h2 {
+      font-size: 27px;
+      color: var(--blue);
+    }
+
+    h3 {
+      font-size: 18px;
+      color: var(--teal);
+    }
+
+    p {
+      margin: 8px 0;
+      color: var(--muted);
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .badge {
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: #efe3cb;
+      color: #5b421d;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .metric-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .metric {
+      padding: 16px;
+      border-radius: 18px;
+      background: linear-gradient(180deg, #ffffff, #f7eddc);
+      border: 1px solid var(--line);
+    }
+
+    .metric strong {
+      display: block;
+      font-size: 24px;
+      color: var(--blue);
+    }
+
+    .metric span {
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .flow {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 12px;
+      align-items: center;
+      margin-top: 22px;
+    }
+
+    .node {
+      min-height: 92px;
+      padding: 15px;
+      border-radius: 18px;
+      background: #fffaf0;
+      border: 2px solid var(--line);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+      font-weight: 700;
+    }
+
+    .node small {
+      display: block;
+      margin-top: 6px;
+      font-weight: 500;
+      color: var(--muted);
+    }
+
+    .node:not(:last-child)::after {
+      content: "→";
+      position: absolute;
+      right: -20px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--amber);
+      font-size: 26px;
+      z-index: 2;
+    }
+
+    .soc-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 1.5fr 1.05fr;
+      gap: 16px;
+      margin-top: 20px;
+    }
+
+    .stack {
+      display: grid;
+      gap: 12px;
+    }
+
+    .box {
+      padding: 14px 16px;
+      border-radius: 18px;
+      background: #fffdf8;
+      border: 2px solid var(--line);
+      box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.6);
+    }
+
+    .box.blue { border-color: rgba(35, 87, 137, 0.5); }
+    .box.teal { border-color: rgba(28, 124, 116, 0.5); }
+    .box.amber { border-color: rgba(196, 124, 27, 0.55); }
+    .box.green { border-color: rgba(75, 139, 59, 0.5); }
+    .box.red { border-color: rgba(154, 59, 59, 0.48); }
+
+    .arrow-note {
+      margin: 10px 0;
+      padding: 8px 12px;
+      border-radius: 12px;
+      background: #edf4f3;
+      color: var(--teal);
+      font-weight: 700;
+      text-align: center;
+    }
+
+    .nn {
+      display: grid;
+      grid-template-columns: 0.9fr 1.2fr 1.2fr 0.85fr;
+      gap: 14px;
+      margin-top: 18px;
+      align-items: stretch;
+    }
+
+    .layer {
+      border-radius: 22px;
+      padding: 18px;
+      border: 2px solid var(--line);
+      background: linear-gradient(180deg, #fffefa, #f3ead8);
+    }
+
+    .pe-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .pe {
+      padding: 10px 6px;
+      border-radius: 12px;
+      background: #e7f1ef;
+      color: #13564f;
+      font-weight: 800;
+      text-align: center;
+    }
+
+    .table {
+      width: 100%;
+      border-collapse: collapse;
+      overflow: hidden;
+      border-radius: 16px;
+      margin-top: 16px;
+      font-size: 15px;
+    }
+
+    .table th,
+    .table td {
+      padding: 11px 12px;
+      border: 1px solid #dfd2ba;
+      text-align: left;
+    }
+
+    .table th {
+      background: #e8dcc5;
+      color: #3a2d1d;
+    }
+
+    .table td {
+      background: rgba(255, 253, 248, 0.72);
+    }
+
+    .callout {
+      margin-top: 16px;
+      padding: 16px 18px;
+      border-left: 6px solid var(--amber);
+      border-radius: 12px;
+      background: #fff5e4;
+      color: #5c3c10;
+      font-weight: 700;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 16px;
+    }
+
+    ul {
+      margin: 8px 0 0;
+      padding-left: 22px;
+      color: var(--muted);
+    }
+
+    code {
+      padding: 2px 6px;
+      border-radius: 6px;
+      background: #eee2cc;
+      color: #4f3511;
+      font-family: "JetBrains Mono", "SFMono-Regular", Consolas, monospace;
+      font-size: 0.93em;
+    }
+
+    @media (max-width: 900px) {
+      main {
+        width: min(100vw - 24px, 1180px);
+      }
+
+      .hero,
+      .soc-grid,
+      .nn,
+      .two-col,
+      .metric-grid,
+      .flow {
+        grid-template-columns: 1fr;
+      }
+
+      .node:not(:last-child)::after {
+        content: "↓";
+        right: 50%;
+        top: auto;
+        bottom: -25px;
+        transform: translateX(50%);
+      }
+    }
+  </style>
+</head>
+<body>
+<main>
+  <section class="hero">
+    <div>
+      <h1>基于 RISC-V 的雷达 QMLP 硬件加速系统</h1>
+      <p>汇报图页：SoC 架构、NN-RTL 架构、ROM/word-bank 数据流、PPA 与测试结果。已同步 2026-04-15 word-bank/ROM 重构版。</p>
+      <div class="badge-row">
+        <span class="badge">k=7 + rcs21</span>
+        <span class="badge">21->64->32->2 INT8 QMLP</span>
+        <span class="badge">4-lane PE</span>
+        <span class="badge">ROM + word-bank</span>
+        <span class="badge">AXI DMA + AXI-Stream</span>
+        <span class="badge">Nexys Video / Artix-7</span>
+      </div>
+    </div>
+    <div class="metric-grid">
+      <div class="metric"><strong>1000/1000</strong><span>large golden 通过</span></div>
+      <div class="metric"><strong>54/54</strong><span>boundary 通过</span></div>
+      <div class="metric"><strong>1301</strong><span>kernel cycles</span></div>
+      <div class="metric"><strong>26.02 us</strong><span>@ 50 MHz</span></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>1. SoC 总体架构图</h2>
+    <p>CPU 负责控制、DMA 配置、测试程序运行和结果对拍；QMLP 作为 AXI-Stream 数据通路上的专用推理模块。</p>
+    <div class="soc-grid">
+      <div class="stack">
+        <div class="box blue"><h3>PC / Host</h3><p>UART-TSI 下载 ELF<br>串口接收测试日志</p></div>
+        <div class="arrow-note">控制与日志</div>
+        <div class="box blue"><h3>Rocket RISC-V Core</h3><p>bare-metal 程序<br>MMIO 配置 DMA / QMLP</p></div>
+      </div>
+      <div class="stack">
+        <div class="box amber"><h3>DDR Memory</h3><p>input buffer / output buffer / golden data</p></div>
+        <div class="arrow-note">MM2S: DDR -> Stream</div>
+        <div class="box teal"><h3>AXI DMA</h3><p>MM2S + S2MM<br>连接 DDR 与 AXI-Stream 加速器</p></div>
+        <div class="arrow-note">AXI-Stream datapath</div>
+        <div class="box green"><h3>Preproc + RadarAXISQMLP</h3><p>预处理可旁路<br>QMLP 执行 INT8 推理</p></div>
+        <div class="arrow-note">S2MM: Stream -> DDR</div>
+        <div class="box amber"><h3>DDR Output</h3><p>logits[2] 写回<br>CPU 读取并对拍</p></div>
+      </div>
+      <div class="stack">
+        <div class="box red"><h3>MMIO Control</h3><p>Base: 0x60000000<br>QMLP ctrl/status/counters</p></div>
+        <div class="box red"><h3>Debug Counters</h3><p>inBeats / outBeats<br>frames / runCycles / logits</p></div>
+        <div class="box red"><h3>Validation</h3><p>large golden<br>boundary cases</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>2. 系统数据流</h2>
+    <div class="flow">
+      <div class="node">ELF / Data<small>PC 通过 UART-TSI 下载</small></div>
+      <div class="node">RISC-V CPU<small>配置 DMA 与 QMLP</small></div>
+      <div class="node">DDR Input<small>input_int8[21]</small></div>
+      <div class="node">AXI DMA<small>MM2S / S2MM</small></div>
+      <div class="node">QMLP RTL<small>4-lane INT8 MAC</small></div>
+      <div class="node">DDR Output<small>logits_int32[2]</small></div>
+    </div>
+    <div class="callout">当前 e2e 包含 CPU 调度、DMA 配置、DDR 搬运、AXI-Stream 推理与结果回读；kernel latency 只统计 QMLP 本体推理周期。</div>
+  </section>
+
+  <section>
+    <h2>3. NN-RTL 架构图</h2>
+    <p>固定模型结构：<code>21 -> 64 -> 32 -> 2</code>，权重与激活为 INT8，中间累加与最终 logits 为 INT32。</p>
+    <div class="nn">
+      <div class="layer">
+        <h3>Input Buffer</h3>
+        <p><code>inputWords[4]</code></p>
+        <p>64-bit word-bank，承接 AXI-Stream 的 21 维 INT8 雷达特征。</p>
+      </div>
+      <div class="layer">
+        <h3>Fixed ROM Weights</h3>
+        <p>显式 distributed ROM</p>
+        <p>32-bit weight word = 4 个 INT8 权重</p>
+        <p><code>addr = outIdx * wordsPerRow + (inIdx >> 2)</code></p>
+      </div>
+      <div class="layer">
+        <h3>L1 / L2 Activation Bank</h3>
+        <p><code>l1OutWords[8]</code> / <code>l2OutWords[4]</code></p>
+        <p>64-bit 中间激活缓存</p>
+        <p>requant + ReLU + clamp</p>
+      </div>
+      <div class="layer">
+        <h3>4-lane PE/MAC</h3>
+        <p><code>inIdx + lane</code> 并行取数</p>
+        <div class="pe-row">
+          <div class="pe">PE0</div>
+          <div class="pe">PE1</div>
+          <div class="pe">PE2</div>
+          <div class="pe">PE3</div>
+        </div>
+      </div>
+      <div class="layer">
+        <h3>Output</h3>
+        <p><code>logits[0]</code>: pedestrian</p>
+        <p><code>logits[1]</code>: vehicle</p>
+        <p>硬件不做 softmax。</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>4. 权重存储与读取方式</h2>
+    <div class="two-col">
+      <div class="box teal">
+        <h3>当前实现</h3>
+        <ul>
+          <li>release 参数在 Chisel elaboration 阶段被读取并打包。</li>
+          <li>权重被打包为 <code>32-bit</code> word 并写入 hex 文件。</li>
+          <li>RTL 内联 <code>RadarQMLPAsyncRom</code>，通过 <code>$readmemh</code> 初始化。</li>
+          <li>Vivado 按 <code>rom_style="distributed"</code> 综合为 LUT-based ROM。</li>
+          <li>MAC 阶段按地址直接读取 ROM word，不再需要整行权重寄存器。</li>
+        </ul>
+      </div>
+      <div class="box amber">
+        <h3>不是这样</h3>
+        <ul>
+          <li>不是 CPU/AXI 可运行时改写的 RAM。</li>
+          <li>不是 BRAM ROM。</li>
+          <li>不是从 DDR 每次推理动态搬权重。</li>
+          <li>不是软件数组在硬件里运行。</li>
+        </ul>
+      </div>
+    </div>
+    <div class="callout">准确表述：显式固定 ROM + distributed LUT 实现 + 32-bit weight word。<code>outIdx</code> 选择神经元行，<code>inIdx >> 2</code> 选择行内 4 权重 word。</div>
+  </section>
+
+  <section>
+    <h2>5. 正确性与延迟测试结果</h2>
+    <table class="table">
+      <tr><th>项目</th><th>结果</th><th>说明</th></tr>
+      <tr><td>large_golden</td><td>1000/1000 通过</td><td>真实样本 golden logits 对拍</td></tr>
+      <tr><td>boundary_cases</td><td>54/54 通过</td><td>全 0、极值、交替、单维激活等</td></tr>
+      <tr><td>QMLP kernel</td><td>1301 cycles = 26.02 us</td><td>50 MHz 主系统时钟</td></tr>
+      <tr><td>large batch e2e</td><td>1117247 cycles = 22.345 ms</td><td>平均每样本系统端到端</td></tr>
+      <tr><td>boundary e2e</td><td>8941730 cycles = 178.835 ms</td><td>单样本式鲁棒性测试路径</td></tr>
+    </table>
+  </section>
+
+  <section>
+    <h2>6. PPA 指标</h2>
+    <table class="table">
+      <tr><th>层级</th><th>Total LUTs</th><th>Logic LUTs</th><th>LUTRAMs</th><th>SRLs</th><th>FFs</th><th>RAMB36</th><th>RAMB18</th><th>DSP</th></tr>
+      <tr><td>NexysVideoHarness</td><td>28366</td><td>24346</td><td>3726</td><td>294</td><td>17445</td><td>2</td><td>14</td><td>10</td></tr>
+      <tr><td>RadarAXISQMLP</td><td>3341</td><td>3341</td><td>0</td><td>0</td><td>1491</td><td>0</td><td>0</td><td>0</td></tr>
+    </table>
+    <table class="table">
+      <tr><th>Clock</th><th>Period</th><th>Frequency</th><th>WNS</th><th>WHS</th><th>说明</th></tr>
+      <tr><td>clk_out1_harnessSysPLLNode</td><td>20.000 ns</td><td>50 MHz</td><td>0.531 ns</td><td>0.051 ns</td><td>DUT 主域：Rocket / 总线 / DMA / QMLP</td></tr>
+    </table>
+    <div class="callout">Power 暂未形成有效报告，正式 PPT 建议标为待补充 report_power 或板级功耗实测。</div>
+  </section>
+
+  <section>
+    <h2>7. 创新点候选</h2>
+    <div class="two-col">
+      <div class="box green">
+        <h3>可以重点讲</h3>
+        <ul>
+          <li>RISC-V SoC 内嵌式雷达 QMLP 加速器。</li>
+          <li>固定权重 INT8 QMLP 的显式 ROM 与 word-bank 数据流。</li>
+          <li>4-lane PE/MAC 阵列降低 kernel cycles。</li>
+          <li>集中式 FSM / next-value 风格重构，提高 RTL 可维护性。</li>
+        </ul>
+      </div>
+      <div class="box red">
+        <h3>谨慎包装</h3>
+        <ul>
+          <li>Chipyard/Rocket 平台搭建属于工程基础。</li>
+          <li>AXI DMA 是标准搬运机制。</li>
+          <li>UART-TSI 是调试/加载方式。</li>
+          <li>Vivado 通过是验证结果，不是创新点本身。</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>8. 推荐结论页</h2>
+    <p>当前硬件系统已完成从软件 QMLP 模型到 RISC-V SoC 内嵌式 RTL 加速器的实现闭环。模型采用 <code>21->64->32->2</code> INT8 结构，权重在 bitstream 生成阶段固化为显式 distributed ROM，运行时通过 <code>outIdx/inIdx</code> 地址访问、<code>32-bit</code> 权重 word 和 4-lane PE 完成定点推理；中间激活采用 <code>64-bit</code> word-bank 缓存。</p>
+    <p>板级验证中，1000 组 large golden 与 54 组 boundary cases 全部通过，QMLP kernel latency 为 1301 cycles，约 26.02 us @ 50 MHz。该结果可支撑论文中“面向低功耗边缘雷达检测的 RISC-V SoC + 专用神经网络加速器设计”的硬件主线。</p>
+  </section>
+</main>
+</body>
+</html>

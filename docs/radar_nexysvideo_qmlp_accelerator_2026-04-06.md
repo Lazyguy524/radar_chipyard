@@ -1,6 +1,6 @@
 # Radar NexysVideo QMLP 加速器设计与验证说明
 
-更新时间：2026-04-06
+更新时间：2026-04-10
 
 ## 1. 文档目的
 
@@ -355,6 +355,175 @@ QMLP 在该入口中也已经扩展为：
 - 当前 bare-metal 调度路径下的端到端单次延迟约 `178.67 ms`
 
 这说明当前主要性能瓶颈不在 `QMLP` 算子本体，而在软件调度与 bring-up 路径。
+
+### 7.6 `v2.5` PE 阵列版本更新结果
+
+在 baseline `QMLP` 跑通后，后续继续完成了 `4-lane PE` 阵列版本 `v2.5`，并已完成板级验证：
+
+- 离线摘要：
+  - [339-qmlp-pe-array-v2p5-bitstream-summary-2026-04-09.md](/home/soooarr/chipyard/logs/radar_nexysvideo/runtime/339-qmlp-pe-array-v2p5-bitstream-summary-2026-04-09.md)
+- 板级摘要：
+  - [344-v2p5-board-pass-summary-2026-04-09.md](/home/soooarr/chipyard/logs/radar_nexysvideo/runtime/344-v2p5-board-pass-summary-2026-04-09.md)
+
+当前 `v2.5` 的关键结果如下：
+
+- 保留 `4-lane PE`
+- `hello + selfcheck @115200` 通过
+- `integrated regression + selfcheck @115200` 通过
+- `QMLP` 多样本 `8` 组全部通过
+
+性能数据更新为：
+
+- `hw_cycles_avg = 1301`
+- `hw_cycles_min = 1301`
+- `hw_cycles_max = 1301`
+- `e2e_cycles_avg = 8915389`
+- `inf_per_sec = 38431`
+
+在当前 `50 MHz` 下，可换算得到：
+
+- `QMLP kernel latency ≈ 26.02 us`
+- `system end-to-end latency ≈ 178.31 ms`
+
+与旧版 baseline 相比：
+
+- baseline `hw_cycles_avg = 3554`
+- `v2.5 hw_cycles_avg = 1301`
+- 硬件本体周期数约提升：
+  - `3554 / 1301 ≈ 2.73x`
+
+需要特别说明的是：
+
+- 本轮**已经完成的是 kernel latency 优化**
+- 本轮**还没有完成 system e2e latency 的系统级优化**
+
+也就是说，`v2.5` 已经明显缩短了 `QMLP` 模块内部计算时间，但端到端周期仍然主要受以下部分影响：
+
+- CPU 端测试流程
+- DMA 启停与轮询
+- DDR 往返搬运
+- bare-metal bring-up 路径
+
+因此当前最准确的表述应当是：
+
+- **QMLP 算子本体已经加速成功**
+- **system e2e latency 优化仍属于下一阶段工作**
+
+### 7.7 `v2.8` batch e2e 优化结果
+
+在 `v2.5` 之后，后续工作没有继续削弱 `4-lane PE`，而是把优化重点转到 `system e2e latency`，具体是从 batch 数据路径入手。
+
+本阶段关键文件为：
+
+- e2e 测试程序：
+  - [radar-axi-dma-qmlp-e2e.c](/home/soooarr/chipyard/tests/radar-axi-dma-qmlp-e2e.c)
+- batch 修复离线摘要：
+  - [412-qmlp-e2e-batchfix-v2p8-summary-2026-04-10.md](/home/soooarr/chipyard/logs/radar_nexysvideo/runtime/412-qmlp-e2e-batchfix-v2p8-summary-2026-04-10.md)
+- batch 板级通过摘要：
+  - [421-v2p8-batch-pass-summary-2026-04-10.md](/home/soooarr/chipyard/logs/radar_nexysvideo/runtime/421-v2p8-batch-pass-summary-2026-04-10.md)
+
+#### 7.7.1 这轮具体修了什么
+
+在 `batch-only` 诊断版里，旧版本已经出现下面这个特征：
+
+- `out[0]` 正确
+- `out[1]` 开始错位
+- `sample = 32`
+- `output = 8`
+- 但 `out = 5`
+
+这说明问题不在模型计算本体，而在样本边界的接收与打包。
+
+最终定位到 [RadarQMLP.scala](/home/soooarr/chipyard/fpga/src/main/scala/nexysvideo/RadarQMLP.scala) 中的 `recvBeatCount`：
+
+- 状态机回到 `sIdle` 时虽然会写 `recvBeatCount := 0`
+- 但下一样本首拍仍可能在同一个周期里使用上一样本残留值参与 `baseByte` 计算
+- 这样第二个样本第一拍就可能从错误偏移装载，导致 batch 输出从第二组开始整体错位
+
+`v2.8` 的修法是：
+
+- 增加显式 `recvBeatBase`
+- 在 `state === sIdle` 时强制其视为 `0`
+- `io.in.fire` 时统一使用 `recvBeatBase` 参与：
+  - `baseByte`
+  - `recvBeatCount` 递增
+  - 样本结束判断
+
+这轮修的是：
+
+- **QMLP batch 接收边界**
+
+而不是：
+
+- 削弱 `PE`
+- 改量化规则
+- 降低模型复杂度
+
+#### 7.7.2 离线实现结果
+
+`v2.8` 的 bitstream 已通过：
+
+- `sys_clock: WNS = 2.527 ns, WHS = 0.235 ns`
+- `clk_out1_harnessSysPLLNode: WNS = 0.114 ns, WHS = 0.050 ns`
+
+这说明：
+
+- `50 MHz` DUT 主域仍然通过
+- 修复 batch 接收逻辑后，当前版本仍可正常实现
+
+#### 7.7.3 板级结果
+
+在 fresh `CPU_RESET` 后，`batch-only` e2e 路径已经通过：
+
+- 日志：
+  - [420-v2p8-batch-only-after-user-reset-2026-04-10.log](/home/soooarr/chipyard/logs/radar_nexysvideo/runtime/420-v2p8-batch-only-after-user-reset-2026-04-10.log)
+
+关键结果为：
+
+- `AXI DMA qmlp e2e PASSED`
+- `in = 32`
+- `out = 8`
+- `frames = 1`
+- `keep = 0x000000ff`
+
+前四组输出为：
+
+- `out[0] = {855, -10706}`
+- `out[1] = {861, 508}`
+- `out[2] = {979, -8599}`
+- `out[3] = {291, 151}`
+
+说明 batch 接收错位问题已经消失。
+
+#### 7.7.4 当前 e2e 数据
+
+当前 `v2.8 batch-only` 路径给出的数据是：
+
+- `hw_cycles_avg = 1301`
+- `e2e_cycles_avg = 1157261`
+
+按 `50 MHz` 换算：
+
+- `kernel latency ≈ 26.02 us`
+- `reset_batch_per_sample e2e latency ≈ 23.145 ms`
+
+和旧单样本 e2e 对比：
+
+- `v2.5` 单样本 e2e：`8915389 cycles`，约 `178.31 ms`
+- `v2.8 batch-only` 每样本 e2e：`1157261 cycles`，约 `23.145 ms`
+
+也就是说，当前已经不只是：
+
+- `kernel latency` 优化成功
+
+而是已经开始拿到：
+
+- **真实 batch e2e 优化结果**
+
+当前更准确的结论是：
+
+- `v2.5` 是当前 `4-lane PE` 的板级稳定基线
+- `v2.8` 是当前 batch e2e 的板级稳定基线
 
 ## 8. 当前板测阻塞与定位结果
 

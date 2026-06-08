@@ -66,12 +66,14 @@
 
 #define QMLP_CTRL_ENABLE           (1u << 0)
 #define QMLP_CTRL_CLR_COUNTS       (1u << 1)
+#define QMLP_CTRL_CHAIN_PREPROC    (1u << 2)
 
 #define PREPROC_MODE_BYPASS        0u
 #define PREPROC_MODE_ADD32         1u
 #define PREPROC_MODE_SHIFT16_AR    2u
 #define PREPROC_MODE_RELU16        3u
 #define PREPROC_MODE_SWAP32        4u
+#define PREPROC_MODE_FEATURE21_Q8_8 5u
 
 #define DMACR_RS         (1u << 0)
 #define DMACR_RESET      (1u << 2)
@@ -272,6 +274,11 @@ static inline void qmlp_enable(int enable)
   qmlp_write32(QMLP_CTRL, enable ? QMLP_CTRL_ENABLE : 0u);
 }
 
+static inline void qmlp_enable_preproc_chain(int enable)
+{
+  qmlp_write32(QMLP_CTRL, enable ? (QMLP_CTRL_ENABLE | QMLP_CTRL_CHAIN_PREPROC) : 0u);
+}
+
 static inline void qmlp_dump_status(const char *tag)
 {
   printf("%s qmlp: CTRL=0x%08x STATUS=0x%08x IN=%u OUT=%u FRAMES=%u KEEP=0x%08x LOGIT0=%d LOGIT1=%d CYC=%u CAPS=0x%08x SAMPLE=%u OUTPUT=%u\n",
@@ -288,6 +295,21 @@ static inline void qmlp_dump_status(const char *tag)
          qmlp_read32(QMLP_CAPABILITIES),
          qmlp_read32(QMLP_SAMPLE_BYTES),
          qmlp_read32(QMLP_OUTPUT_BYTES));
+}
+
+static inline int qmlp_wait_idle(void)
+{
+  unsigned long timeout = DMA_TIMEOUT_CYCLES;
+
+  while (timeout-- > 0UL) {
+    uint32_t status = qmlp_read32(QMLP_STATUS);
+    if ((status & 0x1fu) == 0u) {
+      return 0;
+    }
+  }
+
+  printf("QMLP idle-wait timeout: STATUS=0x%08x\n", qmlp_read32(QMLP_STATUS));
+  return -1;
 }
 
 static inline volatile uint32_t *tx_buffer(void)
@@ -364,6 +386,44 @@ static inline int dma_wait_running(const char *name, uintptr_t sr_off)
 
   printf("%s failed to leave HALTED: DMASR=0x%08x\n", name, mmio_read32(DMA_BASE_ADDR + sr_off));
   return -1;
+}
+
+static inline int dma_wait_idle(const char *name, uintptr_t sr_off)
+{
+  unsigned long timeout = DMA_TIMEOUT_CYCLES;
+
+  while (timeout-- > 0UL) {
+    uint32_t status = mmio_read32(DMA_BASE_ADDR + sr_off);
+
+    if ((status & DMASR_ERR_MASK) != 0u) {
+      printf("%s idle-wait error: DMASR=0x%08x\n", name, status);
+      return -1;
+    }
+
+    if ((status & DMASR_IDLE) != 0u) {
+      return 0;
+    }
+  }
+
+  printf("%s idle-wait timeout: DMASR=0x%08x\n", name, mmio_read32(DMA_BASE_ADDR + sr_off));
+  return -1;
+}
+
+static inline int dma_ready_for_reuse(const char *name, uintptr_t sr_off)
+{
+  uint32_t status = mmio_read32(DMA_BASE_ADDR + sr_off);
+
+  if ((status & DMASR_ERR_MASK) != 0u) {
+    printf("%s reuse-check error: DMASR=0x%08x\n", name, status);
+    return -1;
+  }
+
+  if ((status & DMASR_HALTED) != 0u) {
+    printf("%s reuse-check halted: DMASR=0x%08x\n", name, status);
+    return -1;
+  }
+
+  return 0;
 }
 
 static inline void dma_start_simple_s2mm(uintptr_t dst_addr, uint32_t length)
@@ -502,6 +562,47 @@ static inline int dma_run_stream_once(uintptr_t src_addr,
 
   dma_start_simple_s2mm(dst_addr, s2mm_length);
   dma_start_simple_mm2s(src_addr, mm2s_length);
+
+  if (dma_wait_done("MM2S", MM2S_DMASR) != 0) return -1;
+  if (dma_wait_done("S2MM", S2MM_DMASR) != 0) return -1;
+  return 0;
+}
+
+static inline int dma_stream_prepare_noreset(void)
+{
+  if (dma_reset_channel("MM2S", MM2S_DMACR, MM2S_DMASR) != 0) return -1;
+  if (dma_reset_channel("S2MM", S2MM_DMACR, S2MM_DMASR) != 0) return -1;
+
+  mmio_write32(DMA_BASE_ADDR + MM2S_DMASR, DMASR_CLEAR_MASK);
+  mmio_write32(DMA_BASE_ADDR + S2MM_DMASR, DMASR_CLEAR_MASK);
+  mmio_write32(DMA_BASE_ADDR + MM2S_DMACR, DMACR_RUN_MASK);
+  mmio_write32(DMA_BASE_ADDR + S2MM_DMACR, DMACR_RUN_MASK);
+
+  if (dma_wait_running("MM2S", MM2S_DMASR) != 0) return -1;
+  if (dma_wait_running("S2MM", S2MM_DMASR) != 0) return -1;
+  return 0;
+}
+
+static inline int dma_run_stream_once_noreset(uintptr_t src_addr,
+                                              uint32_t mm2s_length,
+                                              uintptr_t dst_addr,
+                                              uint32_t s2mm_length)
+{
+  if (dma_ready_for_reuse("MM2S", MM2S_DMASR) != 0) return -1;
+  if (dma_ready_for_reuse("S2MM", S2MM_DMASR) != 0) return -1;
+
+  mmio_write32(DMA_BASE_ADDR + MM2S_DMASR, DMASR_CLEAR_MASK);
+  mmio_write32(DMA_BASE_ADDR + S2MM_DMASR, DMASR_CLEAR_MASK);
+  mmio_write32(DMA_BASE_ADDR + MM2S_DMACR, DMACR_RUN_MASK);
+  mmio_write32(DMA_BASE_ADDR + S2MM_DMACR, DMACR_RUN_MASK);
+
+  mmio_write32(DMA_BASE_ADDR + S2MM_DA, (uint32_t)dst_addr);
+  mmio_write32(DMA_BASE_ADDR + S2MM_DA_MSB, 0u);
+  mmio_write32(DMA_BASE_ADDR + S2MM_LENGTH, s2mm_length);
+
+  mmio_write32(DMA_BASE_ADDR + MM2S_SA, (uint32_t)src_addr);
+  mmio_write32(DMA_BASE_ADDR + MM2S_SA_MSB, 0u);
+  mmio_write32(DMA_BASE_ADDR + MM2S_LENGTH, mm2s_length);
 
   if (dma_wait_done("MM2S", MM2S_DMASR) != 0) return -1;
   if (dma_wait_done("S2MM", S2MM_DMASR) != 0) return -1;

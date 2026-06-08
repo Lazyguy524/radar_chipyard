@@ -1,0 +1,90 @@
+{
+  "calibration": {
+    "method": "percentile",
+    "percentile": 99.99,
+    "sample_count": 357780,
+    "batch_size": 8192
+  },
+  "num_layers": 3,
+  "num_bits": 8,
+  "input_dim": 21,
+  "num_classes": 2,
+  "shapes": [
+    [
+      64,
+      21
+    ],
+    [
+      32,
+      64
+    ],
+    [
+      2,
+      32
+    ]
+  ],
+  "logit_scale": 0.0007342078895983956,
+  "weight_layout": "row_major[out][in]",
+  "bias_layout": "separate_int32[out]",
+  "requant_mode": "fixed_point_multiplier_shift_for_hardware",
+  "float_requant_reference": "float_mul_scale_then_round",
+  "rounding": "round_to_nearest_ties_to_even",
+  "clamp_range": [
+    -127,
+    127
+  ],
+  "hardware_requant": {
+    "shift": 16,
+    "l1_multiplier": 3439,
+    "l2_multiplier": 504,
+    "rounding": "round_to_nearest_ties_to_even_integer_remainder",
+    "activation_order": "integer_round_then_relu_then_clamp",
+    "clamp_range": [
+      0,
+      127
+    ],
+    "applies_to": [
+      "l1",
+      "l2"
+    ],
+    "l3": "int32_accumulator_logits_no_requant"
+  },
+  "layers_detail": [
+    {
+      "name": "l1",
+      "weight_shape": [
+        64,
+        21
+      ],
+      "weight_count": 1344,
+      "bias_count": 64,
+      "input_scale": 2.436145305633545,
+      "weight_scale": 0.01293090172111988,
+      "output_scale": 0.6003565788269043
+    },
+    {
+      "name": "l2",
+      "weight_shape": [
+        32,
+        64
+      ],
+      "weight_count": 2048,
+      "bias_count": 32,
+      "input_scale": 0.6003565788269043,
+      "weight_scale": 0.0052408999763429165,
+      "output_scale": 0.40937960147857666
+    },
+    {
+      "name": "l3",
+      "weight_shape": [
+        2,
+        32
+      ],
+      "weight_count": 64,
+      "bias_count": 2,
+      "input_scale": 0.40937960147857666,
+      "weight_scale": 0.0017934647621586919,
+      "output_scale": 0.0007342078895983956
+    }
+  ]
+}

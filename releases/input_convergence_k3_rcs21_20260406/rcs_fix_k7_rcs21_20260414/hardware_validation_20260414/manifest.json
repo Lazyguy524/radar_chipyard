@@ -1,0 +1,33 @@
+{
+  "config": "/home/student/CaiWeijie/project/radar_cluster_rocc_exp/configs/multiframe_k_sweep_rcsfix_2026-04-14/k7_rcs21_nokd.yaml",
+  "checkpoint": "/home/student/CaiWeijie/project/radar_cluster_rocc_exp/logs/multiframe_k_sweep_rcsfix_2026-04-14/train/k7_rcs21_nokd/student_qat.pt",
+  "output_dir": "/home/student/CaiWeijie/project/radar_cluster_rocc_exp/releases/rcs_fix_k7_rcs21_20260414/hardware_validation_20260414",
+  "target_name": "radar_mlp_binary_k7_rcs21_rcsfix",
+  "feature_dim": 21,
+  "num_classes": 2,
+  "class_names": [
+    "pedestrian",
+    "vehicle"
+  ],
+  "sample_count": 1000,
+  "large_golden": {
+    "split": "test",
+    "sample_count": 1000,
+    "inputs_int8_npy": "test_inputs_int8.npy",
+    "logits_int32_npy": "test_logits_int32.npy",
+    "l1_int8_npy": "test_l1_int8.npy",
+    "l2_int8_npy": "test_l2_int8.npy",
+    "overview_jsonl": "test_overview.jsonl",
+    "detailed_jsonl": "test_detailed.jsonl",
+    "overview_csv": "test_overview.csv"
+  },
+  "boundary_cases": {
+    "case_count": 54,
+    "inputs_int8_npy": "boundary_inputs_int8.npy",
+    "logits_int32_npy": "boundary_logits_int32.npy",
+    "l1_int8_npy": "boundary_l1_int8.npy",
+    "l2_int8_npy": "boundary_l2_int8.npy",
+    "jsonl": "boundary_cases.jsonl",
+    "csv": "boundary_cases.csv"
+  }
+}

@@ -519,6 +519,95 @@ The project is not limited to 50 MHz by Feature21 or QMLP arithmetic. The curren
   - Keep arithmetic results unchanged; accept extra cycles per tile/output.
   - A more aggressive alternative is replacing the async distributed ROMs with synchronous ROMs, but that requires state-machine changes anyway.
 
+## Checkpoint 2026-06-04 Fresh Continuation / QMLP Stage 0
+
+- Restarted from this rolling summary and current files only; no old thread context was used.
+- Current evidence files for this phase:
+  - Rolling context: `docs/feature21_qmlp_frequency_limit_2026-06-02/rolling_summary.md`
+  - Latest post-buffer 60 MHz timing: `fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideo60MHzConfig/obj/report/timing.txt`
+  - Latest post-buffer bitstream log: `logs/radar_nexysvideo/runtime/feature21-frequency-limit-2026-06-03/tsi-buffer-experiment-2026-06-03/bitstream-60mhz-tsi-buffer-vivado2022p2-2026-06-03.log`
+  - QMLP source: `fpga/src/main/scala/nexysvideo/RadarQMLP.scala`
+  - Feature21 source: `fpga/src/main/scala/nexysvideo/RadarAXIDMA.scala`
+- Current timing state from the latest 60 MHz implementation:
+  - Overall setup still fails: WNS `-1.578 ns`, TNS `-276.127 ns`, 293 failing endpoints.
+  - `sys_clock` is clean; failures are intra-DUT `clk_out1_harnessSysPLLNode`.
+  - Top three observed classes are QMLP, Feature21, and buffered UART-TSI, in that order.
+- QMLP source/timing mapping rechecked:
+  - `RadarQMLPAsyncRom` remains asynchronous distributed ROM with `assign data = Memory[addr]`.
+  - `outIdx/inIdx` drive weight ROM addresses combinationally.
+  - MAC states consume ROM data and update `accReg` in the same cycle.
+  - The timing report shows `outIdx_reg[1]_replica -> l1WeightRom -> partial-sum/add tree -> accReg_reg[27]`, with 27 logic levels.
+- Next experiment:
+  - Add a conservative per-tile MAC prep stage in `RadarQMLP.scala`.
+  - Register selected activation lanes and weight lanes before the MAC add.
+  - Leave arithmetic semantics unchanged and accept extra cycles per tile.
+- Backup directory:
+  - `logs/radar_nexysvideo/runtime/feature21-frequency-limit-2026-06-04/qmlp-staging-experiment-2026-06-04/`
+
+## Checkpoint 2026-06-04 QMLP Async-ROM/MAC Staging Stage 1
+
+- Modified `fpga/src/main/scala/nexysvideo/RadarQMLP.scala`.
+- Added one MAC prep stage per layer:
+  - `sL1Load -> sL1Prep -> sL1Mac`
+  - `sL2Load -> sL2Prep -> sL2Mac`
+  - `sL3Load -> sL3Prep -> sL3Mac`
+- Added staging registers:
+  - `biasStageReg`
+  - `macDataRegs`
+  - `macWeightRegs`
+- Behavior intent:
+  - Keep async ROMs unchanged for now.
+  - Keep arithmetic and output values unchanged.
+  - Register selected activation lanes and weight lanes before the MAC add.
+  - Accept one extra cycle per MAC tile so the old `outIdx/inIdx -> async ROM -> multiply/sum -> accReg` path is cut.
+- Validation:
+  - `git diff --check -- fpga/src/main/scala/nexysvideo/RadarQMLP.scala docs/feature21_qmlp_frequency_limit_2026-06-02/rolling_summary.md` passed.
+  - `make -C fpga SUB_PROJECT=nexysvideo CONFIG=RadarAXIMMIONexysVideo60MHzConfig verilog` passed.
+  - Log: `logs/radar_nexysvideo/runtime/feature21-frequency-limit-2026-06-04/qmlp-staging-experiment-2026-06-04/verilog-60mhz-qmlp-staging-2026-06-04.log`
+  - Existing Makefile behavior still prints the ignored empty-`SIM_FILE_REQS` `cp: missing destination file operand` message.
+- Generated SV evidence:
+  - `RadarAXISQMLP.sv` contains real registers `macDataRegs_0..3`, `macWeightRegs_0..3`, and `biasStageReg`.
+  - In prep states, async ROM data such as `_l1WeightRom_data` loads `macWeightRegs_*`.
+  - In MAC states, `accReg` is updated from `macDataRegs_* * macWeightRegs_*` through `macPartialSum`, not directly from ROM outputs.
+- Current interpretation:
+  - The QMLP structural issue identified by the latest 60 MHz timing report has been addressed at RTL/generator level.
+  - Actual slack impact still requires implementation timing.
+  - Next stage is Feature21 quant/writeback split, because the second latest 60 MHz failing path was `featureQ8p8Reg_reg[0] -> featureByteRegs_11_reg[1]`.
+
+## Checkpoint 2026-06-04 Feature21 Quant/Writeback Split Stage 1
+
+- Feature21 timing source/destination rechecked from the latest 60 MHz report:
+  - `radarDMA/feature21/featureQ8p8Reg_reg[0]` to `radarDMA/feature21/featureByteRegs_11_reg[1]`
+  - Slack `-1.530 ns`
+  - Data path delay `17.908 ns`
+  - Logic levels `37`
+- Source mapping:
+  - `sFeatureSelect` already registers the selected feature control/data into `featureRawReg`, `featureDensityReg`, and `featureQ8p8Reg`.
+  - `sFeatureQuant` still computed `selectedFeatureByte` and wrote `featureByteRegs(featureIdx)` in the same cycle.
+  - That one-cycle path includes constant multiply, round-nearest-even, clamp, and the dynamic 32-entry feature-byte write mux.
+- Modified `fpga/src/main/scala/nexysvideo/RadarAXIDMA.scala`.
+- Added `featureByteReg` and split the final feature byte path:
+  - `sFeatureSelect -> sFeatureQuant -> sFeatureWrite`
+  - `sFeatureQuant` now computes and registers `selectedFeatureByte`.
+  - `sFeatureWrite` writes `featureByteRegs(featureIdx)` from the 8-bit `featureByteReg`.
+- Behavior intent:
+  - Keep feature values and quantization formula unchanged.
+  - Add one cycle per emitted feature byte.
+  - Cut the old `featureQ8p8Reg -> quantize/round/clamp -> featureByteRegs` timing path.
+- Validation:
+  - `git diff --check -- fpga/src/main/scala/nexysvideo/RadarAXIDMA.scala fpga/src/main/scala/nexysvideo/RadarQMLP.scala docs/feature21_qmlp_frequency_limit_2026-06-02/rolling_summary.md` passed.
+  - `make -C fpga SUB_PROJECT=nexysvideo CONFIG=RadarAXIMMIONexysVideo60MHzConfig verilog` passed.
+  - Log: `logs/radar_nexysvideo/runtime/feature21-frequency-limit-2026-06-04/feature21-quant-writeback-experiment-2026-06-04/verilog-60mhz-feature21-quant-writeback-2026-06-04.log`
+  - Existing Makefile behavior still prints the ignored empty-`SIM_FILE_REQS` `cp: missing destination file operand` message.
+- Generated SV evidence:
+  - `RadarAXISFeature21Preprocessor.sv` contains real `featureByteReg`.
+  - The quantization network from `featureQ8p8Reg` feeds `featureByteReg`.
+  - The dynamic `featureByteRegs_*` write muxes now select `featureByteReg`, not the full quantization result.
+- Current interpretation:
+  - The Feature21 structural issue identified by the latest 60 MHz timing report has been addressed at RTL/generator level.
+  - Actual slack impact still requires implementation timing.
+  - The remaining watch item is the UART-TSI/`TSIToTileLink` A-channel request-generation path, especially an internal A-channel register stage if implementation timing still shows `tsi2tl` near the top.
+
 ### Feature21 Path Mapping
 
 - Latest timing source/destination:
@@ -578,3 +667,910 @@ The project is not limited to 50 MHz by Feature21 or QMLP arithmetic. The curren
   - First address QMLP async-ROM/MAC staging because it is the current worst path.
   - Then split Feature21 quant/writeback.
   - Keep the buffered TSI path on the list because it is still only about `0.070 ns` behind the worst path.
+
+## Checkpoint 2026-06-04 Post-QMLP/Feature21 60 MHz Bitstream
+
+- Ran a targeted 60 MHz implementation after the QMLP MAC staging and Feature21 quant/writeback split.
+- Command:
+  - `make -C fpga SUB_PROJECT=nexysvideo CONFIG=RadarAXIMMIONexysVideo60MHzConfig bitstream`
+- Log:
+  - `logs/radar_nexysvideo/runtime/feature21-frequency-limit-2026-06-04/post-qmlp-feature21-bitstream-2026-06-04/bitstream-60mhz-post-qmlp-feature21-2026-06-04-181822.log`
+- Result:
+  - Top-level `make` returned `0`.
+  - `write_bitstream completed successfully`.
+  - Final timing gate passed; no `Failed to meet timing` exit was triggered.
+
+### Final Artifacts
+
+- Bitstream:
+  - `fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideo60MHzConfig/obj/NexysVideoHarness.bit`
+  - mtime `2026-06-04 18:35:17 +0800`
+  - size `9730766`
+  - SHA256 `2e837c3700adbd0385837dc2697d1d3abf5f2a5607d2aed8d7073c2c5c5b3a39`
+- Timing report:
+  - `fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideo60MHzConfig/obj/report/timing.txt`
+  - mtime `2026-06-04 18:35:53 +0800`
+  - size `3397930`
+  - SHA256 `3e5f6c41991cc8aa6a6288994fa0af1515e8686fc680ea06c39728fb71682f3c`
+
+### Timing Result
+
+- Final design timing summary:
+  - WNS `+0.018 ns`
+  - TNS `0.000 ns`
+  - Setup failing endpoints `0`
+  - WHS `+0.027 ns`
+  - THS `0.000 ns`
+  - Hold failing endpoints `0`
+- Intra-DUT clock group:
+  - `clk_out1_harnessSysPLLNode` WNS `+0.018 ns`
+  - `clk_out1_harnessSysPLLNode` TNS `0.000 ns`
+  - 0 setup/hold failing endpoints.
+- Route/physopt progression:
+  - Post-route before post-route physopt: WNS `-0.071 ns`, TNS `-0.136 ns`.
+  - Post-route `phys_opt_design` improved the critical path by about `0.090 ns`.
+  - Final post-physopt timing: WNS `+0.018 ns`, TNS `0.000 ns`.
+
+### New Tight Paths After Closure
+
+- Worst setup path is no longer QMLP async-ROM/MAC:
+  - Source `radarDMA/feature21/densityQ8p8Reg_reg[2]`
+  - Destination `radarDMA/feature21/densityFeatureReg_reg[4]`
+  - Slack `+0.018 ns`
+  - Data path delay `16.545 ns`
+  - Logic levels `31`
+  - Interpretation: Feature21 density final quantization/feature-byte generation is now the tightest accepted path.
+- Other near-top Feature21 density paths:
+  - `densityQ8p8Reg_reg[2] -> densityFeatureReg_reg[0]`, slack `+0.019 ns`
+  - `densityQ8p8Reg_reg[2] -> densityFeatureReg_reg[1]`, slack `+0.023 ns`
+  - `densityQ8p8Reg_reg[2] -> densityFeatureReg_reg[2]`, slack `+0.023 ns`
+  - `densityQ8p8Reg_reg[2] -> densityFeatureReg_reg[3]`, slack `+0.024 ns`
+- Buffered UART-TSI path remains close but no longer failing:
+  - Source `chiptop0/system/fbus/tsi2tl/addr_reg[4]`
+  - Destination `chiptop0/system/fbus/coupler_from_uart_tsi/buffer/nodeOut_a_q/ram_reg[50]`
+  - Slack `+0.102 ns`
+  - Data path delay `16.451 ns`
+  - Logic levels `33`
+- QMLP no longer appears among the worst max-delay paths in the final report excerpt, which supports the QMLP MAC staging change as effective for the previously observed `outIdx -> async ROM -> accReg` path.
+
+### Updated Interpretation
+
+- Practical 60 MHz closure is now achieved for the integrated Feature21 + QMLP NexysVideo config.
+- The QMLP MAC staging and Feature21 quant/writeback split converted the previous `-1.578 ns` 60 MHz failure into a passing post-route bitstream with only `+0.018 ns` margin.
+- Margin is very thin. This bitstream should be treated as a timing-accepted 60 MHz candidate, not a robustly overclosed design.
+- The next engineering priority should be functional validation on board:
+  - UART-TSI load/selfcheck smoke test.
+  - Feature21/QMLP board regression or golden comparison.
+  - Confirm added QMLP and Feature21 cycles did not break software-visible completion or expected outputs.
+- If more timing margin is needed after functional validation:
+  - split Feature21 density final quantization/feature-byte generation,
+  - or add an internal registered A-channel request stage in `TSIToTileLink` because the buffered TSI path still has only about `0.10 ns` slack.
+
+### Immediate Validation After Bitstream
+
+- Static diff check passed:
+  - `git diff --check -- fpga/src/main/scala/nexysvideo/RadarQMLP.scala fpga/src/main/scala/nexysvideo/RadarAXIDMA.scala docs/feature21_qmlp_frequency_limit_2026-06-02/rolling_summary.md`
+- RISC-V test ELF build targets were checked:
+  - `radar-axi-dma-feature21.riscv`
+  - `radar-axi-dma-feature21-golden.riscv`
+  - `radar-axi-dma-qmlp.riscv`
+  - `radar-axi-dma-qmlp-validation.riscv`
+  - `radar-axi-dma-qmlp-chain-validation.riscv`
+  - `radar-axi-dma-qmlp-e2e.riscv`
+  - Result: all were present and `make` reported them up to date.
+- Generated SV evidence rechecked:
+  - `RadarAXISQMLP.sv` contains real `biasStageReg`, `macDataRegs_*`, and `macWeightRegs_*`.
+  - QMLP MAC expressions now multiply `macDataRegs_* * macWeightRegs_*`, not ROM outputs directly.
+  - `RadarAXISFeature21Preprocessor.sv` contains real `featureByteReg`.
+  - Feature byte array update muxes now select `featureByteReg`.
+- Source-level state-machine sanity:
+  - QMLP `Load -> Prep -> Mac` sequence registers bias/data/weight before MAC and preserves accumulator semantics.
+  - Feature21 `Select -> Quant -> Write` sequence adds one byte-register stage before indexed feature-byte writeback.
+  - No obvious same-cycle read-after-write issue was found in the final Feature21 emit transition: the final feature byte is written before later output beats read that word.
+- Board validation was not run in this checkpoint because no `/dev/ttyUSB*` or `/dev/ttyACM*` device was present.
+
+## Checkpoint 2026-06-04 Feature21 Density/General Quant Split 60 MHz Closure
+
+- Continued from the thin-margin `+0.018 ns` 60 MHz candidate and kept the earlier bitstream/timing result as history.
+- First follow-up: split Feature21 density final quantization by adding `densityQuantProductReg` and changing the density tail to:
+  - `sDensityShift -> sDensityQuantMul -> sDensityQuantRound`
+- Density-only split result:
+  - 60 MHz bitstream passed.
+  - Archived bitstream: `logs/radar_nexysvideo/runtime/feature21-frequency-limit-2026-06-04/feature21-density-quant-split-2026-06-04/artifacts/NexysVideoHarness-density-quant-split-60mhz.bit`
+  - Archived timing: `logs/radar_nexysvideo/runtime/feature21-frequency-limit-2026-06-04/feature21-density-quant-split-2026-06-04/artifacts/timing-density-quant-split-60mhz.txt`
+  - Bit SHA256 `2f5b54cdfab75326c7a063e6d9d52845bfb99a670a60cf6202206c33771d6f07`
+  - Timing SHA256 `e4d624a9dd6115316b589abd50984be1784f02e1d7d1bdf90562675e7915c386`
+  - Final WNS `+0.007 ns`, TNS `0.000 ns`, setup failing endpoints `0`.
+  - Hold was clean: WHS `+0.015 ns`, THS `0.000 ns`.
+  - Intra-DUT `clk_out1_harnessSysPLLNode` WNS `+0.007 ns`.
+  - Worst 60 MHz setup path moved to ordinary Feature21 quantization:
+    - `radarDMA/feature21/featureQ8p8Reg_reg[2]` to `radarDMA/feature21/featureByteReg_reg[2]`
+    - data path delay `16.514 ns`
+    - logic levels `37`
+- Second follow-up: split ordinary Feature21 quantization by adding `featureQuantProductReg` and changing the feature tail to:
+  - `sFeatureSelect -> sFeatureQuantMul -> sFeatureQuantRound -> sFeatureWrite`
+- Current source state in `fpga/src/main/scala/nexysvideo/RadarAXIDMA.scala`:
+  - density quant multiply is registered in `densityQuantProductReg`.
+  - ordinary feature quant multiply is registered in `featureQuantProductReg`.
+  - `sFeatureQuantRound` only rounds/clamps from `featureQuantProductReg` into `featureByteReg`.
+  - `sFeatureWrite` writes `featureByteRegs(featureIdx)` from `featureByteReg`.
+  - Feature 0/count uses the same selected Q8.8 feature path via `(actualPoints << 8)`, so it no longer bypasses directly into the byte write mux.
+- General-quant-split result:
+  - 60 MHz bitstream passed.
+  - Current generated bitstream and timing are byte-identical to the archived general-quant-split copies.
+  - Archived bitstream: `logs/radar_nexysvideo/runtime/feature21-frequency-limit-2026-06-04/feature21-general-quant-split-2026-06-04/NexysVideoHarness-general-quant-split-60mhz.bit`
+  - Archived timing: `logs/radar_nexysvideo/runtime/feature21-frequency-limit-2026-06-04/feature21-general-quant-split-2026-06-04/timing-general-quant-split-60mhz.txt`
+  - Bit SHA256 `e01ce71f4c130f213d1657c738e008e8f08f5ddf6bff37f25ac47acb18798644`
+  - Timing SHA256 `5e0236c9a9f5537416d3bd937e2c0f1d9e53d670e265b6856067707b74a4d63a`
+  - Generated bitstream mtime `2026-06-04 22:25:54 +0800`, size `9730766`.
+  - Generated timing mtime `2026-06-04 22:26:31 +0800`, size `3386661`.
+- Final timing summary for the general-quant-split build:
+  - WNS `+0.162 ns`
+  - TNS `0.000 ns`
+  - Setup failing endpoints `0`
+  - WHS `+0.025 ns`
+  - THS `0.000 ns`
+  - Hold failing endpoints `0`
+  - Intra-DUT `clk_out1_harnessSysPLLNode` WNS `+0.162 ns`, TNS `0.000 ns`, 0 failing endpoints.
+  - `sys_clock` WNS `+5.584 ns`.
+- True 60 MHz worst setup path for the current general-quant-split build:
+  - Source `chiptop0/system/fbus/tsi2tl/addr_reg[4]_replica`
+  - Destination `chiptop0/system/fbus/coupler_from_uart_tsi/buffer/nodeOut_a_q/ram_reg[50]`
+  - Slack `+0.162 ns`
+  - Data path delay `16.411 ns`
+  - Logic levels `32`
+  - Path group `clk_out1_harnessSysPLLNode`
+  - This is the buffered UART-TSI / front-bus A-channel path, not Feature21 or QMLP arithmetic.
+- Generated SV evidence:
+  - `RadarAXISFeature21Preprocessor.sv` contains both `featureQuantProductReg` and `densityQuantProductReg`.
+  - `featureByteRegs_*` writebacks select `featureByteReg`.
+- Resource note:
+  - `feature21` uses 2 DSP blocks in the post-route utilization report, matching the expected Feature21 multiply resources.
+  - The added general quant split did not introduce an obvious extra DSP block beyond the Feature21 pair already present.
+- Current recommendation:
+  - Treat `feature21-general-quant-split-2026-06-04` as the preferred 60 MHz timing-closed candidate.
+  - It improves the accepted margin from the density-only `+0.007 ns` to `+0.162 ns`.
+  - The next timing-margin target is no longer ordinary Feature21 quantization; it is the buffered `tsi2tl` / UART-TSI front-bus path, unless board validation exposes a functional issue first.
+  - Board validation is still required for UART-TSI load/selfcheck and Feature21/QMLP golden/regression behavior.
+
+## Checkpoint 2026-06-04 75 MHz TSI/QMLP Split Work
+
+- Target shifted from the already timing-closed 60 MHz candidate to an aggressive 75 MHz push.
+- Historical 75 MHz baseline remains:
+  - WNS `-3.059 ns`
+  - TNS `-599.344 ns`
+  - worst path `fbus/tsi2tl/addr_reg[4]` into `fbus/buffer` TL-A queue RAM.
+- First 75 MHz TSI change:
+  - Modified `generators/testchipip/src/main/scala/tsi/TSIToTileLink.scala`.
+  - Added registered TL-A request output (`aBitsReg`, `aValidReg`) and prepare states so `mem.a.bits` no longer comes directly from `edge.Get`/`edge.Put` combinational request generation.
+  - 75 MHz verilog generation passed and generated `TSIToTileLink.sv` confirmed TL-A fields driven from `aBitsReg_*`.
+- A first implementation attempt with only that TSI A-register stage was intentionally stopped during route:
+  - Log: `logs/radar_nexysvideo/runtime/feature21-frequency-limit-2026-06-04/feature21-75mhz-tsi-a-pipeline-2026-06-04/bitstream-75mhz-tsi-a-pipeline-2026-06-04.log`
+  - It reached route startup, but the code had a functional bug for multi-beat TSI reads.
+  - The stopped run did not produce a final post-route timing report.
+  - Intermediate post-place/power-opt estimate still showed negative setup timing around WNS `-2.226 ns`.
+  - Placement/physopt messages named `tsi2tl/aBitsReg_*`, `raw_size`, `byteAddr`, and `radarDMA/qmlp/quantProductReg_*` candidates, so the next cuts were aimed there.
+- Functional bug fixed in TSI read flow:
+  - The original A-register patch cleared `aValidReg` after a read request fired.
+  - Multi-beat reads then returned from `s_read_body` to `s_read_req` without reloading `aBitsReg` or reasserting `aValidReg`, which could hang UART-TSI selfcheck/readback.
+  - The read loop now returns to request preparation for each new beat.
+- Deeper TSI read-request split:
+  - Added `s_read_measure`, `s_read_size`, `s_read_prepare`, then `s_read_req`.
+  - `s_read_measure` registers address/length sizing inputs.
+  - `s_read_size` registers derived request size/address-low fields.
+  - `s_read_prepare` loads the final TL-A `Get` request into `aBitsReg`.
+  - Generated `TSIToTileLink.sv` confirms real `readAddrSizeReg`, `readLenSizeReg`, `readLgSizeReg`, `readBeatAddrReg`, `readByteAddrReg`, and `aBitsReg_*`.
+- QMLP follow-up split:
+  - Modified `fpga/src/main/scala/nexysvideo/RadarQMLP.scala`.
+  - Changed the requant constant multiply helper from a linear shift-add fold to a fixed-width balanced sum helper.
+  - Intent is to reduce the `accReg -> quantProductReg` logic depth without changing QMLP state sequencing or adding visible cycles.
+  - First attempt failed elaboration because fixed-width slicing ran before padding; fixed by padding before slicing.
+- Validation before rerun:
+  - `git -C generators/testchipip diff --check -- src/main/scala/tsi/TSIToTileLink.scala` passed.
+  - `git diff --check -- fpga/src/main/scala/nexysvideo/RadarQMLP.scala docs/feature21_qmlp_frequency_limit_2026-06-02/rolling_summary.md` passed.
+  - `make -C fpga SUB_PROJECT=nexysvideo CONFIG=RadarAXIMMIONexysVideo75MHzConfig verilog` passed after both TSI and QMLP changes.
+  - Latest verilog log: `logs/radar_nexysvideo/runtime/feature21-frequency-limit-2026-06-04/feature21-75mhz-tsi-read-pipeline-2026-06-04/verilog-75mhz-tsi-read-pipeline-qmlp-balanced-v2-2026-06-04.log`
+- Current active run:
+  - Command: `make -C fpga SUB_PROJECT=nexysvideo CONFIG=RadarAXIMMIONexysVideo75MHzConfig bitstream`
+  - Log: `logs/radar_nexysvideo/runtime/feature21-frequency-limit-2026-06-04/feature21-75mhz-tsi-read-pipeline-2026-06-04/bitstream-75mhz-tsi-read-pipeline-qmlp-balanced-2026-06-04.log`
+  - At the time of this checkpoint, the run had passed PLL/IP setup and was entering Vivado implementation; no final WNS/TNS yet.
+
+## Checkpoint 2026-06-04 75 MHz TSI/QMLP Split Closure
+
+- The 75 MHz implementation completed after the deeper TSI read pipeline and QMLP balanced requant add tree.
+- Command:
+  - `make -C fpga SUB_PROJECT=nexysvideo CONFIG=RadarAXIMMIONexysVideo75MHzConfig bitstream`
+- Log:
+  - `logs/radar_nexysvideo/runtime/feature21-frequency-limit-2026-06-04/feature21-75mhz-tsi-read-pipeline-2026-06-04/bitstream-75mhz-tsi-read-pipeline-qmlp-balanced-2026-06-04.log`
+- Result:
+  - `write_bitstream completed successfully`.
+  - Vivado exited normally at `2026-06-04 23:31:42 +0800`.
+  - The final timing gate did not trigger a failure.
+
+### Final 75 MHz Artifacts
+
+- Bitstream:
+  - `fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideo75MHzConfig/obj/NexysVideoHarness.bit`
+  - mtime `2026-06-04 23:30:58 +0800`
+  - size `9730766`
+  - SHA256 `4c17ff97e38d99de268e010458d3e6172f8f03e3f2b41fc205d7e219e2e024a9`
+- Timing report:
+  - `fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideo75MHzConfig/obj/report/timing.txt`
+  - mtime `2026-06-04 23:31:32 +0800`
+  - size `3452071`
+  - SHA256 `cb7cb8bd1bbe388ea270926b516232c8e5a03299299a705ffaa42e9ea4acade8`
+
+### Final Timing Result
+
+- Final design timing summary:
+  - WNS `+0.021 ns`
+  - TNS `0.000 ns`
+  - Setup failing endpoints `0`
+  - WHS `+0.017 ns`
+  - THS `0.000 ns`
+  - Hold failing endpoints `0`
+- Intra-DUT `clk_out1_harnessSysPLLNode`:
+  - WNS `+0.021 ns`
+  - TNS `0.000 ns`
+  - setup failing endpoints `0`
+  - WHS `+0.024 ns`
+  - THS `0.000 ns`
+  - hold failing endpoints `0`
+- Post-route progression:
+  - Route-stage timing before post-route physopt was still failing at WNS `-0.919 ns`, TNS `-111.716 ns`, WHS `+0.017 ns`.
+  - Post-route `phys_opt_design -directive Explore` recovered about `0.939 ns` WNS and `111.716 ns` TNS.
+  - Post-route physopt final summary was WNS `+0.021 ns`, TNS `0.000 ns`, WHS `+0.017 ns`, THS `0.000 ns`.
+
+### Tight Paths After 75 MHz Closure
+
+- Worst setup path in the final report:
+  - Slack `+0.021 ns`
+  - Source `chiptop0/system/tile_prci_domain/element_reset_domain_rockettile/frontend/fq/valid_0_reg_replica`
+  - Destination `chiptop0/system/tile_prci_domain/element_reset_domain_rockettile/core/ex_reg_rs_msb_0_reg[49]`
+  - Requirement `13.333 ns`
+  - Data path delay `12.484 ns`
+  - Logic delay `2.068 ns`
+  - Route delay `10.416 ns`
+  - Logic levels `13`
+  - Interpretation: the final worst setup path is Rocket front-end queue/control into core execute decode, not TSI or QMLP.
+- Other near-top setup paths repeat the same source into nearby `ex_reg_rs_msb_0` destinations with the same `+0.021 ns` slack.
+- During post-route physopt, the active path group rotated through:
+  - Rocket divider DSP/multiply residue, including `_prod_T_40__*` and `remainder*` nets.
+  - Rocket front-end queue/control decode nets.
+  - Feature21 density quantization nets, including `densityFeatureReg*`, `densityRounded0`, and `densityQuantProductReg`.
+- The earlier TSI and QMLP candidates no longer appear as the final top setup path class in the closed timing report.
+
+### DRC / Robustness Notes
+
+- Bitgen DRC completed with `0 Errors`, `28 Warnings`, and `4 Advisories`.
+- Notable timing-relevant warnings:
+  - DSP input/output pipeline warnings remain on Feature21 density DSPs (`densityAreaReg0`, `densityProdReg0`).
+  - DSP output/multiplier pipeline warnings remain on Rocket divider DSPs (`core/div/_prod_T_40__*`).
+  - These warnings line up with the paths Vivado had to optimize late in post-route physopt.
+- There were also known project/IP critical warnings earlier in the log for already-present IP/fileset/XDC issues; they did not prevent bitstream generation or final timing closure.
+
+### Current Interpretation
+
+- The 75 MHz target is now timing-closed for this generated bitstream, but with a very thin `+0.021 ns` setup margin.
+- The TSI TL-A request registerization plus deeper read-request preparation eliminated the old 75 MHz front-bus/TSI bottleneck as the top final path.
+- The QMLP balanced requant add tree also removed the observed `qmlp/quantProductReg_*` path from the final top path class.
+- The remaining margin risk has shifted to global SoC timing and Feature21 density DSP/quantization residue rather than one obvious accelerator path.
+- Board validation is still required, especially UART-TSI load/readback/selfcheck, because the TSI FSM changed and the earlier A-register-only patch had a multi-beat read bug that was fixed before this final run.
+- If more 75 MHz guardband is needed after functional validation, the likely next targets are:
+  - Rocket divider/front-end timing only if changing the core configuration is acceptable.
+  - Feature21 density DSP pipelining or another density-tail split.
+  - A floorplanning/clocking pass, because the final Rocket path is route-dominated (`10.416 ns` route out of `12.484 ns` data delay).
+
+## Checkpoint 2026-06-05 Fresh 75 MHz/QMLP/TSI Audit
+
+- Restarted from `docs/feature21_qmlp_frequency_limit_2026-06-02/rolling_summary.md` and current files only; no old thread context was used.
+- Evidence rechecked:
+  - 75 MHz timing: `fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideo75MHzConfig/obj/report/timing.txt`
+  - 75 MHz bitstream: `fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideo75MHzConfig/obj/NexysVideoHarness.bit`
+  - 75 MHz build log: `logs/radar_nexysvideo/runtime/feature21-frequency-limit-2026-06-04/feature21-75mhz-tsi-read-pipeline-2026-06-04/bitstream-75mhz-tsi-read-pipeline-qmlp-balanced-2026-06-04.log`
+  - QMLP source: `fpga/src/main/scala/nexysvideo/RadarQMLP.scala`
+  - Feature21 source: `fpga/src/main/scala/nexysvideo/RadarAXIDMA.scala`
+  - UART-TSI source: `generators/testchipip/src/main/scala/tsi/TSIToTileLink.scala` and `generators/testchipip/src/main/scala/tsi/PeripheryUARTTSI.scala`
+- 75 MHz artifact hashes still match the prior checkpoint:
+  - Bitstream SHA256 `4c17ff97e38d99de268e010458d3e6172f8f03e3f2b41fc205d7e219e2e024a9`
+  - Timing SHA256 `cb7cb8bd1bbe388ea270926b516232c8e5a03299299a705ffaa42e9ea4acade8`
+- 75 MHz final timing rechecked:
+  - WNS `+0.021 ns`
+  - TNS `0.000 ns`
+  - Setup failing endpoints `0`
+  - WHS `+0.017 ns`
+  - THS `0.000 ns`
+  - Hold failing endpoints `0`
+- Final 75 MHz worst setup path remains a Rocket/SoC path, not QMLP, Feature21, or TSI:
+  - Source `chiptop0/system/tile_prci_domain/element_reset_domain_rockettile/frontend/fq/valid_0_reg_replica`
+  - Destination `chiptop0/system/tile_prci_domain/element_reset_domain_rockettile/core/ex_reg_rs_msb_0_reg[49]`
+  - Slack `+0.021 ns`
+  - Data path delay `12.484 ns`
+  - Route delay `10.416 ns`
+  - Logic levels `13`
+- QMLP async-ROM/MAC staging source check:
+  - Async distributed ROMs are still present, but the MAC path is now staged through `biasStageReg`, `macDataRegs`, and `macWeightRegs`.
+  - Layer sequencing is `Load -> Prep -> Mac`, so the old `outIdx/inIdx -> async ROM -> lane multiply/sum -> accReg` path is cut by real registers.
+  - The requant constant multiply now uses `balancedFixedWidthSum`, matching the 75 MHz checkpoint intent to reduce `accReg -> quantProductReg` depth.
+  - No further QMLP RTL change was made in this audit.
+- Feature21 quant/writeback split source check:
+  - Density quantization is split through `densityQuantProductReg`.
+  - Ordinary feature quantization is split through `featureQuantProductReg`, then `featureByteReg`, then `featureByteRegs(featureIdx)`.
+  - This matches the timing-closed 60 MHz general-quant-split path and keeps the 75 MHz final top path away from ordinary Feature21 quant/writeback.
+  - No further Feature21 RTL change was made in this audit.
+- UART-TSI watch-list source check:
+  - `PeripheryUARTTSI.scala` still couples UART-TSI into FBUS through `TLBuffer(BufferParams.pipe)`.
+  - `TSIToTileLink.scala` now drives TL A-channel from `aBitsReg/aValidReg`, not directly from combinational `edge.Get/edge.Put` logic.
+  - Read request generation is split through `s_read_measure`, `s_read_size`, and `s_read_prepare`; multi-beat reads return to `s_read_measure`, avoiding the earlier A-register-only bug where later read beats could fail to reassert `aValidReg`.
+  - TSI is no longer the final 75 MHz top path, but it remains a functional validation watch item because the bring-up/readback FSM changed.
+- Current conclusion:
+  - The current source plus generated artifacts support 75 MHz timing closure, with very thin margin.
+  - QMLP async-ROM/MAC staging and Feature21 quant/writeback splitting should be treated as implemented timing cuts, not pending hypotheses.
+  - Next priority is board validation: UART-TSI load/readback/selfcheck and Feature21/QMLP golden/regression tests.
+  - If more 75 MHz guardband is needed after functional validation, the next timing targets are Feature21 density DSP/tail pipelining or route/floorplanning/Rocket-core configuration work; TSI stays on the watch list but is no longer the leading timing limiter in the final report.
+
+## Checkpoint 2026-06-05 75 MHz WNS Margin Experiments
+
+- User requested more WNS margin because the closed 75 MHz bitstream is still too close to the edge.
+- Baseline remains the 2026-06-04 75 MHz bitstream/timing:
+  - WNS `+0.021 ns`
+  - WHS `+0.017 ns`
+  - Worst setup path is Rocket frontend queue/control into Rocket execute decode, not QMLP/Feature21/TSI.
+- Runtime workspace:
+  - `logs/radar_nexysvideo/runtime/feature21-frequency-limit-2026-06-05/75mhz-wns-margin-physopt-2026-06-05/`
+- Physical implementation experiment 1:
+  - Script: `run_post_place_route_variant.tcl`
+  - Input checkpoint: generated 75 MHz `obj/post_place.dcp`
+  - Route directive `AggressiveExplore`
+  - Post-route physopt directive `AggressiveExplore`
+  - Result: post-route WNS `-0.919 ns`, final WNS `+0.021 ns`, final WHS `+0.017 ns`
+  - Interpretation: no improvement over baseline; the result is timing-clean but not a better candidate bitstream.
+- Physical implementation experiment 2:
+  - Script: `run_impl_directive_variant.tcl`
+  - Input checkpoint: generated 75 MHz `obj/post_synth.dcp`
+  - Opt `Explore`, place `ExtraTimingOpt`, post-place physopt `AggressiveExplore`, no power opt, route `MoreGlobalIterations`, post-route physopt `AggressiveExplore`
+  - Result: post-route WNS `-0.689 ns`, final WNS `-0.420 ns`, final WHS `+0.010 ns`
+  - Interpretation: failed timing; do not use the generated bitstream from this variant.
+- Physical implementation experiment 3:
+  - Script: `run_post_place_route_variant.tcl`
+  - Input checkpoint: generated 75 MHz `obj/post_place.dcp`
+  - Route directive `Explore`
+  - Post-route physopt directive `AddRetime`
+  - Result: post-route WNS `-0.919 ns`, final WNS `-0.177 ns`, final WHS `+0.017 ns`
+  - Interpretation: failed timing; it improved the raw route result by `0.742 ns`, but still did not reach the existing baseline `+0.021 ns`.
+- Current read:
+  - The existing baseline placement/routing recipe is already close to the best observed result.
+  - Continue with targeted post-place route/physopt variants first because they are lower-risk than RTL, then fall back to Feature21 density DSP/tail pipelining if no physical variant produces extra margin.
+  - Keep `TSIToTileLink` A-channel register stage on the watch list; it is not currently the final top timing class.
+
+## Checkpoint 2026-06-05 Feature21 Density DSP Pipeline Edit
+
+- Since three physical implementation variants failed to improve the baseline, moved to the next lower-risk RTL cleanup target: Feature21 density DSP/tail pipelining.
+- Source edited:
+  - `fpga/src/main/scala/nexysvideo/RadarAXIDMA.scala`
+- RTL change:
+  - Expanded the Feature21 FSM from `Enum(17)` to `Enum(21)`.
+  - Split `sDensityArea` into:
+    - `sDensityArea`: register `spanX/spanY` operands.
+    - `sDensityAreaMul`: compute registered `spanX * spanY`.
+    - `sDensityAreaCommit`: commit the registered area product into `densityAreaReg`.
+  - Split density reciprocal multiplication into:
+    - `sDensityMulPrep`: register point-count and reciprocal operands.
+    - `sDensityMul`: compute the registered product.
+    - `sDensityMulCommit`: commit into `densityProdReg`.
+  - Added internal registers: `densitySpanXReg`, `densitySpanYReg`, `densityAreaProductReg`, `densityPointCountReg`, `densityRecipOperandReg`, and `densityProdProductReg`.
+- Expected behavior impact:
+  - AXIS input/output format and Feature21 feature bytes are intended to remain unchanged.
+  - Feature21 per-frame internal latency increases by four cycles.
+  - The edit targets Vivado DRC warnings on `radarDMA/feature21/densityAreaReg0` and `radarDMA/feature21/densityProdReg0` DSP input/output/multiplier pipelining.
+- Verification status:
+  - Path-limited `git diff --check -- fpga/src/main/scala/nexysvideo/RadarAXIDMA.scala docs/feature21_qmlp_frequency_limit_2026-06-02/rolling_summary.md` passed.
+  - Full-repo `git diff --check` still reports pre-existing trailing whitespace in unrelated `docs/radar_soc_progress_report_2026-04-05.md`; left untouched.
+  - 75 MHz Verilog regeneration passed.
+  - Verilog log: `logs/radar_nexysvideo/runtime/feature21-frequency-limit-2026-06-05/75mhz-feature21-density-pipeline-2026-06-05/verilog-75mhz-feature21-density-pipeline-2026-06-05.log`
+  - 75 MHz implementation completed, but failed to improve timing.
+
+### Density Pipeline Result And Revert
+
+- Failed density-pipeline artifacts were archived before restoring the usable baseline:
+  - Bitstream: `logs/radar_nexysvideo/runtime/feature21-frequency-limit-2026-06-05/75mhz-feature21-density-pipeline-2026-06-05/failed-density-pipeline.NexysVideoHarness.bit`
+    - SHA256 `e2fd5bd9268f361b50929299a6867579c57d9c62a5a74e3759d12a95dcf217d0`
+  - Timing: `logs/radar_nexysvideo/runtime/feature21-frequency-limit-2026-06-05/75mhz-feature21-density-pipeline-2026-06-05/failed-density-pipeline.timing.txt`
+    - SHA256 `130dc3077c0c26dc067b98d1ab553bc706d838f1252be28c53e53b08579f9648`
+  - DRC: `logs/radar_nexysvideo/runtime/feature21-frequency-limit-2026-06-05/75mhz-feature21-density-pipeline-2026-06-05/failed-density-pipeline.drc.txt`
+    - SHA256 `7dd8c55b05ed542f2faad70efcdd2e02f5d7973f0764c31bf4678d53d203b386`
+- Failed density-pipeline final timing:
+  - WNS `-0.169 ns`
+  - TNS `-8.931 ns`
+  - Setup failing endpoints `131`
+  - WHS `+0.024 ns`
+  - Worst setup path remained Rocket frontend/core decode:
+    - Source `rockettile/frontend/icache/s2_dout_0_reg[11]`
+    - Destination `rockettile/core/ex_reg_rs_msb_1_reg[12]/CE`
+    - Data path delay `13.075 ns`, route delay `10.562 ns`, logic levels `13`
+- The density edit did not solve the DSP DRC class either:
+  - The DRC warnings moved from `densityAreaReg0` / `densityProdReg0` to `densityAreaProductReg0` / `densityProdProductReg0`.
+  - The generated DSPs still had no internal A/B/M/P register absorption.
+- Conclusion:
+  - Do not use the density-pipeline bitstream.
+  - The extra Feature21 density area/product staging was reverted from `fpga/src/main/scala/nexysvideo/RadarAXIDMA.scala`.
+  - The effective Feature21 quant/writeback split remains in place: `featureQuantProductReg`, `featureByteReg`, and the `sFeatureQuantMul` / `sFeatureQuantRound` states are still present.
+- The generated 75 MHz `obj` bitstream and timing report were restored to the known-good 2026-06-04 baseline:
+  - `obj/NexysVideoHarness.bit` SHA256 `4c17ff97e38d99de268e010458d3e6172f8f03e3f2b41fc205d7e219e2e024a9`
+  - `obj/report/timing.txt` SHA256 `cb7cb8bd1bbe388ea270926b516232c8e5a03299299a705ffaa42e9ea4acade8`
+  - Restored timing remains WNS `+0.021 ns`, TNS `0.000 ns`, WHS `+0.017 ns`.
+- Next step:
+  - Regenerated 75 MHz Verilog after the revert to confirm the source state is clean.
+    - Log: `logs/radar_nexysvideo/runtime/feature21-frequency-limit-2026-06-05/75mhz-feature21-density-pipeline-2026-06-05/verilog-75mhz-after-density-revert-2026-06-05.log`
+    - Result: passed.
+    - Generated `RadarAXISFeature21Preprocessor.sv` no longer contains `densityAreaProductReg`, `densityProdProductReg`, `densitySpanXReg`, or `densityPointCountReg`.
+    - Generated SV still contains `featureQuantProductReg`, confirming the useful general quant split remains.
+    - The existing Makefile `SIM_FILE_REQS` empty-copy warning is still present and ignored by make, as in earlier successful runs.
+  - Rebuild or otherwise refresh baseline implementation checkpoints before running any further post-place route/physopt variants, because the density experiment overwrote generated implementation checkpoints even though bit/timing were restored.
+
+### After-Revert 75 MHz Baseline Refresh
+
+- Ran a full 75 MHz bitstream build after reverting the failed density-pipeline edit.
+- Command:
+  - `make -C fpga SUB_PROJECT=nexysvideo CONFIG=RadarAXIMMIONexysVideo75MHzConfig bitstream`
+- Log:
+  - `logs/radar_nexysvideo/runtime/feature21-frequency-limit-2026-06-05/75mhz-feature21-density-pipeline-2026-06-05/bitstream-75mhz-after-density-revert-refresh-2026-06-05.log`
+- Result:
+  - `write_bitstream completed successfully`.
+  - Vivado exited normally at `2026-06-05 20:15:42 +0800`.
+  - Timing gate passed.
+- Refreshed final timing:
+  - WNS `+0.021 ns`
+  - TNS `0.000 ns`
+  - Setup failing endpoints `0`
+  - WHS `+0.017 ns`
+  - THS `0.000 ns`
+  - Hold failing endpoints `0`
+- Refreshed worst setup path is identical in class and slack to the 2026-06-04 baseline:
+  - Source `rockettile/frontend/fq/valid_0_reg_replica`
+  - Destination `rockettile/core/ex_reg_rs_msb_0_reg[49]`
+  - Slack `+0.021 ns`
+  - Data path delay `12.484 ns`, route delay `10.416 ns`, logic levels `13`
+- Post-route progression again matches the known-good baseline shape:
+  - Post-route before post-route physopt: WNS `-0.919 ns`, TNS `-111.716 ns`, WHS `+0.017 ns`.
+  - Post-route `phys_opt_design -directive Explore`: final WNS `+0.021 ns`, TNS `0.000 ns`, WHS `+0.017 ns`.
+- Refreshed artifact archive:
+  - Directory: `logs/radar_nexysvideo/runtime/feature21-frequency-limit-2026-06-05/75mhz-feature21-density-pipeline-2026-06-05/after-density-revert-refresh-artifacts/`
+  - Bitstream SHA256 `d10295154b23971be1e21129729d0f7f569ed6648c47d3f710cb772583961c8e`
+  - Timing SHA256 `266dd3ecbfa477de4b20262eeae7d40e772bbbdd325aabc8153050660846168c`
+  - DRC SHA256 `a051e1466c187b6473cebfff417601864942a0c7c3a06d50da2b981182aeea0a`
+  - Post-place checkpoint SHA256 `5c637f0a920f03c7d18e20eccb6243d4c0103cca940d4f12baedaf44c65a785e`
+- Note:
+  - The refreshed bitstream hash differs from the earlier 2026-06-04 bitstream hash, but final WNS/WHS and the top timing path reproduce the same timing-closed baseline.
+  - The generated implementation checkpoints are now aligned with the reverted RTL again, so further post-place route/physopt variants can safely use the refreshed `obj/post_place.dcp`.
+
+## Checkpoint 2026-06-05 Post-Revert 75 MHz Physical Variant
+
+- Ran another post-place route/physopt variant from the refreshed, reverted 75 MHz `obj/post_place.dcp`.
+- Runtime workspace:
+  - `logs/radar_nexysvideo/runtime/feature21-frequency-limit-2026-06-05/75mhz-wns-margin-physopt-2026-06-05/explore_route_aggressivefanout_phys_after_revert/`
+- Variant:
+  - Route directive `Explore`
+  - Post-route physopt directive `AggressiveFanoutOpt`
+- Result:
+  - Post-route WNS `-0.919 ns`
+  - Final WNS `-0.177 ns`
+  - Final TNS `-2.069 ns`
+  - Setup failing endpoints `33`
+  - Final WHS `+0.017 ns`
+  - Bitgen completed, but timing constraints were not met.
+- Worst final setup path:
+  - Source `rockettile/frontend/fq/valid_0_reg_replica`
+  - Destination `rockettile/core/ex_reg_rs_msb_0_reg[49]`
+  - Data path delay `12.681 ns`
+  - Route delay `10.613 ns`
+  - Logic levels `13`
+- Interpretation:
+  - Do not use this bitstream.
+  - `AggressiveFanoutOpt` behaves similarly to the earlier `AddRetime` post-route variant: it improves the raw `-0.919 ns` route result but fails to recover to the existing `+0.021 ns` baseline.
+  - The final limiter remains Rocket frontend/core routing, with Rocket divider residue also appearing among failing paths.
+  - TSI, QMLP MAC, and ordinary Feature21 quant/writeback remain off the top final path list.
+
+## Checkpoint 2026-06-05 Post-Revert 75 MHz MoreGlobal Variant
+
+- Ran a post-place route/physopt variant from the refreshed, reverted 75 MHz `obj/post_place.dcp`.
+- Runtime workspace:
+  - `logs/radar_nexysvideo/runtime/feature21-frequency-limit-2026-06-05/75mhz-wns-margin-physopt-2026-06-05/moreglobal_route_explore_phys_after_revert/`
+- Variant:
+  - Route directive `MoreGlobalIterations`
+  - Post-route physopt directive `Explore`
+- Result:
+  - Post-route WNS `-0.919 ns`
+  - Final WNS `+0.040 ns`
+  - Final TNS `0.000 ns`
+  - Setup failing endpoints `0`
+  - Final WHS `+0.017 ns`
+  - Bitgen completed successfully.
+- This is the best 75 MHz candidate observed so far:
+  - It improves over the current baseline WNS `+0.021 ns` by `0.019 ns`.
+  - The margin is still very thin, but it is a measurable improvement.
+- Worst final setup path:
+  - Source `rockettile/frontend/icache/s2_dout_0_reg[15]`
+  - Destination `rockettile/core/ex_reg_rs_msb_0_reg[49]`
+  - Slack `+0.040 ns`
+  - Data path delay `12.461 ns`
+  - Route delay `10.257 ns`
+  - Logic levels `13`
+- Artifact hashes:
+  - Bitstream SHA256 `530cceaee2e9d433b5829d32340012fd1ee107c9b16adc4115013f6e2f8cb665`
+  - Timing summary SHA256 `d5a81563a12c8977e60584621f7ccd4cc946293de1f5e46e5ef4b0023aea9482`
+  - Post-physopt checkpoint SHA256 `e39d9e4415ef06f3a706f9c39997c6ca56416d794a85d7aa278cfb1008f53c69`
+- Interpretation:
+  - Prefer this bitstream over the baseline if using a 75 MHz candidate now.
+  - The improvement came from routing/physopt behavior only; no new RTL change was introduced.
+  - The final top path is still Rocket frontend/core routing, not TSI, QMLP, or Feature21 quant/writeback.
+
+### MoreGlobal + AggressiveExplore Check
+
+- Ran adjacent variant from the same refreshed `obj/post_place.dcp`:
+  - Route directive `MoreGlobalIterations`
+  - Post-route physopt directive `AggressiveExplore`
+- Runtime workspace:
+  - `logs/radar_nexysvideo/runtime/feature21-frequency-limit-2026-06-05/75mhz-wns-margin-physopt-2026-06-05/moreglobal_route_aggressive_phys_after_revert/`
+- Result:
+  - Post-route WNS `-0.919 ns`
+  - Final WNS `+0.040 ns`
+  - Final TNS `0.000 ns`
+  - Final WHS `+0.017 ns`
+  - Bitgen completed successfully.
+- Artifact hashes:
+  - Bitstream SHA256 `6eeb61241517b23c2ad43a20440f785d16f1760e0636f1522d241dceb7682f4f`
+  - Timing summary SHA256 `7e377fd87d82875502e75680b4870de4a7161fac7e0ce7649ca862bb585ab7cd`
+  - Post-physopt checkpoint SHA256 `df40a6c12d365344eff3c26142f83bb40b0b7a3c058eb30077d05e82199471eb`
+- Interpretation:
+  - This ties the `MoreGlobalIterations + Explore` result but does not beat it.
+  - The useful ingredient appears to be `route_design -directive MoreGlobalIterations`; changing post-route physopt from `Explore` to `AggressiveExplore` did not add margin.
+
+### Unsupported Physopt Directive Check
+
+- Tried `MoreGlobalIterations + ExploreWithRemap`.
+- Runtime log:
+  - `logs/radar_nexysvideo/runtime/feature21-frequency-limit-2026-06-05/75mhz-wns-margin-physopt-2026-06-05/moreglobal_route_explorewithremap_phys_after_revert.log`
+- Result:
+  - Route completed with post-route WNS `-0.919 ns`.
+  - `phys_opt_design -directive ExploreWithRemap` failed immediately afterward:
+    - Vivado 2022.2 reported `Directive 'ExploreWithRemap' is not a recognized directive`.
+  - No final physopt timing or usable bitstream from this variant.
+- Interpretation:
+  - Do not retry `ExploreWithRemap` in this toolchain.
+
+### MoreGlobal + AlternateReplication Check
+
+- Ran another adjacent variant from the same refreshed `obj/post_place.dcp`:
+  - Route directive `MoreGlobalIterations`
+  - Post-route physopt directive `AlternateReplication`
+- Runtime workspace:
+  - `logs/radar_nexysvideo/runtime/feature21-frequency-limit-2026-06-05/75mhz-wns-margin-physopt-2026-06-05/moreglobal_route_alternatereplication_phys_after_revert/`
+- Result:
+  - Post-route WNS `-0.919 ns`
+  - Final WNS `-0.061 ns`
+  - Final TNS `-0.432 ns`
+  - Setup failing endpoints `9`
+  - Final WHS `+0.017 ns`
+  - Bitgen completed, but timing constraints were not met.
+- Worst final setup path:
+  - Source `rockettile/frontend/fq/elts_0_data_reg[17]`
+  - Destination `rockettile/core/ex_reg_rs_msb_0_reg[49]`
+  - Data path delay `12.567 ns`
+  - Route delay `10.623 ns`
+  - Logic levels `12`
+- Artifact hashes:
+  - Bitstream SHA256 `4b95728561e5a38b88bfab7d318ce6257851f4e28171d559b6990ddb74dcba0c`
+  - Timing summary SHA256 `5b92761da2c1e3b1d1d26f42242f2287baaedd2ba54f323b804bcf2fe42a2559`
+- Interpretation:
+  - Do not use this bitstream.
+  - `AlternateReplication` is supported by this Vivado, but it regresses below the `+0.040 ns` MoreGlobal + Explore/AggressiveExplore candidates.
+
+### NoTimingRelaxation Route Check
+
+- Ran another post-place variant:
+  - Route directive `NoTimingRelaxation`
+  - Post-route physopt directive `Explore`
+- Runtime workspace:
+  - `logs/radar_nexysvideo/runtime/feature21-frequency-limit-2026-06-05/75mhz-wns-margin-physopt-2026-06-05/notimingrelax_route_explore_phys_after_revert/`
+- Result:
+  - Post-route WNS `-0.919 ns`
+  - Final WNS `-0.043 ns`
+  - Final TNS `-0.258 ns`
+  - Setup failing endpoints `6`
+  - Final WHS `+0.002 ns`
+  - Bitgen completed, but timing constraints were not met.
+- Worst final setup path:
+  - Source `rockettile/frontend/icache/s2_dout_0_reg[25]`
+  - Destination `rockettile/core/ex_reg_rs_msb_0_reg[49]`
+  - Data path delay `12.486 ns`
+  - Route delay `10.219 ns`
+  - Logic levels `13`
+- Additional note:
+  - Later failing paths included `feature21/densityQuantProductReg -> densityFeatureReg`, so this route/physopt trajectory also brings Feature21 density residue closer to failure.
+- Artifact hashes:
+  - Bitstream SHA256 `4ceb7f3d38d8d9d632a5bb5b41a2692c62ffe457194f7534290602f108b9f9b6`
+  - Timing summary SHA256 `7b3018dea586684a9977317bb649b76f451ad18de0515ff3be8a06bcae732e93`
+- Interpretation:
+  - Do not use this bitstream.
+  - Despite better post-route TNS than MoreGlobal in this run, `NoTimingRelaxation` did not convert into positive WNS and badly reduced hold margin.
+
+### Current 75 MHz Candidate Promotion
+
+- Promoted the best observed 75 MHz variant into the generated `obj` bit/timing paths:
+  - Source candidate: `moreglobal_route_explore_phys_after_revert`
+  - `fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideo75MHzConfig/obj/NexysVideoHarness.bit`
+    - SHA256 `530cceaee2e9d433b5829d32340012fd1ee107c9b16adc4115013f6e2f8cb665`
+  - `fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideo75MHzConfig/obj/report/timing.txt`
+    - SHA256 `d5a81563a12c8977e60584621f7ccd4cc946293de1f5e46e5ef4b0023aea9482`
+  - `fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideo75MHzConfig/obj/report/drc.txt`
+    - SHA256 `649d09166ce437a7550c1c339ab7d4953317fcb15b994a168d36497ac50ccdae`
+- Current promoted 75 MHz timing:
+  - WNS `+0.040 ns`
+  - TNS `0.000 ns`
+  - Setup failing endpoints `0`
+  - WHS `+0.017 ns`
+  - THS `0.000 ns`
+  - Hold failing endpoints `0`
+- Source sanity after promotion:
+  - The failed density area/product pipeline staging is absent from `RadarAXIDMA.scala` and regenerated `RadarAXISFeature21Preprocessor.sv`.
+  - The useful Feature21 general quant split remains present through `featureQuantProductReg`.
+  - Path-limited `git diff --check -- fpga/src/main/scala/nexysvideo/RadarAXIDMA.scala docs/feature21_qmlp_frequency_limit_2026-06-02/rolling_summary.md` passed.
+
+### HigherDelayCost Route Check
+
+- The previously in-progress post-place route/physopt variant completed after the handoff.
+- Variant:
+  - Route directive `HigherDelayCost`
+  - Post-route physopt directive `Explore`
+- Runtime workspace:
+  - `logs/radar_nexysvideo/runtime/feature21-frequency-limit-2026-06-05/75mhz-wns-margin-physopt-2026-06-05/higherdelaycost_route_explore_phys_after_revert/`
+- Result:
+  - Post-route WNS `-0.919 ns`
+  - Final WNS `-0.027 ns`
+  - Final TNS `-0.194 ns`
+  - Setup failing endpoints `13`
+  - Final WHS `+0.017 ns`
+  - Bitgen completed, but timing constraints were not met.
+- Worst final setup path:
+  - Source `rockettile/core/ibuf/nBufValid_reg`
+  - Destination `rockettile/core/ex_reg_rs_msb_0_reg[49]`
+  - Data path delay `12.532 ns`
+  - Route delay `10.464 ns`
+  - Logic levels `13`
+- Near-top secondary path:
+  - `radarDMA/feature21/densityQuantProductReg_reg[9]` to `radarDMA/feature21/densityFeatureReg_reg[2]`
+  - Slack `-0.003 ns`
+  - This confirms Feature21 density residue is still close to the edge in some route shapes, but it did not beat the Rocket/core path as the final limiter.
+- Artifact hashes:
+  - Bitstream SHA256 `1a80f2381f5babd9dbed51fb2d2e1e562684b4e77fee11d73d40107a19168a82`
+  - Summary SHA256 `df7094c0141d9c22543c9c23f8d405aa168c5ba92e0694c9229b3c8a71177c38`
+  - Post-physopt checkpoint SHA256 `016412c2e9ba0acec836bab89f717e32a9c07478b369756b57fc344bf85163ee`
+- Interpretation:
+  - Do not use this bitstream.
+  - `HigherDelayCost` is a valid Vivado 2022.2 route directive, but this run failed timing and does not improve on the promoted `MoreGlobalIterations + Explore` candidate.
+  - The generated 75 MHz `obj` bitstream/timing remain promoted to `MoreGlobalIterations + Explore` with WNS `+0.040 ns`, not this failed variant.
+
+### MoreGlobal + AggressiveFanoutOpt Check
+
+- Ran one more adjacent post-place route/physopt variant from the same refreshed `obj/post_place.dcp`.
+- Variant:
+  - Route directive `MoreGlobalIterations`
+  - Post-route physopt directive `AggressiveFanoutOpt`
+- Runtime workspace:
+  - `logs/radar_nexysvideo/runtime/feature21-frequency-limit-2026-06-05/75mhz-wns-margin-physopt-2026-06-05/moreglobal_route_aggressivefanout_phys_after_revert/`
+- Result:
+  - Post-route WNS `-0.919 ns`
+  - Final WNS `-0.061 ns`
+  - Final TNS `-0.432 ns`
+  - Setup failing endpoints `9`
+  - Final WHS `+0.017 ns`
+  - Bitgen completed, but timing constraints were not met.
+- Worst final setup path:
+  - Source `rockettile/frontend/fq/elts_0_data_reg[17]`
+  - Destination `rockettile/core/ex_reg_rs_msb_0_reg[49]`
+  - Data path delay `12.567 ns`
+  - Route delay `10.623 ns`
+  - Logic levels `12`
+- Artifact hashes:
+  - Bitstream SHA256 `e99c24ffa9c87c3234205b9284d4fd5eaa273bbe95d0f7d6359264531e8a2001`
+  - Summary SHA256 `fd64e1052d17fb9f9b1805c1a06c4e2bfb19799d786a8468555eb2c5278b314f`
+  - Post-physopt checkpoint SHA256 `35b870b7b7d2b7059d73d06fee238a583eb0491a9fd8bb0cd02fee1e4297dcad`
+- Interpretation:
+  - Do not use this bitstream.
+  - This matches the `MoreGlobalIterations + AlternateReplication` failure class and does not improve over the `MoreGlobalIterations + Explore` / `AggressiveExplore` tie at WNS `+0.040 ns`.
+  - The generated 75 MHz `obj` bitstream/timing were not changed and still point to the `MoreGlobalIterations + Explore` candidate.
+
+### AdvancedSkewModeling Route Check
+
+- Ran a skew-targeted post-place route/physopt variant from the same refreshed `obj/post_place.dcp`.
+- Variant:
+  - Route directive `AdvancedSkewModeling`
+  - Post-route physopt directive `Explore`
+- Runtime workspace:
+  - `logs/radar_nexysvideo/runtime/feature21-frequency-limit-2026-06-05/75mhz-wns-margin-physopt-2026-06-05/advancedskew_route_explore_phys_after_revert/`
+- Result:
+  - Post-route WNS `-0.919 ns`
+  - Final WNS `-0.099 ns`
+  - Final TNS `-3.162 ns`
+  - Setup failing endpoints `89`
+  - Final WHS `+0.017 ns`
+  - Bitgen completed, but timing constraints were not met.
+- Worst final setup path:
+  - Source `rockettile/frontend/icache/s2_dout_0_reg[17]`
+  - Destination `rockettile/core/ex_reg_rs_msb_0_reg[49]`
+  - Data path delay `12.541 ns`
+  - Route delay `10.528 ns`
+  - Logic levels `11`
+  - Clock path skew `-0.346 ns`
+- Artifact hashes:
+  - Bitstream SHA256 `fcd12f75fc2dcef95622af269ab994df7181ff9ccaab5503b06cfb1568f6142d`
+  - Summary SHA256 `51ba9e530af5373898cc5e6348ace23948f65a68ef601771117693718c9411a0`
+  - Post-physopt checkpoint SHA256 `5e252a6bd60a7af2558434433dfacb844f4dad2565675041f2d9af1e196a6f83`
+- Interpretation:
+  - Do not use this bitstream.
+  - `AdvancedSkewModeling` is valid in this Vivado 2022.2 environment, but it did not improve WNS and produced a worse final TNS than the current best candidate.
+  - The final path remained Rocket frontend/core and the measured clock skew was worse than the promoted `MoreGlobalIterations + Explore` result, so this route directive is not helpful for the current placement.
+  - The generated 75 MHz `obj` bitstream/timing remain the promoted `MoreGlobalIterations + Explore` candidate with WNS `+0.040 ns`.
+
+### WLDrivenBlockPlacement Full-Impl Check
+
+- Found one completed full implementation variant that had not yet been summarized in this rolling log.
+- Variant:
+  - `opt_design -directive Explore`
+  - `place_design -directive WLDrivenBlockPlacement`
+  - post-place `phys_opt_design -directive Explore`
+  - `power_opt_design` enabled
+  - `route_design -directive MoreGlobalIterations`
+  - post-route `phys_opt_design -directive Explore`
+- Runtime workspace:
+  - `logs/radar_nexysvideo/runtime/feature21-frequency-limit-2026-06-05/75mhz-wns-margin-physopt-2026-06-05/impl_wldriven_mgi_explore_2026-06-05/`
+- Result:
+  - Post-route WNS `-0.919 ns`
+  - Final WNS `+0.000 ns`
+  - Final WHS `+0.017 ns`
+- Interpretation:
+  - Do not promote this bitstream; it is timing-clean by the report but has effectively zero setup guardband.
+  - It does not improve on the current promoted `MoreGlobalIterations + Explore` post-place candidate at WNS `+0.040 ns`.
+  - Placement changes from `WLDrivenBlockPlacement` did not solve the current route-dominated Rocket frontend/core path.
+
+## Checkpoint 2026-06-06 75 MHz Margin Status / QoR Audit
+
+- Restarted from the rolling summary and current workspace only; no old thread context was used.
+- Current promoted 75 MHz candidate remains:
+  - Bitstream: `fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideo75MHzConfig/obj/NexysVideoHarness.bit`
+  - Timing: `fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIONexysVideo75MHzConfig/obj/report/timing.txt`
+  - WNS `+0.040 ns`, TNS `0.000 ns`, setup failing endpoints `0`
+  - WHS `+0.017 ns`, THS `0.000 ns`, hold failing endpoints `0`
+- Current worst setup path remains route-dominated Rocket frontend/core timing:
+  - Source `chiptop0/system/tile_prci_domain/element_reset_domain_rockettile/frontend/icache/s2_dout_0_reg[15]`
+  - Destination `chiptop0/system/tile_prci_domain/element_reset_domain_rockettile/core/ex_reg_rs_msb_0_reg[49]`
+  - Slack `+0.040 ns`
+  - Data path delay `12.461 ns`
+  - Route delay `10.257 ns`
+  - Logic delay `2.204 ns`
+  - Logic levels `13`
+- A compact QoR audit was run on the promoted `MoreGlobalIterations + Explore` post-physopt checkpoint:
+  - Runtime workspace: `logs/radar_nexysvideo/runtime/feature21-frequency-limit-2026-06-06/75mhz-wns-margin-qor-2026-06-06/`
+  - Log: `qor-suggestions-promoted-moreglobal-explore-2026-06-06.log`
+  - Reports: `qor_suggestions_promoted_moreglobal_explore.rpt`, `qor_assessment_promoted_moreglobal_explore.rpt`, `design_analysis_timing_promoted_moreglobal_explore.rpt`, `top25_timing_promoted_moreglobal_explore.rpt`
+- QoR findings:
+  - Vivado reported WNS `+0.040 ns` and WHS `+0.017 ns` for the audited checkpoint.
+  - `report_qor_suggestions` did not provide an ML strategy because this routed design was not produced by a recognized default/explore full implementation strategy.
+  - Netlist suggestions still point toward retiming/rebalancing:
+    - `RQS_NETLIST-19`: retime across high-fanout nets; the named high-fanout reset path has slack `+0.246 ns`, so it is not the immediate WNS limiter.
+    - `RQS_NETLIST-10`: rebalance timing paths by forward/backward retiming; the listed paths are Rocket frontend/icache/fq/core paths and are route dominated.
+- Current interpretation:
+  - The project is still at WNS `+0.040 ns`, short of the requested `+0.100 ns` target by about `0.060 ns`.
+  - QMLP, ordinary Feature21 quant/writeback, and TSI are no longer the leading 75 MHz timing classes.
+  - The next low-risk experiment should align with the QoR retiming hint, e.g. a post-place route/physopt variant using `route_design -directive MoreGlobalIterations` plus post-route `phys_opt_design -directive AlternateFlowWithRetiming`.
+
+### MoreGlobal + AlternateFlowWithRetiming Check
+
+- Ran a post-place route/physopt variant from the refreshed 75 MHz `obj/post_place.dcp`.
+- Variant:
+  - `route_design -directive MoreGlobalIterations`
+  - post-route `phys_opt_design -directive AlternateFlowWithRetiming`
+- Runtime workspace:
+  - `logs/radar_nexysvideo/runtime/feature21-frequency-limit-2026-06-06/75mhz-wns-margin-physopt-2026-06-06/moreglobal_route_alternateflowretiming_phys/`
+- Result:
+  - Post-route WNS `-0.919 ns`
+  - Final WNS `-0.061 ns`
+  - Final TNS `-0.432 ns`
+  - Setup failing endpoints `9`
+  - Final WHS `+0.017 ns`
+  - Bitgen completed, but timing constraints were not met.
+- Worst final setup path:
+  - Source `chiptop0/system/tile_prci_domain/element_reset_domain_rockettile/frontend/fq/elts_0_data_reg[17]`
+  - Destination `chiptop0/system/tile_prci_domain/element_reset_domain_rockettile/core/ex_reg_rs_msb_0_reg[49]`
+  - Slack `-0.061 ns`
+  - Data path delay `12.567 ns`
+  - Route delay `10.623 ns`
+  - Logic levels `12`
+- Secondary failing paths included Feature21 density tail residue:
+  - `radarDMA/feature21/densityQuantProductReg_reg[9] -> radarDMA/feature21/densityFeatureReg_reg[1]`, slack `-0.052 ns`
+  - `densityQuantProductReg_reg[9] -> densityFeatureReg_reg[2]`, slack `-0.010 ns`
+  - `densityQuantProductReg_reg[9] -> densityFeatureReg_reg[4]`, slack `-0.003 ns`
+- Artifact hashes:
+  - Bitstream SHA256 `94169d372a2ee51092a8cb771069486e3bb76181b5226aba4b20ede2e87c8408`
+  - Timing summary SHA256 `d10fb6929fb3ea15b55b22f397e07e1ba0107669b8c7cd772f1c866b066cd3e5`
+  - Post-physopt checkpoint SHA256 `b77cc0417d1686758f99aebe3ca228fa46d7a1d2962701b9bf328f2f52f4bb38`
+- Interpretation:
+  - Do not use this bitstream.
+  - The QoR retiming hint did not translate into a better post-route candidate from this placement.
+  - The current generated 75 MHz `obj` bitstream/timing remain promoted to `MoreGlobalIterations + Explore` with WNS `+0.040 ns`.
+  - The practical margin gap to the requested `+0.100 ns` target remains about `0.060 ns`.
+
+### MoreGlobal + ExploreWithHoldFix Check
+
+- Ran another post-place route/physopt variant from the same refreshed 75 MHz `obj/post_place.dcp`.
+- Variant:
+  - `route_design -directive MoreGlobalIterations`
+  - post-route `phys_opt_design -directive ExploreWithHoldFix`
+- Runtime workspace:
+  - `logs/radar_nexysvideo/runtime/feature21-frequency-limit-2026-06-06/75mhz-wns-margin-physopt-2026-06-06/moreglobal_route_explorewithholdfix_phys/`
+- Result:
+  - Post-route WNS `-0.919 ns`
+  - Final WNS `+0.040 ns`
+  - Final TNS `0.000 ns`
+  - Setup failing endpoints `0`
+  - Final WHS `+0.017 ns`
+  - Bitgen completed successfully.
+- Worst final setup path:
+  - Source `chiptop0/system/tile_prci_domain/element_reset_domain_rockettile/frontend/icache/s2_dout_0_reg[15]`
+  - Destination `chiptop0/system/tile_prci_domain/element_reset_domain_rockettile/core/ex_reg_rs_msb_0_reg[49]`
+  - Slack `+0.040 ns`
+  - Data path delay `12.461 ns`
+  - Route delay `10.257 ns`
+  - Logic levels `13`
+- Artifact hashes:
+  - Bitstream SHA256 `3c603cd074352a4804fe72a8cf0d79c511fe2975830daed271bdb7107811c67c`
+  - Timing summary SHA256 `c2027badfab1e52bc95e9ec6b58043027e625a538c1afaa6405bcc8594b28d3e`
+  - Post-physopt checkpoint SHA256 `85bf4e1259382c0f7b33031cb7778fb2f30ee92d1ae3e75bc7452ab6d45e2d63`
+- Interpretation:
+  - This ties the promoted `MoreGlobalIterations + Explore` result but does not improve it.
+  - The hold-fix part did not add hold margin or setup margin; final WHS stayed `+0.017 ns`.
+  - The current promoted 75 MHz generated `obj` bitstream/timing remain unchanged at WNS `+0.040 ns`.
+  - At this point, repeated post-place route/physopt directive variants have not moved the design toward the requested `+0.100 ns` setup margin.
+
+## Checkpoint 2026-06-06 Archive Reports And Core Optimization Planning
+
+- User decided to stop further 75 MHz margin chasing for now and keep the current promoted WNS `+0.040 ns` candidate archived.
+- Created an independent timing-closure report for later FullChain v2 design input:
+  - `docs/feature21_qmlp_frequency_limit_2026-06-02/75mhz_timing_closure_report_for_fullchain_v2_2026-06-06.md`
+  - Purpose: compactly archive the 75 MHz closure timeline, effective RTL cuts, failed/accepted implementation variants, and transferable lessons for FullChain v2.
+- Created a forward-looking RISC-V core optimization plan:
+  - `docs/riscv_core_feature21_qmlp_optimization_plan_2026-06-06.md`
+  - Purpose: outline thesis-grade core/ISA co-design directions so the SoC/core part is not merely "using an open-source Rocket core."
+- Recommended research direction in the core plan:
+  - Define a lightweight radar/QMLP custom extension, tentatively `Xradar`.
+  - Prototype first through RoCC/custom opcodes for quick validation.
+  - Focus initial instructions on packed int8 dot product, Q8.8 scale/round/clamp, feature-byte pack, and accelerator-aware start/wait/status control.
+  - Use CPU-only QMLP and Feature21 software/golden paths as the first measurable baselines.
+  - Consider migrating one or two proven arithmetic instructions into Rocket execute-stage only after RoCC results justify the timing and implementation risk.
+- Supporting references captured in the core plan:
+  - Chipyard RoCC docs.
+  - Rocket Chip generator report.
+  - RISC-V Vector, Bitmanip, Scalar Crypto, and P-extension references.
+  - Stream Semantic Registers and RI5CY/PULP DSP-extension references.
+  - Instruction prefetch references as secondary/background material.
+- Local fit noted:
+  - Current radar config already uses `WithoutFPU` and `WithNSmallCores(1)`, so a small workload-specific extension is more plausible than adding a full RVV/BOOM-style core.
+  - The current 75 MHz final limiter is Rocket frontend/core routing, so frontend/prefetch work should be profile-driven rather than the first implementation target.
+- Refined the RISC-V core optimization plan after thesis-defense risk review:
+  - Added the required "Why not Gemmini?" baseline question and made Phase 0 collect resource, timing, workload-shape, software-overhead, and research-fit evidence before claiming `Xradar` novelty.
+  - Reframed `Xradar` as an algorithm-aware ISA/core/accelerator coupling-point design-space study rather than a simple speedup claim.
+  - Added hard Phase 0 go/no-go gates for dot-product dominance, accelerator control overhead, and Gemmini feasibility.
+  - Froze an initial opcode partition proposal: `custom0` for `rq*` arithmetic/data instructions and `custom1` for `racc.*` accelerator-control instructions.
+  - Added a Phase 1 bit-exact golden requirement: software fallback first, including `rqscale8` round-nearest-even and clamp validation against the existing Feature21/QMLP Q8.8 samples.
+- Tightened the core optimization plan after Amdahl/gate consistency review:
+  - Removed whole-workload optimistic speedup wording and split benefits into kernel-local improvement versus whole-QMLP Amdahl-bounded improvement.
+  - Initially recorded the idealized `s_k -> infinity` bounds to expose the conflict between dot/MAC share and whole-workload claims; this was later corrected to the finite-kernel-speedup model below.
+  - Added Phase 0 counter requirements for measured fraction shares and Amdahl sensitivity calculations.
+  - Added explicit fallback actions when `rqdot4`, `racc.*`, or software-visible kernel gates fail.
+  - Strengthened Gemmini evidence requirements with LeanGemmini resource/timing checks and QMLP-layer utilization against Gemmini array/tile dimensions.
+  - Reserved opcode/funct space for later execute-stage migration and required accumulator width/overflow behavior in the golden ISA semantics.
+- Corrected the Amdahl treatment again to avoid using the unreachable `s_k -> infinity` limit as a realistic bound:
+  - Whole-workload estimates now use `Speedup_total = 1 / ((1 - f) + f / s_k)`, where Phase 0 measures accelerated fraction `f` and Phase 2/3 measures finite kernel-local speedup `s_k`.
+  - Example finite-kernel bounds were added: `f=40%, s_k=4x -> ~1.43x`, `f=70%, s_k=4x -> ~2.11x`, and `f=87.5%, s_k=4x -> ~2.91x`.
+  - The plan now treats `1 / (1 - f)` only as the idealized `s_k -> infinity` limit and requires comparing Amdahl prediction against actual whole-workload measurements.

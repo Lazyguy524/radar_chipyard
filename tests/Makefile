@@ -10,6 +10,7 @@ CP = $(TARGET)-objcopy
 OBJDUMP = $(TARGET)-objdump
 DG = $(TARGET)-gdb
 SIZE = $(TARGET)-size
+HOSTCC ?= gcc
 
 
 #################################
@@ -43,7 +44,9 @@ PROGRAMS = pwm blkdev accum charcount nic-loopback big-blkdev pingd \
            streaming-passthrough streaming-fir nvdla spiflashread spiflashwrite fft gcd \
            hello mt-hello symmetric radar-axi-mmio-smoke radar-axi-dma-loopback \
            radar-axi-dma-consistency radar-axi-dma-regression radar-axi-dma-uncached-alias \
-           radar-axi-dma-preproc radar-axi-dma-qmlp
+           radar-axi-dma-preproc radar-axi-dma-qmlp radar-qmlp-cpu-only radar-qmlp-cpu-profile radar-axi-dma-qmlp-e2e \
+           radar-axi-dma-qmlp-validation radar-axi-dma-qmlp-chain-validation radar-axi-dma-qmlp-profile radar-axi-dma-qmlp-mmio-profile \
+           radar-axi-dma-feature21 radar-axi-dma-feature21-golden
 
 
 .DEFAULT_GOAL := default
@@ -76,6 +79,11 @@ spiflash.img: spiflash.py
 
 BRINGUP_RUNTIME = htif_nolib.bringup.o htif_crt0.bringup.o
 BRINGUP_LDS = ../toolchains/libgloss/util/htif.ld
+QMLP_VALIDATION_HEADERS = radar_qmlp_validation_data.h \
+	../releases/input_convergence_k3_rcs21_20260406/rcs_fix_k7_rcs21_20260414/hardware_validation_20260414/large_golden/test_inputs_int8.h \
+	../releases/input_convergence_k3_rcs21_20260406/rcs_fix_k7_rcs21_20260414/hardware_validation_20260414/large_golden/test_logits_int32.h \
+	../releases/input_convergence_k3_rcs21_20260406/rcs_fix_k7_rcs21_20260414/hardware_validation_20260414/boundary_cases/boundary_inputs_int8.h \
+	../releases/input_convergence_k3_rcs21_20260406/rcs_fix_k7_rcs21_20260414/hardware_validation_20260414/boundary_cases/boundary_logits_int32.h
 
 hello.riscv: hello.bringup.o $(BRINGUP_RUNTIME)
 	$(GCC) $(BRINGUP_LDFLAGS) -T $(BRINGUP_LDS) $^ -lgcc -o $@
@@ -104,8 +112,53 @@ radar-axi-dma-uncached-alias.riscv: radar-axi-dma-uncached-alias.bringup.o $(BRI
 radar-axi-dma-preproc.riscv: radar-axi-dma-preproc.bringup.o $(BRINGUP_RUNTIME)
 	$(GCC) $(BRINGUP_LDFLAGS) -T $(BRINGUP_LDS) $^ -lgcc -o $@
 
+radar-axi-dma-feature21.riscv: radar-axi-dma-feature21.bringup.o $(BRINGUP_RUNTIME)
+	$(GCC) $(BRINGUP_LDFLAGS) -T $(BRINGUP_LDS) $^ -lgcc -o $@
+
+radar-axi-dma-feature21-golden.riscv: radar-axi-dma-feature21-golden.bringup.o $(BRINGUP_RUNTIME)
+	$(GCC) $(BRINGUP_LDFLAGS) -T $(BRINGUP_LDS) $^ -lgcc -o $@
+
+radar-axi-dma-feature21-golden.bringup.o: radar-axi-dma-feature21-golden.c radar_feature21_golden_subset.h
+	$(GCC) $(BRINGUP_CFLAGS) -c $< -o $@
+
 radar-axi-dma-qmlp.riscv: radar-axi-dma-qmlp.bringup.o $(BRINGUP_RUNTIME)
 	$(GCC) $(BRINGUP_LDFLAGS) -T $(BRINGUP_LDS) $^ -lgcc -o $@
+
+radar-axi-dma-qmlp-e2e.riscv: radar-axi-dma-qmlp-e2e.bringup.o $(BRINGUP_RUNTIME)
+	$(GCC) $(BRINGUP_LDFLAGS) -T $(BRINGUP_LDS) $^ -lgcc -o $@
+
+radar-axi-dma-qmlp-validation.riscv: radar-axi-dma-qmlp-validation.bringup.o $(BRINGUP_RUNTIME)
+	$(GCC) $(BRINGUP_LDFLAGS) -T $(BRINGUP_LDS) $^ -lgcc -o $@
+
+radar-axi-dma-qmlp-validation.bringup.o: radar-axi-dma-qmlp-validation.c $(QMLP_VALIDATION_HEADERS)
+	$(GCC) $(BRINGUP_CFLAGS) -c $< -o $@
+
+radar-axi-dma-qmlp-chain-validation.riscv: radar-axi-dma-qmlp-chain-validation.bringup.o $(BRINGUP_RUNTIME)
+	$(GCC) $(BRINGUP_LDFLAGS) -T $(BRINGUP_LDS) $^ -lgcc -o $@
+
+radar-axi-dma-qmlp-chain-validation.bringup.o: radar-axi-dma-qmlp-chain-validation.c radar-axi-dma-qmlp-validation.c $(QMLP_VALIDATION_HEADERS)
+	$(GCC) $(BRINGUP_CFLAGS) -c $< -o $@
+
+radar-axi-dma-qmlp-profile.riscv: radar-axi-dma-qmlp-profile.bringup.o $(BRINGUP_RUNTIME)
+	$(GCC) $(BRINGUP_LDFLAGS) -T $(BRINGUP_LDS) $^ -lgcc -o $@
+
+radar-axi-dma-qmlp-profile.bringup.o: radar-axi-dma-qmlp-profile.c $(QMLP_VALIDATION_HEADERS)
+	$(GCC) $(BRINGUP_CFLAGS) -c $< -o $@
+
+radar-axi-dma-qmlp-mmio-profile.riscv: radar-axi-dma-qmlp-mmio-profile.bringup.o $(BRINGUP_RUNTIME)
+	$(GCC) $(BRINGUP_LDFLAGS) -T $(BRINGUP_LDS) $^ -lgcc -o $@
+
+radar-axi-dma-qmlp-mmio-profile.bringup.o: radar-axi-dma-qmlp-mmio-profile.c $(QMLP_VALIDATION_HEADERS)
+	$(GCC) $(BRINGUP_CFLAGS) -c $< -o $@
+
+radar-qmlp-cpu-only.riscv: radar-qmlp-cpu-only.bringup.o $(BRINGUP_RUNTIME)
+	$(GCC) $(BRINGUP_LDFLAGS) -T $(BRINGUP_LDS) $^ -lgcc -o $@
+
+radar-qmlp-cpu-profile.riscv: radar-qmlp-cpu-profile.bringup.o $(BRINGUP_RUNTIME)
+	$(GCC) $(BRINGUP_LDFLAGS) -T $(BRINGUP_LDS) $^ -lgcc -o $@
+
+radar-qmlp-cpu-profile.bringup.o: radar-qmlp-cpu-profile.c
+	$(GCC) $(BRINGUP_CFLAGS) -c $< -o $@
 
 
 #################################
@@ -124,4 +177,14 @@ default: $(addsuffix .riscv, $(PROGRAMS)) spiflash.img
 dumps: $(addsuffix .dump, $(PROGRAMS))
 
 .PHONY: bringup-binaries
-bringup-binaries: hello.riscv radar-axi-mmio-smoke.riscv radar-axi-dma-loopback.riscv radar-axi-dma-consistency.riscv radar-axi-dma-regression.riscv radar-axi-dma-uncached-alias.riscv radar-axi-dma-preproc.riscv radar-axi-dma-qmlp.riscv
+bringup-binaries: hello.riscv radar-axi-mmio-smoke.riscv radar-axi-dma-loopback.riscv radar-axi-dma-consistency.riscv radar-axi-dma-regression.riscv radar-axi-dma-uncached-alias.riscv radar-axi-dma-preproc.riscv radar-axi-dma-feature21.riscv radar-axi-dma-feature21-golden.riscv radar-axi-dma-qmlp.riscv radar-qmlp-cpu-only.riscv radar-qmlp-cpu-profile.riscv radar-axi-dma-qmlp-e2e.riscv radar-axi-dma-qmlp-validation.riscv radar-axi-dma-qmlp-chain-validation.riscv radar-axi-dma-qmlp-profile.riscv radar-axi-dma-qmlp-mmio-profile.riscv
+
+.PHONY: xradar-host-test
+xradar-host-test:
+	$(HOSTCC) -std=gnu99 -O2 -Wall -Wextra -I. radar-xradar-fallback-host.c -o /tmp/radar-xradar-fallback-host
+	/tmp/radar-xradar-fallback-host
+
+.PHONY: xradar-static-model
+xradar-static-model:
+	$(HOSTCC) -std=gnu99 -O2 -Wall -Wextra -I. radar-xradar-static-model-host.c -o /tmp/radar-xradar-static-model-host
+	/tmp/radar-xradar-static-model-host

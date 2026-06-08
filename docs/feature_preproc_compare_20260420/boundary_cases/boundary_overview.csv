@@ -1,0 +1,11 @@
+case_id,case_name,point_count,pred14,pred18,pred21
+0,single_origin_zero,1,0,0,0
+1,eight_zero,8,0,0,0
+2,x_line_near,8,0,0,0
+3,y_line_near,8,0,0,0
+4,wide_box_static,4,0,0,0
+5,fast_positive_doppler,8,0,0,0
+6,fast_negative_doppler,8,0,0,0
+7,strong_rcs_compact,8,0,0,0
+8,weak_rcs_compact,8,0,0,0
+9,large_point_count_grid,64,1,1,0

@@ -14,6 +14,13 @@
 - 后续 NN 加速器是否适合直接用 Chisel 实现
 - 为什么业界仍然广泛使用 Verilog / SystemVerilog / HLS / DSL 等其他方法
 
+补充说明：
+
+- `RadarAXISQMLP` 的后续重构必须同时遵守专门的 QMLP 代码质量门禁：
+  - [radar_qmlp_chisel_refactor_plan_2026-04-14.md](/home/soooarr/chipyard/docs/radar_qmlp_chisel_refactor_plan_2026-04-14.md)
+- 该门禁明确禁止“很多分散的 `when` + 多处覆盖同一个寄存器 + 补丁式状态跳转”的实现方式。
+- 后续 QMLP 代码应优先采用集中式 `switch(state)` FSM、next-value 寄存器更新、控制/数据通路分离、固定权重表/rowReg/PE 消费路径分层的工程风格。
+
 ## 2. 适用范围
 
 适用于以下模块：

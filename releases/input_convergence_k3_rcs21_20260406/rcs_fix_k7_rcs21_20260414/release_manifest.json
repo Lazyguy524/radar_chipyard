@@ -1,0 +1,75 @@
+{
+  "release": "rcs_fix_k7_rcs21_20260414",
+  "items": [
+    {
+      "path": "radar_mlp_binary_k7_rcs21_rcsfix_params.h",
+      "bytes": 15416,
+      "sha256": "39a1508bbc2e3b5b119d6b21327dae69d331aadf34b5923d4896bbe600e7ac25"
+    },
+    {
+      "path": "radar_mlp_binary_k7_rcs21_rcsfix_params.json",
+      "bytes": 1850,
+      "sha256": "fa75e4b1d594f5302fca272ef16232e4738e8f59216bd66c336d870e0b7fb6df"
+    },
+    {
+      "path": "Radar_mlp_binary_k7_rcs21_rcsfixParams.scala",
+      "bytes": 14592,
+      "sha256": "15bf0b1035cb3dd50dfbae1b3b4777e1c7d2b95c5e2a2aa4084588bd83c82bc0"
+    },
+    {
+      "path": "README.md",
+      "bytes": 3917,
+      "sha256": "0190f51390c7d4a7370e3b48ae962257a2c7fe831f993c6d41bb48e23b2970b9"
+    },
+    {
+      "path": "exported_c_trace_test_metrics.json",
+      "bytes": 547,
+      "sha256": "5b6852835afe2db5afa547fa142fe0b55a2434a92a09e64347921f4b611745a4"
+    },
+    {
+      "path": "hardware_validation_20260414/manifest.json",
+      "bytes": 1283,
+      "sha256": "add92f8a35f820c7b679a673e36d9aefbd1693e93c23cca337f24e4f3ef08781"
+    },
+    {
+      "path": "hardware_validation_20260414/large_golden/test_inputs_int8.bin",
+      "bytes": 21000,
+      "sha256": "a6a5f12ccd58377776a0dce1088699e823fcf56ca5d864071a954622f52101ef"
+    },
+    {
+      "path": "hardware_validation_20260414/large_golden/test_logits_int32.bin",
+      "bytes": 8000,
+      "sha256": "e8aa02e8ef8837569806abf81249c43205f7983408edac946e0cfdf7f08264b4"
+    },
+    {
+      "path": "hardware_validation_20260414/large_golden/test_l1_int8.bin",
+      "bytes": 64000,
+      "sha256": "24285e22af2810362e1d5a2cfff7a5fb508e3fa58e278c9ecd044954e920a02f"
+    },
+    {
+      "path": "hardware_validation_20260414/large_golden/test_l2_int8.bin",
+      "bytes": 32000,
+      "sha256": "2cea53334677da9238de5a7f2fe56272efcdc1d90c7cfa034bdc615fd53a1f16"
+    },
+    {
+      "path": "hardware_validation_20260414/boundary_cases/boundary_inputs_int8.bin",
+      "bytes": 1134,
+      "sha256": "cf316a1578ef9a8ace1cd9b7aa1deb786a4d3b67a5cc655d5e75d822fac6119a"
+    },
+    {
+      "path": "hardware_validation_20260414/boundary_cases/boundary_logits_int32.bin",
+      "bytes": 432,
+      "sha256": "d0c4e57f049f7e89d07ad6ced9921616beb879bb26000c92cc2312807b29ee5e"
+    },
+    {
+      "path": "hardware_validation_20260414/boundary_cases/boundary_l1_int8.bin",
+      "bytes": 3456,
+      "sha256": "c85e14c82acd10f7877de81863dc2d75d2cb47183fbce28a25b378c3e76fac6e"
+    },
+    {
+      "path": "hardware_validation_20260414/boundary_cases/boundary_l2_int8.bin",
+      "bytes": 1728,
+      "sha256": "d4c128da89e93f3d17276512730ab5934154c4905397cd59c320af5b6a8c4e59"
+    }
+  ]
+}

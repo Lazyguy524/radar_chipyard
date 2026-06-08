@@ -1,0 +1,329 @@
+{
+  "feature_mode": "compact14",
+  "feature_dim": 14,
+  "feature_names": [
+    "n_points",
+    "mean_x",
+    "mean_y",
+    "std_x",
+    "std_y",
+    "span_x",
+    "span_y",
+    "centroid_range",
+    "azimuth_span",
+    "eig_major",
+    "eig_minor",
+    "density_2d",
+    "doppler_mean",
+    "doppler_std"
+  ],
+  "point_input_layout": [
+    "x",
+    "y",
+    "doppler",
+    "rcs"
+  ],
+  "multiframe": {
+    "enabled": true,
+    "k": 7,
+    "position": "before feature extraction",
+    "operation": "concatenate points from current and previous frames with the same sequence_id/sensor_id/track_id"
+  },
+  "quantization": {
+    "input_scale": 2.75762939453125,
+    "input_zero_point": 0,
+    "feature_quant_formula": "int8 = clamp(round_to_nearest_even(feature_float / input_scale), -127, 127)",
+    "clamp": [
+      -127,
+      127
+    ],
+    "rounding": "C lrintf / round-to-nearest ties-to-even when default FP environment is used",
+    "weight_layout": "row_major[out][in]",
+    "bias_layout": "separate int32[out]",
+    "requant_shift": 16,
+    "l1_multiplier": 2782,
+    "l2_multiplier": 725
+  },
+  "features": [
+    {
+      "index": 0,
+      "name": "n_points",
+      "meaning": "融合点簇内点数",
+      "raw_fields": "point count",
+      "from_k7_fusion": true,
+      "complex_ops": {
+        "sqrt": false,
+        "division": false,
+        "atan_angle": false,
+        "exp_log": false,
+        "normalization": true,
+        "sorting_topk": false,
+        "nearest_neighbor_association": false,
+        "dynamic_loop_variable_points": true
+      },
+      "formula": "N",
+      "fixed_point_suggestion": "整数计数；建议 uint16/uint32 累加后按输入 scale 量化",
+      "suitable_for_stage1_hw": true
+    },
+    {
+      "index": 1,
+      "name": "mean_x",
+      "meaning": "点簇 x 坐标均值",
+      "raw_fields": "x",
+      "from_k7_fusion": true,
+      "complex_ops": {
+        "sqrt": false,
+        "division": true,
+        "atan_angle": false,
+        "exp_log": false,
+        "normalization": true,
+        "sorting_topk": false,
+        "nearest_neighbor_association": false,
+        "dynamic_loop_variable_points": true
+      },
+      "formula": "sum(x_i) / N",
+      "fixed_point_suggestion": "sum 使用 int32/fixed32，最后除以 N",
+      "suitable_for_stage1_hw": true
+    },
+    {
+      "index": 2,
+      "name": "mean_y",
+      "meaning": "点簇 y 坐标均值",
+      "raw_fields": "y",
+      "from_k7_fusion": true,
+      "complex_ops": {
+        "sqrt": false,
+        "division": true,
+        "atan_angle": false,
+        "exp_log": false,
+        "normalization": true,
+        "sorting_topk": false,
+        "nearest_neighbor_association": false,
+        "dynamic_loop_variable_points": true
+      },
+      "formula": "sum(y_i) / N",
+      "fixed_point_suggestion": "sum 使用 int32/fixed32，最后除以 N",
+      "suitable_for_stage1_hw": true
+    },
+    {
+      "index": 3,
+      "name": "std_x",
+      "meaning": "x 坐标标准差",
+      "raw_fields": "x",
+      "from_k7_fusion": true,
+      "complex_ops": {
+        "sqrt": true,
+        "division": true,
+        "atan_angle": false,
+        "exp_log": false,
+        "normalization": true,
+        "sorting_topk": false,
+        "nearest_neighbor_association": false,
+        "dynamic_loop_variable_points": true
+      },
+      "formula": "sqrt(mean(x_i^2) - mean_x^2)",
+      "fixed_point_suggestion": "可用 variance 近似或查表/迭代 sqrt；第一阶段可先软件对拍",
+      "suitable_for_stage1_hw": false
+    },
+    {
+      "index": 4,
+      "name": "std_y",
+      "meaning": "y 坐标标准差",
+      "raw_fields": "y",
+      "from_k7_fusion": true,
+      "complex_ops": {
+        "sqrt": true,
+        "division": true,
+        "atan_angle": false,
+        "exp_log": false,
+        "normalization": true,
+        "sorting_topk": false,
+        "nearest_neighbor_association": false,
+        "dynamic_loop_variable_points": true
+      },
+      "formula": "sqrt(mean(y_i^2) - mean_y^2)",
+      "fixed_point_suggestion": "同 std_x",
+      "suitable_for_stage1_hw": false
+    },
+    {
+      "index": 5,
+      "name": "span_x",
+      "meaning": "x 方向包围盒宽度",
+      "raw_fields": "x",
+      "from_k7_fusion": true,
+      "complex_ops": {
+        "sqrt": false,
+        "division": false,
+        "atan_angle": false,
+        "exp_log": false,
+        "normalization": true,
+        "sorting_topk": false,
+        "nearest_neighbor_association": false,
+        "dynamic_loop_variable_points": true
+      },
+      "formula": "max(x_i) - min(x_i)",
+      "fixed_point_suggestion": "min/max 比较器，减法",
+      "suitable_for_stage1_hw": true
+    },
+    {
+      "index": 6,
+      "name": "span_y",
+      "meaning": "y 方向包围盒高度",
+      "raw_fields": "y",
+      "from_k7_fusion": true,
+      "complex_ops": {
+        "sqrt": false,
+        "division": false,
+        "atan_angle": false,
+        "exp_log": false,
+        "normalization": true,
+        "sorting_topk": false,
+        "nearest_neighbor_association": false,
+        "dynamic_loop_variable_points": true
+      },
+      "formula": "max(y_i) - min(y_i)",
+      "fixed_point_suggestion": "min/max 比较器，减法",
+      "suitable_for_stage1_hw": true
+    },
+    {
+      "index": 7,
+      "name": "centroid_range",
+      "meaning": "点簇中心点到坐标原点的距离",
+      "raw_fields": "x/y",
+      "from_k7_fusion": true,
+      "complex_ops": {
+        "sqrt": true,
+        "division": false,
+        "atan_angle": false,
+        "exp_log": false,
+        "normalization": true,
+        "sorting_topk": false,
+        "nearest_neighbor_association": false,
+        "dynamic_loop_variable_points": true
+      },
+      "formula": "sqrt(mean_x^2 + mean_y^2)",
+      "fixed_point_suggestion": "sqrt/CORDIC；可先用查表或分段近似",
+      "suitable_for_stage1_hw": false
+    },
+    {
+      "index": 8,
+      "name": "azimuth_span",
+      "meaning": "点簇方位角跨度",
+      "raw_fields": "x/y",
+      "from_k7_fusion": true,
+      "complex_ops": {
+        "sqrt": false,
+        "division": false,
+        "atan_angle": true,
+        "exp_log": false,
+        "normalization": true,
+        "sorting_topk": false,
+        "nearest_neighbor_association": false,
+        "dynamic_loop_variable_points": true
+      },
+      "formula": "max(atan2(y_i,x_i)) - min(atan2(y_i,x_i))",
+      "fixed_point_suggestion": "涉及 atan2，第一阶段硬件化风险较高",
+      "suitable_for_stage1_hw": false
+    },
+    {
+      "index": 9,
+      "name": "eig_major",
+      "meaning": "xy 协方差矩阵较大特征值，描述主轴离散程度",
+      "raw_fields": "x/y",
+      "from_k7_fusion": true,
+      "complex_ops": {
+        "sqrt": true,
+        "division": true,
+        "atan_angle": false,
+        "exp_log": false,
+        "normalization": true,
+        "sorting_topk": false,
+        "nearest_neighbor_association": false,
+        "dynamic_loop_variable_points": true
+      },
+      "formula": "eig_max(cov([[x],[y]]))",
+      "fixed_point_suggestion": "2x2 特征值闭式解，含除法和 sqrt",
+      "suitable_for_stage1_hw": false
+    },
+    {
+      "index": 10,
+      "name": "eig_minor",
+      "meaning": "xy 协方差矩阵较小特征值，描述次轴离散程度",
+      "raw_fields": "x/y",
+      "from_k7_fusion": true,
+      "complex_ops": {
+        "sqrt": true,
+        "division": true,
+        "atan_angle": false,
+        "exp_log": false,
+        "normalization": true,
+        "sorting_topk": false,
+        "nearest_neighbor_association": false,
+        "dynamic_loop_variable_points": true
+      },
+      "formula": "eig_min(cov([[x],[y]]))",
+      "fixed_point_suggestion": "同 eig_major",
+      "suitable_for_stage1_hw": false
+    },
+    {
+      "index": 11,
+      "name": "density_2d",
+      "meaning": "二维包围盒内点密度",
+      "raw_fields": "x/y/N",
+      "from_k7_fusion": true,
+      "complex_ops": {
+        "sqrt": false,
+        "division": true,
+        "atan_angle": false,
+        "exp_log": false,
+        "normalization": true,
+        "sorting_topk": false,
+        "nearest_neighbor_association": false,
+        "dynamic_loop_variable_points": true
+      },
+      "formula": "N / max(span_x * span_y, 1e-4)",
+      "fixed_point_suggestion": "乘法 + 除法；需上限保护，容易溢出",
+      "suitable_for_stage1_hw": false
+    },
+    {
+      "index": 12,
+      "name": "doppler_mean",
+      "meaning": "径向速度/Doppler 均值",
+      "raw_fields": "doppler",
+      "from_k7_fusion": true,
+      "complex_ops": {
+        "sqrt": false,
+        "division": true,
+        "atan_angle": false,
+        "exp_log": false,
+        "normalization": true,
+        "sorting_topk": false,
+        "nearest_neighbor_association": false,
+        "dynamic_loop_variable_points": true
+      },
+      "formula": "sum(d_i) / N",
+      "fixed_point_suggestion": "sum 后除以 N",
+      "suitable_for_stage1_hw": true
+    },
+    {
+      "index": 13,
+      "name": "doppler_std",
+      "meaning": "Doppler 标准差",
+      "raw_fields": "doppler",
+      "from_k7_fusion": true,
+      "complex_ops": {
+        "sqrt": true,
+        "division": true,
+        "atan_angle": false,
+        "exp_log": false,
+        "normalization": true,
+        "sorting_topk": false,
+        "nearest_neighbor_association": false,
+        "dynamic_loop_variable_points": true
+      },
+      "formula": "sqrt(mean(d_i^2) - mean_d^2)",
+      "fixed_point_suggestion": "同 std_x",
+      "suitable_for_stage1_hw": false
+    }
+  ]
+}

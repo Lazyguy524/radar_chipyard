@@ -1,0 +1,104 @@
+{
+  "model_name": "k7_rcs21_qmlp_21_64_32_2",
+  "checkpoint": "logs/multiframe_k_sweep_rcsfix_2026-04-14/train/k7_rcs21_nokd/student_qat.pt",
+  "config": "configs/multiframe_k_sweep_rcsfix_2026-04-14/k7_rcs21_nokd.yaml",
+  "packed_dir": "logs/multiframe_k_sweep_rcsfix_2026-04-14/packed/k7_rcs21",
+  "release_dir": "releases/feature_preproc_compare_20260420/feature21",
+  "input_dim": 21,
+  "architecture": "21->64->32->2",
+  "k": 7,
+  "uses_rcs": true,
+  "feature_mode": "rcs21",
+  "class_names": [
+    "pedestrian",
+    "vehicle"
+  ],
+  "parameter_count": 3554,
+  "macs_per_sample": 3456,
+  "approx_flops_per_sample": 6912,
+  "float_fp32_metrics": null,
+  "float_fp32_note": "当前没有单独保留 FP32-only student 训练结果；现有 checkpoint 为 QAT student。",
+  "qat_metrics": {
+    "accuracy": 0.9645507599050179,
+    "macro_f1": 0.9584114569289974,
+    "macro_precision": 0.9512740030443927,
+    "macro_recall": 0.966572285397112,
+    "confusion_matrix": [
+      [
+        16109,
+        471
+      ],
+      [
+        1497,
+        37439
+      ]
+    ],
+    "per_class": [
+      {
+        "class_id": 0,
+        "class_name": "pedestrian",
+        "precision": 0.9149721685788935,
+        "recall": 0.9715922798552473,
+        "f1": 0.9424325747381969
+      },
+      {
+        "class_id": 1,
+        "class_name": "vehicle",
+        "precision": 0.9875758375098919,
+        "recall": 0.9615522909389768,
+        "f1": 0.974390339119798
+      }
+    ],
+    "sample_count": 55516,
+    "source": "PyTorch QAT/fake-quant student evaluation on full test split"
+  },
+  "int_c_trace_metrics": {
+    "accuracy": 0.9721701851718424,
+    "macro_f1": 0.9670196468360857,
+    "macro_precision": 0.9638209038964599,
+    "macro_recall": 0.970393960036612,
+    "confusion_matrix": [
+      [
+        16016,
+        564
+      ],
+      [
+        981,
+        37955
+      ]
+    ],
+    "per_class": [
+      {
+        "class_id": 0,
+        "class_name": "pedestrian",
+        "precision": 0.9422839324586691,
+        "recall": 0.9659831121833534,
+        "f1": 0.9539863597105162
+      },
+      {
+        "class_id": 1,
+        "class_name": "vehicle",
+        "precision": 0.9853578753342507,
+        "recall": 0.9748048078898706,
+        "f1": 0.9800529339616553
+      }
+    ],
+    "sample_count": 55516,
+    "source": "exported fixed-point C trace over full test split",
+    "logits_min": [
+      -21715,
+      -6863
+    ],
+    "logits_max": [
+      11843,
+      15814
+    ]
+  },
+  "hardware_export_status": "params exported in this package; only feature21/k7 rcs21 has known board-level QMLP validation before this package",
+  "int8_export_available": true,
+  "params_files": [
+    "feature21/qmlp_params_21.h",
+    "feature21/qmlp_params_21.scala",
+    "feature21/qmlp_params_21.json"
+  ]
+}
