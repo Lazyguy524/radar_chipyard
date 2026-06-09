@@ -1,0 +1,46 @@
+[nexysvideo] repo_root=/home/soooarr/chipyard
+[nexysvideo] tty=/dev/ttyUSB0 baudrate=115200
+[nexysvideo] bin=tests/radar-xradar-rocc-cycle-profile.riscv
+[nexysvideo] log=/home/soooarr/chipyard/logs/radar_nexysvideo/runtime/xradar-rocc-cycle-profile-75mhz-2026-06-09-2026-06-09-215919.log
+[nexysvideo] 提示: 如需 fresh 状态，请先按板上的 CPU_RESET。
+[nexysvideo] command=/home/soooarr/chipyard/generators/testchipip/uart_tsi/uart_tsi +tty=/dev/ttyUSB0 +baudrate=115200 +selfcheck tests/radar-xradar-rocc-cycle-profile.riscv
+Starting UART-based TSI
+Usage: ./uart_tsi +tty=/dev/pts/xx <PLUSARGS> <bin>
+       ./uart_tsi +tty=/dev/ttyxx  <PLUSARGS> <bin>
+       ./uart_tsi +tty=/dev/ttyxx  +no_hart0_msip +init_write=0x80000000:0xdeadbeef none
+       ./uart_tsi +tty=/dev/ttyxx  +no_hart0_msip +init_read=0x80000000 none
+       ./uart_tsi +tty=/dev/ttyxx  +selfcheck <bin>
+       ./uart_tsi +tty=/dev/ttyxx  +baudrate=921600 <bin>
+Attempting to open TTY at /dev/ttyUSB0
+Checking connection status with /dev/ttyUSB0
+Connection succeeded
+Performing self check
+Self check chunk 80000000 to 80000400
+Self check succeeded chunk 80000000 to 80000400
+Self check chunk 80000400 to 80000800
+Self check succeeded chunk 80000400 to 80000800
+Self check chunk 80000800 to 80000c00
+Self check succeeded chunk 80000800 to 80000c00
+Self check chunk 80000c00 to 80001000
+Self check succeeded chunk 80000c00 to 80001000
+Self check chunk 80001000 to 80001400
+Self check succeeded chunk 80001000 to 80001400
+Self check chunk 80001400 to 80001800
+Self check succeeded chunk 80001400 to 80001800
+Self check chunk 80001800 to 80001c00
+Self check succeeded chunk 80001800 to 80001c00
+Self check chunk 80001c00 to 80002000
+Self check succeeded chunk 80001c00 to 80002000
+Self check chunk 80002000 to 80002190
+Self check succeeded chunk 80002000 to 80002190
+Self check chunk 80002190 to 80002240
+Self check succeeded chunk 80002190 to 80002240
+Self check success
+[XRADAR-PROFILE] scalar-vs-rocc start repeats=200 cases=8
+[XRADAR-PROFILE] scalar count=1600 cycles_avg=168203 instret_avg=26686 sink={-437,3496}
+[XRADAR-PROFILE] rocc count=1600 cycles_avg=62532 instret_avg=35016 sink={-437,3496}
+[XRADAR-PROFILE] rocc_ops rqdot4_avg=848 scalar_tail_macs_avg=64 rqscale8_avg=96 packed_mac_coverage_x100=9814
+[XRADAR-PROFILE] speedup_x1000=2689 scalar_avg=168203 rocc_avg=62532
+[XRADAR-PROFILE] PASSED
+Done, shutting down, flushing UART
+WARNING: You should probably reset the target before running this program again

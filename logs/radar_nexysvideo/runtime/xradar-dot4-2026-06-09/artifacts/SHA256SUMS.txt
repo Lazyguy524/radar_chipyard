@@ -12,5 +12,6 @@ d786609efa5ee32632a75f99f50aceba5b20472687027c324266e23846ae96cd  logs/radar_nex
 12d56a0f719fa4c06505a37b0174c2d52539ada75a73dee3c4f664214735c98f  logs/radar_nexysvideo/runtime/xradar-dot4-2026-06-09/artifacts/radar-xradar-rocc-memory-smoke-funct3fix-2026-06-09.riscv
 006211999086cb3d9ec92bc3a14b491450107502e85de2938597c727a8f7bab2  logs/radar_nexysvideo/runtime/xradar-dot4-2026-06-09/artifacts/radar-xradar-rocc-htif-probe-funct3fix-2026-06-09.riscv
 33c8501e6ab773d92c2a0ba30c5fc05b1973e5befd89a931b6cdc33545be9ed7  logs/radar_nexysvideo/runtime/xradar-dot4-2026-06-09/artifacts/radar-xradar-rocc-smoke-funct3fix-printfix-2026-06-09.riscv
-e7d7a2fe1e07376e5fc7ce92a56d5234c0ec4d2f1024bf8c96bb7bd090a1bdd9  logs/radar_nexysvideo/runtime/xradar-dot4-2026-06-09/artifacts/xradar-rocc-board-status-2026-06-09.md
+f0aa9f9caed6f020537c2970c002cf51d3adb6de920443cff3d75d223157cdd7  logs/radar_nexysvideo/runtime/xradar-dot4-2026-06-09/artifacts/xradar-rocc-board-status-2026-06-09.md
 e7d81147655e048622be52cb5fe6f56d929c1a43e54d1805be33455409ac0c24  logs/radar_nexysvideo/runtime/xradar-dot4-2026-06-09/artifacts/xradar-rocc-memory-smoke-readback-2026-06-09.md
+1c80410352d9cc3673f4bddfd4c1f1c1288cf1e39c88360165aeab40116e8e2d  logs/radar_nexysvideo/runtime/xradar-dot4-2026-06-09/artifacts/radar-xradar-rocc-cycle-profile-2026-06-09.riscv

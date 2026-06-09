@@ -1841,3 +1841,29 @@ The project is not limited to 50 MHz by Feature21 or QMLP arithmetic. The curren
   - Avoid unsupported bare-metal printf width/left-align formats such as `%-20s`; this was the reason the printable smoke appeared to timeout after the arithmetic path already passed.
   - Treat memory-smoke timeout as expected only because that program intentionally spins for UART-TSI readback. Judge it by DDR status words: stage `0x7777aaaa`, fail `0`, basic mask `0x0f`, QMLP mask `0xff`.
   - For future board tests, use `/dev/ttyUSB0` at `115200` and press `CPU_RESET` before each fresh ELF load.
+
+## Checkpoint 2026-06-09 Xradar RoCC Scalar-vs-Dot4 Cycle Profile
+
+- User had already pressed CPU_RESET, so the next scalar-vs-RoCC comparison was run as a single board test rather than two separate ELF loads.
+- Added a combined profile ELF:
+  - Source: `tests/radar-xradar-rocc-cycle-profile.c`
+  - Build target: `tests/radar-xradar-rocc-cycle-profile.riscv`
+  - Archived ELF: `logs/radar_nexysvideo/runtime/xradar-dot4-2026-06-09/artifacts/radar-xradar-rocc-cycle-profile-2026-06-09.riscv`
+  - SHA256: `1c80410352d9cc3673f4bddfd4c1f1c1288cf1e39c88360165aeab40116e8e2d`
+- Board command:
+  - `timeout 240s scripts/run_nexysvideo_uart_tsi.sh --tty /dev/ttyUSB0 --baudrate 115200 --bin tests/radar-xradar-rocc-cycle-profile.riscv --log-name xradar-rocc-cycle-profile-75mhz-2026-06-09`
+- Log:
+  - `logs/radar_nexysvideo/runtime/xradar-rocc-cycle-profile-75mhz-2026-06-09-2026-06-09-215919.log`
+  - SHA256: `991993c1672ccc9aabe46206b985dbc3a34ef3d016e531e9cf2e45898c67462e`
+- Selfcheck:
+  - PASS over all chunks.
+- Result:
+  - Scalar QMLP: `count=1600`, `cycles_avg=168203`, `instret_avg=26686`.
+  - RoCC `rqdot4` QMLP: `count=1600`, `cycles_avg=62532`, `instret_avg=35016`.
+  - RoCC ops per inference: `rqdot4_avg=848`, `scalar_tail_macs_avg=64`, `rqscale8_avg=96`, packed MAC coverage x100 `9814`.
+  - Reported speedup: `speedup_x1000=2689`, i.e. about `2.689x` for this scalar-vs-RoCC QMLP kernel comparison.
+  - Final line: `[XRADAR-PROFILE] PASSED`.
+- Interpretation:
+  - This is the first board-measured speedup evidence for the implemented `rqdot4` RoCC path.
+  - The result is kernel/QMLP-profile evidence, not a full Feature21+QMLP end-to-end system speedup.
+  - `rqscale8` is still software in this comparison; `rqscale8`, `rqpack`, and `racc.*` remain unimplemented in RoCC RTL.

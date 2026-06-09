@@ -81,7 +81,15 @@ Date: 2026-06-09
   - Result: PASS; all 8 QMLP semantic cases printed and final line was `[XRADAR-ROCC] PASSED`.
   - Counts: `rqdot4=848`, `scalar_tail_macs=64`, `rqscale8=96`, packed MAC coverage x100 `9814`.
   - Interpretation: the earlier printable-smoke timeout was caused by software-side print/format handling, not by RoCC functional behavior.
+- Scalar-vs-RoCC cycle profile:
+  - Artifact: `radar-xradar-rocc-cycle-profile-2026-06-09.riscv`
+  - Log: `logs/radar_nexysvideo/runtime/xradar-rocc-cycle-profile-75mhz-2026-06-09-2026-06-09-215919.log`
+  - One board run after fresh reset covered both scalar QMLP and RoCC `rqdot4` QMLP.
+  - Result: PASS; scalar QMLP `cycles_avg=168203`, RoCC `rqdot4` QMLP `cycles_avg=62532`.
+  - Reported speedup: `speedup_x1000=2689`, about `2.689x` for this QMLP-kernel profile.
+  - Counts: `rqdot4_avg=848`, `scalar_tail_macs_avg=64`, `rqscale8_avg=96`, packed MAC coverage x100 `9814`.
+  - Interpretation: this is first board-measured speedup evidence for the implemented `rqdot4` RoCC path. It is not a full Feature21+QMLP end-to-end speedup claim.
 
 ## Current Boundary
 
-The timing-clean RoCC bitstream is programmed and has repeatable board validation for the current `rqdot4` scope. A single-instruction probe passes, memory-smoke passes 4 basic dot-product cases plus all 8 QMLP semantic cases across a fresh reset rerun, HTIF probe passes, and the fixed printable smoke now passes. `rqscale8`, `rqpack`, and `racc.*` remain unimplemented in RoCC RTL.
+The timing-clean RoCC bitstream is programmed and has repeatable board validation for the current `rqdot4` scope. A single-instruction probe passes, memory-smoke passes 4 basic dot-product cases plus all 8 QMLP semantic cases across a fresh reset rerun, HTIF probe passes, fixed printable smoke passes, and the combined scalar-vs-RoCC profile shows about `2.689x` QMLP-kernel speedup for the RoCC-dot4 path. `rqscale8`, `rqpack`, and `racc.*` remain unimplemented in RoCC RTL.

@@ -167,6 +167,12 @@ radar-xradar-rocc-smoke.riscv: radar-xradar-rocc-smoke.bringup.o $(BRINGUP_RUNTI
 radar-xradar-rocc-smoke.bringup.o: radar-xradar-rocc-smoke.c radar_xradar_fallback.h
 	$(GCC) $(BRINGUP_CFLAGS) -c $< -o $@
 
+radar-xradar-rocc-cycle-profile.riscv: radar-xradar-rocc-cycle-profile.bringup.o $(BRINGUP_RUNTIME)
+	$(GCC) $(BRINGUP_LDFLAGS) -T $(BRINGUP_LDS) $^ -lgcc -o $@
+
+radar-xradar-rocc-cycle-profile.bringup.o: radar-xradar-rocc-cycle-profile.c radar_xradar_fallback.h
+	$(GCC) $(BRINGUP_CFLAGS) -c $< -o $@
+
 
 #################################
 # Recipes
