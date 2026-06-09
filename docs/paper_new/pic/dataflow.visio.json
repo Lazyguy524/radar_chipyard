@@ -1,0 +1,40 @@
+{
+  "title": "Feature21/QMLP 端到端数据形态",
+  "language": "zh-CN",
+  "page": {"width_in": 13.33, "height_in": 7.5, "orientation": "landscape"},
+  "style": {"font": "Microsoft YaHei", "line_color": "#334155"},
+  "groups": [
+    {"id": "input", "label": "输入与特征", "x": 0.4, "y": 0.7, "w": 4.2, "h": 5.6, "fill": "#fef3c7"},
+    {"id": "qmlp_group", "label": "QMLP 推理", "x": 4.9, "y": 0.7, "w": 5.0, "h": 5.6, "fill": "#dcfce7"},
+    {"id": "output", "label": "输出与判决", "x": 10.3, "y": 0.7, "w": 2.4, "h": 5.6, "fill": "#dbeafe"}
+  ],
+  "nodes": [
+    {"id": "points", "label": "多帧融合点集", "subtitle": "k=7, [x,y,doppler,rcs]", "x": 0.85, "y": 1.25, "w": 2.0, "h": 0.7, "shape": "rounded_rect", "fill": "#fde68a", "tags": ["input"]},
+    {"id": "feature21", "label": "Feature21", "subtitle": "固定点/近似预处理", "x": 1.05, "y": 2.55, "w": 1.6, "h": 0.7, "shape": "rounded_rect", "fill": "#fcd34d", "tags": ["preproc"]},
+    {"id": "features", "label": "21 维特征", "subtitle": "int8[21], q=round(feature/scale)", "x": 0.75, "y": 3.85, "w": 2.25, "h": 0.75, "shape": "document", "fill": "#fef3c7", "tags": ["feature"]},
+    {"id": "frame32", "label": "QMLP 输入帧", "subtitle": "32 B 对齐, 4x64-bit beat", "x": 3.0, "y": 3.85, "w": 1.45, "h": 0.75, "shape": "document", "fill": "#fef9c3", "tags": ["axis"]},
+    {"id": "l1", "label": "L1", "subtitle": "21 -> 64, MAC + requant + ReLU", "x": 5.25, "y": 1.25, "w": 1.65, "h": 0.75, "shape": "rounded_rect", "fill": "#bbf7d0", "tags": ["qmlp"]},
+    {"id": "l1out", "label": "L1 激活", "subtitle": "int8[64]", "x": 7.2, "y": 1.25, "w": 1.25, "h": 0.65, "shape": "document", "fill": "#dcfce7", "tags": ["activation"]},
+    {"id": "l2", "label": "L2", "subtitle": "64 -> 32, MAC + requant + ReLU", "x": 5.25, "y": 2.85, "w": 1.65, "h": 0.75, "shape": "rounded_rect", "fill": "#bbf7d0", "tags": ["qmlp"]},
+    {"id": "l2out", "label": "L2 激活", "subtitle": "int8[32]", "x": 7.2, "y": 2.85, "w": 1.25, "h": 0.65, "shape": "document", "fill": "#dcfce7", "tags": ["activation"]},
+    {"id": "l3", "label": "L3", "subtitle": "32 -> 2, int32 accumulate", "x": 5.25, "y": 4.45, "w": 1.65, "h": 0.75, "shape": "rounded_rect", "fill": "#bbf7d0", "tags": ["qmlp"]},
+    {"id": "logits", "label": "logits", "subtitle": "int32[2], 8 B", "x": 10.8, "y": 2.55, "w": 1.35, "h": 0.7, "shape": "document", "fill": "#bfdbfe", "tags": ["output"]},
+    {"id": "class", "label": "分类结果", "subtitle": "argmax(logits), 非 softmax", "x": 10.6, "y": 4.05, "w": 1.75, "h": 0.65, "shape": "rounded_rect", "fill": "#dbeafe", "tags": ["output"]}
+  ],
+  "edges": [
+    {"from": "points", "to": "feature21", "label": "AXIS 点帧", "protocol": "AXI4-Stream", "width": "64-bit", "style": "data", "arrow": "end"},
+    {"from": "feature21", "to": "features", "label": "统计/量化", "protocol": "internal", "width": "21 bytes", "style": "data", "arrow": "end"},
+    {"from": "features", "to": "frame32", "label": "对齐/打包", "protocol": "frame", "width": "32 B", "style": "data", "arrow": "end"},
+    {"from": "frame32", "to": "l1", "label": "int8[21]", "protocol": "AXI4-Stream", "width": "4 beats", "style": "data", "arrow": "end"},
+    {"from": "l1", "to": "l1out", "label": "ReLU/clamp", "protocol": "internal", "width": "int8[64]", "style": "data", "arrow": "end"},
+    {"from": "l1out", "to": "l2", "label": "activation", "protocol": "internal", "width": "int8[64]", "style": "data", "arrow": "end"},
+    {"from": "l2", "to": "l2out", "label": "ReLU/clamp", "protocol": "internal", "width": "int8[32]", "style": "data", "arrow": "end"},
+    {"from": "l2out", "to": "l3", "label": "activation", "protocol": "internal", "width": "int8[32]", "style": "data", "arrow": "end"},
+    {"from": "l3", "to": "logits", "label": "pack", "protocol": "AXI4-Stream", "width": "64-bit", "style": "data", "arrow": "end"},
+    {"from": "logits", "to": "class", "label": "比较大小", "protocol": "software/check", "width": "2 values", "style": "control", "arrow": "end"}
+  ],
+  "notes": [
+    {"id": "note_feature", "text": "Feature21 是固定点/近似硬件，与 exact-LUT mirror 和分类一致性对拍。", "x": 0.9, "y": 5.4, "w": 3.3, "h": 0.45},
+    {"id": "note_logits", "text": "logits 不是概率；论文中不要写成 softmax 输出。", "x": 10.4, "y": 5.4, "w": 2.0, "h": 0.45}
+  ]
+}

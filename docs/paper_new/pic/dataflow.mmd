@@ -1,0 +1,10 @@
+flowchart TD
+  A[多帧融合点集<br/>k=7, x/y/doppler/rcs] --> B[Feature21 固定点/近似预处理]
+  B --> C[int8[21] 特征]
+  C --> D[QMLP 输入帧<br/>32B, 4x64-bit beat]
+  D --> E[L1 21->64<br/>int32 MAC, requant, ReLU]
+  E --> F[int8[64]]
+  F --> G[L2 64->32<br/>int32 MAC, requant, ReLU]
+  G --> H[int8[32]]
+  H --> I[L3 32->2<br/>int32 MAC]
+  I --> J[int32 logits[2]<br/>8B, 非 softmax]

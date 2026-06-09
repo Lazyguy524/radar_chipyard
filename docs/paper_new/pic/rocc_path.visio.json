@@ -1,0 +1,36 @@
+{
+  "title": "Xradar RoCC rqdot4 指令路径",
+  "language": "zh-CN",
+  "page": {"width_in": 13.33, "height_in": 7.5, "orientation": "landscape"},
+  "style": {"font": "Microsoft YaHei", "line_color": "#334155"},
+  "groups": [
+    {"id": "software", "label": "软件/指令", "x": 0.5, "y": 0.8, "w": 3.0, "h": 5.2, "fill": "#f1f5f9"},
+    {"id": "rocket", "label": "Rocket RoCC 接口", "x": 3.8, "y": 0.8, "w": 2.5, "h": 5.2, "fill": "#dbeafe"},
+    {"id": "xradar", "label": "XradarRoCC RTL", "x": 6.7, "y": 0.8, "w": 5.8, "h": 5.2, "fill": "#ede9fe"}
+  ],
+  "nodes": [
+    {"id": "asm", "label": ".insn r CUSTOM_0, 7, 0", "subtitle": "funct3=7 -> xd/xs1/xs2=1", "x": 0.9, "y": 1.35, "w": 2.2, "h": 0.65, "shape": "rounded_rect", "fill": "#f8fafc", "tags": ["software"]},
+    {"id": "rs", "label": "rs1 / rs2", "subtitle": "packed int8x4", "x": 1.1, "y": 2.65, "w": 1.8, "h": 0.65, "shape": "document", "fill": "#f8fafc", "tags": ["operand"]},
+    {"id": "cmd", "label": "RoCC Command", "subtitle": "rd, rs1, rs2, funct", "x": 4.15, "y": 1.65, "w": 1.75, "h": 0.65, "shape": "rounded_rect", "fill": "#bfdbfe", "tags": ["rocc"]},
+    {"id": "sidle", "label": "sIdle", "subtitle": "捕获 command", "x": 7.05, "y": 1.1, "w": 1.25, "h": 0.55, "shape": "rounded_rect", "fill": "#ddd6fe", "tags": ["state"]},
+    {"id": "smul", "label": "sMul", "subtitle": "4 lane signed multiply", "x": 8.75, "y": 1.1, "w": 1.35, "h": 0.55, "shape": "rounded_rect", "fill": "#c4b5fd", "tags": ["state"]},
+    {"id": "ssum", "label": "sSum", "subtitle": "4 products sum", "x": 10.55, "y": 1.1, "w": 1.25, "h": 0.55, "shape": "rounded_rect", "fill": "#c4b5fd", "tags": ["state"]},
+    {"id": "sresp", "label": "sResp", "subtitle": "sign-extend writeback", "x": 8.75, "y": 2.55, "w": 1.55, "h": 0.55, "shape": "rounded_rect", "fill": "#ddd6fe", "tags": ["state"]},
+    {"id": "rd", "label": "rd", "subtitle": "int32 dot result", "x": 4.25, "y": 4.0, "w": 1.55, "h": 0.6, "shape": "document", "fill": "#dbeafe", "tags": ["response"]},
+    {"id": "qloop", "label": "QMLP 软件循环", "subtitle": "bias/tail/requant 仍由软件处理", "x": 0.85, "y": 4.35, "w": 2.25, "h": 0.65, "shape": "rounded_rect", "fill": "#f8fafc", "tags": ["software"]}
+  ],
+  "edges": [
+    {"from": "asm", "to": "cmd", "label": "发射 custom0", "protocol": "RoCC", "width": "instruction", "style": "instruction", "arrow": "end"},
+    {"from": "rs", "to": "cmd", "label": "操作数", "protocol": "register file", "width": "XLEN", "style": "instruction", "arrow": "end"},
+    {"from": "cmd", "to": "sidle", "label": "io.cmd.fire", "protocol": "ready/valid", "width": "RoCCCommand", "style": "instruction", "arrow": "end"},
+    {"from": "sidle", "to": "smul", "label": "寄存 rs1/rs2", "protocol": "internal", "width": "4 lanes", "style": "data", "arrow": "end"},
+    {"from": "smul", "to": "ssum", "label": "p0..p3", "protocol": "internal", "width": "SInt(16)", "style": "data", "arrow": "end"},
+    {"from": "ssum", "to": "sresp", "label": "dotReg", "protocol": "internal", "width": "SInt(20)->SInt(32)", "style": "data", "arrow": "end"},
+    {"from": "sresp", "to": "rd", "label": "io.resp.fire", "protocol": "RoCCResponse", "width": "XLEN", "style": "instruction", "arrow": "end"},
+    {"from": "rd", "to": "qloop", "label": "累加到 QMLP", "protocol": "software loop", "width": "int32", "style": "data", "arrow": "end"}
+  ],
+  "notes": [
+    {"id": "note_bug", "text": "funct3=0 会导致 xd/xs1/xs2=0，板上曾表现为 rd 未写回。", "x": 0.8, "y": 5.25, "w": 4.0, "h": 0.45},
+    {"id": "note_scope", "text": "当前 RTL 只实现 rqdot4；rqscale8/rqpack/racc.* 未实现。", "x": 7.0, "y": 5.25, "w": 4.0, "h": 0.45}
+  ]
+}

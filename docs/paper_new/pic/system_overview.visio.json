@@ -1,0 +1,43 @@
+{
+  "title": "Chipyard 雷达 SoC 总体架构",
+  "language": "zh-CN",
+  "page": {"width_in": 13.33, "height_in": 7.5, "orientation": "landscape"},
+  "style": {"font": "Microsoft YaHei", "line_color": "#334155"},
+  "groups": [
+    {"id": "host", "label": "Host/调试", "x": 0.3, "y": 0.3, "w": 2.2, "h": 1.2, "fill": "#f1f5f9"},
+    {"id": "soc", "label": "Rocket/Chipyard SoC", "x": 2.8, "y": 0.3, "w": 4.2, "h": 2.4, "fill": "#dbeafe"},
+    {"id": "dma_stream", "label": "DMA + AXI4-Stream 数据面", "x": 0.7, "y": 3.0, "w": 8.6, "h": 2.4, "fill": "#dcfce7"},
+    {"id": "memory", "label": "板上 DDR", "x": 9.8, "y": 2.0, "w": 2.6, "h": 2.2, "fill": "#fef3c7"},
+    {"id": "rocc", "label": "Xradar/RoCC 指令级路径", "x": 7.4, "y": 0.4, "w": 4.9, "h": 1.8, "fill": "#ede9fe"}
+  ],
+  "nodes": [
+    {"id": "host_pc", "label": "Host PC", "subtitle": "uart_tsi 装载/读写", "x": 0.6, "y": 0.75, "w": 1.5, "h": 0.45, "shape": "rounded_rect", "fill": "#f8fafc", "tags": ["host"]},
+    {"id": "uart_tsi", "label": "UART-TSI", "subtitle": "/dev/ttyUSB0 115200", "x": 2.95, "y": 0.85, "w": 1.55, "h": 0.55, "shape": "rounded_rect", "fill": "#e0f2fe", "tags": ["debug"]},
+    {"id": "rocket", "label": "Rocket Core", "subtitle": "控制/校验/发射 RoCC", "x": 4.8, "y": 0.85, "w": 1.75, "h": 0.65, "shape": "rounded_rect", "fill": "#bfdbfe", "tags": ["cpu"]},
+    {"id": "tl_bus", "label": "TileLink/SoC bus", "subtitle": "Chipyard 内部互连", "x": 4.4, "y": 1.8, "w": 2.0, "h": 0.45, "shape": "rect", "fill": "#dbeafe", "tags": ["bus"]},
+    {"id": "mmio_bridge", "label": "AXI4 -> AXI4-Lite Bridge", "subtitle": "DMA/CSR 控制面", "x": 1.1, "y": 3.55, "w": 2.15, "h": 0.6, "shape": "rounded_rect", "fill": "#bbf7d0", "tags": ["control"]},
+    {"id": "axi_dma", "label": "AXI DMA", "subtitle": "MM2S / S2MM", "x": 3.75, "y": 3.55, "w": 1.55, "h": 0.65, "shape": "rounded_rect", "fill": "#86efac", "tags": ["dma"]},
+    {"id": "feature21", "label": "Feature21", "subtitle": "点集 -> int8[21]", "x": 5.9, "y": 3.25, "w": 1.35, "h": 0.6, "shape": "rounded_rect", "fill": "#bbf7d0", "tags": ["stream"]},
+    {"id": "qmlp", "label": "QMLP", "subtitle": "21->64->32->2", "x": 7.65, "y": 3.25, "w": 1.25, "h": 0.6, "shape": "rounded_rect", "fill": "#bbf7d0", "tags": ["stream"]},
+    {"id": "ddr", "label": "MIG / DDR", "subtitle": "共享 buffer / ELF / 输出", "x": 10.25, "y": 2.65, "w": 1.65, "h": 0.9, "shape": "cylinder", "fill": "#fde68a", "tags": ["memory"]},
+    {"id": "rocc_if", "label": "RoCC Interface", "subtitle": "custom0 command/response", "x": 7.75, "y": 0.95, "w": 1.55, "h": 0.55, "shape": "rounded_rect", "fill": "#ddd6fe", "tags": ["instruction"]},
+    {"id": "xradar", "label": "XradarRoCC", "subtitle": "rqdot4 only", "x": 10.0, "y": 0.95, "w": 1.55, "h": 0.55, "shape": "rounded_rect", "fill": "#c4b5fd", "tags": ["rocc"]}
+  ],
+  "edges": [
+    {"from": "host_pc", "to": "uart_tsi", "label": "ELF 装载 / selfcheck", "protocol": "UART-TSI", "width": "serial", "style": "control", "arrow": "end"},
+    {"from": "uart_tsi", "to": "rocket", "label": "程序运行", "protocol": "TSI/TileLink", "width": "SoC bus", "style": "control", "arrow": "end"},
+    {"from": "rocket", "to": "tl_bus", "label": "load/store/MMIO", "protocol": "TileLink", "width": "XLEN/SoC", "style": "control", "arrow": "end"},
+    {"from": "tl_bus", "to": "mmio_bridge", "label": "寄存器访问", "protocol": "AXI4 MMIO", "width": "64-bit bus / 32-bit regs", "style": "control", "arrow": "end"},
+    {"from": "mmio_bridge", "to": "axi_dma", "label": "DMA 控制", "protocol": "AXI4-Lite", "width": "32-bit regs", "style": "control", "arrow": "end"},
+    {"from": "axi_dma", "to": "feature21", "label": "raw/fused 点流", "protocol": "AXI4-Stream", "width": "64-bit", "style": "data", "arrow": "end"},
+    {"from": "feature21", "to": "qmlp", "label": "int8[21] / 32B frame", "protocol": "AXI4-Stream", "width": "64-bit", "style": "data", "arrow": "end"},
+    {"from": "qmlp", "to": "axi_dma", "label": "int32 logits[2]", "protocol": "AXI4-Stream", "width": "64-bit", "style": "data", "arrow": "end"},
+    {"from": "axi_dma", "to": "ddr", "label": "MM2S/S2MM 读写", "protocol": "AXI4", "width": "64-bit", "style": "data", "arrow": "both"},
+    {"from": "rocket", "to": "rocc_if", "label": ".insn CUSTOM_0", "protocol": "RoCC", "width": "rs1/rs2/rd", "style": "instruction", "arrow": "end"},
+    {"from": "rocc_if", "to": "xradar", "label": "rqdot4 command", "protocol": "RoCC", "width": "packed int8x4", "style": "instruction", "arrow": "both"}
+  ],
+  "notes": [
+    {"id": "note_scope", "text": "当前 RoCC 只实现 rqdot4；rqscale8/rqpack/racc.* 尚未 RTL 实现。", "x": 7.8, "y": 1.7, "w": 3.8, "h": 0.4},
+    {"id": "note_perf", "text": "2.689x 是 QMLP kernel/profile 口径，不是完整 Feature21+QMLP e2e。", "x": 8.6, "y": 6.5, "w": 4.0, "h": 0.4}
+  ]
+}

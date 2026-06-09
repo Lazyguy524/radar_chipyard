@@ -199,6 +199,7 @@ Use these for writing thesis sections, report framing, and slides.
 
 | File or directory | Role |
 | --- | --- |
+| [paper_new/README.md](/home/soooarr/chipyard/docs/paper_new/README.md) | Current thesis knowledge-base entry; use this first for project-wide Chinese explanations, evidence-scoped numbers, Obsidian links, and Visio diagram specs. |
 | [paper/README.md](/home/soooarr/chipyard/docs/paper/README.md) | Existing paper-material index. |
 | [paper/radar_thesis_logic_gap_audit_2026-04-16.md](/home/soooarr/chipyard/docs/paper/radar_thesis_logic_gap_audit_2026-04-16.md) | Thesis gap/risk analysis. |
 | [paper/radar_hardware_thesis_framework_2026-04-13.md](/home/soooarr/chipyard/docs/paper/radar_hardware_thesis_framework_2026-04-13.md) | Thesis framework. |

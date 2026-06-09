@@ -1,5 +1,7 @@
 # Paper 目录说明
 
+> 2026-06-09 note: this directory is now historical/reference material. For the current thesis knowledge base, start from [../paper_new/README.md](/home/soooarr/chipyard/docs/paper_new/README.md). Use this directory for earlier survey/framework text, but refresh all performance, timing, Feature21, QMLP, and RoCC claims against `docs/paper_new/` before writing thesis text.
+
 本目录用于存放：
 
 - 论文调研报告
@@ -15,7 +17,7 @@
 - [radar_hardware_ppt_material_2026-04-14.md](/home/soooarr/chipyard/docs/paper/radar_hardware_ppt_material_2026-04-14.md)
 - [radar_hardware_ppt_diagrams_2026-04-14.html](/home/soooarr/chipyard/docs/paper/radar_hardware_ppt_diagrams_2026-04-14.html)
 
-当前硬件实现与论文硬件部分的最新有效基线：
+历史硬件实现与论文硬件部分的旧基线：
 
 - `k=7 + rcs21`
 - `21 -> 64 -> 32 -> 2 INT8 QMLP`

@@ -1,0 +1,10 @@
+flowchart LR
+  Host[Host PC<br/>uart_tsi] -->|UART-TSI 装载/selfcheck| Rocket[Rocket Core]
+  Rocket -->|TileLink / MMIO| Bridge[AXI4 -> AXI4-Lite Bridge]
+  Bridge -->|控制寄存器| DMA[AXI DMA]
+  DDR[(MIG / DDR)]
+  DMA <-->|AXI4 读写| DDR
+  DMA -->|MM2S AXI4-Stream 64-bit| F21[Feature21<br/>点集->int8[21]]
+  F21 -->|32B feature frame| QMLP[QMLP<br/>21->64->32->2]
+  QMLP -->|S2MM logits int32[2]| DMA
+  Rocket -->|CUSTOM_0 RoCC| XR[XradarRoCC<br/>rqdot4 only]
