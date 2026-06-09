@@ -1,0 +1,10 @@
+Starting UART-based TSI
+Usage: ./uart_tsi +tty=/dev/pts/xx <PLUSARGS> <bin>
+       ./uart_tsi +tty=/dev/ttyxx  <PLUSARGS> <bin>
+       ./uart_tsi +tty=/dev/ttyxx  +no_hart0_msip +init_write=0x80000000:0xdeadbeef none
+       ./uart_tsi +tty=/dev/ttyxx  +no_hart0_msip +init_read=0x80000000 none
+       ./uart_tsi +tty=/dev/ttyxx  +selfcheck <bin>
+       ./uart_tsi +tty=/dev/ttyxx  +baudrate=921600 <bin>
+Attempting to open TTY at /dev/ttyUSB0
+Checking connection status with /dev/ttyUSB0
+Connection succeeded

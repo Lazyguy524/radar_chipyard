@@ -421,6 +421,31 @@ Exit criteria:
 
 ### Phase 2: RoCC Prototype
 
+Current status as of 2026-06-09:
+
+- Minimal `rqdot4` RoCC RTL has been written and elaborated:
+  - `fpga/src/main/scala/nexysvideo/XradarRoCC.scala`
+  - `RadarAXIMMIOXradarRoCCNexysVideo75MHzConfig`
+- Verilog generation passes for the dedicated 75 MHz NexysVideo config.
+- A RoCC-only board smoke test has been added:
+  - `tests/radar-xradar-rocc-smoke.c`
+  - `tests/radar-xradar-rocc-smoke.riscv`
+- The first one-cycle/combinational 75 MHz implementation attempt produced a bitstream, but the final timing gate failed:
+  - WNS `-0.330 ns`
+  - TNS `-29.441 ns`
+  - WHS `+0.016 ns`
+  - Worst path includes the RoCC command queue, `xradar_p0` DSP output, and RoCC response arbiter queue.
+- The RoCC datapath was then changed to a multi-cycle ready/valid path with registered command operands, registered products, registered sum, and a response state.
+- The pipelined 75 MHz implementation passes the final timing gate:
+  - WNS `+0.004 ns`
+  - TNS `0.000 ns`
+  - WHS `+0.009 ns`
+- Board validation now passes for the implemented `rqdot4` scope:
+  - Single-instruction probe PASS. The probe packs lanes `{1, -2, 3, -4}` and `{-5, 6, -7, 8}`, whose signed int8 dot product is `-70`; board readback returned `0xffffffba`.
+  - Memory-smoke PASS and repeat-after-reset PASS across 4 basic `rqdot4` cases and 8 QMLP semantic cases.
+  - HTIF probe PASS and fixed printable smoke PASS after using `funct3=7` and replacing unsupported bare-metal `%-20s` with `%s`.
+- Keep the scope narrow: this validates `rqdot4` arithmetic and repeated command sequencing on the RoCC timing-clean bitstream, not `rqscale8`, `rqpack`, or `racc.*` RoCC RTL.
+
 Tasks:
 
 - Add `WithXradarRoCC` config fragment.

@@ -1,0 +1,16 @@
+[nexysvideo] repo_root=/home/soooarr/chipyard
+[nexysvideo] tty=/dev/ttyUSB0 baudrate=115200
+[nexysvideo] bin=none
+[nexysvideo] log=/home/soooarr/chipyard/logs/radar_nexysvideo/runtime/xradar-rocc-single-probe-readback-2026-06-09-2026-06-09-203027.log
+[nexysvideo] 提示: 如需 fresh 状态，请先按板上的 CPU_RESET。
+[nexysvideo] command=/home/soooarr/chipyard/generators/testchipip/uart_tsi/uart_tsi +tty=/dev/ttyUSB0 +baudrate=115200 +init_read=0x80003000 +init_read=0x80003008 +init_read=0x80003010 +init_read=0x80003018 +init_read=0x80003020 none
+Starting UART-based TSI
+Usage: ./uart_tsi +tty=/dev/pts/xx <PLUSARGS> <bin>
+       ./uart_tsi +tty=/dev/ttyxx  <PLUSARGS> <bin>
+       ./uart_tsi +tty=/dev/ttyxx  +no_hart0_msip +init_write=0x80000000:0xdeadbeef none
+       ./uart_tsi +tty=/dev/ttyxx  +no_hart0_msip +init_read=0x80000000 none
+       ./uart_tsi +tty=/dev/ttyxx  +selfcheck <bin>
+       ./uart_tsi +tty=/dev/ttyxx  +baudrate=921600 <bin>
+Attempting to open TTY at /dev/ttyUSB0
+Checking connection status with /dev/ttyUSB0
+Connection succeeded

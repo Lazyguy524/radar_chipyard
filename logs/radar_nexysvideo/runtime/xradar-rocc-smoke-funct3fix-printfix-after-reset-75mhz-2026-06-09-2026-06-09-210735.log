@@ -1,0 +1,49 @@
+[nexysvideo] repo_root=/home/soooarr/chipyard
+[nexysvideo] tty=/dev/ttyUSB0 baudrate=115200
+[nexysvideo] bin=logs/radar_nexysvideo/runtime/xradar-dot4-2026-06-09/artifacts/radar-xradar-rocc-smoke-funct3fix-printfix-2026-06-09.riscv
+[nexysvideo] log=/home/soooarr/chipyard/logs/radar_nexysvideo/runtime/xradar-rocc-smoke-funct3fix-printfix-after-reset-75mhz-2026-06-09-2026-06-09-210735.log
+[nexysvideo] 提示: 如需 fresh 状态，请先按板上的 CPU_RESET。
+[nexysvideo] command=/home/soooarr/chipyard/generators/testchipip/uart_tsi/uart_tsi +tty=/dev/ttyUSB0 +baudrate=115200 +selfcheck logs/radar_nexysvideo/runtime/xradar-dot4-2026-06-09/artifacts/radar-xradar-rocc-smoke-funct3fix-printfix-2026-06-09.riscv
+Starting UART-based TSI
+Usage: ./uart_tsi +tty=/dev/pts/xx <PLUSARGS> <bin>
+       ./uart_tsi +tty=/dev/ttyxx  <PLUSARGS> <bin>
+       ./uart_tsi +tty=/dev/ttyxx  +no_hart0_msip +init_write=0x80000000:0xdeadbeef none
+       ./uart_tsi +tty=/dev/ttyxx  +no_hart0_msip +init_read=0x80000000 none
+       ./uart_tsi +tty=/dev/ttyxx  +selfcheck <bin>
+       ./uart_tsi +tty=/dev/ttyxx  +baudrate=921600 <bin>
+Attempting to open TTY at /dev/ttyUSB0
+Checking connection status with /dev/ttyUSB0
+Connection succeeded
+Performing self check
+Self check chunk 80000000 to 80000400
+Self check succeeded chunk 80000000 to 80000400
+Self check chunk 80000400 to 80000800
+Self check succeeded chunk 80000400 to 80000800
+Self check chunk 80000800 to 80000c00
+Self check succeeded chunk 80000800 to 80000c00
+Self check chunk 80000c00 to 80001000
+Self check succeeded chunk 80000c00 to 80001000
+Self check chunk 80001000 to 80001400
+Self check succeeded chunk 80001000 to 80001400
+Self check chunk 80001400 to 80001800
+Self check succeeded chunk 80001400 to 80001800
+Self check chunk 80001800 to 80001c00
+Self check succeeded chunk 80001800 to 80001c00
+Self check chunk 80001c00 to 80002000
+Self check succeeded chunk 80001c00 to 80002000
+Self check chunk 80002000 to 800020d0
+Self check succeeded chunk 80002000 to 800020d0
+Self check success
+[XRADAR-ROCC] rqdot4 smoke start
+[XRADAR-ROCC] case=0 golden_base logits={855,-10706}
+[XRADAR-ROCC] case=1 zero logits={861,508}
+[XRADAR-ROCC] case=2 alternating_perturb logits={979,-8599}
+[XRADAR-ROCC] case=3 sparse_keep3 logits={291,151}
+[XRADAR-ROCC] case=4 sign_flip_even logits={-3940,-5776}
+[XRADAR-ROCC] case=5 half_scale logits={905,-5277}
+[XRADAR-ROCC] case=6 offset_plus logits={-490,-9698}
+[XRADAR-ROCC] case=7 offset_minus logits={-437,3496}
+[XRADAR-ROCC] counts rqdot4=848 scalar_tail_macs=64 rqscale8=96 total_macs=3456 packed_mac_coverage_x100=9814
+[XRADAR-ROCC] PASSED
+Done, shutting down, flushing UART
+WARNING: You should probably reset the target before running this program again

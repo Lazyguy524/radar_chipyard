@@ -1,0 +1,27 @@
+make: Entering directory '/home/soooarr/chipyard/tests'
+libgloss-htif: Using local build
+gcc -std=gnu99 -O2 -Wall -Wextra -I. radar-xradar-fallback-host.c -o /tmp/radar-xradar-fallback-host
+/tmp/radar-xradar-fallback-host
+[XRADAR-FALLBACK] case=0 golden_base          logits={855,-10706}
+[XRADAR-FALLBACK] case=1 zero                 logits={861,508}
+[XRADAR-FALLBACK] case=2 alternating_perturb  logits={979,-8599}
+[XRADAR-FALLBACK] case=3 sparse_keep3         logits={291,151}
+[XRADAR-FALLBACK] case=4 sign_flip_even       logits={-3940,-5776}
+[XRADAR-FALLBACK] case=5 half_scale           logits={905,-5277}
+[XRADAR-FALLBACK] case=6 offset_plus          logits={-490,-9698}
+[XRADAR-FALLBACK] case=7 offset_minus         logits={-437,3496}
+[XRADAR-FALLBACK] counts rqdot4=848 scalar_tail_macs=64 rqscale8=96 total_macs=3456 packed_mac_coverage_x100=9814
+[XRADAR-FALLBACK] PASSED
+gcc -std=gnu99 -O2 -Wall -Wextra -I. radar-xradar-static-model-host.c -o /tmp/radar-xradar-static-model-host
+/tmp/radar-xradar-static-model-host
+[XRADAR-STATIC] layer=L1 shape=64x21 macs=1344 rqdot4=320 tail_macs=64 scalar_loads=2688 packed_loads=768 packed_load_reduction_x100=7142
+[XRADAR-STATIC] layer=L2 shape=32x64 macs=2048 rqdot4=512 tail_macs=0 scalar_loads=4096 packed_loads=1024 packed_load_reduction_x100=7500
+[XRADAR-STATIC] layer=L3 shape=2x32 macs=64 rqdot4=16 tail_macs=0 scalar_loads=128 packed_loads=32 packed_load_reduction_x100=7500
+[XRADAR-STATIC] total_macs=3456 rqdot4=848 packed_terms=3392 tail_macs=64 packed_coverage_x100=9814 rqscale8=96
+[XRADAR-AMDAHL] f_pct=20 sk2x_x1000=1111 sk4x_x1000=1176 sk6x_x1000=1200 sk8x_x1000=1212
+[XRADAR-AMDAHL] f_pct=40 sk2x_x1000=1250 sk4x_x1000=1429 sk6x_x1000=1500 sk8x_x1000=1538
+[XRADAR-AMDAHL] f_pct=50 sk2x_x1000=1333 sk4x_x1000=1600 sk6x_x1000=1714 sk8x_x1000=1778
+[XRADAR-AMDAHL] f_pct=60 sk2x_x1000=1429 sk4x_x1000=1818 sk6x_x1000=2000 sk8x_x1000=2105
+[XRADAR-AMDAHL] f_pct=70 sk2x_x1000=1538 sk4x_x1000=2105 sk6x_x1000=2400 sk8x_x1000=2581
+[XRADAR-AMDAHL] f_pct=80 sk2x_x1000=1667 sk4x_x1000=2500 sk6x_x1000=3000 sk8x_x1000=3333
+make: Leaving directory '/home/soooarr/chipyard/tests'

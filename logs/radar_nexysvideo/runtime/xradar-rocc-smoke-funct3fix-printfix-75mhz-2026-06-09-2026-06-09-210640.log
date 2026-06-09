@@ -1,0 +1,23 @@
+[nexysvideo] repo_root=/home/soooarr/chipyard
+[nexysvideo] tty=/dev/ttyUSB0 baudrate=115200
+[nexysvideo] bin=logs/radar_nexysvideo/runtime/xradar-dot4-2026-06-09/artifacts/radar-xradar-rocc-smoke-funct3fix-printfix-2026-06-09.riscv
+[nexysvideo] log=/home/soooarr/chipyard/logs/radar_nexysvideo/runtime/xradar-rocc-smoke-funct3fix-printfix-75mhz-2026-06-09-2026-06-09-210640.log
+[nexysvideo] 提示: 如需 fresh 状态，请先按板上的 CPU_RESET。
+[nexysvideo] command=/home/soooarr/chipyard/generators/testchipip/uart_tsi/uart_tsi +tty=/dev/ttyUSB0 +baudrate=115200 +selfcheck logs/radar_nexysvideo/runtime/xradar-dot4-2026-06-09/artifacts/radar-xradar-rocc-smoke-funct3fix-printfix-2026-06-09.riscv
+Starting UART-based TSI
+Usage: ./uart_tsi +tty=/dev/pts/xx <PLUSARGS> <bin>
+       ./uart_tsi +tty=/dev/ttyxx  <PLUSARGS> <bin>
+       ./uart_tsi +tty=/dev/ttyxx  +no_hart0_msip +init_write=0x80000000:0xdeadbeef none
+       ./uart_tsi +tty=/dev/ttyxx  +no_hart0_msip +init_read=0x80000000 none
+       ./uart_tsi +tty=/dev/ttyxx  +selfcheck <bin>
+       ./uart_tsi +tty=/dev/ttyxx  +baudrate=921600 <bin>
+Attempting to open TTY at /dev/ttyUSB0
+Checking connection status with /dev/ttyUSB0
+Connection succeeded
+Performing self check
+Self check chunk 80000000 to 80000400
+Self check succeeded chunk 80000000 to 80000400
+Self check chunk 80000400 to 80000800
+Self check succeeded chunk 80000400 to 80000800
+Self check chunk 80000800 to 80000c00
+Self check failed at address 80000980 1 != 7

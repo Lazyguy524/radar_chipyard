@@ -1,0 +1,16 @@
+72276a06173e38522daeb13357c6b24335792cf8b5d9952e805bef3eb3e54100  logs/radar_nexysvideo/runtime/xradar-dot4-2026-06-09/artifacts/NexysVideoHarness-xradar-rocc-75mhz-timingfail-2026-06-09.bit
+ac315fee6da8ceb2b3cab17d6d9b952130da5c26a036144cf66f5ed2f695c993  logs/radar_nexysvideo/runtime/xradar-dot4-2026-06-09/artifacts/drc-xradar-rocc-75mhz-timingfail-2026-06-09.txt
+f71e91db6c2419d9a08e5261d6d8ed89f6946971157a1c9006b24023fb7e4985  logs/radar_nexysvideo/runtime/xradar-dot4-2026-06-09/artifacts/timing-xradar-rocc-75mhz-timingfail-2026-06-09.txt
+c479f6b13baafa7ad0e154af651e6ed8a58b7953e1d456611f7db7bde7d9c03b  logs/radar_nexysvideo/runtime/xradar-dot4-2026-06-09/artifacts/utilization-xradar-rocc-75mhz-timingfail-2026-06-09.txt
+a59a27f10c98c44515a3b988fd167515993c3795486d4972fcd12c0504253fff  logs/radar_nexysvideo/runtime/xradar-dot4-2026-06-09/artifacts/radar-xradar-rocc-smoke-2026-06-09.riscv
+29b5ab3a2b0515b7b2cb7d78e21c88a5b8f82c5bada3c9f4dbcc41e7a428ab36  logs/radar_nexysvideo/runtime/xradar-dot4-2026-06-09/artifacts/NexysVideoHarness-xradar-rocc-pipelined-75mhz-timingclean-2026-06-09.bit
+50179fc06632c119eae753242265350f9a5f997f48fb971db2956d11bfd72c45  logs/radar_nexysvideo/runtime/xradar-dot4-2026-06-09/artifacts/timing-xradar-rocc-pipelined-75mhz-timingclean-2026-06-09.txt
+00c3b43d3c29328bc4f84b77502295c52ecd1d2e6187cbf2fce7650257f4eecb  logs/radar_nexysvideo/runtime/xradar-dot4-2026-06-09/artifacts/drc-xradar-rocc-pipelined-75mhz-timingclean-2026-06-09.txt
+5fee01eae78753ccc166519286a542fec1cea8e0495081a7b1a5e430805e934c  logs/radar_nexysvideo/runtime/xradar-dot4-2026-06-09/artifacts/utilization-xradar-rocc-pipelined-75mhz-timingclean-2026-06-09.txt
+bcfe1ee66731852afc1fa63f7c90645cbecad8b8d540421cf580975dab3dfe88  logs/radar_nexysvideo/runtime/xradar-dot4-2026-06-09/artifacts/radar-xradar-rocc-smoke-funct3fix-2026-06-09.riscv
+d786609efa5ee32632a75f99f50aceba5b20472687027c324266e23846ae96cd  logs/radar_nexysvideo/runtime/xradar-dot4-2026-06-09/artifacts/radar-xradar-rocc-single-probe-funct3fix-2026-06-09.riscv
+12d56a0f719fa4c06505a37b0174c2d52539ada75a73dee3c4f664214735c98f  logs/radar_nexysvideo/runtime/xradar-dot4-2026-06-09/artifacts/radar-xradar-rocc-memory-smoke-funct3fix-2026-06-09.riscv
+006211999086cb3d9ec92bc3a14b491450107502e85de2938597c727a8f7bab2  logs/radar_nexysvideo/runtime/xradar-dot4-2026-06-09/artifacts/radar-xradar-rocc-htif-probe-funct3fix-2026-06-09.riscv
+33c8501e6ab773d92c2a0ba30c5fc05b1973e5befd89a931b6cdc33545be9ed7  logs/radar_nexysvideo/runtime/xradar-dot4-2026-06-09/artifacts/radar-xradar-rocc-smoke-funct3fix-printfix-2026-06-09.riscv
+e7d7a2fe1e07376e5fc7ce92a56d5234c0ec4d2f1024bf8c96bb7bd090a1bdd9  logs/radar_nexysvideo/runtime/xradar-dot4-2026-06-09/artifacts/xradar-rocc-board-status-2026-06-09.md
+e7d81147655e048622be52cb5fe6f56d929c1a43e54d1805be33455409ac0c24  logs/radar_nexysvideo/runtime/xradar-dot4-2026-06-09/artifacts/xradar-rocc-memory-smoke-readback-2026-06-09.md

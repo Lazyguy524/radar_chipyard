@@ -1,0 +1,97 @@
+#-----------------------------------------------------------
+# Vivado v2022.2 (64-bit)
+# SW Build 3671981 on Fri Oct 14 04:59:54 MDT 2022
+# IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
+# Start of session at: Tue Jun  9 20:04:40 2026
+# Process ID: 337133
+# Current directory: /home/soooarr/chipyard
+# Command line: vivado -mode batch -source logs/radar_nexysvideo/runtime/xradar-dot4-2026-06-09/program-xradar-rocc-pipelined-75mhz-2026-06-09.tcl -journal logs/radar_nexysvideo/runtime/xradar-dot4-2026-06-09/program-xradar-rocc-pipelined-75mhz-2026-06-09.jou -log logs/radar_nexysvideo/runtime/xradar-dot4-2026-06-09/program-xradar-rocc-pipelined-75mhz-2026-06-09.log
+# Log file: /home/soooarr/chipyard/logs/radar_nexysvideo/runtime/xradar-dot4-2026-06-09/program-xradar-rocc-pipelined-75mhz-2026-06-09.log
+# Journal file: /home/soooarr/chipyard/logs/radar_nexysvideo/runtime/xradar-dot4-2026-06-09/program-xradar-rocc-pipelined-75mhz-2026-06-09.jou
+# Running On: ubuntu, OS: Linux, CPU Frequency: 3696.011 MHz, CPU Physical cores: 16, Host memory: 16728 MB
+#-----------------------------------------------------------
+source logs/radar_nexysvideo/runtime/xradar-dot4-2026-06-09/program-xradar-rocc-pipelined-75mhz-2026-06-09.tcl
+# open_hw_manager
+open_hw_manager: Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1286.500 ; gain = 0.023 ; free physical = 6558 ; free virtual = 15308
+# connect_hw_server
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2022.2
+  **** Build date : Oct 14 2022 at 05:10:28
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+
+
+INFO: [Labtools 27-3415] Connecting to cs_server url TCP:localhost:0
+INFO: [Labtools 27-3417] Launching cs_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+
+******** Xilinx cs_server v2022.2.0
+  ****** Build date   : Oct 05 2022-07:25:37
+    **** Build number : 2022.2.1664925937
+      ** Copyright 2017-2026 Xilinx, Inc. All Rights Reserved.
+
+
+
+# set bit_file {/home/soooarr/chipyard/logs/radar_nexysvideo/runtime/xradar-dot4-2026-06-09/artifacts/NexysVideoHarness-xradar-rocc-pipelined-75mhz-timingclean-2026-06-09.bit}
+# set targets [get_hw_targets]
+# puts "HW_TARGETS: $targets"
+HW_TARGETS: localhost:3121/xilinx_tcf/Digilent/210276689939 localhost:3121/xilinx_tcf/Digilent/210276689939B
+# set ordered_targets {}
+# foreach target $targets {
+#   if {[string match {*210276689939B*} $target]} {
+#     set ordered_targets [linsert $ordered_targets 0 $target]
+#   } else {
+#     lappend ordered_targets $target
+#   }
+# }
+# set selected_target {}
+# foreach target $ordered_targets {
+#   puts "TRY_HW_TARGET: $target"
+#   if {[catch {
+#     current_hw_target $target
+#     open_hw_target $target
+#   } err]} {
+#     puts "WARN: open_hw_target failed for $target: $err"
+#     continue
+#   }
+# 
+#   set devices [get_hw_devices xc7a200t*]
+#   puts "DEVICES_ON_TARGET: $target => $devices"
+#   if {[llength $devices] != 0} {
+#     set selected_target $target
+#     break
+#   }
+# 
+#   catch {close_hw_target $target}
+# }
+TRY_HW_TARGET: localhost:3121/xilinx_tcf/Digilent/210276689939B
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210276689939B
+DEVICES_ON_TARGET: localhost:3121/xilinx_tcf/Digilent/210276689939B => xc7a200t_0
+# if {$selected_target eq {}} {
+#   puts "ERROR: no hw_target with xc7a200t device found"
+#   exit 2
+# }
+# puts "SELECTED_HW_TARGET: $selected_target"
+SELECTED_HW_TARGET: localhost:3121/xilinx_tcf/Digilent/210276689939B
+# set devices [get_hw_devices xc7a200t*]
+# if {[llength $devices] == 0} {
+#   puts "ERROR: no xc7a200t hardware device found"
+#   exit 2
+# }
+# set dev [lindex $devices 0]
+# current_hw_device $dev
+# refresh_hw_device -update_hw_probes false $dev
+INFO: [Labtools 27-1434] Device xc7a200t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+# set_property PROGRAM.FILE $bit_file $dev
+# program_hw_devices $dev
+INFO: [Labtools 27-3164] End of startup status: HIGH
+program_hw_devices: Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 3226.496 ; gain = 1.000 ; free physical = 4551 ; free virtual = 13343
+# refresh_hw_device $dev
+INFO: [Labtools 27-1434] Device xc7a200t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+# puts "PROGRAM_DONE: $bit_file"
+PROGRAM_DONE: /home/soooarr/chipyard/logs/radar_nexysvideo/runtime/xradar-dot4-2026-06-09/artifacts/NexysVideoHarness-xradar-rocc-pipelined-75mhz-timingclean-2026-06-09.bit
+# exit
+INFO: [Common 17-206] Exiting Vivado at Tue Jun  9 20:04:59 2026...

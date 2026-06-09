@@ -1574,3 +1574,270 @@ The project is not limited to 50 MHz by Feature21 or QMLP arithmetic. The curren
   - Whole-workload estimates now use `Speedup_total = 1 / ((1 - f) + f / s_k)`, where Phase 0 measures accelerated fraction `f` and Phase 2/3 measures finite kernel-local speedup `s_k`.
   - Example finite-kernel bounds were added: `f=40%, s_k=4x -> ~1.43x`, `f=70%, s_k=4x -> ~2.11x`, and `f=87.5%, s_k=4x -> ~2.91x`.
   - The plan now treats `1 / (1 - f)` only as the idealized `s_k -> infinity` limit and requires comparing Amdahl prediction against actual whole-workload measurements.
+
+## Checkpoint 2026-06-08 Feature21 Batch DMA Candidate
+
+- User observed that the Feature21 golden dump flow was too slow because it configured/reran DMA per sample and printed too much per-sample output.
+- Implemented a one-shot Feature21 batch mode:
+  - `FEATURE21_DMA_BATCH_MODE=1` default in `tests/Makefile`.
+  - `tests/radar-axi-dma-feature21-golden.c` now packs all 1000 Feature21 golden frames into one MM2S stream, expects all output frames in one S2MM buffer, checks preprocessor counters and padding, and prints a compact summary.
+  - `fpga/src/main/scala/nexysvideo/RadarAXIDMA.scala` now carries input TLAST through the Feature21 preprocessor so only the final output frame asserts TLAST in a concatenated multi-frame stream; frame count increments on completed output frames.
+- Offline gates:
+  - Batch ELF rebuilt: `tests/radar-axi-dma-feature21-golden.riscv`.
+  - Verilog generation PASS for `RadarAXIMMIONexysVideo75MHzConfig`.
+  - 75 MHz bitstream generation PASS.
+- Final timing:
+  - WNS `+0.016 ns`
+  - TNS `0.000 ns`
+  - WHS `+0.010 ns`
+  - `timing.txt` reports all user specified timing constraints are met.
+- Artifacts:
+  - `logs/radar_nexysvideo/runtime/feature21-batch-dma-2026-06-08/artifacts/NexysVideoHarness-feature21-batch-dma-75mhz-2026-06-08.bit`
+  - `logs/radar_nexysvideo/runtime/feature21-batch-dma-2026-06-08/artifacts/radar-axi-dma-feature21-golden-batch-2026-06-08.riscv`
+  - `logs/radar_nexysvideo/runtime/feature21-batch-dma-2026-06-08/artifacts/timing-feature21-batch-dma-75mhz-2026-06-08.txt`
+- Board status:
+  - New batch bitstream is not yet board-validated.
+  - The reset-interrupted summary-only run before this bitstream was generated used the old bitstream and should remain invalid evidence.
+- Next board step:
+  - Program the new batch-DMA bitstream, press CPU_RESET, then run the archived batch ELF at UART-TSI baudrate `115200`.
+
+## Checkpoint 2026-06-09 Xradar dot4 Fallback/Profile Prep
+
+- Continued the RISC-V/Xradar work according to `docs/riscv_core_feature21_qmlp_optimization_plan_2026-06-06.md`.
+- Existing Phase 1 fallback files were confirmed present:
+  - `tests/radar_xradar_fallback.h`
+  - `tests/radar-xradar-fallback-host.c`
+  - `tests/radar-xradar-static-model-host.c`
+- Host/static checks pass:
+  - `make -C tests xradar-host-test xradar-static-model`
+  - Log: `logs/radar_nexysvideo/runtime/xradar-dot4-2026-06-09/xradar-host-and-static-2026-06-09.log`
+  - Result: `rqdot4=848`, `scalar_tail_macs=64`, `rqscale8=96`, packed MAC coverage `98.14%`.
+- `tests/radar-qmlp-cpu-profile.c` now has a build-time Xradar fallback path:
+  - `RADAR_QMLP_CPU_PROFILE_USE_XRADAR_FALLBACK=0`: scalar baseline profile.
+  - `RADAR_QMLP_CPU_PROFILE_USE_XRADAR_FALLBACK=1`: uses `xradar_dot_i8_packed_tail()` and `xradar_rqscale8_relu_sw()` while preserving the same QMLP logits contract.
+  - The fallback profile prints `xradar_ops` averages, so future board runs can compare scalar and dot4-shaped software paths before RoCC RTL.
+- Board-ready profile artifacts:
+  - `logs/radar_nexysvideo/runtime/xradar-dot4-2026-06-09/artifacts/radar-qmlp-cpu-profile-scalar-2026-06-09.riscv`
+  - `logs/radar_nexysvideo/runtime/xradar-dot4-2026-06-09/artifacts/radar-qmlp-cpu-profile-xradar-fallback-2026-06-09.riscv`
+- Current boundary:
+  - This step does not implement `rqdot4` in hardware yet.
+  - It establishes the software golden/profile path required before a RoCC or execute-stage implementation.
+
+## Checkpoint 2026-06-09 Xradar RoCC `rqdot4` Prototype
+
+- Continued the offline RISC-V/Xradar path beyond the software fallback.
+- Added a minimal RoCC RTL prototype:
+  - Source: `fpga/src/main/scala/nexysvideo/XradarRoCC.scala`
+  - Config fragment: `WithXradarRoCC`
+  - Dedicated NexysVideo config: `RadarAXIMMIOXradarRoCCNexysVideo75MHzConfig`
+- Current implemented hardware semantics:
+  - `custom0`, `funct7=0`, `funct3=0`
+  - `rqdot4 rd, rs1, rs2`
+  - Treats the low 32 bits of both source registers as four signed int8 lanes.
+  - Returns the signed 4-lane dot-product result, sign-extended to `xLen`.
+- Added a board smoke ELF for the future RoCC bitstream:
+  - Source: `tests/radar-xradar-rocc-smoke.c`
+  - Build artifact: `tests/radar-xradar-rocc-smoke.riscv`
+  - Size: text `8366`, data `16`, bss `0`.
+  - The smoke test compares hardware `rqdot4` against `xradar_rqdot4_sw()` and then runs 8 QMLP semantic cases through a RoCC-dot4 path.
+- Offline verification:
+  - `make -C tests radar-xradar-rocc-smoke.riscv` PASS after loading `env.sh`.
+  - `git diff --check` PASS for the RoCC source/config/test changes.
+  - `make -C fpga SUB_PROJECT=nexysvideo CONFIG=RadarAXIMMIOXradarRoCCNexysVideo75MHzConfig verilog` PASS.
+  - Log: `logs/radar_nexysvideo/runtime/xradar-dot4-2026-06-09/xradar-rocc-verilog-75mhz-2026-06-09.log`
+  - Generated RTL evidence: `fpga/generated-src/chipyard.fpga.nexysvideo.NexysVideoHarness.RadarAXIMMIOXradarRoCCNexysVideo75MHzConfig/gen-collateral/RocketTile.sv` contains four signed int8 multiply lanes and the RoCC response data mux.
+- Current boundary:
+  - This is not yet a timing-clean bitstream.
+  - This is not yet board-validated.
+  - `rqscale8`, `rqpack`, and `racc.*` remain unimplemented in RoCC RTL.
+- Next offline gate:
+  - Build a 75 MHz bitstream for `RadarAXIMMIOXradarRoCCNexysVideo75MHzConfig`.
+  - Inspect final timing, especially whether the added RoCC path perturbs the already tight Rocket frontend/core timing.
+- Next board gate:
+  - Program the new RoCC bitstream.
+  - Press CPU_RESET.
+  - Run `tests/radar-xradar-rocc-smoke.riscv` over UART-TSI at `115200`.
+
+## Checkpoint 2026-06-09 Xradar RoCC 75 MHz Implementation Gate
+
+- Ran the first 75 MHz implementation attempt for `RadarAXIMMIOXradarRoCCNexysVideo75MHzConfig`.
+- Outcome:
+  - Vivado wrote a bitstream, but the make timing gate failed.
+  - Final timing: WNS `-0.330 ns`, TNS `-29.441 ns`, WHS `+0.016 ns`, THS `0.000 ns`.
+  - Treat this bitstream as timing-fail evidence, not as a formal board baseline.
+- Worst final setup path:
+  - Source: RoCC command queue RAM under `cmdRouter/cmd_q`.
+  - Middle: `xradar_p0` DSP path.
+  - Destination: RoCC response arbiter queue RAM under `respArb_io_in_0_q`.
+  - This confirms the current combinational `rqdot4` response path is the immediate timing issue introduced by the prototype.
+- DRC evidence:
+  - `xradar_p0..p3` DSP inputs are not pipelined.
+  - `xradar_p0..p3` DSP multiplier/output stages are not pipelined.
+  - This matches the timing report and points to a registered/pipelined RoCC datapath as the next design step.
+- Archived artifacts:
+  - Bitstream: `logs/radar_nexysvideo/runtime/xradar-dot4-2026-06-09/artifacts/NexysVideoHarness-xradar-rocc-75mhz-timingfail-2026-06-09.bit`
+  - Timing: `logs/radar_nexysvideo/runtime/xradar-dot4-2026-06-09/artifacts/timing-xradar-rocc-75mhz-timingfail-2026-06-09.txt`
+  - DRC: `logs/radar_nexysvideo/runtime/xradar-dot4-2026-06-09/artifacts/drc-xradar-rocc-75mhz-timingfail-2026-06-09.txt`
+  - Utilization: `logs/radar_nexysvideo/runtime/xradar-dot4-2026-06-09/artifacts/utilization-xradar-rocc-75mhz-timingfail-2026-06-09.txt`
+  - Checksums: `logs/radar_nexysvideo/runtime/xradar-dot4-2026-06-09/artifacts/SHA256SUMS.txt`
+- Next offline gate:
+  - Convert `XradarRoCC` from a combinational response into a multi-cycle ready/valid design.
+  - Register command operands, register DSP products, register the sum/response, and keep `io.busy` asserted while an in-flight command waits to respond.
+  - Re-run Verilog and 75 MHz bitstream timing before asking for board validation.
+
+## Checkpoint 2026-06-09 Xradar RoCC Pipelined 75 MHz Timing-Clean Candidate
+
+- Implemented the next offline gate after the failed one-cycle RoCC attempt.
+- RTL change:
+  - `XradarRoCC` now uses a multi-cycle ready/valid microarchitecture.
+  - Command operands and destination register are captured first.
+  - Four int8 products are registered.
+  - The dot-product sum is registered.
+  - The response is emitted from a dedicated response state, with `io.busy` asserted while a command is in flight.
+- Verification:
+  - `git diff --check` PASS for the RoCC/docs changes.
+  - `make -C tests radar-xradar-rocc-smoke.riscv` PASS after loading `env.sh`.
+  - `make -C fpga SUB_PROJECT=nexysvideo CONFIG=RadarAXIMMIOXradarRoCCNexysVideo75MHzConfig verilog` PASS.
+  - `make -C fpga SUB_PROJECT=nexysvideo CONFIG=RadarAXIMMIOXradarRoCCNexysVideo75MHzConfig bitstream` PASS.
+- Final timing:
+  - WNS `+0.004 ns`
+  - TNS `0.000 ns`
+  - WHS `+0.009 ns`
+  - THS `0.000 ns`
+  - All user timing constraints are met.
+- Interpretation:
+  - The combinational RoCC DSP/response path was a real issue and has been addressed by pipelining.
+  - During the successful run, the hard optimization work shifted to existing Rocket frontend/core-div paths rather than the Xradar dot4 path.
+  - The resulting slack is very small, so this is a board-test candidate rather than a large-margin timing baseline.
+- Archived artifacts:
+  - Bitstream: `logs/radar_nexysvideo/runtime/xradar-dot4-2026-06-09/artifacts/NexysVideoHarness-xradar-rocc-pipelined-75mhz-timingclean-2026-06-09.bit`
+  - Timing: `logs/radar_nexysvideo/runtime/xradar-dot4-2026-06-09/artifacts/timing-xradar-rocc-pipelined-75mhz-timingclean-2026-06-09.txt`
+  - DRC: `logs/radar_nexysvideo/runtime/xradar-dot4-2026-06-09/artifacts/drc-xradar-rocc-pipelined-75mhz-timingclean-2026-06-09.txt`
+  - Utilization: `logs/radar_nexysvideo/runtime/xradar-dot4-2026-06-09/artifacts/utilization-xradar-rocc-pipelined-75mhz-timingclean-2026-06-09.txt`
+  - Checksums: `logs/radar_nexysvideo/runtime/xradar-dot4-2026-06-09/artifacts/SHA256SUMS.txt`
+- Next board gate:
+  - Program the pipelined timing-clean bitstream.
+  - Press CPU_RESET.
+  - Run `tests/radar-xradar-rocc-smoke.riscv` over UART-TSI at `115200`.
+  - Treat a PASS as functional validation for `rqdot4` only; `rqscale8`, `rqpack`, and `racc.*` remain unimplemented in RoCC RTL.
+
+## Checkpoint 2026-06-09 Xradar RoCC Board Bring-Up Partial Pass
+
+- Programmed the timing-clean pipelined RoCC bitstream:
+  - Bitstream: `logs/radar_nexysvideo/runtime/xradar-dot4-2026-06-09/artifacts/NexysVideoHarness-xradar-rocc-pipelined-75mhz-timingclean-2026-06-09.bit`
+  - Program log: `logs/radar_nexysvideo/runtime/xradar-dot4-2026-06-09/program-xradar-rocc-pipelined-75mhz-2026-06-09.log`
+  - Result: `PROGRAM_DONE`
+  - The Vivado `no supported debug core(s)` message is expected because this design has no ILA/VIO debug cores.
+- Confirmed artifact checksums from repo root:
+  - `sha256sum -c logs/radar_nexysvideo/runtime/xradar-dot4-2026-06-09/artifacts/SHA256SUMS.txt`
+  - Result: all listed original timing/bitstream artifacts passed.
+- First full-smoke board attempt exposed a software encoding issue:
+  - Original inline asm used `.insn r CUSTOM_0, 0, 0`, which encoded RoCC `xd/xs1/xs2=0`.
+  - Board log showed first basic case `got=-66847231`, expected `-70`.
+  - `-66847231` is `0xfc03fe01`, matching the packed `rs1` operand; this is consistent with no RoCC writeback rather than a valid arithmetic result.
+  - Log: `logs/radar_nexysvideo/runtime/xradar-rocc-smoke-75mhz-2026-06-09-2026-06-09-201352.log`
+- Fixed the smoke test instruction encoding:
+  - Source: `tests/radar-xradar-rocc-smoke.c`
+  - Change: encode `funct3=7`, so `xd/xs1/xs2=1`.
+  - Rebuilt ELF: `logs/radar_nexysvideo/runtime/xradar-dot4-2026-06-09/artifacts/radar-xradar-rocc-smoke-funct3fix-2026-06-09.riscv`
+  - Fixed full smoke status: selfcheck passed, but the run timed out before visible HTIF output; not a full PASS.
+- Added and ran a smaller single-instruction memory probe:
+  - Source: `tests/radar-xradar-rocc-single-probe.c`
+  - ELF: `logs/radar_nexysvideo/runtime/xradar-dot4-2026-06-09/artifacts/radar-xradar-rocc-single-probe-funct3fix-2026-06-09.riscv`
+  - Probe writes status words around one `rqdot4` instruction and then leaves the values readable through UART-TSI.
+  - Board readback:
+    - `0x80003000 -> 0x11110000`
+    - `0x80003008 -> 0xfc03fe01`
+    - `0x80003010 -> 0x08f906fb`
+    - `0x80003018 -> 0xffffffba`
+    - `0x80003020 -> 0x2222aaaa`
+  - Expected arithmetic: `0xfc03fe01` packs `{1, -2, 3, -4}`, `0x08f906fb` packs `{-5, 6, -7, 8}`, and the signed int8 dot product is `1*(-5) + (-2)*6 + 3*(-7) + (-4)*8 = -70`.
+  - Interpretation: the single board-executed `rqdot4` returned `-70` and passed the probe status check.
+- Durable status note:
+  - `logs/radar_nexysvideo/runtime/xradar-dot4-2026-06-09/artifacts/xradar-rocc-board-status-2026-06-09.md`
+- Current boundary:
+  - The board now has partial functional validation for `rqdot4` arithmetic on the timing-clean bitstream.
+  - Do not report the full QMLP semantic smoke as PASS yet.
+  - Next debug should isolate whether the fixed full-smoke timeout is due to HTIF/printf interaction, repeated RoCC command sequencing, or another software-side issue.
+
+## Checkpoint 2026-06-09 Xradar RoCC Memory-Smoke Board PASS
+
+- After a fresh CPU reset, added and ran a memory-based smoke test to avoid the printable HTIF path:
+  - Source: `tests/radar-xradar-rocc-memory-smoke.c`
+  - ELF: `logs/radar_nexysvideo/runtime/xradar-dot4-2026-06-09/artifacts/radar-xradar-rocc-memory-smoke-funct3fix-2026-06-09.riscv`
+  - The program writes probe/status words to `0x80010000` and then stays in a loop, allowing UART-TSI readback.
+  - The program uses `funct3=7`, so RoCC `xd/xs1/xs2=1`.
+- Load/selfcheck:
+  - Command shape: `scripts/run_nexysvideo_uart_tsi.sh --tty /dev/ttyUSB0 --baudrate 115200 --bin ...memory-smoke...`
+  - Log: `logs/radar_nexysvideo/runtime/xradar-rocc-memory-smoke-funct3fix-75mhz-2026-06-09-2026-06-09-204609.log`
+  - Selfcheck passed over all ELF chunks.
+  - The run ended by timeout because the memory-smoke intentionally does not call `exit`.
+- Board readback summary:
+  - Stage: `0x7777aaaa`
+  - Fail code: `0`
+  - Basic pass mask: `0x0f` -> 4/4 basic `rqdot4` cases passed.
+  - QMLP pass mask: `0xff` -> 8/8 QMLP semantic cases passed.
+  - Cases completed: basic `4`, QMLP `8`.
+  - Counts: `rqdot4_ops=848`, `scalar_tail_macs=64`, `rqscale8_ops=96`, `total_macs=3456`, packed MAC coverage x100 `9814`.
+  - Case-detail table: `logs/radar_nexysvideo/runtime/xradar-dot4-2026-06-09/artifacts/xradar-rocc-memory-smoke-readback-2026-06-09.md`
+- Interpretation:
+  - This validates repeated RoCC command sequencing and the QMLP semantic path for the current `rqdot4` scope on the timing-clean 75 MHz bitstream.
+  - The earlier printable full smoke timeout should now be treated as an HTIF/printf/debug-output issue, not as the primary functional verdict.
+  - `rqscale8`, `rqpack`, and `racc.*` remain unimplemented in RoCC RTL.
+
+## Checkpoint 2026-06-09 Xradar RoCC Memory-Smoke Repeat After Reset
+
+- After another fresh CPU reset, reran the same memory-smoke ELF:
+  - ELF: `logs/radar_nexysvideo/runtime/xradar-dot4-2026-06-09/artifacts/radar-xradar-rocc-memory-smoke-funct3fix-2026-06-09.riscv`
+  - Load log: `logs/radar_nexysvideo/runtime/xradar-rocc-memory-smoke-repeat-after-reset-75mhz-2026-06-09-2026-06-09-205440.log`
+  - Selfcheck: PASS over all chunks.
+  - Runtime ended by timeout as expected because memory-smoke intentionally does not call `exit`.
+- Repeat readback summary:
+  - Stage: `0x7777aaaa`
+  - Fail code: `0`
+  - Basic pass mask: `0x0f`
+  - QMLP pass mask: `0xff`
+  - Cases completed: basic `4`, QMLP `8`
+  - Counts stayed consistent: `rqdot4_ops=848`, `scalar_tail_macs=64`, `rqscale8_ops=96`, packed MAC coverage x100 `9814`.
+- Interpretation:
+  - The memory-smoke board PASS is repeatable across a fresh reset.
+  - Next useful validation layer is not another identical functional smoke, but either a multi-iteration stress test or a cycle/profile probe comparing scalar vs RoCC `rqdot4` paths.
+
+## Checkpoint 2026-06-09 Xradar RoCC Printable Smoke Timeout Resolved
+
+- Investigated the earlier fixed-smoke timeout rather than leaving it as an open issue.
+- Added a minimal HTIF/printf probe:
+  - Source: `tests/radar-xradar-rocc-htif-probe.c`
+  - ELF: `logs/radar_nexysvideo/runtime/xradar-dot4-2026-06-09/artifacts/radar-xradar-rocc-htif-probe-funct3fix-2026-06-09.riscv`
+  - Log: `logs/radar_nexysvideo/runtime/xradar-rocc-htif-probe-funct3fix-75mhz-2026-06-09-2026-06-09-210454.log`
+  - Result: PASS. It printed before/after one `rqdot4`, returned `got=-70 expected=-70`, printed `PASSED`, and exited.
+  - Interpretation: HTIF/printf is not generally broken on this RoCC bitstream.
+- Fixed the printable full smoke software:
+  - Source: `tests/radar-xradar-rocc-smoke.c`
+  - Prior fixes: `funct3=7`, so RoCC `xd/xs1/xs2=1`.
+  - New fix: replace unsupported bare-metal `%-20s` with `%s`.
+  - ELF: `logs/radar_nexysvideo/runtime/xradar-dot4-2026-06-09/artifacts/radar-xradar-rocc-smoke-funct3fix-printfix-2026-06-09.riscv`
+- Board result after fresh CPU reset:
+  - Log: `logs/radar_nexysvideo/runtime/xradar-rocc-smoke-funct3fix-printfix-after-reset-75mhz-2026-06-09-2026-06-09-210735.log`
+  - Selfcheck: PASS.
+  - Printed all 8 QMLP semantic cases.
+  - Counts: `rqdot4=848`, `scalar_tail_macs=64`, `rqscale8=96`, `total_macs=3456`, packed MAC coverage x100 `9814`.
+  - Final line: `[XRADAR-ROCC] PASSED`.
+- Updated interpretation:
+  - Printable smoke timeout is resolved.
+  - The root cause was software-side test formatting/encoding, not RoCC arithmetic or repeated-command behavior.
+  - Current board status for the implemented `rqdot4` scope is PASS.
+  - Still-open architecture scope: `rqscale8`, `rqpack`, and `racc.*` are not implemented in RoCC RTL.
+
+## Checkpoint 2026-06-09 Xradar RoCC Debug Lessons Synced
+
+- Synced the board-debug root causes into repo docs, Codex memory, and the local Obsidian notes so future continuation windows do not reopen the same failure modes.
+- Durable source of truth:
+  - Board status: `logs/radar_nexysvideo/runtime/xradar-dot4-2026-06-09/artifacts/xradar-rocc-board-status-2026-06-09.md`
+  - Docs map: `docs/README.md`
+  - Obsidian work log: `/home/soooarr/obsidian/Codex/Chipyard/Research Notes/Xradar Work Log.md`
+- Debug carryover:
+  - Use `.insn r CUSTOM_0, 7, 0, rd, rs1, rs2` for RoCC `rqdot4`. `funct3=7` requests `xd/xs1/xs2`; `funct3=0` caused the packed-`rs1` symptom `0xfc03fe01`.
+  - Avoid unsupported bare-metal printf width/left-align formats such as `%-20s`; this was the reason the printable smoke appeared to timeout after the arithmetic path already passed.
+  - Treat memory-smoke timeout as expected only because that program intentionally spins for UART-TSI readback. Judge it by DDR status words: stage `0x7777aaaa`, fail `0`, basic mask `0x0f`, QMLP mask `0xff`.
+  - For future board tests, use `/dev/ttyUSB0` at `115200` and press `CPU_RESET` before each fresh ELF load.

@@ -158,6 +158,9 @@ class RadarAXIMMIONexysVideo60MHzConfig extends RadarAXIMMIONexysVideoFreqConfig
 class RadarAXIMMIONexysVideo65MHzConfig extends RadarAXIMMIONexysVideoFreqConfig(65.0)
 class RadarAXIMMIONexysVideo66p667MHzConfig extends RadarAXIMMIONexysVideoFreqConfig(66.666667)
 class RadarAXIMMIONexysVideo75MHzConfig extends RadarAXIMMIONexysVideoFreqConfig(75.0)
+class RadarAXIMMIOXradarRoCCNexysVideo75MHzConfig extends Config(
+  new WithXradarRoCC(OpcodeSet.custom0) ++
+  new RadarAXIMMIONexysVideoFreqConfig(75.0))
 
 class RadarAXIMMIOSimConfig extends Config(
   new freechips.rocketchip.subsystem.WithCustomMMIOPort(

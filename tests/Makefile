@@ -79,6 +79,7 @@ spiflash.img: spiflash.py
 
 BRINGUP_RUNTIME = htif_nolib.bringup.o htif_crt0.bringup.o
 BRINGUP_LDS = ../toolchains/libgloss/util/htif.ld
+RADAR_QMLP_CPU_PROFILE_USE_XRADAR_FALLBACK ?= 0
 QMLP_VALIDATION_HEADERS = radar_qmlp_validation_data.h \
 	../releases/input_convergence_k3_rcs21_20260406/rcs_fix_k7_rcs21_20260414/hardware_validation_20260414/large_golden/test_inputs_int8.h \
 	../releases/input_convergence_k3_rcs21_20260406/rcs_fix_k7_rcs21_20260414/hardware_validation_20260414/large_golden/test_logits_int32.h \
@@ -157,7 +158,13 @@ radar-qmlp-cpu-only.riscv: radar-qmlp-cpu-only.bringup.o $(BRINGUP_RUNTIME)
 radar-qmlp-cpu-profile.riscv: radar-qmlp-cpu-profile.bringup.o $(BRINGUP_RUNTIME)
 	$(GCC) $(BRINGUP_LDFLAGS) -T $(BRINGUP_LDS) $^ -lgcc -o $@
 
-radar-qmlp-cpu-profile.bringup.o: radar-qmlp-cpu-profile.c
+radar-qmlp-cpu-profile.bringup.o: radar-qmlp-cpu-profile.c radar_xradar_fallback.h
+	$(GCC) $(BRINGUP_CFLAGS) -DRADAR_QMLP_CPU_PROFILE_USE_XRADAR_FALLBACK=$(RADAR_QMLP_CPU_PROFILE_USE_XRADAR_FALLBACK) -c $< -o $@
+
+radar-xradar-rocc-smoke.riscv: radar-xradar-rocc-smoke.bringup.o $(BRINGUP_RUNTIME)
+	$(GCC) $(BRINGUP_LDFLAGS) -T $(BRINGUP_LDS) $^ -lgcc -o $@
+
+radar-xradar-rocc-smoke.bringup.o: radar-xradar-rocc-smoke.c radar_xradar_fallback.h
 	$(GCC) $(BRINGUP_CFLAGS) -c $< -o $@
 
 
