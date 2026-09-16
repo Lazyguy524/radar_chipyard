@@ -1,0 +1,8 @@
+{
+  "status": "PASS",
+  "perturbed_mask_zero": true,
+  "clean_correct_gradient_only": true,
+  "source_sha256": {
+    "docs/paper_new/conditional_protection_2026-09-16/protection_common.py": "45faaee23ff72d07997be7e17d366605e370354df193cd25c52d74f92491c545"
+  }
+}

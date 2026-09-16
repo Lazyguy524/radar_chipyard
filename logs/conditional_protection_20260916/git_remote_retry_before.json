@@ -1,0 +1,6 @@
+{
+  "returncode": 0,
+  "stderr": "remote: \nremote: Create a pull request for 'backup/radar-thesis-20260916-protection' on GitHub by visiting:        \nremote:      https://github.com/Lazyguy524/radar_chipyard/pull/new/backup/radar-thesis-20260916-protection        \nremote: \nTo github.com:Lazyguy524/radar_chipyard.git\n * [new branch]        backup/radar-thesis-20260916-protection -> backup/radar-thesis-20260916-protection\n",
+  "remote": "f27159eaa3036d691e09f22dca430586044f217c\trefs/heads/backup/radar-thesis-20260916-protection",
+  "verified": true
+}

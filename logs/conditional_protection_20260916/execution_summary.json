@@ -1,0 +1,20 @@
+{
+  "status": "PASS",
+  "stages": [
+    {
+      "stage": "training",
+      "seconds": 550.346342482022,
+      "returncode": 0
+    },
+    {
+      "stage": "evaluation",
+      "seconds": 45.16273360798368,
+      "returncode": 0
+    },
+    {
+      "stage": "implementations",
+      "seconds": 5.181207707966678,
+      "returncode": 0
+    }
+  ]
+}

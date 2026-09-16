@@ -1,0 +1,17 @@
+{
+  "status": "DESIGN_RECORD_TIMING_DISCLOSED",
+  "plan": "plan.json was frozen and hashed by preflight before any full training",
+  "pre_run_git_commit": "f27159eaa3036d691e09f22dca430586044f217c",
+  "pre_run_notes": [
+    "00_设计账本与主线.md",
+    "01_计划与预检审查.md"
+  ],
+  "during_run_added": [
+    "research_contract.json",
+    "references.ris",
+    "report.py",
+    "finalize.py",
+    "04_备份与复现.md"
+  ],
+  "note": "Supplemental explanatory and archival files do not alter frozen training/evaluation code. Post-result reflection is appended and labelled."
+}

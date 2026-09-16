@@ -1,0 +1,51 @@
+{
+  "status": "PASS",
+  "trajectories": 6,
+  "numeric_metrics_recomputed": 96,
+  "source_hash_checks": 78,
+  "integer_complete_c_rows": 482700,
+  "original_problem_sha256": "f3210adbd4b430dac097d141234572257adddd64123f537a11b6dd64eb37240c",
+  "old_artifact_guards": [
+    {
+      "package": "training_and_gemmini_retest_2026-09-15",
+      "unchanged": 201
+    },
+    {
+      "package": "gemmini_qmlp_comparison_2026-09-15",
+      "unchanged": 68
+    },
+    {
+      "package": "feature_approximation_pilot",
+      "unchanged": 110
+    },
+    {
+      "package": "qmlp_int8_convergence",
+      "unchanged": 81
+    },
+    {
+      "package": "conditional_statistics",
+      "unchanged": 271
+    },
+    {
+      "package": "mechanism_convergence",
+      "unchanged": 1807
+    },
+    {
+      "package": "moment_encoding",
+      "unchanged": 470
+    }
+  ],
+  "method_accepted": {
+    "clean_guard": false,
+    "group_guard": false
+  },
+  "original_validation_sequences": 27,
+  "no_new_historical_test_scoring": true,
+  "reserve_target_rows": 0,
+  "output_bytes": 50103982,
+  "local_markdown_links": 32,
+  "gpu_jobs": 0,
+  "new_rtl_jobs": 0,
+  "new_board_jobs": 0,
+  "scope": "Execution and reproducibility PASS; method promotion separately follows predeclared gates. No independent test/hardware/novelty claim"
+}

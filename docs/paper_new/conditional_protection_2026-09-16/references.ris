@@ -1,0 +1,41 @@
+TY  - CONF
+TI  - Positive-Congruent Training: Towards Regression-Free Model Updates
+AU  - Yan, Sijie
+AU  - Xiong, Yuanjun
+AU  - Kundu, Kaustav
+AU  - Yang, Shuo
+AU  - Deng, Siqi
+AU  - Wang, Meng
+AU  - Xia, Wei
+AU  - Soatto, Stefano
+PY  - 2021
+T2  - Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition
+SP  - 14299
+EP  - 14308
+UR  - https://openaccess.thecvf.com/content/CVPR2021/html/Yan_Positive-Congruent_Training_Towards_Regression-Free_Model_Updates_CVPR_2021_paper.html
+N1  - Direct prior work on negative flips and correct-reference-focused distillation. Our clean-view guard is an adapted control, not a claimed new distillation method.
+ER  -
+
+TY  - RPRT
+TI  - Distributionally Robust Neural Networks for Group Shifts: On the Importance of Regularization for Worst-Case Generalization
+AU  - Sagawa, Shiori
+AU  - Koh, Pang Wei
+AU  - Hashimoto, Tatsunori B.
+AU  - Liang, Percy
+PY  - 2019
+M3  - arXiv preprint
+M1  - arXiv:1911.08731
+UR  - https://arxiv.org/abs/1911.08731
+N1  - Existing group-risk optimization; worst training group improvement does not guarantee worst-group generalization. Bibliographic record uses verified preprint year.
+ER  -
+
+TY  - RPRT
+TI  - Learning without Forgetting
+AU  - Li, Zhizhong
+AU  - Hoiem, Derek
+PY  - 2016
+M3  - arXiv preprint
+M1  - arXiv:1606.09282
+UR  - https://arxiv.org/abs/1606.09282
+N1  - Earlier use of distillation for retaining capabilities during learning; not a radar-specific or exact reproduction baseline here.
+ER  -

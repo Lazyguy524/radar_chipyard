@@ -1,0 +1,25 @@
+{
+  "status": "FROZEN_BEFORE_TRAINING",
+  "sha256": {
+    "docs/paper_new/conditional_protection_2026-09-16/run.py": "cb75ec93a00b813d9ad0d5b710fe1a907d3ec0c9ad270ee7788e323b842f8f66",
+    "docs/paper_new/conditional_protection_2026-09-16/train.py": "7550ed4ed0982a2ff5f952eb60d1e2d0071822e26b86b4ec60befcf42c9a861f",
+    "docs/paper_new/conditional_protection_2026-09-16/evaluate.py": "4d1a3766f33a5c1e68db3f99cdc3b1c517807ef8ffe47f27209810742ba8099b",
+    "docs/paper_new/conditional_protection_2026-09-16/audit_reserve.py": "41a4aa0505f086fd659d533d9e46d9567c62d65ce25970bb5f059e3274f476e7",
+    "docs/paper_new/conditional_protection_2026-09-16/preflight.py": "5e048dd91e460bd0b2fde6d4577a2851f6f401b30e3f5832150efdf1f977fb5b",
+    "docs/paper_new/conditional_protection_2026-09-16/backup_git.py": "48805369ae2c9269d23374cf83de59c58af502223528ab8f36f7a86a9c705a7a",
+    "docs/paper_new/conditional_protection_2026-09-16/build_candidates.py": "3676b1ec34b97e014e3b3bfb94f07ea9f3137abbd2fabdd58c8ede973ad6c3ab",
+    "docs/paper_new/conditional_protection_2026-09-16/protection_common.py": "45faaee23ff72d07997be7e17d366605e370354df193cd25c52d74f92491c545",
+    "docs/paper_new/conditional_protection_2026-09-16/plan.json": "e0b06a5aba1c363b50a6ed6d4ff99c909e6012e92e7357114f22cb489de51793",
+    "logs/conditional_protection_20260916/preflight.json": "b1c6d6fbfae216530a2a6c0c24e949416715673ffa0de01c666e215b10701a83",
+    "logs/mechanism_convergence_20260916/augmentation_v2/summary.json": "c23359e4e9499ca64cec82319907485dccab4afb7e2fa0e3409653b1db3126ba",
+    "logs/mechanism_convergence_20260916/factorial_v2/summary.json": "ecaa6dcff7085e91423bf9374c61c6def92dfeac68338632c44a1abf8fa7c753",
+    "logs/conditional_protection_20260916/prepared/teacher_seed37_logits.npy": "13e510e8fc8ae7c49f974d319d497e687b96c5ab3e9e2d5190242c6ed9a8e2d9",
+    "logs/conditional_protection_20260916/prepared/teacher_seed17_logits.npy": "d716cc9999521e4cd7e46ece05e498d771a0b30e5e3daf9f4efb12799ac0a3ef",
+    "logs/conditional_protection_20260916/prepared/normalization.npz": "bb01419264f4d97e8d2883e4730ca5be5f5c5f2dba12a447e339d4c6d0b3ec25",
+    "logs/conditional_protection_20260916/prepared/teacher_seed7_logits.npy": "b716f01b262c7a3947a6c11911424872baf43e3d6d2f3ef1d806f64b815b002f",
+    "logs/conditional_protection_20260916/prepared/teacher_seed7_real.npy": "674418a63d2c8cf64e4a8b34e76eb1114780a373d6eb62514812da3d6066f84c",
+    "logs/conditional_protection_20260916/prepared/teacher_seed17_real.npy": "6f56e3ba5e8835c4453e778ae3093cb3b7446dbf86d9da371255bd39878644b0",
+    "logs/conditional_protection_20260916/prepared/teacher_seed37_real.npy": "2a216a7890bd1dde191d4ef7887db8cfa41faf6b63d21d092677a75020a6855d",
+    "logs/conditional_protection_20260916/prepared/source_groups.npy": "5d9429af11bee3a30a8c419ba815fd66433784f5c2364ba93fb762f08a264538"
+  }
+}
