@@ -1,0 +1,45 @@
+{
+  "scope": "Logical execution structure only. No new FPGA/ASIC/board resource, timing, power or energy results. C compiler can eliminate compile-time disabled moment products; neither model size nor logical ROM bits implies measured physical savings.",
+  "shared": {
+    "point_passes": 1,
+    "first_moment_accumulators": 4,
+    "classifier": [
+      21,
+      64,
+      32,
+      2
+    ],
+    "weights": 3456,
+    "biases": 98,
+    "spatial_eigensolver": false
+  },
+  "proxy": {
+    "point_centering_subtractions": 0,
+    "additional_spatial_products_per_point": 0,
+    "spatial_second_accumulators": 0,
+    "mean_finish": "original count-bin shift"
+  },
+  "mean": {
+    "point_centering_subtractions": 4,
+    "additional_spatial_products_per_point": 0,
+    "spatial_second_accumulators": 0,
+    "reciprocal_lookups_per_cluster": 1,
+    "mean_reciprocal_products_per_cluster": 4
+  },
+  "shape": {
+    "point_centering_subtractions": 2,
+    "additional_spatial_products_per_point": 3,
+    "spatial_second_accumulators": 3,
+    "reciprocal_lookups_per_cluster": 1,
+    "mean_outputs": "original count-bin shift; two centered sums restored before old x/y means"
+  },
+  "moment": {
+    "point_centering_subtractions": 4,
+    "additional_spatial_products_per_point": 3,
+    "spatial_second_accumulators": 3,
+    "reciprocal_lookups_per_cluster": 1,
+    "reciprocal_products_per_cluster": 7,
+    "mean_products_for_covariance": 3
+  },
+  "mixed_precision": "Using different reciprocals for mean and covariance may require a second lookup and recomputing spatial mean terms. It is not automatically cheaper than one shared higher-precision reciprocal."
+}

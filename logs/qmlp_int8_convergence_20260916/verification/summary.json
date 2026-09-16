@@ -1,0 +1,235 @@
+{
+  "status": "PASS",
+  "checks": [
+    {
+      "seed": 7,
+      "full_validation_rows": 80450,
+      "stress_rows": 1028,
+      "layer_mismatches": [
+        0,
+        0,
+        0
+      ],
+      "checkpoint_export_equal": true,
+      "saved_training_logits_equal": true,
+      "batch_partition_and_order_invariant": true,
+      "evaluation_state_unchanged": true,
+      "scala_multiplier_roundtrip": true,
+      "max_observed_abs_values": [
+        127,
+        127,
+        50884
+      ],
+      "hidden_clamp127_fraction": [
+        0.00038669204474829085,
+        0.0021243784959602235
+      ],
+      "metrics": {
+        "samples": 80450,
+        "accuracy": 0.976308266003729,
+        "macro_f1": 0.974956631565139,
+        "per_class_f1": [
+          0.9691386010362695,
+          0.9807746620940084
+        ],
+        "recall": [
+          0.9797034078632927,
+          0.9742300062120514
+        ],
+        "confusion_matrix": [
+          [
+            29927,
+            620
+          ],
+          [
+            1286,
+            48617
+          ]
+        ]
+      }
+    },
+    {
+      "seed": 17,
+      "full_validation_rows": 80450,
+      "stress_rows": 1028,
+      "layer_mismatches": [
+        0,
+        0,
+        0
+      ],
+      "checkpoint_export_equal": true,
+      "saved_training_logits_equal": true,
+      "batch_partition_and_order_invariant": true,
+      "evaluation_state_unchanged": true,
+      "scala_multiplier_roundtrip": true,
+      "max_observed_abs_values": [
+        127,
+        127,
+        78611
+      ],
+      "hidden_clamp127_fraction": [
+        0.000829513673088875,
+        0.00173088875077688
+      ],
+      "metrics": {
+        "samples": 80450,
+        "accuracy": 0.9766687383467992,
+        "macro_f1": 0.9753641640778563,
+        "per_class_f1": [
+          0.9696950126741689,
+          0.9810333154815436
+        ],
+        "recall": [
+          0.9830752610731005,
+          0.9727471294310963
+        ],
+        "confusion_matrix": [
+          [
+            30030,
+            517
+          ],
+          [
+            1360,
+            48543
+          ]
+        ]
+      }
+    }
+  ],
+  "paired_comparisons": [
+    {
+      "seed": 7,
+      "reference": "old_deployment",
+      "macro_f1_delta": 0.008429225537958107,
+      "harm": 571,
+      "repair": 1218,
+      "bootstrap": {
+        "delta_macro_f1_percentile95": [
+          0.004692961057463449,
+          0.01603054878010852
+        ],
+        "replicates": 2000,
+        "unit": "whole sequence, paired resampling",
+        "sequences": 27,
+        "selection_adjusted": false
+      }
+    },
+    {
+      "seed": 7,
+      "reference": "folded_warmup",
+      "macro_f1_delta": 0.00027549281239658274,
+      "harm": 534,
+      "repair": 556,
+      "bootstrap": {
+        "delta_macro_f1_percentile95": [
+          -0.003769194291754524,
+          0.0040616508669388115
+        ],
+        "replicates": 2000,
+        "unit": "whole sequence, paired resampling",
+        "sequences": 27,
+        "selection_adjusted": false
+      }
+    },
+    {
+      "seed": 7,
+      "reference": "ptq",
+      "macro_f1_delta": 0.0030163663998006296,
+      "harm": 662,
+      "repair": 890,
+      "bootstrap": {
+        "delta_macro_f1_percentile95": [
+          -0.0007833355735964137,
+          0.007394407507626351
+        ],
+        "replicates": 2000,
+        "unit": "whole sequence, paired resampling",
+        "sequences": 27,
+        "selection_adjusted": false
+      }
+    },
+    {
+      "seed": 17,
+      "reference": "old_deployment",
+      "macro_f1_delta": 0.008836758050675408,
+      "harm": 504,
+      "repair": 1180,
+      "bootstrap": {
+        "delta_macro_f1_percentile95": [
+          0.0047636143800435325,
+          0.016660419579061413
+        ],
+        "replicates": 2000,
+        "unit": "whole sequence, paired resampling",
+        "sequences": 27,
+        "selection_adjusted": false
+      }
+    },
+    {
+      "seed": 17,
+      "reference": "folded_warmup",
+      "macro_f1_delta": 0.0010344566792657162,
+      "harm": 295,
+      "repair": 372,
+      "bootstrap": {
+        "delta_macro_f1_percentile95": [
+          -0.0018453853771820071,
+          0.005162202088471182
+        ],
+        "replicates": 2000,
+        "unit": "whole sequence, paired resampling",
+        "sequences": 27,
+        "selection_adjusted": false
+      }
+    },
+    {
+      "seed": 17,
+      "reference": "ptq",
+      "macro_f1_delta": 0.004895409119010097,
+      "harm": 461,
+      "repair": 831,
+      "bootstrap": {
+        "delta_macro_f1_percentile95": [
+          0.000444603986371675,
+          0.012635567109503958
+        ],
+        "replicates": 2000,
+        "unit": "whole sequence, paired resampling",
+        "sequences": 27,
+        "selection_adjusted": false
+      }
+    }
+  ],
+  "old_deployment_validation": {
+    "samples": 80450,
+    "accuracy": 0.9682660037290243,
+    "macro_f1": 0.9665274060271809,
+    "per_class_f1": [
+      0.9588988167109394,
+      0.9741559953434226
+    ],
+    "recall": [
+      0.9749238877794874,
+      0.9641905296274773
+    ],
+    "confusion_matrix": [
+      [
+        29781,
+        766
+      ],
+      [
+        1787,
+        48116
+      ]
+    ]
+  },
+  "wall_seconds": 2.861890092957765,
+  "plan_sha256": "d1293be9eef179396c78e24670dcde1b2b2b0e144071be0157f59dedd51e25f0",
+  "source_sha256": {
+    "docs/paper_new/qmlp_int8_convergence_2026-09-16/verify.py": "bd8aa85165ab84ba7bc630ba454a0b69cfa438138e29b62bb35f5834602c753d",
+    "docs/paper_new/qmlp_int8_convergence_2026-09-16/common.py": "59613000cc60a2f4cacb90b3ab2e01f6b68a422dd5ba4f1c21f522c30d641e56",
+    "tests/radar-feature21-qmlp-cpu-fullchain-profile.c": "c56cc771eded98bda18ae6cddf4eb8b8452ac6f093a68a1ed0bf0187d22898a7",
+    "generators/chipyard/src/main/scala/radar/RadarQMLP.scala": "c3343815591e3ebc1ee56023ddf6deef364d8ccdbe66ae59e0348cb2722786a1"
+  },
+  "scope": "Offline integer arithmetic and exploratory validation only. No new RTL elaboration, simulation, FPGA timing or board run."
+}

@@ -1,0 +1,109 @@
+{
+  "status": "FROZEN_BEFORE_PRECHECK_AND_TRAINING",
+  "date": "2026-09-16",
+  "objective": "Preserve original correct decisions while improving condition robustness, retaining the statistics/precision/shared-cost thesis question",
+  "authorization": "User approved two bounded training methods and requests reflection, traceable design rationale and Git backup",
+  "data": {
+    "train_rows": 357780,
+    "validation_rows": 80450,
+    "train_sequences": 113,
+    "validation_sequences": 27,
+    "representation": "proxy with previous train-frozen per-feature scales; 21 slots held fixed for control, not optimum claim",
+    "historical_test": "No new scoring, split metadata only",
+    "reserve_audit": "All five sequences absent from historical binary manifest: identity/annotation coverage only, no model scoring or choice based on accuracy; historical nonuse remains to be established"
+  },
+  "training": {
+    "methods": [
+      "clean_guard",
+      "group_guard"
+    ],
+    "seeds": [
+      7,
+      17,
+      37
+    ],
+    "max_trajectories": 6,
+    "warmup_epochs": 20,
+    "qat_epochs": 60,
+    "snapshots": [
+      20,
+      40,
+      60
+    ],
+    "selection": "Final epoch60, all seeds; no best checkpoint, no parameter search",
+    "architecture": [
+      21,
+      64,
+      32,
+      2
+    ],
+    "views": [
+      "clean",
+      "uniform_quarter_0",
+      "central_half"
+    ],
+    "probabilities": [
+      0.5,
+      0.25,
+      0.25
+    ],
+    "batch_size": 1024,
+    "normalization": "Same train-only mixture mean/std and frozen QAT calibration as previous augmentation proxy",
+    "teacher": "Same-seed clean-trained proxy from mechanism factorial_v2 epoch60. Offline train-only logits, no validation selection; teacher forward compute recorded separately",
+    "clean_guard": "Class-weighted CE plus correct-teacher clean-view KL, temperature2, coefficient1, weighted over entire batch; wrong teacher and perturbed views receive zero distillation penalty",
+    "group_guard": "Same clean guard plus 0.5 ordinary weighted CE + 0.5 group-weighted CE; 18 groups = 3 views x 3 source-history bins (0,1..5,6 preceding observations) x 2 source-current-point bins (train median boundary); group q starts uniform, epoch multiplicative update eta0.05 on per-group weighted CE; no validation feedback",
+    "group_definitions": "Group source observation support before synthetic removal, not inferred post-removal history; no new runtime metadata inputs",
+    "compute": "Same one sampled view per row per epoch and one student forward/backward; teacher train inference additional offline cost, task loss aggregation overhead reported; previous A/B reused as controls"
+  },
+  "evaluation": {
+    "conditions": [
+      "clean",
+      "uniform_half_0",
+      "uniform_half_1",
+      "uniform_half_2",
+      "uniform_quarter_0",
+      "uniform_quarter_1",
+      "uniform_quarter_2",
+      "central_half",
+      "xy_fraction6",
+      "xy_fraction4",
+      "kept_single"
+    ],
+    "sparse_views": [
+      "sparse_single",
+      "sparse_context"
+    ],
+    "groups": "Original supported point-count, shape and cross groups; real sparse current points/history/range; >=100 rows, >=3 sequences, both labels",
+    "acceptance": {
+      "all_seeds_required": true,
+      "clean_f1_loss_vs_A_max": 0.001,
+      "retained_condition_f1_loss_vs_B_max": 0.001,
+      "difficult_f1_gain_vs_A_min": 0.005,
+      "difficult_conditions": [
+        "uniform_quarter_0",
+        "central_half"
+      ],
+      "protected_sparse_context_groups": [
+        "history:six",
+        "current_range:le20"
+      ],
+      "protected_sparse_f1_loss_vs_A_max": 0.002,
+      "sparse_context_accuracy_loss_vs_A_max": 0.005,
+      "clean_negative_flips_vs_A": "Must not exceed same-seed B",
+      "interpretation": "Exploratory development gate, not safety guarantee; failure means no promoted method. All supported groups reported even outside protected gate"
+    },
+    "bootstrap": "Whole sequence paired 2000 resamples, exploratory, no selection or multiplicity correction"
+  },
+  "budgets": {
+    "cpu_threads": 2,
+    "gpu_jobs": 0,
+    "preparation_seconds": 900,
+    "training_seconds": 1800,
+    "evaluation_seconds": 600,
+    "max_output_bytes": 1073741824,
+    "new_rtl_jobs": 0,
+    "new_board_runs": 0
+  },
+  "stop": "Stop after six completed trajectories or any numerical/integer mismatch/budget exhaustion. No extra variants or seeds to rescue hypothesis.",
+  "review": "One-executor pre-run method/code review and Python preflight, not independent review. Previously viewed validation is explicitly exploratory. Distillation/group DRO are known methods; no new-method claim."
+}

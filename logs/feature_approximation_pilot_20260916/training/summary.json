@@ -1,0 +1,153 @@
+{
+  "status": "BOUNDED_MATCHED_REPRESENTATION_PROBE_COMPLETE",
+  "selected_candidate": "mean_eigen_corrected",
+  "train_samples": 49255,
+  "validation_samples": 80450,
+  "runs": 6,
+  "wall_seconds": 13.693666435021441,
+  "representation_metrics": {
+    "software_reference": {
+      "val_macro_f1_by_seed": [
+        0.9693298338867778,
+        0.9705689672095723
+      ],
+      "mean_val_macro_f1": 0.969949400548175
+    },
+    "deployment": {
+      "val_macro_f1_by_seed": [
+        0.9682835799551851,
+        0.9676632338945488
+      ],
+      "mean_val_macro_f1": 0.9679734069248669
+    },
+    "mean_eigen_corrected": {
+      "val_macro_f1_by_seed": [
+        0.9673917532591408,
+        0.9678436673699357
+      ],
+      "mean_val_macro_f1": 0.9676177103145382
+    }
+  },
+  "paired_comparisons": [
+    {
+      "seed": 7,
+      "representation": "software_reference",
+      "macro_f1_delta_vs_deployment": 0.0010462539315927444,
+      "harm": 790,
+      "repair": 869,
+      "bootstrap": {
+        "delta_macro_f1_percentile95": [
+          -0.0006598083378073133,
+          0.0031906169280573795
+        ],
+        "replicates": 2000,
+        "unit": "whole sequence, paired resampling",
+        "sequences": 27,
+        "selection_adjusted": false
+      }
+    },
+    {
+      "seed": 7,
+      "representation": "deployment",
+      "macro_f1_delta_vs_deployment": 0.0,
+      "harm": 0,
+      "repair": 0,
+      "bootstrap": {
+        "delta_macro_f1_percentile95": [
+          0.0,
+          0.0
+        ],
+        "replicates": 2000,
+        "unit": "whole sequence, paired resampling",
+        "sequences": 27,
+        "selection_adjusted": false
+      }
+    },
+    {
+      "seed": 7,
+      "representation": "mean_eigen_corrected",
+      "macro_f1_delta_vs_deployment": -0.0008918266960442622,
+      "harm": 733,
+      "repair": 667,
+      "bootstrap": {
+        "delta_macro_f1_percentile95": [
+          -0.0030381730307307785,
+          0.00147609407885009
+        ],
+        "replicates": 2000,
+        "unit": "whole sequence, paired resampling",
+        "sequences": 27,
+        "selection_adjusted": false
+      }
+    },
+    {
+      "seed": 17,
+      "representation": "software_reference",
+      "macro_f1_delta_vs_deployment": 0.0029057333150235287,
+      "harm": 770,
+      "repair": 989,
+      "bootstrap": {
+        "delta_macro_f1_percentile95": [
+          -0.0005903491102271091,
+          0.008299743755368292
+        ],
+        "replicates": 2000,
+        "unit": "whole sequence, paired resampling",
+        "sequences": 27,
+        "selection_adjusted": false
+      }
+    },
+    {
+      "seed": 17,
+      "representation": "deployment",
+      "macro_f1_delta_vs_deployment": 0.0,
+      "harm": 0,
+      "repair": 0,
+      "bootstrap": {
+        "delta_macro_f1_percentile95": [
+          0.0,
+          0.0
+        ],
+        "replicates": 2000,
+        "unit": "whole sequence, paired resampling",
+        "sequences": 27,
+        "selection_adjusted": false
+      }
+    },
+    {
+      "seed": 17,
+      "representation": "mean_eigen_corrected",
+      "macro_f1_delta_vs_deployment": 0.00018043347538687637,
+      "harm": 661,
+      "repair": 674,
+      "bootstrap": {
+        "delta_macro_f1_percentile95": [
+          -0.0016478602735054138,
+          0.0022322493160877198
+        ],
+        "replicates": 2000,
+        "unit": "whole sequence, paired resampling",
+        "sequences": 27,
+        "selection_adjusted": false
+      }
+    }
+  ],
+  "source_sha256": {
+    "docs/paper_new/feature_approximation_pilot_2026-09-16/plan.json": "24b42182cafa7e87dd50ec6b8ce081d6f2f815fcb4f427c9b447e5164f9159b6",
+    "docs/paper_new/feature_approximation_pilot_2026-09-16/run_bounded_training.py": "812c4212a9f77ce84ad4ba05ac9e57b77594c325a0156b8736cc21ec717c9cd8",
+    "docs/paper_new/feature_approximation_pilot_2026-09-16/pilot_common.py": "ad6f3f212a54556e08b78f592cac13a900b654864c724465cb37007e3c6320b6"
+  },
+  "environment": {
+    "torch": "2.4.1+cpu",
+    "numpy": "1.26.4",
+    "threads": 2,
+    "device": "cpu"
+  },
+  "limitations": [
+    "FP32 weights/activations, standardized INT8 input representations; not a frozen integer deployment result.",
+    "Capped training sample per sequence, only two seeds and fixed 20 epochs; not convergence or full-training proof.",
+    "Candidate selected on this validation split; results are exploratory and intervals are not selection adjusted.",
+    "Historical test not read. K7 historical temporal assumptions unchanged.",
+    "No hardware cost or board performance measured."
+  ]
+}

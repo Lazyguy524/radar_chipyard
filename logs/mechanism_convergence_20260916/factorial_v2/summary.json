@@ -1,0 +1,806 @@
+{
+  "status": "PASS",
+  "stage": "factorial",
+  "runs": [
+    {
+      "stage": "factorial",
+      "mode": "proxy",
+      "seed": 7,
+      "initialization_sha256": "dd8c7e7f284abb9a2d8be274467a06cefe3c7cfe205c0517ce41bd8adf17ab47",
+      "fold_max_error": 1.5987211554602254e-14,
+      "qat_epochs": 60,
+      "validation": {
+        "samples": 80450,
+        "accuracy": 0.9812802983219391,
+        "macro_f1": 0.9802176303908359,
+        "per_class_f1": [
+          0.9756326451362372,
+          0.9848026156454347
+        ],
+        "recall": [
+          0.9869708973057911,
+          0.9777969260365108
+        ],
+        "confusion_matrix": [
+          [
+            30149,
+            398
+          ],
+          [
+            1108,
+            48795
+          ]
+        ]
+      },
+      "frozen_buffers_sha256": "4e90dbb7b3282730e12b8e54729848fbae27d950faa6df76dbb13eea1187b638",
+      "integer_layer_mismatches": [
+        0,
+        0,
+        0
+      ],
+      "wall_seconds": 69.63163315400016,
+      "scope": "Fixed epoch 60, no best-validation selection; synthetic point-removal training only in augmentation stage"
+    },
+    {
+      "stage": "factorial",
+      "mode": "proxy",
+      "seed": 17,
+      "initialization_sha256": "70c204e5999f5c8c1367203d222497e8d2b32e34f8b912e43480d8f83ed24dd8",
+      "fold_max_error": 2.842170943040401e-14,
+      "qat_epochs": 60,
+      "validation": {
+        "samples": 80450,
+        "accuracy": 0.9826600372902424,
+        "macro_f1": 0.9816506290333396,
+        "per_class_f1": [
+          0.9773469089491889,
+          0.9859543491174901
+        ],
+        "recall": [
+          0.9851376567257014,
+          0.9811434182313689
+        ],
+        "confusion_matrix": [
+          [
+            30093,
+            454
+          ],
+          [
+            941,
+            48962
+          ]
+        ]
+      },
+      "frozen_buffers_sha256": "ac155affe1091fed1e9405e1c982c7eb7bbe966e2553cbf8d27c564d1939f8e8",
+      "integer_layer_mismatches": [
+        0,
+        0,
+        0
+      ],
+      "wall_seconds": 69.54468730901135,
+      "scope": "Fixed epoch 60, no best-validation selection; synthetic point-removal training only in augmentation stage"
+    },
+    {
+      "stage": "factorial",
+      "mode": "proxy",
+      "seed": 37,
+      "initialization_sha256": "c4bc1f02261d4102ff6a5c1469fa109e648953e663ab612f47f2995b0cf77f2f",
+      "fold_max_error": 1.4210854715202004e-14,
+      "qat_epochs": 60,
+      "validation": {
+        "samples": 80450,
+        "accuracy": 0.9817650714729645,
+        "macro_f1": 0.9807554344046521,
+        "per_class_f1": [
+          0.9763474839978717,
+          0.9851633848114324
+        ],
+        "recall": [
+          0.9911938979277835,
+          0.9759934272488628
+        ],
+        "confusion_matrix": [
+          [
+            30278,
+            269
+          ],
+          [
+            1198,
+            48705
+          ]
+        ]
+      },
+      "frozen_buffers_sha256": "616e739123e65f03d9c96bc0290cab953ff14e3c2f8c00e250399a19b055ba2d",
+      "integer_layer_mismatches": [
+        0,
+        0,
+        0
+      ],
+      "wall_seconds": 70.06189703400014,
+      "scope": "Fixed epoch 60, no best-validation selection; synthetic point-removal training only in augmentation stage"
+    },
+    {
+      "stage": "factorial",
+      "mode": "proxy",
+      "seed": 47,
+      "initialization_sha256": "66d04e62bc3d8d2ab31cf49c931c7c909956ffdf7a27aa61e6c7414a17f1ae98",
+      "fold_max_error": 1.7763568394002505e-14,
+      "qat_epochs": 60,
+      "validation": {
+        "samples": 80450,
+        "accuracy": 0.9801864512119329,
+        "macro_f1": 0.9790501801362707,
+        "per_class_f1": [
+          0.9741711767184107,
+          0.9839291835541306
+        ],
+        "recall": [
+          0.9840573542410057,
+          0.9778169649119292
+        ],
+        "confusion_matrix": [
+          [
+            30060,
+            487
+          ],
+          [
+            1107,
+            48796
+          ]
+        ]
+      },
+      "frozen_buffers_sha256": "9d4c98158a32ba34edd825df6578d33c914d364de62dc4614aac3009b588772d",
+      "integer_layer_mismatches": [
+        0,
+        0,
+        0
+      ],
+      "wall_seconds": 70.84401798801264,
+      "scope": "Fixed epoch 60, no best-validation selection; synthetic point-removal training only in augmentation stage"
+    },
+    {
+      "stage": "factorial",
+      "mode": "proxy",
+      "seed": 57,
+      "initialization_sha256": "ba3ee34268dde19d5f1c786667d434fbc8a35b8241349dfa6a8f3c9eadf1f206",
+      "fold_max_error": 1.4210854715202004e-14,
+      "qat_epochs": 60,
+      "validation": {
+        "samples": 80450,
+        "accuracy": 0.9818893722809199,
+        "macro_f1": 0.9808611633281368,
+        "per_class_f1": [
+          0.9764250926330437,
+          0.9852972340232298
+        ],
+        "recall": [
+          0.9877565718401152,
+          0.9782978979219686
+        ],
+        "confusion_matrix": [
+          [
+            30173,
+            374
+          ],
+          [
+            1083,
+            48820
+          ]
+        ]
+      },
+      "frozen_buffers_sha256": "86b6ff5f5b3809ca24bac63f7ab48f239150bfa5f6db502bec79bbcf85849a41",
+      "integer_layer_mismatches": [
+        0,
+        0,
+        0
+      ],
+      "wall_seconds": 70.70302447502036,
+      "scope": "Fixed epoch 60, no best-validation selection; synthetic point-removal training only in augmentation stage"
+    },
+    {
+      "stage": "factorial",
+      "mode": "mean",
+      "seed": 7,
+      "initialization_sha256": "dd8c7e7f284abb9a2d8be274467a06cefe3c7cfe205c0517ce41bd8adf17ab47",
+      "fold_max_error": 1.9539925233402755e-14,
+      "qat_epochs": 60,
+      "validation": {
+        "samples": 80450,
+        "accuracy": 0.9820633934120572,
+        "macro_f1": 0.981009859107057,
+        "per_class_f1": [
+          0.9765369668785874,
+          0.9854827513355265
+        ],
+        "recall": [
+          0.9830425246341703,
+          0.9814640402380619
+        ],
+        "confusion_matrix": [
+          [
+            30029,
+            518
+          ],
+          [
+            925,
+            48978
+          ]
+        ]
+      },
+      "frozen_buffers_sha256": "97882c26ef6a385b9f109f3c093863dc163dc47ed86d9ab0cce4e62199abb6c9",
+      "integer_layer_mismatches": [
+        0,
+        0,
+        0
+      ],
+      "wall_seconds": 70.6182345150155,
+      "scope": "Fixed epoch 60, no best-validation selection; synthetic point-removal training only in augmentation stage"
+    },
+    {
+      "stage": "factorial",
+      "mode": "mean",
+      "seed": 17,
+      "initialization_sha256": "70c204e5999f5c8c1367203d222497e8d2b32e34f8b912e43480d8f83ed24dd8",
+      "fold_max_error": 2.1316282072803006e-14,
+      "qat_epochs": 60,
+      "validation": {
+        "samples": 80450,
+        "accuracy": 0.9832939714108142,
+        "macro_f1": 0.9823154560525518,
+        "per_class_f1": [
+          0.9781555765042421,
+          0.9864753356008614
+        ],
+        "recall": [
+          0.985072183847841,
+          0.9822054786285394
+        ],
+        "confusion_matrix": [
+          [
+            30091,
+            456
+          ],
+          [
+            888,
+            49015
+          ]
+        ]
+      },
+      "frozen_buffers_sha256": "5dc28df57aa80c5f1b623f2e81b524dbbd62ced0ae3cfcdba9a989b814b8866b",
+      "integer_layer_mismatches": [
+        0,
+        0,
+        0
+      ],
+      "wall_seconds": 71.2537281330442,
+      "scope": "Fixed epoch 60, no best-validation selection; synthetic point-removal training only in augmentation stage"
+    },
+    {
+      "stage": "factorial",
+      "mode": "mean",
+      "seed": 37,
+      "initialization_sha256": "c4bc1f02261d4102ff6a5c1469fa109e648953e663ab612f47f2995b0cf77f2f",
+      "fold_max_error": 2.3092638912203256e-14,
+      "qat_epochs": 60,
+      "validation": {
+        "samples": 80450,
+        "accuracy": 0.9825854568054693,
+        "macro_f1": 0.9815866516239278,
+        "per_class_f1": [
+          0.977298138155656,
+          0.9858751650921996
+        ],
+        "recall": [
+          0.9872000523783023,
+          0.9797607358275053
+        ],
+        "confusion_matrix": [
+          [
+            30156,
+            391
+          ],
+          [
+            1010,
+            48893
+          ]
+        ]
+      },
+      "frozen_buffers_sha256": "9332f2fb7613e67430abbd64af6a50bbc3b81a30759bb0bf603cc4a1cabeeb07",
+      "integer_layer_mismatches": [
+        0,
+        0,
+        0
+      ],
+      "wall_seconds": 70.70033014996443,
+      "scope": "Fixed epoch 60, no best-validation selection; synthetic point-removal training only in augmentation stage"
+    },
+    {
+      "stage": "factorial",
+      "mode": "mean",
+      "seed": 47,
+      "initialization_sha256": "66d04e62bc3d8d2ab31cf49c931c7c909956ffdf7a27aa61e6c7414a17f1ae98",
+      "fold_max_error": 2.1316282072803006e-14,
+      "qat_epochs": 60,
+      "validation": {
+        "samples": 80450,
+        "accuracy": 0.9814543194530765,
+        "macro_f1": 0.9803996198876306,
+        "per_class_f1": [
+          0.975852916423901,
+          0.9849463233513601
+        ],
+        "recall": [
+          0.9869381608668609,
+          0.9780975091677855
+        ],
+        "confusion_matrix": [
+          [
+            30148,
+            399
+          ],
+          [
+            1093,
+            48810
+          ]
+        ]
+      },
+      "frozen_buffers_sha256": "bd9d47438db594fd326b6916232005e4942e6a7e476aa386bb465c7aed009978",
+      "integer_layer_mismatches": [
+        0,
+        0,
+        0
+      ],
+      "wall_seconds": 70.77906545100268,
+      "scope": "Fixed epoch 60, no best-validation selection; synthetic point-removal training only in augmentation stage"
+    },
+    {
+      "stage": "factorial",
+      "mode": "mean",
+      "seed": 57,
+      "initialization_sha256": "ba3ee34268dde19d5f1c786667d434fbc8a35b8241349dfa6a8f3c9eadf1f206",
+      "fold_max_error": 1.4210854715202004e-14,
+      "qat_epochs": 60,
+      "validation": {
+        "samples": 80450,
+        "accuracy": 0.9826848974518334,
+        "macro_f1": 0.9816555508219479,
+        "per_class_f1": [
+          0.977310116788559,
+          0.9860009848553368
+        ],
+        "recall": [
+          0.9820931679051953,
+          0.9830471113961085
+        ],
+        "confusion_matrix": [
+          [
+            30000,
+            547
+          ],
+          [
+            846,
+            49057
+          ]
+        ]
+      },
+      "frozen_buffers_sha256": "5f649c798ec38c2acbc9e39b827bd2fec7366c6bb21c22e54787da584806382f",
+      "integer_layer_mismatches": [
+        0,
+        0,
+        0
+      ],
+      "wall_seconds": 71.24978194903815,
+      "scope": "Fixed epoch 60, no best-validation selection; synthetic point-removal training only in augmentation stage"
+    },
+    {
+      "stage": "factorial",
+      "mode": "shape",
+      "seed": 7,
+      "initialization_sha256": "dd8c7e7f284abb9a2d8be274467a06cefe3c7cfe205c0517ce41bd8adf17ab47",
+      "fold_max_error": 2.1316282072803006e-14,
+      "qat_epochs": 60,
+      "validation": {
+        "samples": 80450,
+        "accuracy": 0.9827594779366066,
+        "macro_f1": 0.9817652883691024,
+        "per_class_f1": [
+          0.9775075002027082,
+          0.9860230765354966
+        ],
+        "recall": [
+          0.9866435329164893,
+          0.980381940965473
+        ],
+        "confusion_matrix": [
+          [
+            30139,
+            408
+          ],
+          [
+            979,
+            48924
+          ]
+        ]
+      },
+      "frozen_buffers_sha256": "68a02532c8f281cd879a89338104c0410acfce8c55b01aa479687fe736c69660",
+      "integer_layer_mismatches": [
+        0,
+        0,
+        0
+      ],
+      "wall_seconds": 71.211293300963,
+      "scope": "Fixed epoch 60, no best-validation selection; synthetic point-removal training only in augmentation stage"
+    },
+    {
+      "stage": "factorial",
+      "mode": "shape",
+      "seed": 17,
+      "initialization_sha256": "70c204e5999f5c8c1367203d222497e8d2b32e34f8b912e43480d8f83ed24dd8",
+      "fold_max_error": 2.4868995751603507e-14,
+      "qat_epochs": 60,
+      "validation": {
+        "samples": 80450,
+        "accuracy": 0.9805469235550031,
+        "macro_f1": 0.9793171550584262,
+        "per_class_f1": [
+          0.9742738316374336,
+          0.9843604784794188
+        ],
+        "recall": [
+          0.9701116312567519,
+          0.9869346532272609
+        ],
+        "confusion_matrix": [
+          [
+            29634,
+            913
+          ],
+          [
+            652,
+            49251
+          ]
+        ]
+      },
+      "frozen_buffers_sha256": "cafe4eed7ad23c9ade7160344a1f228139e2a92397b6d3072eead91f89088ee3",
+      "integer_layer_mismatches": [
+        0,
+        0,
+        0
+      ],
+      "wall_seconds": 71.79332467995118,
+      "scope": "Fixed epoch 60, no best-validation selection; synthetic point-removal training only in augmentation stage"
+    },
+    {
+      "stage": "factorial",
+      "mode": "shape",
+      "seed": 37,
+      "initialization_sha256": "c4bc1f02261d4102ff6a5c1469fa109e648953e663ab612f47f2995b0cf77f2f",
+      "fold_max_error": 1.9539925233402755e-14,
+      "qat_epochs": 60,
+      "validation": {
+        "samples": 80450,
+        "accuracy": 0.9827346177750156,
+        "macro_f1": 0.981755951341805,
+        "per_class_f1": [
+          0.977530452788068,
+          0.9859814498955422
+        ],
+        "recall": [
+          0.9890987658362523,
+          0.9788389475582631
+        ],
+        "confusion_matrix": [
+          [
+            30214,
+            333
+          ],
+          [
+            1056,
+            48847
+          ]
+        ]
+      },
+      "frozen_buffers_sha256": "02b5ecf863714ff594ae94440a2290a297b06e8bd5723316b80cad5982b590fa",
+      "integer_layer_mismatches": [
+        0,
+        0,
+        0
+      ],
+      "wall_seconds": 70.99930694402428,
+      "scope": "Fixed epoch 60, no best-validation selection; synthetic point-removal training only in augmentation stage"
+    },
+    {
+      "stage": "factorial",
+      "mode": "shape",
+      "seed": 47,
+      "initialization_sha256": "66d04e62bc3d8d2ab31cf49c931c7c909956ffdf7a27aa61e6c7414a17f1ae98",
+      "fold_max_error": 2.1316282072803006e-14,
+      "qat_epochs": 60,
+      "validation": {
+        "samples": 80450,
+        "accuracy": 0.9799378495960224,
+        "macro_f1": 0.9788136357744892,
+        "per_class_f1": [
+          0.9739332665783779,
+          0.9836940049706007
+        ],
+        "recall": [
+          0.9870691066225816,
+          0.9755726108650783
+        ],
+        "confusion_matrix": [
+          [
+            30152,
+            395
+          ],
+          [
+            1219,
+            48684
+          ]
+        ]
+      },
+      "frozen_buffers_sha256": "1edcad46e8beb45535787aa558fc694d20447b83e5b78c3f35dfb4fac23d9761",
+      "integer_layer_mismatches": [
+        0,
+        0,
+        0
+      ],
+      "wall_seconds": 70.63710255397018,
+      "scope": "Fixed epoch 60, no best-validation selection; synthetic point-removal training only in augmentation stage"
+    },
+    {
+      "stage": "factorial",
+      "mode": "shape",
+      "seed": 57,
+      "initialization_sha256": "ba3ee34268dde19d5f1c786667d434fbc8a35b8241349dfa6a8f3c9eadf1f206",
+      "fold_max_error": 1.7763568394002505e-14,
+      "qat_epochs": 60,
+      "validation": {
+        "samples": 80450,
+        "accuracy": 0.9811559975139839,
+        "macro_f1": 0.9801096467615333,
+        "per_class_f1": [
+          0.9755475983096229,
+          0.9846716952134437
+        ],
+        "recall": [
+          0.989982649687367,
+          0.9757529607438431
+        ],
+        "confusion_matrix": [
+          [
+            30241,
+            306
+          ],
+          [
+            1210,
+            48693
+          ]
+        ]
+      },
+      "frozen_buffers_sha256": "726576959befebb2fb05ebea8674a49762fbaa791cd12e20b0c0a87ea1d98721",
+      "integer_layer_mismatches": [
+        0,
+        0,
+        0
+      ],
+      "wall_seconds": 71.06815456901677,
+      "scope": "Fixed epoch 60, no best-validation selection; synthetic point-removal training only in augmentation stage"
+    },
+    {
+      "stage": "factorial",
+      "mode": "moment",
+      "seed": 7,
+      "initialization_sha256": "dd8c7e7f284abb9a2d8be274467a06cefe3c7cfe205c0517ce41bd8adf17ab47",
+      "fold_max_error": 1.7763568394002505e-14,
+      "qat_epochs": 60,
+      "validation": {
+        "samples": 80450,
+        "accuracy": 0.9797886886264761,
+        "macro_f1": 0.9786949634041167,
+        "per_class_f1": [
+          0.9738677638134422,
+          0.9835221629947911
+        ],
+        "recall": [
+          0.9918486267063868,
+          0.972406468548985
+        ],
+        "confusion_matrix": [
+          [
+            30298,
+            249
+          ],
+          [
+            1377,
+            48526
+          ]
+        ]
+      },
+      "frozen_buffers_sha256": "836fc49c429f461d9c7fec9d2e3941bea8a0ebd004ff61ffac7906b2847a1910",
+      "integer_layer_mismatches": [
+        0,
+        0,
+        0
+      ],
+      "wall_seconds": 71.86182266101241,
+      "scope": "Fixed epoch 60, no best-validation selection; synthetic point-removal training only in augmentation stage"
+    },
+    {
+      "stage": "factorial",
+      "mode": "moment",
+      "seed": 17,
+      "initialization_sha256": "70c204e5999f5c8c1367203d222497e8d2b32e34f8b912e43480d8f83ed24dd8",
+      "fold_max_error": 2.4868995751603507e-14,
+      "qat_epochs": 60,
+      "validation": {
+        "samples": 80450,
+        "accuracy": 0.9808701056556868,
+        "macro_f1": 0.979658669318245,
+        "per_class_f1": [
+          0.9746945755298683,
+          0.9846227631066216
+        ],
+        "recall": [
+          0.9702753134514027,
+          0.9873554696110455
+        ],
+        "confusion_matrix": [
+          [
+            29639,
+            908
+          ],
+          [
+            631,
+            49272
+          ]
+        ]
+      },
+      "frozen_buffers_sha256": "2d75255fc00b9e64386ad58f711bde72918f2b9b07a685afa695039f9e4256f4",
+      "integer_layer_mismatches": [
+        0,
+        0,
+        0
+      ],
+      "wall_seconds": 71.19457002001582,
+      "scope": "Fixed epoch 60, no best-validation selection; synthetic point-removal training only in augmentation stage"
+    },
+    {
+      "stage": "factorial",
+      "mode": "moment",
+      "seed": 37,
+      "initialization_sha256": "c4bc1f02261d4102ff6a5c1469fa109e648953e663ab612f47f2995b0cf77f2f",
+      "fold_max_error": 1.9539925233402755e-14,
+      "qat_epochs": 60,
+      "validation": {
+        "samples": 80450,
+        "accuracy": 0.9830453697949036,
+        "macro_f1": 0.9820279004273366,
+        "per_class_f1": [
+          0.9777516800417564,
+          0.9863041208129167
+        ],
+        "recall": [
+          0.9811765476151504,
+          0.9841893272949522
+        ],
+        "confusion_matrix": [
+          [
+            29972,
+            575
+          ],
+          [
+            789,
+            49114
+          ]
+        ]
+      },
+      "frozen_buffers_sha256": "307102894dc0eccc92e3246cd532e35cd292b588ccbbecde625d5547c3e78868",
+      "integer_layer_mismatches": [
+        0,
+        0,
+        0
+      ],
+      "wall_seconds": 71.44715755298967,
+      "scope": "Fixed epoch 60, no best-validation selection; synthetic point-removal training only in augmentation stage"
+    },
+    {
+      "stage": "factorial",
+      "mode": "moment",
+      "seed": 47,
+      "initialization_sha256": "66d04e62bc3d8d2ab31cf49c931c7c909956ffdf7a27aa61e6c7414a17f1ae98",
+      "fold_max_error": 1.7763568394002505e-14,
+      "qat_epochs": 60,
+      "validation": {
+        "samples": 80450,
+        "accuracy": 0.9810316967060286,
+        "macro_f1": 0.9799668390496907,
+        "per_class_f1": [
+          0.9753481309166101,
+          0.9845855471827714
+        ],
+        "recall": [
+          0.9882476184240678,
+          0.9766146323868304
+        ],
+        "confusion_matrix": [
+          [
+            30188,
+            359
+          ],
+          [
+            1167,
+            48736
+          ]
+        ]
+      },
+      "frozen_buffers_sha256": "4f24e27037143a60d8b767b02fbeb5556a6c7bf07e7e67ee4cbab52f912a6c5d",
+      "integer_layer_mismatches": [
+        0,
+        0,
+        0
+      ],
+      "wall_seconds": 71.48358066100627,
+      "scope": "Fixed epoch 60, no best-validation selection; synthetic point-removal training only in augmentation stage"
+    },
+    {
+      "stage": "factorial",
+      "mode": "moment",
+      "seed": 57,
+      "initialization_sha256": "ba3ee34268dde19d5f1c786667d434fbc8a35b8241349dfa6a8f3c9eadf1f206",
+      "fold_max_error": 1.4210854715202004e-14,
+      "qat_epochs": 60,
+      "validation": {
+        "samples": 80450,
+        "accuracy": 0.9807209446861405,
+        "macro_f1": 0.979670050211511,
+        "per_class_f1": [
+          0.975047861130327,
+          0.984292239292695
+        ],
+        "recall": [
+          0.992045045339968,
+          0.9737891509528486
+        ],
+        "confusion_matrix": [
+          [
+            30304,
+            243
+          ],
+          [
+            1308,
+            48595
+          ]
+        ]
+      },
+      "frozen_buffers_sha256": "b198174f15b6256b3624e56b31556b7efb2e32a3dcbda43bb4f276d751499a3c",
+      "integer_layer_mismatches": [
+        0,
+        0,
+        0
+      ],
+      "wall_seconds": 72.45582358899992,
+      "scope": "Fixed epoch 60, no best-validation selection; synthetic point-removal training only in augmentation stage"
+    }
+  ],
+  "wall_seconds": 1420.4364076789934,
+  "source_sha256": {
+    "docs/paper_new/mechanism_convergence_2026-09-16/plan.json": "f02006540bd17ddec6c07e6b8a7cba5815df64cee694ba9b0d93facd1715e76e",
+    "docs/paper_new/mechanism_convergence_2026-09-16/train_fixed_v2.py": "70f6cfe6ee77c4dccfd7cdcceb4da01663d858070640c827ae8bf2b0771c0ca9",
+    "docs/paper_new/mechanism_convergence_2026-09-16/common.py": "1a28d76bfcb0d5025a2d13427420abb0bf0b9a31d935c127de38117896aa0ebc",
+    "docs/paper_new/qmlp_int8_convergence_2026-09-16/common.py": "59613000cc60a2f4cacb90b3ab2e01f6b68a422dd5ba4f1c21f522c30d641e56",
+    "docs/paper_new/qmlp_int8_convergence_2026-09-16/plan.json": "d1293be9eef179396c78e24670dcde1b2b2b0e144071be0157f59dedd51e25f0",
+    "logs/mechanism_convergence_20260916/data/scales.json": "b0825a51c07a672b5f93f6facb04e0f490b63b4a4626c2cfa3edd8eff165c17c",
+    "logs/mechanism_convergence_20260916/data/train/proxy.npy": "7ada058c9d26ef6a903bfee6658a939a39d21546d779e9c5a9cf8c377c3cac71",
+    "logs/mechanism_convergence_20260916/data/val/proxy.npy": "ba6be1c48dbd72381e5db4d52576726a61b9bcaf7a3f93e7aa7d06a472a98db4",
+    "logs/mechanism_convergence_20260916/data/train/mean.npy": "04ea67db4774b755d97737616574ebdcaf5b04ee6ee67bf44bcb914a0aac3b99",
+    "logs/mechanism_convergence_20260916/data/val/mean.npy": "acb68ef4a0e22c271533dfb3567ef49a487a99d7c0d1ae2ffc01a59da90cb2fe",
+    "logs/mechanism_convergence_20260916/data/train/shape.npy": "7eef2b8f7b57ee2c0ba414ae544f948e3e212c90c09112d056d6a2b1bb5f494c",
+    "logs/mechanism_convergence_20260916/data/val/shape.npy": "faf4134ce153d6d051aa5895289e3ee59215abf70d3b0c10a636a8598cd0b21f",
+    "logs/mechanism_convergence_20260916/data/train/moment.npy": "2f16bb6b24d83e4fbcf5f6ea26d79900194f168e53227219061076d760b75c43",
+    "logs/mechanism_convergence_20260916/data/val/moment.npy": "1b7c854ca0369b97279d0e344f52577b4312a051001116d5e55851d535299a43",
+    "logs/mechanism_convergence_20260916/data/train/labels.npy": "fa6ea251f797140175a8f5d33ea91357ee607a6c593d9cd727eb2d6eccef4272",
+    "logs/mechanism_convergence_20260916/data/val/labels.npy": "3ac1b4d33f41b71f5dd3f7c79f070781f519c9ba5bdccb4f64dd2095604b9302"
+  },
+  "plan_sha256": "f02006540bd17ddec6c07e6b8a7cba5815df64cee694ba9b0d93facd1715e76e"
+}

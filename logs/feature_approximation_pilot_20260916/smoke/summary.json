@@ -1,0 +1,336 @@
+{
+  "status": "SMOKE_PASS",
+  "phase": "smoke",
+  "samples": 432,
+  "sequences": 27,
+  "plan_sha256": "24b42182cafa7e87dd50ec6b8ce081d6f2f815fcb4f427c9b447e5164f9159b6",
+  "metrics": {
+    "software_reference": {
+      "samples": 432,
+      "accuracy": 0.9722222222222222,
+      "macro_f1": 0.9710196779964222,
+      "per_class_f1": [
+        0.9651162790697675,
+        0.9769230769230769
+      ],
+      "recall": [
+        0.9822485207100592,
+        0.9657794676806084
+      ],
+      "confusion_matrix": [
+        [
+          166,
+          3
+        ],
+        [
+          9,
+          254
+        ]
+      ],
+      "harm_vs_deployment": 4,
+      "repair_vs_deployment": 4,
+      "harm_vs_software_reference": 0,
+      "repair_vs_software_reference": 0,
+      "saturated_feature_values": 0,
+      "positive_sequences_at_least_100_samples": 0,
+      "negative_sequences_at_least_100_samples": 0
+    },
+    "exact_quantized_input": {
+      "samples": 432,
+      "accuracy": 0.9722222222222222,
+      "macro_f1": 0.9710196779964222,
+      "per_class_f1": [
+        0.9651162790697675,
+        0.9769230769230769
+      ],
+      "recall": [
+        0.9822485207100592,
+        0.9657794676806084
+      ],
+      "confusion_matrix": [
+        [
+          166,
+          3
+        ],
+        [
+          9,
+          254
+        ]
+      ],
+      "harm_vs_deployment": 4,
+      "repair_vs_deployment": 4,
+      "harm_vs_software_reference": 0,
+      "repair_vs_software_reference": 0,
+      "saturated_feature_values": 0,
+      "positive_sequences_at_least_100_samples": 0,
+      "negative_sequences_at_least_100_samples": 0
+    },
+    "exact_stats_hardware_quantizer": {
+      "samples": 432,
+      "accuracy": 0.9722222222222222,
+      "macro_f1": 0.9710196779964222,
+      "per_class_f1": [
+        0.9651162790697675,
+        0.9769230769230769
+      ],
+      "recall": [
+        0.9822485207100592,
+        0.9657794676806084
+      ],
+      "confusion_matrix": [
+        [
+          166,
+          3
+        ],
+        [
+          9,
+          254
+        ]
+      ],
+      "harm_vs_deployment": 4,
+      "repair_vs_deployment": 4,
+      "harm_vs_software_reference": 0,
+      "repair_vs_software_reference": 0,
+      "saturated_feature_values": 0,
+      "positive_sequences_at_least_100_samples": 0,
+      "negative_sequences_at_least_100_samples": 0
+    },
+    "deployment": {
+      "samples": 432,
+      "accuracy": 0.9722222222222222,
+      "macro_f1": 0.970961887477314,
+      "per_class_f1": [
+        0.9649122807017544,
+        0.9770114942528736
+      ],
+      "recall": [
+        0.9763313609467456,
+        0.9695817490494296
+      ],
+      "confusion_matrix": [
+        [
+          165,
+          4
+        ],
+        [
+          8,
+          255
+        ]
+      ],
+      "harm_vs_deployment": 0,
+      "repair_vs_deployment": 0,
+      "harm_vs_software_reference": 4,
+      "repair_vs_software_reference": 4,
+      "saturated_feature_values": 0,
+      "positive_sequences_at_least_100_samples": 0,
+      "negative_sequences_at_least_100_samples": 0
+    },
+    "mean_corrected": {
+      "samples": 432,
+      "accuracy": 0.9699074074074074,
+      "macro_f1": 0.9685101181431287,
+      "per_class_f1": [
+        0.9618768328445748,
+        0.9751434034416826
+      ],
+      "recall": [
+        0.9704142011834319,
+        0.9695817490494296
+      ],
+      "confusion_matrix": [
+        [
+          164,
+          5
+        ],
+        [
+          8,
+          255
+        ]
+      ],
+      "harm_vs_deployment": 3,
+      "repair_vs_deployment": 2,
+      "harm_vs_software_reference": 2,
+      "repair_vs_software_reference": 1,
+      "saturated_feature_values": 0,
+      "positive_sequences_at_least_100_samples": 0,
+      "negative_sequences_at_least_100_samples": 0
+    },
+    "eigen_slots_exact": {
+      "samples": 432,
+      "accuracy": 0.9791666666666666,
+      "macro_f1": 0.9781993125606276,
+      "per_class_f1": [
+        0.9736070381231672,
+        0.982791586998088
+      ],
+      "recall": [
+        0.9822485207100592,
+        0.9771863117870723
+      ],
+      "confusion_matrix": [
+        [
+          166,
+          3
+        ],
+        [
+          6,
+          257
+        ]
+      ],
+      "harm_vs_deployment": 1,
+      "repair_vs_deployment": 4,
+      "harm_vs_software_reference": 2,
+      "repair_vs_software_reference": 5,
+      "saturated_feature_values": 0,
+      "positive_sequences_at_least_100_samples": 0,
+      "negative_sequences_at_least_100_samples": 0
+    },
+    "std_slots_exact": {
+      "samples": 432,
+      "accuracy": 0.9837962962962963,
+      "macro_f1": 0.9830780680794391,
+      "per_class_f1": [
+        0.9795918367346939,
+        0.9865642994241842
+      ],
+      "recall": [
+        0.9940828402366864,
+        0.9771863117870723
+      ],
+      "confusion_matrix": [
+        [
+          168,
+          1
+        ],
+        [
+          6,
+          257
+        ]
+      ],
+      "harm_vs_deployment": 0,
+      "repair_vs_deployment": 5,
+      "harm_vs_software_reference": 0,
+      "repair_vs_software_reference": 5,
+      "saturated_feature_values": 0,
+      "positive_sequences_at_least_100_samples": 0,
+      "negative_sequences_at_least_100_samples": 0
+    },
+    "angle_slot_exact": {
+      "samples": 432,
+      "accuracy": 0.9768518518518519,
+      "macro_f1": 0.9758015728977616,
+      "per_class_f1": [
+        0.9707602339181286,
+        0.9808429118773946
+      ],
+      "recall": [
+        0.9822485207100592,
+        0.973384030418251
+      ],
+      "confusion_matrix": [
+        [
+          166,
+          3
+        ],
+        [
+          7,
+          256
+        ]
+      ],
+      "harm_vs_deployment": 0,
+      "repair_vs_deployment": 2,
+      "harm_vs_software_reference": 3,
+      "repair_vs_software_reference": 5,
+      "saturated_feature_values": 0,
+      "positive_sequences_at_least_100_samples": 0,
+      "negative_sequences_at_least_100_samples": 0
+    },
+    "range_slots_exact": {
+      "samples": 432,
+      "accuracy": 0.9675925925925926,
+      "macro_f1": 0.9662552726136542,
+      "per_class_f1": [
+        0.9595375722543352,
+        0.972972972972973
+      ],
+      "recall": [
+        0.9822485207100592,
+        0.9581749049429658
+      ],
+      "confusion_matrix": [
+        [
+          166,
+          3
+        ],
+        [
+          11,
+          252
+        ]
+      ],
+      "harm_vs_deployment": 3,
+      "repair_vs_deployment": 1,
+      "harm_vs_software_reference": 5,
+      "repair_vs_software_reference": 3,
+      "saturated_feature_values": 0,
+      "positive_sequences_at_least_100_samples": 0,
+      "negative_sequences_at_least_100_samples": 0
+    },
+    "mean_eigen_corrected": {
+      "samples": 432,
+      "accuracy": 0.9722222222222222,
+      "macro_f1": 0.970961887477314,
+      "per_class_f1": [
+        0.9649122807017544,
+        0.9770114942528736
+      ],
+      "recall": [
+        0.9763313609467456,
+        0.9695817490494296
+      ],
+      "confusion_matrix": [
+        [
+          165,
+          4
+        ],
+        [
+          8,
+          255
+        ]
+      ],
+      "harm_vs_deployment": 3,
+      "repair_vs_deployment": 3,
+      "harm_vs_software_reference": 1,
+      "repair_vs_software_reference": 1,
+      "saturated_feature_values": 0,
+      "positive_sequences_at_least_100_samples": 0,
+      "negative_sequences_at_least_100_samples": 0
+    }
+  },
+  "candidate_gate": {
+    "eligible": [],
+    "selected": null,
+    "training_allowed": false,
+    "interpretation": "Exploratory validation selection, not corrected significance or held-out generalization."
+  },
+  "integer_trace_crosscheck_samples": 64,
+  "reconstruction_checks": {
+    "feature_tolerance_mismatches": 0,
+    "label_mismatches": 0,
+    "count_mismatches": 0,
+    "python_native_feature_mismatches": 0
+  },
+  "wall_seconds": 25.642441285017412,
+  "source_sha256": {
+    "tests/radar-feature21-qmlp-cpu-fullchain-profile.c": "c56cc771eded98bda18ae6cddf4eb8b8452ac6f093a68a1ed0bf0187d22898a7",
+    "docs/feature_preproc_compare_20260420/feature21/qmlp_params_21.h": "9709cca67c6bf7508e44a5cf438916b5374f472fbd699f64624fe4c7596d8273",
+    "docs/paper_new/feature_approximation_pilot_2026-09-16/pilot_common.py": "ad6f3f212a54556e08b78f592cac13a900b654864c724465cb37007e3c6320b6",
+    "docs/paper_new/feature_approximation_pilot_2026-09-16/run_diagnostic.py": "b4a6d1e459118197c775dad9f76f9b1a3362b58834ca6bb385b050587dbc5e3f"
+  },
+  "limitations": [
+    "Frozen old model; no matched retraining yet.",
+    "Full historical validation split, not an untouched final test.",
+    "No historical test rows, training, GPU, RTL or board run.",
+    "Slot interventions have no verified hardware cost.",
+    "Bootstrap intervals are exploratory and not multiplicity/selection adjusted."
+  ]
+}

@@ -1,0 +1,445 @@
+{
+  "scope": "Pilot-only files; external source inputs separately hashed in phase summaries.",
+  "files": {
+    "docs/paper_new/feature_approximation_pilot_2026-09-16/01_\u6267\u884c\u8fb9\u754c\u4e0e\u8bc4\u5ba1.md": {
+      "sha256": "8428938f22dd3dbd9119b40d693cf9a642ff0d7ee914405eb4552c39792be5b2",
+      "bytes": 4453
+    },
+    "docs/paper_new/feature_approximation_pilot_2026-09-16/02_\u8bd5\u9a8c\u7ed3\u679c\u4e0e\u51b3\u7b56.md": {
+      "sha256": "cb0cda002b28f883aca367ba21b59429bd7c78b2ddcbc8231fe0dbb65ad4e24b",
+      "bytes": 5621
+    },
+    "docs/paper_new/feature_approximation_pilot_2026-09-16/03_\u540e\u7eed\u4f18\u5148\u7ea7\u4e0e\u505c\u6b62\u6761\u4ef6.md": {
+      "sha256": "2bea52dabd71b81f21161c10fd411ff6e50efd8182c41f4725376197cc8f2cbb",
+      "bytes": 4249
+    },
+    "docs/paper_new/feature_approximation_pilot_2026-09-16/README.md": {
+      "sha256": "c045cb2af8bbd399b43aa8900c2c964a0c9f4f8fa3ff84bf06d71668949b6810",
+      "bytes": 2343
+    },
+    "docs/paper_new/feature_approximation_pilot_2026-09-16/diagnostic.pdf": {
+      "sha256": "6768b3bd86c68690d9b44cc3f7f716626eeeb4e68f24fe543b559ddf54a7f767",
+      "bytes": 21058
+    },
+    "docs/paper_new/feature_approximation_pilot_2026-09-16/diagnostic.png": {
+      "sha256": "a93deb32b8b929a18d4cbed245083613a830d15ae83edef212cf7735e6d64f58",
+      "bytes": 125900
+    },
+    "docs/paper_new/feature_approximation_pilot_2026-09-16/finalize_pilot.py": {
+      "sha256": "c2014a953b731f7ca722be5bb431db63db7c550e59b42d24b64bc4c601c0d235",
+      "bytes": 8851
+    },
+    "docs/paper_new/feature_approximation_pilot_2026-09-16/matched_training.pdf": {
+      "sha256": "5507c79a90bc97117ebad31de7a1dd2cccd16d218351e101870d7be3d9f0a449",
+      "bytes": 19764
+    },
+    "docs/paper_new/feature_approximation_pilot_2026-09-16/matched_training.png": {
+      "sha256": "a8ec40f85591387771bcb3480a181e46d0f142a974232bdb08f2b22c88b93c4e",
+      "bytes": 108841
+    },
+    "docs/paper_new/feature_approximation_pilot_2026-09-16/pilot_common.py": {
+      "sha256": "ad6f3f212a54556e08b78f592cac13a900b654864c724465cb37007e3c6320b6",
+      "bytes": 12839
+    },
+    "docs/paper_new/feature_approximation_pilot_2026-09-16/plan.json": {
+      "sha256": "24b42182cafa7e87dd50ec6b8ce081d6f2f815fcb4f427c9b447e5164f9159b6",
+      "bytes": 3706
+    },
+    "docs/paper_new/feature_approximation_pilot_2026-09-16/plot_results.py": {
+      "sha256": "3e1219940d8a1663f1fb895531686e03681987b2b52c6ea65f65c642d41f4961",
+      "bytes": 3652
+    },
+    "docs/paper_new/feature_approximation_pilot_2026-09-16/profile_quantized_inputs.py": {
+      "sha256": "f785386ad643ca03a0520ae82685cf28431b98f72b9a1a6f083f35e4abaf9153",
+      "bytes": 2128
+    },
+    "docs/paper_new/feature_approximation_pilot_2026-09-16/quantized_input_profile.csv": {
+      "sha256": "574acb8b4e2d212f7c9ad47529ec113384ee2a75199f05f6dfd189463369d172",
+      "bytes": 1517
+    },
+    "docs/paper_new/feature_approximation_pilot_2026-09-16/quantized_input_profile.json": {
+      "sha256": "d3439785d3a22c91ed9916b23f71bdb28c29d0cb1e58f8ebccb78ddea67a78b0",
+      "bytes": 2015
+    },
+    "docs/paper_new/feature_approximation_pilot_2026-09-16/run_bounded_training.py": {
+      "sha256": "812c4212a9f77ce84ad4ba05ac9e57b77594c325a0156b8736cc21ec717c9cd8",
+      "bytes": 8085
+    },
+    "docs/paper_new/feature_approximation_pilot_2026-09-16/run_diagnostic.py": {
+      "sha256": "b4a6d1e459118197c775dad9f76f9b1a3362b58834ca6bb385b050587dbc5e3f",
+      "bytes": 7212
+    },
+    "docs/paper_new/feature_approximation_pilot_2026-09-16/summarize_results.py": {
+      "sha256": "837775ca2b927eae3df0a99b6974489802859bc1a179830a7c7ea62e858c0b42",
+      "bytes": 10768
+    },
+    "logs/feature_approximation_pilot_20260916/execution/full.log": {
+      "sha256": "6b8e6004b134fb3da439e86e5bcdd148e510754cd5492dcf9dd6b89550171af6",
+      "bytes": 12252
+    },
+    "logs/feature_approximation_pilot_20260916/execution/prepare.log": {
+      "sha256": "447465acdd78a78161e32a21405d3ec707b0ee10ea611babcb10c967f3d3454a",
+      "bytes": 13695
+    },
+    "logs/feature_approximation_pilot_20260916/execution/smoke.log": {
+      "sha256": "20890eef072c581de16d13f3de60399d4fe858b28fd6a8643c4004a9cdf37efc",
+      "bytes": 9579
+    },
+    "logs/feature_approximation_pilot_20260916/execution/training.log": {
+      "sha256": "aa31b77b1d943a64deb838a6e58773a02c3e3a88505c51db03e19a0e27b30ba9",
+      "bytes": 4576
+    },
+    "logs/feature_approximation_pilot_20260916/full/angle_slot_exact.npy": {
+      "sha256": "cd870951558939a885f48aad48b764bcfb70a06c05e860cf2ce41bbbc11b2922",
+      "bytes": 1689578
+    },
+    "logs/feature_approximation_pilot_20260916/full/angle_slot_exact_logits.npy": {
+      "sha256": "6cff1158a08ae271df3b1c837d3b7c9844c898e78837aede23b257c6ad8e171b",
+      "bytes": 643728
+    },
+    "logs/feature_approximation_pilot_20260916/full/deployment.npy": {
+      "sha256": "9ab3282b3b79955b00c2d749dbb7f25b699c0cd0e622c1ac4a542c853d5cad62",
+      "bytes": 1689578
+    },
+    "logs/feature_approximation_pilot_20260916/full/deployment_logits.npy": {
+      "sha256": "81e7ab196e06a007d120154ede626d4450ab85f67dfc67e1d80ffd83ff31d215",
+      "bytes": 643728
+    },
+    "logs/feature_approximation_pilot_20260916/full/eigen_slots_exact.npy": {
+      "sha256": "00fa7b9e77dad00b1fdef44c3267b1187be7cf38fbfce986dd8fc2b9de433522",
+      "bytes": 1689578
+    },
+    "logs/feature_approximation_pilot_20260916/full/eigen_slots_exact_logits.npy": {
+      "sha256": "a92bfa376759534a48c37243fa57e39f5d06c98f563f43a6401f535515c9a0cb",
+      "bytes": 643728
+    },
+    "logs/feature_approximation_pilot_20260916/full/exact_quantized_input.npy": {
+      "sha256": "8bce563db7402360df3915f2b61eb5f5bdd4bbf62222845a0606feaf919a48d8",
+      "bytes": 1689578
+    },
+    "logs/feature_approximation_pilot_20260916/full/exact_quantized_input_logits.npy": {
+      "sha256": "501430d9e3325a234edb9de7feeb6724d0107d39c50414fa861a1430c31387d7",
+      "bytes": 643728
+    },
+    "logs/feature_approximation_pilot_20260916/full/exact_stats_hardware_quantizer.npy": {
+      "sha256": "ebfe6a0da17be5ef1a415116a45de91c7b253f9d1d9e2fe1e749149e7ecb9d7e",
+      "bytes": 1689578
+    },
+    "logs/feature_approximation_pilot_20260916/full/exact_stats_hardware_quantizer_logits.npy": {
+      "sha256": "0663b9c53c0948df2d2f4ef789ab4448d19de11557475ce7be0531085bab8e3d",
+      "bytes": 643728
+    },
+    "logs/feature_approximation_pilot_20260916/full/group_metrics.csv": {
+      "sha256": "4b0a8147828c9d6be6d168133248e9d0dafa48d313cf81389f7870911fe2064a",
+      "bytes": 23382
+    },
+    "logs/feature_approximation_pilot_20260916/full/labels.npy": {
+      "sha256": "3ac1b4d33f41b71f5dd3f7c79f070781f519c9ba5bdccb4f64dd2095604b9302",
+      "bytes": 643728
+    },
+    "logs/feature_approximation_pilot_20260916/full/mean_corrected.npy": {
+      "sha256": "88a4530ab159b804a3ab20d7a74cb6d2c46026fe23c5561bc752927523e9c402",
+      "bytes": 1689578
+    },
+    "logs/feature_approximation_pilot_20260916/full/mean_corrected_logits.npy": {
+      "sha256": "882ad79576036a2bf551b447d0e8edbb7a53f024a477a687c71da90c8422bb25",
+      "bytes": 643728
+    },
+    "logs/feature_approximation_pilot_20260916/full/mean_eigen_corrected.npy": {
+      "sha256": "578ee8aad56a38ce20aeb6217bb2aaa706dc74f80a48dc5910b27fa2484d1f38",
+      "bytes": 1689578
+    },
+    "logs/feature_approximation_pilot_20260916/full/mean_eigen_corrected_logits.npy": {
+      "sha256": "e95e93f1857072514690dda46596690b34f088d8094eefc36e3edcc01a770622",
+      "bytes": 643728
+    },
+    "logs/feature_approximation_pilot_20260916/full/metadata.csv.gz": {
+      "sha256": "4891ed45a808b6289c4cd3ec9296db25bdc53ee7c1c08f5482027cdc0600d5e8",
+      "bytes": 3027076
+    },
+    "logs/feature_approximation_pilot_20260916/full/range_slots_exact.npy": {
+      "sha256": "fb96f8b3d64642e1181123207cfed110de6596edc495f758a59b7c88bf1acfc3",
+      "bytes": 1689578
+    },
+    "logs/feature_approximation_pilot_20260916/full/range_slots_exact_logits.npy": {
+      "sha256": "7c52b8ab494841a8733e66c21c7f05c1c4cedbe39ce37407820c9ff4ee215960",
+      "bytes": 643728
+    },
+    "logs/feature_approximation_pilot_20260916/full/reconstruction_summary.json": {
+      "sha256": "9845886f523162020b21c9938c98ea2f54cdc14cb9666f635f36f0f1f1cb0d41",
+      "bytes": 4440
+    },
+    "logs/feature_approximation_pilot_20260916/full/sequence_metrics.csv": {
+      "sha256": "e5c94cd2112a43aecaae3bec8ff6c02bb570e7063c0049a9b55ef3e1fc031e1e",
+      "bytes": 24956
+    },
+    "logs/feature_approximation_pilot_20260916/full/software_reference.npy": {
+      "sha256": "b2e9a55125da261d167167e67998fa0bde9ea1ba3bfa0afbdebc666647d2881e",
+      "bytes": 1689578
+    },
+    "logs/feature_approximation_pilot_20260916/full/software_reference_logits.npy": {
+      "sha256": "57f13a2e91f71e1edf03b9829e7739a47d025435a6c80deecf1f4478d2132848",
+      "bytes": 643728
+    },
+    "logs/feature_approximation_pilot_20260916/full/std_slots_exact.npy": {
+      "sha256": "d69ea8ac546e740ba904858fe0ff62c72a5eb9c9bc4561facdcdc97c9b4f595c",
+      "bytes": 1689578
+    },
+    "logs/feature_approximation_pilot_20260916/full/std_slots_exact_logits.npy": {
+      "sha256": "a8aa6a159de63e3b0ce486585ccbc6938bc963be32a0ad40c645e7e0b067d92c",
+      "bytes": 643728
+    },
+    "logs/feature_approximation_pilot_20260916/full/summary.json": {
+      "sha256": "7fb29cb2a8f0cc8d2f105dada127156ac4cea41112783c2af459bda99a5e4dbe",
+      "bytes": 12239
+    },
+    "logs/feature_approximation_pilot_20260916/native/frozen_params.h": {
+      "sha256": "9709cca67c6bf7508e44a5cf438916b5374f472fbd699f64624fe4c7596d8273",
+      "bytes": 15362
+    },
+    "logs/feature_approximation_pilot_20260916/native/pilot_native.c": {
+      "sha256": "fe32213c9a2d0e2779c531b9ee23bf5b116bda8919534bfc346840a88832da1a",
+      "bytes": 10859
+    },
+    "logs/feature_approximation_pilot_20260916/native/pilot_native.so": {
+      "sha256": "316b4f4dafc68e1b4b9a5b85265b6c0f0e6d0e9e183fb8019f7cff37e51143a5",
+      "bytes": 24952
+    },
+    "logs/feature_approximation_pilot_20260916/smoke/angle_slot_exact.npy": {
+      "sha256": "6b3f9448b12498406ecb6efa4f05dfa1701c9de9f213c8f0855206ee8ba18e40",
+      "bytes": 9200
+    },
+    "logs/feature_approximation_pilot_20260916/smoke/angle_slot_exact_logits.npy": {
+      "sha256": "bbe8b260c21d546d651169a498a8541b265e89c6b57d717eb606147d0b2b0231",
+      "bytes": 3584
+    },
+    "logs/feature_approximation_pilot_20260916/smoke/deployment.npy": {
+      "sha256": "0f099fe9a541fa9d1a37995ca9b4966d533c545e3fd94dfa6daf9f39cdae198c",
+      "bytes": 9200
+    },
+    "logs/feature_approximation_pilot_20260916/smoke/deployment_logits.npy": {
+      "sha256": "dc2ab43bca7e97b7150df1f987ebe39b1a79d8446a4d79d8184b23350af28a34",
+      "bytes": 3584
+    },
+    "logs/feature_approximation_pilot_20260916/smoke/eigen_slots_exact.npy": {
+      "sha256": "d9aa0d65367fc4d56c240637ecb3093e00e470c2583f60e6df1c5f7cbf82b561",
+      "bytes": 9200
+    },
+    "logs/feature_approximation_pilot_20260916/smoke/eigen_slots_exact_logits.npy": {
+      "sha256": "786ed93689d84d545ec72c6f766d3103a7caa9583279cba9d5c321972769f6fc",
+      "bytes": 3584
+    },
+    "logs/feature_approximation_pilot_20260916/smoke/exact_quantized_input.npy": {
+      "sha256": "4d3eaab57c6223a9cab624c880d23587188aea579e96e7c5ecfa83f358f12761",
+      "bytes": 9200
+    },
+    "logs/feature_approximation_pilot_20260916/smoke/exact_quantized_input_logits.npy": {
+      "sha256": "c522a7567d347934aa88537cd266973850c78bb101b562bcc75231401616bc1d",
+      "bytes": 3584
+    },
+    "logs/feature_approximation_pilot_20260916/smoke/exact_stats_hardware_quantizer.npy": {
+      "sha256": "2b58138e0840cac2302c564b0dd259e0a03edb97cddb92a832e2bd5684431c88",
+      "bytes": 9200
+    },
+    "logs/feature_approximation_pilot_20260916/smoke/exact_stats_hardware_quantizer_logits.npy": {
+      "sha256": "68fd3ff96c5e118a48e16538b01eab12062e2c2027a7377d8b6b4832ef28d44b",
+      "bytes": 3584
+    },
+    "logs/feature_approximation_pilot_20260916/smoke/group_metrics.csv": {
+      "sha256": "f535a96fde382881b3ad0db80b906919e8df9da2b0165b720692fe4f2f6a50d6",
+      "bytes": 19195
+    },
+    "logs/feature_approximation_pilot_20260916/smoke/labels.npy": {
+      "sha256": "2da12f23dd331bd985afd30c79bd62208200432469949182d40b233b13170d48",
+      "bytes": 3584
+    },
+    "logs/feature_approximation_pilot_20260916/smoke/mean_corrected.npy": {
+      "sha256": "9014afae31b94b65908ddabcc3bbc9d4f509b9e01702a66cfaf243a176b2fa16",
+      "bytes": 9200
+    },
+    "logs/feature_approximation_pilot_20260916/smoke/mean_corrected_logits.npy": {
+      "sha256": "19f486f2f9c245ba3dc558388f707a06e90a35e90ea962d6af6ccebe9e8ac381",
+      "bytes": 3584
+    },
+    "logs/feature_approximation_pilot_20260916/smoke/mean_eigen_corrected.npy": {
+      "sha256": "3f6eb65682dc149f0bfd00ac42748150bd8bd5c5573c49d2f688c3d5a6ba0f94",
+      "bytes": 9200
+    },
+    "logs/feature_approximation_pilot_20260916/smoke/mean_eigen_corrected_logits.npy": {
+      "sha256": "2ef9fec39744f85bb4298acdcee0d466a7d2ec76ecedb9338ae50ab26077608d",
+      "bytes": 3584
+    },
+    "logs/feature_approximation_pilot_20260916/smoke/metadata.csv.gz": {
+      "sha256": "86b04466a5cb1a6355a57e51f318d57be60206f76ed2664c2611cd2beaf94be4",
+      "bytes": 20668
+    },
+    "logs/feature_approximation_pilot_20260916/smoke/range_slots_exact.npy": {
+      "sha256": "844a8be696b0ab57d90b35f0b73ce0c62111376cf0eb04673a63519f6390e8c6",
+      "bytes": 9200
+    },
+    "logs/feature_approximation_pilot_20260916/smoke/range_slots_exact_logits.npy": {
+      "sha256": "a543589ba26152ba964a3cc60fa3ec86bce6a120d6d32ce2fdd4ffe156b781e3",
+      "bytes": 3584
+    },
+    "logs/feature_approximation_pilot_20260916/smoke/reconstruction_summary.json": {
+      "sha256": "17004137a5f258eb4ed085b83d7e6c19bb9df03f2b10d9299421c0ea338608ef",
+      "bytes": 4436
+    },
+    "logs/feature_approximation_pilot_20260916/smoke/sequence_metrics.csv": {
+      "sha256": "889d7bf610c9b679b8166304e06f8aea4f1e4672e61b609bc230d82b0f6e1687",
+      "bytes": 14904
+    },
+    "logs/feature_approximation_pilot_20260916/smoke/software_reference.npy": {
+      "sha256": "7b8b2316c4c72813bea6ddd36cfc11575bae82d04a79aed4aadead5329512509",
+      "bytes": 9200
+    },
+    "logs/feature_approximation_pilot_20260916/smoke/software_reference_logits.npy": {
+      "sha256": "44ee4e39340ca9cc7bb3f7284acc995677f7eacc5b663b39b21898d926d843a4",
+      "bytes": 3584
+    },
+    "logs/feature_approximation_pilot_20260916/smoke/std_slots_exact.npy": {
+      "sha256": "a3d045e28a34b3d145dd6b9542b2ff1551959cc094ca1bfedd43103be1737c05",
+      "bytes": 9200
+    },
+    "logs/feature_approximation_pilot_20260916/smoke/std_slots_exact_logits.npy": {
+      "sha256": "ddd3f7475ba2db83d1567fb1db4ade827cb84ba0a4dcedfc22939b18734415cd",
+      "bytes": 3584
+    },
+    "logs/feature_approximation_pilot_20260916/smoke/summary.json": {
+      "sha256": "936bba5635b81b87668e69c6ea34271b5ebe3190a7cde1227f508a312c47562b",
+      "bytes": 8771
+    },
+    "logs/feature_approximation_pilot_20260916/train_subset/angle_slot_exact.npy": {
+      "sha256": "5897b22a59e49a52a4cb2ad6490740a8adfdb2501befcbff1b36d6da2fc59758",
+      "bytes": 1034483
+    },
+    "logs/feature_approximation_pilot_20260916/train_subset/deployment.npy": {
+      "sha256": "e16fd4509d7339107baec1359743d9a67291df6a7fad7ea9e0bcdce62e6af433",
+      "bytes": 1034483
+    },
+    "logs/feature_approximation_pilot_20260916/train_subset/eigen_slots_exact.npy": {
+      "sha256": "7694864ff61aa21507fea95062683e2bda1866bebbb603b580603227e9a3bbb6",
+      "bytes": 1034483
+    },
+    "logs/feature_approximation_pilot_20260916/train_subset/exact_quantized_input.npy": {
+      "sha256": "5ebf947af8cbc480ade47162b8f02e43a4d404a2c1d652add2822701e8611733",
+      "bytes": 1034483
+    },
+    "logs/feature_approximation_pilot_20260916/train_subset/exact_stats_hardware_quantizer.npy": {
+      "sha256": "e7ae7b1a990f2898ff5f5b3b276729ef605573f7d171daa4920d4e91ff3ca9e4",
+      "bytes": 1034483
+    },
+    "logs/feature_approximation_pilot_20260916/train_subset/labels.npy": {
+      "sha256": "57da494f7a8b8e481b13da5a2cc7fcb4ccc980b7df4ecb80ccc75e083855ee0c",
+      "bytes": 394168
+    },
+    "logs/feature_approximation_pilot_20260916/train_subset/mean_corrected.npy": {
+      "sha256": "e651e5f07067be27e3186d2b4ef316233670f62578e4fb5e017c68455293c05b",
+      "bytes": 1034483
+    },
+    "logs/feature_approximation_pilot_20260916/train_subset/mean_eigen_corrected.npy": {
+      "sha256": "79f851dbc3039af873c4c3e711000c06ab9ff700ec9a47145707e184939593c2",
+      "bytes": 1034483
+    },
+    "logs/feature_approximation_pilot_20260916/train_subset/metadata.csv.gz": {
+      "sha256": "eaddaeccc203eedd6643deadcb7febcb573ea6b5a975bb3168386462ad04244d",
+      "bytes": 1950626
+    },
+    "logs/feature_approximation_pilot_20260916/train_subset/range_slots_exact.npy": {
+      "sha256": "512935dbd3af723db1cf79b38270735a0e4b9805fc0cb826d71dc2100a413d2e",
+      "bytes": 1034483
+    },
+    "logs/feature_approximation_pilot_20260916/train_subset/reconstruction_summary.json": {
+      "sha256": "d48efbd4dd99c102931745f49ffe595bf73bc58fe40047a0165fc1c5902da374",
+      "bytes": 12336
+    },
+    "logs/feature_approximation_pilot_20260916/train_subset/software_reference.npy": {
+      "sha256": "c470a696ebd7c633c7f5920c7fcacab618990cc7691c1513d3c45e730d2d5a42",
+      "bytes": 1034483
+    },
+    "logs/feature_approximation_pilot_20260916/train_subset/std_slots_exact.npy": {
+      "sha256": "c1bd29872a1c75e5f2f2642f7caca34679361cd2f0df789349dd94a74b3238e5",
+      "bytes": 1034483
+    },
+    "logs/feature_approximation_pilot_20260916/training/deployment_seed17.json": {
+      "sha256": "2a46808aa175de47a4e4ad73f5e508412bdcfe7e9e5de0c7d2c03b9831ab05b7",
+      "bytes": 3240
+    },
+    "logs/feature_approximation_pilot_20260916/training/deployment_seed17.pt": {
+      "sha256": "4b69c2203f98106ad2b979b0b09fe06840634dd0f67b6d44354bd3e4c2fce7e1",
+      "bytes": 17580
+    },
+    "logs/feature_approximation_pilot_20260916/training/deployment_seed17_val_logits.npy": {
+      "sha256": "8cc749478dc786b093d4f7bd26d0eeb23992911221a261f495049062e9d24f86",
+      "bytes": 643728
+    },
+    "logs/feature_approximation_pilot_20260916/training/deployment_seed7.json": {
+      "sha256": "d7836f9fc3e7acd185b801b9348809f2e7fc407b9c9f0cd3cffd03b99bbe9418",
+      "bytes": 3241
+    },
+    "logs/feature_approximation_pilot_20260916/training/deployment_seed7.pt": {
+      "sha256": "905589ec8cc26ed231093782470afea0db4044e74c572658ce4c201b14b9841d",
+      "bytes": 17570
+    },
+    "logs/feature_approximation_pilot_20260916/training/deployment_seed7_val_logits.npy": {
+      "sha256": "877bb9d121e0d7834842544078775e58876ee374a2cb18c3d45ac36c6b313956",
+      "bytes": 643728
+    },
+    "logs/feature_approximation_pilot_20260916/training/mean_eigen_corrected_seed17.json": {
+      "sha256": "cdd6c66163a443f25ad61813f9219fc4b02e34abb1c7e9d4aacb311ba7885bd5",
+      "bytes": 3265
+    },
+    "logs/feature_approximation_pilot_20260916/training/mean_eigen_corrected_seed17.pt": {
+      "sha256": "276619352b74844b1cf0ad21bb0c26c703befe6ece9721a8db8cda7be924b0d2",
+      "bytes": 17808
+    },
+    "logs/feature_approximation_pilot_20260916/training/mean_eigen_corrected_seed17_val_logits.npy": {
+      "sha256": "55fa9882a5010744262f5b66ecdb1c366abe106fcbb445e50890fcbd5a64165f",
+      "bytes": 643728
+    },
+    "logs/feature_approximation_pilot_20260916/training/mean_eigen_corrected_seed7.json": {
+      "sha256": "1014c6f926db78dbfd9a03188b13a332b0d75cd9b84fed3262248620babab377",
+      "bytes": 3267
+    },
+    "logs/feature_approximation_pilot_20260916/training/mean_eigen_corrected_seed7.pt": {
+      "sha256": "d936bee613c9e7a263b7e0e7fc06c61e5dfed1dc2f290a8e664c74674c453138",
+      "bytes": 17798
+    },
+    "logs/feature_approximation_pilot_20260916/training/mean_eigen_corrected_seed7_val_logits.npy": {
+      "sha256": "ded6790f89288bcac5bdcfa8aebf0ae64064530093b71613c931ba0ef99104dc",
+      "bytes": 643728
+    },
+    "logs/feature_approximation_pilot_20260916/training/paired_sequence_metrics.csv": {
+      "sha256": "040ae8dc209ae9ff22f200984493f703bd47141160ed0c61d2c559c51117b3f3",
+      "bytes": 8427
+    },
+    "logs/feature_approximation_pilot_20260916/training/software_reference_seed17.json": {
+      "sha256": "4c4d9e77c6ee692248b436186fbb540388f4eab383b8ac581b60c63bbfecb1e7",
+      "bytes": 3263
+    },
+    "logs/feature_approximation_pilot_20260916/training/software_reference_seed17.pt": {
+      "sha256": "e4db2b9cdff9bb4b8eab51105fa73e2cee643663f3951263c2e94fa123d8d85a",
+      "bytes": 17788
+    },
+    "logs/feature_approximation_pilot_20260916/training/software_reference_seed17_val_logits.npy": {
+      "sha256": "2be754d72f01730d5d99bef19509a922ceb6dd81d868dc9144cf2e54c9dc8d64",
+      "bytes": 643728
+    },
+    "logs/feature_approximation_pilot_20260916/training/software_reference_seed7.json": {
+      "sha256": "82a8f402e806693a2b877a57a8c9166f686c881d19830936540741a673f2dde5",
+      "bytes": 3267
+    },
+    "logs/feature_approximation_pilot_20260916/training/software_reference_seed7.pt": {
+      "sha256": "bb1c78e32016c9aa98970dddcfe25cfced85231c07206453b5540b79b06fd55c",
+      "bytes": 17778
+    },
+    "logs/feature_approximation_pilot_20260916/training/software_reference_seed7_val_logits.npy": {
+      "sha256": "850c9ef115c1bf1037290d156dbdbd99e224bbb55636aadb2555725d433ea7d1",
+      "bytes": 643728
+    },
+    "logs/feature_approximation_pilot_20260916/training/summary.json": {
+      "sha256": "ce15d1f80c28d5164d70edfeeb8186013294398b06cf57b4ada8b0f8f1248e5e",
+      "bytes": 4558
+    }
+  }
+}

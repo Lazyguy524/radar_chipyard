@@ -1,0 +1,188 @@
+{
+  "status": "PASS",
+  "analysis_phase": "POST_RESULT_ATTRIBUTION_ONLY",
+  "fixed_weight_precision_full_groups": [
+    {
+      "seed": 7,
+      "delta_f1": 2.4273726584311817e-07,
+      "groups": [
+        {
+          "axis": "retained_N",
+          "group": "1-4",
+          "samples": 1615,
+          "supported": true,
+          "delta_accuracy": 0.0,
+          "harm": 0,
+          "repair": 0
+        },
+        {
+          "axis": "retained_N",
+          "group": "5-16",
+          "samples": 4958,
+          "supported": true,
+          "delta_accuracy": 0.0,
+          "harm": 0,
+          "repair": 0
+        },
+        {
+          "axis": "retained_N",
+          "group": "17-64",
+          "samples": 64466,
+          "supported": true,
+          "delta_accuracy": 1.5512052865096493e-05,
+          "harm": 1,
+          "repair": 2
+        },
+        {
+          "axis": "retained_N",
+          "group": "65-511",
+          "samples": 9411,
+          "supported": true,
+          "delta_accuracy": -0.00010625863351387821,
+          "harm": 1,
+          "repair": 0
+        },
+        {
+          "axis": "original_shape",
+          "group": "elongated",
+          "samples": 45116,
+          "supported": true,
+          "delta_accuracy": 2.2165085557190878e-05,
+          "harm": 0,
+          "repair": 1
+        },
+        {
+          "axis": "original_shape",
+          "group": "intermediate",
+          "samples": 30998,
+          "supported": true,
+          "delta_accuracy": -3.226014581581005e-05,
+          "harm": 2,
+          "repair": 1
+        },
+        {
+          "axis": "original_shape",
+          "group": "compact",
+          "samples": 4336,
+          "supported": true,
+          "delta_accuracy": 0.0,
+          "harm": 0,
+          "repair": 0
+        }
+      ],
+      "note": "Q24-trained weights fixed; this isolates front-end reciprocal precision, unlike separately trained models."
+    },
+    {
+      "seed": 17,
+      "delta_f1": 1.3290092551354604e-05,
+      "groups": [
+        {
+          "axis": "retained_N",
+          "group": "1-4",
+          "samples": 1615,
+          "supported": true,
+          "delta_accuracy": 0.0,
+          "harm": 0,
+          "repair": 0
+        },
+        {
+          "axis": "retained_N",
+          "group": "5-16",
+          "samples": 4958,
+          "supported": true,
+          "delta_accuracy": 0.0,
+          "harm": 0,
+          "repair": 0
+        },
+        {
+          "axis": "retained_N",
+          "group": "17-64",
+          "samples": 64466,
+          "supported": true,
+          "delta_accuracy": 1.5512052865096493e-05,
+          "harm": 0,
+          "repair": 1
+        },
+        {
+          "axis": "retained_N",
+          "group": "65-511",
+          "samples": 9411,
+          "supported": true,
+          "delta_accuracy": 0.0,
+          "harm": 0,
+          "repair": 0
+        },
+        {
+          "axis": "original_shape",
+          "group": "elongated",
+          "samples": 45116,
+          "supported": true,
+          "delta_accuracy": 2.21650855573019e-05,
+          "harm": 0,
+          "repair": 1
+        },
+        {
+          "axis": "original_shape",
+          "group": "intermediate",
+          "samples": 30998,
+          "supported": true,
+          "delta_accuracy": 0.0,
+          "harm": 0,
+          "repair": 0
+        },
+        {
+          "axis": "original_shape",
+          "group": "compact",
+          "samples": 4336,
+          "supported": true,
+          "delta_accuracy": 0.0,
+          "harm": 0,
+          "repair": 0
+        }
+      ],
+      "note": "Q24-trained weights fixed; this isolates front-end reciprocal precision, unlike separately trained models."
+    }
+  ],
+  "coordinate_quantization": [
+    {
+      "mode": "legacy",
+      "changed_feature_rows": 105,
+      "changed_feature_entries": 119
+    },
+    {
+      "mode": "proxy_scaled",
+      "changed_feature_rows": 292,
+      "changed_feature_entries": 368
+    },
+    {
+      "mode": "moment24",
+      "changed_feature_rows": 156,
+      "changed_feature_entries": 157
+    },
+    {
+      "mode": "moment16",
+      "changed_feature_rows": 153,
+      "changed_feature_entries": 154
+    }
+  ],
+  "filter_coverage": [
+    {
+      "split": "train",
+      "below_three": 474582,
+      "total_target_track_observations": 832362,
+      "fraction": 0.5701629819717863
+    },
+    {
+      "split": "val",
+      "below_three": 97734,
+      "total_target_track_observations": 178184,
+      "fraction": 0.5485004265253894
+    }
+  ],
+  "interpretation": "Do not attribute independently trained model differences to reciprocal bit width. Negative variance counts are numerical defects, not evidence of harmful classification. No new trajectory, no changed predeclared decision.",
+  "source_sha256": {
+    "docs/paper_new/conditional_statistics_2026-09-16/audit_findings.py": "b1b9c8dd43c5049d07a5a1891cb73743c514487d242e99ea7f59e67c02339a84",
+    "logs/conditional_statistics_20260916/evaluation/summary.json": "412efdc3a8cd2b64f6da14f3daada90d04c8fcfbd5ef06f617b755f4ec83e203",
+    "logs/conditional_statistics_20260916/data/summary.json": "e301dfcff7122aef8b3fecaf1aa5883153859dade5593cef219e5a1df0848eab"
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "status": "PASS",
+  "checks": [
+    {
+      "mode": "linear_fine",
+      "seed": 7,
+      "rows": 80450,
+      "feature_and_logit_equal": true
+    },
+    {
+      "mode": "linear_fine",
+      "seed": 17,
+      "rows": 80450,
+      "feature_and_logit_equal": true
+    },
+    {
+      "mode": "linear_fine",
+      "seed": 37,
+      "rows": 80450,
+      "feature_and_logit_equal": true
+    },
+    {
+      "mode": "root",
+      "seed": 7,
+      "rows": 80450,
+      "feature_and_logit_equal": true
+    },
+    {
+      "mode": "root",
+      "seed": 17,
+      "rows": 80450,
+      "feature_and_logit_equal": true
+    },
+    {
+      "mode": "root",
+      "seed": 37,
+      "rows": 80450,
+      "feature_and_logit_equal": true
+    }
+  ],
+  "complete_c_rows": 482700,
+  "wall_seconds": 4.665401764970738,
+  "root_cost": "Three integer square roots per cluster, max/min reuse the two standard deviations; added to shared first/second-moment path. No measured FPGA/board benefit claimed.",
+  "source_sha256": {
+    "docs/paper_new/moment_encoding_2026-09-16/build_candidates.py": "74e6822e545c9cc2426e7d6cb0980316507642a706bd18d15948fca95ea29eca",
+    "docs/paper_new/moment_encoding_2026-09-16/encoding.c": "d8071ec026bf0cd8ec7cf97e8d35a8fa4f905fd32c0a75baf48fb3f9a571a845",
+    "docs/paper_new/mechanism_convergence_2026-09-16/single_variant.c": "f542709ee0945c91ef2e796d8414103fa76cdd4e1a9b49e36545f9ab4674f6e0"
+  }
+}

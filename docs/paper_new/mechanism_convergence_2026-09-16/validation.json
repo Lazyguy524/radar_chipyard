@@ -1,0 +1,55 @@
+{
+  "status": "PASS",
+  "completed_trajectories": 35,
+  "fixed_epochs": {
+    "fp32": 20,
+    "qat": 60
+  },
+  "same_seed_initializations_match": true,
+  "numeric_metrics_recomputed": 1129,
+  "source_hash_checks": 371,
+  "raw_hdf5_rehashed": 140,
+  "complete_c_model_observation_pairs": 2815750,
+  "historical_guards": [
+    {
+      "manifest": "docs/paper_new/training_and_gemmini_retest_2026-09-15/protected_artifacts_before.json",
+      "unchanged": 201
+    },
+    {
+      "manifest": "docs/paper_new/gemmini_qmlp_comparison_2026-09-15/protected_artifacts_before.json",
+      "unchanged": 68
+    },
+    {
+      "manifest": "docs/paper_new/feature_approximation_pilot_2026-09-16/evidence_manifest.json",
+      "unchanged": 110
+    },
+    {
+      "manifest": "docs/paper_new/qmlp_int8_convergence_2026-09-16/evidence_manifest.json",
+      "unchanged": 81
+    },
+    {
+      "manifest": "docs/paper_new/conditional_statistics_2026-09-16/evidence_manifest.json",
+      "unchanged": 271
+    }
+  ],
+  "stage_training_seconds": {
+    "factorial_v2": 1420.4364076789934,
+    "augmentation_v2": 625.5461813239963,
+    "encoding_training": 405.65729547000956
+  },
+  "raw_seconds": 302.67283376603154,
+  "output_bytes": {
+    "logs/mechanism_convergence_20260916": 561187467,
+    "logs/moment_encoding_20260916": 185992456
+  },
+  "local_markdown_links": 57,
+  "failures_preserved": {
+    "mechanism_partial_training_wrapper_failure": 1,
+    "encoding_initialization_smoke_fix": 1,
+    "encoding_pre_model_source_path_failure": 1
+  },
+  "gpu_jobs": 0,
+  "new_rtl_jobs": 0,
+  "new_board_runs": 0,
+  "scope": "Evidence integrity and bounded execution PASS, not acceptance of every hypothesis, independent generalization, or measured hardware quality-cost advantage"
+}

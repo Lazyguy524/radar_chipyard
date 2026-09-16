@@ -1,0 +1,30 @@
+{
+  "layers": [
+    {
+      "input_scale": 1.0,
+      "weight_scale": 0.002958735419003622,
+      "output_scale": 0.05878861670501068,
+      "accumulator_abs_bound": 69504
+    },
+    {
+      "input_scale": 0.05878861670501068,
+      "weight_scale": 0.01026339887634037,
+      "output_scale": 0.07123169772354354,
+      "accumulator_abs_bound": 232007
+    },
+    {
+      "input_scale": 0.07123169772354354,
+      "weight_scale": 0.007765351317998931,
+      "output_scale": 0.0005531391578008203,
+      "accumulator_abs_bound": 271113
+    }
+  ],
+  "multipliers": [
+    3298,
+    555
+  ],
+  "shift": 16,
+  "input": "Raw existing Feature21 INT8, no normalization at inference",
+  "arithmetic": "row-major INT8 weight, INT32 bias/accumulator; ties-to-even shift 16; ReLU clamp 0..127; INT32 logits",
+  "status": "ISOLATED_CANDIDATE_NOT_INSTALLED_IN_RTL_OR_BITSTREAM"
+}

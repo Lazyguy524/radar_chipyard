@@ -1,0 +1,302 @@
+{
+  "status": "PASS",
+  "models": 29,
+  "rows_per_model": 80450,
+  "complete_c_rows": 2333050,
+  "checks": [
+    {
+      "stage": "factorial",
+      "mode": "proxy",
+      "seed": 7,
+      "feature_rows": 80450,
+      "logit_rows": 80450,
+      "exact": true
+    },
+    {
+      "stage": "factorial",
+      "mode": "proxy",
+      "seed": 17,
+      "feature_rows": 80450,
+      "logit_rows": 80450,
+      "exact": true
+    },
+    {
+      "stage": "factorial",
+      "mode": "proxy",
+      "seed": 37,
+      "feature_rows": 80450,
+      "logit_rows": 80450,
+      "exact": true
+    },
+    {
+      "stage": "factorial",
+      "mode": "proxy",
+      "seed": 47,
+      "feature_rows": 80450,
+      "logit_rows": 80450,
+      "exact": true
+    },
+    {
+      "stage": "factorial",
+      "mode": "proxy",
+      "seed": 57,
+      "feature_rows": 80450,
+      "logit_rows": 80450,
+      "exact": true
+    },
+    {
+      "stage": "factorial",
+      "mode": "mean",
+      "seed": 7,
+      "feature_rows": 80450,
+      "logit_rows": 80450,
+      "exact": true
+    },
+    {
+      "stage": "factorial",
+      "mode": "mean",
+      "seed": 17,
+      "feature_rows": 80450,
+      "logit_rows": 80450,
+      "exact": true
+    },
+    {
+      "stage": "factorial",
+      "mode": "mean",
+      "seed": 37,
+      "feature_rows": 80450,
+      "logit_rows": 80450,
+      "exact": true
+    },
+    {
+      "stage": "factorial",
+      "mode": "mean",
+      "seed": 47,
+      "feature_rows": 80450,
+      "logit_rows": 80450,
+      "exact": true
+    },
+    {
+      "stage": "factorial",
+      "mode": "mean",
+      "seed": 57,
+      "feature_rows": 80450,
+      "logit_rows": 80450,
+      "exact": true
+    },
+    {
+      "stage": "factorial",
+      "mode": "shape",
+      "seed": 7,
+      "feature_rows": 80450,
+      "logit_rows": 80450,
+      "exact": true
+    },
+    {
+      "stage": "factorial",
+      "mode": "shape",
+      "seed": 17,
+      "feature_rows": 80450,
+      "logit_rows": 80450,
+      "exact": true
+    },
+    {
+      "stage": "factorial",
+      "mode": "shape",
+      "seed": 37,
+      "feature_rows": 80450,
+      "logit_rows": 80450,
+      "exact": true
+    },
+    {
+      "stage": "factorial",
+      "mode": "shape",
+      "seed": 47,
+      "feature_rows": 80450,
+      "logit_rows": 80450,
+      "exact": true
+    },
+    {
+      "stage": "factorial",
+      "mode": "shape",
+      "seed": 57,
+      "feature_rows": 80450,
+      "logit_rows": 80450,
+      "exact": true
+    },
+    {
+      "stage": "factorial",
+      "mode": "moment",
+      "seed": 7,
+      "feature_rows": 80450,
+      "logit_rows": 80450,
+      "exact": true
+    },
+    {
+      "stage": "factorial",
+      "mode": "moment",
+      "seed": 17,
+      "feature_rows": 80450,
+      "logit_rows": 80450,
+      "exact": true
+    },
+    {
+      "stage": "factorial",
+      "mode": "moment",
+      "seed": 37,
+      "feature_rows": 80450,
+      "logit_rows": 80450,
+      "exact": true
+    },
+    {
+      "stage": "factorial",
+      "mode": "moment",
+      "seed": 47,
+      "feature_rows": 80450,
+      "logit_rows": 80450,
+      "exact": true
+    },
+    {
+      "stage": "factorial",
+      "mode": "moment",
+      "seed": 57,
+      "feature_rows": 80450,
+      "logit_rows": 80450,
+      "exact": true
+    },
+    {
+      "stage": "augmentation",
+      "mode": "proxy",
+      "seed": 7,
+      "feature_rows": 80450,
+      "logit_rows": 80450,
+      "exact": true
+    },
+    {
+      "stage": "augmentation",
+      "mode": "proxy",
+      "seed": 17,
+      "feature_rows": 80450,
+      "logit_rows": 80450,
+      "exact": true
+    },
+    {
+      "stage": "augmentation",
+      "mode": "proxy",
+      "seed": 37,
+      "feature_rows": 80450,
+      "logit_rows": 80450,
+      "exact": true
+    },
+    {
+      "stage": "augmentation",
+      "mode": "mean",
+      "seed": 7,
+      "feature_rows": 80450,
+      "logit_rows": 80450,
+      "exact": true
+    },
+    {
+      "stage": "augmentation",
+      "mode": "mean",
+      "seed": 17,
+      "feature_rows": 80450,
+      "logit_rows": 80450,
+      "exact": true
+    },
+    {
+      "stage": "augmentation",
+      "mode": "mean",
+      "seed": 37,
+      "feature_rows": 80450,
+      "logit_rows": 80450,
+      "exact": true
+    },
+    {
+      "stage": "augmentation",
+      "mode": "moment",
+      "seed": 7,
+      "feature_rows": 80450,
+      "logit_rows": 80450,
+      "exact": true
+    },
+    {
+      "stage": "augmentation",
+      "mode": "moment",
+      "seed": 17,
+      "feature_rows": 80450,
+      "logit_rows": 80450,
+      "exact": true
+    },
+    {
+      "stage": "augmentation",
+      "mode": "moment",
+      "seed": 37,
+      "feature_rows": 80450,
+      "logit_rows": 80450,
+      "exact": true
+    }
+  ],
+  "source_sha256": {
+    "logs/mechanism_convergence_20260916/implementations/factorial_proxy_seed7/candidate.c": "de0447943e70a55054a5f9cc8b803cd70a89cf8b287d6d242b3797b6fdc4eaff",
+    "logs/mechanism_convergence_20260916/implementations/factorial_proxy_seed7/params.h": "64481534a9144dfbc59b7320a1178b05b3c18a72d88214263e99ad8c8993e59d",
+    "logs/mechanism_convergence_20260916/implementations/factorial_proxy_seed17/candidate.c": "de0447943e70a55054a5f9cc8b803cd70a89cf8b287d6d242b3797b6fdc4eaff",
+    "logs/mechanism_convergence_20260916/implementations/factorial_proxy_seed17/params.h": "28039a9a78bfcc3e113262abf4237ee3fca66549bfea9eb363d01d9885e9b7d6",
+    "logs/mechanism_convergence_20260916/implementations/factorial_proxy_seed37/candidate.c": "de0447943e70a55054a5f9cc8b803cd70a89cf8b287d6d242b3797b6fdc4eaff",
+    "logs/mechanism_convergence_20260916/implementations/factorial_proxy_seed37/params.h": "77fdea6223b8f96963081a15d35ee0c7a0662de4d6b8754d9a7931a34e2eac1d",
+    "logs/mechanism_convergence_20260916/implementations/factorial_proxy_seed47/candidate.c": "de0447943e70a55054a5f9cc8b803cd70a89cf8b287d6d242b3797b6fdc4eaff",
+    "logs/mechanism_convergence_20260916/implementations/factorial_proxy_seed47/params.h": "9d9f69e3d16b8a1e16e7441bde72f745ce4e89a5fc1c86f39820e51137ffae8d",
+    "logs/mechanism_convergence_20260916/implementations/factorial_proxy_seed57/candidate.c": "de0447943e70a55054a5f9cc8b803cd70a89cf8b287d6d242b3797b6fdc4eaff",
+    "logs/mechanism_convergence_20260916/implementations/factorial_proxy_seed57/params.h": "275b5993bdac910e15ce5a138ee455c914ad0d8019f4ff9842232a28786be305",
+    "logs/mechanism_convergence_20260916/implementations/factorial_mean_seed7/candidate.c": "a0577c3f937f00d305687dc1b86a3db672c020e221fc96ac082bf5fc6249b769",
+    "logs/mechanism_convergence_20260916/implementations/factorial_mean_seed7/params.h": "6c1319cac83a29a901f1ef7dbc3baeaf0bf56385d0484d00b91ea3944be9d497",
+    "logs/mechanism_convergence_20260916/implementations/factorial_mean_seed17/candidate.c": "a0577c3f937f00d305687dc1b86a3db672c020e221fc96ac082bf5fc6249b769",
+    "logs/mechanism_convergence_20260916/implementations/factorial_mean_seed17/params.h": "a05efcd85e9003898b67fad9f15b055c7e00838fa5f66d2707b1c93e2d345f5c",
+    "logs/mechanism_convergence_20260916/implementations/factorial_mean_seed37/candidate.c": "a0577c3f937f00d305687dc1b86a3db672c020e221fc96ac082bf5fc6249b769",
+    "logs/mechanism_convergence_20260916/implementations/factorial_mean_seed37/params.h": "c998a29a9d3f0c69f6bfdef7dc906938d3cb419dad5c2310017e0e0ccdd83013",
+    "logs/mechanism_convergence_20260916/implementations/factorial_mean_seed47/candidate.c": "a0577c3f937f00d305687dc1b86a3db672c020e221fc96ac082bf5fc6249b769",
+    "logs/mechanism_convergence_20260916/implementations/factorial_mean_seed47/params.h": "aa78229b410dc8fa94307f3923f4b4d2adf1e4c1a0006a6c2ef70fb2ee7a6893",
+    "logs/mechanism_convergence_20260916/implementations/factorial_mean_seed57/candidate.c": "a0577c3f937f00d305687dc1b86a3db672c020e221fc96ac082bf5fc6249b769",
+    "logs/mechanism_convergence_20260916/implementations/factorial_mean_seed57/params.h": "16798e7f13a09e7716ce08f68f2e9a5c47dad793c20f7ccc0ecfadb888362d84",
+    "logs/mechanism_convergence_20260916/implementations/factorial_shape_seed7/candidate.c": "3d687c8d1f601219d4e30a2e4b7af7b9245cc864cf991e0f298f9f70af8afca2",
+    "logs/mechanism_convergence_20260916/implementations/factorial_shape_seed7/params.h": "4b1afb75c5999af2535de0a1d54b4623d1409762c14bff1846cc00e6044938ea",
+    "logs/mechanism_convergence_20260916/implementations/factorial_shape_seed17/candidate.c": "3d687c8d1f601219d4e30a2e4b7af7b9245cc864cf991e0f298f9f70af8afca2",
+    "logs/mechanism_convergence_20260916/implementations/factorial_shape_seed17/params.h": "bbe72c88b3fbb7445a118a9b5002357d583f2e785e6353de1b4831bead33c7a7",
+    "logs/mechanism_convergence_20260916/implementations/factorial_shape_seed37/candidate.c": "3d687c8d1f601219d4e30a2e4b7af7b9245cc864cf991e0f298f9f70af8afca2",
+    "logs/mechanism_convergence_20260916/implementations/factorial_shape_seed37/params.h": "2c1eb5457d2b12fdb55e4fa31cc74dc6c61eb323ad39983563d59ab739b5191f",
+    "logs/mechanism_convergence_20260916/implementations/factorial_shape_seed47/candidate.c": "3d687c8d1f601219d4e30a2e4b7af7b9245cc864cf991e0f298f9f70af8afca2",
+    "logs/mechanism_convergence_20260916/implementations/factorial_shape_seed47/params.h": "02be6497994b2bbab5609a1f83359385012c9001e794958a5382a3ea47dd1f1a",
+    "logs/mechanism_convergence_20260916/implementations/factorial_shape_seed57/candidate.c": "3d687c8d1f601219d4e30a2e4b7af7b9245cc864cf991e0f298f9f70af8afca2",
+    "logs/mechanism_convergence_20260916/implementations/factorial_shape_seed57/params.h": "040fa2ec758a0f73c69a38592d860c5b872e79a696837e0f42789ff455a1fcf0",
+    "logs/mechanism_convergence_20260916/implementations/factorial_moment_seed7/candidate.c": "c0e99ebdd0fcecb76ccb14b34031370ff6832fcdcec39e53ed2ba0a2bf630752",
+    "logs/mechanism_convergence_20260916/implementations/factorial_moment_seed7/params.h": "c54e044777abff19a2e1c2d18aa7a1a51a53844ddcf51cb1f2769615a8371f10",
+    "logs/mechanism_convergence_20260916/implementations/factorial_moment_seed17/candidate.c": "c0e99ebdd0fcecb76ccb14b34031370ff6832fcdcec39e53ed2ba0a2bf630752",
+    "logs/mechanism_convergence_20260916/implementations/factorial_moment_seed17/params.h": "018e9029abb9a6fba04caa7f39ed2fc00204a6b61c3f854fe49188e2fc9f84c2",
+    "logs/mechanism_convergence_20260916/implementations/factorial_moment_seed37/candidate.c": "c0e99ebdd0fcecb76ccb14b34031370ff6832fcdcec39e53ed2ba0a2bf630752",
+    "logs/mechanism_convergence_20260916/implementations/factorial_moment_seed37/params.h": "ebdc3c57ac58a7c708b09574137f039b746cd3df1f9c9ff9e22bb01f0ba84ed3",
+    "logs/mechanism_convergence_20260916/implementations/factorial_moment_seed47/candidate.c": "c0e99ebdd0fcecb76ccb14b34031370ff6832fcdcec39e53ed2ba0a2bf630752",
+    "logs/mechanism_convergence_20260916/implementations/factorial_moment_seed47/params.h": "559fefd340560b93ce71ffc215a48d0eb56d68575927acd47514058ce0811152",
+    "logs/mechanism_convergence_20260916/implementations/factorial_moment_seed57/candidate.c": "c0e99ebdd0fcecb76ccb14b34031370ff6832fcdcec39e53ed2ba0a2bf630752",
+    "logs/mechanism_convergence_20260916/implementations/factorial_moment_seed57/params.h": "ad06ef94200b5c43b587e5f5cbc6c06f26fb388dc94d9feb064b1341e34e6e37",
+    "logs/mechanism_convergence_20260916/implementations/augmentation_proxy_seed7/candidate.c": "de0447943e70a55054a5f9cc8b803cd70a89cf8b287d6d242b3797b6fdc4eaff",
+    "logs/mechanism_convergence_20260916/implementations/augmentation_proxy_seed7/params.h": "49b94e74d479df24f84afe4362300afa5fabec95d5255f854ed5d6a482244a38",
+    "logs/mechanism_convergence_20260916/implementations/augmentation_proxy_seed17/candidate.c": "de0447943e70a55054a5f9cc8b803cd70a89cf8b287d6d242b3797b6fdc4eaff",
+    "logs/mechanism_convergence_20260916/implementations/augmentation_proxy_seed17/params.h": "9920abde4fdfb7dc046b8f5904a33f3d967e6890a0a1ed3a0b33843f05895b4b",
+    "logs/mechanism_convergence_20260916/implementations/augmentation_proxy_seed37/candidate.c": "de0447943e70a55054a5f9cc8b803cd70a89cf8b287d6d242b3797b6fdc4eaff",
+    "logs/mechanism_convergence_20260916/implementations/augmentation_proxy_seed37/params.h": "c174aceb14a3a6f563595bf353c5e8a8c2caadd130f4c2e2a224fd5a3d153932",
+    "logs/mechanism_convergence_20260916/implementations/augmentation_mean_seed7/candidate.c": "a0577c3f937f00d305687dc1b86a3db672c020e221fc96ac082bf5fc6249b769",
+    "logs/mechanism_convergence_20260916/implementations/augmentation_mean_seed7/params.h": "94fbfd50c1cfff5755bc59d1bb9ea51d8f6ad3a427e5c2a1c7a4dbb16d44db08",
+    "logs/mechanism_convergence_20260916/implementations/augmentation_mean_seed17/candidate.c": "a0577c3f937f00d305687dc1b86a3db672c020e221fc96ac082bf5fc6249b769",
+    "logs/mechanism_convergence_20260916/implementations/augmentation_mean_seed17/params.h": "7a3cb254633bd0a6d0e3f69cceabab7244e447224b9d181ea331b693efe9a96f",
+    "logs/mechanism_convergence_20260916/implementations/augmentation_mean_seed37/candidate.c": "a0577c3f937f00d305687dc1b86a3db672c020e221fc96ac082bf5fc6249b769",
+    "logs/mechanism_convergence_20260916/implementations/augmentation_mean_seed37/params.h": "5ce70cc3a711a07fa1362e33a0dcec0e492fda44ffb003e56534211c7f9cc5f6",
+    "logs/mechanism_convergence_20260916/implementations/augmentation_moment_seed7/candidate.c": "c0e99ebdd0fcecb76ccb14b34031370ff6832fcdcec39e53ed2ba0a2bf630752",
+    "logs/mechanism_convergence_20260916/implementations/augmentation_moment_seed7/params.h": "64168b32385583e1e977f3b5197f06a794f8a56726ab84ea5ffa570f9d399a96",
+    "logs/mechanism_convergence_20260916/implementations/augmentation_moment_seed17/candidate.c": "c0e99ebdd0fcecb76ccb14b34031370ff6832fcdcec39e53ed2ba0a2bf630752",
+    "logs/mechanism_convergence_20260916/implementations/augmentation_moment_seed17/params.h": "0ce369c75e34abc41bc749e46ad6470fa1cb525992abbc853d3825126b4fecfa",
+    "logs/mechanism_convergence_20260916/implementations/augmentation_moment_seed37/candidate.c": "c0e99ebdd0fcecb76ccb14b34031370ff6832fcdcec39e53ed2ba0a2bf630752",
+    "logs/mechanism_convergence_20260916/implementations/augmentation_moment_seed37/params.h": "1a123be056839bbf9ff5a597b0a80c18637644a6c944cfc6c4c4b0a4333899ca"
+  },
+  "wall_seconds": 18.148308586969506,
+  "scope": "Single-pass host C candidate with fixed compile-time feature family and matching epoch60 weights; no RTL/bitstream installation"
+}

@@ -1,0 +1,47 @@
+{
+  "triggered": true,
+  "rows": [
+    {
+      "seed": 7,
+      "drops": {
+        "uniform_quarter_0": 0.021354980562399817,
+        "central_half": 0.027473442696376082
+      },
+      "trigger": true
+    },
+    {
+      "seed": 17,
+      "drops": {
+        "uniform_quarter_0": 0.025169505086243493,
+        "central_half": 0.02836788405854218
+      },
+      "trigger": true
+    },
+    {
+      "seed": 37,
+      "drops": {
+        "uniform_quarter_0": 0.025215939394428344,
+        "central_half": 0.02850448284505458
+      },
+      "trigger": true
+    },
+    {
+      "seed": 47,
+      "drops": {
+        "uniform_quarter_0": 0.02169784784299089,
+        "central_half": 0.02776071393041568
+      },
+      "trigger": true
+    },
+    {
+      "seed": 57,
+      "drops": {
+        "uniform_quarter_0": 0.03208168126458122,
+        "central_half": 0.030397958842050432
+      },
+      "trigger": true
+    }
+  ],
+  "rule": "After factorial evaluation, run if at least 4 of 5 proxy seeds lose >=1 F1 percentage point under uniform_quarter_0 or central_half versus clean",
+  "plan_sha256": "f02006540bd17ddec6c07e6b8a7cba5815df64cee694ba9b0d93facd1715e76e"
+}

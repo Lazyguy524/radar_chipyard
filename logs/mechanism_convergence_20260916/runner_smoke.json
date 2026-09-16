@@ -1,0 +1,8 @@
+{
+  "status": "PASS",
+  "rows": 4101,
+  "wrapper": "trace=True[-1]",
+  "source_sha256": {
+    "/home/soooarr/chipyard/docs/paper_new/mechanism_convergence_2026-09-16/train_fixed_v2.py": "70f6cfe6ee77c4dccfd7cdcceb4da01663d858070640c827ae8bf2b0771c0ca9"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "status": "FAILED",
+  "error": "RuntimeError('training failed; original log retained')",
+  "stages": [
+    {
+      "stage": "prepare",
+      "returncode": 0,
+      "seconds": 73.80284384801053
+    },
+    {
+      "stage": "training",
+      "returncode": 1,
+      "seconds": 1.5695905989850871
+    }
+  ],
+  "wait_seconds": 272.2909737760201
+}

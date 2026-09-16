@@ -1,0 +1,52 @@
+{
+  "status": "PASS",
+  "python_integer_cases": 576,
+  "prior_real_cluster_equivalence": 3448,
+  "samples": {
+    "train": 357780,
+    "val": 80450
+  },
+  "bounds": [
+    {
+      "reciprocal_fraction_bits": 8,
+      "max_sum_square_times_inverse": 2194661310975,
+      "max_centered_mean_square": 4380749464576,
+      "signed64_safe": true
+    },
+    {
+      "reciprocal_fraction_bits": 12,
+      "max_sum_square_times_inverse": 18592346018025,
+      "max_centered_mean_square": 1228122754849,
+      "signed64_safe": true
+    },
+    {
+      "reciprocal_fraction_bits": 16,
+      "max_sum_square_times_inverse": 282557275242750,
+      "max_centered_mean_square": 1108017285376,
+      "signed64_safe": true
+    },
+    {
+      "reciprocal_fraction_bits": 24,
+      "max_sum_square_times_inverse": 72056485919850750,
+      "max_centered_mean_square": 1099511627776,
+      "signed64_safe": true
+    }
+  ],
+  "plan_sha256": "f02006540bd17ddec6c07e6b8a7cba5815df64cee694ba9b0d93facd1715e76e",
+  "source_sha256": {
+    "docs/paper_new/mechanism_convergence_2026-09-16/plan.json": "f02006540bd17ddec6c07e6b8a7cba5815df64cee694ba9b0d93facd1715e76e",
+    "docs/paper_new/mechanism_convergence_2026-09-16/common.py": "1a28d76bfcb0d5025a2d13427420abb0bf0b9a31d935c127de38117896aa0ebc",
+    "docs/paper_new/mechanism_convergence_2026-09-16/mechanism.c": "fe09dca410557c220b626984eeae5bf65a7ccc2dc9c67f0e8638b773d44704e7",
+    "docs/paper_new/mechanism_convergence_2026-09-16/preflight_prepare.py": "92fe3ecfa7e3ebaa10a78cd4a8e896616adef1f832ac4965e4bbaa315c3c85a5",
+    "logs/conditional_statistics_20260916/native/kernel.c": "135051a82c63e950abff41d8cb90dcc0a7b5c9e8946bdd744b50c635b6b95d36",
+    "logs/conditional_statistics_20260916/data/output_scale_exponents.json": "142b9d1e72e9f98eeefb441341d5e673639a2c56cd33edd41da36443cac16cd4",
+    "logs/conditional_statistics_20260916/data/train/proxy_scaled.npy": "7ada058c9d26ef6a903bfee6658a939a39d21546d779e9c5a9cf8c377c3cac71",
+    "logs/conditional_statistics_20260916/data/train/moment24.npy": "2f16bb6b24d83e4fbcf5f6ea26d79900194f168e53227219061076d760b75c43",
+    "logs/conditional_statistics_20260916/data/train/labels.npy": "fa6ea251f797140175a8f5d33ea91357ee607a6c593d9cd727eb2d6eccef4272",
+    "logs/conditional_statistics_20260916/data/train/metadata.csv": "e304d6a60714afaa00ae3b3fc624eb7dae58aaa6bca4ceb633386b23cf6295b5",
+    "logs/conditional_statistics_20260916/data/val/proxy_scaled.npy": "ba6be1c48dbd72381e5db4d52576726a61b9bcaf7a3f93e7aa7d06a472a98db4",
+    "logs/conditional_statistics_20260916/data/val/moment24.npy": "1b7c854ca0369b97279d0e344f52577b4312a051001116d5e55851d535299a43",
+    "logs/conditional_statistics_20260916/data/val/labels.npy": "3ac1b4d33f41b71f5dd3f7c79f070781f519c9ba5bdccb4f64dd2095604b9302",
+    "logs/conditional_statistics_20260916/data/val/metadata.csv": "2536aad722f74ff1435ce69666c88ad778035eb8cde1e445f58b3bb9861843d4"
+  }
+}

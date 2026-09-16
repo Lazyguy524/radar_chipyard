@@ -1,0 +1,58 @@
+{
+  "scope": "Logical operations and proven widths, not measured FPGA LUT/DSP/cycles/power. C tables both uint32_t[512]; hardware width pruning unverified.",
+  "proxy_scaled": {
+    "point_passes": 1,
+    "first_moment_accumulators": 4,
+    "additional_spatial_product_accumulators": 0,
+    "additional_xy_products_per_point": 0,
+    "output_bits_per_feature": 8
+  },
+  "centered_moments": {
+    "point_passes": 1,
+    "first_moment_accumulators": 4,
+    "additional_spatial_product_accumulators": 3,
+    "additional_xy_products_per_point": 3,
+    "centering_subtractions_per_point": 4,
+    "input_bits": 16,
+    "centered_delta_signed_bits": 17,
+    "sum_delta_signed_bits": 26,
+    "sum_square_unsigned_bits": 41,
+    "sum_cross_signed_bits": 42,
+    "reciprocal_lookup_per_cluster": 1,
+    "shared_finalize_reciprocal_products": 7,
+    "shared_finalize_mean_products": 3,
+    "mean_extra_fraction_bits": 4,
+    "sqrt_eigensolver": false,
+    "output_bits_per_feature": 8,
+    "note": "Four first-moment sums shared by means and covariance; extrema/range/density shared, no repeated point scans. Hardware may serialize three products or parallelize them; resource and latency effects remain unmeasured."
+  },
+  "precision_bounds": [
+    {
+      "reciprocal_bits": 16,
+      "max_sum_square_times_reciprocal": 282557275242750,
+      "max_sum_times_reciprocal": 4311547650,
+      "max_mean_q12_square": 1108017285376,
+      "reciprocal_rom_bits": 8704,
+      "signed64_safe": true
+    },
+    {
+      "reciprocal_bits": 24,
+      "max_sum_square_times_reciprocal": 72056485919850750,
+      "max_sum_times_reciprocal": 1099511496450,
+      "max_mean_q12_square": 1099511627776,
+      "reciprocal_rom_bits": 12800,
+      "signed64_safe": true
+    }
+  ],
+  "classifier": {
+    "shape": [
+      21,
+      64,
+      32,
+      2
+    ],
+    "weight_count": 3456,
+    "bias_count": 98,
+    "changed_weights_and_requant_multipliers_require_new_physical_checks": true
+  }
+}

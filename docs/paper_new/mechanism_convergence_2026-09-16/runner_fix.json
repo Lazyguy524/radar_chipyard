@@ -1,0 +1,10 @@
+{
+  "status": "TECHNICAL_RUNNER_FIX_BEFORE_ANY_VALIDATION_RESULT",
+  "failed_attempt": "factorial/proxy_seed7 aborted at first epoch20 evaluation; no scores or checkpoint were produced",
+  "reason": "New wrapper passed unsupported integer_logits keyword; verified existing API returns integer logits through trace=True[-1]",
+  "action": "Preserve original source, failed output and log; use train_fixed_v2.py with exact wrapper and separate stage_v2 directories",
+  "experiment_change": "None: same data, model, seeds, epochs, losses, output scales and decision rules",
+  "attempt_accounting": "At most 29 completed planned trajectories plus this one aborted technical attempt, total stage wall budgets unchanged; aborted attempt is not a successful model trial",
+  "original_runner_sha256": "d12c618460a2c73a93d6c06e1d2cb2dd3bf418d2a84ce52e7525159e31960073",
+  "corrected_runner_sha256": "70f6cfe6ee77c4dccfd7cdcceb4da01663d858070640c827ae8bf2b0771c0ca9"
+}

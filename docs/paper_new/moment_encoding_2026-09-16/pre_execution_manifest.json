@@ -1,0 +1,16 @@
+{
+  "status": "FROZEN_BEFORE_ENCODING_PREPARATION_AND_TRAINING",
+  "pre_run_import_fix": "Reuse initialized mechanism common module, avoiding duplicate torch interop-thread initialization. No model/data run occurred before this fix.",
+  "sha256": {
+    "docs/paper_new/moment_encoding_2026-09-16/evaluate.py": "e88c04e7013dd1499a5db38982993646d6135dc2877292fac22778084af0538b",
+    "docs/paper_new/moment_encoding_2026-09-16/common_encoding.py": "c6ff1d5691efc18f0242e84ce404d9295887df5a9b78758f714ff7832bc9e4d4",
+    "docs/paper_new/moment_encoding_2026-09-16/encoding.c": "d8071ec026bf0cd8ec7cf97e8d35a8fa4f905fd32c0a75baf48fb3f9a571a845",
+    "docs/paper_new/moment_encoding_2026-09-16/prepare.py": "0b8da3d19c7f13c808032f8ba09d6a416a5d59186c79287e1d3218406941e34a",
+    "docs/paper_new/moment_encoding_2026-09-16/build_candidates.py": "74e6822e545c9cc2426e7d6cb0980316507642a706bd18d15948fca95ea29eca",
+    "docs/paper_new/moment_encoding_2026-09-16/train_encoding.py": "f341fc43570339a5f51856b92c30c18454c9fcd4d401894cd565e0d9c9e42a1f",
+    "docs/paper_new/moment_encoding_2026-09-16/run_after_mechanism.py": "d36d738548734b0c32c11a2b15fbdf0c50d255cc7c4f9f14d5f36330b7581f7e",
+    "docs/paper_new/moment_encoding_2026-09-16/plan.json": "c7be666ecafcf01d6d5192d975d296a363781d119f3835fee9d70b781937265b",
+    "docs/paper_new/moment_encoding_2026-09-16/00_\u8ba1\u5212\u5ba1\u67e5\u4e0e\u65b9\u6cd5\u8fb9\u754c.md": "15c66d1de9ea936fa245847fba528256b5082e8fbc84db3d092604bb7e6a401d",
+    "docs/paper_new/moment_encoding_2026-09-16/encoding_references.ris": "1cc1af749f43ed6196dae2dfd62de032befb4237543505e0cbb2522d454d42d5"
+  }
+}

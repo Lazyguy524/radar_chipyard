@@ -1,0 +1,10 @@
+{
+  "status": "RUNNING",
+  "stages": [
+    {
+      "stage": "prepare",
+      "returncode": 0,
+      "seconds": 73.80284384801053
+    }
+  ]
+}

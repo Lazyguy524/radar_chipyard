@@ -1,0 +1,49 @@
+{
+  "status": "PASS",
+  "augmentation_triggered": true,
+  "stages": [
+    {
+      "stage": "raw_validation",
+      "returncode": 0,
+      "seconds": 119.77436453005066,
+      "log": "logs/mechanism_convergence_20260916/execution/raw_validation.log"
+    },
+    {
+      "stage": "factorial_evaluation",
+      "returncode": 0,
+      "seconds": 204.74939641699893,
+      "log": "logs/mechanism_convergence_20260916/execution/factorial_evaluation.log"
+    },
+    {
+      "stage": "raw_train_augmentation",
+      "returncode": 0,
+      "seconds": 187.5519979079836,
+      "log": "logs/mechanism_convergence_20260916/execution/raw_train_augmentation.log"
+    },
+    {
+      "stage": "augmentation_training",
+      "returncode": 0,
+      "seconds": 627.1105505260057,
+      "log": "logs/mechanism_convergence_20260916/execution/augmentation_training.log"
+    },
+    {
+      "stage": "augmentation_evaluation",
+      "returncode": 0,
+      "seconds": 88.40789388603298,
+      "log": "logs/mechanism_convergence_20260916/execution/augmentation_evaluation.log"
+    },
+    {
+      "stage": "single_pass_implementations",
+      "returncode": 0,
+      "seconds": 19.43114834203152,
+      "log": "logs/mechanism_convergence_20260916/execution/single_pass_implementations.log"
+    },
+    {
+      "stage": "mechanism_attribution",
+      "returncode": 0,
+      "seconds": 5.381863780028652,
+      "log": "logs/mechanism_convergence_20260916/execution/mechanism_attribution.log"
+    }
+  ],
+  "wall_seconds": 1515.770518499019
+}

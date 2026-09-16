@@ -1,0 +1,40 @@
+{
+  "layers": [
+    {
+      "input_scale": 1.0,
+      "weight_scale": 0.0009364700194657448,
+      "output_scale": 0.05040081644763705,
+      "accumulator_abs_bound": 91172
+    },
+    {
+      "input_scale": 0.05040081644763705,
+      "weight_scale": 0.011788844123600036,
+      "output_scale": 0.06799572816852141,
+      "accumulator_abs_bound": 187357
+    },
+    {
+      "input_scale": 0.06799572816852141,
+      "weight_scale": 0.009141845027292808,
+      "output_scale": 0.000621606409434551,
+      "accumulator_abs_bound": 222164
+    }
+  ],
+  "multipliers": [
+    1218,
+    573
+  ],
+  "shift": 16,
+  "input": {
+    "representation": "mean",
+    "flags": 1,
+    "statistics_precision": [
+      24,
+      24
+    ],
+    "feature_slots": 21,
+    "scale_source": "logs/mechanism_convergence_20260916/data/scales.json",
+    "runtime_normalization": false
+  },
+  "arithmetic": "row-major INT8 weight, INT32 bias/accumulator; ties-to-even shift 16; ReLU clamp 0..127; INT32 logits",
+  "status": "ISOLATED_CANDIDATE_NOT_INSTALLED_IN_RTL_OR_BITSTREAM"
+}

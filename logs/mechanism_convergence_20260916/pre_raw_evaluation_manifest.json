@@ -1,0 +1,17 @@
+{
+  "status": "FROZEN_BEFORE_RAW_VIEW_PREPARATION_AND_PERTURBATION_RESULTS",
+  "sha256": {
+    "docs/paper_new/mechanism_convergence_2026-09-16/preflight_prepare.py": "92fe3ecfa7e3ebaa10a78cd4a8e896616adef1f832ac4965e4bbaa315c3c85a5",
+    "docs/paper_new/mechanism_convergence_2026-09-16/runner_fix.json": "7aa84e83de48b977bbf718003c330e79b06f47db39230e13f853ea0b1baf1b07",
+    "docs/paper_new/mechanism_convergence_2026-09-16/prepare_views.py": "7073efb6639def91438941f7d9d406c361a393f7370047085aeb7ba95b27d9f9",
+    "docs/paper_new/mechanism_convergence_2026-09-16/build_candidates.py": "2ef7589e83d9773b40540286a57f032ced0f71a348092d3504819f099b10968c",
+    "docs/paper_new/mechanism_convergence_2026-09-16/plan.json": "f02006540bd17ddec6c07e6b8a7cba5815df64cee694ba9b0d93facd1715e76e",
+    "docs/paper_new/mechanism_convergence_2026-09-16/train_fixed_v2.py": "70f6cfe6ee77c4dccfd7cdcceb4da01663d858070640c827ae8bf2b0771c0ca9",
+    "docs/paper_new/mechanism_convergence_2026-09-16/single_variant.c": "f542709ee0945c91ef2e796d8414103fa76cdd4e1a9b49e36545f9ab4674f6e0",
+    "docs/paper_new/mechanism_convergence_2026-09-16/explain_mechanisms.py": "ad796a75d93369a6a8aa5748bbc25de744f120ef3bbe0fa3611a16e5d4c833ce",
+    "docs/paper_new/mechanism_convergence_2026-09-16/evaluate_stage.py": "408a21cbad3be8371d196076da127cb54cd54e0f88138ee5ea52aaf9cb9412fc",
+    "docs/paper_new/mechanism_convergence_2026-09-16/mechanism.c": "fe09dca410557c220b626984eeae5bf65a7ccc2dc9c67f0e8638b773d44704e7",
+    "docs/paper_new/mechanism_convergence_2026-09-16/common.py": "1a28d76bfcb0d5025a2d13427420abb0bf0b9a31d935c127de38117896aa0ebc",
+    "docs/paper_new/mechanism_convergence_2026-09-16/train_fixed.py": "d12c618460a2c73a93d6c06e1d2cb2dd3bf418d2a84ce52e7525159e31960073"
+  }
+}

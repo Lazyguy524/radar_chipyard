@@ -1,0 +1,7 @@
+{
+  "status": "PASS",
+  "synthetic_equal_cells_zero_effects": 7,
+  "source_sha256": {
+    "/home/soooarr/chipyard/docs/paper_new/mechanism_convergence_2026-09-16/evaluate_stage.py": "408a21cbad3be8371d196076da127cb54cd54e0f88138ee5ea52aaf9cb9412fc"
+  }
+}

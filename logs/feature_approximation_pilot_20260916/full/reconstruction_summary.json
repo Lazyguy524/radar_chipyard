@@ -1,0 +1,161 @@
+{
+  "split": "val",
+  "samples": 80450,
+  "sequences": 27,
+  "limit_per_sequence": 0,
+  "checks": {
+    "feature_tolerance_mismatches": 0,
+    "label_mismatches": 0,
+    "count_mismatches": 0,
+    "python_native_feature_mismatches": 0
+  },
+  "max_absolute_reconstruction_difference": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    3.5762786865234375e-07,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "input_saturated_elements": 0,
+  "input_elements": 12224336,
+  "wall_seconds": 75.00368337600958,
+  "raw_hdf5_metadata": {
+    "sequence_107": {
+      "bytes": 172194044,
+      "mtime_ns": 1614533560000000000
+    },
+    "sequence_111": {
+      "bytes": 30936608,
+      "mtime_ns": 1614533672000000000
+    },
+    "sequence_122": {
+      "bytes": 9876608,
+      "mtime_ns": 1614533975000000000
+    },
+    "sequence_130": {
+      "bytes": 91245208,
+      "mtime_ns": 1614534169000000000
+    },
+    "sequence_135": {
+      "bytes": 94855704,
+      "mtime_ns": 1614534276000000000
+    },
+    "sequence_138": {
+      "bytes": 107991740,
+      "mtime_ns": 1614534331000000000
+    },
+    "sequence_14": {
+      "bytes": 47597992,
+      "mtime_ns": 1614532036000000000
+    },
+    "sequence_147": {
+      "bytes": 123765106,
+      "mtime_ns": 1614534546000000000
+    },
+    "sequence_148": {
+      "bytes": 88802712,
+      "mtime_ns": 1614534563000000000
+    },
+    "sequence_153": {
+      "bytes": 40598888,
+      "mtime_ns": 1614534641000000000
+    },
+    "sequence_155": {
+      "bytes": 61136005,
+      "mtime_ns": 1614534663000000000
+    },
+    "sequence_19": {
+      "bytes": 50716765,
+      "mtime_ns": 1614532067000000000
+    },
+    "sequence_24": {
+      "bytes": 60063640,
+      "mtime_ns": 1614532184000000000
+    },
+    "sequence_31": {
+      "bytes": 12132608,
+      "mtime_ns": 1614532305000000000
+    },
+    "sequence_42": {
+      "bytes": 90976936,
+      "mtime_ns": 1614532453000000000
+    },
+    "sequence_48": {
+      "bytes": 104683128,
+      "mtime_ns": 1614532561000000000
+    },
+    "sequence_5": {
+      "bytes": 40636110,
+      "mtime_ns": 1614531906000000000
+    },
+    "sequence_58": {
+      "bytes": 76147864,
+      "mtime_ns": 1614532647000000000
+    },
+    "sequence_6": {
+      "bytes": 37994728,
+      "mtime_ns": 1614531913000000000
+    },
+    "sequence_63": {
+      "bytes": 45257000,
+      "mtime_ns": 1614532755000000000
+    },
+    "sequence_68": {
+      "bytes": 83851928,
+      "mtime_ns": 1614532876000000000
+    },
+    "sequence_73": {
+      "bytes": 108609656,
+      "mtime_ns": 1614532991000000000
+    },
+    "sequence_79": {
+      "bytes": 65477992,
+      "mtime_ns": 1614533061000000000
+    },
+    "sequence_85": {
+      "bytes": 47640170,
+      "mtime_ns": 1614533118000000000
+    },
+    "sequence_89": {
+      "bytes": 71037864,
+      "mtime_ns": 1614533185000000000
+    },
+    "sequence_93": {
+      "bytes": 103107965,
+      "mtime_ns": 1614533237000000000
+    },
+    "sequence_99": {
+      "bytes": 174420656,
+      "mtime_ns": 1614533390000000000
+    }
+  },
+  "source_sha256": {
+    "logs/training_server_recovery_20260915/dataset_audit/split_manifest.csv.gz": "8077bd35cf6e4420c9d3bf44bdc9c3684e3975e4229faba111244f90d3f912d7",
+    "logs/training_server_recovery_20260915/recovered/logs/multiframe_k_sweep_rcsfix_2026-04-14/packed/k7_rcs21/val_feat.npy": "fc4f968b94c791b7fb32517c9f0eba606a001b8fc48451c02523d71835c0a15f",
+    "logs/training_server_recovery_20260915/recovered/logs/multiframe_k_sweep_rcsfix_2026-04-14/packed/k7_rcs21/val_label.npy": "3ac1b4d33f41b71f5dd3f7c79f070781f519c9ba5bdccb4f64dd2095604b9302",
+    "logs/training_server_recovery_20260915/recovered/src/radar_cluster_rocc/features.py": "b039788d60be7b64b1309ee0670c9156c60aec17d760056ca38376ea7bacf534",
+    "docs/paper_new/feature_approximation_pilot_2026-09-16/plan.json": "24b42182cafa7e87dd50ec6b8ce081d6f2f815fcb4f427c9b447e5164f9159b6",
+    "docs/paper_new/feature_approximation_pilot_2026-09-16/pilot_common.py": "ad6f3f212a54556e08b78f592cac13a900b654864c724465cb37007e3c6320b6"
+  },
+  "limitations": [
+    "K7 and old split are intentionally unchanged; no time-expiry or pose-alignment repair.",
+    "Exact slot interventions use rounded Q8.8 then the hardware output quantizer; not synthesized candidates.",
+    "Frozen-model diagnostics reflect feature/model mismatch as well as representation information."
+  ]
+}

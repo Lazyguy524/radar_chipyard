@@ -1,0 +1,257 @@
+{
+  "status": "TWO_SEED_TRAINING_COMPLETE",
+  "runs": [
+    {
+      "seed": 7,
+      "initialization_sha256": "dd8c7e7f284abb9a2d8be274467a06cefe3c7cfe205c0517ce41bd8adf17ab47",
+      "train_samples": 357780,
+      "validation_samples": 80450,
+      "fold_max_error": 1.2434497875801753e-14,
+      "warmup_validation": {
+        "samples": 80450,
+        "accuracy": 0.9760348042262275,
+        "macro_f1": 0.9746811387527424,
+        "per_class_f1": [
+          0.9688268011900142,
+          0.9805354763154707
+        ],
+        "recall": [
+          0.9807837103479884,
+          0.9731278680640443
+        ],
+        "confusion_matrix": [
+          [
+            29960,
+            587
+          ],
+          [
+            1341,
+            48562
+          ]
+        ]
+      },
+      "ptq_validation": {
+        "samples": 80450,
+        "accuracy": 0.9734742075823493,
+        "macro_f1": 0.9719402651653384,
+        "per_class_f1": [
+          0.9653796236210254,
+          0.9785009067096514
+        ],
+        "recall": [
+          0.9740072674894426,
+          0.9731479069394625
+        ],
+        "confusion_matrix": [
+          [
+            29753,
+            794
+          ],
+          [
+            1340,
+            48563
+          ]
+        ]
+      },
+      "qat_validation": {
+        "samples": 80450,
+        "accuracy": 0.976308266003729,
+        "macro_f1": 0.974956631565139,
+        "per_class_f1": [
+          0.9691386010362695,
+          0.9807746620940084
+        ],
+        "recall": [
+          0.9797034078632927,
+          0.9742300062120514
+        ],
+        "confusion_matrix": [
+          [
+            29927,
+            620
+          ],
+          [
+            1286,
+            48617
+          ]
+        ]
+      },
+      "qat_train": {
+        "samples": 357780,
+        "accuracy": 0.9815668846777349,
+        "macro_f1": 0.9797971193461001,
+        "per_class_f1": [
+          0.9738176245697475,
+          0.9857766141224527
+        ],
+        "recall": [
+          0.9855675736487681,
+          0.9794332684774876
+        ],
+        "confusion_matrix": [
+          [
+            122646,
+            1796
+          ],
+          [
+            4799,
+            228539
+          ]
+        ]
+      },
+      "qat_epochs": 28,
+      "train_loss_plateau": true,
+      "stop_reason": "TRAIN_LOSS_PLATEAU",
+      "last_five_validation_f1_span": 0.002416527661305623,
+      "validation_stable_within_0p003": true,
+      "frozen_buffers_sha256": "0dffd5757b443e10f0eeb129dfe15e5ec42942d7eaf0b68a43b54226835d642a",
+      "weight_clipped_fraction": [
+        0.000744047619047619,
+        0.0009765625,
+        0.015625
+      ],
+      "wall_seconds": 40.57646626699716,
+      "final_multipliers": [
+        16599,
+        599
+      ]
+    },
+    {
+      "seed": 17,
+      "initialization_sha256": "70c204e5999f5c8c1367203d222497e8d2b32e34f8b912e43480d8f83ed24dd8",
+      "train_samples": 357780,
+      "validation_samples": 80450,
+      "fold_max_error": 2.4868995751603507e-14,
+      "warmup_validation": {
+        "samples": 80450,
+        "accuracy": 0.9757116221255439,
+        "macro_f1": 0.9743297073985906,
+        "per_class_f1": [
+          0.968373688980966,
+          0.9802857258162153
+        ],
+        "recall": [
+          0.9793105705961306,
+          0.9735086066969921
+        ],
+        "confusion_matrix": [
+          [
+            29915,
+            632
+          ],
+          [
+            1322,
+            48581
+          ]
+        ]
+      },
+      "ptq_validation": {
+        "samples": 80450,
+        "accuracy": 0.9720696084524549,
+        "macro_f1": 0.9704687549588462,
+        "per_class_f1": [
+          0.9635930588635591,
+          0.9773444510541334
+        ],
+        "recall": [
+          0.9734507480276295,
+          0.9712241748993047
+        ],
+        "confusion_matrix": [
+          [
+            29736,
+            811
+          ],
+          [
+            1436,
+            48467
+          ]
+        ]
+      },
+      "qat_validation": {
+        "samples": 80450,
+        "accuracy": 0.9766687383467992,
+        "macro_f1": 0.9753641640778563,
+        "per_class_f1": [
+          0.9696950126741689,
+          0.9810333154815436
+        ],
+        "recall": [
+          0.9830752610731005,
+          0.9727471294310963
+        ],
+        "confusion_matrix": [
+          [
+            30030,
+            517
+          ],
+          [
+            1360,
+            48543
+          ]
+        ]
+      },
+      "qat_train": {
+        "samples": 357780,
+        "accuracy": 0.9835233942646319,
+        "macro_f1": 0.9819503647927483,
+        "per_class_f1": [
+          0.9766218933292089,
+          0.9872788362562878
+        ],
+        "recall": [
+          0.9894730075055046,
+          0.9803503929921401
+        ],
+        "confusion_matrix": [
+          [
+            123132,
+            1310
+          ],
+          [
+            4585,
+            228753
+          ]
+        ]
+      },
+      "qat_epochs": 39,
+      "train_loss_plateau": true,
+      "stop_reason": "TRAIN_LOSS_PLATEAU",
+      "last_five_validation_f1_span": 0.002009530312446328,
+      "validation_stable_within_0p003": true,
+      "frozen_buffers_sha256": "4e1971c9386dcdf6fad529caf3049b67e9ed8b971373b7a4f031d514dce9e31d",
+      "weight_clipped_fraction": [
+        0.000744047619047619,
+        0.0009765625,
+        0.0
+      ],
+      "wall_seconds": 49.092415088030975,
+      "final_multipliers": [
+        15853,
+        373
+      ]
+    }
+  ],
+  "wall_seconds": 89.85084495099727,
+  "train_rows": 357780,
+  "validation_rows": 80450,
+  "calibration_rows": 16384,
+  "environment": {
+    "torch": "2.4.1+cpu",
+    "numpy": "1.26.4",
+    "threads": 2,
+    "device": "cpu"
+  },
+  "source_sha256": {
+    "docs/paper_new/qmlp_int8_convergence_2026-09-16/plan.json": "d1293be9eef179396c78e24670dcde1b2b2b0e144071be0157f59dedd51e25f0",
+    "docs/paper_new/qmlp_int8_convergence_2026-09-16/common.py": "59613000cc60a2f4cacb90b3ab2e01f6b68a422dd5ba4f1c21f522c30d641e56",
+    "docs/paper_new/qmlp_int8_convergence_2026-09-16/train.py": "b046b18882edc75a0a3dddcbb65e718d10a9002e03e3981158cff6a515d907c5",
+    "logs/qmlp_int8_convergence_20260916/train/features.npy": "cce56f89ee4a6c7dd5437696df393c0a39e0501260e2f3ca4514f8c23d9d4158",
+    "logs/qmlp_int8_convergence_20260916/train/labels.npy": "fa6ea251f797140175a8f5d33ea91357ee607a6c593d9cd727eb2d6eccef4272",
+    "logs/qmlp_int8_convergence_20260916/train/metadata.csv.gz": "0497b2b58dc9bb3ff3aba55d435e6a358c775e0f53cc3c76696e14c879d8cd71",
+    "logs/feature_approximation_pilot_20260916/full/deployment.npy": "9ab3282b3b79955b00c2d749dbb7f25b699c0cd0e622c1ac4a542c853d5cad62",
+    "logs/feature_approximation_pilot_20260916/full/labels.npy": "3ac1b4d33f41b71f5dd3f7c79f070781f519c9ba5bdccb4f64dd2095604b9302",
+    "logs/feature_approximation_pilot_20260916/full/metadata.csv.gz": "4891ed45a808b6289c4cd3ec9296db25bdc53ee7c1c08f5482027cdc0600d5e8"
+  },
+  "scope": "Development validation; frozen integer-aware QAT, no new RTL or board measurements; no independent test claim"
+}

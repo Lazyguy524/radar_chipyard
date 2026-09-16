@@ -1,0 +1,484 @@
+{
+  "status": "PASS",
+  "samples": 357780,
+  "sequences": 113,
+  "checks": {
+    "software_features": 0,
+    "label": 0,
+    "count": 0,
+    "pilot_subset": 0
+  },
+  "pilot_subset_checked": 49255,
+  "input_saturated_elements": 0,
+  "train_validation_sequence_overlap": 0,
+  "wall_seconds": 239.55978196504293,
+  "raw_hdf5_metadata": {
+    "sequence_1": {
+      "bytes": 61471784,
+      "mtime_ns": 1614531842000000000
+    },
+    "sequence_101": {
+      "bytes": 137024888,
+      "mtime_ns": 1614533433000000000
+    },
+    "sequence_102": {
+      "bytes": 111558411,
+      "mtime_ns": 1614533454000000000
+    },
+    "sequence_103": {
+      "bytes": 17607672,
+      "mtime_ns": 1614533457000000000
+    },
+    "sequence_104": {
+      "bytes": 142576710,
+      "mtime_ns": 1614533483000000000
+    },
+    "sequence_105": {
+      "bytes": 118387858,
+      "mtime_ns": 1614533506000000000
+    },
+    "sequence_106": {
+      "bytes": 98052632,
+      "mtime_ns": 1614533525000000000
+    },
+    "sequence_108": {
+      "bytes": 162000466,
+      "mtime_ns": 1614533591000000000
+    },
+    "sequence_109": {
+      "bytes": 211507960,
+      "mtime_ns": 1614533633000000000
+    },
+    "sequence_11": {
+      "bytes": 35157120,
+      "mtime_ns": 1614532012000000000
+    },
+    "sequence_112": {
+      "bytes": 145506296,
+      "mtime_ns": 1614533734000000000
+    },
+    "sequence_113": {
+      "bytes": 204698268,
+      "mtime_ns": 1614533778000000000
+    },
+    "sequence_114": {
+      "bytes": 94249320,
+      "mtime_ns": 1614533794000000000
+    },
+    "sequence_115": {
+      "bytes": 123379459,
+      "mtime_ns": 1614533821000000000
+    },
+    "sequence_116": {
+      "bytes": 13666624,
+      "mtime_ns": 1614533823000000000
+    },
+    "sequence_117": {
+      "bytes": 206042968,
+      "mtime_ns": 1614533874000000000
+    },
+    "sequence_118": {
+      "bytes": 218554360,
+      "mtime_ns": 1614533934000000000
+    },
+    "sequence_119": {
+      "bytes": 148798212,
+      "mtime_ns": 1614533961000000000
+    },
+    "sequence_12": {
+      "bytes": 53978873,
+      "mtime_ns": 1614532020000000000
+    },
+    "sequence_121": {
+      "bytes": 21563296,
+      "mtime_ns": 1614533973000000000
+    },
+    "sequence_123": {
+      "bytes": 63646184,
+      "mtime_ns": 1614533985000000000
+    },
+    "sequence_124": {
+      "bytes": 100731128,
+      "mtime_ns": 1614534007000000000
+    },
+    "sequence_125": {
+      "bytes": 90871464,
+      "mtime_ns": 1614534044000000000
+    },
+    "sequence_126": {
+      "bytes": 131092661,
+      "mtime_ns": 1614534070000000000
+    },
+    "sequence_127": {
+      "bytes": 127084408,
+      "mtime_ns": 1614534094000000000
+    },
+    "sequence_128": {
+      "bytes": 165686520,
+      "mtime_ns": 1614534126000000000
+    },
+    "sequence_129": {
+      "bytes": 123453944,
+      "mtime_ns": 1614534149000000000
+    },
+    "sequence_13": {
+      "bytes": 52511503,
+      "mtime_ns": 1614532029000000000
+    },
+    "sequence_131": {
+      "bytes": 53335949,
+      "mtime_ns": 1614534196000000000
+    },
+    "sequence_132": {
+      "bytes": 113466681,
+      "mtime_ns": 1614534217000000000
+    },
+    "sequence_133": {
+      "bytes": 117876600,
+      "mtime_ns": 1614534241000000000
+    },
+    "sequence_134": {
+      "bytes": 95298200,
+      "mtime_ns": 1614534259000000000
+    },
+    "sequence_136": {
+      "bytes": 25289144,
+      "mtime_ns": 1614534281000000000
+    },
+    "sequence_137": {
+      "bytes": 134409230,
+      "mtime_ns": 1614534307000000000
+    },
+    "sequence_139": {
+      "bytes": 51728191,
+      "mtime_ns": 1614534341000000000
+    },
+    "sequence_141": {
+      "bytes": 71640812,
+      "mtime_ns": 1614534386000000000
+    },
+    "sequence_142": {
+      "bytes": 157130950,
+      "mtime_ns": 1614534421000000000
+    },
+    "sequence_143": {
+      "bytes": 51002835,
+      "mtime_ns": 1614534457000000000
+    },
+    "sequence_144": {
+      "bytes": 104199573,
+      "mtime_ns": 1614534480000000000
+    },
+    "sequence_145": {
+      "bytes": 73650712,
+      "mtime_ns": 1614534494000000000
+    },
+    "sequence_146": {
+      "bytes": 149679096,
+      "mtime_ns": 1614534524000000000
+    },
+    "sequence_149": {
+      "bytes": 158006880,
+      "mtime_ns": 1614534610000000000
+    },
+    "sequence_15": {
+      "bytes": 23582752,
+      "mtime_ns": 1614532047000000000
+    },
+    "sequence_151": {
+      "bytes": 38253338,
+      "mtime_ns": 1614534620000000000
+    },
+    "sequence_152": {
+      "bytes": 52595352,
+      "mtime_ns": 1614534635000000000
+    },
+    "sequence_154": {
+      "bytes": 57015192,
+      "mtime_ns": 1614534651000000000
+    },
+    "sequence_156": {
+      "bytes": 54684163,
+      "mtime_ns": 1614534672000000000
+    },
+    "sequence_157": {
+      "bytes": 63461656,
+      "mtime_ns": 1614534684000000000
+    },
+    "sequence_158": {
+      "bytes": 8293152,
+      "mtime_ns": 1614534685000000000
+    },
+    "sequence_16": {
+      "bytes": 22568992,
+      "mtime_ns": 1614532050000000000
+    },
+    "sequence_17": {
+      "bytes": 14383508,
+      "mtime_ns": 1614532053000000000
+    },
+    "sequence_18": {
+      "bytes": 23014624,
+      "mtime_ns": 1614532056000000000
+    },
+    "sequence_2": {
+      "bytes": 113827832,
+      "mtime_ns": 1614531890000000000
+    },
+    "sequence_21": {
+      "bytes": 59726616,
+      "mtime_ns": 1614532131000000000
+    },
+    "sequence_22": {
+      "bytes": 86919816,
+      "mtime_ns": 1614532153000000000
+    },
+    "sequence_23": {
+      "bytes": 73456170,
+      "mtime_ns": 1614532170000000000
+    },
+    "sequence_25": {
+      "bytes": 77050776,
+      "mtime_ns": 1614532203000000000
+    },
+    "sequence_26": {
+      "bytes": 66854296,
+      "mtime_ns": 1614532219000000000
+    },
+    "sequence_27": {
+      "bytes": 86473280,
+      "mtime_ns": 1614532241000000000
+    },
+    "sequence_28": {
+      "bytes": 118861110,
+      "mtime_ns": 1614532276000000000
+    },
+    "sequence_29": {
+      "bytes": 73539224,
+      "mtime_ns": 1614532293000000000
+    },
+    "sequence_3": {
+      "bytes": 27217920,
+      "mtime_ns": 1614531894000000000
+    },
+    "sequence_32": {
+      "bytes": 57785193,
+      "mtime_ns": 1614532319000000000
+    },
+    "sequence_33": {
+      "bytes": 64072344,
+      "mtime_ns": 1614532336000000000
+    },
+    "sequence_34": {
+      "bytes": 44326923,
+      "mtime_ns": 1614532346000000000
+    },
+    "sequence_35": {
+      "bytes": 11529492,
+      "mtime_ns": 1614532360000000000
+    },
+    "sequence_36": {
+      "bytes": 53553576,
+      "mtime_ns": 1614532368000000000
+    },
+    "sequence_37": {
+      "bytes": 89431064,
+      "mtime_ns": 1614532384000000000
+    },
+    "sequence_38": {
+      "bytes": 82570792,
+      "mtime_ns": 1614532397000000000
+    },
+    "sequence_39": {
+      "bytes": 74954728,
+      "mtime_ns": 1614532410000000000
+    },
+    "sequence_4": {
+      "bytes": 15497984,
+      "mtime_ns": 1614531897000000000
+    },
+    "sequence_41": {
+      "bytes": 119413526,
+      "mtime_ns": 1614532437000000000
+    },
+    "sequence_43": {
+      "bytes": 113798951,
+      "mtime_ns": 1614532474000000000
+    },
+    "sequence_44": {
+      "bytes": 77464616,
+      "mtime_ns": 1614532488000000000
+    },
+    "sequence_45": {
+      "bytes": 137464696,
+      "mtime_ns": 1614532513000000000
+    },
+    "sequence_46": {
+      "bytes": 52302489,
+      "mtime_ns": 1614532525000000000
+    },
+    "sequence_47": {
+      "bytes": 51241398,
+      "mtime_ns": 1614532535000000000
+    },
+    "sequence_49": {
+      "bytes": 16875209,
+      "mtime_ns": 1614532564000000000
+    },
+    "sequence_51": {
+      "bytes": 50290152,
+      "mtime_ns": 1614532573000000000
+    },
+    "sequence_52": {
+      "bytes": 43922623,
+      "mtime_ns": 1614532580000000000
+    },
+    "sequence_56": {
+      "bytes": 99941496,
+      "mtime_ns": 1614532611000000000
+    },
+    "sequence_57": {
+      "bytes": 95276696,
+      "mtime_ns": 1614532628000000000
+    },
+    "sequence_61": {
+      "bytes": 72407914,
+      "mtime_ns": 1614532728000000000
+    },
+    "sequence_62": {
+      "bytes": 73178008,
+      "mtime_ns": 1614532745000000000
+    },
+    "sequence_64": {
+      "bytes": 142184824,
+      "mtime_ns": 1614532780000000000
+    },
+    "sequence_65": {
+      "bytes": 105222392,
+      "mtime_ns": 1614532801000000000
+    },
+    "sequence_66": {
+      "bytes": 52426395,
+      "mtime_ns": 1614532813000000000
+    },
+    "sequence_67": {
+      "bytes": 149445752,
+      "mtime_ns": 1614532843000000000
+    },
+    "sequence_69": {
+      "bytes": 173547752,
+      "mtime_ns": 1614532911000000000
+    },
+    "sequence_7": {
+      "bytes": 100239352,
+      "mtime_ns": 1614531933000000000
+    },
+    "sequence_71": {
+      "bytes": 54177688,
+      "mtime_ns": 1614532945000000000
+    },
+    "sequence_72": {
+      "bytes": 127127449,
+      "mtime_ns": 1614532969000000000
+    },
+    "sequence_74": {
+      "bytes": 61965976,
+      "mtime_ns": 1614533005000000000
+    },
+    "sequence_75": {
+      "bytes": 90553468,
+      "mtime_ns": 1614533020000000000
+    },
+    "sequence_76": {
+      "bytes": 71271862,
+      "mtime_ns": 1614533032000000000
+    },
+    "sequence_77": {
+      "bytes": 79855054,
+      "mtime_ns": 1614533046000000000
+    },
+    "sequence_78": {
+      "bytes": 22472256,
+      "mtime_ns": 1614533050000000000
+    },
+    "sequence_8": {
+      "bytes": 42471611,
+      "mtime_ns": 1614531941000000000
+    },
+    "sequence_81": {
+      "bytes": 9530692,
+      "mtime_ns": 1614533087000000000
+    },
+    "sequence_82": {
+      "bytes": 35069240,
+      "mtime_ns": 1614533095000000000
+    },
+    "sequence_83": {
+      "bytes": 18596704,
+      "mtime_ns": 1614533098000000000
+    },
+    "sequence_84": {
+      "bytes": 67874536,
+      "mtime_ns": 1614533110000000000
+    },
+    "sequence_86": {
+      "bytes": 46173334,
+      "mtime_ns": 1614533128000000000
+    },
+    "sequence_87": {
+      "bytes": 103386104,
+      "mtime_ns": 1614533148000000000
+    },
+    "sequence_88": {
+      "bytes": 130245496,
+      "mtime_ns": 1614533172000000000
+    },
+    "sequence_9": {
+      "bytes": 76014360,
+      "mtime_ns": 1614531955000000000
+    },
+    "sequence_91": {
+      "bytes": 125703160,
+      "mtime_ns": 1614533211000000000
+    },
+    "sequence_92": {
+      "bytes": 40495848,
+      "mtime_ns": 1614533218000000000
+    },
+    "sequence_94": {
+      "bytes": 141765630,
+      "mtime_ns": 1614533267000000000
+    },
+    "sequence_95": {
+      "bytes": 101588700,
+      "mtime_ns": 1614533301000000000
+    },
+    "sequence_96": {
+      "bytes": 17691031,
+      "mtime_ns": 1614533304000000000
+    },
+    "sequence_97": {
+      "bytes": 152487876,
+      "mtime_ns": 1614533335000000000
+    },
+    "sequence_98": {
+      "bytes": 105598275,
+      "mtime_ns": 1614533355000000000
+    }
+  },
+  "source_sha256": {
+    "docs/paper_new/qmlp_int8_convergence_2026-09-16/plan.json": "d1293be9eef179396c78e24670dcde1b2b2b0e144071be0157f59dedd51e25f0",
+    "docs/paper_new/qmlp_int8_convergence_2026-09-16/prepare.py": "50f4bc49c3ff662cac8e1848218c00b5e82db3965222afb9dbd2550eec677c32",
+    "docs/paper_new/qmlp_int8_convergence_2026-09-16/common.py": "59613000cc60a2f4cacb90b3ab2e01f6b68a422dd5ba4f1c21f522c30d641e56",
+    "docs/paper_new/feature_approximation_pilot_2026-09-16/pilot_common.py": "ad6f3f212a54556e08b78f592cac13a900b654864c724465cb37007e3c6320b6",
+    "logs/training_server_recovery_20260915/dataset_audit/split_manifest.csv.gz": "8077bd35cf6e4420c9d3bf44bdc9c3684e3975e4229faba111244f90d3f912d7",
+    "logs/training_server_recovery_20260915/recovered/logs/multiframe_k_sweep_rcsfix_2026-04-14/packed/k7_rcs21/train_feat.npy": "5445126a29e0604e8a22ba717cc1fd8f183f68128662d386ef975a9898701e54",
+    "logs/training_server_recovery_20260915/recovered/logs/multiframe_k_sweep_rcsfix_2026-04-14/packed/k7_rcs21/train_label.npy": "fa6ea251f797140175a8f5d33ea91357ee607a6c593d9cd727eb2d6eccef4272",
+    "logs/training_server_recovery_20260915/recovered/src/radar_cluster_rocc/features.py": "b039788d60be7b64b1309ee0670c9156c60aec17d760056ca38376ea7bacf534",
+    "logs/feature_approximation_pilot_20260916/full/deployment.npy": "9ab3282b3b79955b00c2d749dbb7f25b699c0cd0e622c1ac4a542c853d5cad62",
+    "logs/feature_approximation_pilot_20260916/full/labels.npy": "3ac1b4d33f41b71f5dd3f7c79f070781f519c9ba5bdccb4f64dd2095604b9302",
+    "logs/feature_approximation_pilot_20260916/full/metadata.csv.gz": "4891ed45a808b6289c4cd3ec9296db25bdc53ee7c1c08f5482027cdc0600d5e8",
+    "tests/radar-feature21-qmlp-cpu-fullchain-profile.c": "c56cc771eded98bda18ae6cddf4eb8b8452ac6f093a68a1ed0bf0187d22898a7",
+    "docs/feature_preproc_compare_20260420/feature21/qmlp_params_21.h": "9709cca67c6bf7508e44a5cf438916b5374f472fbd699f64624fe4c7596d8273"
+  }
+}

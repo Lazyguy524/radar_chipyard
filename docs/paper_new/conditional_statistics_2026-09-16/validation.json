@@ -1,0 +1,78 @@
+{
+  "status": "PASS",
+  "source_hash_checks": 49,
+  "numeric_metrics_recomputed": 48,
+  "stopped_trajectories": [
+    {
+      "mode": "proxy_scaled",
+      "seed": 7,
+      "epochs": 55,
+      "plateau": true
+    },
+    {
+      "mode": "proxy_scaled",
+      "seed": 17,
+      "epochs": 21,
+      "plateau": true
+    },
+    {
+      "mode": "moment24",
+      "seed": 7,
+      "epochs": 53,
+      "plateau": true
+    },
+    {
+      "mode": "moment24",
+      "seed": 17,
+      "epochs": 36,
+      "plateau": true
+    },
+    {
+      "mode": "moment16",
+      "seed": 7,
+      "epochs": 60,
+      "plateau": false
+    },
+    {
+      "mode": "moment16",
+      "seed": 17,
+      "epochs": 60,
+      "plateau": false
+    }
+  ],
+  "precision_retraining_decision": "REJECTED_BOTH_SEEDS_AS_PLANNED",
+  "protected_artifacts": [
+    {
+      "manifest": "docs/paper_new/training_and_gemmini_retest_2026-09-15/protected_artifacts_before.json",
+      "unchanged": 201
+    },
+    {
+      "manifest": "docs/paper_new/gemmini_qmlp_comparison_2026-09-15/protected_artifacts_before.json",
+      "unchanged": 68
+    }
+  ],
+  "previous_research_packages": [
+    {
+      "manifest": "docs/paper_new/feature_approximation_pilot_2026-09-16/evidence_manifest.json",
+      "unchanged": 110
+    },
+    {
+      "manifest": "docs/paper_new/qmlp_int8_convergence_2026-09-16/evidence_manifest.json",
+      "unchanged": 81
+    }
+  ],
+  "local_markdown_links": 42,
+  "stages_seconds": {
+    "prepare": 321.3705140139791,
+    "training": 336.0644111810252,
+    "evaluation": 7.707558981026523,
+    "rf": 8.186218921036925
+  },
+  "output_bytes": 414340175,
+  "single_pass_frontend_cases": 51720,
+  "complete_c_inference_cases": 20688,
+  "new_rtl_jobs": 0,
+  "gpu_jobs": 0,
+  "new_board_runs": 0,
+  "scope": "PASS means reproducible bounded execution and artifact checks, not acceptance of every hypothesis or final hardware quality-cost advantage"
+}

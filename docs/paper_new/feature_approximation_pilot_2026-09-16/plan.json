@@ -1,0 +1,68 @@
+{
+  "status": "FROZEN_BEFORE_REAL_DATA_EVALUATION",
+  "date": "2026-09-16",
+  "objective": "Diagnose conditional classification damage from existing feature approximations, then run a small matched representation probe only if justified.",
+  "data": {
+    "diagnostic_split": "val",
+    "validation_rows_expected": 80450,
+    "validation_sequences_expected": 27,
+    "smoke_max_rows_per_sequence": 16,
+    "training_max_rows_per_sequence": 512,
+    "training_sequences_expected": 113,
+    "sampling_seed": 20260916,
+    "historical_test_use": "NONE: do not select or evaluate new candidates on historical test",
+    "fusion": "Historical K7 unchanged; no new time limit or pose alignment"
+  },
+  "resources": {
+    "location": "local CPU; server read-only health probe only",
+    "cpu_threads": 2,
+    "single_process": true,
+    "raw_sequences_resident": 1,
+    "diagnostic_timeout_seconds": 600,
+    "training_preparation_timeout_seconds": 600,
+    "training_timeout_seconds": 900,
+    "output_soft_limit_bytes": 1073741824,
+    "gpu_jobs": 0,
+    "rtl_synthesis_board_jobs": 0
+  },
+  "diagnostic_modes": [
+    "software_reference", "exact_quantized_input", "exact_stats_hardware_quantizer", "deployment",
+    "mean_corrected", "eigen_slots_exact", "std_slots_exact", "angle_slot_exact", "range_slots_exact", "mean_eigen_corrected"
+  ],
+  "interpretation": "Slot replacement is a diagnostic counterfactual, not a costed synthesizable hardware proposal. Prediction disagreement alone is not damage.",
+  "training_gate": {
+    "eligible_modes": ["mean_corrected", "eigen_slots_exact", "std_slots_exact", "angle_slot_exact", "range_slots_exact", "mean_eigen_corrected"],
+    "min_macro_f1_gain_over_deployment": 0.002,
+    "min_sequences_with_positive_accuracy_change_and_at_least_100_samples": 3,
+    "candidate_rule": "Among eligible modes meeting both exploratory gates, choose highest validation macro-F1; fixed listed order breaks exact ties.",
+    "gate_is_exploratory_not_significance_test": true,
+    "if_none_pass": "Stop at diagnosis and document negative result; no training sweep"
+  },
+  "training": {
+    "representations": ["software_reference", "deployment", "one_gate_selected_candidate"],
+    "seeds": [7, 17],
+    "max_runs": 6,
+    "architecture": [21, 64, 32, 2],
+    "epochs": 20,
+    "batch_size": 512,
+    "learning_rate": 0.001,
+    "weight_decay": 0.0001,
+    "loss": "class-weighted cross entropy; weights from selected train only",
+    "normalization": "per-feature train-only standardization of frozen int8 feature representations",
+    "checkpoint_selection": "fixed final epoch, no best-val checkpoint or hyperparameter sweep",
+    "precision_scope": "FP32 weights and activations with already-int8 input representations; NOT deployed QAT or bit-exact integer model",
+    "purpose": "Check whether a fixed-old-model benefit survives matched retraining. No deployment accuracy or hardware savings claim."
+  },
+  "groups": {
+    "point_count_upper_edges": [4, 8, 16, 32, 64, 128, 256, 511],
+    "boundary": "at power-of-two / just above power-of-two / other",
+    "shape_minor_major_ratio_edges": [0.1, 0.5],
+    "range_edges_metres": [20, 40, 80],
+    "window_span_edges_seconds": [0.3, 1.0],
+    "uncertainty": "paired whole-sequence bootstrap, 2000 replicates, fixed seed 20260916; correlated windows not treated as independent"
+  },
+  "review": {
+    "type": "single-executor pre-run audit, not independent review",
+    "checks": ["No historical-test selection", "All interventions explicit", "Simple baselines retained", "Train-only fitted transforms", "Paired seeds and equal budget", "No RTL/bitstream/parameter overwrites", "Hard process timeouts and phase gates"]
+  }
+}

@@ -1,0 +1,1885 @@
+{
+  "scope": "Isolated study files; upstream sources additionally hashed in stage records",
+  "files": {
+    "docs/paper_new/moment_encoding_2026-09-16/00_计划审查与方法边界.md": {
+      "sha256": "15c66d1de9ea936fa245847fba528256b5082e8fbc84db3d092604bb7e6a401d",
+      "bytes": 2642
+    },
+    "docs/paper_new/moment_encoding_2026-09-16/README.md": {
+      "sha256": "12cd179fd58e1d1d8220f6a83954172347373452a5b2558091e1ed6bef354a3d",
+      "bytes": 2426
+    },
+    "docs/paper_new/moment_encoding_2026-09-16/build_candidates.py": {
+      "sha256": "74e6822e545c9cc2426e7d6cb0980316507642a706bd18d15948fca95ea29eca",
+      "bytes": 3676
+    },
+    "docs/paper_new/moment_encoding_2026-09-16/candidate_c_bundle.zip": {
+      "sha256": "5010e18a80ea65f2bb3257f16e1b070dbe8c12e6b9ec0dfaa35f2932b211ca43",
+      "bytes": 87137
+    },
+    "docs/paper_new/moment_encoding_2026-09-16/common_encoding.py": {
+      "sha256": "c6ff1d5691efc18f0242e84ce404d9295887df5a9b78758f714ff7832bc9e4d4",
+      "bytes": 2938
+    },
+    "docs/paper_new/moment_encoding_2026-09-16/encoding.c": {
+      "sha256": "d8071ec026bf0cd8ec7cf97e8d35a8fa4f905fd32c0a75baf48fb3f9a571a845",
+      "bytes": 1204
+    },
+    "docs/paper_new/moment_encoding_2026-09-16/encoding_references.ris": {
+      "sha256": "1cc1af749f43ed6196dae2dfd62de032befb4237543505e0cbb2522d454d42d5",
+      "bytes": 820
+    },
+    "docs/paper_new/moment_encoding_2026-09-16/evaluate.py": {
+      "sha256": "e88c04e7013dd1499a5db38982993646d6135dc2877292fac22778084af0538b",
+      "bytes": 5518
+    },
+    "docs/paper_new/moment_encoding_2026-09-16/plan.json": {
+      "sha256": "c7be666ecafcf01d6d5192d975d296a363781d119f3835fee9d70b781937265b",
+      "bytes": 3650
+    },
+    "docs/paper_new/moment_encoding_2026-09-16/pre_execution_manifest.json": {
+      "sha256": "7ff389bd77680e91ff9e86b5d6ec22993319bb9f8d42d4d297386d275cd0591b",
+      "bytes": 1633
+    },
+    "docs/paper_new/moment_encoding_2026-09-16/prepare.py": {
+      "sha256": "0b8da3d19c7f13c808032f8ba09d6a416a5d59186c79287e1d3218406941e34a",
+      "bytes": 7894
+    },
+    "docs/paper_new/moment_encoding_2026-09-16/resume_after_runner_fix.py": {
+      "sha256": "57d89140b0013e1c61859be9bfc046dd6b179f2c8063ce30c45ccfc97f58d89e",
+      "bytes": 1695
+    },
+    "docs/paper_new/moment_encoding_2026-09-16/run_after_mechanism.py": {
+      "sha256": "d36d738548734b0c32c11a2b15fbdf0c50d255cc7c4f9f14d5f36330b7581f7e",
+      "bytes": 2343
+    },
+    "docs/paper_new/moment_encoding_2026-09-16/runner_fix.json": {
+      "sha256": "e33d85f0816657f4e634ea2de25f69c1a53a563881a44a64874afd4e25f979c6",
+      "bytes": 527
+    },
+    "docs/paper_new/moment_encoding_2026-09-16/train_encoding.py": {
+      "sha256": "f341fc43570339a5f51856b92c30c18454c9fcd4d401894cd565e0d9c9e42a1f",
+      "bytes": 8657
+    },
+    "docs/paper_new/moment_encoding_2026-09-16/train_encoding_v2.py": {
+      "sha256": "d5859ec5e7a04e7733a2368f9bf3314e120deba37b113b19034477a27e09f00e",
+      "bytes": 8651
+    },
+    "docs/paper_new/moment_encoding_2026-09-16/validation.json": {
+      "sha256": "93cff05ed0252bc941bb490bb750b01f8bfbf5bc08f00c376fe84f40da8268ab",
+      "bytes": 1757
+    },
+    "logs/moment_encoding_20260916/continuation_failed_pre_run.json": {
+      "sha256": "f0e18f4527cf6efb8a93826f131bd5830d585decfbd93c53911e6cbd38b24379",
+      "bytes": 345
+    },
+    "logs/moment_encoding_20260916/continuation_progress.json": {
+      "sha256": "4b77957ac24a58b663ca188506297e3caf676858c37aac69070371d554f3cb7f",
+      "bytes": 141
+    },
+    "logs/moment_encoding_20260916/continuation_progress_v2.json": {
+      "sha256": "4b253e71b4e1a21c77498cb8dcf1dcfff8cc7daec72437a2a6ba7e434e181e7d",
+      "bytes": 443
+    },
+    "logs/moment_encoding_20260916/continuation_summary.json": {
+      "sha256": "c3921b81ffbedcd57fd8bc80d3023d7c36d099ee7020f22846a364366b6c80e9",
+      "bytes": 428
+    },
+    "logs/moment_encoding_20260916/data/scales.json": {
+      "sha256": "bf264367d747cb189125a5f48a13dd81068078f5907f380e2f7025b9fb463099",
+      "bytes": 944
+    },
+    "logs/moment_encoding_20260916/data/train/labels.npy": {
+      "sha256": "fa6ea251f797140175a8f5d33ea91357ee607a6c593d9cd727eb2d6eccef4272",
+      "bytes": 2862368
+    },
+    "logs/moment_encoding_20260916/data/train/linear_fine.npy": {
+      "sha256": "f13872666a016215e89bf2aa93e866b6cf49533bddfd846e233f5d26d7936a2b",
+      "bytes": 7513508
+    },
+    "logs/moment_encoding_20260916/data/train/root.npy": {
+      "sha256": "4164f799ce30403581a22e8776e78d62e1c93376d148707625c2857e81d084d0",
+      "bytes": 7513508
+    },
+    "logs/moment_encoding_20260916/data/val/labels.npy": {
+      "sha256": "3ac1b4d33f41b71f5dd3f7c79f070781f519c9ba5bdccb4f64dd2095604b9302",
+      "bytes": 643728
+    },
+    "logs/moment_encoding_20260916/data/val/linear_fine.npy": {
+      "sha256": "07e56b87fe78b29d9fa370a1e4fbb801cac3ee8651729c735b380e7f468b3bc2",
+      "bytes": 1689578
+    },
+    "logs/moment_encoding_20260916/data/val/root.npy": {
+      "sha256": "ea2b87c6931f86a815ac444208a00963688d3b2c7ff44bb2f76bc227b34d0241",
+      "bytes": 1689578
+    },
+    "logs/moment_encoding_20260916/evaluation/groups.csv": {
+      "sha256": "b6f6d35cad3f3f024542da433a974a55f219f7bd034417dcba20151c19330ffd",
+      "bytes": 245089
+    },
+    "logs/moment_encoding_20260916/evaluation/linear_fine_seed17_central_half_prediction.npy": {
+      "sha256": "8ff74de2b541ab42922338bab01d88ab6fab3f97181e5d9ce9f4ecc70d06efd7",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/linear_fine_seed17_clean_prediction.npy": {
+      "sha256": "bd42359f93d608f236abb460872f3b9db84bf52a94b90987bf66930cf3839573",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/linear_fine_seed17_kept_single_prediction.npy": {
+      "sha256": "776c8a48755f53411d8df3f4900fbc3aa4a0fa98520161520a623c21772ce551",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/linear_fine_seed17_m12_v12_central_half_prediction.npy": {
+      "sha256": "ba6bebf9a55d43f8049ab2701f75425a5dcb5f5e92e132fc3f5be4caf03b51de",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/linear_fine_seed17_m12_v12_clean_prediction.npy": {
+      "sha256": "b4151204a34ef65b0ed0a09f4ccc2cd93e4846a42404dd505720fc47f3da0fb9",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/linear_fine_seed17_m12_v12_uniform_half_0_prediction.npy": {
+      "sha256": "f70a7b87d93152b907e258deb4880ec2b5984854a658c5045dbc41e5d94d1f3f",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/linear_fine_seed17_m12_v12_uniform_quarter_0_prediction.npy": {
+      "sha256": "136aac1cf56e73519ab072d0e5ad2cfebc12838218418d2d97fe1f74342effbd",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/linear_fine_seed17_m12_v24_central_half_prediction.npy": {
+      "sha256": "ac4b1e4973afa3a4513f4470300fb3b50137fde18e07ce33cd01ec0977f4a7d3",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/linear_fine_seed17_m12_v24_clean_prediction.npy": {
+      "sha256": "0d52f4e3565788d1ef724fe5aad53077dee433fc768944d4af55a9ce4097c947",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/linear_fine_seed17_m12_v24_uniform_half_0_prediction.npy": {
+      "sha256": "bae74e92f0c12d240ba68a9576ceafafefb42259e8e60b4a3475d4904042dda3",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/linear_fine_seed17_m12_v24_uniform_quarter_0_prediction.npy": {
+      "sha256": "1dc74411b54897fca6aa90db143180431bb96a225e68103cb4f2690c20e8fe9e",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/linear_fine_seed17_m16_v16_central_half_prediction.npy": {
+      "sha256": "c1c76bddcf99040a28acde7c1490fd73d19594524dad2468ef0e4fa679c1f773",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/linear_fine_seed17_m16_v16_clean_prediction.npy": {
+      "sha256": "04b286f60ea5272a9fea193f7fe83f9f148f2a1bcacdf6462323891379c169fd",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/linear_fine_seed17_m16_v16_uniform_half_0_prediction.npy": {
+      "sha256": "c79b8a588463bc4b1ed3c8ce199f9cb1fe7356bfaf17681524cc0c4bbb513670",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/linear_fine_seed17_m16_v16_uniform_quarter_0_prediction.npy": {
+      "sha256": "49ea67c09ff3dba58a823275186bf2e4119c84daf5adfa817846c7513f1d285b",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/linear_fine_seed17_m24_v12_central_half_prediction.npy": {
+      "sha256": "2c2ab33c32f4815c7d3020429820016fc014e370a1575c9acd8997ac92d6d184",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/linear_fine_seed17_m24_v12_clean_prediction.npy": {
+      "sha256": "89d1aad8523fee03781140dd23ba96701e0fb279cac61586240905c5b7941ac7",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/linear_fine_seed17_m24_v12_uniform_half_0_prediction.npy": {
+      "sha256": "4087b6b97bdcdefb881fa1f67be48e5e3633e3a8e20eeb7764d5cc3905e218a1",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/linear_fine_seed17_m24_v12_uniform_quarter_0_prediction.npy": {
+      "sha256": "c045a7c521c9819969f82db4b45574e9b6e45e6a65f28d5e97f3f0058fe57730",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/linear_fine_seed17_m8_v8_central_half_prediction.npy": {
+      "sha256": "60bcf1b38eaba4bf8cb15e7d1d5f8cb6ef015fc302a0a528ae1ea7739fc187ec",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/linear_fine_seed17_m8_v8_clean_prediction.npy": {
+      "sha256": "bc06c1789e1a251327621617b277f70e1bc45476f705ec192f5ebc4ac9eb5d96",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/linear_fine_seed17_m8_v8_uniform_half_0_prediction.npy": {
+      "sha256": "9c84ae84846fb84ba664a250392cec84612c4b9ef91f9c46daf7895010f3adf4",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/linear_fine_seed17_m8_v8_uniform_quarter_0_prediction.npy": {
+      "sha256": "5f6f8fd85b0e3c58c42d11a28b99100ca74c60947d5ce66c89975152476b80f4",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/linear_fine_seed17_sparse_context_prediction.npy": {
+      "sha256": "b871e36de31f06f31f3992b106fc06022fb6c9f8afae55e9f64ed4e935e26a19",
+      "bytes": 97862
+    },
+    "logs/moment_encoding_20260916/evaluation/linear_fine_seed17_sparse_single_prediction.npy": {
+      "sha256": "5ade8892cf19a706dd2bc7d549da188f93d70b40476bc0abe448f44e60390f2f",
+      "bytes": 97862
+    },
+    "logs/moment_encoding_20260916/evaluation/linear_fine_seed17_uniform_half_0_prediction.npy": {
+      "sha256": "c79b8a588463bc4b1ed3c8ce199f9cb1fe7356bfaf17681524cc0c4bbb513670",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/linear_fine_seed17_uniform_half_1_prediction.npy": {
+      "sha256": "97f572b3efad4168d5aef6d4556e6b7c945c49901c1d5a553988bde5f3b34170",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/linear_fine_seed17_uniform_half_2_prediction.npy": {
+      "sha256": "096e5c1eb7eb23840524904af2c8639fe466bc24db94e53be6c6b26ba73d0be3",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/linear_fine_seed17_uniform_quarter_0_prediction.npy": {
+      "sha256": "fbd44bd519efebc72294791a77a7ca34cb6c013064e678e61cbbef9d6070a4e4",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/linear_fine_seed17_uniform_quarter_1_prediction.npy": {
+      "sha256": "6f41d4b4ad2e34ab841512d818746fcdfbc37db98359cbf20de457f9346cbeb2",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/linear_fine_seed17_uniform_quarter_2_prediction.npy": {
+      "sha256": "de2192dabfb47befce31a4be1082b64ed80b5e23e02169060585af02dab3a140",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/linear_fine_seed17_xy_fraction4_prediction.npy": {
+      "sha256": "7132214be8046a4ce5dce3b849eac3dc7ff767e44c5c2da72b45af1995017558",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/linear_fine_seed17_xy_fraction6_prediction.npy": {
+      "sha256": "aa4d2486f357038879833f5823db990aa9bfe630bc4e9cb45cc8e9b4e18ca569",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/linear_fine_seed37_central_half_prediction.npy": {
+      "sha256": "8902a2acd54422d9572aec8f521f45b20a9b90ef9dddd0e4b340d89eb84a738b",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/linear_fine_seed37_clean_prediction.npy": {
+      "sha256": "e609cb9dc744ef2142ece8e3b34f4ad5baa156b59997e368aafdebdd77733557",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/linear_fine_seed37_kept_single_prediction.npy": {
+      "sha256": "b17e2c780bded4ffe4ec02186fabadfb168cfa5409e1b1143868e58e3cddc5ba",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/linear_fine_seed37_m12_v12_central_half_prediction.npy": {
+      "sha256": "672e48649b2538351bc7ef8eba3783b0efb5f79bb7488f45aef605424f14f17f",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/linear_fine_seed37_m12_v12_clean_prediction.npy": {
+      "sha256": "5421cc1fb4c43bdc2a1049a0aab168784044d3d7e54c61ae77c9433ff9e6aa4a",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/linear_fine_seed37_m12_v12_uniform_half_0_prediction.npy": {
+      "sha256": "47828f0de3e72d599e11473dc81ebc23fcd67d53cf5030f85408a2b4c4d85bd9",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/linear_fine_seed37_m12_v12_uniform_quarter_0_prediction.npy": {
+      "sha256": "8340c218c42f9e97fd512de3f16b2342b23c13bcf4260330b2595db0b4a992a7",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/linear_fine_seed37_m12_v24_central_half_prediction.npy": {
+      "sha256": "017f51b4158bf3aeca0952fd534d1cc6e955616b34441a971beb7f60f9432acf",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/linear_fine_seed37_m12_v24_clean_prediction.npy": {
+      "sha256": "23475b7a8cbd067a2e382217b50a6fb23a094e62e12bd2ab21edde35fbb8b1e2",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/linear_fine_seed37_m12_v24_uniform_half_0_prediction.npy": {
+      "sha256": "8f518672faca551bd6b94b160a3eed79241fec5d842b9ea4ed834c9e6f431a0e",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/linear_fine_seed37_m12_v24_uniform_quarter_0_prediction.npy": {
+      "sha256": "0fce830443446cf673e2aec2bc1b46c42d1613429cd7c7ec5831df1e3992f110",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/linear_fine_seed37_m16_v16_central_half_prediction.npy": {
+      "sha256": "543bdaa48bdf72b416818495da4bf4f4584ef9ebf108adb497d3edb314ec434e",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/linear_fine_seed37_m16_v16_clean_prediction.npy": {
+      "sha256": "51c11ce5801b98f4be915649085d8007a1f9f280499597cea60bb7693f4366e1",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/linear_fine_seed37_m16_v16_uniform_half_0_prediction.npy": {
+      "sha256": "f2f8f8d959a4359f11048639702b14ceec74e3f4eb0d858087045a6aa8d22be5",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/linear_fine_seed37_m16_v16_uniform_quarter_0_prediction.npy": {
+      "sha256": "cb4e05b66469b9ef9e8fac5bacfb759eea6909465e00c280852d76d219ff83fe",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/linear_fine_seed37_m24_v12_central_half_prediction.npy": {
+      "sha256": "bf1e417ad6f739b430f70f56e65640c2feeaa42fad8659deeaae117cee66c2fb",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/linear_fine_seed37_m24_v12_clean_prediction.npy": {
+      "sha256": "47932fc5b0e7bf025eb7e37e0978985e68f23dd6558ce76444e0e8e26a526f16",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/linear_fine_seed37_m24_v12_uniform_half_0_prediction.npy": {
+      "sha256": "f7c92352a74b30adbcdd16f560c1edc42a9837d335434a1843aac1132f7fa629",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/linear_fine_seed37_m24_v12_uniform_quarter_0_prediction.npy": {
+      "sha256": "3ae0069c80cd10e33698311b4a2339a4d5537ab1601f649acde3fb930f771ddb",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/linear_fine_seed37_m8_v8_central_half_prediction.npy": {
+      "sha256": "31e599444c4da3b8173012e7e529d5f4a95d0ed1502b61fa7deb053a62b541ba",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/linear_fine_seed37_m8_v8_clean_prediction.npy": {
+      "sha256": "de0ce1f7d1833c301ec9d54a09f02b8864d2fe999edc63ecbc6f0eac1285ee68",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/linear_fine_seed37_m8_v8_uniform_half_0_prediction.npy": {
+      "sha256": "82c8ff74c74b36c15a8586808833795bbdabd14d005060229d8d661aeb391bc8",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/linear_fine_seed37_m8_v8_uniform_quarter_0_prediction.npy": {
+      "sha256": "55e0e051d5a24a1cdc9eac47e610b4f42880d8134a9107b9f53e5138ba81f88d",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/linear_fine_seed37_sparse_context_prediction.npy": {
+      "sha256": "c7c6efbbb52efa73e3d07c7a9798730a47b8f152de427100f6ac37244037b3d4",
+      "bytes": 97862
+    },
+    "logs/moment_encoding_20260916/evaluation/linear_fine_seed37_sparse_single_prediction.npy": {
+      "sha256": "b9ae2c5f9b780d83c491d05db9a47833663b2aa129b366b53961c59bb7812b1d",
+      "bytes": 97862
+    },
+    "logs/moment_encoding_20260916/evaluation/linear_fine_seed37_uniform_half_0_prediction.npy": {
+      "sha256": "02f73aa6703c3f6fcb0ba347607cf78eb873094a44ceaecb59d111dfeede484c",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/linear_fine_seed37_uniform_half_1_prediction.npy": {
+      "sha256": "21e5ff11c1543ed7a8bac640f365c1bc107c94a410318744c36876af75c46579",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/linear_fine_seed37_uniform_half_2_prediction.npy": {
+      "sha256": "92ee570522643d18b3258f0adff9ac53a466c5ba6f5410c4012471d3b7ba406f",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/linear_fine_seed37_uniform_quarter_0_prediction.npy": {
+      "sha256": "6b61a4089a34410972dc88b6dbb498889df34eceaa1066d59bdb68fdcfd3647f",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/linear_fine_seed37_uniform_quarter_1_prediction.npy": {
+      "sha256": "6b10bb7dd0fb07926ff5cc89b28a5b23c3da453cdc196cd97854ed217488a4ae",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/linear_fine_seed37_uniform_quarter_2_prediction.npy": {
+      "sha256": "dff331e703bdb55d771b9b33b3fac26ee872fa8059af94a23477580fcdee046b",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/linear_fine_seed37_xy_fraction4_prediction.npy": {
+      "sha256": "d7b97be6ee1ad81cd1fa28e7c2988c084ccf5069c8a98464972648ca576fd833",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/linear_fine_seed37_xy_fraction6_prediction.npy": {
+      "sha256": "de1a78feb3db48a3298331c0f9e6a84622e78ae4cdede58ded8a9b15921e3e2d",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/linear_fine_seed7_central_half_prediction.npy": {
+      "sha256": "0ef08127039a13b6b7b486ed8372c3075139f77e5510a7421998c04555b4f571",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/linear_fine_seed7_clean_prediction.npy": {
+      "sha256": "8cc5a9b6cb420809c70ab05a3938a3bd82aff51e3ec258c97db2de3898803798",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/linear_fine_seed7_kept_single_prediction.npy": {
+      "sha256": "4d50ae6e4fea829e50495f7c1cb781bef92ecb790a49c9c27eb0af0c9ea9dce4",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/linear_fine_seed7_m12_v12_central_half_prediction.npy": {
+      "sha256": "329389f448acb6cf0b46e0d1b88bd8152330982f8f806a02641528d2ee729fef",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/linear_fine_seed7_m12_v12_clean_prediction.npy": {
+      "sha256": "2d0031d0dfa6e209a5e9ad7d2a8c0339701578198ac0a5cc0b6fad053a7ff89e",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/linear_fine_seed7_m12_v12_uniform_half_0_prediction.npy": {
+      "sha256": "4a86138ef2d4eebe56ca58aa3a220f2e6080eecc2a09248ccf0d9d7f3bffa069",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/linear_fine_seed7_m12_v12_uniform_quarter_0_prediction.npy": {
+      "sha256": "8d45cf21f27007c47a1ed6cda6fdee60a667133a2e7e5a1ed7b000b9569c5e2f",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/linear_fine_seed7_m12_v24_central_half_prediction.npy": {
+      "sha256": "d163331bf5be202912ce75a673c65f2a5fedae3d236bf5d6821a8799a68786b9",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/linear_fine_seed7_m12_v24_clean_prediction.npy": {
+      "sha256": "cfeab8d0166bed242ae10eab08b53b4a4b922027fbf2603add5d9d6aeb10a916",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/linear_fine_seed7_m12_v24_uniform_half_0_prediction.npy": {
+      "sha256": "dcbe6b6b4267126681d259e4871f2575c06b48b93fe06d03b2001d88235d1e7d",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/linear_fine_seed7_m12_v24_uniform_quarter_0_prediction.npy": {
+      "sha256": "92cebc48fb21062c0991da82dcda36f4d15a2a7f4a2c3c2bf4c0dd2af49b8e77",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/linear_fine_seed7_m16_v16_central_half_prediction.npy": {
+      "sha256": "07154403df5b871d0d3541d80a6d6c47d390ebbecd258b34cc8c08cc163e43c3",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/linear_fine_seed7_m16_v16_clean_prediction.npy": {
+      "sha256": "d289a22c083a25032b8ca9771aa90e9b24289c44613dfca078d259de8e4877ef",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/linear_fine_seed7_m16_v16_uniform_half_0_prediction.npy": {
+      "sha256": "3dcbf5f6ea76cd51f29992f9678ef9e517884b20aec6da9c9a0a73be2d3232c3",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/linear_fine_seed7_m16_v16_uniform_quarter_0_prediction.npy": {
+      "sha256": "3c3305738c30135335da2e315488707e8471bed0894fe2fb260a053451b41f0c",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/linear_fine_seed7_m24_v12_central_half_prediction.npy": {
+      "sha256": "5c84ebda989dac139a89f84bf3340337a0baebfd467ec4fb3208fa5a1aa0e0fe",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/linear_fine_seed7_m24_v12_clean_prediction.npy": {
+      "sha256": "415bff787ae4a4907279a64591333df01b9778d84c251812c4292e35788d5e29",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/linear_fine_seed7_m24_v12_uniform_half_0_prediction.npy": {
+      "sha256": "f1f6ad502cb748c8e17af857220baa5345bfe9b2035dcd8637a7e55649687e01",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/linear_fine_seed7_m24_v12_uniform_quarter_0_prediction.npy": {
+      "sha256": "b76f64ad33eb202c4a6a187bad48911ab3f045cd5a973372963d273b0e3f6716",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/linear_fine_seed7_m8_v8_central_half_prediction.npy": {
+      "sha256": "f5552c79030797de6b02c52e62afb1d3b9f0abcaeb99c82180f9df68cd6fc30d",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/linear_fine_seed7_m8_v8_clean_prediction.npy": {
+      "sha256": "08362fba3a6af932391f32527c5521649cc6cf75fbfe85458591e11485f94552",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/linear_fine_seed7_m8_v8_uniform_half_0_prediction.npy": {
+      "sha256": "0b795a77aaebe3b3cc8c8560e1c3c041b3a8586cbcbdf7af860c004f817762aa",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/linear_fine_seed7_m8_v8_uniform_quarter_0_prediction.npy": {
+      "sha256": "ea9f62d718585d25f6fd5dac7f58b0d05a04bb03eca5ebe72a4f08cd7bad97d2",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/linear_fine_seed7_sparse_context_prediction.npy": {
+      "sha256": "38c12fe9c5cef12556835bf13f26838450314abdf77e230e6408cae19256bf2c",
+      "bytes": 97862
+    },
+    "logs/moment_encoding_20260916/evaluation/linear_fine_seed7_sparse_single_prediction.npy": {
+      "sha256": "bdc89080771c06ea8dd46735a70e124ec78053903d711a51006387d182b74e9e",
+      "bytes": 97862
+    },
+    "logs/moment_encoding_20260916/evaluation/linear_fine_seed7_uniform_half_0_prediction.npy": {
+      "sha256": "270dff8836627a3dbae3d0e41b8c35b83dab770f8e985d43704c1f6e9ef40443",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/linear_fine_seed7_uniform_half_1_prediction.npy": {
+      "sha256": "be629f619e88722e9945e45824a6058eed58d64ef8cc55c5dd801fbed6d28f7f",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/linear_fine_seed7_uniform_half_2_prediction.npy": {
+      "sha256": "2ba544cf56226ae3a42e9b5000ed7f3d290071a8d2f04223bbee4f23eca0c5d1",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/linear_fine_seed7_uniform_quarter_0_prediction.npy": {
+      "sha256": "50c49d1997a69e1eb1d6cf6254f79ebef62bcc1dde636ccde272df1f8e80ae95",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/linear_fine_seed7_uniform_quarter_1_prediction.npy": {
+      "sha256": "dc1d89ddb7570fa8af9365d95bf30e86a041cc7dcda71ef7229fac83da3e9e12",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/linear_fine_seed7_uniform_quarter_2_prediction.npy": {
+      "sha256": "944247d706877801232e030c2087081ace7d896c02c330040558cc52bddcd61a",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/linear_fine_seed7_xy_fraction4_prediction.npy": {
+      "sha256": "e1c46db1d18d1f377a66f6aad0e1794ffc0dbbb750ce5dcb9c0173ae078cb248",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/linear_fine_seed7_xy_fraction6_prediction.npy": {
+      "sha256": "e0c5fc16aa52ad2c5f553e3afd3c7433183ca1cca7d51e6caab813796070a6fe",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/root_seed17_central_half_prediction.npy": {
+      "sha256": "fa27512b9f30a1c6a296f632e01f0e13a51688410583f91023457dccb3800146",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/root_seed17_clean_prediction.npy": {
+      "sha256": "9654d402f4977f0b327c1ef46c53e92b259eb74587780fc2ef95cd59965676eb",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/root_seed17_kept_single_prediction.npy": {
+      "sha256": "d9dd375f7b982b071e13dda89bbf0bab60c31e811cc2b54a74b7e741f9ecba08",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/root_seed17_m12_v12_central_half_prediction.npy": {
+      "sha256": "11fbb5670a52bf5234edfb688fb87278922ab945aa750bdf71a7fe8ea3debd25",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/root_seed17_m12_v12_clean_prediction.npy": {
+      "sha256": "e1ad5111521910c53f46df7112e82f8546738ab5828752f1ba8104c6625a8cd8",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/root_seed17_m12_v12_uniform_half_0_prediction.npy": {
+      "sha256": "2ac44846a5af917cd8b8d7246d6f5063914865230ca89fdc095aa7edd92deff9",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/root_seed17_m12_v12_uniform_quarter_0_prediction.npy": {
+      "sha256": "31f02cec36bb8467a0c38a84945d93189786accf4424fbccf945fa802b456013",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/root_seed17_m12_v24_central_half_prediction.npy": {
+      "sha256": "eebe9cb78abaa510728807619d6de55205272c2b6e1f80deb40507a9b42e86ff",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/root_seed17_m12_v24_clean_prediction.npy": {
+      "sha256": "2848180f16329247569d19e45ae765c3eb6da144b6bf2204ee53e3132b3bb560",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/root_seed17_m12_v24_uniform_half_0_prediction.npy": {
+      "sha256": "9b2b5e60502bb578dd66979d429fe29dce238cffea4d94ece8a7e8e8bf773373",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/root_seed17_m12_v24_uniform_quarter_0_prediction.npy": {
+      "sha256": "d0383539b2131200eed9976c545a5e055c26bffbdf37055e6ef37980bd17d9f8",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/root_seed17_m16_v16_central_half_prediction.npy": {
+      "sha256": "fa27512b9f30a1c6a296f632e01f0e13a51688410583f91023457dccb3800146",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/root_seed17_m16_v16_clean_prediction.npy": {
+      "sha256": "9654d402f4977f0b327c1ef46c53e92b259eb74587780fc2ef95cd59965676eb",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/root_seed17_m16_v16_uniform_half_0_prediction.npy": {
+      "sha256": "dd673786eda193291537b5eef1064165ad2cdf367d1fa2ce759d08c2f102eb03",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/root_seed17_m16_v16_uniform_quarter_0_prediction.npy": {
+      "sha256": "f46ad59d510a1e5eeedc2f0cfa0c4aa350d0fdb48779abc613bc4974a719569c",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/root_seed17_m24_v12_central_half_prediction.npy": {
+      "sha256": "e08c0b703f3145adbd5d762ac8cc9a61b6fb46bbe65648c22494eaf5ef12399b",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/root_seed17_m24_v12_clean_prediction.npy": {
+      "sha256": "fa0b47cb8f4bfe87745f417548f7cb049ef1ff1d232220afbde394cdb1c4ec60",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/root_seed17_m24_v12_uniform_half_0_prediction.npy": {
+      "sha256": "796a976481fced761d92dd53613c1dc62dd2198bd8913d355224e3beea16fea9",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/root_seed17_m24_v12_uniform_quarter_0_prediction.npy": {
+      "sha256": "39975c2569dfd0502c05dace1fabdf54337a145b623c49a1a3806446e4ef984f",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/root_seed17_m8_v8_central_half_prediction.npy": {
+      "sha256": "c0479dbc78e756f6160f21aa5e37d8d0a6d0212812925a8faf67190a49ecd123",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/root_seed17_m8_v8_clean_prediction.npy": {
+      "sha256": "c1ddb58d1b1a1a63a225cceea2599f9e8a916e1e9f41173ac48672e242f5733c",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/root_seed17_m8_v8_uniform_half_0_prediction.npy": {
+      "sha256": "d3255c2087afa69ffd9b6ad3f59623c51db0ceb1da02956fc929a4085dbb680b",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/root_seed17_m8_v8_uniform_quarter_0_prediction.npy": {
+      "sha256": "abadefcc88b26e8d03e9e3e899f8ac40a4e47990cc1a0d196da614eb99940387",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/root_seed17_sparse_context_prediction.npy": {
+      "sha256": "25e24c4fe86159175e89ec0342360eea293ca505db0ec74471f3ed25f8212e5d",
+      "bytes": 97862
+    },
+    "logs/moment_encoding_20260916/evaluation/root_seed17_sparse_single_prediction.npy": {
+      "sha256": "b621726c5ef459a13d60bc35f76917d00082638464a79d338fbd597116a2fb7e",
+      "bytes": 97862
+    },
+    "logs/moment_encoding_20260916/evaluation/root_seed17_uniform_half_0_prediction.npy": {
+      "sha256": "30ffc543dbfec87c73994caead65f58f95f448659e2907894f3aa172c6813106",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/root_seed17_uniform_half_1_prediction.npy": {
+      "sha256": "7ae8a87af54c4fe552c10dfcee516c5f6448d594c6d27ff4beeba46c93bb9f06",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/root_seed17_uniform_half_2_prediction.npy": {
+      "sha256": "28be14f490b55e2933a5201e82e9dcc4a5635b164b7b0f879f8615dfaefc8bdd",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/root_seed17_uniform_quarter_0_prediction.npy": {
+      "sha256": "b9c9f5b27a6cefe16ca50a58896fad8d44b7b943f33b69f459e83a3962fd48c8",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/root_seed17_uniform_quarter_1_prediction.npy": {
+      "sha256": "14e70d8276cb7fc1981b60c42a69648ae533a8b0246b2125720f1335c2df7da2",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/root_seed17_uniform_quarter_2_prediction.npy": {
+      "sha256": "0b859545bae3f5b72a65f371949f5ee3949b0dd79c8c0957b86a42d604b76ef8",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/root_seed17_xy_fraction4_prediction.npy": {
+      "sha256": "fb1f959b013b337c4d98c980eac7b27b79b21ec3dfeab4a87c326b30f0d458b7",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/root_seed17_xy_fraction6_prediction.npy": {
+      "sha256": "8c69cce578033ceb26b02a3ba92da799c58562ff63fed12610747c8be1e49bf9",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/root_seed37_central_half_prediction.npy": {
+      "sha256": "75544b8e11b0e79a2b42397e707694ce857734deb65d11364854e0b8956c7519",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/root_seed37_clean_prediction.npy": {
+      "sha256": "18b9334e8d0da5c46c5668b9c087e7b8e7a9482328a088ba6b2f22cfbdedb999",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/root_seed37_kept_single_prediction.npy": {
+      "sha256": "630d476a451642fbf026e785d76406a7515bcb057b935f5bb44d9ef9519f80aa",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/root_seed37_m12_v12_central_half_prediction.npy": {
+      "sha256": "79d0e81ee3ec124fece4f9ea573484fbc1b9c3003cf3b8c9021facee19460df8",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/root_seed37_m12_v12_clean_prediction.npy": {
+      "sha256": "fcdf0253e7da096186acd44cd927122826924db1087d7d6ed7a69c00aa4a8e9e",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/root_seed37_m12_v12_uniform_half_0_prediction.npy": {
+      "sha256": "cc24f85ad75e023e8b1fd09d5edc7a2f9cfe2ac1cba62897a11d103c6b4ce090",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/root_seed37_m12_v12_uniform_quarter_0_prediction.npy": {
+      "sha256": "fd556476f55177fbeb7adbfe060d7297f3f52a536ac8f42c52078107cf781f21",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/root_seed37_m12_v24_central_half_prediction.npy": {
+      "sha256": "fd8875030102c22445843144beef5439fad8b5c4179c442beb52803be29d217d",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/root_seed37_m12_v24_clean_prediction.npy": {
+      "sha256": "af30972203ad9cb0cb3a8d52414346b1a54f1cb7817f8a0c198c9b2f99c6c72c",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/root_seed37_m12_v24_uniform_half_0_prediction.npy": {
+      "sha256": "6729e8ed4eedfd450bbbc5e534ed5aea4da7f37aa086062f89e2cdefd7c15abe",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/root_seed37_m12_v24_uniform_quarter_0_prediction.npy": {
+      "sha256": "2d420fde1c877ad2b3c129822c64521cb1dd589ffc398e5641f233dec0ab2eb6",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/root_seed37_m16_v16_central_half_prediction.npy": {
+      "sha256": "7d3f402a3d877e03436eee2459a0893a70893b4fc70a0e2627c3e05158e7ed0d",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/root_seed37_m16_v16_clean_prediction.npy": {
+      "sha256": "30b0663934d729832b5409b8e1d82deafc8a239b6c68b6b9e3e8931c7d19256e",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/root_seed37_m16_v16_uniform_half_0_prediction.npy": {
+      "sha256": "2d71803f75b7e7bc9dc3914fa10d413d74d31978573ec7725733d74b111b1143",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/root_seed37_m16_v16_uniform_quarter_0_prediction.npy": {
+      "sha256": "09565384f5b330bacadeb6bd664e304081ce0cafef4ecc4aa768b53cde7e4bf7",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/root_seed37_m24_v12_central_half_prediction.npy": {
+      "sha256": "1977b0b1839f91accb3e412fe9e22a71bbe57f9605fb4befbf5b298c9b63a57f",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/root_seed37_m24_v12_clean_prediction.npy": {
+      "sha256": "f29dd12d765f33f2d556a17ccad8b23ea66c64e38aab62afa5299266a0dc2b9d",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/root_seed37_m24_v12_uniform_half_0_prediction.npy": {
+      "sha256": "7bc6cb450fb28d9cbc05e1bfcc5a62a3ff451e82364376fd2410088546930a55",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/root_seed37_m24_v12_uniform_quarter_0_prediction.npy": {
+      "sha256": "fd0a6b53b437a8f5a05709383ba1778aaee8af8b9eb98dc4213219a76e333def",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/root_seed37_m8_v8_central_half_prediction.npy": {
+      "sha256": "a692fbc73537761261bb779e27299be3417bf738771bf86d963d4693f5eecf49",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/root_seed37_m8_v8_clean_prediction.npy": {
+      "sha256": "d6052a0732c77809d9399cab04877d71eb8500b6c511fe1f82232ae38402741c",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/root_seed37_m8_v8_uniform_half_0_prediction.npy": {
+      "sha256": "2f7892e85e58482a3ae2fb5d26012d14f9229caf472bb0db8ae90d7a1a78f230",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/root_seed37_m8_v8_uniform_quarter_0_prediction.npy": {
+      "sha256": "ee81cfd4f4dc52da0be99b7a8803376ec1bcb7971f747328f248dc5e21b1a690",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/root_seed37_sparse_context_prediction.npy": {
+      "sha256": "11f2200446e765cdde5829a0a54388cf6c8ae4c5d900c10696ce6cb565561d2d",
+      "bytes": 97862
+    },
+    "logs/moment_encoding_20260916/evaluation/root_seed37_sparse_single_prediction.npy": {
+      "sha256": "6be47e32aab872c48da5d52c2361f2981e48c44d9c0c262f923cf4f3a62da032",
+      "bytes": 97862
+    },
+    "logs/moment_encoding_20260916/evaluation/root_seed37_uniform_half_0_prediction.npy": {
+      "sha256": "1c2e5894248c670a9705c1546981388491bf6b421d23496ada0c30b6d43efcba",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/root_seed37_uniform_half_1_prediction.npy": {
+      "sha256": "95e454c65cac870c9365b87a6d894520146aa020a90d778fc8ca3123544e1f20",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/root_seed37_uniform_half_2_prediction.npy": {
+      "sha256": "3dcadc99ac2b6c45149f97eda313040187915044bd6c65dab8ebe38e478848bb",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/root_seed37_uniform_quarter_0_prediction.npy": {
+      "sha256": "09565384f5b330bacadeb6bd664e304081ce0cafef4ecc4aa768b53cde7e4bf7",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/root_seed37_uniform_quarter_1_prediction.npy": {
+      "sha256": "68e49543ef902c49a88604abac222f0a1b8f979ebcead17250e0d8d7c1eb1a3e",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/root_seed37_uniform_quarter_2_prediction.npy": {
+      "sha256": "031c7d299daa5b1beeb73ee490bff971c2773bbfa6f50b8c003728cd0b1cf056",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/root_seed37_xy_fraction4_prediction.npy": {
+      "sha256": "cbd28f00e0748748a766d256584eb6b75c1a2a2ff1d0f4f2deb4f495ed48e293",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/root_seed37_xy_fraction6_prediction.npy": {
+      "sha256": "3bf6cddd18d3bb042542b7cae0b2ba3ddc7271660fa3176c85cb5d54dca4b711",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/root_seed7_central_half_prediction.npy": {
+      "sha256": "09db07b8a574f3cf96a9bb738604dd8af2238e74a52e51ce70a7ef1fea52984d",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/root_seed7_clean_prediction.npy": {
+      "sha256": "fa5b607929973aff67007219f1a598cca8ce4fa9392de8c56b9ec6b650034946",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/root_seed7_kept_single_prediction.npy": {
+      "sha256": "ca38d0a8a5586b29bc3cf4085a8345a187b21282638dcb29a96ef93141e00eb8",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/root_seed7_m12_v12_central_half_prediction.npy": {
+      "sha256": "2147f8a94ac9eb730629e1fb470d6b5cfd955cd428c4270c15a571bf8c32ebc5",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/root_seed7_m12_v12_clean_prediction.npy": {
+      "sha256": "430cd6796ccce64888eb2915ebdc78f4444f37307f1b542c3e0b462858f1a766",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/root_seed7_m12_v12_uniform_half_0_prediction.npy": {
+      "sha256": "303acfd42f05528d013dfb2060a48352b816a12a07044f43064458be33bd24a8",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/root_seed7_m12_v12_uniform_quarter_0_prediction.npy": {
+      "sha256": "de72bb26397464740f9b189b919132ffc2a434b719f0621b62257419f8372c58",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/root_seed7_m12_v24_central_half_prediction.npy": {
+      "sha256": "1707a7f935f51bb74c4f429f95c00e2c17629fe40fe544956ad8a0e45d84b651",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/root_seed7_m12_v24_clean_prediction.npy": {
+      "sha256": "267b76b72da08622017e38535317d2d76fa00604d4897fca567ca509e982f1b1",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/root_seed7_m12_v24_uniform_half_0_prediction.npy": {
+      "sha256": "77fb4d45ce8dfd2b8bb4e562e802a5b996a88538f94ae16329fbc231d6f5b88c",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/root_seed7_m12_v24_uniform_quarter_0_prediction.npy": {
+      "sha256": "9f5a9877e66cbcb1f10b84aa344adf0cb57e9b4b893c16f3c17a72b56e3841c4",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/root_seed7_m16_v16_central_half_prediction.npy": {
+      "sha256": "f9a3058a96a40405357526f5d123b901e4c3c609b4e7d20c851517c30cae88f0",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/root_seed7_m16_v16_clean_prediction.npy": {
+      "sha256": "667c14e8ac67ad7a35db6c4fa7ef023bcc68604babfb9ca2f4baf4c931f4ec9c",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/root_seed7_m16_v16_uniform_half_0_prediction.npy": {
+      "sha256": "d9d6844b453f21da71e65754aa099202728a6e23ce3ac7cc82772bb0a1685c35",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/root_seed7_m16_v16_uniform_quarter_0_prediction.npy": {
+      "sha256": "f4835f072d5404aef7376d284ad46d1cb95ac8278f26e9a35423ae845e8bb5aa",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/root_seed7_m24_v12_central_half_prediction.npy": {
+      "sha256": "247885e30a5fde47ed6d5cc6dbf442806ba3050be7ac0a730fc1cf872ac2e153",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/root_seed7_m24_v12_clean_prediction.npy": {
+      "sha256": "678349cc4fa3a35d0381d767c4716306a45ff8fb0a77493d5d525866c03b7f3c",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/root_seed7_m24_v12_uniform_half_0_prediction.npy": {
+      "sha256": "c4f7aa3292b9d46238ec887012baacc610ca2cbccc3ba0a33a26eb194537fecb",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/root_seed7_m24_v12_uniform_quarter_0_prediction.npy": {
+      "sha256": "72ae21b74ef24ea788fae0e89923567f6c22e2763f20b4fe102bd58ca8303aec",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/root_seed7_m8_v8_central_half_prediction.npy": {
+      "sha256": "933e3f0971a43356a855abb949ff6f203e80e5d903c32645b615ecf6e576649b",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/root_seed7_m8_v8_clean_prediction.npy": {
+      "sha256": "374800284fb946a58cf6b043c91b5fefdbf77f2e219fbabdbeb64ab3e93686b3",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/root_seed7_m8_v8_uniform_half_0_prediction.npy": {
+      "sha256": "e3d331f65324458f8596e5fc577494c03727ef659f62817e195e7706ae474063",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/root_seed7_m8_v8_uniform_quarter_0_prediction.npy": {
+      "sha256": "d9196c6fb2317d928ba0271e884b2897cf5c729c8aee4926f44dad76231341a9",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/root_seed7_sparse_context_prediction.npy": {
+      "sha256": "d854553aeeb3ab87d5d492206452321d5d204cfd6ce23c561d67ff8322503b2f",
+      "bytes": 97862
+    },
+    "logs/moment_encoding_20260916/evaluation/root_seed7_sparse_single_prediction.npy": {
+      "sha256": "1013a2d18826de20b904650af01ed68c3dd4c7b19b61b09e7c3680b466e115a8",
+      "bytes": 97862
+    },
+    "logs/moment_encoding_20260916/evaluation/root_seed7_uniform_half_0_prediction.npy": {
+      "sha256": "d9d6844b453f21da71e65754aa099202728a6e23ce3ac7cc82772bb0a1685c35",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/root_seed7_uniform_half_1_prediction.npy": {
+      "sha256": "66b3de49bf6f0c9d9205789102bb5547ea44fc9196a284a1d1fa513c8df97e17",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/root_seed7_uniform_half_2_prediction.npy": {
+      "sha256": "e8a199a9715f6b4291940abc5d6e6a728045a64981e20f06b5de7fa820a94eb6",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/root_seed7_uniform_quarter_0_prediction.npy": {
+      "sha256": "77d1e758bcc46d05d149f9d38e67700ce242cabf5299e13dbf8c216f090c9f3d",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/root_seed7_uniform_quarter_1_prediction.npy": {
+      "sha256": "c504f81f9470289d8d08ef8ab376a335513ae675ebdc80d010aee8998dca405e",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/root_seed7_uniform_quarter_2_prediction.npy": {
+      "sha256": "28667332ab235942fe53625042fb23b547ac58736fe27fb060af7367480a0892",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/root_seed7_xy_fraction4_prediction.npy": {
+      "sha256": "4154a96d8ff2c089f31855ec1515c79028548107841700e2d176fdce0ac86a68",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/root_seed7_xy_fraction6_prediction.npy": {
+      "sha256": "6d27f509a7e18eb0534b33bafacbe1af4e708f53536bd253a8568557c1bda33c",
+      "bytes": 80578
+    },
+    "logs/moment_encoding_20260916/evaluation/summary.json": {
+      "sha256": "1d539af822f6768900e13071c332241de75d8db49ff64e40362320deedd82947",
+      "bytes": 140933
+    },
+    "logs/moment_encoding_20260916/execution/evaluation.log": {
+      "sha256": "4e7b15451100d8ae76bb6462e5c68dad55fc05a186345d3c5130f210ed32da94",
+      "bytes": 499
+    },
+    "logs/moment_encoding_20260916/execution/implementations.log": {
+      "sha256": "9909bf664e0d7744fa30535748d47f3c9f692505d91c6262a923529f35bef76a",
+      "bytes": 76
+    },
+    "logs/moment_encoding_20260916/execution/prepare.log": {
+      "sha256": "107c53560d2265645d441a58aa9e87526a3cd26a1fe375e65e71774660c896fb",
+      "bytes": 438
+    },
+    "logs/moment_encoding_20260916/execution/training.log": {
+      "sha256": "a9a7df6d628466b79ee44ab1f26f029102273dc4e14d6e3813b3d2a4dc829edd",
+      "bytes": 1159
+    },
+    "logs/moment_encoding_20260916/execution/training_v2.log": {
+      "sha256": "b159fd2e6f0a56585b3a39d7df1ace257807b4fef1d5b9ebca7be014d34e8439",
+      "bytes": 3177
+    },
+    "logs/moment_encoding_20260916/implementations/linear_fine_seed17/candidate": {
+      "sha256": "8f5e5d35e16f04f5eb652eec05df229950228e6c9e42edbef6e4269f5fcc59ce",
+      "bytes": 34536
+    },
+    "logs/moment_encoding_20260916/implementations/linear_fine_seed17/candidate.c": {
+      "sha256": "53f8942e91e44ea0bf7fb212378d5f9dba301ae99ac4834f7d29dac2810171cf",
+      "bytes": 26332
+    },
+    "logs/moment_encoding_20260916/implementations/linear_fine_seed17/candidate.so": {
+      "sha256": "b3b114658eb6117a4e488ff7341a2beb81c6825d6ff0614c28b413feb0b45351",
+      "bytes": 34112
+    },
+    "logs/moment_encoding_20260916/implementations/linear_fine_seed17/example.int16le": {
+      "sha256": "ed2e6c32814eedfde184835b0a5c1f242100992987397dd19c9f5a3cc5ddbd90",
+      "bytes": 24
+    },
+    "logs/moment_encoding_20260916/implementations/linear_fine_seed17/example.json": {
+      "sha256": "d88fe6fe203decd7e25902f9cf9dade721b2e3b01caf0ed1c26b58d22c43ba4d",
+      "bytes": 262
+    },
+    "logs/moment_encoding_20260916/implementations/linear_fine_seed17/params.h": {
+      "sha256": "a4aa5c9c79249d609b06ca32dfc30da76c8c803f8ae8a29a24ec4afe7a8214e0",
+      "bytes": 11956
+    },
+    "logs/moment_encoding_20260916/implementations/linear_fine_seed37/candidate": {
+      "sha256": "7bb6ad83466e3f35f12241023e95f41e9137fd37cfafe95fc6b679bf1caeb904",
+      "bytes": 34536
+    },
+    "logs/moment_encoding_20260916/implementations/linear_fine_seed37/candidate.c": {
+      "sha256": "53f8942e91e44ea0bf7fb212378d5f9dba301ae99ac4834f7d29dac2810171cf",
+      "bytes": 26332
+    },
+    "logs/moment_encoding_20260916/implementations/linear_fine_seed37/candidate.so": {
+      "sha256": "4a5d0827e0e441db2400ecd2f31fff08830315a378494e421458a335a4a7a9b1",
+      "bytes": 34112
+    },
+    "logs/moment_encoding_20260916/implementations/linear_fine_seed37/example.int16le": {
+      "sha256": "ed2e6c32814eedfde184835b0a5c1f242100992987397dd19c9f5a3cc5ddbd90",
+      "bytes": 24
+    },
+    "logs/moment_encoding_20260916/implementations/linear_fine_seed37/example.json": {
+      "sha256": "04f30fbc4b4316267d6dcd28475e5944c187f94f10c708f8a352b2558d19b58e",
+      "bytes": 262
+    },
+    "logs/moment_encoding_20260916/implementations/linear_fine_seed37/params.h": {
+      "sha256": "70f1c965c7827624a2d8ec375d9a24ec91401aaab591b9d8654f1d09be474b91",
+      "bytes": 12013
+    },
+    "logs/moment_encoding_20260916/implementations/linear_fine_seed7/candidate": {
+      "sha256": "924b70a457493d096032db93b3ba71b1bd7205379f15b65cd182c406ed74a3b0",
+      "bytes": 34536
+    },
+    "logs/moment_encoding_20260916/implementations/linear_fine_seed7/candidate.c": {
+      "sha256": "53f8942e91e44ea0bf7fb212378d5f9dba301ae99ac4834f7d29dac2810171cf",
+      "bytes": 26332
+    },
+    "logs/moment_encoding_20260916/implementations/linear_fine_seed7/candidate.so": {
+      "sha256": "5a0d84dd6cb482e919687249961207104ad5e91b8308ce3e111b174d908feb94",
+      "bytes": 34112
+    },
+    "logs/moment_encoding_20260916/implementations/linear_fine_seed7/example.int16le": {
+      "sha256": "ed2e6c32814eedfde184835b0a5c1f242100992987397dd19c9f5a3cc5ddbd90",
+      "bytes": 24
+    },
+    "logs/moment_encoding_20260916/implementations/linear_fine_seed7/example.json": {
+      "sha256": "84aeb91bb7a5b24b2f8e24236dfe7147d84b047a012d866e248d8bc4282dcee8",
+      "bytes": 262
+    },
+    "logs/moment_encoding_20260916/implementations/linear_fine_seed7/params.h": {
+      "sha256": "b0567b4a638627628bd927473c8846731093ea2c5ab36a53d99404f30b1e8865",
+      "bytes": 11796
+    },
+    "logs/moment_encoding_20260916/implementations/root_seed17/candidate": {
+      "sha256": "0e03ae9adf29ceea1ae7b686754f4c140939fd54befd7a56d2cd1574bd1a03ea",
+      "bytes": 34536
+    },
+    "logs/moment_encoding_20260916/implementations/root_seed17/candidate.c": {
+      "sha256": "8d59fc164c6efbe220fa0ea2018481a2c7d9396976e651ead472a0e464cc98d3",
+      "bytes": 26327
+    },
+    "logs/moment_encoding_20260916/implementations/root_seed17/candidate.so": {
+      "sha256": "bd5d6a2be93f5c4f8599e1dd37c59ed36f7f4fd5b513adb4d8efe1a676680acb",
+      "bytes": 34112
+    },
+    "logs/moment_encoding_20260916/implementations/root_seed17/example.int16le": {
+      "sha256": "ed2e6c32814eedfde184835b0a5c1f242100992987397dd19c9f5a3cc5ddbd90",
+      "bytes": 24
+    },
+    "logs/moment_encoding_20260916/implementations/root_seed17/example.json": {
+      "sha256": "ce75f4006ee0173a9cdc49c21fe3bd6772ead22422aa2872b4619c0cb9049441",
+      "bytes": 261
+    },
+    "logs/moment_encoding_20260916/implementations/root_seed17/params.h": {
+      "sha256": "e9bb8a596696cdde523869b7357bb2667d943b6cbb9d8c5e40d43178acf110fd",
+      "bytes": 11771
+    },
+    "logs/moment_encoding_20260916/implementations/root_seed37/candidate": {
+      "sha256": "c48621c68200bec50ee6a5ab2176c8ac2a000b02c580e40304fe9637946390ba",
+      "bytes": 34536
+    },
+    "logs/moment_encoding_20260916/implementations/root_seed37/candidate.c": {
+      "sha256": "8d59fc164c6efbe220fa0ea2018481a2c7d9396976e651ead472a0e464cc98d3",
+      "bytes": 26327
+    },
+    "logs/moment_encoding_20260916/implementations/root_seed37/candidate.so": {
+      "sha256": "0840b1157b8abd1ca0b12f3c0b3fce1aac27fa04c2163dde15331bd11d7d7c74",
+      "bytes": 34112
+    },
+    "logs/moment_encoding_20260916/implementations/root_seed37/example.int16le": {
+      "sha256": "ed2e6c32814eedfde184835b0a5c1f242100992987397dd19c9f5a3cc5ddbd90",
+      "bytes": 24
+    },
+    "logs/moment_encoding_20260916/implementations/root_seed37/example.json": {
+      "sha256": "c870ae8d2dec7d67a436c2120c9a2b79223f3f6553a66da5926c8f53891b55da",
+      "bytes": 261
+    },
+    "logs/moment_encoding_20260916/implementations/root_seed37/params.h": {
+      "sha256": "ef0fcae27d5ef25666598b602baccf3dd0ae6596eb52d36ffcbd9b7aa12db826",
+      "bytes": 11452
+    },
+    "logs/moment_encoding_20260916/implementations/root_seed7/candidate": {
+      "sha256": "79c222d0534a3364c190f4f5f867f8b52f87dda1adc0970fff4c323f68b00a58",
+      "bytes": 34536
+    },
+    "logs/moment_encoding_20260916/implementations/root_seed7/candidate.c": {
+      "sha256": "8d59fc164c6efbe220fa0ea2018481a2c7d9396976e651ead472a0e464cc98d3",
+      "bytes": 26327
+    },
+    "logs/moment_encoding_20260916/implementations/root_seed7/candidate.so": {
+      "sha256": "c74c6233fd71d781607a862f2bc928901e56f1ca48fd09b24715d74f4f8db9d5",
+      "bytes": 34112
+    },
+    "logs/moment_encoding_20260916/implementations/root_seed7/example.int16le": {
+      "sha256": "ed2e6c32814eedfde184835b0a5c1f242100992987397dd19c9f5a3cc5ddbd90",
+      "bytes": 24
+    },
+    "logs/moment_encoding_20260916/implementations/root_seed7/example.json": {
+      "sha256": "8ea810cc1350ed8aaeecf6ff7808db9988a7e3d1c17a0ffe3de1a981881fc058",
+      "bytes": 262
+    },
+    "logs/moment_encoding_20260916/implementations/root_seed7/params.h": {
+      "sha256": "4b6cbec2a64d7bc286eef62d568d5f3dc835dfd9a181571d4a123d2fe0a90a4c",
+      "bytes": 11394
+    },
+    "logs/moment_encoding_20260916/implementations/summary.json": {
+      "sha256": "6013a1be0ef897fba57a9b0bc10f30b0c81c115099ff1b000cd83a12469097fb",
+      "bytes": 1411
+    },
+    "logs/moment_encoding_20260916/native/encoding.c": {
+      "sha256": "6456229e8284dcc30b05b99bcaabde767f608a7c3f4c815fa378c9888cd8054b",
+      "bytes": 19263
+    },
+    "logs/moment_encoding_20260916/native/encoding.so": {
+      "sha256": "00c1c9a8a856abdb13497be53aef751f070bc1c3752e32ff6bfd6bfea3cc843b",
+      "bytes": 29032
+    },
+    "logs/moment_encoding_20260916/preflight.json": {
+      "sha256": "5cf2d47affe1fc88e5b08e97b5783d68b8e370db78d802633ead94b5513108da",
+      "bytes": 9141
+    },
+    "logs/moment_encoding_20260916/raw/precision/m12_v12/central_half/linear_fine.npy": {
+      "sha256": "1fe56f6f3bcc6c00bf505c0067b5a6600cd671b5e3bfe49c6a2197db0babe130",
+      "bytes": 1689578
+    },
+    "logs/moment_encoding_20260916/raw/precision/m12_v12/central_half/root.npy": {
+      "sha256": "bae642c4b50d6cf9399be03bbfe60d67d8b2c36ea004b7e9306d001e7ad592bd",
+      "bytes": 1689578
+    },
+    "logs/moment_encoding_20260916/raw/precision/m12_v12/clean/linear_fine.npy": {
+      "sha256": "23b3b4dbff11d9f3532abd966870d93930a16049b122e985e8c769808d1b5fee",
+      "bytes": 1689578
+    },
+    "logs/moment_encoding_20260916/raw/precision/m12_v12/clean/root.npy": {
+      "sha256": "380e4db3b0887252f72c09a6085cad10fc4a11bae1bce7f17085f5e2e812f586",
+      "bytes": 1689578
+    },
+    "logs/moment_encoding_20260916/raw/precision/m12_v12/uniform_half_0/linear_fine.npy": {
+      "sha256": "2184492d3c7f208a8e2bd618579fd4b170fe7777c12cd29e65666a3ea34d4f27",
+      "bytes": 1689578
+    },
+    "logs/moment_encoding_20260916/raw/precision/m12_v12/uniform_half_0/root.npy": {
+      "sha256": "a519cf28f8572f99158a587e0efa75b2c29f2a841dcac4bd01b8f7cb177f07e8",
+      "bytes": 1689578
+    },
+    "logs/moment_encoding_20260916/raw/precision/m12_v12/uniform_quarter_0/linear_fine.npy": {
+      "sha256": "97173f6ad3715fbd8a57ac70e91cc2e41b3d978600778bfb2651492581fb228e",
+      "bytes": 1689578
+    },
+    "logs/moment_encoding_20260916/raw/precision/m12_v12/uniform_quarter_0/root.npy": {
+      "sha256": "32fbd357be178c2a06bb0435f96c2bd3d5ba5b842abba89c3764eea8d4bb275a",
+      "bytes": 1689578
+    },
+    "logs/moment_encoding_20260916/raw/precision/m12_v24/central_half/linear_fine.npy": {
+      "sha256": "a9471d43d31c5243779dcfefcf72c42a9b662057f4841aa2b9541490166fc9a0",
+      "bytes": 1689578
+    },
+    "logs/moment_encoding_20260916/raw/precision/m12_v24/central_half/root.npy": {
+      "sha256": "ce153ae86807b9c454aec4fdc0d15a760f51ef33d2154d6e3bdcf1557594d311",
+      "bytes": 1689578
+    },
+    "logs/moment_encoding_20260916/raw/precision/m12_v24/clean/linear_fine.npy": {
+      "sha256": "f1d2c69916e8dc54305c4fa044df71b84ca1775e9de033a675635ff001bd10fa",
+      "bytes": 1689578
+    },
+    "logs/moment_encoding_20260916/raw/precision/m12_v24/clean/root.npy": {
+      "sha256": "e173be820193fa01261cff3f8ab88f96312a482d52c93f70837aed707dace5a0",
+      "bytes": 1689578
+    },
+    "logs/moment_encoding_20260916/raw/precision/m12_v24/uniform_half_0/linear_fine.npy": {
+      "sha256": "154f44152d3d221b0434feefaee5fff9740b46078001de95f82d16432c0a2169",
+      "bytes": 1689578
+    },
+    "logs/moment_encoding_20260916/raw/precision/m12_v24/uniform_half_0/root.npy": {
+      "sha256": "9cd968112605529a0f9c6f918cf656397773760934a558cb90cf40736f5dc9b2",
+      "bytes": 1689578
+    },
+    "logs/moment_encoding_20260916/raw/precision/m12_v24/uniform_quarter_0/linear_fine.npy": {
+      "sha256": "4ca0e4ec99d64503efb5dfeed3ea59a1eda7164e659e828280255e959d9bf2be",
+      "bytes": 1689578
+    },
+    "logs/moment_encoding_20260916/raw/precision/m12_v24/uniform_quarter_0/root.npy": {
+      "sha256": "dbaaf2def757d23d45c1b5378f4bcedb5e137d28366ebcd3c34b75b5db478ad3",
+      "bytes": 1689578
+    },
+    "logs/moment_encoding_20260916/raw/precision/m16_v16/central_half/linear_fine.npy": {
+      "sha256": "c203402bf5fd85c7cd8ba321b21fadf0412a67856b0d09568a81408980143720",
+      "bytes": 1689578
+    },
+    "logs/moment_encoding_20260916/raw/precision/m16_v16/central_half/root.npy": {
+      "sha256": "86917a9025c3d0bf955dd3d37c6a0e3ee3c4bbca6c2bc4332041d204c7c1a4cf",
+      "bytes": 1689578
+    },
+    "logs/moment_encoding_20260916/raw/precision/m16_v16/clean/linear_fine.npy": {
+      "sha256": "5a1864c7ecd731164f362b1a5902eebf5a04c4eda6e9eb9045b601e48e41e0e1",
+      "bytes": 1689578
+    },
+    "logs/moment_encoding_20260916/raw/precision/m16_v16/clean/root.npy": {
+      "sha256": "18cb9c6e86e9f06074580f32160d3c8c99aa9aba785b91679289432ae083c9c6",
+      "bytes": 1689578
+    },
+    "logs/moment_encoding_20260916/raw/precision/m16_v16/uniform_half_0/linear_fine.npy": {
+      "sha256": "3bc2a0d5748bb91b5510f97a8da8d902f899b1d1972e59d818036ffc96b9f716",
+      "bytes": 1689578
+    },
+    "logs/moment_encoding_20260916/raw/precision/m16_v16/uniform_half_0/root.npy": {
+      "sha256": "f442b2d919a7937915cece0c2134178a23e58a27226a49f66587d82ed47c29a1",
+      "bytes": 1689578
+    },
+    "logs/moment_encoding_20260916/raw/precision/m16_v16/uniform_quarter_0/linear_fine.npy": {
+      "sha256": "711745ca4bb680aaf59bf78e6c5c52dd76cdc175b57cbaa9afbe4e565e41d880",
+      "bytes": 1689578
+    },
+    "logs/moment_encoding_20260916/raw/precision/m16_v16/uniform_quarter_0/root.npy": {
+      "sha256": "be6ba6a6bf0c98dc08d5e25260e839be6957a7d41148508c5bafdd3b2d0d3ac1",
+      "bytes": 1689578
+    },
+    "logs/moment_encoding_20260916/raw/precision/m24_v12/central_half/linear_fine.npy": {
+      "sha256": "6298428702573c5b926b3baf6e19d78593cddbec2e3c71b693244f208c58967d",
+      "bytes": 1689578
+    },
+    "logs/moment_encoding_20260916/raw/precision/m24_v12/central_half/root.npy": {
+      "sha256": "f307876a57b99dc9f126e23f3cdd633bb563c2e012007c3bca7a749277e93680",
+      "bytes": 1689578
+    },
+    "logs/moment_encoding_20260916/raw/precision/m24_v12/clean/linear_fine.npy": {
+      "sha256": "a1fd6af21a9536a2f3bd5595ee562755a13fbaa4296043dd01b46320e687435e",
+      "bytes": 1689578
+    },
+    "logs/moment_encoding_20260916/raw/precision/m24_v12/clean/root.npy": {
+      "sha256": "9cd4d151fe5a721e314f73b21c91891a16586205a12ed9dfbfd3f6ceb1f891dd",
+      "bytes": 1689578
+    },
+    "logs/moment_encoding_20260916/raw/precision/m24_v12/uniform_half_0/linear_fine.npy": {
+      "sha256": "da3a3dcfb24a5b47c0f3e86e0a5168594c1b900bb6734e24982a193da822e980",
+      "bytes": 1689578
+    },
+    "logs/moment_encoding_20260916/raw/precision/m24_v12/uniform_half_0/root.npy": {
+      "sha256": "7dda0dc43a60cfa15aaae4e4b7f41a8997cedb6bb1a171cebef81b60e14ba15d",
+      "bytes": 1689578
+    },
+    "logs/moment_encoding_20260916/raw/precision/m24_v12/uniform_quarter_0/linear_fine.npy": {
+      "sha256": "ad56b5403155fe16130bc573e558a66f17f87fa886e13a966411701679428d85",
+      "bytes": 1689578
+    },
+    "logs/moment_encoding_20260916/raw/precision/m24_v12/uniform_quarter_0/root.npy": {
+      "sha256": "676f8c2607f4958123dc0b661fbc4746830607a7f714e917766550515f78b219",
+      "bytes": 1689578
+    },
+    "logs/moment_encoding_20260916/raw/precision/m8_v8/central_half/linear_fine.npy": {
+      "sha256": "fb1c55f36fbf2175204472cc34396dd8667a1bda838775dbd1bb7809167febca",
+      "bytes": 1689578
+    },
+    "logs/moment_encoding_20260916/raw/precision/m8_v8/central_half/root.npy": {
+      "sha256": "03df7019297be380002424f2ecf70dd3b8d454731228a2453a0e55d43cd4d848",
+      "bytes": 1689578
+    },
+    "logs/moment_encoding_20260916/raw/precision/m8_v8/clean/linear_fine.npy": {
+      "sha256": "b449e3f105d6f7e31840914183fc8d70964ce9b69ff147f524d0cce5ec0c7bae",
+      "bytes": 1689578
+    },
+    "logs/moment_encoding_20260916/raw/precision/m8_v8/clean/root.npy": {
+      "sha256": "d0fcd11a7b0379a9b8f9263be2452664b0670bd3f3d0d48d01747942bf1587e3",
+      "bytes": 1689578
+    },
+    "logs/moment_encoding_20260916/raw/precision/m8_v8/uniform_half_0/linear_fine.npy": {
+      "sha256": "8d03e0e85a3d61e2ba4ab32b296322e2b41fe4420f4a107b437e4ca63adb54c2",
+      "bytes": 1689578
+    },
+    "logs/moment_encoding_20260916/raw/precision/m8_v8/uniform_half_0/root.npy": {
+      "sha256": "afb2823517fe31ee02b6ce0103db7f95fb53a1c7b2eaed35c0973bc24f1deb2e",
+      "bytes": 1689578
+    },
+    "logs/moment_encoding_20260916/raw/precision/m8_v8/uniform_quarter_0/linear_fine.npy": {
+      "sha256": "b34e86001dd10ba0d565f05437f670ef75cfee03f3b1f7c715b9ae3f65a00fd1",
+      "bytes": 1689578
+    },
+    "logs/moment_encoding_20260916/raw/precision/m8_v8/uniform_quarter_0/root.npy": {
+      "sha256": "80b99ef6c76f40388c2afe1706b14708113ab2c38e6286c5025948fb8c8fd56f",
+      "bytes": 1689578
+    },
+    "logs/moment_encoding_20260916/raw/sparse_context/labels.npy": {
+      "sha256": "7e5749cf197ac93e27e8e3dd35cc14cf8a7f5b737934d9a4f828732fe718ef55",
+      "bytes": 782000
+    },
+    "logs/moment_encoding_20260916/raw/sparse_context/linear_fine.npy": {
+      "sha256": "99935ae9a228ab680a03d148dfa978720e7da829eb2bd9d3d1d7c03b54d5d39e",
+      "bytes": 2052542
+    },
+    "logs/moment_encoding_20260916/raw/sparse_context/metadata.csv": {
+      "sha256": "8680eaeaba4235e62b6a4f0256105714a1cfff19f1e9bad65b4336ceb70399e7",
+      "bytes": 11609970
+    },
+    "logs/moment_encoding_20260916/raw/sparse_context/root.npy": {
+      "sha256": "f7be63025908e26f7d435c613f43bc95ebd80ea2df6c77ff6385ad1db0de365e",
+      "bytes": 2052542
+    },
+    "logs/moment_encoding_20260916/raw/sparse_single/labels.npy": {
+      "sha256": "7e5749cf197ac93e27e8e3dd35cc14cf8a7f5b737934d9a4f828732fe718ef55",
+      "bytes": 782000
+    },
+    "logs/moment_encoding_20260916/raw/sparse_single/linear_fine.npy": {
+      "sha256": "f83d52d357fdf0ddf8080a8b18a8214786a3d1203f092321a0f4d0505a0ce537",
+      "bytes": 2052542
+    },
+    "logs/moment_encoding_20260916/raw/sparse_single/metadata.csv": {
+      "sha256": "d6c672311266e4bef716be3d1813583085453e241c2805d2a3ff6f5c3cd26e48",
+      "bytes": 11003624
+    },
+    "logs/moment_encoding_20260916/raw/sparse_single/root.npy": {
+      "sha256": "e153557ba69a18a4e55f6dc0c21d0c7c340a340259db0c1f24788f4a82418733",
+      "bytes": 2052542
+    },
+    "logs/moment_encoding_20260916/raw/val/linear_fine/central_half.npy": {
+      "sha256": "bc66e616b36e5c18bd5bf103930ec7f1d309c506eb82df346f07d115f688d65d",
+      "bytes": 1689578
+    },
+    "logs/moment_encoding_20260916/raw/val/linear_fine/kept_single.npy": {
+      "sha256": "e06223ae84916c998407e57633550f5dfbe5f22a24ef98026b6f9d0de8aae7dc",
+      "bytes": 1689578
+    },
+    "logs/moment_encoding_20260916/raw/val/linear_fine/uniform_half_0.npy": {
+      "sha256": "3685b1f1558996a2f3ef98f51f31fc2da6659c37b86266c6021ddda41abb6206",
+      "bytes": 1689578
+    },
+    "logs/moment_encoding_20260916/raw/val/linear_fine/uniform_half_1.npy": {
+      "sha256": "877308cbd0177954b4e1f891374276054100ea894bc2a4a3732ec4256a32f969",
+      "bytes": 1689578
+    },
+    "logs/moment_encoding_20260916/raw/val/linear_fine/uniform_half_2.npy": {
+      "sha256": "ff7bdcd93dc81227249ac6715f264e846a44ca1d65944bd410fedb6337e906f7",
+      "bytes": 1689578
+    },
+    "logs/moment_encoding_20260916/raw/val/linear_fine/uniform_quarter_0.npy": {
+      "sha256": "13f4b84df4e9e49dcb5a840edd0108d9a89116a1126487a3736569001a1f3fcf",
+      "bytes": 1689578
+    },
+    "logs/moment_encoding_20260916/raw/val/linear_fine/uniform_quarter_1.npy": {
+      "sha256": "51927a4ac7b93094d32f3251d96ccc07da749b8f8a271d6e7fd23f24038f2f40",
+      "bytes": 1689578
+    },
+    "logs/moment_encoding_20260916/raw/val/linear_fine/uniform_quarter_2.npy": {
+      "sha256": "e95e9e445e9ea070d7043ea13e7c6f9abf615628ab69fef82db7a0b2156b5bb0",
+      "bytes": 1689578
+    },
+    "logs/moment_encoding_20260916/raw/val/linear_fine/xy_fraction4.npy": {
+      "sha256": "a7572ef94d9fb43013fc3129a2f22737df3c77b7266cd62ea5aea7a1727834bc",
+      "bytes": 1689578
+    },
+    "logs/moment_encoding_20260916/raw/val/linear_fine/xy_fraction6.npy": {
+      "sha256": "783c915915b4a7017fee6e43a973d416999dab1b4c9255adfd25b0efe978913d",
+      "bytes": 1689578
+    },
+    "logs/moment_encoding_20260916/raw/val/root/central_half.npy": {
+      "sha256": "70fdbd7713c6027b75ec8db87bc8fc2645d164fc9c37463d4771336983c07d07",
+      "bytes": 1689578
+    },
+    "logs/moment_encoding_20260916/raw/val/root/kept_single.npy": {
+      "sha256": "2c6445d0a962b4b280e803d510c82cb7d1547d855137261ab12e9d57bf367571",
+      "bytes": 1689578
+    },
+    "logs/moment_encoding_20260916/raw/val/root/uniform_half_0.npy": {
+      "sha256": "250161a2a77e4d373251ee8b9371424e86a80cb0bdbe62e4ede3f28caa08b047",
+      "bytes": 1689578
+    },
+    "logs/moment_encoding_20260916/raw/val/root/uniform_half_1.npy": {
+      "sha256": "7fa9dc57008085896b139a0e50d123a7d6aa8a8b713cb6c238397d264811b62e",
+      "bytes": 1689578
+    },
+    "logs/moment_encoding_20260916/raw/val/root/uniform_half_2.npy": {
+      "sha256": "46a921aed215bdaf3a982167a36900e503633a2aba1e8def9baa0dd7b93e87e9",
+      "bytes": 1689578
+    },
+    "logs/moment_encoding_20260916/raw/val/root/uniform_quarter_0.npy": {
+      "sha256": "888f693d40e3229979e7d7af85961d82cccf91fa85cd174e5ba5fd3d74b59cd5",
+      "bytes": 1689578
+    },
+    "logs/moment_encoding_20260916/raw/val/root/uniform_quarter_1.npy": {
+      "sha256": "d6063186a2b678815efd9a3f56d512a3c5a4079d0904e87e990dee33bc5743b0",
+      "bytes": 1689578
+    },
+    "logs/moment_encoding_20260916/raw/val/root/uniform_quarter_2.npy": {
+      "sha256": "8fcbfaec4e7f85cbf381277f15de0b08c12f861a5c4645b70672d4e72b42a2b1",
+      "bytes": 1689578
+    },
+    "logs/moment_encoding_20260916/raw/val/root/xy_fraction4.npy": {
+      "sha256": "c72a219cda9ddef8a5be5a156470c7574e429b3b25149636d732b74e591fd58a",
+      "bytes": 1689578
+    },
+    "logs/moment_encoding_20260916/raw/val/root/xy_fraction6.npy": {
+      "sha256": "85cb1fc62a708aef6d5986ffa3edd670e9bc74c88ef1dad6c097da58c0eb8929",
+      "bytes": 1689578
+    },
+    "logs/moment_encoding_20260916/training/calibration_rows.npy": {
+      "sha256": "563a68a1b0df22c9abf32d4d2eb0b725c68421e91d1c9bbfe6e760942c2fa86a",
+      "bytes": 131200
+    },
+    "logs/moment_encoding_20260916/training/linear_fine_seed17/epoch20/export/Radar_frozen_qmlpParams.scala": {
+      "sha256": "ff7537a1c9b38c5d78c4fc274ca8454398da108fa27f56a433aac0dcca740131",
+      "bytes": 11888
+    },
+    "logs/moment_encoding_20260916/training/linear_fine_seed17/epoch20/export/integer_params.npz": {
+      "sha256": "79017d0c0613982740e6dfe42d2615337dc7e5dc6e7943439e386c6a16e09ba3",
+      "bytes": 5286
+    },
+    "logs/moment_encoding_20260916/training/linear_fine_seed17/epoch20/export/params.h": {
+      "sha256": "13561c66af7d6822af5fe97d9ebd4998b9fa593e6107590008cdb5cb35cf1d7b",
+      "bytes": 11891
+    },
+    "logs/moment_encoding_20260916/training/linear_fine_seed17/epoch20/export/params.json": {
+      "sha256": "45b4558c421a50cf9a79c243b25cdcde5a881ae54d944c5c39d25f8344ac0a64",
+      "bytes": 1087
+    },
+    "logs/moment_encoding_20260916/training/linear_fine_seed17/epoch20/frozen_qat.pt": {
+      "sha256": "ab55db02217fbccaccb8f3fa5d6fc6b8a2526289002f2d6185e1dbde103f6bdc",
+      "bytes": 31971
+    },
+    "logs/moment_encoding_20260916/training/linear_fine_seed17/epoch20/val_logits.npy": {
+      "sha256": "547e0fa9ff1047d2a487b320e7f08b47055ddee974e7e216a241c307f3d72892",
+      "bytes": 643728
+    },
+    "logs/moment_encoding_20260916/training/linear_fine_seed17/epoch40/export/Radar_frozen_qmlpParams.scala": {
+      "sha256": "27174d6a5404d9e0949f3d804c68402dd76f41c24d4c1452a37b9970d4d78d26",
+      "bytes": 11931
+    },
+    "logs/moment_encoding_20260916/training/linear_fine_seed17/epoch40/export/integer_params.npz": {
+      "sha256": "e7494f9bf464778d821db6078398f2b821650c1434fe8aa3b5696a2c70f3595a",
+      "bytes": 5286
+    },
+    "logs/moment_encoding_20260916/training/linear_fine_seed17/epoch40/export/params.h": {
+      "sha256": "00327f2e744b00818e10542fda50a816efaf85f70ca4c5b535718534f0365ea5",
+      "bytes": 11934
+    },
+    "logs/moment_encoding_20260916/training/linear_fine_seed17/epoch40/export/params.json": {
+      "sha256": "a8481e03b32dd1ba262f74b729f943ed47496e7600a1cad2a716b8034db7f5dd",
+      "bytes": 1087
+    },
+    "logs/moment_encoding_20260916/training/linear_fine_seed17/epoch40/frozen_qat.pt": {
+      "sha256": "bc29932b5c9651dc3ed9f6161d2ba8f24fe79cba26b571adc267594a56b0cb3a",
+      "bytes": 31971
+    },
+    "logs/moment_encoding_20260916/training/linear_fine_seed17/epoch40/val_logits.npy": {
+      "sha256": "f8d4553090920d0f455fb7af915f67275ed4f82d7fe13f0adeff641d19e3912e",
+      "bytes": 643728
+    },
+    "logs/moment_encoding_20260916/training/linear_fine_seed17/epoch60/export/Radar_frozen_qmlpParams.scala": {
+      "sha256": "48f62fb79e6bc8c7ef447e1d7a298584949e818f9717375ccafa60c0be01cd9f",
+      "bytes": 11953
+    },
+    "logs/moment_encoding_20260916/training/linear_fine_seed17/epoch60/export/inference_trace.c": {
+      "sha256": "07eaf1b6d56e3f40c48dc217810a8102fb4230a5ab1050e720fa6a3ae5248a72",
+      "bytes": 2336
+    },
+    "logs/moment_encoding_20260916/training/linear_fine_seed17/epoch60/export/inference_trace.so": {
+      "sha256": "20200d5d0c8b4b93bbd933bd551183e1612408f21d4e89894535027fc3224b46",
+      "bytes": 20160
+    },
+    "logs/moment_encoding_20260916/training/linear_fine_seed17/epoch60/export/integer_params.npz": {
+      "sha256": "bc4203b87f2e19aefad77528ce2f8b37be31b84408eb2f241fbf3af30e0f0199",
+      "bytes": 5286
+    },
+    "logs/moment_encoding_20260916/training/linear_fine_seed17/epoch60/export/params.h": {
+      "sha256": "a4aa5c9c79249d609b06ca32dfc30da76c8c803f8ae8a29a24ec4afe7a8214e0",
+      "bytes": 11956
+    },
+    "logs/moment_encoding_20260916/training/linear_fine_seed17/epoch60/export/params.json": {
+      "sha256": "ec54865bd6ec4b232df1524a4640ebf31e4ca9cf0190aa15e25a3425c5d6e2ec",
+      "bytes": 1087
+    },
+    "logs/moment_encoding_20260916/training/linear_fine_seed17/epoch60/frozen_qat.pt": {
+      "sha256": "2fa3cf0961b1469ff198cdc026595ec19befa64b2abd9cc19865e1b5fa4a7891",
+      "bytes": 31971
+    },
+    "logs/moment_encoding_20260916/training/linear_fine_seed17/epoch60/val_logits.npy": {
+      "sha256": "de0ab4b2da757c3eeb0e0d9fb9addc4ea88f2df464e9bea51a019ce4523ffd54",
+      "bytes": 643728
+    },
+    "logs/moment_encoding_20260916/training/linear_fine_seed17/summary.json": {
+      "sha256": "e1dd9f4d6f06945012a6100b7e12d7609ac73c0f3b9319e602b0b7790edc6c78",
+      "bytes": 14509
+    },
+    "logs/moment_encoding_20260916/training/linear_fine_seed37/epoch20/export/Radar_frozen_qmlpParams.scala": {
+      "sha256": "e9e4b5de2a826f06dfe3c8d42d02628c17e375036d1d07bc7862aecf3f7442d5",
+      "bytes": 11927
+    },
+    "logs/moment_encoding_20260916/training/linear_fine_seed37/epoch20/export/integer_params.npz": {
+      "sha256": "c85520b69ded32fc7db51783aea85f64e560dafdc3526dcd9acdaa96d92fd398",
+      "bytes": 5286
+    },
+    "logs/moment_encoding_20260916/training/linear_fine_seed37/epoch20/export/params.h": {
+      "sha256": "0418294fcd1667b6c7bebda75da1dc7aed324ec4ca8f4e7b7c0129b44d5e73b4",
+      "bytes": 11926
+    },
+    "logs/moment_encoding_20260916/training/linear_fine_seed37/epoch20/export/params.json": {
+      "sha256": "a5b6d554044ba6e87bc9f6799a0906b41f98e493a262e97690699766775ba584",
+      "bytes": 1086
+    },
+    "logs/moment_encoding_20260916/training/linear_fine_seed37/epoch20/frozen_qat.pt": {
+      "sha256": "19e05d85c22ef24cfc9df9725d5e791fc42aec8dfbe99f23643f0fa370661cd6",
+      "bytes": 31971
+    },
+    "logs/moment_encoding_20260916/training/linear_fine_seed37/epoch20/val_logits.npy": {
+      "sha256": "b7f5d0817190620d56050c5aded90eb66f2bf0f34ede1dd9ac71290644a9e8b1",
+      "bytes": 643728
+    },
+    "logs/moment_encoding_20260916/training/linear_fine_seed37/epoch40/export/Radar_frozen_qmlpParams.scala": {
+      "sha256": "f6cb193369efb11edcb45c04db59ea4bdf9fc1d48bb32856f9a34e8418e4b35a",
+      "bytes": 11969
+    },
+    "logs/moment_encoding_20260916/training/linear_fine_seed37/epoch40/export/integer_params.npz": {
+      "sha256": "f0d0aaa23c06101e66eaff3f34a59845a107b01918929b9e59014385cdcee986",
+      "bytes": 5286
+    },
+    "logs/moment_encoding_20260916/training/linear_fine_seed37/epoch40/export/params.h": {
+      "sha256": "dfdba99e1d1250501eaf88f2ad670356d5224b15e7d9457fe8a8715e662014b6",
+      "bytes": 11968
+    },
+    "logs/moment_encoding_20260916/training/linear_fine_seed37/epoch40/export/params.json": {
+      "sha256": "741193393210020ebcc0dc60449e562d785c128985de5e54aa0f7fb00c101ff6",
+      "bytes": 1087
+    },
+    "logs/moment_encoding_20260916/training/linear_fine_seed37/epoch40/frozen_qat.pt": {
+      "sha256": "cb9f63c2d9df1b5937a8b9dc3a7e9286e2ded6c55cbe07e6dcb08db0f56297e6",
+      "bytes": 31971
+    },
+    "logs/moment_encoding_20260916/training/linear_fine_seed37/epoch40/val_logits.npy": {
+      "sha256": "0f510fb88c9d1bd7cb0b57dd14c5279c6238263279b5340ddf94638aa16c3123",
+      "bytes": 643728
+    },
+    "logs/moment_encoding_20260916/training/linear_fine_seed37/epoch60/export/Radar_frozen_qmlpParams.scala": {
+      "sha256": "3ff9103708875119cf7afc404e1d5eb81fc91c1260e62e43ee5346284c15f7a1",
+      "bytes": 12014
+    },
+    "logs/moment_encoding_20260916/training/linear_fine_seed37/epoch60/export/inference_trace.c": {
+      "sha256": "07eaf1b6d56e3f40c48dc217810a8102fb4230a5ab1050e720fa6a3ae5248a72",
+      "bytes": 2336
+    },
+    "logs/moment_encoding_20260916/training/linear_fine_seed37/epoch60/export/inference_trace.so": {
+      "sha256": "d4af5567348262b00fd884bc5a1aee947b3385b85e601b209cf90d5f4b1f2a9b",
+      "bytes": 20160
+    },
+    "logs/moment_encoding_20260916/training/linear_fine_seed37/epoch60/export/integer_params.npz": {
+      "sha256": "9b6e35165499531b3fdbca33a1d5eb1c29393bdebbb5df7a880831f34690efc7",
+      "bytes": 5286
+    },
+    "logs/moment_encoding_20260916/training/linear_fine_seed37/epoch60/export/params.h": {
+      "sha256": "70f1c965c7827624a2d8ec375d9a24ec91401aaab591b9d8654f1d09be474b91",
+      "bytes": 12013
+    },
+    "logs/moment_encoding_20260916/training/linear_fine_seed37/epoch60/export/params.json": {
+      "sha256": "bd086bf284706752dbdc08da504c33657062285a1f0352b6f45deb0ba3e98342",
+      "bytes": 1087
+    },
+    "logs/moment_encoding_20260916/training/linear_fine_seed37/epoch60/frozen_qat.pt": {
+      "sha256": "4708603f79f3a902b4f8090d13d0994a746beb29ced78d2ac53dba0cd42b6224",
+      "bytes": 31971
+    },
+    "logs/moment_encoding_20260916/training/linear_fine_seed37/epoch60/val_logits.npy": {
+      "sha256": "5e455c3855685a49f96e7513c2fabea3b14d6e88206cbca52e7d7429a7015414",
+      "bytes": 643728
+    },
+    "logs/moment_encoding_20260916/training/linear_fine_seed37/summary.json": {
+      "sha256": "c541e3a95d3f38f7d58bc5705940dea27220bb610da204169768e6526b55eaa5",
+      "bytes": 14516
+    },
+    "logs/moment_encoding_20260916/training/linear_fine_seed7/epoch20/export/Radar_frozen_qmlpParams.scala": {
+      "sha256": "dd699d69c622664bc77b2b2fa41f2b8cbbf5bcac59ee25ace57268e65996df45",
+      "bytes": 11738
+    },
+    "logs/moment_encoding_20260916/training/linear_fine_seed7/epoch20/export/integer_params.npz": {
+      "sha256": "218e5106adac9277ab402e8e1446cb631de6b7d9563041f219fb6aee4f64cf1f",
+      "bytes": 5286
+    },
+    "logs/moment_encoding_20260916/training/linear_fine_seed7/epoch20/export/params.h": {
+      "sha256": "c70eb335f35025ce8085aefc74696c8db2a0436b70ae217979d7c4490320d3cc",
+      "bytes": 11737
+    },
+    "logs/moment_encoding_20260916/training/linear_fine_seed7/epoch20/export/params.json": {
+      "sha256": "72f3d4e0b5d867b7d87af46e2c9ca24cb0559a38d48859d501ae080c8b1dcfba",
+      "bytes": 1084
+    },
+    "logs/moment_encoding_20260916/training/linear_fine_seed7/epoch20/frozen_qat.pt": {
+      "sha256": "4f332290636194837847a0ddf5327a1b93e24068578588b8cea7871e10a8620a",
+      "bytes": 31971
+    },
+    "logs/moment_encoding_20260916/training/linear_fine_seed7/epoch20/val_logits.npy": {
+      "sha256": "61659c501cbb1668081b3f83aca735f2b196da04f97960024ea04c3326af7a86",
+      "bytes": 643728
+    },
+    "logs/moment_encoding_20260916/training/linear_fine_seed7/epoch40/export/Radar_frozen_qmlpParams.scala": {
+      "sha256": "f3254ded55be67180e631d69b974843913e99eddaadba271f68d7ea6e9ecf3ee",
+      "bytes": 11763
+    },
+    "logs/moment_encoding_20260916/training/linear_fine_seed7/epoch40/export/integer_params.npz": {
+      "sha256": "6cbd1269e4a37d334e7505400a70af6a98030becef3fd901697740fd76cb6ed9",
+      "bytes": 5286
+    },
+    "logs/moment_encoding_20260916/training/linear_fine_seed7/epoch40/export/params.h": {
+      "sha256": "b4ee83a759e359a8c453d3c76d4e317cda15cf8bb6efe20dcac38eb614b0c8c2",
+      "bytes": 11762
+    },
+    "logs/moment_encoding_20260916/training/linear_fine_seed7/epoch40/export/params.json": {
+      "sha256": "98918e299e3349f3a67f38804ad01d6008a63b7e22c120ce450aabf8e603bef0",
+      "bytes": 1084
+    },
+    "logs/moment_encoding_20260916/training/linear_fine_seed7/epoch40/frozen_qat.pt": {
+      "sha256": "006f09b0517422ba4d0197844e574a62de6ba0fc3d72a357af6fbdaa870fbf31",
+      "bytes": 31971
+    },
+    "logs/moment_encoding_20260916/training/linear_fine_seed7/epoch40/val_logits.npy": {
+      "sha256": "f49b6d7493e2ee1d5c737b11408cb7fd1f40cb66aff2a7be8793b43f108cb81e",
+      "bytes": 643728
+    },
+    "logs/moment_encoding_20260916/training/linear_fine_seed7/epoch60/export/Radar_frozen_qmlpParams.scala": {
+      "sha256": "ff214003c946bb50741a1fd730b92f40efa5b99a7292cbb8c72c6886ad6e7b7b",
+      "bytes": 11797
+    },
+    "logs/moment_encoding_20260916/training/linear_fine_seed7/epoch60/export/inference_trace.c": {
+      "sha256": "07eaf1b6d56e3f40c48dc217810a8102fb4230a5ab1050e720fa6a3ae5248a72",
+      "bytes": 2336
+    },
+    "logs/moment_encoding_20260916/training/linear_fine_seed7/epoch60/export/inference_trace.so": {
+      "sha256": "241a1a0344d1f6e0e5f338a9855fddeaa3e0ef137ad15fdc6d9bb33766ee3cde",
+      "bytes": 20160
+    },
+    "logs/moment_encoding_20260916/training/linear_fine_seed7/epoch60/export/integer_params.npz": {
+      "sha256": "f8d42a716dfb8db4c90d61da783e3632ba3823a74f174c927bba1505a1e82c9a",
+      "bytes": 5286
+    },
+    "logs/moment_encoding_20260916/training/linear_fine_seed7/epoch60/export/params.h": {
+      "sha256": "b0567b4a638627628bd927473c8846731093ea2c5ab36a53d99404f30b1e8865",
+      "bytes": 11796
+    },
+    "logs/moment_encoding_20260916/training/linear_fine_seed7/epoch60/export/params.json": {
+      "sha256": "f04fa892c6e5c4011fa25a57465e58b10f294465924b4a8afa106956897cfd15",
+      "bytes": 1085
+    },
+    "logs/moment_encoding_20260916/training/linear_fine_seed7/epoch60/frozen_qat.pt": {
+      "sha256": "3d630ff078c5221e7f728016825ec07382d100c1ad031e3ff7e51476030a95b7",
+      "bytes": 31971
+    },
+    "logs/moment_encoding_20260916/training/linear_fine_seed7/epoch60/val_logits.npy": {
+      "sha256": "8b24acd79928ce3b0ff089e60a6fbb90250fe08bcd461f24147bf1d84845496d",
+      "bytes": 643728
+    },
+    "logs/moment_encoding_20260916/training/linear_fine_seed7/summary.json": {
+      "sha256": "28f52934fb90f384a698067b28a58ca19a4b0d2b6fea9cffb7255e7247a0075e",
+      "bytes": 14506
+    },
+    "logs/moment_encoding_20260916/training/root_seed17/epoch20/export/Radar_frozen_qmlpParams.scala": {
+      "sha256": "50dac7997dc8d2083100a4207bb7ee804cadb8b3cf16e463afbbe6ac60b04260",
+      "bytes": 11706
+    },
+    "logs/moment_encoding_20260916/training/root_seed17/epoch20/export/integer_params.npz": {
+      "sha256": "f8422d55b7ba38f5f50b9577f0b168fb0b53d4a1e2ab557c27427bb456c0bf3e",
+      "bytes": 5286
+    },
+    "logs/moment_encoding_20260916/training/root_seed17/epoch20/export/params.h": {
+      "sha256": "9cec0c9c9ccce212d2d90907bea5a2e3f16d57da897ebef897e1c9ce120a2017",
+      "bytes": 11711
+    },
+    "logs/moment_encoding_20260916/training/root_seed17/epoch20/export/params.json": {
+      "sha256": "a341bdec36fd7c8491dc9c9575d739b5c263b0d8111b66a936c977cc269f17dc",
+      "bytes": 1077
+    },
+    "logs/moment_encoding_20260916/training/root_seed17/epoch20/frozen_qat.pt": {
+      "sha256": "50a5f736e3d2351a256e8cc5f061e97ddbbc3d60a165a725c3f9dcc01d58248b",
+      "bytes": 31971
+    },
+    "logs/moment_encoding_20260916/training/root_seed17/epoch20/val_logits.npy": {
+      "sha256": "387c9bf3bcc5114064325df1448f98e3f6fae936c6900dde023488ce2b6aa73a",
+      "bytes": 643728
+    },
+    "logs/moment_encoding_20260916/training/root_seed17/epoch40/export/Radar_frozen_qmlpParams.scala": {
+      "sha256": "309ffbf9b06acefb4e3c24952084ca285213eb297c00c7cc2def5329d0ebf141",
+      "bytes": 11777
+    },
+    "logs/moment_encoding_20260916/training/root_seed17/epoch40/export/integer_params.npz": {
+      "sha256": "ddd717cb007df2a7961edc5d43526f046943536403a3af63d35ac1f722868255",
+      "bytes": 5286
+    },
+    "logs/moment_encoding_20260916/training/root_seed17/epoch40/export/params.h": {
+      "sha256": "6a86c2b16cee0d5bffc459f115ddd9977dfd9eeb64869d1d84877d6cea349889",
+      "bytes": 11782
+    },
+    "logs/moment_encoding_20260916/training/root_seed17/epoch40/export/params.json": {
+      "sha256": "952b283964e01e02be4027bf35d7d8f2142a45829fa5c16807968d71011294af",
+      "bytes": 1077
+    },
+    "logs/moment_encoding_20260916/training/root_seed17/epoch40/frozen_qat.pt": {
+      "sha256": "9b2cc23fe71e61c327a7f3976bd3e03be76c3dbf1525ca6208e270c51c485aff",
+      "bytes": 31971
+    },
+    "logs/moment_encoding_20260916/training/root_seed17/epoch40/val_logits.npy": {
+      "sha256": "ed80e3a75cea0b0dd1f7eaca63fd7639018e6282cd0fb0d8327deb270efb1d70",
+      "bytes": 643728
+    },
+    "logs/moment_encoding_20260916/training/root_seed17/epoch60/export/Radar_frozen_qmlpParams.scala": {
+      "sha256": "606dc96f833d176d82c3cb2e9fb10854d32af25bbb384378733aaa1c7bcdec9c",
+      "bytes": 11766
+    },
+    "logs/moment_encoding_20260916/training/root_seed17/epoch60/export/inference_trace.c": {
+      "sha256": "07eaf1b6d56e3f40c48dc217810a8102fb4230a5ab1050e720fa6a3ae5248a72",
+      "bytes": 2336
+    },
+    "logs/moment_encoding_20260916/training/root_seed17/epoch60/export/inference_trace.so": {
+      "sha256": "b2c9e46083948da467b788feb4327af1525aaf34ce1c1aea2e9edc2123f6b327",
+      "bytes": 20160
+    },
+    "logs/moment_encoding_20260916/training/root_seed17/epoch60/export/integer_params.npz": {
+      "sha256": "4feb5c865b95e2ba2e56a6c8f1d7b45fbfdee9082accfa9c244e381295af9832",
+      "bytes": 5286
+    },
+    "logs/moment_encoding_20260916/training/root_seed17/epoch60/export/params.h": {
+      "sha256": "e9bb8a596696cdde523869b7357bb2667d943b6cbb9d8c5e40d43178acf110fd",
+      "bytes": 11771
+    },
+    "logs/moment_encoding_20260916/training/root_seed17/epoch60/export/params.json": {
+      "sha256": "0243081dcbc661994eb3255c1d98cc81b2ad7fab56fb9b2936e3e57d37de4483",
+      "bytes": 1077
+    },
+    "logs/moment_encoding_20260916/training/root_seed17/epoch60/frozen_qat.pt": {
+      "sha256": "bf446fbb07a53f207ec5fb99ae78d4f7776068418f44092bd40ddbccbf92d4e9",
+      "bytes": 31971
+    },
+    "logs/moment_encoding_20260916/training/root_seed17/epoch60/val_logits.npy": {
+      "sha256": "a285c698ea5b966867246b7d0d68ab45027d14782c04772a575143cc5fc57613",
+      "bytes": 643728
+    },
+    "logs/moment_encoding_20260916/training/root_seed17/summary.json": {
+      "sha256": "6484c2c59af69548e38cf525936a8bcf0e8093cec64099a4c792e02c09add7f0",
+      "bytes": 14505
+    },
+    "logs/moment_encoding_20260916/training/root_seed37/epoch20/export/Radar_frozen_qmlpParams.scala": {
+      "sha256": "cf741dec5787b51a3f3e746d9c72b2584ac1a90f821afbe285f71e70457c0eab",
+      "bytes": 11366
+    },
+    "logs/moment_encoding_20260916/training/root_seed37/epoch20/export/integer_params.npz": {
+      "sha256": "b65c74396fdb4bca5f5f24c4c5f7f5519cfcd95add9e7cedee25a5b560dd6750",
+      "bytes": 5286
+    },
+    "logs/moment_encoding_20260916/training/root_seed37/epoch20/export/params.h": {
+      "sha256": "26a015f7d413687eb63c7cc60f1ac5b812f1a6760643022f920d67ca2e7f3093",
+      "bytes": 11366
+    },
+    "logs/moment_encoding_20260916/training/root_seed37/epoch20/export/params.json": {
+      "sha256": "cc372247af9523a389515794334c2d534d4e43d055243ce5a909de85bde90e2e",
+      "bytes": 1078
+    },
+    "logs/moment_encoding_20260916/training/root_seed37/epoch20/frozen_qat.pt": {
+      "sha256": "36293943d00e9fddb1030f14f3e0d3c8e532592e821b885d3bcdd99f809da565",
+      "bytes": 31971
+    },
+    "logs/moment_encoding_20260916/training/root_seed37/epoch20/val_logits.npy": {
+      "sha256": "843236bb1f84e2ffdac223fc14b5d13aa162d59db432415d71eddea5185047a1",
+      "bytes": 643728
+    },
+    "logs/moment_encoding_20260916/training/root_seed37/epoch40/export/Radar_frozen_qmlpParams.scala": {
+      "sha256": "7f67788219996643dace8c979ea4744ab58bf3368910130b8e53062eccdc8cff",
+      "bytes": 11435
+    },
+    "logs/moment_encoding_20260916/training/root_seed37/epoch40/export/integer_params.npz": {
+      "sha256": "358035d8912ebd156db79983365cf7a5c139c5dc8eea86e6579bb58cd48adf4c",
+      "bytes": 5286
+    },
+    "logs/moment_encoding_20260916/training/root_seed37/epoch40/export/params.h": {
+      "sha256": "ca6247a63a5e7267555bbb5d8a36803103fe926df7cf1530cc33b7927c2fc7d3",
+      "bytes": 11435
+    },
+    "logs/moment_encoding_20260916/training/root_seed37/epoch40/export/params.json": {
+      "sha256": "608c14ea0e44db81af14418c82075ec731cb35461f5b4a7fe62dd5ce13586882",
+      "bytes": 1078
+    },
+    "logs/moment_encoding_20260916/training/root_seed37/epoch40/frozen_qat.pt": {
+      "sha256": "e7af45aa8597f820d928ba5ed22e579f04be89dcfdec766aab1b292c2c14574f",
+      "bytes": 31971
+    },
+    "logs/moment_encoding_20260916/training/root_seed37/epoch40/val_logits.npy": {
+      "sha256": "5cd875ec7b114b8a4f0a0b7531579634c9d324f3e2bca456eb5316f6cab6d6ec",
+      "bytes": 643728
+    },
+    "logs/moment_encoding_20260916/training/root_seed37/epoch60/export/Radar_frozen_qmlpParams.scala": {
+      "sha256": "58bf5b202adfcbf37bfc0ea0a9c0a4f2b86b1a65bc0ac80c2ef9e1cae4af21a7",
+      "bytes": 11452
+    },
+    "logs/moment_encoding_20260916/training/root_seed37/epoch60/export/inference_trace.c": {
+      "sha256": "07eaf1b6d56e3f40c48dc217810a8102fb4230a5ab1050e720fa6a3ae5248a72",
+      "bytes": 2336
+    },
+    "logs/moment_encoding_20260916/training/root_seed37/epoch60/export/inference_trace.so": {
+      "sha256": "b7ea8d59f4760622a02e37c92a2626bd35c13de1a8e8542fadbe0630579cc7a1",
+      "bytes": 20160
+    },
+    "logs/moment_encoding_20260916/training/root_seed37/epoch60/export/integer_params.npz": {
+      "sha256": "203065917ea735b192b7e0b2b9de641547761a8baf1ea40682d8cfd21e9524a2",
+      "bytes": 5286
+    },
+    "logs/moment_encoding_20260916/training/root_seed37/epoch60/export/params.h": {
+      "sha256": "ef0fcae27d5ef25666598b602baccf3dd0ae6596eb52d36ffcbd9b7aa12db826",
+      "bytes": 11452
+    },
+    "logs/moment_encoding_20260916/training/root_seed37/epoch60/export/params.json": {
+      "sha256": "bd596f2a95bab1b4d1d603c30b45847d7be0b83ad0adff7943b3be0c89d13f2e",
+      "bytes": 1078
+    },
+    "logs/moment_encoding_20260916/training/root_seed37/epoch60/frozen_qat.pt": {
+      "sha256": "d6b0dc994ab25679c5042dfcaa188f86b0daa459ea33ea4f514747278cf87c6a",
+      "bytes": 31971
+    },
+    "logs/moment_encoding_20260916/training/root_seed37/epoch60/val_logits.npy": {
+      "sha256": "ab63f26c6a0a0f542a8123af1dd463f4594f370bd6d9a661fafc813f38ca6ecd",
+      "bytes": 643728
+    },
+    "logs/moment_encoding_20260916/training/root_seed37/summary.json": {
+      "sha256": "9bf82cd2f05026054b4404cb7e2d353477434e92af722a8f7ee5d67bf4b993b4",
+      "bytes": 14513
+    },
+    "logs/moment_encoding_20260916/training/root_seed7/epoch20/export/Radar_frozen_qmlpParams.scala": {
+      "sha256": "54ef3c58cfd1cfd57195b5a01e46f32bbcfd5b40253ff9d7f2c55f81ed3d1656",
+      "bytes": 11314
+    },
+    "logs/moment_encoding_20260916/training/root_seed7/epoch20/export/integer_params.npz": {
+      "sha256": "ebe8dbaa765f32991a428bb4865f8e996b34a59c484d1254b80a3f47ef5002ff",
+      "bytes": 5286
+    },
+    "logs/moment_encoding_20260916/training/root_seed7/epoch20/export/params.h": {
+      "sha256": "85e207371fe654432bb0a18d5acde966a5c794dc1ae7ca5c35ff014e05487776",
+      "bytes": 11317
+    },
+    "logs/moment_encoding_20260916/training/root_seed7/epoch20/export/params.json": {
+      "sha256": "d514c9ca4f85de87147de2eb1719ef15cd8c279ca3ca6a4d2a9745707665656f",
+      "bytes": 1079
+    },
+    "logs/moment_encoding_20260916/training/root_seed7/epoch20/frozen_qat.pt": {
+      "sha256": "a53c6651dc61367d176407168bddd6dec689413ad4a9868ef0f3239d4d1f8ca7",
+      "bytes": 31971
+    },
+    "logs/moment_encoding_20260916/training/root_seed7/epoch20/val_logits.npy": {
+      "sha256": "45ba002ad386452b8d1eb68b12166e51ffa69b6a9cd5fcfce7e6effc14392e83",
+      "bytes": 643728
+    },
+    "logs/moment_encoding_20260916/training/root_seed7/epoch40/export/Radar_frozen_qmlpParams.scala": {
+      "sha256": "84b28c0b66d8ac4a202aa0ace5831c2ebe22e36bc7fa706850fbcc12c92809c2",
+      "bytes": 11374
+    },
+    "logs/moment_encoding_20260916/training/root_seed7/epoch40/export/integer_params.npz": {
+      "sha256": "fbb63e1e355624119456a29ccfda94a810d9743735cdc76d887f1341695f7988",
+      "bytes": 5286
+    },
+    "logs/moment_encoding_20260916/training/root_seed7/epoch40/export/params.h": {
+      "sha256": "ddd000358ede07c19176147fc7995fcbac83eb06cd8451c593d64e5b8ffeceac",
+      "bytes": 11377
+    },
+    "logs/moment_encoding_20260916/training/root_seed7/epoch40/export/params.json": {
+      "sha256": "786e72d63b9bf68defbba867477cf710cd268bc178cc214143197ee681108af0",
+      "bytes": 1079
+    },
+    "logs/moment_encoding_20260916/training/root_seed7/epoch40/frozen_qat.pt": {
+      "sha256": "3c54d96e543fda1eac2c19625bc0eea5b01dddec1f59ea07c1c98e516d6d21e9",
+      "bytes": 31971
+    },
+    "logs/moment_encoding_20260916/training/root_seed7/epoch40/val_logits.npy": {
+      "sha256": "f446839df48d95beb055570d03bf303a00f4276bc69c61a45fa06826f546d8f3",
+      "bytes": 643728
+    },
+    "logs/moment_encoding_20260916/training/root_seed7/epoch60/export/Radar_frozen_qmlpParams.scala": {
+      "sha256": "27dde1cab4fe396cef3167925d82ac526080147edf420d3136fc33635a0f3caf",
+      "bytes": 11391
+    },
+    "logs/moment_encoding_20260916/training/root_seed7/epoch60/export/inference_trace.c": {
+      "sha256": "07eaf1b6d56e3f40c48dc217810a8102fb4230a5ab1050e720fa6a3ae5248a72",
+      "bytes": 2336
+    },
+    "logs/moment_encoding_20260916/training/root_seed7/epoch60/export/inference_trace.so": {
+      "sha256": "01a478c38f6f0eb749a1f72381b0057a37ca51fc488c569cbca3f0207803d1ed",
+      "bytes": 20160
+    },
+    "logs/moment_encoding_20260916/training/root_seed7/epoch60/export/integer_params.npz": {
+      "sha256": "39c8e62846549b034660b7483b3c55088f5f9b394fc297dcd97acf9731f142ac",
+      "bytes": 5286
+    },
+    "logs/moment_encoding_20260916/training/root_seed7/epoch60/export/params.h": {
+      "sha256": "4b6cbec2a64d7bc286eef62d568d5f3dc835dfd9a181571d4a123d2fe0a90a4c",
+      "bytes": 11394
+    },
+    "logs/moment_encoding_20260916/training/root_seed7/epoch60/export/params.json": {
+      "sha256": "60360a337a6e77b402138c75544b9674f843b83ec562301654f7b74e59cec679",
+      "bytes": 1079
+    },
+    "logs/moment_encoding_20260916/training/root_seed7/epoch60/frozen_qat.pt": {
+      "sha256": "122c3a78ae33ffa5a01d85ec55f4fd4f8ff40eb42d09feb27c2577774b8425ef",
+      "bytes": 31971
+    },
+    "logs/moment_encoding_20260916/training/root_seed7/epoch60/val_logits.npy": {
+      "sha256": "df03a40dbb78599c87a6776d46116b4653626da1a4c166de6fe17f6cdf8e305f",
+      "bytes": 643728
+    },
+    "logs/moment_encoding_20260916/training/root_seed7/summary.json": {
+      "sha256": "fd99631698c738560aaeba164e198b4e6779aedc839bad60e05e4f784a32f19a",
+      "bytes": 14514
+    },
+    "logs/moment_encoding_20260916/training/source_manifest.json": {
+      "sha256": "5dc65e400518c882484195e7baa4ab91d490b73a361d2068455e0bfa3385e499",
+      "bytes": 1607
+    },
+    "logs/moment_encoding_20260916/training/summary.json": {
+      "sha256": "ec9c5cba69fa6e346c5e223484012c7caf45f0f53654ae86e0e6d1d103fc98c4",
+      "bytes": 8213
+    }
+  }
+}

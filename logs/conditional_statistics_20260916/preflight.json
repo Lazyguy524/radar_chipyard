@@ -1,0 +1,42 @@
+{
+  "status": "PASS",
+  "integer_cases": 136,
+  "python_c_equal": true,
+  "proxy_reconstruction_equal": true,
+  "same_extent_different_interior": {
+    "old_features_equal": true,
+    "new_x_variance": [
+      419430,
+      838861
+    ]
+  },
+  "centered_shape_translation_invariant": true,
+  "mean_n5_constant10": {
+    "old": 6.25,
+    "new": 10.0
+  },
+  "bounds": [
+    {
+      "reciprocal_bits": 16,
+      "max_sum_square_times_reciprocal": 282557275242750,
+      "max_sum_times_reciprocal": 4311547650,
+      "max_mean_q12_square": 1108017285376,
+      "reciprocal_rom_bits": 8704,
+      "signed64_safe": true
+    },
+    {
+      "reciprocal_bits": 24,
+      "max_sum_square_times_reciprocal": 72056485919850750,
+      "max_sum_times_reciprocal": 1099511496450,
+      "max_mean_q12_square": 1099511627776,
+      "reciprocal_rom_bits": 12800,
+      "signed64_safe": true
+    }
+  ],
+  "plan_sha256": "d1e90b383350e2b8009507d385e2c7178230f4e8ff1a8dbb2fb77f19478727c4",
+  "source_sha256": {
+    "docs/paper_new/conditional_statistics_2026-09-16/kernel.py": "f7729da4e980f4273c6458bb33475f652a1a62e835d73428aa55d4bb1e42feeb",
+    "docs/paper_new/conditional_statistics_2026-09-16/moments.c": "23364eadc743eff5388573a8a1d183b93f3df1986219f4708b73799b0bbd10c1",
+    "docs/paper_new/conditional_statistics_2026-09-16/preflight.py": "18189df0a102db595d0763a169423d4f7cba5626f06440415208c2a36296133a"
+  }
+}

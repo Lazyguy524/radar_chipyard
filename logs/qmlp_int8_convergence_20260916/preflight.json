@@ -1,0 +1,14 @@
+{
+  "status": "PASS",
+  "synthetic_samples": 1024,
+  "fold_max_error": 1.942890293094024e-16,
+  "integer_three_way_equal": true,
+  "signed_rounding_cases": 60,
+  "finite_gradients": true,
+  "frozen_batch_invariance": true,
+  "plan_sha256": "d1293be9eef179396c78e24670dcde1b2b2b0e144071be0157f59dedd51e25f0",
+  "source_sha256": {
+    "docs/paper_new/qmlp_int8_convergence_2026-09-16/common.py": "59613000cc60a2f4cacb90b3ab2e01f6b68a422dd5ba4f1c21f522c30d641e56",
+    "docs/paper_new/qmlp_int8_convergence_2026-09-16/preflight.py": "a897f619ea1ae76ce0318158b07f94656d605a78c419fd0f04bfa38b67826aaa"
+  }
+}

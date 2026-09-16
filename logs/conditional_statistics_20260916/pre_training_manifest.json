@@ -1,0 +1,13 @@
+{
+  "status": "FROZEN_BEFORE_TRAINING",
+  "utc": "2026-09-16T11:10:59.554178+00:00",
+  "sha256": {
+    "docs/paper_new/conditional_statistics_2026-09-16/plan.json": "d1e90b383350e2b8009507d385e2c7178230f4e8ff1a8dbb2fb77f19478727c4",
+    "docs/paper_new/conditional_statistics_2026-09-16/kernel.py": "f7729da4e980f4273c6458bb33475f652a1a62e835d73428aa55d4bb1e42feeb",
+    "docs/paper_new/conditional_statistics_2026-09-16/moments.c": "23364eadc743eff5388573a8a1d183b93f3df1986219f4708b73799b0bbd10c1",
+    "docs/paper_new/conditional_statistics_2026-09-16/run_training.py": "361623681a23bd8009b4234582cf216624eab1e38ba8ab31f2684eae4c9c18e1",
+    "docs/paper_new/conditional_statistics_2026-09-16/evaluate.py": "ce1404a53e2b4b8c2769280efe8fcafdfc83cb835ec1a7ec545fa6c50d5bd5dc",
+    "docs/paper_new/conditional_statistics_2026-09-16/frontend_output.c": "d07f3df056348a3f9c98f9bb5ca4874c573e9a50ab91359eae216fe802998e4b",
+    "docs/paper_new/conditional_statistics_2026-09-16/00_研究主线复核.md": "381cd4b86bdf66471435b3127db85826a9274248f874afdaff84aeffb493a625"
+  }
+}

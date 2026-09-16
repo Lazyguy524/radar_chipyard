@@ -1,0 +1,20 @@
+{
+  "status": "FROZEN_BEFORE_NEW_REAL_DATA_RESULTS",
+  "date": "2026-09-16",
+  "research_question": "Which approximations damage classification under point-count and shape variation, and can statistical representation, precision and shared primitives improve the quality-cost tradeoff?",
+  "review": "Recover original research objective; frozen QAT is a baseline, RF is supporting evidence, neither is the final algorithm objective. Single-executor pre-run review.",
+  "data": {"train_rows": 357780, "validation_rows": 80450, "train_sequences": 113, "validation_sequences": 27, "seed": 20260916, "diagnostic_rows_per_validation_sequence": 128, "historical_test": "No new use", "fusion": "Original K7, GT tracks, no temporal changes"},
+  "representations": {
+    "legacy": "Existing Feature21 INT8 plus already-trained frozen-QAT seeds 7/17",
+    "proxy_scaled": "Existing pre-output-quantization proxy statistics with train-only power-of-two per-feature INT8 scaling; density retains original quantized value",
+    "moment24": "First-point shifted sums and x/y second moments with shared reciprocal LUT Q24; x/y variances, covariance and max/min diagonal variances replace proxy shape slots; other definitions retained",
+    "moment16": "Same moment representation, reciprocal Q16; identical output scales fitted from moment24 train",
+    "uncentered16": "Numerical diagnostic only: same Q16 formula without origin shift, evaluated with moment24 weights; no separately fitted model"
+  },
+  "precision": {"point_input": "Original signed Q8.8", "mean_extra_fraction_bits": 4, "spatial_second_moment_fraction_bits": 16, "reciprocal_fraction_bits": [24, 16], "output": "Symmetric INT8 with per-feature power-of-two steps calibrated at train absolute 99.99 percentile; density step=1", "arithmetic": "Integer sums, ties-to-even, nonnegative diagonal variance clamp; report negative preclamp cases; signed 64-bit reference with proven bounds", "dimension": "21 held fixed to isolate representation/precision; not a claim that 21 is optimal"},
+  "training": {"representations": ["proxy_scaled", "moment24", "moment16"], "seeds": [7, 17], "max_new_trajectories": 6, "protocol": "Reuse full-train frozen-QAT baseline protocol: 20 FP32 epochs, fold normalization, fixed scales, QAT 20..60 epochs, train-only plateau; no validation checkpoint selection"},
+  "diagnostics": {"paired_conditions": ["clean", "uniform_half", "uniform_quarter", "central_half", "xy_fraction6"], "interpretation": "Offline point deletion/coordinate quantization sensitivity, not calibrated physical radar corruptions or new independent real data", "shape_groups": ["elongated_ratio_le_0.1", "intermediate", "compact_ratio_gt_0.5"], "point_count_groups": ["1-4", "5-16", "17-64", "65-511"], "supported_group": "At least 100 rows, 3 sequences, and both classes for macro-F1", "bootstrap_replicates": 2000},
+  "rf": {"representations": ["proxy_scaled", "moment24"], "random_state": 7, "n_estimators": 100, "max_depth": 16, "min_samples_leaf": 5, "max_samples": 32768, "class_weight": "balanced", "n_jobs": 2, "group_permutation_repeats": 3, "purpose": "Classifier-family crosscheck and grouped input dependence, no RF-directed feature elimination"},
+  "decision": {"candidate_quality": "Compare moments to both legacy and proxy_scaled matched baselines; report all seeds, supported conditional groups and paired damage/repair", "precision_tolerance_global_f1": 0.001, "precision_tolerance_group_accuracy": 0.005, "precision_rule": "Exploratory acceptance of Q16 only if both seeds satisfy tolerances vs Q24 on clean and every predefined perturbation; not a business requirement", "stop": "Stop at six trajectories and report positive/negative findings; no automatic parameter or feature search, no RTL promotion solely from proxy cost"},
+  "budget": {"cpu_threads": 2, "gpu_jobs": 0, "prepare_seconds": 900, "training_seconds": 1800, "evaluation_seconds": 600, "rf_seconds": 180, "max_output_bytes": 1073741824, "new_rtl_or_board_jobs": 0}
+}

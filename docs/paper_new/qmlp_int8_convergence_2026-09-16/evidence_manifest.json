@@ -1,0 +1,329 @@
+{
+  "scope": "Isolated INT8 convergence package; external inputs separately hashed in phase summaries",
+  "files": {
+    "docs/paper_new/qmlp_int8_convergence_2026-09-16/01_计划与部署契约.md": {
+      "sha256": "15d95ca86fa0fd509f136f6d52a6a502e6f48bc88bcc953ea7937be1e30cce3f",
+      "bytes": 4764
+    },
+    "docs/paper_new/qmlp_int8_convergence_2026-09-16/02_结果与收敛判定.md": {
+      "sha256": "a27980973e64b64408775e8bf2c5af37bd108da3ddd702ea908b6151a4155523",
+      "bytes": 5356
+    },
+    "docs/paper_new/qmlp_int8_convergence_2026-09-16/03_审查与后续边界.md": {
+      "sha256": "b396b4677510e5167ef298f5ecb4be382d5f18eaabbafae010c7beed48a7b0c8",
+      "bytes": 4483
+    },
+    "docs/paper_new/qmlp_int8_convergence_2026-09-16/04_先完成特征筛选与样本审计.md": {
+      "sha256": "576cefb9c2b41e2dba04b1d4ff30e1c0bfdfddf9ec0804e503b7ed459ee98609",
+      "bytes": 4731
+    },
+    "docs/paper_new/qmlp_int8_convergence_2026-09-16/README.md": {
+      "sha256": "3b521c5dbfd70ebed47030c0ff75e4d44c9a28811aa95a0a273950dde3a95730",
+      "bytes": 2105
+    },
+    "docs/paper_new/qmlp_int8_convergence_2026-09-16/candidate_parameters.zip": {
+      "sha256": "af43aab117c056a3c3df16a5e0ca366a7fed895af55e686e88f456c89841b6a0",
+      "bytes": 104887
+    },
+    "docs/paper_new/qmlp_int8_convergence_2026-09-16/common.py": {
+      "sha256": "59613000cc60a2f4cacb90b3ab2e01f6b68a422dd5ba4f1c21f522c30d641e56",
+      "bytes": 9232
+    },
+    "docs/paper_new/qmlp_int8_convergence_2026-09-16/convergence.pdf": {
+      "sha256": "2e277c028a27b0e3adc56b4820db073b9cb2dfcd5d77205c46aebfee2dbd5426",
+      "bytes": 22078
+    },
+    "docs/paper_new/qmlp_int8_convergence_2026-09-16/convergence.png": {
+      "sha256": "abe3662016e56e24286e8c635ebf84ad8661cedd51d94249c9cd411e62b37bec",
+      "bytes": 244098
+    },
+    "docs/paper_new/qmlp_int8_convergence_2026-09-16/finalize.py": {
+      "sha256": "302fbc75eb02ecd8b804fce11703dd6551ab9eb0664e90da2596904c62edd410",
+      "bytes": 10530
+    },
+    "docs/paper_new/qmlp_int8_convergence_2026-09-16/plan.json": {
+      "sha256": "d1293be9eef179396c78e24670dcde1b2b2b0e144071be0157f59dedd51e25f0",
+      "bytes": 3211
+    },
+    "docs/paper_new/qmlp_int8_convergence_2026-09-16/plot_results.py": {
+      "sha256": "e2d6d59d3c530c4415a88897a690db346760abb919a0142cfd29867592ac0c47",
+      "bytes": 1797
+    },
+    "docs/paper_new/qmlp_int8_convergence_2026-09-16/preflight.py": {
+      "sha256": "a897f619ea1ae76ce0318158b07f94656d605a78c419fd0f04bfa38b67826aaa",
+      "bytes": 2177
+    },
+    "docs/paper_new/qmlp_int8_convergence_2026-09-16/prepare.py": {
+      "sha256": "50f4bc49c3ff662cac8e1848218c00b5e82db3965222afb9dbd2550eec677c32",
+      "bytes": 4854
+    },
+    "docs/paper_new/qmlp_int8_convergence_2026-09-16/run_candidate.py": {
+      "sha256": "192fb65339d0db7559de737948217db3e03a5ade937e6e758d0106f0fc071b91",
+      "bytes": 1751
+    },
+    "docs/paper_new/qmlp_int8_convergence_2026-09-16/summarize.py": {
+      "sha256": "4d089f7315a5796e35a97c573983f76b94e4442432e02191c8c1d84e437a65bc",
+      "bytes": 9437
+    },
+    "docs/paper_new/qmlp_int8_convergence_2026-09-16/train.py": {
+      "sha256": "b046b18882edc75a0a3dddcbb65e718d10a9002e03e3981158cff6a515d907c5",
+      "bytes": 8701
+    },
+    "docs/paper_new/qmlp_int8_convergence_2026-09-16/verify.py": {
+      "sha256": "bd8aa85165ab84ba7bc630ba454a0b69cfa438138e29b62bb35f5834602c753d",
+      "bytes": 6571
+    },
+    "logs/qmlp_int8_convergence_20260916/cli_smoke/input.npy": {
+      "sha256": "ec2bf3ee43fda4d4ef0470eba6635c0a9dd06ca59c60bb40bb2887a8bd1c2654",
+      "bytes": 800
+    },
+    "logs/qmlp_int8_convergence_20260916/cli_smoke/output.npy": {
+      "sha256": "4a45e9d57bcad946a12804d08709ee53960298fa6fc5f5aefbc08fa5867c3bf4",
+      "bytes": 384
+    },
+    "logs/qmlp_int8_convergence_20260916/cli_smoke/summary.json": {
+      "sha256": "2ca2a897db0e38587d1a11ffad468cc5c52e3aaaeda457c0c0908ff98fd65bea",
+      "bytes": 132
+    },
+    "logs/qmlp_int8_convergence_20260916/cli_smoke/wrong_dtype.npy": {
+      "sha256": "7d8e0100a1a0d56e9f7278e84a02a9ad27d1c24b6463c24f3aee1132de98e18d",
+      "bytes": 2816
+    },
+    "logs/qmlp_int8_convergence_20260916/execution/prepare.log": {
+      "sha256": "c35b079f4762ba1ea01fab2f42f7f8e1c9d7cda60993aa2c1a3e0dc19b246914",
+      "bytes": 8261
+    },
+    "logs/qmlp_int8_convergence_20260916/execution/training.log": {
+      "sha256": "c6548a07af6f170a76e5cd1c72fbf6a292b566a9a5c43938c4f67821175e156f",
+      "bytes": 24364
+    },
+    "logs/qmlp_int8_convergence_20260916/execution/verify.log": {
+      "sha256": "38e44bcdb7d7f2bab83f68dd0619e70d6b0870685ef80a70fc397a3bb3502a00",
+      "bytes": 4308
+    },
+    "logs/qmlp_int8_convergence_20260916/native/frozen_params.h": {
+      "sha256": "9709cca67c6bf7508e44a5cf438916b5374f472fbd699f64624fe4c7596d8273",
+      "bytes": 15362
+    },
+    "logs/qmlp_int8_convergence_20260916/native/pilot_native.c": {
+      "sha256": "fe32213c9a2d0e2779c531b9ee23bf5b116bda8919534bfc346840a88832da1a",
+      "bytes": 10859
+    },
+    "logs/qmlp_int8_convergence_20260916/native/pilot_native.so": {
+      "sha256": "316b4f4dafc68e1b4b9a5b85265b6c0f0e6d0e9e183fb8019f7cff37e51143a5",
+      "bytes": 24952
+    },
+    "logs/qmlp_int8_convergence_20260916/pre_training_source_manifest.json": {
+      "sha256": "315dcd3b12842398518eebe92dfb1b3741738642a11a68385b73f20fe1582cd9",
+      "bytes": 785
+    },
+    "logs/qmlp_int8_convergence_20260916/preflight.json": {
+      "sha256": "ee184acee1bf4e1142ad593f32a6f55b2f354285f51973347674ec96cc29f066",
+      "bytes": 603
+    },
+    "logs/qmlp_int8_convergence_20260916/synthetic_export/Radar_frozen_qmlpParams.scala": {
+      "sha256": "895b50cd674142e85fc620dc411855b2dc1ee260ec0a82d1799d32ed0c652088",
+      "bytes": 13830
+    },
+    "logs/qmlp_int8_convergence_20260916/synthetic_export/inference_trace.c": {
+      "sha256": "07eaf1b6d56e3f40c48dc217810a8102fb4230a5ab1050e720fa6a3ae5248a72",
+      "bytes": 2336
+    },
+    "logs/qmlp_int8_convergence_20260916/synthetic_export/inference_trace.so": {
+      "sha256": "8af34348a22506e70cba58238d0cecfcde087db007c446900fb344d6ec0290e7",
+      "bytes": 20160
+    },
+    "logs/qmlp_int8_convergence_20260916/synthetic_export/integer_params.npz": {
+      "sha256": "15a3e8c5f3a202701e0127b1002cb9f9d2b2b8bb08b31c64a22b78b323c492b1",
+      "bytes": 5286
+    },
+    "logs/qmlp_int8_convergence_20260916/synthetic_export/params.h": {
+      "sha256": "5b36e40eecb2b580bce728cef2dbb213822ef6929a909e12a51df4072f14f03d",
+      "bytes": 13824
+    },
+    "logs/qmlp_int8_convergence_20260916/synthetic_export/params.json": {
+      "sha256": "cc9ea38d25437d005e6d2eb6c6a7988e993a263b5107538cfa879f20b3e5a7b5",
+      "bytes": 871
+    },
+    "logs/qmlp_int8_convergence_20260916/train/features.npy": {
+      "sha256": "cce56f89ee4a6c7dd5437696df393c0a39e0501260e2f3ca4514f8c23d9d4158",
+      "bytes": 7513508
+    },
+    "logs/qmlp_int8_convergence_20260916/train/labels.npy": {
+      "sha256": "fa6ea251f797140175a8f5d33ea91357ee607a6c593d9cd727eb2d6eccef4272",
+      "bytes": 2862368
+    },
+    "logs/qmlp_int8_convergence_20260916/train/metadata.csv.gz": {
+      "sha256": "0497b2b58dc9bb3ff3aba55d435e6a358c775e0f53cc3c76696e14c879d8cd71",
+      "bytes": 927597
+    },
+    "logs/qmlp_int8_convergence_20260916/train/summary.json": {
+      "sha256": "8d66acc2bf4172043f888f273e67ddd8e92f8e5d4b1041522393e3cb7ba1d680",
+      "bytes": 12648
+    },
+    "logs/qmlp_int8_convergence_20260916/training/calibration_rows.npy": {
+      "sha256": "563a68a1b0df22c9abf32d4d2eb0b725c68421e91d1c9bbfe6e760942c2fa86a",
+      "bytes": 131200
+    },
+    "logs/qmlp_int8_convergence_20260916/training/seed17/final_export/Radar_frozen_qmlpParams.scala": {
+      "sha256": "e7b8ea27ac49be7ee4c8c3332391d62cd34d5bd7604cde847e525002776779b1",
+      "bytes": 11410
+    },
+    "logs/qmlp_int8_convergence_20260916/training/seed17/final_export/inference_trace.c": {
+      "sha256": "07eaf1b6d56e3f40c48dc217810a8102fb4230a5ab1050e720fa6a3ae5248a72",
+      "bytes": 2336
+    },
+    "logs/qmlp_int8_convergence_20260916/training/seed17/final_export/inference_trace.so": {
+      "sha256": "da99cba8fa7f71d1f94d81df9e4f7f1db3d4ee1707031f1961f885dcc0777097",
+      "bytes": 20160
+    },
+    "logs/qmlp_int8_convergence_20260916/training/seed17/final_export/integer_params.npz": {
+      "sha256": "a5ded06da072fd9c752988a8b303231923e0f586b62c1efddd65b3f0c3c8a4d7",
+      "bytes": 5286
+    },
+    "logs/qmlp_int8_convergence_20260916/training/seed17/final_export/params.h": {
+      "sha256": "d60d096c897fd7570049ddf458f725afbc4538531bc068cd4597d064308941a5",
+      "bytes": 11412
+    },
+    "logs/qmlp_int8_convergence_20260916/training/seed17/final_export/params.json": {
+      "sha256": "2fbb1035c9f96dc6f65d7d4d92e371cc76d0d180a3e8ed3c34535e6970cf0cfd",
+      "bytes": 866
+    },
+    "logs/qmlp_int8_convergence_20260916/training/seed17/final_train_logits.npy": {
+      "sha256": "4024d57e9d1166a871d96ff3181b08deb4b0ee0ed74691452a329bbd0d363e60",
+      "bytes": 2862368
+    },
+    "logs/qmlp_int8_convergence_20260916/training/seed17/final_val_logits.npy": {
+      "sha256": "8eecaed7a8ccd40e0bd386df04b1d2209ba307d3a0e5a1884734c77c1db90b04",
+      "bytes": 643728
+    },
+    "logs/qmlp_int8_convergence_20260916/training/seed17/folded_warmup.pt": {
+      "sha256": "717b81a7179ed35de8c9ff5a06238a912b2901f09be8c84364a8229dbeb2b8c7",
+      "bytes": 31172
+    },
+    "logs/qmlp_int8_convergence_20260916/training/seed17/frozen_qat.pt": {
+      "sha256": "f0f4b0341dd50d3db14d341835483ba09651de5bb290c4def26a1af341ab0aef",
+      "bytes": 32035
+    },
+    "logs/qmlp_int8_convergence_20260916/training/seed17/ptq_export/Radar_frozen_qmlpParams.scala": {
+      "sha256": "2e16b23269d8010b1707f6a6a9fc90913d5f4f6951aa6cd54fc0225c219ec922",
+      "bytes": 11323
+    },
+    "logs/qmlp_int8_convergence_20260916/training/seed17/ptq_export/integer_params.npz": {
+      "sha256": "99cd3c9a5bcfba3a62b22e41fb60d362b91b7d27c4978417841a609bac8b02eb",
+      "bytes": 5286
+    },
+    "logs/qmlp_int8_convergence_20260916/training/seed17/ptq_export/params.h": {
+      "sha256": "bebc2a097f0ad4691d12c6f9ff012932a5fbace3886d22ed9dfa139a01be5963",
+      "bytes": 11325
+    },
+    "logs/qmlp_int8_convergence_20260916/training/seed17/ptq_export/params.json": {
+      "sha256": "1cb759c73f31286ca67f4b1907eeb33c14ff0fc7e5e48687399b4ca784f944f7",
+      "bytes": 866
+    },
+    "logs/qmlp_int8_convergence_20260916/training/seed17/ptq_val_logits.npy": {
+      "sha256": "498a0c036f522219b6dbb0fedd1a16e6e26db71b718e2eed8085c64866829ecb",
+      "bytes": 643728
+    },
+    "logs/qmlp_int8_convergence_20260916/training/seed17/summary.json": {
+      "sha256": "4db544bb00d3da7982cb4fabf1b22ee08be83b6301c94012d68681ed082f4434",
+      "bytes": 17374
+    },
+    "logs/qmlp_int8_convergence_20260916/training/seed17/warmup_val_logits.npy": {
+      "sha256": "e00430e1d0349cfa56138e0ca0921866a30e2938f44351d9c53af49fda9df192",
+      "bytes": 1287328
+    },
+    "logs/qmlp_int8_convergence_20260916/training/seed7/final_export/Radar_frozen_qmlpParams.scala": {
+      "sha256": "8401d25e8a0db9c61955fd934c94be69a604b9b07b77bdf554ebaf268ecb6258",
+      "bytes": 10967
+    },
+    "logs/qmlp_int8_convergence_20260916/training/seed7/final_export/inference_trace.c": {
+      "sha256": "07eaf1b6d56e3f40c48dc217810a8102fb4230a5ab1050e720fa6a3ae5248a72",
+      "bytes": 2336
+    },
+    "logs/qmlp_int8_convergence_20260916/training/seed7/final_export/inference_trace.so": {
+      "sha256": "82d84e7608cec8f983f59fb932fa3558a0ddf6a5252e75c5313457549f1e562f",
+      "bytes": 20160
+    },
+    "logs/qmlp_int8_convergence_20260916/training/seed7/final_export/integer_params.npz": {
+      "sha256": "559d9b19eb6fb88c14ff975f007e229d58aa3d5a1a0b753762931d9060969dcc",
+      "bytes": 5286
+    },
+    "logs/qmlp_int8_convergence_20260916/training/seed7/final_export/params.h": {
+      "sha256": "6885abff56754b48966a6de947b63ee872efea77cd03b1108b04bdbb205a9054",
+      "bytes": 10969
+    },
+    "logs/qmlp_int8_convergence_20260916/training/seed7/final_export/params.json": {
+      "sha256": "81f1eb5ef56203d18e0a1029513b756b5d90eb47ee0f9956f988be68077f57c1",
+      "bytes": 866
+    },
+    "logs/qmlp_int8_convergence_20260916/training/seed7/final_train_logits.npy": {
+      "sha256": "d9fe44d0661f5d2d227ed1a610b61184235596c34b9541f89a6725a31dac30a3",
+      "bytes": 2862368
+    },
+    "logs/qmlp_int8_convergence_20260916/training/seed7/final_val_logits.npy": {
+      "sha256": "18069b5809cf6ad2e8dfd20656e9c4ade96c6cd95a13e2092d8d8c7fa08fcdb7",
+      "bytes": 643728
+    },
+    "logs/qmlp_int8_convergence_20260916/training/seed7/folded_warmup.pt": {
+      "sha256": "985b6f9142cb4908e9d5cefa67741a991a333dcd9fe50434a2a43ba343789a7c",
+      "bytes": 31172
+    },
+    "logs/qmlp_int8_convergence_20260916/training/seed7/frozen_qat.pt": {
+      "sha256": "6b39e0edc62ba6e8debceba8fcf4822793552b46b301fcd740e6306d9c9b3f88",
+      "bytes": 32035
+    },
+    "logs/qmlp_int8_convergence_20260916/training/seed7/ptq_export/Radar_frozen_qmlpParams.scala": {
+      "sha256": "7b1c2a7113026382f1a4f6960e78c741b53b2e14e1af332653ce35296cd82a46",
+      "bytes": 10921
+    },
+    "logs/qmlp_int8_convergence_20260916/training/seed7/ptq_export/integer_params.npz": {
+      "sha256": "8657973153722502d74d78f9d978f64f7ffb4c410ba4761d25264c838a60cf19",
+      "bytes": 5286
+    },
+    "logs/qmlp_int8_convergence_20260916/training/seed7/ptq_export/params.h": {
+      "sha256": "cca22cea6167b0f2f0cdf1be74bf13649ee696a9eaae82a89a00e0f29ec9d378",
+      "bytes": 10923
+    },
+    "logs/qmlp_int8_convergence_20260916/training/seed7/ptq_export/params.json": {
+      "sha256": "d4df642147e13a6f95b3488686e305a5b4737c2edf3cc797aec225a1fae285e5",
+      "bytes": 866
+    },
+    "logs/qmlp_int8_convergence_20260916/training/seed7/ptq_val_logits.npy": {
+      "sha256": "1ff24f889dad3b9ff4ac1f8de16ce43b73cda567d222ece82ce0ace3e8551848",
+      "bytes": 643728
+    },
+    "logs/qmlp_int8_convergence_20260916/training/seed7/summary.json": {
+      "sha256": "7b7ffd9a3351517d2cdd3a0e6601a99b1faea2aba6e63483c3432c05434f9768",
+      "bytes": 13500
+    },
+    "logs/qmlp_int8_convergence_20260916/training/seed7/warmup_val_logits.npy": {
+      "sha256": "cefd6c85c4bc437ed441425bdb2177a2fbc25bb5e4079e5acc239e044d291e62",
+      "bytes": 1287328
+    },
+    "logs/qmlp_int8_convergence_20260916/training/summary.json": {
+      "sha256": "046ef07e277cfa856cdf5002b247f20d489b1dacafe7ab185f12324846b50135",
+      "bytes": 7064
+    },
+    "logs/qmlp_int8_convergence_20260916/training/train_normalization.npz": {
+      "sha256": "7868cdd5d72fcf378f9a596a4ecc8233402487384111002dbe3c601cba1962f4",
+      "bytes": 1110
+    },
+    "logs/qmlp_int8_convergence_20260916/verification/seed17_c_validation_logits.npy": {
+      "sha256": "8eecaed7a8ccd40e0bd386df04b1d2209ba307d3a0e5a1884734c77c1db90b04",
+      "bytes": 643728
+    },
+    "logs/qmlp_int8_convergence_20260916/verification/seed7_c_validation_logits.npy": {
+      "sha256": "18069b5809cf6ad2e8dfd20656e9c4ade96c6cd95a13e2092d8d8c7fa08fcdb7",
+      "bytes": 643728
+    },
+    "logs/qmlp_int8_convergence_20260916/verification/sequence_metrics.csv": {
+      "sha256": "017732a23553953741e964416b1867790d2eb06e5c58dc0e4cf0a0015a698bc7",
+      "bytes": 4162
+    },
+    "logs/qmlp_int8_convergence_20260916/verification/summary.json": {
+      "sha256": "d4f5fce0465f19e9934953f10c402bceeb4d5c1597a07563f8ac90a56d02f689",
+      "bytes": 6004
+    }
+  }
+}

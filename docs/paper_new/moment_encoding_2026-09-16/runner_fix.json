@@ -1,0 +1,9 @@
+{
+  "status": "PRE_RUN_PATH_CORRECTION",
+  "reason": "Generated wrapper incorrectly renamed the reused QAT common.py source-hash path; failed before initialization or optimization",
+  "original_runner_preserved": "docs/paper_new/moment_encoding_2026-09-16/train_encoding.py",
+  "corrected_runner": "docs/paper_new/moment_encoding_2026-09-16/train_encoding_v2.py",
+  "corrected_sha256": "d5859ec5e7a04e7733a2368f9bf3314e120deba37b113b19034477a27e09f00e",
+  "model_attempts_before_fix": 0,
+  "data_and_protocol_change": "NONE"
+}

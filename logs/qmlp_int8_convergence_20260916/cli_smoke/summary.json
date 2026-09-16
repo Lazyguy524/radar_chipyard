@@ -1,0 +1,7 @@
+{
+  "status": "PASS",
+  "samples": 32,
+  "logits_match": true,
+  "overwrite_rejected": true,
+  "wrong_input_dtype_rejected": true
+}

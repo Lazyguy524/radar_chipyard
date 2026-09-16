@@ -1,0 +1,31 @@
+{
+  "status": "PASS",
+  "source_hash_checks": 33,
+  "numeric_results_recomputed": 6,
+  "plateau_stop_epochs_recomputed": [
+    28,
+    39
+  ],
+  "protected_guards": [
+    {
+      "snapshot": "docs/paper_new/training_and_gemmini_retest_2026-09-15/protected_artifacts_before.json",
+      "files_unchanged": 201
+    },
+    {
+      "snapshot": "docs/paper_new/gemmini_qmlp_comparison_2026-09-15/protected_artifacts_before.json",
+      "files_unchanged": 68
+    }
+  ],
+  "previous_pilot_files_unchanged": 110,
+  "local_links_checked": 34,
+  "stages_seconds": {
+    "prepare": 239.55978196504293,
+    "training": 89.85084495099727,
+    "verification": 2.861890092957765
+  },
+  "output_bytes": 24093492,
+  "complete_validation_rows_per_seed": 80450,
+  "new_board_runs": 0,
+  "gpu_jobs": 0,
+  "scope": "Offline integer training and export evidence, operational loss plateau; not global convergence or independent test/board evidence"
+}

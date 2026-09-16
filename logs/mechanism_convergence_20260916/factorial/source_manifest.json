@@ -1,0 +1,21 @@
+{
+  "status": "FROZEN_BEFORE_STAGE",
+  "sha256": {
+    "docs/paper_new/mechanism_convergence_2026-09-16/plan.json": "f02006540bd17ddec6c07e6b8a7cba5815df64cee694ba9b0d93facd1715e76e",
+    "docs/paper_new/mechanism_convergence_2026-09-16/train_fixed.py": "d12c618460a2c73a93d6c06e1d2cb2dd3bf418d2a84ce52e7525159e31960073",
+    "docs/paper_new/mechanism_convergence_2026-09-16/common.py": "1a28d76bfcb0d5025a2d13427420abb0bf0b9a31d935c127de38117896aa0ebc",
+    "docs/paper_new/qmlp_int8_convergence_2026-09-16/common.py": "59613000cc60a2f4cacb90b3ab2e01f6b68a422dd5ba4f1c21f522c30d641e56",
+    "docs/paper_new/qmlp_int8_convergence_2026-09-16/plan.json": "d1293be9eef179396c78e24670dcde1b2b2b0e144071be0157f59dedd51e25f0",
+    "logs/mechanism_convergence_20260916/data/scales.json": "b0825a51c07a672b5f93f6facb04e0f490b63b4a4626c2cfa3edd8eff165c17c",
+    "logs/mechanism_convergence_20260916/data/train/proxy.npy": "7ada058c9d26ef6a903bfee6658a939a39d21546d779e9c5a9cf8c377c3cac71",
+    "logs/mechanism_convergence_20260916/data/val/proxy.npy": "ba6be1c48dbd72381e5db4d52576726a61b9bcaf7a3f93e7aa7d06a472a98db4",
+    "logs/mechanism_convergence_20260916/data/train/mean.npy": "04ea67db4774b755d97737616574ebdcaf5b04ee6ee67bf44bcb914a0aac3b99",
+    "logs/mechanism_convergence_20260916/data/val/mean.npy": "acb68ef4a0e22c271533dfb3567ef49a487a99d7c0d1ae2ffc01a59da90cb2fe",
+    "logs/mechanism_convergence_20260916/data/train/shape.npy": "7eef2b8f7b57ee2c0ba414ae544f948e3e212c90c09112d056d6a2b1bb5f494c",
+    "logs/mechanism_convergence_20260916/data/val/shape.npy": "faf4134ce153d6d051aa5895289e3ee59215abf70d3b0c10a636a8598cd0b21f",
+    "logs/mechanism_convergence_20260916/data/train/moment.npy": "2f16bb6b24d83e4fbcf5f6ea26d79900194f168e53227219061076d760b75c43",
+    "logs/mechanism_convergence_20260916/data/val/moment.npy": "1b7c854ca0369b97279d0e344f52577b4312a051001116d5e55851d535299a43",
+    "logs/mechanism_convergence_20260916/data/train/labels.npy": "fa6ea251f797140175a8f5d33ea91357ee607a6c593d9cd727eb2d6eccef4272",
+    "logs/mechanism_convergence_20260916/data/val/labels.npy": "3ac1b4d33f41b71f5dd3f7c79f070781f519c9ba5bdccb4f64dd2095604b9302"
+  }
+}

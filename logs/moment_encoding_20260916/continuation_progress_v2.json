@@ -1,0 +1,21 @@
+{
+  "status": "RUNNING",
+  "stages": [
+    {
+      "stage": "training_v2",
+      "returncode": 0,
+      "seconds": 407.26913964701816
+    },
+    {
+      "stage": "evaluation",
+      "returncode": 0,
+      "seconds": 67.33909602399217
+    },
+    {
+      "stage": "implementations",
+      "returncode": 0,
+      "seconds": 5.983591438038275
+    }
+  ],
+  "source_path_fix": "See runner_fix.json; no model started in the failed pre-run attempt"
+}

@@ -1,0 +1,17 @@
+{
+  "status": "FROZEN_BEFORE_STAGE",
+  "sha256": {
+    "docs/paper_new/moment_encoding_2026-09-16/plan.json": "c7be666ecafcf01d6d5192d975d296a363781d119f3835fee9d70b781937265b",
+    "docs/paper_new/moment_encoding_2026-09-16/train_encoding_v2.py": "d5859ec5e7a04e7733a2368f9bf3314e120deba37b113b19034477a27e09f00e",
+    "docs/paper_new/moment_encoding_2026-09-16/common_encoding.py": "c6ff1d5691efc18f0242e84ce404d9295887df5a9b78758f714ff7832bc9e4d4",
+    "docs/paper_new/qmlp_int8_convergence_2026-09-16/common.py": "59613000cc60a2f4cacb90b3ab2e01f6b68a422dd5ba4f1c21f522c30d641e56",
+    "docs/paper_new/qmlp_int8_convergence_2026-09-16/plan.json": "d1293be9eef179396c78e24670dcde1b2b2b0e144071be0157f59dedd51e25f0",
+    "logs/moment_encoding_20260916/data/scales.json": "bf264367d747cb189125a5f48a13dd81068078f5907f380e2f7025b9fb463099",
+    "logs/moment_encoding_20260916/data/train/linear_fine.npy": "f13872666a016215e89bf2aa93e866b6cf49533bddfd846e233f5d26d7936a2b",
+    "logs/moment_encoding_20260916/data/val/linear_fine.npy": "07e56b87fe78b29d9fa370a1e4fbb801cac3ee8651729c735b380e7f468b3bc2",
+    "logs/moment_encoding_20260916/data/train/root.npy": "4164f799ce30403581a22e8776e78d62e1c93376d148707625c2857e81d084d0",
+    "logs/moment_encoding_20260916/data/val/root.npy": "ea2b87c6931f86a815ac444208a00963688d3b2c7ff44bb2f76bc227b34d0241",
+    "logs/moment_encoding_20260916/data/train/labels.npy": "fa6ea251f797140175a8f5d33ea91357ee607a6c593d9cd727eb2d6eccef4272",
+    "logs/moment_encoding_20260916/data/val/labels.npy": "3ac1b4d33f41b71f5dd3f7c79f070781f519c9ba5bdccb4f64dd2095604b9302"
+  }
+}

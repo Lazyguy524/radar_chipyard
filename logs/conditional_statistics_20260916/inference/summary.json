@@ -1,0 +1,47 @@
+{
+  "status": "PASS",
+  "checks": [
+    {
+      "tag": "proxy_scaled_seed7",
+      "complete_c_rows": 3448,
+      "cli_example": "PASS",
+      "invalid_lengths_rejected": 2
+    },
+    {
+      "tag": "proxy_scaled_seed17",
+      "complete_c_rows": 3448,
+      "cli_example": "PASS",
+      "invalid_lengths_rejected": 2
+    },
+    {
+      "tag": "moment24_seed7",
+      "complete_c_rows": 3448,
+      "cli_example": "PASS",
+      "invalid_lengths_rejected": 2
+    },
+    {
+      "tag": "moment24_seed17",
+      "complete_c_rows": 3448,
+      "cli_example": "PASS",
+      "invalid_lengths_rejected": 2
+    },
+    {
+      "tag": "moment16_seed7",
+      "complete_c_rows": 3448,
+      "cli_example": "PASS",
+      "invalid_lengths_rejected": 2
+    },
+    {
+      "tag": "moment16_seed17",
+      "complete_c_rows": 3448,
+      "cli_example": "PASS",
+      "invalid_lengths_rejected": 2
+    }
+  ],
+  "source_sha256": {
+    "docs/paper_new/conditional_statistics_2026-09-16/build_inference.py": "8bc3c43e66ee80e70cda1108fddbe2b45abe348a50f1c92c866dcc9a38aa2010",
+    "docs/paper_new/conditional_statistics_2026-09-16/inference_main.c": "26c25229632d0e957f06b4d2460c7fa109b669589ec570aa3d976e714f9c77f2",
+    "docs/paper_new/conditional_statistics_2026-09-16/shared_candidate.c": "b42ca2f7c4ca65cfbbd10812803ed9a62a720a553ee7b6a9ccafc9777ade2d61"
+  },
+  "scope": "Host C executable only, K7/GT fusion upstream, no RISC-V cross-compile, RTL or bitstream; all six configurations retained, no best-seed release selection."
+}

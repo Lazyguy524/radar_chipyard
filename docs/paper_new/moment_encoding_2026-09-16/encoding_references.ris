@@ -1,0 +1,22 @@
+TY  - CONF
+TI  - Improving the Fisher Kernel for Large-Scale Image Classification
+AU  - Perronnin, Florent
+AU  - Sánchez, Jorge
+AU  - Mensink, Thomas
+PY  - 2010
+T2  - Computer Vision – ECCV 2010
+UR  - https://europe.naverlabs.com/wp-content/uploads/2010/09/PSM10_0766.pdf
+N1  - Section 3.2: signed power normalization; alpha=0.5 is an existing method, not a novelty claim for this radar experiment.
+ER  -
+
+TY  - RPRT
+TI  - Convolutional Neural Networks using Logarithmic Data Representation
+AU  - Miyashita, Daisuke
+AU  - Lee, Edward H.
+AU  - Murmann, Boris
+PY  - 2016
+M3  - arXiv preprint
+M1  - arXiv:1603.01025
+UR  - https://arxiv.org/abs/1603.01025
+N1  - Existing nonuniform numeric encoding of network weights/activations; not a direct radar-statistics baseline or FPGA performance result for this project.
+ER  -

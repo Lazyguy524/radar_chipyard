@@ -1,0 +1,440 @@
+{
+  "status": "FIXED_MODEL_DIAGNOSTIC_COMPLETE",
+  "phase": "full",
+  "samples": 80450,
+  "sequences": 27,
+  "plan_sha256": "24b42182cafa7e87dd50ec6b8ce081d6f2f815fcb4f427c9b447e5164f9159b6",
+  "metrics": {
+    "software_reference": {
+      "samples": 80450,
+      "accuracy": 0.9753014294592914,
+      "macro_f1": 0.9738925134837939,
+      "per_class_f1": [
+        0.9678275934651317,
+        0.9799574335024561
+      ],
+      "recall": [
+        0.9783939503060857,
+        0.9734084123199006
+      ],
+      "confusion_matrix": [
+        [
+          29887,
+          660
+        ],
+        [
+          1327,
+          48576
+        ]
+      ],
+      "harm_vs_deployment": 459,
+      "repair_vs_deployment": 1025,
+      "harm_vs_software_reference": 0,
+      "repair_vs_software_reference": 0,
+      "saturated_feature_values": 113,
+      "positive_sequences_at_least_100_samples": 21,
+      "negative_sequences_at_least_100_samples": 3,
+      "paired_sequence_bootstrap_vs_deployment": {
+        "delta_macro_f1_percentile95": [
+          0.0037570718026774864,
+          0.014234307980535842
+        ],
+        "replicates": 2000,
+        "unit": "whole sequence, paired resampling",
+        "sequences": 27,
+        "selection_adjusted": false
+      }
+    },
+    "exact_quantized_input": {
+      "samples": 80450,
+      "accuracy": 0.975313859540087,
+      "macro_f1": 0.9739054933307272,
+      "per_class_f1": [
+        0.9678432642487047,
+        0.9799677224127497
+      ],
+      "recall": [
+        0.9783939503060857,
+        0.973428451195319
+      ],
+      "confusion_matrix": [
+        [
+          29887,
+          660
+        ],
+        [
+          1326,
+          48577
+        ]
+      ],
+      "harm_vs_deployment": 458,
+      "repair_vs_deployment": 1025,
+      "harm_vs_software_reference": 0,
+      "repair_vs_software_reference": 1,
+      "saturated_feature_values": 113,
+      "positive_sequences_at_least_100_samples": 21,
+      "negative_sequences_at_least_100_samples": 3,
+      "paired_sequence_bootstrap_vs_deployment": {
+        "delta_macro_f1_percentile95": [
+          0.0037570718026774864,
+          0.014235273671693475
+        ],
+        "replicates": 2000,
+        "unit": "whole sequence, paired resampling",
+        "sequences": 27,
+        "selection_adjusted": false
+      }
+    },
+    "exact_stats_hardware_quantizer": {
+      "samples": 80450,
+      "accuracy": 0.9753262896208825,
+      "macro_f1": 0.9739200651671738,
+      "per_class_f1": [
+        0.967864138969386,
+        0.9799759913649615
+      ],
+      "recall": [
+        0.9785576325007366,
+        0.9733482956936457
+      ],
+      "confusion_matrix": [
+        [
+          29892,
+          655
+        ],
+        [
+          1330,
+          48573
+        ]
+      ],
+      "harm_vs_deployment": 455,
+      "repair_vs_deployment": 1023,
+      "harm_vs_software_reference": 12,
+      "repair_vs_software_reference": 14,
+      "saturated_feature_values": 113,
+      "positive_sequences_at_least_100_samples": 21,
+      "negative_sequences_at_least_100_samples": 3,
+      "paired_sequence_bootstrap_vs_deployment": {
+        "delta_macro_f1_percentile95": [
+          0.0037842828016745904,
+          0.014271134687310661
+        ],
+        "replicates": 2000,
+        "unit": "whole sequence, paired resampling",
+        "sequences": 27,
+        "selection_adjusted": false
+      }
+    },
+    "deployment": {
+      "samples": 80450,
+      "accuracy": 0.9682660037290243,
+      "macro_f1": 0.9665274060271809,
+      "per_class_f1": [
+        0.9588988167109394,
+        0.9741559953434226
+      ],
+      "recall": [
+        0.9749238877794874,
+        0.9641905296274773
+      ],
+      "confusion_matrix": [
+        [
+          29781,
+          766
+        ],
+        [
+          1787,
+          48116
+        ]
+      ],
+      "harm_vs_deployment": 0,
+      "repair_vs_deployment": 0,
+      "harm_vs_software_reference": 1025,
+      "repair_vs_software_reference": 459,
+      "saturated_feature_values": 38,
+      "positive_sequences_at_least_100_samples": 0,
+      "negative_sequences_at_least_100_samples": 0,
+      "paired_sequence_bootstrap_vs_deployment": {
+        "delta_macro_f1_percentile95": [
+          0.0,
+          0.0
+        ],
+        "replicates": 2000,
+        "unit": "whole sequence, paired resampling",
+        "sequences": 27,
+        "selection_adjusted": false
+      }
+    },
+    "mean_corrected": {
+      "samples": 80450,
+      "accuracy": 0.971597265382225,
+      "macro_f1": 0.9700076685311723,
+      "per_class_f1": [
+        0.9631029081690323,
+        0.9769124288933122
+      ],
+      "recall": [
+        0.9762660817756245,
+        0.968739354347434
+      ],
+      "confusion_matrix": [
+        [
+          29822,
+          725
+        ],
+        [
+          1560,
+          48343
+        ]
+      ],
+      "harm_vs_deployment": 462,
+      "repair_vs_deployment": 730,
+      "harm_vs_software_reference": 581,
+      "repair_vs_software_reference": 283,
+      "saturated_feature_values": 38,
+      "positive_sequences_at_least_100_samples": 18,
+      "negative_sequences_at_least_100_samples": 7,
+      "paired_sequence_bootstrap_vs_deployment": {
+        "delta_macro_f1_percentile95": [
+          0.0005136048463290632,
+          0.00719149066918972
+        ],
+        "replicates": 2000,
+        "unit": "whole sequence, paired resampling",
+        "sequences": 27,
+        "selection_adjusted": false
+      }
+    },
+    "eigen_slots_exact": {
+      "samples": 80450,
+      "accuracy": 0.9694717215661902,
+      "macro_f1": 0.9677598519396444,
+      "per_class_f1": [
+        0.9603307920920016,
+        0.9751889117872874
+      ],
+      "recall": [
+        0.9731888565161881,
+        0.967196360940224
+      ],
+      "confusion_matrix": [
+        [
+          29728,
+          819
+        ],
+        [
+          1637,
+          48266
+        ]
+      ],
+      "harm_vs_deployment": 221,
+      "repair_vs_deployment": 318,
+      "harm_vs_software_reference": 912,
+      "repair_vs_software_reference": 443,
+      "saturated_feature_values": 113,
+      "positive_sequences_at_least_100_samples": 16,
+      "negative_sequences_at_least_100_samples": 6,
+      "paired_sequence_bootstrap_vs_deployment": {
+        "delta_macro_f1_percentile95": [
+          -0.0019610129445324057,
+          0.004424227438750576
+        ],
+        "replicates": 2000,
+        "unit": "whole sequence, paired resampling",
+        "sequences": 27,
+        "selection_adjusted": false
+      }
+    },
+    "std_slots_exact": {
+      "samples": 80450,
+      "accuracy": 0.9709011808576756,
+      "macro_f1": 0.969300344265938,
+      "per_class_f1": [
+        0.9622899853412588,
+        0.9763107031906174
+      ],
+      "recall": [
+        0.9778046944053426,
+        0.9666753501793479
+      ],
+      "confusion_matrix": [
+        [
+          29869,
+          678
+        ],
+        [
+          1663,
+          48240
+        ]
+      ],
+      "harm_vs_deployment": 103,
+      "repair_vs_deployment": 315,
+      "harm_vs_software_reference": 818,
+      "repair_vs_software_reference": 464,
+      "saturated_feature_values": 38,
+      "positive_sequences_at_least_100_samples": 18,
+      "negative_sequences_at_least_100_samples": 3,
+      "paired_sequence_bootstrap_vs_deployment": {
+        "delta_macro_f1_percentile95": [
+          0.0015096831614823363,
+          0.005047954627354291
+        ],
+        "replicates": 2000,
+        "unit": "whole sequence, paired resampling",
+        "sequences": 27,
+        "selection_adjusted": false
+      }
+    },
+    "angle_slot_exact": {
+      "samples": 80450,
+      "accuracy": 0.9680546923555003,
+      "macro_f1": 0.9663175784164029,
+      "per_class_f1": [
+        0.9586683821164361,
+        0.9739667747163695
+      ],
+      "recall": [
+        0.9757095623138115,
+        0.9633689357353266
+      ],
+      "confusion_matrix": [
+        [
+          29805,
+          742
+        ],
+        [
+          1828,
+          48075
+        ]
+      ],
+      "harm_vs_deployment": 43,
+      "repair_vs_deployment": 26,
+      "harm_vs_software_reference": 1046,
+      "repair_vs_software_reference": 463,
+      "saturated_feature_values": 38,
+      "positive_sequences_at_least_100_samples": 5,
+      "negative_sequences_at_least_100_samples": 8,
+      "paired_sequence_bootstrap_vs_deployment": {
+        "delta_macro_f1_percentile95": [
+          -0.0008391168402073045,
+          0.00035490235425385264
+        ],
+        "replicates": 2000,
+        "unit": "whole sequence, paired resampling",
+        "sequences": 27,
+        "selection_adjusted": false
+      }
+    },
+    "range_slots_exact": {
+      "samples": 80450,
+      "accuracy": 0.9675326289620882,
+      "macro_f1": 0.9658256525968999,
+      "per_class_f1": [
+        0.9581879302064992,
+        0.9734633749873006
+      ],
+      "recall": [
+        0.979768880741153,
+        0.9600424824158869
+      ],
+      "confusion_matrix": [
+        [
+          29929,
+          618
+        ],
+        [
+          1994,
+          47909
+        ]
+      ],
+      "harm_vs_deployment": 364,
+      "repair_vs_deployment": 305,
+      "harm_vs_software_reference": 1088,
+      "repair_vs_software_reference": 463,
+      "saturated_feature_values": 38,
+      "positive_sequences_at_least_100_samples": 10,
+      "negative_sequences_at_least_100_samples": 12,
+      "paired_sequence_bootstrap_vs_deployment": {
+        "delta_macro_f1_percentile95": [
+          -0.0041019001800325725,
+          0.002005845479747549
+        ],
+        "replicates": 2000,
+        "unit": "whole sequence, paired resampling",
+        "sequences": 27,
+        "selection_adjusted": false
+      }
+    },
+    "mean_eigen_corrected": {
+      "samples": 80450,
+      "accuracy": 0.9725792417650715,
+      "macro_f1": 0.971032500429601,
+      "per_class_f1": [
+        0.9643388296152603,
+        0.9777261712439418
+      ],
+      "recall": [
+        0.9764297639702754,
+        0.9702222311283891
+      ],
+      "confusion_matrix": [
+        [
+          29827,
+          720
+        ],
+        [
+          1486,
+          48417
+        ]
+      ],
+      "harm_vs_deployment": 495,
+      "repair_vs_deployment": 842,
+      "harm_vs_software_reference": 395,
+      "repair_vs_software_reference": 176,
+      "saturated_feature_values": 113,
+      "positive_sequences_at_least_100_samples": 21,
+      "negative_sequences_at_least_100_samples": 5,
+      "paired_sequence_bootstrap_vs_deployment": {
+        "delta_macro_f1_percentile95": [
+          0.0018648190610775438,
+          0.009269845525547379
+        ],
+        "replicates": 2000,
+        "unit": "whole sequence, paired resampling",
+        "sequences": 27,
+        "selection_adjusted": false
+      }
+    }
+  },
+  "candidate_gate": {
+    "eligible": [
+      "mean_corrected",
+      "std_slots_exact",
+      "mean_eigen_corrected"
+    ],
+    "selected": "mean_eigen_corrected",
+    "training_allowed": true,
+    "interpretation": "Exploratory validation selection, not corrected significance or held-out generalization."
+  },
+  "integer_trace_crosscheck_samples": 64,
+  "reconstruction_checks": {
+    "feature_tolerance_mismatches": 0,
+    "label_mismatches": 0,
+    "count_mismatches": 0,
+    "python_native_feature_mismatches": 0
+  },
+  "wall_seconds": 80.1501689129509,
+  "source_sha256": {
+    "tests/radar-feature21-qmlp-cpu-fullchain-profile.c": "c56cc771eded98bda18ae6cddf4eb8b8452ac6f093a68a1ed0bf0187d22898a7",
+    "docs/feature_preproc_compare_20260420/feature21/qmlp_params_21.h": "9709cca67c6bf7508e44a5cf438916b5374f472fbd699f64624fe4c7596d8273",
+    "docs/paper_new/feature_approximation_pilot_2026-09-16/pilot_common.py": "ad6f3f212a54556e08b78f592cac13a900b654864c724465cb37007e3c6320b6",
+    "docs/paper_new/feature_approximation_pilot_2026-09-16/run_diagnostic.py": "b4a6d1e459118197c775dad9f76f9b1a3362b58834ca6bb385b050587dbc5e3f"
+  },
+  "limitations": [
+    "Frozen old model; no matched retraining yet.",
+    "Full historical validation split, not an untouched final test.",
+    "No historical test rows, training, GPU, RTL or board run.",
+    "Slot interventions have no verified hardware cost.",
+    "Bootstrap intervals are exploratory and not multiplicity/selection adjusted."
+  ]
+}

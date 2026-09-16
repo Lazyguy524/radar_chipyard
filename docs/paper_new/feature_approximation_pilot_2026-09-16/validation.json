@@ -1,0 +1,19 @@
+{
+  "status": "PASS",
+  "numeric_evaluations_recomputed": 16,
+  "source_hash_checks": 23,
+  "train_validation_sequence_overlap": 0,
+  "stages_seconds": {
+    "smoke": 25.642441285017412,
+    "full": 80.1501689129509,
+    "train_subset": 141.12598206696566,
+    "training": 13.693666435021441
+  },
+  "main_compute_wall_seconds": 260.6122586999554,
+  "output_bytes": 44062732,
+  "local_links_checked": 18,
+  "trained_models": 6,
+  "gpu_jobs": 0,
+  "new_board_runs": 0,
+  "scope": "Local validation/representation pilot; no novelty certification, deployed QAT claim or hardware performance result."
+}

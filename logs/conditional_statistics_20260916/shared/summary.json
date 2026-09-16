@@ -1,0 +1,18 @@
+{
+  "status": "PASS",
+  "single_pass_raw_equivalence_cases": 51720,
+  "integer_frontend_equivalence_cases": 51720,
+  "conditions": [
+    "clean",
+    "uniform_half",
+    "uniform_quarter",
+    "central_half",
+    "xy_fraction6"
+  ],
+  "source_sha256": {
+    "docs/paper_new/conditional_statistics_2026-09-16/shared_candidate.c": "b42ca2f7c4ca65cfbbd10812803ed9a62a720a553ee7b6a9ccafc9777ade2d61",
+    "docs/paper_new/conditional_statistics_2026-09-16/verify_shared.py": "ab2b77df506ae3104c2edd36414109aa9ffb2b7719f77ccd9a56e42812d78e5b",
+    "logs/conditional_statistics_20260916/native/kernel.c": "135051a82c63e950abff41d8cb90dcc0a7b5c9e8946bdd744b50c635b6b95d36"
+  },
+  "scope": "Implemented one-pass C statistical candidate; cost graph is structural, not measured hardware performance"
+}

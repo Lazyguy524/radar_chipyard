@@ -1,0 +1,256 @@
+{
+  "status": "PASS",
+  "stage": "encoding",
+  "runs": [
+    {
+      "stage": "encoding",
+      "mode": "linear_fine",
+      "seed": 7,
+      "initialization_sha256": "dd8c7e7f284abb9a2d8be274467a06cefe3c7cfe205c0517ce41bd8adf17ab47",
+      "fold_max_error": 1.9539925233402755e-14,
+      "qat_epochs": 60,
+      "validation": {
+        "samples": 80450,
+        "accuracy": 0.9829086389061529,
+        "macro_f1": 0.9819000333768171,
+        "per_class_f1": [
+          0.9776273613303178,
+          0.9861727054233164
+        ],
+        "recall": [
+          0.9834680983402625,
+          0.982566178386069
+        ],
+        "confusion_matrix": [
+          [
+            30042,
+            505
+          ],
+          [
+            870,
+            49033
+          ]
+        ]
+      },
+      "frozen_buffers_sha256": "1e31f51f796445c7191e06d65de7e90c098e17daebb19822a50104bbe6b6d664",
+      "integer_layer_mismatches": [
+        0,
+        0,
+        0
+      ],
+      "wall_seconds": 67.63157145801233,
+      "scope": "Fixed epoch 60, no best-validation selection; synthetic point-removal training only in augmentation stage"
+    },
+    {
+      "stage": "encoding",
+      "mode": "linear_fine",
+      "seed": 17,
+      "initialization_sha256": "70c204e5999f5c8c1367203d222497e8d2b32e34f8b912e43480d8f83ed24dd8",
+      "fold_max_error": 2.1316282072803006e-14,
+      "qat_epochs": 60,
+      "validation": {
+        "samples": 80450,
+        "accuracy": 0.9828091982597887,
+        "macro_f1": 0.9817931397693638,
+        "per_class_f1": [
+          0.977492066075352,
+          0.9860942134633754
+        ],
+        "recall": [
+          0.9831079975120306,
+          0.9826262950123239
+        ],
+        "confusion_matrix": [
+          [
+            30031,
+            516
+          ],
+          [
+            867,
+            49036
+          ]
+        ]
+      },
+      "frozen_buffers_sha256": "44c8eeaf5fa4227aedbb43004cfe31f9a19a1ecb56b2c42201e353d3ffdbee30",
+      "integer_layer_mismatches": [
+        0,
+        0,
+        0
+      ],
+      "wall_seconds": 67.8929703690228,
+      "scope": "Fixed epoch 60, no best-validation selection; synthetic point-removal training only in augmentation stage"
+    },
+    {
+      "stage": "encoding",
+      "mode": "linear_fine",
+      "seed": 37,
+      "initialization_sha256": "c4bc1f02261d4102ff6a5c1469fa109e648953e663ab612f47f2995b0cf77f2f",
+      "fold_max_error": 1.9539925233402755e-14,
+      "qat_epochs": 60,
+      "validation": {
+        "samples": 80450,
+        "accuracy": 0.9814418893722809,
+        "macro_f1": 0.9803581733266833,
+        "per_class_f1": [
+          0.9757444803665134,
+          0.9849718662868532
+        ],
+        "recall": [
+          0.9830752610731005,
+          0.980442057591728
+        ],
+        "confusion_matrix": [
+          [
+            30030,
+            517
+          ],
+          [
+            976,
+            48927
+          ]
+        ]
+      },
+      "frozen_buffers_sha256": "8d76ea7136bbe4eac9d52e804e6daf3c6c50c4465876b534777c3f32760e9d44",
+      "integer_layer_mismatches": [
+        0,
+        0,
+        0
+      ],
+      "wall_seconds": 67.82131639396539,
+      "scope": "Fixed epoch 60, no best-validation selection; synthetic point-removal training only in augmentation stage"
+    },
+    {
+      "stage": "encoding",
+      "mode": "root",
+      "seed": 7,
+      "initialization_sha256": "dd8c7e7f284abb9a2d8be274467a06cefe3c7cfe205c0517ce41bd8adf17ab47",
+      "fold_max_error": 1.7763568394002505e-14,
+      "qat_epochs": 60,
+      "validation": {
+        "samples": 80450,
+        "accuracy": 0.9816159105034182,
+        "macro_f1": 0.9805268993105132,
+        "per_class_f1": [
+          0.9759218559218559,
+          0.9851319426991706
+        ],
+        "recall": [
+          0.9812092840540806,
+          0.9818648177464281
+        ],
+        "confusion_matrix": [
+          [
+            29973,
+            574
+          ],
+          [
+            905,
+            48998
+          ]
+        ]
+      },
+      "frozen_buffers_sha256": "785c6bb7bf577213e00068e095d4c2bdbd1560b0f29c98f989f14712efd65a08",
+      "integer_layer_mismatches": [
+        0,
+        0,
+        0
+      ],
+      "wall_seconds": 67.55549805104965,
+      "scope": "Fixed epoch 60, no best-validation selection; synthetic point-removal training only in augmentation stage"
+    },
+    {
+      "stage": "encoding",
+      "mode": "root",
+      "seed": 17,
+      "initialization_sha256": "70c204e5999f5c8c1367203d222497e8d2b32e34f8b912e43480d8f83ed24dd8",
+      "fold_max_error": 2.4868995751603507e-14,
+      "qat_epochs": 60,
+      "validation": {
+        "samples": 80450,
+        "accuracy": 0.9820509633312616,
+        "macro_f1": 0.9809577631339025,
+        "per_class_f1": [
+          0.9763952005754079,
+          0.9855203256923971
+        ],
+        "recall": [
+          0.9776737486496219,
+          0.9847303769312467
+        ],
+        "confusion_matrix": [
+          [
+            29865,
+            682
+          ],
+          [
+            762,
+            49141
+          ]
+        ]
+      },
+      "frozen_buffers_sha256": "be57bd0f175779185878b5477b42a75904e595a08cd1be22190bf59def8389a0",
+      "integer_layer_mismatches": [
+        0,
+        0,
+        0
+      ],
+      "wall_seconds": 67.26350830798037,
+      "scope": "Fixed epoch 60, no best-validation selection; synthetic point-removal training only in augmentation stage"
+    },
+    {
+      "stage": "encoding",
+      "mode": "root",
+      "seed": 37,
+      "initialization_sha256": "c4bc1f02261d4102ff6a5c1469fa109e648953e663ab612f47f2995b0cf77f2f",
+      "fold_max_error": 2.4868995751603507e-14,
+      "qat_epochs": 60,
+      "validation": {
+        "samples": 80450,
+        "accuracy": 0.9838408949658173,
+        "macro_f1": 0.9829020204326304,
+        "per_class_f1": [
+          0.9788954186824248,
+          0.9869086221828361
+        ],
+        "recall": [
+          0.9869708973057911,
+          0.981924934372683
+        ],
+        "confusion_matrix": [
+          [
+            30149,
+            398
+          ],
+          [
+            902,
+            49001
+          ]
+        ]
+      },
+      "frozen_buffers_sha256": "a6e5cad4f7084db17e3ff32472399069498cc51e0cb2072ef09c6646428c7794",
+      "integer_layer_mismatches": [
+        0,
+        0,
+        0
+      ],
+      "wall_seconds": 67.18725509097567,
+      "scope": "Fixed epoch 60, no best-validation selection; synthetic point-removal training only in augmentation stage"
+    }
+  ],
+  "wall_seconds": 405.65729547000956,
+  "source_sha256": {
+    "docs/paper_new/moment_encoding_2026-09-16/plan.json": "c7be666ecafcf01d6d5192d975d296a363781d119f3835fee9d70b781937265b",
+    "docs/paper_new/moment_encoding_2026-09-16/train_encoding_v2.py": "d5859ec5e7a04e7733a2368f9bf3314e120deba37b113b19034477a27e09f00e",
+    "docs/paper_new/moment_encoding_2026-09-16/common_encoding.py": "c6ff1d5691efc18f0242e84ce404d9295887df5a9b78758f714ff7832bc9e4d4",
+    "docs/paper_new/qmlp_int8_convergence_2026-09-16/common.py": "59613000cc60a2f4cacb90b3ab2e01f6b68a422dd5ba4f1c21f522c30d641e56",
+    "docs/paper_new/qmlp_int8_convergence_2026-09-16/plan.json": "d1293be9eef179396c78e24670dcde1b2b2b0e144071be0157f59dedd51e25f0",
+    "logs/moment_encoding_20260916/data/scales.json": "bf264367d747cb189125a5f48a13dd81068078f5907f380e2f7025b9fb463099",
+    "logs/moment_encoding_20260916/data/train/linear_fine.npy": "f13872666a016215e89bf2aa93e866b6cf49533bddfd846e233f5d26d7936a2b",
+    "logs/moment_encoding_20260916/data/val/linear_fine.npy": "07e56b87fe78b29d9fa370a1e4fbb801cac3ee8651729c735b380e7f468b3bc2",
+    "logs/moment_encoding_20260916/data/train/root.npy": "4164f799ce30403581a22e8776e78d62e1c93376d148707625c2857e81d084d0",
+    "logs/moment_encoding_20260916/data/val/root.npy": "ea2b87c6931f86a815ac444208a00963688d3b2c7ff44bb2f76bc227b34d0241",
+    "logs/moment_encoding_20260916/data/train/labels.npy": "fa6ea251f797140175a8f5d33ea91357ee607a6c593d9cd727eb2d6eccef4272",
+    "logs/moment_encoding_20260916/data/val/labels.npy": "3ac1b4d33f41b71f5dd3f7c79f070781f519c9ba5bdccb4f64dd2095604b9302"
+  },
+  "plan_sha256": "c7be666ecafcf01d6d5192d975d296a363781d119f3835fee9d70b781937265b"
+}

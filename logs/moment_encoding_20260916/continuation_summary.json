@@ -1,0 +1,22 @@
+{
+  "status": "PASS",
+  "stages": [
+    {
+      "stage": "training_v2",
+      "returncode": 0,
+      "seconds": 407.26913964701816
+    },
+    {
+      "stage": "evaluation",
+      "returncode": 0,
+      "seconds": 67.33909602399217
+    },
+    {
+      "stage": "implementations",
+      "returncode": 0,
+      "seconds": 5.983591438038275
+    }
+  ],
+  "prepare_seconds": 72.08941884699743,
+  "resume_seconds": 480.59357262199046
+}

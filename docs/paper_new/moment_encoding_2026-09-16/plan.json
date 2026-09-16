@@ -1,0 +1,113 @@
+{
+  "status": "FROZEN_BEFORE_ENCODING_RUNS",
+  "date": "2026-09-16",
+  "authorization": "User requests continued bounded testing and deeper interpretation; this is a separate six-run study after the original 20+9-run mechanism protocol.",
+  "trigger": "Existing validation raw moments are nonzero, but output quantization maps x/y variances to zero in 67.1361%/91.2020% of rows. Verify whether distribution encoding, rather than extra reciprocal bits, limits utility.",
+  "data": {
+    "train_rows": 357780,
+    "validation_rows": 80450,
+    "seed": 20260916,
+    "test": "No new use",
+    "base": "Same frozen GT-track K7 train/validation data and labels"
+  },
+  "encoding": {
+    "representations": [
+      "linear_fine",
+      "root"
+    ],
+    "flags": {
+      "linear_fine": 3,
+      "root": 3
+    },
+    "seeds": [
+      7,
+      17,
+      37
+    ],
+    "warmup_epochs": 20,
+    "qat_epochs": 60,
+    "snapshots": [
+      20,
+      40,
+      60
+    ],
+    "completed_trajectories": 6,
+    "mean_slots": "Unchanged centered Q24 means",
+    "shape_slots": [
+      3,
+      4,
+      10,
+      11,
+      12
+    ],
+    "linear_fine": "Same Q16-fraction spatial moments; train absolute 99th percentile sets power-of-two output scales only for five shape slots, other scales frozen",
+    "root": "Round integer sqrt of x/y variance and signed sqrt of absolute xy covariance; max/min reuse two std values; train absolute 99.99th percentile for shape scales, other scales frozen",
+    "selection": "Fixed epoch60 and all seeds, no best checkpoint or transform search",
+    "training_augmentation": false
+  },
+  "diagnostics": {
+    "conditions": [
+      "clean",
+      "uniform_half_0",
+      "uniform_half_1",
+      "uniform_half_2",
+      "uniform_quarter_0",
+      "uniform_quarter_1",
+      "uniform_quarter_2",
+      "central_half",
+      "xy_fraction6",
+      "xy_fraction4",
+      "kept_single"
+    ],
+    "primary": [
+      "clean",
+      "uniform_half_0",
+      "uniform_quarter_0",
+      "central_half"
+    ],
+    "reference": "The same seeds of clean-trained moment and mean/proxy cells in mechanism_convergence; augmentation comparisons are contextual and not a controlled encoding effect",
+    "precision": [
+      [
+        8,
+        8
+      ],
+      [
+        12,
+        12
+      ],
+      [
+        16,
+        16
+      ],
+      [
+        12,
+        24
+      ],
+      [
+        24,
+        12
+      ]
+    ],
+    "sparse_views": [
+      "sparse_single",
+      "sparse_context"
+    ],
+    "precision_tolerance": {
+      "global_macro_f1": 0.001,
+      "supported_group_accuracy": 0.005,
+      "acceptance": "All three seeds and four primary conditions, including supported intersections; exploratory numerical gate only"
+    }
+  },
+  "budgets": {
+    "cpu_threads": 2,
+    "gpu_jobs": 0,
+    "prepare_seconds": 900,
+    "encoding_training_seconds": 900,
+    "evaluation_seconds": 600,
+    "max_output_bytes": 2147483648,
+    "new_rtl_jobs": 0,
+    "new_board_jobs": 0
+  },
+  "decision": "Stop after six fixed trajectories regardless of outcome. Retain finer-linear control to separate clipping/range allocation from nonlinear encoding. Check whether more informative output encoding exposes reciprocal errors hidden by coarse quantization. Three sqrt operations per cluster are extra cost, not free hardware. No further adaptive training is authorized by this study's plan.",
+  "novelty": "Standard deviation, signed power normalization, companding and finite-precision training are known techniques. This study tests their necessity and conditional tradeoff in the current radar pipeline; it does not claim the transforms are novel."
+}

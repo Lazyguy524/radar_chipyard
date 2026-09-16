@@ -1,0 +1,53 @@
+{
+  "status": "POST_HOC_DESCRIPTIVE_PROFILE",
+  "samples": 80450,
+  "new_training": false,
+  "source_sha256": {
+    "logs/feature_approximation_pilot_20260916/full/deployment.npy": "9ab3282b3b79955b00c2d749dbb7f25b699c0cd0e622c1ac4a542c853d5cad62",
+    "logs/feature_approximation_pilot_20260916/full/exact_stats_hardware_quantizer.npy": "ebfe6a0da17be5ef1a415116a45de91c7b253f9d1d9e2fe1e749149e7ecb9d7e"
+  },
+  "observations": {
+    "std_y": {
+      "slot": 4,
+      "name": "std_y",
+      "current_unique_values": 7,
+      "exact_unique_values": 11,
+      "current_zero_fraction": 0.9051336233685519,
+      "exact_zero_fraction": 0.8845494095711622,
+      "changed_fraction": 0.03229334990677439
+    },
+    "azimuth_span": {
+      "slot": 10,
+      "name": "azimuth_span",
+      "current_unique_values": 21,
+      "exact_unique_values": 2,
+      "current_zero_fraction": 0.11736482287134867,
+      "exact_zero_fraction": 0.9950279676817899,
+      "changed_fraction": 0.8778495960223741
+    },
+    "eig_major": {
+      "slot": 11,
+      "name": "eig_major",
+      "current_unique_values": 8,
+      "exact_unique_values": 123,
+      "current_zero_fraction": 0.4833064014916097,
+      "exact_zero_fraction": 0.3125046612802983,
+      "changed_fraction": 0.5623990055935364
+    },
+    "eig_minor": {
+      "slot": 12,
+      "name": "eig_minor",
+      "current_unique_values": 4,
+      "exact_unique_values": 16,
+      "current_zero_fraction": 0.9598259788688627,
+      "exact_zero_fraction": 0.9781603480422623,
+      "changed_fraction": 0.03632069608452455
+    }
+  },
+  "limitations": [
+    "Post-hoc follow-up of completed pilot, not predeclared confirmatory evidence.",
+    "A mostly-zero feature may be unnecessary for this task; zero fraction alone does not establish classification damage.",
+    "Training standardization was applied AFTER this quantization and cannot recover distinctions already lost.",
+    "Per-feature scaling/mixed precision are established methods, not a new method by themselves."
+  ]
+}

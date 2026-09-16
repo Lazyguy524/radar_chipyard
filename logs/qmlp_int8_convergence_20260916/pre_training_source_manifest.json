@@ -1,0 +1,11 @@
+{
+  "status": "FROZEN_BEFORE_TRAINING",
+  "utc": "2026-09-16T10:35:34.538759+00:00",
+  "sha256": {
+    "docs/paper_new/qmlp_int8_convergence_2026-09-16/plan.json": "d1293be9eef179396c78e24670dcde1b2b2b0e144071be0157f59dedd51e25f0",
+    "docs/paper_new/qmlp_int8_convergence_2026-09-16/common.py": "59613000cc60a2f4cacb90b3ab2e01f6b68a422dd5ba4f1c21f522c30d641e56",
+    "docs/paper_new/qmlp_int8_convergence_2026-09-16/train.py": "b046b18882edc75a0a3dddcbb65e718d10a9002e03e3981158cff6a515d907c5",
+    "docs/paper_new/qmlp_int8_convergence_2026-09-16/verify.py": "bd8aa85165ab84ba7bc630ba454a0b69cfa438138e29b62bb35f5834602c753d",
+    "docs/paper_new/qmlp_int8_convergence_2026-09-16/01_计划与部署契约.md": "15d95ca86fa0fd509f136f6d52a6a502e6f48bc88bcc953ea7937be1e30cce3f"
+  }
+}
