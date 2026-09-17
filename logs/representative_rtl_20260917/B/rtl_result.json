@@ -1,0 +1,12 @@
+{
+  "status":"PASS",
+  "rows":80992,
+  "feature_bytes_checked":2591744,
+  "logits_checked":161984,
+  "cycles_with_testbench_stalls":73864824,
+  "input_stall_cycles":70266875,
+  "output_stall_cycles":400759,
+  "abort_recovery":true,
+  "malformed_header_flag":true,
+  "scope":"Standalone RTL correctness; injected stalls, not a board performance measurement"
+}

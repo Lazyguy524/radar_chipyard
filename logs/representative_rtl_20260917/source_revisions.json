@@ -1,0 +1,12 @@
+{
+  "docs/paper_new/representative_rtl_2026-09-17/CandidateTop.scala": {
+    "before": "ac0b814cbfa4d6175e1d5ab60a64ec0eadd9b6fe7029abbb8747f1e683d4d88d",
+    "after": "81a642c127174e2eb9d24fe5f5feade05499190b912b4a9cfb35cd3dfde6a8cd",
+    "reason": "Fully qualify root circt after util wildcard shadowed the namespace; no datapath change"
+  },
+  "docs/paper_new/representative_rtl_2026-09-17/workflow.py": {
+    "before": "c160f2bba3654d48bd632f129c9160ab90203a323b7100d4d0d575ab2edb49d0",
+    "after": "3ca5cf923453c33614cb6259c33513570d5874a5e2ffd15ab41525ea507d805c",
+    "reason": "Require successful Scala compilation before elaboration; record tooling revisions separately; split CIRCT multi-file output including non-Verilog resource list before Verilator compilation; retain first failed build logs"
+  }
+}

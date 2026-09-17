@@ -1,0 +1,17 @@
+{
+  "date": "2026-09-17",
+  "purpose": "Connect frozen A/B/C proxy candidates to an isolated copy of the actual Feature21/QMLP RTL; preserve the research question and existing releases.",
+  "training_runs": 0,
+  "representatives": {"A": "ordinary proxy", "B": "perturbation proxy", "C": "clean_guard proxy"},
+  "rtl_seed": 7,
+  "seed_rule": "First seed in the previous frozen list, not selected by accuracy; scientific comparisons retain all three seeds.",
+  "lanes": 4,
+  "frontend_shifts": [10,8,8,6,5,8,7,8,8,8,7,6,4,0,6,7,8,8,6,5,7],
+  "preflight": "Independent Python integer rounding, raw C proxy to saved features, parameter/Scala multiplier binding and accumulator bounds before RTL execution.",
+  "verification": "All 80450 existing clean validation clusters plus deterministic boundary clusters; compare every feature byte and both INT32 logits; input bubbles/output stalls; abort/restart and protocol framing.",
+  "acceptance": "Zero mismatched bytes/logits, no timeout or unexpected status. This is implementation acceptance, not algorithm promotion or independent generalization confirmation.",
+  "budgets": {"cpu_threads": 2, "java_heap_gib": 4, "compile_timeout_seconds": 900, "simulation_timeout_seconds": 600, "new_model_variants": 0},
+  "isolation": "New docs/log paths and generated Scala package only; old source, exports, bitstreams and frozen manifests unchanged.",
+  "cost_scope": "No FPGA area/timing/energy conclusion from arithmetic, simulation cycles or model counts. Board measurements require a matching future SoC build, ELF and workload.",
+  "next_gate": "Only after bit-exact standalone RTL, prepare isolated SoC integration and matched board protocol. Do not resume Gemmini or expand training implicitly."
+}

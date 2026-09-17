@@ -1,0 +1,2 @@
+Error: Could not find or load main class chipyard.radar.candidate20260917.CandidateEmit
+Caused by: java.lang.ClassNotFoundException: chipyard.radar.candidate20260917.CandidateEmit

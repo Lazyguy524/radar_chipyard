@@ -1,0 +1,4 @@
+%Error: /home/soooarr/chipyard/logs/representative_rtl_20260917/A/CandidateTop.sv:3906:1: syntax error, unexpected IDENTIFIER
+ 3906 | RadarQMLPL1BiasRom.sv
+      | ^~~~~~~~~~~~~~~~~~
+%Error: Exiting due to 1 error(s)

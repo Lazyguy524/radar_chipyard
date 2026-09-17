@@ -1,0 +1,4 @@
+/home/soooarr/chipyard/logs/representative_rtl_20260917/scala/CandidateTop.scala:39: error: object stage is not a member of package chisel3.util.circt
+  circt.stage.ChiselStage.emitSystemVerilogFile(
+        ^
+1 error

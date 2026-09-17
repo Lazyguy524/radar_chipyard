@@ -1,0 +1,295 @@
+{
+  "status": "PASS",
+  "real_rows": 80450,
+  "synthetic_rows": 542,
+  "total_rows": 80992,
+  "python_rounding_cases": 1835015,
+  "raw_proxy_scaled_exact": true,
+  "legacy_byte_information_collisions": [
+    {
+      "slot": 0,
+      "old_byte": 2,
+      "rows": [
+        14,
+        1
+      ],
+      "new_bytes": [
+        1,
+        2
+      ]
+    },
+    {
+      "slot": 1,
+      "old_byte": -13,
+      "rows": [
+        10779,
+        10778
+      ],
+      "new_bytes": [
+        -33,
+        -32
+      ]
+    },
+    {
+      "slot": 2,
+      "old_byte": -30,
+      "rows": [
+        32697,
+        51425
+      ],
+      "new_bytes": [
+        -74,
+        -72
+      ]
+    },
+    {
+      "slot": 3,
+      "old_byte": 0,
+      "rows": [
+        184,
+        36
+      ],
+      "new_bytes": [
+        0,
+        5
+      ]
+    },
+    {
+      "slot": 4,
+      "old_byte": 0,
+      "rows": [
+        2561,
+        137
+      ],
+      "new_bytes": [
+        0,
+        10
+      ]
+    },
+    {
+      "slot": 5,
+      "old_byte": 0,
+      "rows": [
+        184,
+        0
+      ],
+      "new_bytes": [
+        0,
+        1
+      ]
+    },
+    {
+      "slot": 6,
+      "old_byte": 0,
+      "rows": [
+        2561,
+        14
+      ],
+      "new_bytes": [
+        0,
+        2
+      ]
+    },
+    {
+      "slot": 7,
+      "old_byte": 1,
+      "rows": [
+        11504,
+        74
+      ],
+      "new_bytes": [
+        3,
+        4
+      ]
+    },
+    {
+      "slot": 8,
+      "old_byte": 1,
+      "rows": [
+        40293,
+        40294
+      ],
+      "new_bytes": [
+        3,
+        4
+      ]
+    },
+    {
+      "slot": 9,
+      "old_byte": 1,
+      "rows": [
+        11508,
+        83
+      ],
+      "new_bytes": [
+        2,
+        4
+      ]
+    },
+    {
+      "slot": 10,
+      "old_byte": 0,
+      "rows": [
+        2561,
+        14
+      ],
+      "new_bytes": [
+        0,
+        2
+      ]
+    },
+    {
+      "slot": 11,
+      "old_byte": 0,
+      "rows": [
+        7784,
+        36
+      ],
+      "new_bytes": [
+        0,
+        5
+      ]
+    },
+    {
+      "slot": 12,
+      "old_byte": 0,
+      "rows": [
+        184,
+        410
+      ],
+      "new_bytes": [
+        0,
+        20
+      ]
+    },
+    {
+      "slot": 14,
+      "old_byte": -8,
+      "rows": [
+        36907,
+        27763
+      ],
+      "new_bytes": [
+        -81,
+        -73
+      ]
+    },
+    {
+      "slot": 15,
+      "old_byte": 0,
+      "rows": [
+        0,
+        37
+      ],
+      "new_bytes": [
+        0,
+        2
+      ]
+    },
+    {
+      "slot": 16,
+      "old_byte": -39,
+      "rows": [
+        11435,
+        13820
+      ],
+      "new_bytes": [
+        -96,
+        -94
+      ]
+    },
+    {
+      "slot": 17,
+      "old_byte": -8,
+      "rows": [
+        29347,
+        26275
+      ],
+      "new_bytes": [
+        -20,
+        -18
+      ]
+    },
+    {
+      "slot": 18,
+      "old_byte": -10,
+      "rows": [
+        40174,
+        40176
+      ],
+      "new_bytes": [
+        -100,
+        -93
+      ]
+    },
+    {
+      "slot": 19,
+      "old_byte": 0,
+      "rows": [
+        0,
+        1
+      ],
+      "new_bytes": [
+        0,
+        10
+      ]
+    },
+    {
+      "slot": 20,
+      "old_byte": -9,
+      "rows": [
+        42090,
+        15043
+      ],
+      "new_bytes": [
+        -43,
+        -42
+      ]
+    }
+  ],
+  "legacy_different_feature_bytes": 1522685,
+  "model_bindings": [
+    {
+      "model": "A",
+      "seed": 7,
+      "export_sha256": "38a53488ddf81afecaefad92506ba3a7a15ee3d19edea45e628b948537f66344",
+      "multipliers": [
+        947,
+        896
+      ],
+      "validation_logits_exact": true,
+      "metadata_accumulator_bound": 192710
+    },
+    {
+      "model": "B",
+      "seed": 7,
+      "export_sha256": "c96f2dfdcf2d1f340ac40a2ac59f3dc0d673d1ea8336d71e3b250e53783a77e6",
+      "multipliers": [
+        1226,
+        513
+      ],
+      "validation_logits_exact": true,
+      "metadata_accumulator_bound": 209723
+    },
+    {
+      "model": "C",
+      "seed": 7,
+      "export_sha256": "8f7d961abc525d386b92bd3f8c962f3df90f255418506b3b3b725f2719bc6505",
+      "multipliers": [
+        1558,
+        458
+      ],
+      "validation_logits_exact": true,
+      "metadata_accumulator_bound": 213728
+    }
+  ],
+  "vector_sha256": {
+    "B_logits.bin": "2c3f36caeb854a64293988d837e0f65870426db54c6d421d02c00145a452de16",
+    "offsets.bin": "b6706d7ea3e9af2c1bf8f829de408a5c9aaaeaffdf2358c2ab5499b7e4dfa861",
+    "A_logits.bin": "6c712c0172233c2fd2bbd9d4b2c90d18403c08db979e98d17e88082596ec7677",
+    "features.bin": "0fa95fa1fd8d170214bb3c72feb4caa870d2b3b7fe35e07feeadb7f51ba4e6f9",
+    "C_logits.bin": "bde30a537638d09b2b76581becf0e546ba30aa94c6cb144a6d2ef8cab554dc24",
+    "points.bin": "888ba1095c0a5e337f3c7d25f2ac354ea2614d68986d7e0a40cf80605c7b4465"
+  },
+  "scope": "Pre-RTL numerical preparation, no training or independent test scoring"
+}

@@ -1,0 +1,23 @@
+{
+  "command": [
+    "java",
+    "-XX:ActiveProcessorCount=2",
+    "-Xmx4G",
+    "-cp",
+    "/home/soooarr/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-compiler/2.13.12/scala-compiler-2.13.12.jar:/home/soooarr/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-reflect/2.13.12/scala-reflect-2.13.12.jar:/home/soooarr/chipyard/.classpath_cache/chipyard_fpga_gemmini_qmlp_compare_20260915_r1.jar",
+    "scala.tools.nsc.Main",
+    "-classpath",
+    "/home/soooarr/chipyard/.classpath_cache/chipyard_fpga_gemmini_qmlp_compare_20260915_r1.jar",
+    "-Xplugin:/home/soooarr/.cache/coursier/v1/https/repo1.maven.org/maven2/org/chipsalliance/chisel-plugin_2.13.12/6.5.0/chisel-plugin_2.13.12-6.5.0.jar",
+    "-d",
+    "/home/soooarr/chipyard/logs/representative_rtl_20260917/classes",
+    "/home/soooarr/chipyard/logs/representative_rtl_20260917/scala/CandidateTop.scala",
+    "/home/soooarr/chipyard/logs/representative_rtl_20260917/scala/RadarFeature21.scala",
+    "/home/soooarr/chipyard/logs/representative_rtl_20260917/scala/RadarQMLP.scala",
+    "/home/soooarr/chipyard/logs/representative_rtl_20260917/scala/RadarStream.scala"
+  ],
+  "cwd": "/home/soooarr/chipyard/logs/representative_rtl_20260917",
+  "returncode": 1,
+  "wall_seconds": 5.982842543977313,
+  "log_sha256": "eafce28bb04178452c9232f965ca3237dd4305a84e3f00031a52d7e70171fe84"
+}

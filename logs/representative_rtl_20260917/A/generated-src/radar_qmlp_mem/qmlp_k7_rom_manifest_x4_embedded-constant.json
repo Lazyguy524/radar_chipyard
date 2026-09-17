@@ -1,0 +1,16 @@
+{
+  "schema": 1,
+  "model": "qmlp_k7_rcs21",
+  "release_source": "/home/soooarr/chipyard/logs/mechanism_convergence_20260916/factorial_v2/proxy_seed7/epoch60/export/Radar_frozen_qmlpParams.scala",
+  "release_sha256": "a91c02223805e104a4c4e7ffa9367fe4ef93e37b39ab562582cde737f1359b62",
+  "pe_lanes": 4,
+  "backend": "embedded-constant",
+  "roms": [
+    {"logical_name":"l1_weight","module":"RadarQMLPL1WeightRom","canonical_hex":"qmlp_k7_l1_weight_words.hex","depth":384,"width":32,"sha256":"81e373b5d1d3c58ac1c23c221475f9ddcc78092c43bcc5d32291d095e5351c48"},
+    {"logical_name":"l2_weight","module":"RadarQMLPL2WeightRom","canonical_hex":"qmlp_k7_l2_weight_words.hex","depth":512,"width":32,"sha256":"a5592f55bb28ef14c6302ccd78a06a4deb3f37c05bf55bd2e566e8424f17cb3c"},
+    {"logical_name":"l3_weight","module":"RadarQMLPL3WeightRom","canonical_hex":"qmlp_k7_l3_weight_words.hex","depth":16,"width":32,"sha256":"1e6e199e5cef194e672029a03b4064e8a9e718241d57106002925b9e2bf44512"},
+    {"logical_name":"l1_bias","module":"RadarQMLPL1BiasRom","canonical_hex":"qmlp_k7_l1_bias.hex","depth":64,"width":32,"sha256":"64c22b699385281c7bed3d906c31a94a56d575fd6d78dbc4cf2093d3f400cae7"},
+    {"logical_name":"l2_bias","module":"RadarQMLPL2BiasRom","canonical_hex":"qmlp_k7_l2_bias.hex","depth":32,"width":32,"sha256":"64fa6fe66aaadc9661ce3e8ce5525333dabf174418ad61197ba83fb09a557114"},
+    {"logical_name":"l3_bias","module":"RadarQMLPL3BiasRom","canonical_hex":"qmlp_k7_l3_bias.hex","depth":2,"width":32,"sha256":"1731ecfa801e5f20162a7796d5a73c5f0cf27586ee9484f7d5d965f798816e69"}
+  ]
+}

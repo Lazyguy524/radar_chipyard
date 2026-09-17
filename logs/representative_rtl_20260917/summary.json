@@ -1,0 +1,57 @@
+{
+  "status": "PASS",
+  "runs": {
+    "A": {
+      "status": "PASS",
+      "rows": 80992,
+      "feature_bytes_checked": 2591744,
+      "logits_checked": 161984,
+      "cycles_with_testbench_stalls": 73864824,
+      "input_stall_cycles": 70266875,
+      "output_stall_cycles": 400759,
+      "abort_recovery": true,
+      "malformed_header_flag": true,
+      "scope": "Standalone RTL correctness; injected stalls, not a board performance measurement"
+    },
+    "B": {
+      "status": "PASS",
+      "rows": 80992,
+      "feature_bytes_checked": 2591744,
+      "logits_checked": 161984,
+      "cycles_with_testbench_stalls": 73864824,
+      "input_stall_cycles": 70266875,
+      "output_stall_cycles": 400759,
+      "abort_recovery": true,
+      "malformed_header_flag": true,
+      "scope": "Standalone RTL correctness; injected stalls, not a board performance measurement"
+    },
+    "C": {
+      "status": "PASS",
+      "rows": 80992,
+      "feature_bytes_checked": 2591744,
+      "logits_checked": 161984,
+      "cycles_with_testbench_stalls": 73864824,
+      "input_stall_cycles": 70266875,
+      "output_stall_cycles": 400759,
+      "abort_recovery": true,
+      "malformed_header_flag": true,
+      "scope": "Standalone RTL correctness; injected stalls, not a board performance measurement"
+    }
+  },
+  "input_hashes_unchanged": 24,
+  "tooling_revisions": {
+    "docs/paper_new/representative_rtl_2026-09-17/CandidateTop.scala": {
+      "before": "ac0b814cbfa4d6175e1d5ab60a64ec0eadd9b6fe7029abbb8747f1e683d4d88d",
+      "after": "81a642c127174e2eb9d24fe5f5feade05499190b912b4a9cfb35cd3dfde6a8cd",
+      "reason": "Fully qualify root circt after util wildcard shadowed the namespace; no datapath change"
+    },
+    "docs/paper_new/representative_rtl_2026-09-17/workflow.py": {
+      "before": "c160f2bba3654d48bd632f129c9160ab90203a323b7100d4d0d575ab2edb49d0",
+      "after": "3ca5cf923453c33614cb6259c33513570d5874a5e2ffd15ab41525ea507d805c",
+      "reason": "Require successful Scala compilation before elaboration; record tooling revisions separately; split CIRCT multi-file output including non-Verilog resource list before Verilator compilation; retain first failed build logs"
+    }
+  },
+  "preflight_sha256": "6860bee05dc58ff8073e92966d815026ad96a07ef98c68b9d80ff6c44f806ac6",
+  "plan_sha256": "2d7fd2d8e1296dcaa61bf3af625c4de06978b4474105057bff5282545d83469b",
+  "scope": "Actual isolated Feature21 + QMLP Chisel RTL simulated with Verilator; not full RISC-V SoC, bitstream, board or independent evaluation."
+}

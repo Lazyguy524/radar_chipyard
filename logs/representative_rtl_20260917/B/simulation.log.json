@@ -1,0 +1,11 @@
+{
+  "command": [
+    "/home/soooarr/chipyard/logs/representative_rtl_20260917/B/obj/candidate_sim",
+    "/home/soooarr/chipyard/logs/representative_rtl_20260917/vectors",
+    "B"
+  ],
+  "cwd": "/home/soooarr/chipyard/logs/representative_rtl_20260917/B",
+  "returncode": 0,
+  "wall_seconds": 34.83120117295766,
+  "log_sha256": "12af54eca3296037f6a15c03226ff47f0d23231a659d48174495e6d8a61e9f3c"
+}

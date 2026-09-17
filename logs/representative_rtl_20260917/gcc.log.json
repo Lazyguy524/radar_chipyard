@@ -1,0 +1,16 @@
+{
+  "command": [
+    "gcc",
+    "-O2",
+    "-std=c99",
+    "-shared",
+    "-fPIC",
+    "/home/soooarr/chipyard/logs/representative_rtl_20260917/raw_proxy.c",
+    "-o",
+    "/home/soooarr/chipyard/logs/representative_rtl_20260917/raw_proxy.so"
+  ],
+  "cwd": "/home/soooarr/chipyard/logs/representative_rtl_20260917",
+  "returncode": 0,
+  "wall_seconds": 0.9832581260125153,
+  "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

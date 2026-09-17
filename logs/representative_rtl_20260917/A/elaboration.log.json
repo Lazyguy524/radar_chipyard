@@ -1,0 +1,15 @@
+{
+  "command": [
+    "java",
+    "-XX:ActiveProcessorCount=2",
+    "-Xmx4G",
+    "-Dradar.candidate.params=/home/soooarr/chipyard/logs/mechanism_convergence_20260916/factorial_v2/proxy_seed7/epoch60/export/Radar_frozen_qmlpParams.scala",
+    "-cp",
+    "/home/soooarr/chipyard/logs/representative_rtl_20260917/classes:/home/soooarr/chipyard/.classpath_cache/chipyard_fpga_gemmini_qmlp_compare_20260915_r1.jar",
+    "chipyard.radar.candidate20260917.CandidateEmit"
+  ],
+  "cwd": "/home/soooarr/chipyard/logs/representative_rtl_20260917/A",
+  "returncode": 0,
+  "wall_seconds": 6.636668228020426,
+  "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

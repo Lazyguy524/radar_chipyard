@@ -1,0 +1,25 @@
+{
+  "command": [
+    "/home/soooarr/chipyard/.conda-env/bin/verilator",
+    "--cc",
+    "--exe",
+    "--build",
+    "-j",
+    "2",
+    "-Wno-fatal",
+    "--top-module",
+    "CandidateTop",
+    "--Mdir",
+    "/home/soooarr/chipyard/logs/representative_rtl_20260917/A/obj",
+    "-CFLAGS",
+    "-O2",
+    "/home/soooarr/chipyard/logs/representative_rtl_20260917/A/CandidateTop.sv",
+    "/home/soooarr/chipyard/docs/paper_new/representative_rtl_2026-09-17/sim_main.cpp",
+    "-o",
+    "candidate_sim"
+  ],
+  "cwd": "/home/soooarr/chipyard/logs/representative_rtl_20260917/A",
+  "returncode": 1,
+  "wall_seconds": 0.6664028599625453,
+  "log_sha256": "0ebadd8198791cc1062b18ef36700cc771b6bd45cc2d23ea530b0d66108e19ff"
+}

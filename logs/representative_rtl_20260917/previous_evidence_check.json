@@ -1,0 +1,20 @@
+{
+  "status": "PASS",
+  "checks": [
+    {
+      "package": "mechanism_convergence",
+      "verified_files": 1807,
+      "manifest_sha256": "a754382e717985b3ea383db963f2751b6ea0b06a16cfa9abcd404cff8faf3288"
+    },
+    {
+      "package": "moment_encoding",
+      "verified_files": 470,
+      "manifest_sha256": "10ed75cbe824b67bb130ed236a06195893f559818e1b4ef9ff43d749c287feca"
+    },
+    {
+      "package": "conditional_protection",
+      "verified_files": 292,
+      "manifest_sha256": "f2f3e14f563ea9083d95c178a64cff6d05d5c36fcad5bc54e02d95e862c7752b"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "command": [
+    "/home/soooarr/chipyard/.conda-env/bin/verilator",
+    "--cc",
+    "--exe",
+    "--build",
+    "-j",
+    "2",
+    "-Wno-fatal",
+    "--top-module",
+    "CandidateTop",
+    "--Mdir",
+    "/home/soooarr/chipyard/logs/representative_rtl_20260917/B/obj",
+    "-CFLAGS",
+    "-O2",
+    "/home/soooarr/chipyard/logs/representative_rtl_20260917/B/rtl/CandidateTop.sv",
+    "/home/soooarr/chipyard/logs/representative_rtl_20260917/B/rtl/RadarQMLPL1BiasRom.sv",
+    "/home/soooarr/chipyard/logs/representative_rtl_20260917/B/rtl/RadarQMLPL1WeightRom.sv",
+    "/home/soooarr/chipyard/logs/representative_rtl_20260917/B/rtl/RadarQMLPL2BiasRom.sv",
+    "/home/soooarr/chipyard/logs/representative_rtl_20260917/B/rtl/RadarQMLPL2WeightRom.sv",
+    "/home/soooarr/chipyard/logs/representative_rtl_20260917/B/rtl/RadarQMLPL3BiasRom.sv",
+    "/home/soooarr/chipyard/logs/representative_rtl_20260917/B/rtl/RadarQMLPL3WeightRom.sv",
+    "/home/soooarr/chipyard/docs/paper_new/representative_rtl_2026-09-17/sim_main.cpp",
+    "-o",
+    "candidate_sim"
+  ],
+  "cwd": "/home/soooarr/chipyard/logs/representative_rtl_20260917/B",
+  "returncode": 0,
+  "wall_seconds": 7.286755928944331,
+  "log_sha256": "611c20b77e9fe9670d0d7699776fbb0814ace990e0c874a97c7c24188a712204"
+}

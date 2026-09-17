@@ -1,0 +1,71 @@
+--- generators/chipyard/src/main/scala/radar/RadarFeature21.scala
++++ logs/representative_rtl_20260917/scala/RadarFeature21.scala
+@@ -1,4 +1,4 @@
+-package chipyard.radar
++package chipyard.radar.candidate20260917
+ 
+ import chisel3._
+ import chisel3.util._
+@@ -437,12 +437,33 @@
+     }
+ 
+     is (sFeatureQuantMul) {
+-      featureQuantProductReg := multiplyByQ8p8QuantConstant(featureQ8p8Reg)
++      featureQuantProductReg := featureQ8p8Reg
+       state := sFeatureQuantRound
+     }
+ 
+     is (sFeatureQuantRound) {
+-      val featureRounded = bankRoundShift(featureQuantProductReg, 16)
++      val featureRounded = MuxLookup(featureIdx, 0.S(57.W))(Seq(
++        0.U -> bankRoundShift(featureQuantProductReg, 10),
++        1.U -> bankRoundShift(featureQuantProductReg, 8),
++        2.U -> bankRoundShift(featureQuantProductReg, 8),
++        3.U -> bankRoundShift(featureQuantProductReg, 6),
++        4.U -> bankRoundShift(featureQuantProductReg, 5),
++        5.U -> bankRoundShift(featureQuantProductReg, 8),
++        6.U -> bankRoundShift(featureQuantProductReg, 7),
++        7.U -> bankRoundShift(featureQuantProductReg, 8),
++        8.U -> bankRoundShift(featureQuantProductReg, 8),
++        9.U -> bankRoundShift(featureQuantProductReg, 8),
++        10.U -> bankRoundShift(featureQuantProductReg, 7),
++        11.U -> bankRoundShift(featureQuantProductReg, 6),
++        12.U -> bankRoundShift(featureQuantProductReg, 4),
++        13.U -> featureQuantProductReg,
++        14.U -> bankRoundShift(featureQuantProductReg, 6),
++        15.U -> bankRoundShift(featureQuantProductReg, 7),
++        16.U -> bankRoundShift(featureQuantProductReg, 8),
++        17.U -> bankRoundShift(featureQuantProductReg, 8),
++        18.U -> bankRoundShift(featureQuantProductReg, 6),
++        19.U -> bankRoundShift(featureQuantProductReg, 5),
++        20.U -> bankRoundShift(featureQuantProductReg, 7)))
+       featureByteReg := Mux(featureDensityReg, densityFeatureReg, clampS8(featureRounded))
+       state := sFeatureWrite
+     }
+--- generators/chipyard/src/main/scala/radar/RadarQMLP.scala
++++ logs/representative_rtl_20260917/scala/RadarQMLP.scala
+@@ -1,4 +1,4 @@
+-package chipyard.radar
++package chipyard.radar.candidate20260917
+ 
+ import chisel3._
+ import chisel3.util._
+@@ -117,9 +117,7 @@
+ }
+ 
+ object RadarQMLPReleaseData {
+-  val releaseRelativePath =
+-    "releases/input_convergence_k3_rcs21_20260406/rcs_fix_k7_rcs21_20260414/" +
+-      "Radar_mlp_binary_k7_rcs21_rcsfixParams.scala"
++  val releaseRelativePath = sys.props("radar.candidate.params")
+ 
+   private def locate(path: String): String = {
+     val candidates = Seq(
+--- generators/chipyard/src/main/scala/radar/RadarStream.scala
++++ logs/representative_rtl_20260917/scala/RadarStream.scala
+@@ -1,4 +1,4 @@
+-package chipyard.radar
++package chipyard.radar.candidate20260917
+ 
+ import chisel3._
+ 
