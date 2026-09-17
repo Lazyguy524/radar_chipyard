@@ -1,0 +1,49 @@
+{
+  "status": "PASS",
+  "stages": [
+    {
+      "stage": "evaluate.py",
+      "status": "PASS",
+      "elapsed_before": 0.00017444201512262225,
+      "returncode": 0,
+      "wall_seconds": 71.79612239595735
+    },
+    {
+      "stage": "build_package.py",
+      "status": "PASS",
+      "elapsed_before": 71.79674020200036,
+      "returncode": 0,
+      "wall_seconds": 43.457402225001715
+    },
+    {
+      "stage": "explain.py",
+      "status": "PASS",
+      "elapsed_before": 115.25463268597377,
+      "returncode": 0,
+      "wall_seconds": 11.601727542001754
+    },
+    {
+      "stage": "point_count_simulation.py",
+      "status": "PASS",
+      "elapsed_before": 126.85745481401682,
+      "returncode": 0,
+      "wall_seconds": 1.4211667209747247
+    },
+    {
+      "stage": "report.py",
+      "status": "PASS",
+      "elapsed_before": 128.27908235398354,
+      "returncode": 0,
+      "wall_seconds": 1.368598013999872
+    },
+    {
+      "stage": "plot_results.py",
+      "status": "PASS",
+      "elapsed_before": 129.64809831196908,
+      "returncode": 0,
+      "wall_seconds": 4.026877561002038
+    }
+  ],
+  "wall_seconds": 133.67566233698744,
+  "scope": "Includes evaluation, C packaging, explanations and plots; archive/sync are recorded separately."
+}

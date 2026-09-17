@@ -1,0 +1,246 @@
+{
+  "status": "PASS",
+  "rows": [
+    {
+      "distribution": "uniform",
+      "points": 1,
+      "replicates": 2000,
+      "mean": 0.0,
+      "q10": 0.0,
+      "q50": 0.0,
+      "q90": 0.0,
+      "zero_span": 2000
+    },
+    {
+      "distribution": "uniform",
+      "points": 2,
+      "replicates": 2000,
+      "mean": 0.9975,
+      "q10": 1.0,
+      "q50": 1.0,
+      "q90": 1.0,
+      "zero_span": 5
+    },
+    {
+      "distribution": "uniform",
+      "points": 3,
+      "replicates": 2000,
+      "mean": 0.7425472440944882,
+      "q10": 0.6692913385826772,
+      "q50": 0.7244094488188977,
+      "q90": 0.8503937007874016,
+      "zero_span": 0
+    },
+    {
+      "distribution": "uniform",
+      "points": 4,
+      "replicates": 2000,
+      "mean": 0.6268779527559056,
+      "q10": 0.5275590551181102,
+      "q50": 0.6141732283464567,
+      "q90": 0.7480314960629921,
+      "zero_span": 0
+    },
+    {
+      "distribution": "uniform",
+      "points": 8,
+      "replicates": 2000,
+      "mean": 0.4676417322834646,
+      "q10": 0.3543307086614173,
+      "q50": 0.4645669291338583,
+      "q90": 0.5826771653543307,
+      "zero_span": 0
+    },
+    {
+      "distribution": "uniform",
+      "points": 16,
+      "replicates": 2000,
+      "mean": 0.39938188976377953,
+      "q10": 0.31496062992125984,
+      "q50": 0.3937007874015748,
+      "q90": 0.4881889763779528,
+      "zero_span": 0
+    },
+    {
+      "distribution": "uniform",
+      "points": 32,
+      "replicates": 2000,
+      "mean": 0.366728346456693,
+      "q10": 0.2992125984251969,
+      "q50": 0.3700787401574803,
+      "q90": 0.4330708661417323,
+      "zero_span": 0
+    },
+    {
+      "distribution": "uniform",
+      "points": 64,
+      "replicates": 2000,
+      "mean": 0.34892125984251976,
+      "q10": 0.2992125984251969,
+      "q50": 0.3464566929133858,
+      "q90": 0.3937007874015748,
+      "zero_span": 0
+    },
+    {
+      "distribution": "central",
+      "points": 1,
+      "replicates": 2000,
+      "mean": 0.0,
+      "q10": 0.0,
+      "q50": 0.0,
+      "q90": 0.0,
+      "zero_span": 2000
+    },
+    {
+      "distribution": "central",
+      "points": 2,
+      "replicates": 2000,
+      "mean": 0.9965,
+      "q10": 1.0,
+      "q50": 1.0,
+      "q90": 1.0,
+      "zero_span": 7
+    },
+    {
+      "distribution": "central",
+      "points": 3,
+      "replicates": 2000,
+      "mean": 0.7341023622047245,
+      "q10": 0.6692913385826772,
+      "q50": 0.7086614173228346,
+      "q90": 0.84251968503937,
+      "zero_span": 0
+    },
+    {
+      "distribution": "central",
+      "points": 4,
+      "replicates": 2000,
+      "mean": 0.6094015748031496,
+      "q10": 0.5118110236220472,
+      "q50": 0.5984251968503937,
+      "q90": 0.7165354330708661,
+      "zero_span": 0
+    },
+    {
+      "distribution": "central",
+      "points": 8,
+      "replicates": 2000,
+      "mean": 0.4127874015748032,
+      "q10": 0.3228346456692913,
+      "q50": 0.4015748031496063,
+      "q90": 0.5196850393700787,
+      "zero_span": 0
+    },
+    {
+      "distribution": "central",
+      "points": 16,
+      "replicates": 2000,
+      "mean": 0.29824803149606305,
+      "q10": 0.2204724409448819,
+      "q50": 0.29133858267716534,
+      "q90": 0.3858267716535433,
+      "zero_span": 0
+    },
+    {
+      "distribution": "central",
+      "points": 32,
+      "replicates": 2000,
+      "mean": 0.22875590551181102,
+      "q10": 0.1732283464566929,
+      "q50": 0.22440944881889763,
+      "q90": 0.29133858267716534,
+      "zero_span": 0
+    },
+    {
+      "distribution": "central",
+      "points": 64,
+      "replicates": 2000,
+      "mean": 0.18283070866141737,
+      "q10": 0.14173228346456693,
+      "q50": 0.18110236220472442,
+      "q90": 0.23622047244094488,
+      "zero_span": 0
+    },
+    {
+      "distribution": "two_lobes",
+      "points": 1,
+      "replicates": 2000,
+      "mean": 0.0,
+      "q10": 0.0,
+      "q50": 0.0,
+      "q90": 0.0,
+      "zero_span": 2000
+    },
+    {
+      "distribution": "two_lobes",
+      "points": 2,
+      "replicates": 2000,
+      "mean": 0.993,
+      "q10": 1.0,
+      "q50": 1.0,
+      "q90": 1.0,
+      "zero_span": 14
+    },
+    {
+      "distribution": "two_lobes",
+      "points": 3,
+      "replicates": 2000,
+      "mean": 0.8107480314960631,
+      "q10": 0.6929133858267716,
+      "q50": 0.8267716535433071,
+      "q90": 0.8740157480314961,
+      "zero_span": 0
+    },
+    {
+      "distribution": "two_lobes",
+      "points": 4,
+      "replicates": 2000,
+      "mean": 0.7473228346456694,
+      "q10": 0.6220472440944882,
+      "q50": 0.7086614173228346,
+      "q90": 0.9212598425196851,
+      "zero_span": 0
+    },
+    {
+      "distribution": "two_lobes",
+      "points": 8,
+      "replicates": 2000,
+      "mean": 0.7093937007874016,
+      "q10": 0.5748031496062992,
+      "q50": 0.7401574803149606,
+      "q90": 0.8346456692913385,
+      "zero_span": 0
+    },
+    {
+      "distribution": "two_lobes",
+      "points": 16,
+      "replicates": 2000,
+      "mean": 0.7008582677165355,
+      "q10": 0.6141732283464567,
+      "q50": 0.7086614173228346,
+      "q90": 0.7795275590551181,
+      "zero_span": 0
+    },
+    {
+      "distribution": "two_lobes",
+      "points": 32,
+      "replicates": 2000,
+      "mean": 0.6773307086614173,
+      "q10": 0.6220472440944882,
+      "q50": 0.6771653543307087,
+      "q90": 0.7322834645669292,
+      "zero_span": 0
+    },
+    {
+      "distribution": "two_lobes",
+      "points": 64,
+      "replicates": 2000,
+      "mean": 0.6591535433070866,
+      "q10": 0.6299212598425197,
+      "q50": 0.6614173228346457,
+      "q90": 0.6929133858267716,
+      "zero_span": 0
+    }
+  ],
+  "scope": "Post-training fixed-seed unlabeled simulation of normalized variance vs point count; no classifier/threshold fitting or selection. Shapes are idealized input distributions, not radar classes."
+}

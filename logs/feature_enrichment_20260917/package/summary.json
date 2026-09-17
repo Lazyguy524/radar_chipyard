@@ -1,0 +1,368 @@
+{
+  "status": "PASS",
+  "checks": [
+    {
+      "tag": "base16",
+      "seed": 7,
+      "condition": "clean",
+      "rows": 80450,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "base16",
+      "seed": 7,
+      "condition": "sparse_single",
+      "rows": 97734,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "base16",
+      "seed": 7,
+      "condition": "sparse_context",
+      "rows": 97734,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "base16",
+      "seed": 17,
+      "condition": "clean",
+      "rows": 80450,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "base16",
+      "seed": 17,
+      "condition": "sparse_single",
+      "rows": 97734,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "base16",
+      "seed": 17,
+      "condition": "sparse_context",
+      "rows": 97734,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "base16",
+      "seed": 37,
+      "condition": "clean",
+      "rows": 80450,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "base16",
+      "seed": 37,
+      "condition": "sparse_single",
+      "rows": 97734,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "base16",
+      "seed": 37,
+      "condition": "sparse_context",
+      "rows": 97734,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "geometry19",
+      "seed": 7,
+      "condition": "clean",
+      "rows": 80450,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "geometry19",
+      "seed": 7,
+      "condition": "sparse_single",
+      "rows": 97734,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "geometry19",
+      "seed": 7,
+      "condition": "sparse_context",
+      "rows": 97734,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "geometry19",
+      "seed": 17,
+      "condition": "clean",
+      "rows": 80450,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "geometry19",
+      "seed": 17,
+      "condition": "sparse_single",
+      "rows": 97734,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "geometry19",
+      "seed": 17,
+      "condition": "sparse_context",
+      "rows": 97734,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "geometry19",
+      "seed": 37,
+      "condition": "clean",
+      "rows": 80450,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "geometry19",
+      "seed": 37,
+      "condition": "sparse_single",
+      "rows": 97734,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "geometry19",
+      "seed": 37,
+      "condition": "sparse_context",
+      "rows": 97734,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "distribution20",
+      "seed": 7,
+      "condition": "clean",
+      "rows": 80450,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "distribution20",
+      "seed": 7,
+      "condition": "sparse_single",
+      "rows": 97734,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "distribution20",
+      "seed": 7,
+      "condition": "sparse_context",
+      "rows": 97734,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "distribution20",
+      "seed": 17,
+      "condition": "clean",
+      "rows": 80450,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "distribution20",
+      "seed": 17,
+      "condition": "sparse_single",
+      "rows": 97734,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "distribution20",
+      "seed": 17,
+      "condition": "sparse_context",
+      "rows": 97734,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "distribution20",
+      "seed": 37,
+      "condition": "clean",
+      "rows": 80450,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "distribution20",
+      "seed": 37,
+      "condition": "sparse_single",
+      "rows": 97734,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "distribution20",
+      "seed": 37,
+      "condition": "sparse_context",
+      "rows": 97734,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "combined23",
+      "seed": 7,
+      "condition": "clean",
+      "rows": 80450,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "combined23",
+      "seed": 7,
+      "condition": "sparse_single",
+      "rows": 97734,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "combined23",
+      "seed": 7,
+      "condition": "sparse_context",
+      "rows": 97734,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "combined23",
+      "seed": 17,
+      "condition": "clean",
+      "rows": 80450,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "combined23",
+      "seed": 17,
+      "condition": "sparse_single",
+      "rows": 97734,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "combined23",
+      "seed": 17,
+      "condition": "sparse_context",
+      "rows": 97734,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "combined23",
+      "seed": 37,
+      "condition": "clean",
+      "rows": 80450,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "combined23",
+      "seed": 37,
+      "condition": "sparse_single",
+      "rows": 97734,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "combined23",
+      "seed": 37,
+      "condition": "sparse_context",
+      "rows": 97734,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "redundant23",
+      "seed": 7,
+      "condition": "clean",
+      "rows": 80450,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "redundant23",
+      "seed": 7,
+      "condition": "sparse_single",
+      "rows": 97734,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "redundant23",
+      "seed": 7,
+      "condition": "sparse_context",
+      "rows": 97734,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "redundant23",
+      "seed": 17,
+      "condition": "clean",
+      "rows": 80450,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "redundant23",
+      "seed": 17,
+      "condition": "sparse_single",
+      "rows": 97734,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "redundant23",
+      "seed": 17,
+      "condition": "sparse_context",
+      "rows": 97734,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "redundant23",
+      "seed": 37,
+      "condition": "clean",
+      "rows": 80450,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "redundant23",
+      "seed": 37,
+      "condition": "sparse_single",
+      "rows": 97734,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "redundant23",
+      "seed": 37,
+      "condition": "sparse_context",
+      "rows": 97734,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    }
+  ],
+  "complete_point_to_logit_rows": 4138770,
+  "wall_seconds": 42.00869245699141,
+  "scope": "CPU reference exactness; no hardware measurement"
+}

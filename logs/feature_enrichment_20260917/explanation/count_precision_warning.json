@@ -1,0 +1,16 @@
+{
+  "counts": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "base_count_INT8": [
+    0,
+    0,
+    1,
+    1
+  ],
+  "source": "Frozen original output scale; count slot quantizes N/4 with ties-to-even",
+  "meaning": "Gains may partly reflect low-count support cues. N1/N2 normalized variance degeneracy must not be interpreted as precise target shape; report N1/N2/ge3 separately. No dedicated count-only retraining control in this matrix."
+}

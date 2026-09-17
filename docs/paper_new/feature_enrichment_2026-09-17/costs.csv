@@ -1,0 +1,6 @@
+tag,dim,network_macs,int8_weight_bytes,int32_bias_bytes,new_products_per_point,new_sum_states,new_counts,new_ratio_quantizers,raw_point_bytes
+base16,16,3136,3136,392,0,0,0,0,8
+geometry19,19,3328,3328,392,3,3,0,3,8
+distribution20,20,3392,3392,392,2,2,1,4,8
+combined23,23,3584,3584,392,5,5,1,7,8
+redundant23,23,3584,3584,392,0,0,0,0,8

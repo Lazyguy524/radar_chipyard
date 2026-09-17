@@ -1,0 +1,183 @@
+{
+  "status": "FROZEN_BEFORE_PREPARATION_AND_TRAINING",
+  "date": "2026-09-17",
+  "question": "在点数和目标形态变化时，哪些近似会损害分类稳定性？能否针对这些误差，用更合适的统计表示、精度分配和共享计算结构，获得优于现有实现的质量—成本取舍？",
+  "purpose": "Test interpretable complementary distributions; dimension is a variable, not a minimization target",
+  "variants": {
+    "base16": {
+      "extra": [],
+      "dim": 16
+    },
+    "geometry19": {
+      "extra": [
+        0,
+        1,
+        2
+      ],
+      "dim": 19
+    },
+    "distribution20": {
+      "extra": [
+        3,
+        4,
+        5,
+        6
+      ],
+      "dim": 20
+    },
+    "combined23": {
+      "extra": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "dim": 23
+    },
+    "redundant23": {
+      "extra": [],
+      "repeat_base_positions": [
+        0,
+        3,
+        4,
+        8,
+        9,
+        13,
+        15
+      ],
+      "dim": 23
+    }
+  },
+  "base_columns": [
+    0,
+    1,
+    2,
+    5,
+    6,
+    7,
+    8,
+    9,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20
+  ],
+  "features": {
+    "geometry": [
+      "4Var(x)/span(x)^2",
+      "4Var(y)/span(y)^2",
+      "4Cov(x,y)/(span(x)*span(y))"
+    ],
+    "distribution": [
+      "4Var(vr_compensated)/span(vr)^2",
+      "4Var(RCS)/span(RCS)^2",
+      "fraction_abs_vr_le_0.5_m_per_s",
+      "2*(mean_RCS-min_RCS)/span_RCS-1"
+    ],
+    "quantization": "Exact rational -> ties-to-even -> INT8 [-127,127]; normalized values times127, zero for zero denominator; new output ranges analytical, no validation fitted scales",
+    "low_points": "N=1 dispersion/contrast=0; N=2 range-normalized variance hits maximum if nonzero span; this degeneracy is disclosed and separately evaluated",
+    "physical_scope": "Near-zero radial speed does NOT prove stationary object; normalized covariance is NOT Pearson correlation or rotation invariant; history-fused distribution is NOT instantaneous object shape"
+  },
+  "data": {
+    "train_sequences": 113,
+    "validation_sequences": 27,
+    "train_kept": 357780,
+    "train_natural_sparse": 474582,
+    "val_kept": 80450,
+    "val_sparse": 97734,
+    "split": "Retain audited train/validation sequence split, no new test use; validation is reused development data",
+    "representation": "Base16 frozen proxy + independently bounded distribution descriptors; current history unchanged",
+    "history": "Same sequence/sensor/GT track; current plus preceding six retained observations; sparse observations do not update history; no coordinate alignment or time expiry"
+  },
+  "training": {
+    "coverage": "natural",
+    "reference": "Previous less_shape16; conditional software control, A/B promotion remains separate",
+    "seeds": [
+      7,
+      17,
+      37
+    ],
+    "trajectories": 15,
+    "visits_per_epoch": 357780,
+    "warmup_epochs": 20,
+    "qat_epochs": 60,
+    "batch_size": 1024,
+    "warmup_lr": 0.001,
+    "qat_lr": 0.0003,
+    "qat_lr_halve_every_epochs": 20,
+    "weight_decay": 0.0001,
+    "loss": "Same common class-weighted CE as software_convergence",
+    "sampling": "Exactly same per-seed/epoch natural-coverage schedule: 50% clean, 12.5% quarter,12.5% central,25% matched natural sparse; integer remainder alternates",
+    "normalization_calibration": "Reuse common train-only expected-mixture normalization and 16384 calibration row identities, project columns; frozen output scales; frozen QAT scales after warmup",
+    "initialization": "Copy previous base16 initialization; append zero columns for new or duplicated inputs, hidden layers identical; duplicated23 is equal-dimension extra-parameter control",
+    "checkpoints": [
+      20,
+      40,
+      60
+    ],
+    "select_epoch": 60,
+    "full21_reproduction": "Require base16 integer weights/bias/multipliers and clean logits to reproduce previous less_shape16 seed by seed"
+  },
+  "evaluation": {
+    "conditions": [
+      "clean",
+      "uniform_half_0",
+      "uniform_half_1",
+      "uniform_half_2",
+      "uniform_quarter_0",
+      "uniform_quarter_1",
+      "uniform_quarter_2",
+      "central_half",
+      "xy_fraction6",
+      "xy_fraction4",
+      "kept_single",
+      "sparse_single",
+      "sparse_context"
+    ],
+    "bootstrap": "2000 paired full-sequence draws; per-seed and three-seed mean; exploratory, not formal noninferiority or independent significance proof",
+    "group_support": {
+      "samples": 100,
+      "sequences": 3,
+      "both_classes": true
+    },
+    "relative_to": "base16",
+    "clean_f1_max_loss_each_seed": 0.002,
+    "all_conditions_mean_f1_max_loss": 0.003,
+    "all_conditions_mean_each_class_recall_max_loss": 0.005,
+    "composite_mean_f1_max_loss": 0.001,
+    "group_reject": "On any supported condition/group: all three accuracy deltas negative and mean below -0.01",
+    "composite": "Equal average of clean, average of three quarter repeats, central_half,sparse_single,sparse_context",
+    "choice": "Publish all quality-cost results; add information only if previous per-condition/class/group tolerances pass and composite mean gain over base16 >=0.001 with all three positive. For combined23 require mean gain over redundant23 >=0.001 and all three positive to attribute gain beyond a same-dimension redundancy control. Otherwise retain base16 conditional candidate. Among accepted candidates within0.001 of highest composite choose lower measured operation count/feature computation complexity, not dimension alone.",
+    "A_B_guard": "Also apply unchanged software_convergence promotion rule against old A/B; any failed gate keeps A main/B alternative"
+  },
+  "explanation": {
+    "factorial": [
+      "geometry19-base16",
+      "distribution20-base16",
+      "combined23-geometry19",
+      "combined23-distribution20",
+      "combined23-redundant23",
+      "combined23-geometry19-distribution20+base16"
+    ],
+    "support": "All original point/shape/cross/range/history groups, plus point-count degeneracy and train classwise feature distributions; fixed first error identities; same-base/different-distribution synthetic counterexamples with no class labels",
+    "interpretation": "Controlled retraining association, not proof of physical causality or novel standard moments; no independent generalization claim"
+  },
+  "budget": {
+    "cpu_threads": 2,
+    "gpu_jobs": 0,
+    "hardware_jobs": 0,
+    "preparation_seconds": 1800,
+    "training_seconds": 2400,
+    "evaluation_and_package_seconds": 1800,
+    "max_output_bytes": 4294967296
+  },
+  "stop": "Exactly15 final-epoch trajectories; no extra seeds, hyperparameter/threshold/search after viewing results. Numerical mismatch stops dependent stages; preserve outputs and review. No new history change/RTL/SoC/bitstream/board work.",
+  "review": "Single-executor code and Python preflight; complete upstream hash closure before training. Old frozen packages preserved; new branch backup and Obsidian local mirror."
+}

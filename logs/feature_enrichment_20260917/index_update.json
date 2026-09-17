@@ -1,0 +1,14 @@
+[
+  {
+    "path": "docs/paper_new/README.md",
+    "before_sha256": "7253757f20d894a04814e6ccec1a14e96636c2b64c7cb3526b576589f5c20849",
+    "after_sha256": "9a5b7b7cd44c689331dc406e2bcd31701f173071c904418ca49896a6f3bbc4d3",
+    "old_content_preserved_as_suffix": true
+  },
+  {
+    "path": "docs/paper_new/00_project_requirements_and_memory.md",
+    "before_sha256": "7b9d4e1e45fe2b6bab5e2abb4f253351de6d4be019ec347f080076588b6c07f2",
+    "after_sha256": "4a187582b2cb9083d5ce0f60b1381afd60fb44edd29eb84f014212077d2294ac",
+    "old_content_preserved_as_suffix": true
+  }
+]

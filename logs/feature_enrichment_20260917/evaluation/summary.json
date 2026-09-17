@@ -1,0 +1,1064 @@
+{
+  "status": "PASS",
+  "wall_seconds": 70.14765326096676,
+  "enrichment_gates": [
+    {
+      "tag": "geometry19",
+      "accepted": false,
+      "failures": [
+        "sparse_single_f1",
+        "sparse_single_recall0",
+        "minimum_composite_gain",
+        "supported_group_regression"
+      ],
+      "conditions": [
+        {
+          "condition": "clean",
+          "mean_f1_delta": 0.0003470143017898127,
+          "mean_recall_delta": [
+            -0.0012003360941063395,
+            0.0012824880267718886
+          ]
+        },
+        {
+          "condition": "uniform_half_0",
+          "mean_f1_delta": 0.00016615102268221124,
+          "mean_recall_delta": [
+            -0.0023461114566623773,
+            0.0017233432859747877
+          ]
+        },
+        {
+          "condition": "uniform_half_1",
+          "mean_f1_delta": 6.322820273633549e-05,
+          "mean_recall_delta": [
+            -0.0026516515533440512,
+            0.0017567414116719988
+          ]
+        },
+        {
+          "condition": "uniform_half_2",
+          "mean_f1_delta": 0.0006406075503676186,
+          "mean_recall_delta": [
+            -0.002040571359980777,
+            0.0022643929222692463
+          ]
+        },
+        {
+          "condition": "uniform_quarter_0",
+          "mean_f1_delta": 0.00047931191568328924,
+          "mean_recall_delta": [
+            -0.0006547287786034713,
+            0.0011555751491226045
+          ]
+        },
+        {
+          "condition": "uniform_quarter_1",
+          "mean_f1_delta": 0.00036189397024170383,
+          "mean_recall_delta": [
+            -0.0007965866806342407,
+            0.0010620603971704945
+          ]
+        },
+        {
+          "condition": "uniform_quarter_2",
+          "mean_f1_delta": 0.0007955622616224733,
+          "mean_recall_delta": [
+            -0.00044739799871236957,
+            0.001516274906652219
+          ]
+        },
+        {
+          "condition": "central_half",
+          "mean_f1_delta": 0.002537609280710821,
+          "mean_recall_delta": [
+            -0.0003491886819218711,
+            0.004174765712148217
+          ]
+        },
+        {
+          "condition": "xy_fraction6",
+          "mean_f1_delta": 0.0003688474888167148,
+          "mean_recall_delta": [
+            -0.0012003360941063763,
+            0.0013158861524691368
+          ]
+        },
+        {
+          "condition": "xy_fraction4",
+          "mean_f1_delta": 0.00025070235224644577,
+          "mean_recall_delta": [
+            -0.0013203697035169364,
+            0.0012090121502381646
+          ]
+        },
+        {
+          "condition": "kept_single",
+          "mean_f1_delta": -0.0008776585979049326,
+          "mean_recall_delta": [
+            -0.0027935094553747466,
+            0.00039409788322675166
+          ]
+        },
+        {
+          "condition": "sparse_single",
+          "mean_f1_delta": -0.003581878161275198,
+          "mean_recall_delta": [
+            -0.006080114449213192,
+            -0.0008248339573381595
+          ]
+        },
+        {
+          "condition": "sparse_context",
+          "mean_f1_delta": -0.0006891964524271543,
+          "mean_recall_delta": [
+            -0.0019963584341267104,
+            0.0007459367962014593
+          ]
+        }
+      ],
+      "group_failures": [
+        {
+          "condition": "uniform_quarter_0",
+          "axis": "N_x_original_shape",
+          "group": "33-64:intermediate",
+          "per_seed": [
+            -0.046242774566473965,
+            -0.00578034682080919,
+            -0.00578034682080919
+          ],
+          "mean": -0.019267822736030782,
+          "samples": 173,
+          "sequences": 12,
+          "supported": true
+        },
+        {
+          "condition": "uniform_quarter_1",
+          "axis": "N_x_original_shape",
+          "group": "3-4:compact",
+          "per_seed": [
+            -0.024793388429752095,
+            -0.016528925619834656,
+            -0.024793388429752095
+          ],
+          "mean": -0.02203856749311295,
+          "samples": 121,
+          "sequences": 18,
+          "supported": true
+        },
+        {
+          "condition": "kept_single",
+          "axis": "N_x_original_shape",
+          "group": "9-16:compact",
+          "per_seed": [
+            -0.017928286852589626,
+            -0.029880478087649376,
+            -0.01394422310756982
+          ],
+          "mean": -0.020584329349269608,
+          "samples": 502,
+          "sequences": 19,
+          "supported": true
+        },
+        {
+          "condition": "sparse_single",
+          "axis": "current_range",
+          "group": "le20",
+          "per_seed": [
+            -0.01755582069200612,
+            -0.008010908471109524,
+            -0.00997102437361519
+          ],
+          "mean": -0.011845917845576944,
+          "samples": 11734,
+          "sequences": 27,
+          "supported": true
+        },
+        {
+          "condition": "sparse_context",
+          "axis": "N_x_original_shape",
+          "group": "9-16:compact",
+          "per_seed": [
+            -0.013574660633484115,
+            -0.045248868778280604,
+            -0.022624434389140302
+          ],
+          "mean": -0.02714932126696834,
+          "samples": 221,
+          "sequences": 19,
+          "supported": true
+        }
+      ],
+      "composite_delta": [
+        -0.0011298831679047439,
+        0.0007524642376419699,
+        -0.0001270980589485049
+      ],
+      "composite_mean": 0.9674613323865776,
+      "composite_vs_redundancy": null
+    },
+    {
+      "tag": "distribution20",
+      "accepted": false,
+      "failures": [
+        "sparse_single_recall0",
+        "supported_group_regression"
+      ],
+      "conditions": [
+        {
+          "condition": "clean",
+          "mean_f1_delta": 0.0036218034950505165,
+          "mean_recall_delta": [
+            0.0037974269159000893,
+            0.0032062200669298324
+          ]
+        },
+        {
+          "condition": "uniform_half_0",
+          "mean_f1_delta": 0.002444245364954356,
+          "mean_recall_delta": [
+            0.0024879693586931837,
+            0.002217635546293136
+          ]
+        },
+        {
+          "condition": "uniform_half_1",
+          "mean_f1_delta": 0.001975909760751645,
+          "mean_recall_delta": [
+            0.0013640182887572072,
+            0.002197596670874861
+          ]
+        },
+        {
+          "condition": "uniform_half_2",
+          "mean_f1_delta": 0.0024576448118210914,
+          "mean_recall_delta": [
+            0.002084219945221011,
+            0.00249150017701009
+          ]
+        },
+        {
+          "condition": "uniform_quarter_0",
+          "mean_f1_delta": 0.0011093284104357985,
+          "mean_recall_delta": [
+            0.0019750984821204445,
+            0.000480933010039523
+          ]
+        },
+        {
+          "condition": "uniform_quarter_1",
+          "mean_f1_delta": 0.0005733265966025858,
+          "mean_recall_delta": [
+            0.0006110801933632004,
+            0.0005076515105972105
+          ]
+        },
+        {
+          "condition": "uniform_quarter_2",
+          "mean_f1_delta": 0.0010907612770636084,
+          "mean_recall_delta": [
+            0.001527700483408075,
+            0.0007347587653380913
+          ]
+        },
+        {
+          "condition": "central_half",
+          "mean_f1_delta": 0.00440133115358358,
+          "mean_recall_delta": [
+            0.000665640924913502,
+            0.006452517884696325
+          ]
+        },
+        {
+          "condition": "xy_fraction6",
+          "mean_f1_delta": 0.003626204011369335,
+          "mean_recall_delta": [
+            0.0037974269159000893,
+            0.003212899692069282
+          ]
+        },
+        {
+          "condition": "xy_fraction4",
+          "mean_f1_delta": 0.0037095044353597415,
+          "mean_recall_delta": [
+            0.003906548379000692,
+            0.003273016318324181
+          ]
+        },
+        {
+          "condition": "kept_single",
+          "mean_f1_delta": -0.0022119055801269605,
+          "mean_recall_delta": [
+            -0.004135703451511856,
+            -0.0008282735172902381
+          ]
+        },
+        {
+          "condition": "sparse_single",
+          "mean_f1_delta": -0.0027167827766508834,
+          "mean_recall_delta": [
+            -0.006242684354272332,
+            0.0011475950710791254
+          ]
+        },
+        {
+          "condition": "sparse_context",
+          "mean_f1_delta": 0.0020725046569644765,
+          "mean_recall_delta": [
+            0.0005852516582130299,
+            0.003679476696647551
+          ]
+        }
+      ],
+      "group_failures": [
+        {
+          "condition": "central_half",
+          "axis": "N_x_original_shape",
+          "group": "5-8:compact",
+          "per_seed": [
+            -0.008264462809917328,
+            -0.008264462809917328,
+            -0.016528925619834767
+          ],
+          "mean": -0.011019283746556474,
+          "samples": 121,
+          "sequences": 18,
+          "supported": true
+        },
+        {
+          "condition": "sparse_context",
+          "axis": "N_x_original_shape",
+          "group": "9-16:compact",
+          "per_seed": [
+            -0.02714932126696834,
+            -0.03167420814479638,
+            -0.004524886877828038
+          ],
+          "mean": -0.021116138763197585,
+          "samples": 221,
+          "sequences": 19,
+          "supported": true
+        }
+      ],
+      "composite_delta": [
+        0.0009982708937685825,
+        0.002368895285431827,
+        0.001614830994988603
+      ],
+      "composite_mean": 0.9692901704410444,
+      "composite_vs_redundancy": null
+    },
+    {
+      "tag": "combined23",
+      "accepted": true,
+      "failures": [],
+      "conditions": [
+        {
+          "condition": "clean",
+          "mean_f1_delta": 0.0034745833502269154,
+          "mean_recall_delta": [
+            0.00467039862070473,
+            0.002438063175894567
+          ]
+        },
+        {
+          "condition": "uniform_half_0",
+          "mean_f1_delta": 0.002323542729318895,
+          "mean_recall_delta": [
+            0.0025316179439334174,
+            0.0020038875418311544
+          ]
+        },
+        {
+          "condition": "uniform_half_1",
+          "mean_f1_delta": 0.0023064662320490723,
+          "mean_recall_delta": [
+            0.0014949640444779089,
+            0.002625092679798824
+          ]
+        },
+        {
+          "condition": "uniform_half_2",
+          "mean_f1_delta": 0.002651484835162939,
+          "mean_recall_delta": [
+            0.002466145066073048,
+            0.0025516168032650257
+          ]
+        },
+        {
+          "condition": "uniform_quarter_0",
+          "mean_f1_delta": 0.0019200119648369318,
+          "mean_recall_delta": [
+            0.0012221603867265118,
+            0.0022109559211537233
+          ]
+        },
+        {
+          "condition": "uniform_quarter_1",
+          "mean_f1_delta": 0.0012275653335363697,
+          "mean_recall_delta": [
+            9.820931679049849e-05,
+            0.0018435765384846592
+          ]
+        },
+        {
+          "condition": "uniform_quarter_2",
+          "mean_f1_delta": 0.0018566492894230475,
+          "mean_recall_delta": [
+            0.0006001680470531697,
+            0.0025048594272889524
+          ]
+        },
+        {
+          "condition": "central_half",
+          "mean_f1_delta": 0.005837722076655154,
+          "mean_recall_delta": [
+            0.0005019587302626712,
+            0.008790386683499333
+          ]
+        },
+        {
+          "condition": "xy_fraction6",
+          "mean_f1_delta": 0.0035095458437449287,
+          "mean_recall_delta": [
+            0.004692222913324828,
+            0.002478140926731228
+          ]
+        },
+        {
+          "condition": "xy_fraction4",
+          "mean_f1_delta": 0.003562568049937672,
+          "mean_recall_delta": [
+            0.004834080815355597,
+            0.0024714613015917783
+          ]
+        },
+        {
+          "condition": "kept_single",
+          "mean_f1_delta": -0.0008429465562075356,
+          "mean_recall_delta": [
+            -0.004310297792472754,
+            0.0014094009044212097
+          ]
+        },
+        {
+          "condition": "sparse_single",
+          "mean_f1_delta": -0.00265995338191923,
+          "mean_recall_delta": [
+            -0.004590974118871142,
+            -0.0005307627203741117
+          ]
+        },
+        {
+          "condition": "sparse_context",
+          "mean_f1_delta": 0.0015541456777704206,
+          "mean_recall_delta": [
+            0.0003251398101183541,
+            0.0028833326160864203
+          ]
+        }
+      ],
+      "group_failures": [],
+      "composite_delta": [
+        0.0017313339215254686,
+        0.0024444226656143986,
+        0.0017489873640595954
+      ],
+      "composite_mean": 0.9696044193667145,
+      "composite_vs_redundancy": [
+        0.0016984272966621417,
+        0.003139286296800714,
+        0.002326693296193616
+      ]
+    }
+  ],
+  "promotion_gates": [
+    {
+      "tag": "base16",
+      "accepted": false,
+      "failures": [
+        "central_half",
+        "supported_group_regression"
+      ],
+      "clean_vs_A": [
+        0.0009768459031052057,
+        -0.0012634600526900686,
+        0.0019564775029623505
+      ],
+      "difficult_vs_B": {
+        "quarter_mean": -0.0014365657494718803,
+        "central_half": -0.00419545726987632,
+        "sparse_single": 0.012901359257232866,
+        "sparse_context": 0.005250028464409325
+      },
+      "composite_per_seed": [
+        0.9670255516376379,
+        0.9671152749701359,
+        0.96874768754117
+      ],
+      "composite_vs_B": [
+        0.0013686371955945464,
+        0.0017071663822100236,
+        0.004571479770510534
+      ],
+      "composite_mean": 0.9676295047163146,
+      "group_failures": [
+        {
+          "condition": "uniform_quarter_0",
+          "axis": "N_x_original_shape",
+          "group": "3-4:compact",
+          "per_seed": [
+            -0.04958677685950419,
+            -0.024793388429752095,
+            -0.024793388429752095
+          ],
+          "mean": -0.03305785123966946,
+          "samples": 121,
+          "sequences": 18,
+          "supported": true
+        }
+      ]
+    },
+    {
+      "tag": "geometry19",
+      "accepted": false,
+      "failures": [
+        "supported_group_regression"
+      ],
+      "clean_vs_A": [
+        0.0013784817413965422,
+        0.00013684385700474255,
+        0.001195580660345641
+      ],
+      "difficult_vs_B": {
+        "quarter_mean": -0.0008909763669560582,
+        "central_half": -0.001657847989165499,
+        "sparse_single": 0.009319481095957668,
+        "sparse_context": 0.00456083201198217
+      },
+      "composite_per_seed": [
+        0.9658956684697332,
+        0.9678677392077779,
+        0.9686205894822215
+      ],
+      "composite_vs_B": [
+        0.00023875402768980258,
+        0.0024596306198519935,
+        0.004444381711562029
+      ],
+      "composite_mean": 0.9674613323865776,
+      "group_failures": [
+        {
+          "condition": "clean",
+          "axis": "N_x_original_shape",
+          "group": "5-8:elongated",
+          "per_seed": [
+            -0.013948497854077258,
+            -0.010729613733905574,
+            -0.006437768240343367
+          ],
+          "mean": -0.0103719599427754,
+          "samples": 932,
+          "sequences": 27,
+          "supported": true
+        },
+        {
+          "condition": "uniform_half_0",
+          "axis": "N_x_original_shape",
+          "group": "5-8:compact",
+          "per_seed": [
+            -0.016528925619834656,
+            -0.03305785123966942,
+            -0.024793388429752095
+          ],
+          "mean": -0.024793388429752056,
+          "samples": 121,
+          "sequences": 18,
+          "supported": true
+        },
+        {
+          "condition": "uniform_half_1",
+          "axis": "N_x_original_shape",
+          "group": "5-8:compact",
+          "per_seed": [
+            -0.024793388429752095,
+            -0.04132231404958675,
+            -0.024793388429752095
+          ],
+          "mean": -0.030303030303030314,
+          "samples": 121,
+          "sequences": 18,
+          "supported": true
+        },
+        {
+          "condition": "uniform_half_2",
+          "axis": "N_x_original_shape",
+          "group": "5-8:compact",
+          "per_seed": [
+            -0.04132231404958686,
+            -0.05785123966942152,
+            -0.008264462809917439
+          ],
+          "mean": -0.0358126721763086,
+          "samples": 121,
+          "sequences": 18,
+          "supported": true
+        },
+        {
+          "condition": "uniform_quarter_0",
+          "axis": "N_x_original_shape",
+          "group": "3-4:compact",
+          "per_seed": [
+            -0.04958677685950419,
+            -0.04132231404958675,
+            -0.016528925619834767
+          ],
+          "mean": -0.03581267217630857,
+          "samples": 121,
+          "sequences": 18,
+          "supported": true
+        },
+        {
+          "condition": "uniform_quarter_1",
+          "axis": "N_x_original_shape",
+          "group": "1-2:compact",
+          "per_seed": [
+            -0.008620689655172376,
+            -0.03448275862068961,
+            -0.017241379310344862
+          ],
+          "mean": -0.020114942528735618,
+          "samples": 116,
+          "sequences": 19,
+          "supported": true
+        },
+        {
+          "condition": "central_half",
+          "axis": "N_x_original_shape",
+          "group": "5-8:compact",
+          "per_seed": [
+            -0.016528925619834767,
+            -0.024793388429751984,
+            -0.024793388429752095
+          ],
+          "mean": -0.02203856749311295,
+          "samples": 121,
+          "sequences": 18,
+          "supported": true
+        },
+        {
+          "condition": "xy_fraction6",
+          "axis": "N_x_original_shape",
+          "group": "5-8:elongated",
+          "per_seed": [
+            -0.015021459227467782,
+            -0.011802575107296098,
+            -0.005364806866952843
+          ],
+          "mean": -0.010729613733905574,
+          "samples": 932,
+          "sequences": 27,
+          "supported": true
+        },
+        {
+          "condition": "xy_fraction4",
+          "axis": "retained_N",
+          "group": "5-8",
+          "per_seed": [
+            -0.014687100893997385,
+            -0.011494252873563204,
+            -0.004469987228607919
+          ],
+          "mean": -0.010217113665389502,
+          "samples": 1566,
+          "sequences": 27,
+          "supported": true
+        },
+        {
+          "condition": "xy_fraction4",
+          "axis": "N_x_original_shape",
+          "group": "5-8:elongated",
+          "per_seed": [
+            -0.013948497854077258,
+            -0.01180257510729621,
+            -0.007510729613733891
+          ],
+          "mean": -0.011087267525035785,
+          "samples": 932,
+          "sequences": 27,
+          "supported": true
+        },
+        {
+          "condition": "kept_single",
+          "axis": "history",
+          "group": "one_to_five",
+          "per_seed": [
+            -0.01376829570826088,
+            -0.01029521210617712,
+            -0.006077896303646746
+          ],
+          "mean": -0.010047134706028249,
+          "samples": 8062,
+          "sequences": 27,
+          "supported": true
+        }
+      ]
+    },
+    {
+      "tag": "distribution20",
+      "accepted": false,
+      "failures": [
+        "supported_group_regression"
+      ],
+      "clean_vs_A": [
+        0.004339529174684276,
+        0.0027320651118198924,
+        0.005463679552024869
+      ],
+      "difficult_vs_B": {
+        "quarter_mean": -0.0005120936547712161,
+        "central_half": 0.0002058738837072601,
+        "sparse_single": 0.010184576480581983,
+        "sparse_context": 0.007322533121373802
+      },
+      "composite_per_seed": [
+        0.9680238225314065,
+        0.9694841702555678,
+        0.9703625185361586
+      ],
+      "composite_vs_B": [
+        0.002366908089363129,
+        0.00407606166764185,
+        0.006186310765499137
+      ],
+      "composite_mean": 0.9692901704410444,
+      "group_failures": [
+        {
+          "condition": "clean",
+          "axis": "retained_N",
+          "group": "5-8",
+          "per_seed": [
+            -0.012132822477650018,
+            -0.011494252873563204,
+            -0.008301404853128913
+          ],
+          "mean": -0.010642826734780711,
+          "samples": 1566,
+          "sequences": 27,
+          "supported": true
+        },
+        {
+          "condition": "clean",
+          "axis": "N_x_original_shape",
+          "group": "3-4:intermediate",
+          "per_seed": [
+            -0.01446280991735538,
+            -0.010330578512396715,
+            -0.010330578512396715
+          ],
+          "mean": -0.01170798898071627,
+          "samples": 484,
+          "sequences": 27,
+          "supported": true
+        },
+        {
+          "condition": "clean",
+          "axis": "N_x_original_shape",
+          "group": "5-8:intermediate",
+          "per_seed": [
+            -0.014084507042253502,
+            -0.014084507042253502,
+            -0.005281690140845119
+          ],
+          "mean": -0.01115023474178404,
+          "samples": 568,
+          "sequences": 25,
+          "supported": true
+        },
+        {
+          "condition": "uniform_half_2",
+          "axis": "N_x_original_shape",
+          "group": "5-8:compact",
+          "per_seed": [
+            -0.008264462809917439,
+            -0.04132231404958675,
+            -0.008264462809917439
+          ],
+          "mean": -0.019283746556473875,
+          "samples": 121,
+          "sequences": 18,
+          "supported": true
+        },
+        {
+          "condition": "uniform_quarter_1",
+          "axis": "N_x_original_shape",
+          "group": "1-2:compact",
+          "per_seed": [
+            -0.008620689655172376,
+            -0.025862068965517238,
+            -0.02586206896551735
+          ],
+          "mean": -0.020114942528735653,
+          "samples": 116,
+          "sequences": 19,
+          "supported": true
+        },
+        {
+          "condition": "xy_fraction6",
+          "axis": "retained_N",
+          "group": "5-8",
+          "per_seed": [
+            -0.012771392081736832,
+            -0.012132822477650018,
+            -0.005747126436781658
+          ],
+          "mean": -0.010217113665389502,
+          "samples": 1566,
+          "sequences": 27,
+          "supported": true
+        },
+        {
+          "condition": "xy_fraction6",
+          "axis": "N_x_original_shape",
+          "group": "3-4:intermediate",
+          "per_seed": [
+            -0.016528925619834656,
+            -0.010330578512396715,
+            -0.008264462809917328
+          ],
+          "mean": -0.011707988980716233,
+          "samples": 484,
+          "sequences": 27,
+          "supported": true
+        },
+        {
+          "condition": "xy_fraction4",
+          "axis": "retained_N",
+          "group": "5-8",
+          "per_seed": [
+            -0.013409961685823646,
+            -0.011494252873563204,
+            -0.005747126436781658
+          ],
+          "mean": -0.010217113665389502,
+          "samples": 1566,
+          "sequences": 27,
+          "supported": true
+        },
+        {
+          "condition": "xy_fraction4",
+          "axis": "N_x_original_shape",
+          "group": "3-4:intermediate",
+          "per_seed": [
+            -0.01446280991735538,
+            -0.012396694214875992,
+            -0.01446280991735538
+          ],
+          "mean": -0.013774104683195584,
+          "samples": 484,
+          "sequences": 27,
+          "supported": true
+        },
+        {
+          "condition": "xy_fraction4",
+          "axis": "N_x_original_shape",
+          "group": "5-8:intermediate",
+          "per_seed": [
+            -0.017605633802816878,
+            -0.014084507042253502,
+            -0.0017605633802817433
+          ],
+          "mean": -0.01115023474178404,
+          "samples": 568,
+          "sequences": 25,
+          "supported": true
+        }
+      ]
+    },
+    {
+      "tag": "combined23",
+      "accepted": false,
+      "failures": [
+        "supported_group_regression"
+      ],
+      "clean_vs_A": [
+        0.004375255088255092,
+        0.002813330281878468,
+        0.004905028033924674
+      ],
+      "difficult_vs_B": {
+        "quarter_mean": 0.00023150977979356934,
+        "central_half": 0.0016422648067788332,
+        "sparse_single": 0.010241405875313636,
+        "sparse_context": 0.006804174142179746
+      },
+      "composite_per_seed": [
+        0.9687568855591634,
+        0.9695596976357503,
+        0.9704966749052296
+      ],
+      "composite_vs_B": [
+        0.003099971117120015,
+        0.004151589047824422,
+        0.006320467134570129
+      ],
+      "composite_mean": 0.9696044193667145,
+      "group_failures": [
+        {
+          "condition": "uniform_quarter_1",
+          "axis": "N_x_original_shape",
+          "group": "1-2:compact",
+          "per_seed": [
+            -0.025862068965517238,
+            -0.025862068965517238,
+            -0.02586206896551735
+          ],
+          "mean": -0.025862068965517276,
+          "samples": 116,
+          "sequences": 19,
+          "supported": true
+        }
+      ]
+    },
+    {
+      "tag": "redundant23",
+      "accepted": false,
+      "failures": [
+        "central_half",
+        "supported_group_regression"
+      ],
+      "clean_vs_A": [
+        0.0011810803948808513,
+        -0.00108343888275364,
+        0.001836717031292734
+      ],
+      "difficult_vs_B": {
+        "quarter_mean": -0.0015610353209394917,
+        "central_half": -0.004473488396751842,
+        "sparse_single": 0.011602638445261956,
+        "sparse_context": 0.0047969800139473495
+      },
+      "composite_per_seed": [
+        0.9670584582625013,
+        0.9664204113389496,
+        0.968169981609036
+      ],
+      "composite_vs_B": [
+        0.0014015438204578734,
+        0.0010123027510237081,
+        0.003993773838376513
+      ],
+      "composite_mean": 0.9672162837368289,
+      "group_failures": [
+        {
+          "condition": "uniform_half_1",
+          "axis": "N_x_original_shape",
+          "group": "5-8:compact",
+          "per_seed": [
+            -0.008264462809917328,
+            -0.03305785123966942,
+            -0.008264462809917328
+          ],
+          "mean": -0.016528925619834694,
+          "samples": 121,
+          "sequences": 18,
+          "supported": true
+        },
+        {
+          "condition": "uniform_half_2",
+          "axis": "N_x_original_shape",
+          "group": "5-8:compact",
+          "per_seed": [
+            -0.03305785123966942,
+            -0.05785123966942152,
+            -0.008264462809917439
+          ],
+          "mean": -0.03305785123966946,
+          "samples": 121,
+          "sequences": 18,
+          "supported": true
+        },
+        {
+          "condition": "uniform_quarter_0",
+          "axis": "N_x_original_shape",
+          "group": "3-4:compact",
+          "per_seed": [
+            -0.03305785123966942,
+            -0.024793388429752095,
+            -0.03305785123966942
+          ],
+          "mean": -0.030303030303030314,
+          "samples": 121,
+          "sequences": 18,
+          "supported": true
+        },
+        {
+          "condition": "uniform_quarter_2",
+          "axis": "N_x_original_shape",
+          "group": "3-4:compact",
+          "per_seed": [
+            -0.04958677685950419,
+            -0.024793388429752095,
+            -0.008264462809917328
+          ],
+          "mean": -0.027548209366391203,
+          "samples": 121,
+          "sequences": 18,
+          "supported": true
+        },
+        {
+          "condition": "xy_fraction4",
+          "axis": "N_x_original_shape",
+          "group": "3-4:intermediate",
+          "per_seed": [
+            -0.010330578512396715,
+            -0.012396694214875992,
+            -0.012396694214875992
+          ],
+          "mean": -0.011707988980716233,
+          "samples": 484,
+          "sequences": 27,
+          "supported": true
+        }
+      ]
+    }
+  ],
+  "decision": {
+    "conditional": "combined23",
+    "main": "A",
+    "alternative": "B"
+  },
+  "bootstrap_repetitions": 2000,
+  "sequence_names": [
+    "sequence_107",
+    "sequence_111",
+    "sequence_122",
+    "sequence_130",
+    "sequence_135",
+    "sequence_138",
+    "sequence_14",
+    "sequence_147",
+    "sequence_148",
+    "sequence_153",
+    "sequence_155",
+    "sequence_19",
+    "sequence_24",
+    "sequence_31",
+    "sequence_42",
+    "sequence_48",
+    "sequence_5",
+    "sequence_58",
+    "sequence_6",
+    "sequence_63",
+    "sequence_68",
+    "sequence_73",
+    "sequence_79",
+    "sequence_85",
+    "sequence_89",
+    "sequence_93",
+    "sequence_99"
+  ],
+  "scope": "Reused development data, paired whole-sequence intervals with three trained seeds fixed; no independent generalization/causality proof",
+  "output_bytes": 80750908,
+  "plan_sha256": "0631ce95183755c5cd8df36f17582c390fe3fad85928538ef8c3d3dd6d64b6aa"
+}

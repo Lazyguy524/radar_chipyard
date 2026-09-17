@@ -1,0 +1,7 @@
+{
+  "status": "RECORDED_BEFORE_TRAINING",
+  "preflight_train_source_sha256": "cfc41f12f241fb289ade19094f858ee5f276b5f6cb078bc3d2114d7c18d73d9a",
+  "actual_train_source_sha256": "72ac25a7aa360955a3ed8fc0fac00e1f7ac7ba03ebd4184d00405b4f407ebc8f",
+  "change": "Only provenance file-selection list: freeze training/preparation/evaluation/explanation/package sources and design docs; report-rendering scripts can be completed without altering any learning or decision code. No optimizer, data, initialization, epoch, evaluation or stopping logic changed.",
+  "original_source": "logs/feature_enrichment_20260917/train_source_at_preflight.py"
+}

@@ -1,0 +1,56 @@
+{
+  "layers": [
+    {
+      "input_scale": 1.0,
+      "weight_scale": 0.0007826570788972421,
+      "output_scale": 0.059360441269334444,
+      "accumulator_abs_bound": 106036
+    },
+    {
+      "input_scale": 0.059360441269334444,
+      "weight_scale": 0.009866080884858379,
+      "output_scale": 0.09853824574330862,
+      "accumulator_abs_bound": 215130
+    },
+    {
+      "input_scale": 0.09853824574330862,
+      "weight_scale": 0.007588662500456562,
+      "output_scale": 0.0007477734903330196,
+      "accumulator_abs_bound": 258632
+    }
+  ],
+  "multipliers": [
+    864,
+    390
+  ],
+  "shift": 16,
+  "columns": [
+    0,
+    1,
+    2,
+    5,
+    6,
+    7,
+    8,
+    9,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    0,
+    5,
+    6,
+    13,
+    14,
+    18,
+    20
+  ],
+  "input_dim": 23,
+  "kind": "trained_int8",
+  "input": "Frozen16 proxy + specified new normalized distribution descriptors or redundant old inputs; no runtime normalization",
+  "frontend": "feature_enrichment one-pass CPU reference; no hardware claim"
+}

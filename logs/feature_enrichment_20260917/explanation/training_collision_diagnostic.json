@@ -1,0 +1,8 @@
+{
+  "rows": 100000,
+  "duplicate_base16_rows": 1058,
+  "opposite_label_vs_first": 0,
+  "new_features_different_vs_first": 1058,
+  "opposite_label_and_different_extra_vs_first": 0,
+  "scope": "Post-training descriptive first100k retained train rows, not all pair counts and not a proof all ambiguous classes become separable; no new training or selection"
+}

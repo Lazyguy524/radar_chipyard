@@ -1,0 +1,27 @@
+[
+  {
+    "tag": "base16",
+    "path": "logs/feature_enrichment_20260917/package/base16_train_calibration.npz",
+    "sha256": "d59473a0bd34f07895bd7b223a59255bf187e20e3c322986102b7ed7d2fcba5c"
+  },
+  {
+    "tag": "geometry19",
+    "path": "logs/feature_enrichment_20260917/package/geometry19_train_calibration.npz",
+    "sha256": "47295cbc33868ac7f975a68093410777649b94ff4aba6323ca914a0aaf507b70"
+  },
+  {
+    "tag": "distribution20",
+    "path": "logs/feature_enrichment_20260917/package/distribution20_train_calibration.npz",
+    "sha256": "6c4c99d110a33fc06c92f12c69cb2210747d6aec94ca135935589ff606082b7b"
+  },
+  {
+    "tag": "combined23",
+    "path": "logs/feature_enrichment_20260917/package/combined23_train_calibration.npz",
+    "sha256": "7f95d446ce831a2fa86a707a106cbeaf8804d810f455b9b9b64527d56b58f776"
+  },
+  {
+    "tag": "redundant23",
+    "path": "logs/feature_enrichment_20260917/package/redundant23_train_calibration.npz",
+    "sha256": "d546fa944f8d6228167d7eb99e108bdf554e5647c13e231adccdc7c2f7ebda97"
+  }
+]

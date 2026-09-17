@@ -1,0 +1,10532 @@
+[
+  {
+    "tag": "base16",
+    "seed": 7,
+    "condition": "clean",
+    "retained_point_group": "Nge3",
+    "samples": 80450,
+    "accuracy": 0.9822001243008079,
+    "macro_f1": 0.9811944762939411,
+    "per_class_f1": [
+      0.9768457135465511,
+      0.985543239041331
+    ],
+    "recall": [
+      0.9888696107637411,
+      0.9781175480432038
+    ],
+    "confusion_matrix": [
+      [
+        30207,
+        340
+      ],
+      [
+        1092,
+        48811
+      ]
+    ]
+  },
+  {
+    "tag": "base16",
+    "seed": 17,
+    "condition": "clean",
+    "retained_point_group": "Nge3",
+    "samples": 80450,
+    "accuracy": 0.9814294592914854,
+    "macro_f1": 0.9803871689806495,
+    "per_class_f1": [
+      0.9758658568105454,
+      0.9849084811507536
+    ],
+    "recall": [
+      0.9888041378858807,
+      0.9769152155181051
+    ],
+    "confusion_matrix": [
+      [
+        30205,
+        342
+      ],
+      [
+        1152,
+        48751
+      ]
+    ]
+  },
+  {
+    "tag": "base16",
+    "seed": 37,
+    "condition": "clean",
+    "retained_point_group": "Nge3",
+    "samples": 80450,
+    "accuracy": 0.9836668738346799,
+    "macro_f1": 0.9827119119076144,
+    "per_class_f1": [
+      0.9786487276981574,
+      0.9867750961170716
+    ],
+    "recall": [
+      0.985825121943235,
+      0.9823457507564676
+    ],
+    "confusion_matrix": [
+      [
+        30114,
+        433
+      ],
+      [
+        881,
+        49022
+      ]
+    ]
+  },
+  {
+    "tag": "geometry19",
+    "seed": 7,
+    "condition": "clean",
+    "retained_point_group": "Nge3",
+    "samples": 80450,
+    "accuracy": 0.9825605966438782,
+    "macro_f1": 0.9815961121322324,
+    "per_class_f1": [
+      0.9773830058194832,
+      0.9858092184449816
+    ],
+    "recall": [
+      0.9924051461681999,
+      0.9765344768851572
+    ],
+    "confusion_matrix": [
+      [
+        30315,
+        232
+      ],
+      [
+        1171,
+        48732
+      ]
+    ]
+  },
+  {
+    "tag": "geometry19",
+    "seed": 17,
+    "condition": "clean",
+    "retained_point_group": "Nge3",
+    "samples": 80450,
+    "accuracy": 0.9827719080174021,
+    "macro_f1": 0.9817874728903443,
+    "per_class_f1": [
+      0.977553201826839,
+      0.9860217439538496
+    ],
+    "recall": [
+      0.9879857269126264,
+      0.9795803859487405
+    ],
+    "confusion_matrix": [
+      [
+        30180,
+        367
+      ],
+      [
+        1019,
+        48884
+      ]
+    ]
+  },
+  {
+    "tag": "geometry19",
+    "seed": 37,
+    "condition": "clean",
+    "retained_point_group": "Nge3",
+    "samples": 80450,
+    "accuracy": 0.982983219390926,
+    "macro_f1": 0.9819510150649977,
+    "per_class_f1": [
+      0.9776347388541275,
+      0.986267291275868
+    ],
+    "recall": [
+      0.9795069892297116,
+      0.9851111155641945
+    ],
+    "confusion_matrix": [
+      [
+        29921,
+        626
+      ],
+      [
+        743,
+        49160
+      ]
+    ]
+  },
+  {
+    "tag": "distribution20",
+    "seed": 7,
+    "condition": "clean",
+    "retained_point_group": "Nge3",
+    "samples": 80450,
+    "accuracy": 0.9853946550652579,
+    "macro_f1": 0.9845571595655201,
+    "per_class_f1": [
+      0.9809608685084663,
+      0.988153450622574
+    ],
+    "recall": [
+      0.990932006416342,
+      0.9820050898743562
+    ],
+    "confusion_matrix": [
+      [
+        30270,
+        277
+      ],
+      [
+        898,
+        49005
+      ]
+    ]
+  },
+  {
+    "tag": "distribution20",
+    "seed": 17,
+    "condition": "clean",
+    "retained_point_group": "Nge3",
+    "samples": 80450,
+    "accuracy": 0.9852206339341206,
+    "macro_f1": 0.9843826941451594,
+    "per_class_f1": [
+      0.9807651864434199,
+      0.9880002018468991
+    ],
+    "recall": [
+      0.9923396732903395,
+      0.9808628739755125
+    ],
+    "confusion_matrix": [
+      [
+        30313,
+        234
+      ],
+      [
+        955,
+        48948
+      ]
+    ]
+  },
+  {
+    "tag": "distribution20",
+    "seed": 37,
+    "condition": "clean",
+    "retained_point_group": "Nge3",
+    "samples": 80450,
+    "accuracy": 0.9869732753262896,
+    "macro_f1": 0.9862191139566769,
+    "per_class_f1": [
+      0.9829952944994321,
+      0.9894429334139216
+    ],
+    "recall": [
+      0.9916194716338756,
+      0.9841292106686973
+    ],
+    "confusion_matrix": [
+      [
+        30291,
+        256
+      ],
+      [
+        792,
+        49111
+      ]
+    ]
+  },
+  {
+    "tag": "combined23",
+    "seed": 7,
+    "condition": "clean",
+    "retained_point_group": "Nge3",
+    "samples": 80450,
+    "accuracy": 0.9854070851460535,
+    "macro_f1": 0.984592885479091,
+    "per_class_f1": [
+      0.9810510685002259,
+      0.988134702457956
+    ],
+    "recall": [
+      0.994893115526893,
+      0.9796004248241589
+    ],
+    "confusion_matrix": [
+      [
+        30391,
+        156
+      ],
+      [
+        1018,
+        48885
+      ]
+    ]
+  },
+  {
+    "tag": "combined23",
+    "seed": 17,
+    "condition": "clean",
+    "retained_point_group": "Nge3",
+    "samples": 80450,
+    "accuracy": 0.9852952144188937,
+    "macro_f1": 0.984463959315218,
+    "per_class_f1": [
+      0.9808702964052974,
+      0.9880576222251386
+    ],
+    "recall": [
+      0.9928634563132223,
+      0.9806624852213294
+    ],
+    "confusion_matrix": [
+      [
+        30329,
+        218
+      ],
+      [
+        965,
+        48938
+      ]
+    ]
+  },
+  {
+    "tag": "combined23",
+    "seed": 37,
+    "condition": "clean",
+    "retained_point_group": "Nge3",
+    "samples": 80450,
+    "accuracy": 0.9864512119328775,
+    "macro_f1": 0.9856604624385767,
+    "per_class_f1": [
+      0.982293121933786,
+      0.9890278029433673
+    ],
+    "recall": [
+      0.9897534946148558,
+      0.984429793799972
+    ],
+    "confusion_matrix": [
+      [
+        30234,
+        313
+      ],
+      [
+        777,
+        49126
+      ]
+    ]
+  },
+  {
+    "tag": "redundant23",
+    "seed": 7,
+    "condition": "clean",
+    "retained_point_group": "Nge3",
+    "samples": 80450,
+    "accuracy": 0.9823990055935363,
+    "macro_f1": 0.9813987107857167,
+    "per_class_f1": [
+      0.9770851538984368,
+      0.9857122676729966
+    ],
+    "recall": [
+      0.988280354862998,
+      0.9787988698074264
+    ],
+    "confusion_matrix": [
+      [
+        30189,
+        358
+      ],
+      [
+        1058,
+        48845
+      ]
+    ]
+  },
+  {
+    "tag": "redundant23",
+    "seed": 17,
+    "condition": "clean",
+    "retained_point_group": "Nge3",
+    "samples": 80450,
+    "accuracy": 0.9816034804226228,
+    "macro_f1": 0.9805671901505859,
+    "per_class_f1": [
+      0.9760796483061805,
+      0.9850547319949913
+    ],
+    "recall": [
+      0.9885095099355092,
+      0.9773761096527263
+    ],
+    "confusion_matrix": [
+      [
+        30196,
+        351
+      ],
+      [
+        1129,
+        48774
+      ]
+    ]
+  },
+  {
+    "tag": "redundant23",
+    "seed": 37,
+    "condition": "clean",
+    "retained_point_group": "Nge3",
+    "samples": 80450,
+    "accuracy": 0.9835425730267247,
+    "macro_f1": 0.9825921514359448,
+    "per_class_f1": [
+      0.9785246220722766,
+      0.9866596807996131
+    ],
+    "recall": [
+      0.9874619438897436,
+      0.9811434182313689
+    ],
+    "confusion_matrix": [
+      [
+        30164,
+        383
+      ],
+      [
+        941,
+        48962
+      ]
+    ]
+  },
+  {
+    "tag": "base16",
+    "seed": 7,
+    "condition": "uniform_half_0",
+    "retained_point_group": "N2",
+    "samples": 1615,
+    "accuracy": 0.923219814241486,
+    "macro_f1": 0.9146778327675297,
+    "per_class_f1": [
+      0.8876811594202898,
+      0.9416745061147695
+    ],
+    "recall": [
+      0.98,
+      0.8977578475336323
+    ],
+    "confusion_matrix": [
+      [
+        490,
+        10
+      ],
+      [
+        114,
+        1001
+      ]
+    ]
+  },
+  {
+    "tag": "base16",
+    "seed": 7,
+    "condition": "uniform_half_0",
+    "retained_point_group": "Nge3",
+    "samples": 78835,
+    "accuracy": 0.9796283376672797,
+    "macro_f1": 0.9785333477157581,
+    "per_class_f1": [
+      0.9736850729149599,
+      0.9833816225165563
+    ],
+    "recall": [
+      0.9888508004126868,
+      0.9739485119291629
+    ],
+    "confusion_matrix": [
+      [
+        29712,
+        335
+      ],
+      [
+        1271,
+        47517
+      ]
+    ]
+  },
+  {
+    "tag": "base16",
+    "seed": 17,
+    "condition": "uniform_half_0",
+    "retained_point_group": "N2",
+    "samples": 1615,
+    "accuracy": 0.9170278637770898,
+    "macro_f1": 0.9082706856152701,
+    "per_class_f1": [
+      0.8799283154121864,
+      0.9366130558183539
+    ],
+    "recall": [
+      0.982,
+      0.8878923766816144
+    ],
+    "confusion_matrix": [
+      [
+        491,
+        9
+      ],
+      [
+        125,
+        990
+      ]
+    ]
+  },
+  {
+    "tag": "base16",
+    "seed": 17,
+    "condition": "uniform_half_0",
+    "retained_point_group": "Nge3",
+    "samples": 78835,
+    "accuracy": 0.9789941016046172,
+    "macro_f1": 0.9778751517159211,
+    "per_class_f1": [
+      0.972899551598861,
+      0.9828507518329812
+    ],
+    "recall": [
+      0.9892834559190601,
+      0.9726572107895384
+    ],
+    "confusion_matrix": [
+      [
+        29725,
+        322
+      ],
+      [
+        1334,
+        47454
+      ]
+    ]
+  },
+  {
+    "tag": "base16",
+    "seed": 37,
+    "condition": "uniform_half_0",
+    "retained_point_group": "N2",
+    "samples": 1615,
+    "accuracy": 0.9275541795665635,
+    "macro_f1": 0.9191027601091046,
+    "per_class_f1": [
+      0.8929551692589204,
+      0.9452503509592888
+    ],
+    "recall": [
+      0.976,
+      0.905829596412556
+    ],
+    "confusion_matrix": [
+      [
+        488,
+        12
+      ],
+      [
+        105,
+        1010
+      ]
+    ]
+  },
+  {
+    "tag": "base16",
+    "seed": 37,
+    "condition": "uniform_half_0",
+    "retained_point_group": "Nge3",
+    "samples": 78835,
+    "accuracy": 0.9808333861863385,
+    "macro_f1": 0.9797306525725953,
+    "per_class_f1": [
+      0.9750028950981852,
+      0.9844584100470053
+    ],
+    "recall": [
+      0.980730189369987,
+      0.9808969418709519
+    ],
+    "confusion_matrix": [
+      [
+        29468,
+        579
+      ],
+      [
+        932,
+        47856
+      ]
+    ]
+  },
+  {
+    "tag": "geometry19",
+    "seed": 7,
+    "condition": "uniform_half_0",
+    "retained_point_group": "N2",
+    "samples": 1615,
+    "accuracy": 0.9213622291021671,
+    "macro_f1": 0.9125754822616952,
+    "per_class_f1": [
+      0.8848594741613781,
+      0.9402914903620122
+    ],
+    "recall": [
+      0.976,
+      0.8968609865470852
+    ],
+    "confusion_matrix": [
+      [
+        488,
+        12
+      ],
+      [
+        115,
+        1000
+      ]
+    ]
+  },
+  {
+    "tag": "geometry19",
+    "seed": 7,
+    "condition": "uniform_half_0",
+    "retained_point_group": "Nge3",
+    "samples": 78835,
+    "accuracy": 0.9795649140610135,
+    "macro_f1": 0.9784806338005518,
+    "per_class_f1": [
+      0.9736502069055758,
+      0.9833110606955279
+    ],
+    "recall": [
+      0.9905814224381801,
+      0.9727801918504551
+    ],
+    "confusion_matrix": [
+      [
+        29764,
+        283
+      ],
+      [
+        1328,
+        47460
+      ]
+    ]
+  },
+  {
+    "tag": "geometry19",
+    "seed": 17,
+    "condition": "uniform_half_0",
+    "retained_point_group": "N2",
+    "samples": 1615,
+    "accuracy": 0.920123839009288,
+    "macro_f1": 0.9115053081523348,
+    "per_class_f1": [
+      0.8838883888388839,
+      0.9391222274657858
+    ],
+    "recall": [
+      0.982,
+      0.8923766816143498
+    ],
+    "confusion_matrix": [
+      [
+        491,
+        9
+      ],
+      [
+        120,
+        995
+      ]
+    ]
+  },
+  {
+    "tag": "geometry19",
+    "seed": 17,
+    "condition": "uniform_half_0",
+    "retained_point_group": "Nge3",
+    "samples": 78835,
+    "accuracy": 0.9798059237648252,
+    "macro_f1": 0.9786883459333902,
+    "per_class_f1": [
+      0.9738080352736007,
+      0.9835686565931797
+    ],
+    "recall": [
+      0.9849569008553266,
+      0.9766335984258424
+    ],
+    "confusion_matrix": [
+      [
+        29595,
+        452
+      ],
+      [
+        1140,
+        47648
+      ]
+    ]
+  },
+  {
+    "tag": "geometry19",
+    "seed": 37,
+    "condition": "uniform_half_0",
+    "retained_point_group": "N2",
+    "samples": 1615,
+    "accuracy": 0.9244582043343653,
+    "macro_f1": 0.9155320243505102,
+    "per_class_f1": [
+      0.8880733944954129,
+      0.9429906542056075
+    ],
+    "recall": [
+      0.968,
+      0.9049327354260089
+    ],
+    "confusion_matrix": [
+      [
+        484,
+        16
+      ],
+      [
+        106,
+        1009
+      ]
+    ]
+  },
+  {
+    "tag": "geometry19",
+    "seed": 37,
+    "condition": "uniform_half_0",
+    "retained_point_group": "Nge3",
+    "samples": 78835,
+    "accuracy": 0.9806684848100463,
+    "macro_f1": 0.9795241424736321,
+    "per_class_f1": [
+      0.9746835443037974,
+      0.9843647406434668
+    ],
+    "recall": [
+      0.9763703531134555,
+      0.983315569402312
+    ],
+    "confusion_matrix": [
+      [
+        29337,
+        710
+      ],
+      [
+        814,
+        47974
+      ]
+    ]
+  },
+  {
+    "tag": "distribution20",
+    "seed": 7,
+    "condition": "uniform_half_0",
+    "retained_point_group": "N2",
+    "samples": 1615,
+    "accuracy": 0.9287925696594427,
+    "macro_f1": 0.9201251848764902,
+    "per_class_f1": [
+      0.8938134810710988,
+      0.9464368886818817
+    ],
+    "recall": [
+      0.968,
+      0.9112107623318386
+    ],
+    "confusion_matrix": [
+      [
+        484,
+        16
+      ],
+      [
+        99,
+        1016
+      ]
+    ]
+  },
+  {
+    "tag": "distribution20",
+    "seed": 7,
+    "condition": "uniform_half_0",
+    "retained_point_group": "Nge3",
+    "samples": 78835,
+    "accuracy": 0.9813915139214816,
+    "macro_f1": 0.9803642122805434,
+    "per_class_f1": [
+      0.9758729010081739,
+      0.9848555235529127
+    ],
+    "recall": [
+      0.987386427929577,
+      0.9776994342871198
+    ],
+    "confusion_matrix": [
+      [
+        29668,
+        379
+      ],
+      [
+        1088,
+        47700
+      ]
+    ]
+  },
+  {
+    "tag": "distribution20",
+    "seed": 17,
+    "condition": "uniform_half_0",
+    "retained_point_group": "N2",
+    "samples": 1615,
+    "accuracy": 0.9207430340557275,
+    "macro_f1": 0.9117712334613743,
+    "per_class_f1": [
+      0.8836363636363637,
+      0.939906103286385
+    ],
+    "recall": [
+      0.972,
+      0.8977578475336323
+    ],
+    "confusion_matrix": [
+      [
+        486,
+        14
+      ],
+      [
+        114,
+        1001
+      ]
+    ]
+  },
+  {
+    "tag": "distribution20",
+    "seed": 17,
+    "condition": "uniform_half_0",
+    "retained_point_group": "Nge3",
+    "samples": 78835,
+    "accuracy": 0.9822160208029429,
+    "macro_f1": 0.9812480836009148,
+    "per_class_f1": [
+      0.9769877224082464,
+      0.9855084447935832
+    ],
+    "recall": [
+      0.9904815788597864,
+      0.9771255226695089
+    ],
+    "confusion_matrix": [
+      [
+        29761,
+        286
+      ],
+      [
+        1116,
+        47672
+      ]
+    ]
+  },
+  {
+    "tag": "distribution20",
+    "seed": 37,
+    "condition": "uniform_half_0",
+    "retained_point_group": "N2",
+    "samples": 1615,
+    "accuracy": 0.9294117647058824,
+    "macro_f1": 0.9212122301419388,
+    "per_class_f1": [
+      0.8957952468007313,
+      0.9466292134831461
+    ],
+    "recall": [
+      0.98,
+      0.9067264573991032
+    ],
+    "confusion_matrix": [
+      [
+        490,
+        10
+      ],
+      [
+        104,
+        1011
+      ]
+    ]
+  },
+  {
+    "tag": "distribution20",
+    "seed": 37,
+    "condition": "uniform_half_0",
+    "retained_point_group": "Nge3",
+    "samples": 78835,
+    "accuracy": 0.9827234096530729,
+    "macro_f1": 0.9817679615075287,
+    "per_class_f1": [
+      0.9775942620253998,
+      0.9859416609896575
+    ],
+    "recall": [
+      0.9888840816054847,
+      0.978929244896286
+    ],
+    "confusion_matrix": [
+      [
+        29713,
+        334
+      ],
+      [
+        1028,
+        47760
+      ]
+    ]
+  },
+  {
+    "tag": "combined23",
+    "seed": 7,
+    "condition": "uniform_half_0",
+    "retained_point_group": "N2",
+    "samples": 1615,
+    "accuracy": 0.9164086687306502,
+    "macro_f1": 0.9072297600036763,
+    "per_class_f1": [
+      0.8780487804878049,
+      0.9364107395195478
+    ],
+    "recall": [
+      0.972,
+      0.8914798206278027
+    ],
+    "confusion_matrix": [
+      [
+        486,
+        14
+      ],
+      [
+        121,
+        994
+      ]
+    ]
+  },
+  {
+    "tag": "combined23",
+    "seed": 7,
+    "condition": "uniform_half_0",
+    "retained_point_group": "Nge3",
+    "samples": 78835,
+    "accuracy": 0.9818481638865986,
+    "macro_f1": 0.9808691386072095,
+    "per_class_f1": [
+      0.9765413681742923,
+      0.9851969090401266
+    ],
+    "recall": [
+      0.9912803274869372,
+      0.9760391899647455
+    ],
+    "confusion_matrix": [
+      [
+        29785,
+        262
+      ],
+      [
+        1169,
+        47619
+      ]
+    ]
+  },
+  {
+    "tag": "combined23",
+    "seed": 17,
+    "condition": "uniform_half_0",
+    "retained_point_group": "N2",
+    "samples": 1615,
+    "accuracy": 0.920123839009288,
+    "macro_f1": 0.9114293111650467,
+    "per_class_f1": [
+      0.8836789900811542,
+      0.9391796322489392
+    ],
+    "recall": [
+      0.98,
+      0.8932735426008969
+    ],
+    "confusion_matrix": [
+      [
+        490,
+        10
+      ],
+      [
+        119,
+        996
+      ]
+    ]
+  },
+  {
+    "tag": "combined23",
+    "seed": 17,
+    "condition": "uniform_half_0",
+    "retained_point_group": "Nge3",
+    "samples": 78835,
+    "accuracy": 0.9816325236252933,
+    "macro_f1": 0.9806219653882922,
+    "per_class_f1": [
+      0.9761967385586533,
+      0.985047192217931
+    ],
+    "recall": [
+      0.9881851765567278,
+      0.9775969500696893
+    ],
+    "confusion_matrix": [
+      [
+        29692,
+        355
+      ],
+      [
+        1093,
+        47695
+      ]
+    ]
+  },
+  {
+    "tag": "combined23",
+    "seed": 37,
+    "condition": "uniform_half_0",
+    "retained_point_group": "N2",
+    "samples": 1615,
+    "accuracy": 0.920123839009288,
+    "macro_f1": 0.9108851175772352,
+    "per_class_f1": [
+      0.8821917808219178,
+      0.9395784543325527
+    ],
+    "recall": [
+      0.966,
+      0.8995515695067264
+    ],
+    "confusion_matrix": [
+      [
+        483,
+        17
+      ],
+      [
+        112,
+        1003
+      ]
+    ]
+  },
+  {
+    "tag": "combined23",
+    "seed": 37,
+    "condition": "uniform_half_0",
+    "retained_point_group": "Nge3",
+    "samples": 78835,
+    "accuracy": 0.9829517346356313,
+    "macro_f1": 0.9819974057646608,
+    "per_class_f1": [
+      0.9778524817085228,
+      0.9861423298207989
+    ],
+    "recall": [
+      0.9874529903151729,
+      0.9801795523489383
+    ],
+    "confusion_matrix": [
+      [
+        29670,
+        377
+      ],
+      [
+        967,
+        47821
+      ]
+    ]
+  },
+  {
+    "tag": "redundant23",
+    "seed": 7,
+    "condition": "uniform_half_0",
+    "retained_point_group": "N2",
+    "samples": 1615,
+    "accuracy": 0.9269349845201238,
+    "macro_f1": 0.9185202730898419,
+    "per_class_f1": [
+      0.8923357664233577,
+      0.9447047797563262
+    ],
+    "recall": [
+      0.978,
+      0.9040358744394619
+    ],
+    "confusion_matrix": [
+      [
+        489,
+        11
+      ],
+      [
+        107,
+        1008
+      ]
+    ]
+  },
+  {
+    "tag": "redundant23",
+    "seed": 7,
+    "condition": "uniform_half_0",
+    "retained_point_group": "Nge3",
+    "samples": 78835,
+    "accuracy": 0.9792604807509355,
+    "macro_f1": 0.9781259576415736,
+    "per_class_f1": [
+      0.9731443307435818,
+      0.9831075845395655
+    ],
+    "recall": [
+      0.9858887742536693,
+      0.9751783225383291
+    ],
+    "confusion_matrix": [
+      [
+        29623,
+        424
+      ],
+      [
+        1211,
+        47577
+      ]
+    ]
+  },
+  {
+    "tag": "redundant23",
+    "seed": 17,
+    "condition": "uniform_half_0",
+    "retained_point_group": "N2",
+    "samples": 1615,
+    "accuracy": 0.9238390092879257,
+    "macro_f1": 0.9151803461104737,
+    "per_class_f1": [
+      0.8880800727934486,
+      0.9422806194274989
+    ],
+    "recall": [
+      0.976,
+      0.9004484304932735
+    ],
+    "confusion_matrix": [
+      [
+        488,
+        12
+      ],
+      [
+        111,
+        1004
+      ]
+    ]
+  },
+  {
+    "tag": "redundant23",
+    "seed": 17,
+    "condition": "uniform_half_0",
+    "retained_point_group": "Nge3",
+    "samples": 78835,
+    "accuracy": 0.978626244688273,
+    "macro_f1": 0.9774671666144079,
+    "per_class_f1": [
+      0.9723566565499139,
+      0.982577676678902
+    ],
+    "recall": [
+      0.9862881485672447,
+      0.9739075182421907
+    ],
+    "confusion_matrix": [
+      [
+        29635,
+        412
+      ],
+      [
+        1273,
+        47515
+      ]
+    ]
+  },
+  {
+    "tag": "redundant23",
+    "seed": 37,
+    "condition": "uniform_half_0",
+    "retained_point_group": "N2",
+    "samples": 1615,
+    "accuracy": 0.9294117647058824,
+    "macro_f1": 0.920999649859944,
+    "per_class_f1": [
+      0.8952205882352942,
+      0.9467787114845938
+    ],
+    "recall": [
+      0.974,
+      0.9094170403587444
+    ],
+    "confusion_matrix": [
+      [
+        487,
+        13
+      ],
+      [
+        101,
+        1014
+      ]
+    ]
+  },
+  {
+    "tag": "redundant23",
+    "seed": 37,
+    "condition": "uniform_half_0",
+    "retained_point_group": "Nge3",
+    "samples": 78835,
+    "accuracy": 0.9804274751062345,
+    "macro_f1": 0.979326353397306,
+    "per_class_f1": [
+      0.9745551689451032,
+      0.9840975378495089
+    ],
+    "recall": [
+      0.9834259659866209,
+      0.9785807985570222
+    ],
+    "confusion_matrix": [
+      [
+        29549,
+        498
+      ],
+      [
+        1045,
+        47743
+      ]
+    ]
+  },
+  {
+    "tag": "base16",
+    "seed": 7,
+    "condition": "uniform_half_1",
+    "retained_point_group": "N2",
+    "samples": 1615,
+    "accuracy": 0.9238390092879257,
+    "macro_f1": 0.9154027149321267,
+    "per_class_f1": [
+      0.8886877828054298,
+      0.9421176470588235
+    ],
+    "recall": [
+      0.982,
+      0.8977578475336323
+    ],
+    "confusion_matrix": [
+      [
+        491,
+        9
+      ],
+      [
+        114,
+        1001
+      ]
+    ]
+  },
+  {
+    "tag": "base16",
+    "seed": 7,
+    "condition": "uniform_half_1",
+    "retained_point_group": "Nge3",
+    "samples": 78835,
+    "accuracy": 0.9793492737997083,
+    "macro_f1": 0.9782392839858369,
+    "per_class_f1": [
+      0.9733245944617401,
+      0.9831539735099337
+    ],
+    "recall": [
+      0.9884847072919093,
+      0.9737230466508158
+    ],
+    "confusion_matrix": [
+      [
+        29701,
+        346
+      ],
+      [
+        1282,
+        47506
+      ]
+    ]
+  },
+  {
+    "tag": "base16",
+    "seed": 17,
+    "condition": "uniform_half_1",
+    "retained_point_group": "N2",
+    "samples": 1615,
+    "accuracy": 0.9120743034055727,
+    "macro_f1": 0.9028763145768959,
+    "per_class_f1": [
+      0.8729874776386404,
+      0.9327651515151515
+    ],
+    "recall": [
+      0.976,
+      0.8834080717488789
+    ],
+    "confusion_matrix": [
+      [
+        488,
+        12
+      ],
+      [
+        130,
+        985
+      ]
+    ]
+  },
+  {
+    "tag": "base16",
+    "seed": 17,
+    "condition": "uniform_half_1",
+    "retained_point_group": "Nge3",
+    "samples": 78835,
+    "accuracy": 0.9787911460645652,
+    "macro_f1": 0.9776578918053902,
+    "per_class_f1": [
+      0.972626064178127,
+      0.9826897194326535
+    ],
+    "recall": [
+      0.9885845508703032,
+      0.9727596950069689
+    ],
+    "confusion_matrix": [
+      [
+        29704,
+        343
+      ],
+      [
+        1329,
+        47459
+      ]
+    ]
+  },
+  {
+    "tag": "base16",
+    "seed": 37,
+    "condition": "uniform_half_1",
+    "retained_point_group": "N2",
+    "samples": 1615,
+    "accuracy": 0.9226006191950464,
+    "macro_f1": 0.9138011647464164,
+    "per_class_f1": [
+      0.8862602365787079,
+      0.9413420929141249
+    ],
+    "recall": [
+      0.974,
+      0.8995515695067264
+    ],
+    "confusion_matrix": [
+      [
+        487,
+        13
+      ],
+      [
+        112,
+        1003
+      ]
+    ]
+  },
+  {
+    "tag": "base16",
+    "seed": 37,
+    "condition": "uniform_half_1",
+    "retained_point_group": "Nge3",
+    "samples": 78835,
+    "accuracy": 0.9809475486776178,
+    "macro_f1": 0.9798520136217493,
+    "per_class_f1": [
+      0.9751538410639846,
+      0.9845501861795141
+    ],
+    "recall": [
+      0.9809631577195727,
+      0.9809379355579241
+    ],
+    "confusion_matrix": [
+      [
+        29475,
+        572
+      ],
+      [
+        930,
+        47858
+      ]
+    ]
+  },
+  {
+    "tag": "geometry19",
+    "seed": 7,
+    "condition": "uniform_half_1",
+    "retained_point_group": "N2",
+    "samples": 1615,
+    "accuracy": 0.923219814241486,
+    "macro_f1": 0.9145283824157064,
+    "per_class_f1": [
+      0.8872727272727273,
+      0.9417840375586854
+    ],
+    "recall": [
+      0.976,
+      0.8995515695067264
+    ],
+    "confusion_matrix": [
+      [
+        488,
+        12
+      ],
+      [
+        112,
+        1003
+      ]
+    ]
+  },
+  {
+    "tag": "geometry19",
+    "seed": 7,
+    "condition": "uniform_half_1",
+    "retained_point_group": "Nge3",
+    "samples": 78835,
+    "accuracy": 0.9792097418659225,
+    "macro_f1": 0.9781047773159808,
+    "per_class_f1": [
+      0.9731860940695296,
+      0.9830234605624321
+    ],
+    "recall": [
+      0.9898825173894232,
+      0.9726367139460523
+    ],
+    "confusion_matrix": [
+      [
+        29743,
+        304
+      ],
+      [
+        1335,
+        47453
+      ]
+    ]
+  },
+  {
+    "tag": "geometry19",
+    "seed": 17,
+    "condition": "uniform_half_1",
+    "retained_point_group": "N2",
+    "samples": 1615,
+    "accuracy": 0.920123839009288,
+    "macro_f1": 0.9116560124670038,
+    "per_class_f1": [
+      0.884304932735426,
+      0.9390070921985816
+    ],
+    "recall": [
+      0.986,
+      0.8905829596412556
+    ],
+    "confusion_matrix": [
+      [
+        493,
+        7
+      ],
+      [
+        122,
+        993
+      ]
+    ]
+  },
+  {
+    "tag": "geometry19",
+    "seed": 17,
+    "condition": "uniform_half_1",
+    "retained_point_group": "Nge3",
+    "samples": 78835,
+    "accuracy": 0.9798186084860785,
+    "macro_f1": 0.9786961095134796,
+    "per_class_f1": [
+      0.9738059566341231,
+      0.9835862623928361
+    ],
+    "recall": [
+      0.9842579958065697,
+      0.9770845289825367
+    ],
+    "confusion_matrix": [
+      [
+        29574,
+        473
+      ],
+      [
+        1118,
+        47670
+      ]
+    ]
+  },
+  {
+    "tag": "geometry19",
+    "seed": 37,
+    "condition": "uniform_half_1",
+    "retained_point_group": "N2",
+    "samples": 1615,
+    "accuracy": 0.9263157894736842,
+    "macro_f1": 0.9174973738334649,
+    "per_class_f1": [
+      0.890524379024839,
+      0.9444703686420906
+    ],
+    "recall": [
+      0.968,
+      0.9076233183856502
+    ],
+    "confusion_matrix": [
+      [
+        484,
+        16
+      ],
+      [
+        103,
+        1012
+      ]
+    ]
+  },
+  {
+    "tag": "geometry19",
+    "seed": 37,
+    "condition": "uniform_half_1",
+    "retained_point_group": "Nge3",
+    "samples": 78835,
+    "accuracy": 0.9800849876323968,
+    "macro_f1": 0.9789079798908775,
+    "per_class_f1": [
+      0.9739254633627848,
+      0.9838904964189702
+    ],
+    "recall": [
+      0.9758378540286884,
+      0.9827006640977289
+    ],
+    "confusion_matrix": [
+      [
+        29321,
+        726
+      ],
+      [
+        844,
+        47944
+      ]
+    ]
+  },
+  {
+    "tag": "distribution20",
+    "seed": 7,
+    "condition": "uniform_half_1",
+    "retained_point_group": "N2",
+    "samples": 1615,
+    "accuracy": 0.9331269349845202,
+    "macro_f1": 0.9247444885110436,
+    "per_class_f1": [
+      0.8996282527881041,
+      0.9498607242339833
+    ],
+    "recall": [
+      0.968,
+      0.9174887892376682
+    ],
+    "confusion_matrix": [
+      [
+        484,
+        16
+      ],
+      [
+        92,
+        1023
+      ]
+    ]
+  },
+  {
+    "tag": "distribution20",
+    "seed": 7,
+    "condition": "uniform_half_1",
+    "retained_point_group": "Nge3",
+    "samples": 78835,
+    "accuracy": 0.980300627893702,
+    "macro_f1": 0.9792080045806425,
+    "per_class_f1": [
+      0.9744416832611952,
+      0.9839743259000898
+    ],
+    "recall": [
+      0.9852897127833061,
+      0.9772280068869394
+    ],
+    "confusion_matrix": [
+      [
+        29605,
+        442
+      ],
+      [
+        1111,
+        47677
+      ]
+    ]
+  },
+  {
+    "tag": "distribution20",
+    "seed": 17,
+    "condition": "uniform_half_1",
+    "retained_point_group": "N2",
+    "samples": 1615,
+    "accuracy": 0.9244582043343653,
+    "macro_f1": 0.9158328121742756,
+    "per_class_f1": [
+      0.8888888888888888,
+      0.9427767354596623
+    ],
+    "recall": [
+      0.976,
+      0.9013452914798207
+    ],
+    "confusion_matrix": [
+      [
+        488,
+        12
+      ],
+      [
+        110,
+        1005
+      ]
+    ]
+  },
+  {
+    "tag": "distribution20",
+    "seed": 17,
+    "condition": "uniform_half_1",
+    "retained_point_group": "Nge3",
+    "samples": 78835,
+    "accuracy": 0.9819876958203844,
+    "macro_f1": 0.981004327661035,
+    "per_class_f1": [
+      0.9766823212584979,
+      0.9853263340635721
+    ],
+    "recall": [
+      0.9897493926182315,
+      0.9772075100434533
+    ],
+    "confusion_matrix": [
+      [
+        29739,
+        308
+      ],
+      [
+        1112,
+        47676
+      ]
+    ]
+  },
+  {
+    "tag": "distribution20",
+    "seed": 37,
+    "condition": "uniform_half_1",
+    "retained_point_group": "N2",
+    "samples": 1615,
+    "accuracy": 0.9250773993808049,
+    "macro_f1": 0.9164116219135308,
+    "per_class_f1": [
+      0.8894977168949771,
+      0.9433255269320843
+    ],
+    "recall": [
+      0.974,
+      0.9031390134529148
+    ],
+    "confusion_matrix": [
+      [
+        487,
+        13
+      ],
+      [
+        108,
+        1007
+      ]
+    ]
+  },
+  {
+    "tag": "distribution20",
+    "seed": 37,
+    "condition": "uniform_half_1",
+    "retained_point_group": "Nge3",
+    "samples": 78835,
+    "accuracy": 0.9820638041479038,
+    "macro_f1": 0.9810674638962344,
+    "per_class_f1": [
+      0.9767242798353909,
+      0.985410647957078
+    ],
+    "recall": [
+      0.987386427929577,
+      0.9787857669918832
+    ],
+    "confusion_matrix": [
+      [
+        29668,
+        379
+      ],
+      [
+        1035,
+        47753
+      ]
+    ]
+  },
+  {
+    "tag": "combined23",
+    "seed": 7,
+    "condition": "uniform_half_1",
+    "retained_point_group": "N2",
+    "samples": 1615,
+    "accuracy": 0.9219814241486068,
+    "macro_f1": 0.9131498079385403,
+    "per_class_f1": [
+      0.8854545454545455,
+      0.9408450704225352
+    ],
+    "recall": [
+      0.974,
+      0.8986547085201794
+    ],
+    "confusion_matrix": [
+      [
+        487,
+        13
+      ],
+      [
+        113,
+        1002
+      ]
+    ]
+  },
+  {
+    "tag": "combined23",
+    "seed": 7,
+    "condition": "uniform_half_1",
+    "retained_point_group": "Nge3",
+    "samples": 78835,
+    "accuracy": 0.9821399124754233,
+    "macro_f1": 0.9811726330716974,
+    "per_class_f1": [
+      0.9769051602532559,
+      0.985440105890139
+    ],
+    "recall": [
+      0.9910806403301494,
+      0.9766335984258424
+    ],
+    "confusion_matrix": [
+      [
+        29779,
+        268
+      ],
+      [
+        1140,
+        47648
+      ]
+    ]
+  },
+  {
+    "tag": "combined23",
+    "seed": 17,
+    "condition": "uniform_half_1",
+    "retained_point_group": "N2",
+    "samples": 1615,
+    "accuracy": 0.9176470588235294,
+    "macro_f1": 0.9083650415587862,
+    "per_class_f1": [
+      0.8792007266121707,
+      0.9375293565054016
+    ],
+    "recall": [
+      0.968,
+      0.895067264573991
+    ],
+    "confusion_matrix": [
+      [
+        484,
+        16
+      ],
+      [
+        117,
+        998
+      ]
+    ]
+  },
+  {
+    "tag": "combined23",
+    "seed": 17,
+    "condition": "uniform_half_1",
+    "retained_point_group": "Nge3",
+    "samples": 78835,
+    "accuracy": 0.981315405593962,
+    "macro_f1": 0.9802778558825587,
+    "per_class_f1": [
+      0.9757542837390746,
+      0.9848014280260429
+    ],
+    "recall": [
+      0.9864545545312344,
+      0.978150364843814
+    ],
+    "confusion_matrix": [
+      [
+        29640,
+        407
+      ],
+      [
+        1066,
+        47722
+      ]
+    ]
+  },
+  {
+    "tag": "combined23",
+    "seed": 37,
+    "condition": "uniform_half_1",
+    "retained_point_group": "N2",
+    "samples": 1615,
+    "accuracy": 0.9226006191950464,
+    "macro_f1": 0.9134938459039899,
+    "per_class_f1": [
+      0.8854262144821264,
+      0.9415614773258532
+    ],
+    "recall": [
+      0.966,
+      0.9031390134529148
+    ],
+    "confusion_matrix": [
+      [
+        483,
+        17
+      ],
+      [
+        108,
+        1007
+      ]
+    ]
+  },
+  {
+    "tag": "combined23",
+    "seed": 37,
+    "condition": "uniform_half_1",
+    "retained_point_group": "Nge3",
+    "samples": 78835,
+    "accuracy": 0.9822794444092091,
+    "macro_f1": 0.9812797314396211,
+    "per_class_f1": [
+      0.9769536598643945,
+      0.9856058030148476
+    ],
+    "recall": [
+      0.9854561187472959,
+      0.980323030253341
+    ],
+    "confusion_matrix": [
+      [
+        29610,
+        437
+      ],
+      [
+        960,
+        47828
+      ]
+    ]
+  },
+  {
+    "tag": "redundant23",
+    "seed": 7,
+    "condition": "uniform_half_1",
+    "retained_point_group": "N2",
+    "samples": 1615,
+    "accuracy": 0.9250773993808049,
+    "macro_f1": 0.9166328573579934,
+    "per_class_f1": [
+      0.8900999091734787,
+      0.9431658055425082
+    ],
+    "recall": [
+      0.98,
+      0.9004484304932735
+    ],
+    "confusion_matrix": [
+      [
+        490,
+        10
+      ],
+      [
+        111,
+        1004
+      ]
+    ]
+  },
+  {
+    "tag": "redundant23",
+    "seed": 7,
+    "condition": "uniform_half_1",
+    "retained_point_group": "Nge3",
+    "samples": 78835,
+    "accuracy": 0.97908289465339,
+    "macro_f1": 0.9779400008761864,
+    "per_class_f1": [
+      0.9729188221576259,
+      0.9829611795947468
+    ],
+    "recall": [
+      0.9858222118680734,
+      0.9749323604164959
+    ],
+    "confusion_matrix": [
+      [
+        29621,
+        426
+      ],
+      [
+        1223,
+        47565
+      ]
+    ]
+  },
+  {
+    "tag": "redundant23",
+    "seed": 17,
+    "condition": "uniform_half_1",
+    "retained_point_group": "N2",
+    "samples": 1615,
+    "accuracy": 0.920123839009288,
+    "macro_f1": 0.9113528817812908,
+    "per_class_f1": [
+      0.8834688346883469,
+      0.9392369288742346
+    ],
+    "recall": [
+      0.978,
+      0.8941704035874439
+    ],
+    "confusion_matrix": [
+      [
+        489,
+        11
+      ],
+      [
+        118,
+        997
+      ]
+    ]
+  },
+  {
+    "tag": "redundant23",
+    "seed": 17,
+    "condition": "uniform_half_1",
+    "retained_point_group": "Nge3",
+    "samples": 78835,
+    "accuracy": 0.9783344960994482,
+    "macro_f1": 0.9771561301514893,
+    "per_class_f1": [
+      0.9719678319382898,
+      0.9823444283646888
+    ],
+    "recall": [
+      0.9854893999400939,
+      0.9739280150856768
+    ],
+    "confusion_matrix": [
+      [
+        29611,
+        436
+      ],
+      [
+        1272,
+        47516
+      ]
+    ]
+  },
+  {
+    "tag": "redundant23",
+    "seed": 37,
+    "condition": "uniform_half_1",
+    "retained_point_group": "N2",
+    "samples": 1615,
+    "accuracy": 0.9226006191950464,
+    "macro_f1": 0.9137249823817333,
+    "per_class_f1": [
+      0.886052871467639,
+      0.9413970932958274
+    ],
+    "recall": [
+      0.972,
+      0.9004484304932735
+    ],
+    "confusion_matrix": [
+      [
+        486,
+        14
+      ],
+      [
+        111,
+        1004
+      ]
+    ]
+  },
+  {
+    "tag": "redundant23",
+    "seed": 37,
+    "condition": "uniform_half_1",
+    "retained_point_group": "Nge3",
+    "samples": 78835,
+    "accuracy": 0.9798693473710915,
+    "macro_f1": 0.9787357739442154,
+    "per_class_f1": [
+      0.9738261342833111,
+      0.9836454136051197
+    ],
+    "recall": [
+      0.9825606549738742,
+      0.9782118553742724
+    ],
+    "confusion_matrix": [
+      [
+        29523,
+        524
+      ],
+      [
+        1063,
+        47725
+      ]
+    ]
+  },
+  {
+    "tag": "base16",
+    "seed": 7,
+    "condition": "uniform_half_2",
+    "retained_point_group": "N2",
+    "samples": 1615,
+    "accuracy": 0.9176470588235294,
+    "macro_f1": 0.9089166640163683,
+    "per_class_f1": [
+      0.8807174887892377,
+      0.9371158392434988
+    ],
+    "recall": [
+      0.982,
+      0.8887892376681614
+    ],
+    "confusion_matrix": [
+      [
+        491,
+        9
+      ],
+      [
+        124,
+        991
+      ]
+    ]
+  },
+  {
+    "tag": "base16",
+    "seed": 7,
+    "condition": "uniform_half_2",
+    "retained_point_group": "Nge3",
+    "samples": 78835,
+    "accuracy": 0.9791463182596563,
+    "macro_f1": 0.9780286010715157,
+    "per_class_f1": [
+      0.9730730173289219,
+      0.9829841848141094
+    ],
+    "recall": [
+      0.9886178320631012,
+      0.9733131097810938
+    ],
+    "confusion_matrix": [
+      [
+        29705,
+        342
+      ],
+      [
+        1302,
+        47486
+      ]
+    ]
+  },
+  {
+    "tag": "base16",
+    "seed": 17,
+    "condition": "uniform_half_2",
+    "retained_point_group": "N2",
+    "samples": 1615,
+    "accuracy": 0.9126934984520124,
+    "macro_f1": 0.9036008244825078,
+    "per_class_f1": [
+      0.8739946380697051,
+      0.9332070108953103
+    ],
+    "recall": [
+      0.978,
+      0.8834080717488789
+    ],
+    "confusion_matrix": [
+      [
+        489,
+        11
+      ],
+      [
+        130,
+        985
+      ]
+    ]
+  },
+  {
+    "tag": "base16",
+    "seed": 17,
+    "condition": "uniform_half_2",
+    "retained_point_group": "Nge3",
+    "samples": 78835,
+    "accuracy": 0.978676983573286,
+    "macro_f1": 0.9775434342991348,
+    "per_class_f1": [
+      0.9724980776467124,
+      0.9825887909515573
+    ],
+    "recall": [
+      0.9891503311478683,
+      0.9722267770763302
+    ],
+    "confusion_matrix": [
+      [
+        29721,
+        326
+      ],
+      [
+        1355,
+        47433
+      ]
+    ]
+  },
+  {
+    "tag": "base16",
+    "seed": 37,
+    "condition": "uniform_half_2",
+    "retained_point_group": "N2",
+    "samples": 1615,
+    "accuracy": 0.9244582043343653,
+    "macro_f1": 0.9157582484488196,
+    "per_class_f1": [
+      0.8886861313868614,
+      0.9428303655107779
+    ],
+    "recall": [
+      0.974,
+      0.9022421524663677
+    ],
+    "confusion_matrix": [
+      [
+        487,
+        13
+      ],
+      [
+        109,
+        1006
+      ]
+    ]
+  },
+  {
+    "tag": "base16",
+    "seed": 37,
+    "condition": "uniform_half_2",
+    "retained_point_group": "Nge3",
+    "samples": 78835,
+    "accuracy": 0.9808968097926049,
+    "macro_f1": 0.979804161702875,
+    "per_class_f1": [
+      0.9751066150947139,
+      0.9845017083110361
+    ],
+    "recall": [
+      0.9816620627683296,
+      0.9804255144707715
+    ],
+    "confusion_matrix": [
+      [
+        29496,
+        551
+      ],
+      [
+        955,
+        47833
+      ]
+    ]
+  },
+  {
+    "tag": "geometry19",
+    "seed": 7,
+    "condition": "uniform_half_2",
+    "retained_point_group": "N2",
+    "samples": 1615,
+    "accuracy": 0.9188854489164087,
+    "macro_f1": 0.9095837815360563,
+    "per_class_f1": [
+      0.8805834092980857,
+      0.9385841537740272
+    ],
+    "recall": [
+      0.966,
+      0.8977578475336323
+    ],
+    "confusion_matrix": [
+      [
+        483,
+        17
+      ],
+      [
+        114,
+        1001
+      ]
+    ]
+  },
+  {
+    "tag": "geometry19",
+    "seed": 7,
+    "condition": "uniform_half_2",
+    "retained_point_group": "Nge3",
+    "samples": 78835,
+    "accuracy": 0.9794761210122408,
+    "macro_f1": 0.9783877773460105,
+    "per_class_f1": [
+      0.9735378777966767,
+      0.9832376768953442
+    ],
+    "recall": [
+      0.9905481412453823,
+      0.9726572107895384
+    ],
+    "confusion_matrix": [
+      [
+        29763,
+        284
+      ],
+      [
+        1334,
+        47454
+      ]
+    ]
+  },
+  {
+    "tag": "geometry19",
+    "seed": 17,
+    "condition": "uniform_half_2",
+    "retained_point_group": "N2",
+    "samples": 1615,
+    "accuracy": 0.9188854489164087,
+    "macro_f1": 0.9100561221908614,
+    "per_class_f1": [
+      0.8818755635707844,
+      0.9382366808109383
+    ],
+    "recall": [
+      0.978,
+      0.8923766816143498
+    ],
+    "confusion_matrix": [
+      [
+        489,
+        11
+      ],
+      [
+        120,
+        995
+      ]
+    ]
+  },
+  {
+    "tag": "geometry19",
+    "seed": 17,
+    "condition": "uniform_half_2",
+    "retained_point_group": "Nge3",
+    "samples": 78835,
+    "accuracy": 0.9800723029111436,
+    "macro_f1": 0.9789716577029892,
+    "per_class_f1": [
+      0.9741607592230135,
+      0.983782556182965
+    ],
+    "recall": [
+      0.9855892435184878,
+      0.9766745921128146
+    ],
+    "confusion_matrix": [
+      [
+        29614,
+        433
+      ],
+      [
+        1138,
+        47650
+      ]
+    ]
+  },
+  {
+    "tag": "geometry19",
+    "seed": 37,
+    "condition": "uniform_half_2",
+    "retained_point_group": "N2",
+    "samples": 1615,
+    "accuracy": 0.9250773993808049,
+    "macro_f1": 0.9159578032178723,
+    "per_class_f1": [
+      0.8882733148661126,
+      0.9436422915696321
+    ],
+    "recall": [
+      0.962,
+      0.9085201793721973
+    ],
+    "confusion_matrix": [
+      [
+        481,
+        19
+      ],
+      [
+        102,
+        1013
+      ]
+    ]
+  },
+  {
+    "tag": "geometry19",
+    "seed": 37,
+    "condition": "uniform_half_2",
+    "retained_point_group": "Nge3",
+    "samples": 78835,
+    "accuracy": 0.9809348639563645,
+    "macro_f1": 0.979812565640412,
+    "per_class_f1": [
+      0.9750526997194882,
+      0.9845724315613357
+    ],
+    "recall": [
+      0.9775351948613838,
+      0.9830286135935066
+    ],
+    "confusion_matrix": [
+      [
+        29372,
+        675
+      ],
+      [
+        828,
+        47960
+      ]
+    ]
+  },
+  {
+    "tag": "distribution20",
+    "seed": 7,
+    "condition": "uniform_half_2",
+    "retained_point_group": "N2",
+    "samples": 1615,
+    "accuracy": 0.9263157894736842,
+    "macro_f1": 0.9172710754609528,
+    "per_class_f1": [
+      0.8899167437557817,
+      0.9446254071661238
+    ],
+    "recall": [
+      0.962,
+      0.9103139013452914
+    ],
+    "confusion_matrix": [
+      [
+        481,
+        19
+      ],
+      [
+        100,
+        1015
+      ]
+    ]
+  },
+  {
+    "tag": "distribution20",
+    "seed": 7,
+    "condition": "uniform_half_2",
+    "retained_point_group": "Nge3",
+    "samples": 78835,
+    "accuracy": 0.9808460709075918,
+    "macro_f1": 0.979795944556894,
+    "per_class_f1": [
+      0.9751897735861457,
+      0.9844021155276423
+    ],
+    "recall": [
+      0.9876526774719606,
+      0.9766540952693286
+    ],
+    "confusion_matrix": [
+      [
+        29676,
+        371
+      ],
+      [
+        1139,
+        47649
+      ]
+    ]
+  },
+  {
+    "tag": "distribution20",
+    "seed": 17,
+    "condition": "uniform_half_2",
+    "retained_point_group": "N2",
+    "samples": 1615,
+    "accuracy": 0.923219814241486,
+    "macro_f1": 0.9143010222596526,
+    "per_class_f1": [
+      0.886654478976234,
+      0.9419475655430711
+    ],
+    "recall": [
+      0.97,
+      0.9022421524663677
+    ],
+    "confusion_matrix": [
+      [
+        485,
+        15
+      ],
+      [
+        109,
+        1006
+      ]
+    ]
+  },
+  {
+    "tag": "distribution20",
+    "seed": 17,
+    "condition": "uniform_half_2",
+    "retained_point_group": "Nge3",
+    "samples": 78835,
+    "accuracy": 0.98212722775417,
+    "macro_f1": 0.9811545723009015,
+    "per_class_f1": [
+      0.9768732047599508,
+      0.9854359398418523
+    ],
+    "recall": [
+      0.9903817352813925,
+      0.9770435352955645
+    ],
+    "confusion_matrix": [
+      [
+        29758,
+        289
+      ],
+      [
+        1120,
+        47668
+      ]
+    ]
+  },
+  {
+    "tag": "distribution20",
+    "seed": 37,
+    "condition": "uniform_half_2",
+    "retained_point_group": "N2",
+    "samples": 1615,
+    "accuracy": 0.920123839009288,
+    "macro_f1": 0.9110428020183017,
+    "per_class_f1": [
+      0.8826205641492265,
+      0.9394650398873768
+    ],
+    "recall": [
+      0.97,
+      0.8977578475336323
+    ],
+    "confusion_matrix": [
+      [
+        485,
+        15
+      ],
+      [
+        114,
+        1001
+      ]
+    ]
+  },
+  {
+    "tag": "distribution20",
+    "seed": 37,
+    "condition": "uniform_half_2",
+    "retained_point_group": "Nge3",
+    "samples": 78835,
+    "accuracy": 0.9825965624405404,
+    "macro_f1": 0.9816311701070868,
+    "per_class_f1": [
+      0.9774200980876205,
+      0.985842242126553
+    ],
+    "recall": [
+      0.9882850201351217,
+      0.9790932196441748
+    ],
+    "confusion_matrix": [
+      [
+        29695,
+        352
+      ],
+      [
+        1020,
+        47768
+      ]
+    ]
+  },
+  {
+    "tag": "combined23",
+    "seed": 7,
+    "condition": "uniform_half_2",
+    "retained_point_group": "N2",
+    "samples": 1615,
+    "accuracy": 0.9207430340557275,
+    "macro_f1": 0.9117712334613743,
+    "per_class_f1": [
+      0.8836363636363637,
+      0.939906103286385
+    ],
+    "recall": [
+      0.972,
+      0.8977578475336323
+    ],
+    "confusion_matrix": [
+      [
+        486,
+        14
+      ],
+      [
+        114,
+        1001
+      ]
+    ]
+  },
+  {
+    "tag": "combined23",
+    "seed": 7,
+    "condition": "uniform_half_2",
+    "retained_point_group": "Nge3",
+    "samples": 78835,
+    "accuracy": 0.9817086319528129,
+    "macro_f1": 0.9807207978437155,
+    "per_class_f1": [
+      0.9763567797999672,
+      0.9850848158874638
+    ],
+    "recall": [
+      0.9909142343661597,
+      0.9760391899647455
+    ],
+    "confusion_matrix": [
+      [
+        29774,
+        273
+      ],
+      [
+        1169,
+        47619
+      ]
+    ]
+  },
+  {
+    "tag": "combined23",
+    "seed": 17,
+    "condition": "uniform_half_2",
+    "retained_point_group": "N2",
+    "samples": 1615,
+    "accuracy": 0.9176470588235294,
+    "macro_f1": 0.9083650415587862,
+    "per_class_f1": [
+      0.8792007266121707,
+      0.9375293565054016
+    ],
+    "recall": [
+      0.968,
+      0.895067264573991
+    ],
+    "confusion_matrix": [
+      [
+        484,
+        16
+      ],
+      [
+        117,
+        998
+      ]
+    ]
+  },
+  {
+    "tag": "combined23",
+    "seed": 17,
+    "condition": "uniform_half_2",
+    "retained_point_group": "Nge3",
+    "samples": 78835,
+    "accuracy": 0.9815056764127609,
+    "macro_f1": 0.9804893313806856,
+    "per_class_f1": [
+      0.9760362907202261,
+      0.9849423720411451
+    ],
+    "recall": [
+      0.9881851765567278,
+      0.9773919816348282
+    ],
+    "confusion_matrix": [
+      [
+        29692,
+        355
+      ],
+      [
+        1103,
+        47685
+      ]
+    ]
+  },
+  {
+    "tag": "combined23",
+    "seed": 37,
+    "condition": "uniform_half_2",
+    "retained_point_group": "N2",
+    "samples": 1615,
+    "accuracy": 0.9226006191950464,
+    "macro_f1": 0.9138011647464164,
+    "per_class_f1": [
+      0.8862602365787079,
+      0.9413420929141249
+    ],
+    "recall": [
+      0.974,
+      0.8995515695067264
+    ],
+    "confusion_matrix": [
+      [
+        487,
+        13
+      ],
+      [
+        112,
+        1003
+      ]
+    ]
+  },
+  {
+    "tag": "combined23",
+    "seed": 37,
+    "condition": "uniform_half_2",
+    "retained_point_group": "Nge3",
+    "samples": 78835,
+    "accuracy": 0.9830912665694171,
+    "macro_f1": 0.9821483787377022,
+    "per_class_f1": [
+      0.9780456873692706,
+      0.9862510701061339
+    ],
+    "recall": [
+      0.9881851765567278,
+      0.9799540870705912
+    ],
+    "confusion_matrix": [
+      [
+        29692,
+        355
+      ],
+      [
+        978,
+        47810
+      ]
+    ]
+  },
+  {
+    "tag": "redundant23",
+    "seed": 7,
+    "condition": "uniform_half_2",
+    "retained_point_group": "N2",
+    "samples": 1615,
+    "accuracy": 0.9219814241486068,
+    "macro_f1": 0.9131498079385403,
+    "per_class_f1": [
+      0.8854545454545455,
+      0.9408450704225352
+    ],
+    "recall": [
+      0.974,
+      0.8986547085201794
+    ],
+    "confusion_matrix": [
+      [
+        487,
+        13
+      ],
+      [
+        113,
+        1002
+      ]
+    ]
+  },
+  {
+    "tag": "redundant23",
+    "seed": 7,
+    "condition": "uniform_half_2",
+    "retained_point_group": "Nge3",
+    "samples": 78835,
+    "accuracy": 0.9781442252806495,
+    "macro_f1": 0.9769573299068757,
+    "per_class_f1": [
+      0.9717276799632444,
+      0.9821869798505071
+    ],
+    "recall": [
+      0.9854561187472959,
+      0.9736410592768714
+    ],
+    "confusion_matrix": [
+      [
+        29610,
+        437
+      ],
+      [
+        1286,
+        47502
+      ]
+    ]
+  },
+  {
+    "tag": "redundant23",
+    "seed": 17,
+    "condition": "uniform_half_2",
+    "retained_point_group": "N2",
+    "samples": 1615,
+    "accuracy": 0.9170278637770898,
+    "macro_f1": 0.9081928573610314,
+    "per_class_f1": [
+      0.8797127468581688,
+      0.9366729678638941
+    ],
+    "recall": [
+      0.98,
+      0.8887892376681614
+    ],
+    "confusion_matrix": [
+      [
+        490,
+        10
+      ],
+      [
+        124,
+        991
+      ]
+    ]
+  },
+  {
+    "tag": "redundant23",
+    "seed": 17,
+    "condition": "uniform_half_2",
+    "retained_point_group": "Nge3",
+    "samples": 78835,
+    "accuracy": 0.9786642988520328,
+    "macro_f1": 0.9775142307011784,
+    "per_class_f1": [
+      0.9724289414155984,
+      0.9825995199867582
+    ],
+    "recall": [
+      0.9871867407727893,
+      0.9734155939985242
+    ],
+    "confusion_matrix": [
+      [
+        29662,
+        385
+      ],
+      [
+        1297,
+        47491
+      ]
+    ]
+  },
+  {
+    "tag": "redundant23",
+    "seed": 37,
+    "condition": "uniform_half_2",
+    "retained_point_group": "N2",
+    "samples": 1615,
+    "accuracy": 0.9213622291021671,
+    "macro_f1": 0.9122667436613091,
+    "per_class_f1": [
+      0.8840182648401826,
+      0.9405152224824356
+    ],
+    "recall": [
+      0.968,
+      0.9004484304932735
+    ],
+    "confusion_matrix": [
+      [
+        484,
+        16
+      ],
+      [
+        111,
+        1004
+      ]
+    ]
+  },
+  {
+    "tag": "redundant23",
+    "seed": 37,
+    "condition": "uniform_half_2",
+    "retained_point_group": "Nge3",
+    "samples": 78835,
+    "accuracy": 0.9799581404198643,
+    "macro_f1": 0.9788302218329753,
+    "per_class_f1": [
+      0.9739437316534186,
+      0.983716712012532
+    ],
+    "recall": [
+      0.982760342130662,
+      0.9782323522177585
+    ],
+    "confusion_matrix": [
+      [
+        29529,
+        518
+      ],
+      [
+        1062,
+        47726
+      ]
+    ]
+  },
+  {
+    "tag": "base16",
+    "seed": 7,
+    "condition": "uniform_quarter_0",
+    "retained_point_group": "N1",
+    "samples": 1615,
+    "accuracy": 0.881733746130031,
+    "macro_f1": 0.8727100161967545,
+    "per_class_f1": [
+      0.8388185654008439,
+      0.9066014669926651
+    ],
+    "recall": [
+      0.994,
+      0.831390134529148
+    ],
+    "confusion_matrix": [
+      [
+        497,
+        3
+      ],
+      [
+        188,
+        927
+      ]
+    ]
+  },
+  {
+    "tag": "base16",
+    "seed": 7,
+    "condition": "uniform_quarter_0",
+    "retained_point_group": "N2",
+    "samples": 1566,
+    "accuracy": 0.9252873563218391,
+    "macro_f1": 0.9162272401607403,
+    "per_class_f1": [
+      0.8886774500475737,
+      0.9437770302739068
+    ],
+    "recall": [
+      0.9769874476987448,
+      0.9025735294117647
+    ],
+    "confusion_matrix": [
+      [
+        467,
+        11
+      ],
+      [
+        106,
+        982
+      ]
+    ]
+  },
+  {
+    "tag": "base16",
+    "seed": 7,
+    "condition": "uniform_quarter_0",
+    "retained_point_group": "Nge3",
+    "samples": 77269,
+    "accuracy": 0.9734045995159767,
+    "macro_f1": 0.9720521093968453,
+    "per_class_f1": [
+      0.9659040002654676,
+      0.978200218528223
+    ],
+    "recall": [
+      0.9844093476275829,
+      0.9665828092243186
+    ],
+    "confusion_matrix": [
+      [
+        29108,
+        461
+      ],
+      [
+        1594,
+        46106
+      ]
+    ]
+  },
+  {
+    "tag": "base16",
+    "seed": 17,
+    "condition": "uniform_quarter_0",
+    "retained_point_group": "N1",
+    "samples": 1615,
+    "accuracy": 0.8804953560371517,
+    "macro_f1": 0.8714681524972154,
+    "per_class_f1": [
+      0.8374052232518955,
+      0.9055310817425355
+    ],
+    "recall": [
+      0.994,
+      0.8295964125560538
+    ],
+    "confusion_matrix": [
+      [
+        497,
+        3
+      ],
+      [
+        190,
+        925
+      ]
+    ]
+  },
+  {
+    "tag": "base16",
+    "seed": 17,
+    "condition": "uniform_quarter_0",
+    "retained_point_group": "N2",
+    "samples": 1566,
+    "accuracy": 0.9227330779054917,
+    "macro_f1": 0.9137653817290158,
+    "per_class_f1": [
+      0.885956644674835,
+      0.9415741187831965
+    ],
+    "recall": [
+      0.9832635983263598,
+      0.8961397058823529
+    ],
+    "confusion_matrix": [
+      [
+        470,
+        8
+      ],
+      [
+        113,
+        975
+      ]
+    ]
+  },
+  {
+    "tag": "base16",
+    "seed": 17,
+    "condition": "uniform_quarter_0",
+    "retained_point_group": "Nge3",
+    "samples": 77269,
+    "accuracy": 0.972589266070481,
+    "macro_f1": 0.9712232447390214,
+    "per_class_f1": [
+      0.9649535029950028,
+      0.9774929864830401
+    ],
+    "recall": [
+      0.9861003077547431,
+      0.9642138364779874
+    ],
+    "confusion_matrix": [
+      [
+        29158,
+        411
+      ],
+      [
+        1707,
+        45993
+      ]
+    ]
+  },
+  {
+    "tag": "base16",
+    "seed": 37,
+    "condition": "uniform_quarter_0",
+    "retained_point_group": "N1",
+    "samples": 1615,
+    "accuracy": 0.8804953560371517,
+    "macro_f1": 0.8715586160744271,
+    "per_class_f1": [
+      0.8376787216148024,
+      0.9054385105340519
+    ],
+    "recall": [
+      0.996,
+      0.8286995515695067
+    ],
+    "confusion_matrix": [
+      [
+        498,
+        2
+      ],
+      [
+        191,
+        924
+      ]
+    ]
+  },
+  {
+    "tag": "base16",
+    "seed": 37,
+    "condition": "uniform_quarter_0",
+    "retained_point_group": "N2",
+    "samples": 1566,
+    "accuracy": 0.9265644955300127,
+    "macro_f1": 0.9172658449757917,
+    "per_class_f1": [
+      0.8895292987512008,
+      0.9450023912003825
+    ],
+    "recall": [
+      0.9686192468619247,
+      0.9080882352941176
+    ],
+    "confusion_matrix": [
+      [
+        463,
+        15
+      ],
+      [
+        100,
+        988
+      ]
+    ]
+  },
+  {
+    "tag": "base16",
+    "seed": 37,
+    "condition": "uniform_quarter_0",
+    "retained_point_group": "Nge3",
+    "samples": 77269,
+    "accuracy": 0.9745564197802482,
+    "macro_f1": 0.9731586142135074,
+    "per_class_f1": [
+      0.9670333355691193,
+      0.9792838928578955
+    ],
+    "recall": [
+      0.9751767053332883,
+      0.9741719077568134
+    ],
+    "confusion_matrix": [
+      [
+        28835,
+        734
+      ],
+      [
+        1232,
+        46468
+      ]
+    ]
+  },
+  {
+    "tag": "geometry19",
+    "seed": 7,
+    "condition": "uniform_quarter_0",
+    "retained_point_group": "N1",
+    "samples": 1615,
+    "accuracy": 0.8786377708978328,
+    "macro_f1": 0.8696078431372549,
+    "per_class_f1": [
+      0.8352941176470589,
+      0.903921568627451
+    ],
+    "recall": [
+      0.994,
+      0.8269058295964126
+    ],
+    "confusion_matrix": [
+      [
+        497,
+        3
+      ],
+      [
+        193,
+        922
+      ]
+    ]
+  },
+  {
+    "tag": "geometry19",
+    "seed": 7,
+    "condition": "uniform_quarter_0",
+    "retained_point_group": "N2",
+    "samples": 1566,
+    "accuracy": 0.9227330779054917,
+    "macro_f1": 0.9131990682525613,
+    "per_class_f1": [
+      0.8844317096466093,
+      0.9419664268585132
+    ],
+    "recall": [
+      0.9686192468619247,
+      0.9025735294117647
+    ],
+    "confusion_matrix": [
+      [
+        463,
+        15
+      ],
+      [
+        106,
+        982
+      ]
+    ]
+  },
+  {
+    "tag": "geometry19",
+    "seed": 7,
+    "condition": "uniform_quarter_0",
+    "retained_point_group": "Nge3",
+    "samples": 77269,
+    "accuracy": 0.9731457635015336,
+    "macro_f1": 0.9718073084519262,
+    "per_class_f1": [
+      0.9656644548508265,
+      0.9779501620530259
+    ],
+    "recall": [
+      0.9868105110081504,
+      0.9646750524109015
+    ],
+    "confusion_matrix": [
+      [
+        29179,
+        390
+      ],
+      [
+        1685,
+        46015
+      ]
+    ]
+  },
+  {
+    "tag": "geometry19",
+    "seed": 17,
+    "condition": "uniform_quarter_0",
+    "retained_point_group": "N1",
+    "samples": 1615,
+    "accuracy": 0.8792569659442725,
+    "macro_f1": 0.8702276172772709,
+    "per_class_f1": [
+      0.8359966358284272,
+      0.9044585987261147
+    ],
+    "recall": [
+      0.994,
+      0.8278026905829596
+    ],
+    "confusion_matrix": [
+      [
+        497,
+        3
+      ],
+      [
+        192,
+        923
+      ]
+    ]
+  },
+  {
+    "tag": "geometry19",
+    "seed": 17,
+    "condition": "uniform_quarter_0",
+    "retained_point_group": "N2",
+    "samples": 1566,
+    "accuracy": 0.9240102171136654,
+    "macro_f1": 0.9148752482085816,
+    "per_class_f1": [
+      0.8869895536562203,
+      0.9427609427609428
+    ],
+    "recall": [
+      0.9769874476987448,
+      0.9007352941176471
+    ],
+    "confusion_matrix": [
+      [
+        467,
+        11
+      ],
+      [
+        108,
+        980
+      ]
+    ]
+  },
+  {
+    "tag": "geometry19",
+    "seed": 17,
+    "condition": "uniform_quarter_0",
+    "retained_point_group": "Nge3",
+    "samples": 77269,
+    "accuracy": 0.9739093297441406,
+    "macro_f1": 0.9725714895980334,
+    "per_class_f1": [
+      0.9665138529001396,
+      0.9786291262959272
+    ],
+    "recall": [
+      0.9839358787919781,
+      0.9676939203354298
+    ],
+    "confusion_matrix": [
+      [
+        29094,
+        475
+      ],
+      [
+        1541,
+        46159
+      ]
+    ]
+  },
+  {
+    "tag": "geometry19",
+    "seed": 37,
+    "condition": "uniform_quarter_0",
+    "retained_point_group": "N1",
+    "samples": 1615,
+    "accuracy": 0.8755417956656347,
+    "macro_f1": 0.8665138322042087,
+    "per_class_f1": [
+      0.8317991631799163,
+      0.9012285012285012
+    ],
+    "recall": [
+      0.994,
+      0.8224215246636771
+    ],
+    "confusion_matrix": [
+      [
+        497,
+        3
+      ],
+      [
+        198,
+        917
+      ]
+    ]
+  },
+  {
+    "tag": "geometry19",
+    "seed": 37,
+    "condition": "uniform_quarter_0",
+    "retained_point_group": "N2",
+    "samples": 1566,
+    "accuracy": 0.9284802043422733,
+    "macro_f1": 0.9190697674418604,
+    "per_class_f1": [
+      0.8914728682170543,
+      0.9466666666666667
+    ],
+    "recall": [
+      0.9623430962343096,
+      0.9136029411764706
+    ],
+    "confusion_matrix": [
+      [
+        460,
+        18
+      ],
+      [
+        94,
+        994
+      ]
+    ]
+  },
+  {
+    "tag": "geometry19",
+    "seed": 37,
+    "condition": "uniform_quarter_0",
+    "retained_point_group": "Nge3",
+    "samples": 77269,
+    "accuracy": 0.9751388008127451,
+    "macro_f1": 0.9737471923224779,
+    "per_class_f1": [
+      0.9677028867331327,
+      0.9797914979118232
+    ],
+    "recall": [
+      0.9732828299908688,
+      0.9762893081761006
+    ],
+    "confusion_matrix": [
+      [
+        28779,
+        790
+      ],
+      [
+        1131,
+        46569
+      ]
+    ]
+  },
+  {
+    "tag": "distribution20",
+    "seed": 7,
+    "condition": "uniform_quarter_0",
+    "retained_point_group": "N1",
+    "samples": 1615,
+    "accuracy": 0.8755417956656347,
+    "macro_f1": 0.8666057667533319,
+    "per_class_f1": [
+      0.8320802005012531,
+      0.9011313330054107
+    ],
+    "recall": [
+      0.996,
+      0.8215246636771301
+    ],
+    "confusion_matrix": [
+      [
+        498,
+        2
+      ],
+      [
+        199,
+        916
+      ]
+    ]
+  },
+  {
+    "tag": "distribution20",
+    "seed": 7,
+    "condition": "uniform_quarter_0",
+    "retained_point_group": "N2",
+    "samples": 1566,
+    "accuracy": 0.9291187739463601,
+    "macro_f1": 0.9192688655256701,
+    "per_class_f1": [
+      0.8910696761530913,
+      0.9474680548982489
+    ],
+    "recall": [
+      0.9497907949790795,
+      0.9200367647058824
+    ],
+    "confusion_matrix": [
+      [
+        454,
+        24
+      ],
+      [
+        87,
+        1001
+      ]
+    ]
+  },
+  {
+    "tag": "distribution20",
+    "seed": 7,
+    "condition": "uniform_quarter_0",
+    "retained_point_group": "Nge3",
+    "samples": 77269,
+    "accuracy": 0.9737152027333084,
+    "macro_f1": 0.9723502419919977,
+    "per_class_f1": [
+      0.9662068850767874,
+      0.978493598907208
+    ],
+    "recall": [
+      0.981940545841929,
+      0.9686163522012579
+    ],
+    "confusion_matrix": [
+      [
+        29035,
+        534
+      ],
+      [
+        1497,
+        46203
+      ]
+    ]
+  },
+  {
+    "tag": "distribution20",
+    "seed": 17,
+    "condition": "uniform_quarter_0",
+    "retained_point_group": "N1",
+    "samples": 1615,
+    "accuracy": 0.8811145510835914,
+    "macro_f1": 0.8721791865768359,
+    "per_class_f1": [
+      0.8383838383838383,
+      0.9059745347698335
+    ],
+    "recall": [
+      0.996,
+      0.8295964125560538
+    ],
+    "confusion_matrix": [
+      [
+        498,
+        2
+      ],
+      [
+        190,
+        925
+      ]
+    ]
+  },
+  {
+    "tag": "distribution20",
+    "seed": 17,
+    "condition": "uniform_quarter_0",
+    "retained_point_group": "N2",
+    "samples": 1566,
+    "accuracy": 0.9278416347381865,
+    "macro_f1": 0.9185469375355291,
+    "per_class_f1": [
+      0.8910318225650916,
+      0.9460620525059665
+    ],
+    "recall": [
+      0.9665271966527197,
+      0.9108455882352942
+    ],
+    "confusion_matrix": [
+      [
+        462,
+        16
+      ],
+      [
+        97,
+        991
+      ]
+    ]
+  },
+  {
+    "tag": "distribution20",
+    "seed": 17,
+    "condition": "uniform_quarter_0",
+    "retained_point_group": "Nge3",
+    "samples": 77269,
+    "accuracy": 0.9750093828055235,
+    "macro_f1": 0.9737366163473614,
+    "per_class_f1": [
+      0.9679549942747141,
+      0.9795182384200087
+    ],
+    "recall": [
+      0.9863032229700024,
+      0.9680083857442348
+    ],
+    "confusion_matrix": [
+      [
+        29164,
+        405
+      ],
+      [
+        1526,
+        46174
+      ]
+    ]
+  },
+  {
+    "tag": "distribution20",
+    "seed": 37,
+    "condition": "uniform_quarter_0",
+    "retained_point_group": "N1",
+    "samples": 1615,
+    "accuracy": 0.8755417956656347,
+    "macro_f1": 0.8666971368311603,
+    "per_class_f1": [
+      0.8323603002502085,
+      0.9010339734121122
+    ],
+    "recall": [
+      0.998,
+      0.820627802690583
+    ],
+    "confusion_matrix": [
+      [
+        499,
+        1
+      ],
+      [
+        200,
+        915
+      ]
+    ]
+  },
+  {
+    "tag": "distribution20",
+    "seed": 37,
+    "condition": "uniform_quarter_0",
+    "retained_point_group": "N2",
+    "samples": 1566,
+    "accuracy": 0.9240102171136654,
+    "macro_f1": 0.914633794397147,
+    "per_class_f1": [
+      0.8863419293218721,
+      0.942925659472422
+    ],
+    "recall": [
+      0.9707112970711297,
+      0.9034926470588235
+    ],
+    "confusion_matrix": [
+      [
+        464,
+        14
+      ],
+      [
+        105,
+        983
+      ]
+    ]
+  },
+  {
+    "tag": "distribution20",
+    "seed": 37,
+    "condition": "uniform_quarter_0",
+    "retained_point_group": "Nge3",
+    "samples": 77269,
+    "accuracy": 0.9751905680156336,
+    "macro_f1": 0.9739047471721456,
+    "per_class_f1": [
+      0.9681121812465692,
+      0.9796973130977219
+    ],
+    "recall": [
+      0.9841387940072374,
+      0.969643605870021
+    ],
+    "confusion_matrix": [
+      [
+        29100,
+        469
+      ],
+      [
+        1448,
+        46252
+      ]
+    ]
+  },
+  {
+    "tag": "combined23",
+    "seed": 7,
+    "condition": "uniform_quarter_0",
+    "retained_point_group": "N1",
+    "samples": 1615,
+    "accuracy": 0.8786377708978328,
+    "macro_f1": 0.8696988757236664,
+    "per_class_f1": [
+      0.8355704697986577,
+      0.9038272816486752
+    ],
+    "recall": [
+      0.996,
+      0.8260089686098655
+    ],
+    "confusion_matrix": [
+      [
+        498,
+        2
+      ],
+      [
+        194,
+        921
+      ]
+    ]
+  },
+  {
+    "tag": "combined23",
+    "seed": 7,
+    "condition": "uniform_quarter_0",
+    "retained_point_group": "N2",
+    "samples": 1566,
+    "accuracy": 0.9291187739463601,
+    "macro_f1": 0.9199885846587941,
+    "per_class_f1": [
+      0.892960462873674,
+      0.9470167064439141
+    ],
+    "recall": [
+      0.9686192468619247,
+      0.9117647058823529
+    ],
+    "confusion_matrix": [
+      [
+        463,
+        15
+      ],
+      [
+        96,
+        992
+      ]
+    ]
+  },
+  {
+    "tag": "combined23",
+    "seed": 7,
+    "condition": "uniform_quarter_0",
+    "retained_point_group": "Nge3",
+    "samples": 77269,
+    "accuracy": 0.9751388008127451,
+    "macro_f1": 0.9738723126494577,
+    "per_class_f1": [
+      0.9681198864862174,
+      0.9796247388126982
+    ],
+    "recall": [
+      0.9864384997801752,
+      0.9681341719077569
+    ],
+    "confusion_matrix": [
+      [
+        29168,
+        401
+      ],
+      [
+        1520,
+        46180
+      ]
+    ]
+  },
+  {
+    "tag": "combined23",
+    "seed": 17,
+    "condition": "uniform_quarter_0",
+    "retained_point_group": "N1",
+    "samples": 1615,
+    "accuracy": 0.8786377708978328,
+    "macro_f1": 0.8696078431372549,
+    "per_class_f1": [
+      0.8352941176470589,
+      0.903921568627451
+    ],
+    "recall": [
+      0.994,
+      0.8269058295964126
+    ],
+    "confusion_matrix": [
+      [
+        497,
+        3
+      ],
+      [
+        193,
+        922
+      ]
+    ]
+  },
+  {
+    "tag": "combined23",
+    "seed": 17,
+    "condition": "uniform_quarter_0",
+    "retained_point_group": "N2",
+    "samples": 1566,
+    "accuracy": 0.921455938697318,
+    "macro_f1": 0.9117643421079755,
+    "per_class_f1": [
+      0.8825214899713467,
+      0.9410071942446043
+    ],
+    "recall": [
+      0.9665271966527197,
+      0.9016544117647058
+    ],
+    "confusion_matrix": [
+      [
+        462,
+        16
+      ],
+      [
+        107,
+        981
+      ]
+    ]
+  },
+  {
+    "tag": "combined23",
+    "seed": 17,
+    "condition": "uniform_quarter_0",
+    "retained_point_group": "Nge3",
+    "samples": 77269,
+    "accuracy": 0.9748540811968577,
+    "macro_f1": 0.9735244552692071,
+    "per_class_f1": [
+      0.9675912798358715,
+      0.9794576307025427
+    ],
+    "recall": [
+      0.980925969765633,
+      0.9710901467505241
+    ],
+    "confusion_matrix": [
+      [
+        29005,
+        564
+      ],
+      [
+        1379,
+        46321
+      ]
+    ]
+  },
+  {
+    "tag": "combined23",
+    "seed": 37,
+    "condition": "uniform_quarter_0",
+    "retained_point_group": "N1",
+    "samples": 1615,
+    "accuracy": 0.8792569659442725,
+    "macro_f1": 0.8703184625248461,
+    "per_class_f1": [
+      0.836272040302267,
+      0.9043648847474252
+    ],
+    "recall": [
+      0.996,
+      0.8269058295964126
+    ],
+    "confusion_matrix": [
+      [
+        498,
+        2
+      ],
+      [
+        193,
+        922
+      ]
+    ]
+  },
+  {
+    "tag": "combined23",
+    "seed": 37,
+    "condition": "uniform_quarter_0",
+    "retained_point_group": "N2",
+    "samples": 1566,
+    "accuracy": 0.9195402298850575,
+    "macro_f1": 0.9100776013402045,
+    "per_class_f1": [
+      0.8809073724007561,
+      0.9392478302796529
+    ],
+    "recall": [
+      0.9748953974895398,
+      0.8952205882352942
+    ],
+    "confusion_matrix": [
+      [
+        466,
+        12
+      ],
+      [
+        114,
+        974
+      ]
+    ]
+  },
+  {
+    "tag": "combined23",
+    "seed": 37,
+    "condition": "uniform_quarter_0",
+    "retained_point_group": "Nge3",
+    "samples": 77269,
+    "accuracy": 0.9765106316892932,
+    "macro_f1": 0.9752622451841226,
+    "per_class_f1": [
+      0.9697050625093889,
+      0.9808194278588563
+    ],
+    "recall": [
+      0.9823801954749907,
+      0.9728721174004192
+    ],
+    "confusion_matrix": [
+      [
+        29048,
+        521
+      ],
+      [
+        1294,
+        46406
+      ]
+    ]
+  },
+  {
+    "tag": "redundant23",
+    "seed": 7,
+    "condition": "uniform_quarter_0",
+    "retained_point_group": "N1",
+    "samples": 1615,
+    "accuracy": 0.8761609907120743,
+    "macro_f1": 0.8671319926416627,
+    "per_class_f1": [
+      0.8324958123953099,
+      0.9017681728880157
+    ],
+    "recall": [
+      0.994,
+      0.8233183856502242
+    ],
+    "confusion_matrix": [
+      [
+        497,
+        3
+      ],
+      [
+        197,
+        918
+      ]
+    ]
+  },
+  {
+    "tag": "redundant23",
+    "seed": 7,
+    "condition": "uniform_quarter_0",
+    "retained_point_group": "N2",
+    "samples": 1566,
+    "accuracy": 0.9278416347381865,
+    "macro_f1": 0.9190148402772089,
+    "per_class_f1": [
+      0.892278360343184,
+      0.9457513202112338
+    ],
+    "recall": [
+      0.9790794979079498,
+      0.9053308823529411
+    ],
+    "confusion_matrix": [
+      [
+        468,
+        10
+      ],
+      [
+        103,
+        985
+      ]
+    ]
+  },
+  {
+    "tag": "redundant23",
+    "seed": 7,
+    "condition": "uniform_quarter_0",
+    "retained_point_group": "Nge3",
+    "samples": 77269,
+    "accuracy": 0.9734434249181431,
+    "macro_f1": 0.9720722806828229,
+    "per_class_f1": [
+      0.9658841524240207,
+      0.9782604089416251
+    ],
+    "recall": [
+      0.9823801954749907,
+      0.9679035639412998
+    ],
+    "confusion_matrix": [
+      [
+        29048,
+        521
+      ],
+      [
+        1531,
+        46169
+      ]
+    ]
+  },
+  {
+    "tag": "redundant23",
+    "seed": 17,
+    "condition": "uniform_quarter_0",
+    "retained_point_group": "N1",
+    "samples": 1615,
+    "accuracy": 0.8811145510835914,
+    "macro_f1": 0.8720889173429079,
+    "per_class_f1": [
+      0.8381112984822934,
+      0.9060665362035225
+    ],
+    "recall": [
+      0.994,
+      0.8304932735426009
+    ],
+    "confusion_matrix": [
+      [
+        497,
+        3
+      ],
+      [
+        189,
+        926
+      ]
+    ]
+  },
+  {
+    "tag": "redundant23",
+    "seed": 17,
+    "condition": "uniform_quarter_0",
+    "retained_point_group": "N2",
+    "samples": 1566,
+    "accuracy": 0.9195402298850575,
+    "macro_f1": 0.9100776013402045,
+    "per_class_f1": [
+      0.8809073724007561,
+      0.9392478302796529
+    ],
+    "recall": [
+      0.9748953974895398,
+      0.8952205882352942
+    ],
+    "confusion_matrix": [
+      [
+        466,
+        12
+      ],
+      [
+        114,
+        974
+      ]
+    ]
+  },
+  {
+    "tag": "redundant23",
+    "seed": 17,
+    "condition": "uniform_quarter_0",
+    "retained_point_group": "Nge3",
+    "samples": 77269,
+    "accuracy": 0.9726539750740918,
+    "macro_f1": 0.971270180659059,
+    "per_class_f1": [
+      0.9649649317703238,
+      0.9775754295477942
+    ],
+    "recall": [
+      0.984104974804694,
+      0.9655555555555555
+    ],
+    "confusion_matrix": [
+      [
+        29099,
+        470
+      ],
+      [
+        1643,
+        46057
+      ]
+    ]
+  },
+  {
+    "tag": "redundant23",
+    "seed": 37,
+    "condition": "uniform_quarter_0",
+    "retained_point_group": "N1",
+    "samples": 1615,
+    "accuracy": 0.8773993808049536,
+    "macro_f1": 0.8682773109243698,
+    "per_class_f1": [
+      0.8336134453781513,
+      0.9029411764705882
+    ],
+    "recall": [
+      0.992,
+      0.8260089686098655
+    ],
+    "confusion_matrix": [
+      [
+        496,
+        4
+      ],
+      [
+        194,
+        921
+      ]
+    ]
+  },
+  {
+    "tag": "redundant23",
+    "seed": 37,
+    "condition": "uniform_quarter_0",
+    "retained_point_group": "N2",
+    "samples": 1566,
+    "accuracy": 0.9272030651340997,
+    "macro_f1": 0.9181816681912925,
+    "per_class_f1": [
+      0.8910133843212237,
+      0.9453499520613614
+    ],
+    "recall": [
+      0.9748953974895398,
+      0.90625
+    ],
+    "confusion_matrix": [
+      [
+        466,
+        12
+      ],
+      [
+        102,
+        986
+      ]
+    ]
+  },
+  {
+    "tag": "redundant23",
+    "seed": 37,
+    "condition": "uniform_quarter_0",
+    "retained_point_group": "Nge3",
+    "samples": 77269,
+    "accuracy": 0.9744140599723046,
+    "macro_f1": 0.9730416734994127,
+    "per_class_f1": [
+      0.9669591376284783,
+      0.9791242093703473
+    ],
+    "recall": [
+      0.9783557103723495,
+      0.9719706498951782
+    ],
+    "confusion_matrix": [
+      [
+        28929,
+        640
+      ],
+      [
+        1337,
+        46363
+      ]
+    ]
+  },
+  {
+    "tag": "base16",
+    "seed": 7,
+    "condition": "uniform_quarter_1",
+    "retained_point_group": "N1",
+    "samples": 1615,
+    "accuracy": 0.8873065015479876,
+    "macro_f1": 0.8784911120297644,
+    "per_class_f1": [
+      0.8457627118644068,
+      0.911219512195122
+    ],
+    "recall": [
+      0.998,
+      0.8376681614349776
+    ],
+    "confusion_matrix": [
+      [
+        499,
+        1
+      ],
+      [
+        181,
+        934
+      ]
+    ]
+  },
+  {
+    "tag": "base16",
+    "seed": 7,
+    "condition": "uniform_quarter_1",
+    "retained_point_group": "N2",
+    "samples": 1566,
+    "accuracy": 0.9150702426564495,
+    "macro_f1": 0.904949491953168,
+    "per_class_f1": [
+      0.8739336492890996,
+      0.9359653346172364
+    ],
+    "recall": [
+      0.9644351464435147,
+      0.8933823529411765
+    ],
+    "confusion_matrix": [
+      [
+        461,
+        17
+      ],
+      [
+        116,
+        972
+      ]
+    ]
+  },
+  {
+    "tag": "base16",
+    "seed": 7,
+    "condition": "uniform_quarter_1",
+    "retained_point_group": "Nge3",
+    "samples": 77269,
+    "accuracy": 0.9742717001643608,
+    "macro_f1": 0.972966700595255,
+    "per_class_f1": [
+      0.9670271346115571,
+      0.978906266578953
+    ],
+    "recall": [
+      0.9858973925394839,
+      0.9670649895178197
+    ],
+    "confusion_matrix": [
+      [
+        29152,
+        417
+      ],
+      [
+        1571,
+        46129
+      ]
+    ]
+  },
+  {
+    "tag": "base16",
+    "seed": 17,
+    "condition": "uniform_quarter_1",
+    "retained_point_group": "N1",
+    "samples": 1615,
+    "accuracy": 0.8879256965944272,
+    "macro_f1": 0.8792021386281654,
+    "per_class_f1": [
+      0.8467400508044031,
+      0.9116642264519278
+    ],
+    "recall": [
+      1.0,
+      0.8376681614349776
+    ],
+    "confusion_matrix": [
+      [
+        500,
+        0
+      ],
+      [
+        181,
+        934
+      ]
+    ]
+  },
+  {
+    "tag": "base16",
+    "seed": 17,
+    "condition": "uniform_quarter_1",
+    "retained_point_group": "N2",
+    "samples": 1566,
+    "accuracy": 0.9137931034482759,
+    "macro_f1": 0.9040508678810268,
+    "per_class_f1": [
+      0.8734770384254921,
+      0.9346246973365617
+    ],
+    "recall": [
+      0.9748953974895398,
+      0.8869485294117647
+    ],
+    "confusion_matrix": [
+      [
+        466,
+        12
+      ],
+      [
+        123,
+        965
+      ]
+    ]
+  },
+  {
+    "tag": "base16",
+    "seed": 17,
+    "condition": "uniform_quarter_1",
+    "retained_point_group": "Nge3",
+    "samples": 77269,
+    "accuracy": 0.9733787159145324,
+    "macro_f1": 0.972043583020338,
+    "per_class_f1": [
+      0.9659341205306129,
+      0.9781530455100632
+    ],
+    "recall": [
+      0.9862694037674592,
+      0.9653878406708596
+    ],
+    "confusion_matrix": [
+      [
+        29163,
+        406
+      ],
+      [
+        1651,
+        46049
+      ]
+    ]
+  },
+  {
+    "tag": "base16",
+    "seed": 37,
+    "condition": "uniform_quarter_1",
+    "retained_point_group": "N1",
+    "samples": 1615,
+    "accuracy": 0.8842105263157894,
+    "macro_f1": 0.8752870518305864,
+    "per_class_f1": [
+      0.841927303465765,
+      0.9086468001954079
+    ],
+    "recall": [
+      0.996,
+      0.8340807174887892
+    ],
+    "confusion_matrix": [
+      [
+        498,
+        2
+      ],
+      [
+        185,
+        930
+      ]
+    ]
+  },
+  {
+    "tag": "base16",
+    "seed": 37,
+    "condition": "uniform_quarter_1",
+    "retained_point_group": "N2",
+    "samples": 1566,
+    "accuracy": 0.9163473818646233,
+    "macro_f1": 0.906291239624573,
+    "per_class_f1": [
+      0.8755935422602089,
+      0.936988936988937
+    ],
+    "recall": [
+      0.9644351464435147,
+      0.8952205882352942
+    ],
+    "confusion_matrix": [
+      [
+        461,
+        17
+      ],
+      [
+        114,
+        974
+      ]
+    ]
+  },
+  {
+    "tag": "base16",
+    "seed": 37,
+    "condition": "uniform_quarter_1",
+    "retained_point_group": "Nge3",
+    "samples": 77269,
+    "accuracy": 0.9759929596604071,
+    "macro_f1": 0.9746758092022225,
+    "per_class_f1": [
+      0.9689003638070649,
+      0.9804512545973801
+    ],
+    "recall": [
+      0.9772396766884237,
+      0.9752201257861636
+    ],
+    "confusion_matrix": [
+      [
+        28896,
+        673
+      ],
+      [
+        1182,
+        46518
+      ]
+    ]
+  },
+  {
+    "tag": "geometry19",
+    "seed": 7,
+    "condition": "uniform_quarter_1",
+    "retained_point_group": "N1",
+    "samples": 1615,
+    "accuracy": 0.8835913312693499,
+    "macro_f1": 0.8748421201898186,
+    "per_class_f1": [
+      0.8417508417508418,
+      0.9079333986287953
+    ],
+    "recall": [
+      1.0,
+      0.831390134529148
+    ],
+    "confusion_matrix": [
+      [
+        500,
+        0
+      ],
+      [
+        188,
+        927
+      ]
+    ]
+  },
+  {
+    "tag": "geometry19",
+    "seed": 7,
+    "condition": "uniform_quarter_1",
+    "retained_point_group": "N2",
+    "samples": 1566,
+    "accuracy": 0.9189016602809706,
+    "macro_f1": 0.9090671752172137,
+    "per_class_f1": [
+      0.879162702188392,
+      0.9389716482460355
+    ],
+    "recall": [
+      0.9665271966527197,
+      0.8979779411764706
+    ],
+    "confusion_matrix": [
+      [
+        462,
+        16
+      ],
+      [
+        111,
+        977
+      ]
+    ]
+  },
+  {
+    "tag": "geometry19",
+    "seed": 7,
+    "condition": "uniform_quarter_1",
+    "retained_point_group": "Nge3",
+    "samples": 77269,
+    "accuracy": 0.9738316789398077,
+    "macro_f1": 0.9725291994975064,
+    "per_class_f1": [
+      0.9665475481437363,
+      0.9785108508512764
+    ],
+    "recall": [
+      0.987892725489533,
+      0.9651153039832285
+    ],
+    "confusion_matrix": [
+      [
+        29211,
+        358
+      ],
+      [
+        1664,
+        46036
+      ]
+    ]
+  },
+  {
+    "tag": "geometry19",
+    "seed": 17,
+    "condition": "uniform_quarter_1",
+    "retained_point_group": "N1",
+    "samples": 1615,
+    "accuracy": 0.881733746130031,
+    "macro_f1": 0.8728896148715833,
+    "per_class_f1": [
+      0.8393608074011775,
+      0.9064184223419892
+    ],
+    "recall": [
+      0.998,
+      0.8295964125560538
+    ],
+    "confusion_matrix": [
+      [
+        499,
+        1
+      ],
+      [
+        190,
+        925
+      ]
+    ]
+  },
+  {
+    "tag": "geometry19",
+    "seed": 17,
+    "condition": "uniform_quarter_1",
+    "retained_point_group": "N2",
+    "samples": 1566,
+    "accuracy": 0.9182630906768838,
+    "macro_f1": 0.9083942673296286,
+    "per_class_f1": [
+      0.8783269961977186,
+      0.9384615384615385
+    ],
+    "recall": [
+      0.9665271966527197,
+      0.8970588235294118
+    ],
+    "confusion_matrix": [
+      [
+        462,
+        16
+      ],
+      [
+        112,
+        976
+      ]
+    ]
+  },
+  {
+    "tag": "geometry19",
+    "seed": 17,
+    "condition": "uniform_quarter_1",
+    "retained_point_group": "Nge3",
+    "samples": 77269,
+    "accuracy": 0.974698779588192,
+    "macro_f1": 0.9733993407752961,
+    "per_class_f1": [
+      0.9675200611387085,
+      0.9792786204118837
+    ],
+    "recall": [
+      0.984747539653015,
+      0.9684696016771488
+    ],
+    "confusion_matrix": [
+      [
+        29118,
+        451
+      ],
+      [
+        1504,
+        46196
+      ]
+    ]
+  },
+  {
+    "tag": "geometry19",
+    "seed": 37,
+    "condition": "uniform_quarter_1",
+    "retained_point_group": "N1",
+    "samples": 1615,
+    "accuracy": 0.8804953560371517,
+    "macro_f1": 0.8716485295758734,
+    "per_class_f1": [
+      0.837951301427372,
+      0.9053457577243746
+    ],
+    "recall": [
+      0.998,
+      0.8278026905829596
+    ],
+    "confusion_matrix": [
+      [
+        499,
+        1
+      ],
+      [
+        192,
+        923
+      ]
+    ]
+  },
+  {
+    "tag": "geometry19",
+    "seed": 37,
+    "condition": "uniform_quarter_1",
+    "retained_point_group": "N2",
+    "samples": 1566,
+    "accuracy": 0.9118773946360154,
+    "macro_f1": 0.9004778360694392,
+    "per_class_f1": [
+      0.8667953667953668,
+      0.9341603053435115
+    ],
+    "recall": [
+      0.9393305439330544,
+      0.8998161764705882
+    ],
+    "confusion_matrix": [
+      [
+        449,
+        29
+      ],
+      [
+        109,
+        979
+      ]
+    ]
+  },
+  {
+    "tag": "geometry19",
+    "seed": 37,
+    "condition": "uniform_quarter_1",
+    "retained_point_group": "Nge3",
+    "samples": 77269,
+    "accuracy": 0.9764329808849603,
+    "macro_f1": 0.9751119342299723,
+    "per_class_f1": [
+      0.9693779743387089,
+      0.9808458941212357
+    ],
+    "recall": [
+      0.9747708749027698,
+      0.9774633123689728
+    ],
+    "confusion_matrix": [
+      [
+        28823,
+        746
+      ],
+      [
+        1075,
+        46625
+      ]
+    ]
+  },
+  {
+    "tag": "distribution20",
+    "seed": 7,
+    "condition": "uniform_quarter_1",
+    "retained_point_group": "N1",
+    "samples": 1615,
+    "accuracy": 0.881733746130031,
+    "macro_f1": 0.8728000887407676,
+    "per_class_f1": [
+      0.8390901432181971,
+      0.9065100342633382
+    ],
+    "recall": [
+      0.996,
+      0.8304932735426009
+    ],
+    "confusion_matrix": [
+      [
+        498,
+        2
+      ],
+      [
+        189,
+        926
+      ]
+    ]
+  },
+  {
+    "tag": "distribution20",
+    "seed": 7,
+    "condition": "uniform_quarter_1",
+    "retained_point_group": "N2",
+    "samples": 1566,
+    "accuracy": 0.9182630906768838,
+    "macro_f1": 0.9072324686359774,
+    "per_class_f1": [
+      0.8752436647173489,
+      0.9392212725546059
+    ],
+    "recall": [
+      0.9393305439330544,
+      0.9090073529411765
+    ],
+    "confusion_matrix": [
+      [
+        449,
+        29
+      ],
+      [
+        99,
+        989
+      ]
+    ]
+  },
+  {
+    "tag": "distribution20",
+    "seed": 7,
+    "condition": "uniform_quarter_1",
+    "retained_point_group": "Nge3",
+    "samples": 77269,
+    "accuracy": 0.9739610969470293,
+    "macro_f1": 0.972599108522217,
+    "per_class_f1": [
+      0.9664901235801605,
+      0.9787080934642736
+    ],
+    "recall": [
+      0.981264161791065,
+      0.9694339622641509
+    ],
+    "confusion_matrix": [
+      [
+        29015,
+        554
+      ],
+      [
+        1458,
+        46242
+      ]
+    ]
+  },
+  {
+    "tag": "distribution20",
+    "seed": 17,
+    "condition": "uniform_quarter_1",
+    "retained_point_group": "N1",
+    "samples": 1615,
+    "accuracy": 0.8842105263157894,
+    "macro_f1": 0.8752870518305864,
+    "per_class_f1": [
+      0.841927303465765,
+      0.9086468001954079
+    ],
+    "recall": [
+      0.996,
+      0.8340807174887892
+    ],
+    "confusion_matrix": [
+      [
+        498,
+        2
+      ],
+      [
+        185,
+        930
+      ]
+    ]
+  },
+  {
+    "tag": "distribution20",
+    "seed": 17,
+    "condition": "uniform_quarter_1",
+    "retained_point_group": "N2",
+    "samples": 1566,
+    "accuracy": 0.9182630906768838,
+    "macro_f1": 0.9078688042359171,
+    "per_class_f1": [
+      0.8769230769230769,
+      0.9388145315487572
+    ],
+    "recall": [
+      0.9539748953974896,
+      0.9025735294117647
+    ],
+    "confusion_matrix": [
+      [
+        456,
+        22
+      ],
+      [
+        106,
+        982
+      ]
+    ]
+  },
+  {
+    "tag": "distribution20",
+    "seed": 17,
+    "condition": "uniform_quarter_1",
+    "retained_point_group": "Nge3",
+    "samples": 77269,
+    "accuracy": 0.9751388008127451,
+    "macro_f1": 0.9738682404651001,
+    "per_class_f1": [
+      0.9681061247530341,
+      0.9796303561771661
+    ],
+    "recall": [
+      0.9859988501471135,
+      0.9684067085953878
+    ],
+    "confusion_matrix": [
+      [
+        29155,
+        414
+      ],
+      [
+        1507,
+        46193
+      ]
+    ]
+  },
+  {
+    "tag": "distribution20",
+    "seed": 37,
+    "condition": "uniform_quarter_1",
+    "retained_point_group": "N1",
+    "samples": 1615,
+    "accuracy": 0.8773993808049536,
+    "macro_f1": 0.8684606727152462,
+    "per_class_f1": [
+      0.8341708542713567,
+      0.9027504911591355
+    ],
+    "recall": [
+      0.996,
+      0.8242152466367713
+    ],
+    "confusion_matrix": [
+      [
+        498,
+        2
+      ],
+      [
+        196,
+        919
+      ]
+    ]
+  },
+  {
+    "tag": "distribution20",
+    "seed": 37,
+    "condition": "uniform_quarter_1",
+    "retained_point_group": "N2",
+    "samples": 1566,
+    "accuracy": 0.9176245210727969,
+    "macro_f1": 0.9074601636742182,
+    "per_class_f1": [
+      0.8767908309455588,
+      0.9381294964028777
+    ],
+    "recall": [
+      0.9602510460251046,
+      0.8988970588235294
+    ],
+    "confusion_matrix": [
+      [
+        459,
+        19
+      ],
+      [
+        110,
+        978
+      ]
+    ]
+  },
+  {
+    "tag": "distribution20",
+    "seed": 37,
+    "condition": "uniform_quarter_1",
+    "retained_point_group": "Nge3",
+    "samples": 77269,
+    "accuracy": 0.976407097283516,
+    "macro_f1": 0.9751774167985783,
+    "per_class_f1": [
+      0.9696525777829569,
+      0.9807022558141997
+    ],
+    "recall": [
+      0.9849504548682743,
+      0.9711111111111111
+    ],
+    "confusion_matrix": [
+      [
+        29124,
+        445
+      ],
+      [
+        1378,
+        46322
+      ]
+    ]
+  },
+  {
+    "tag": "combined23",
+    "seed": 7,
+    "condition": "uniform_quarter_1",
+    "retained_point_group": "N1",
+    "samples": 1615,
+    "accuracy": 0.881733746130031,
+    "macro_f1": 0.8728896148715833,
+    "per_class_f1": [
+      0.8393608074011775,
+      0.9064184223419892
+    ],
+    "recall": [
+      0.998,
+      0.8295964125560538
+    ],
+    "confusion_matrix": [
+      [
+        499,
+        1
+      ],
+      [
+        190,
+        925
+      ]
+    ]
+  },
+  {
+    "tag": "combined23",
+    "seed": 7,
+    "condition": "uniform_quarter_1",
+    "retained_point_group": "N2",
+    "samples": 1566,
+    "accuracy": 0.909323116219668,
+    "macro_f1": 0.89808593757161,
+    "per_class_f1": [
+      0.864244741873805,
+      0.9319271332694151
+    ],
+    "recall": [
+      0.9456066945606695,
+      0.8933823529411765
+    ],
+    "confusion_matrix": [
+      [
+        452,
+        26
+      ],
+      [
+        116,
+        972
+      ]
+    ]
+  },
+  {
+    "tag": "combined23",
+    "seed": 7,
+    "condition": "uniform_quarter_1",
+    "retained_point_group": "Nge3",
+    "samples": 77269,
+    "accuracy": 0.9754364622293545,
+    "macro_f1": 0.9741803396281898,
+    "per_class_f1": [
+      0.9684853717663467,
+      0.979875307490033
+    ],
+    "recall": [
+      0.9863032229700024,
+      0.9687002096436059
+    ],
+    "confusion_matrix": [
+      [
+        29164,
+        405
+      ],
+      [
+        1493,
+        46207
+      ]
+    ]
+  },
+  {
+    "tag": "combined23",
+    "seed": 17,
+    "condition": "uniform_quarter_1",
+    "retained_point_group": "N1",
+    "samples": 1615,
+    "accuracy": 0.8842105263157894,
+    "macro_f1": 0.8752870518305864,
+    "per_class_f1": [
+      0.841927303465765,
+      0.9086468001954079
+    ],
+    "recall": [
+      0.996,
+      0.8340807174887892
+    ],
+    "confusion_matrix": [
+      [
+        498,
+        2
+      ],
+      [
+        185,
+        930
+      ]
+    ]
+  },
+  {
+    "tag": "combined23",
+    "seed": 17,
+    "condition": "uniform_quarter_1",
+    "retained_point_group": "N2",
+    "samples": 1566,
+    "accuracy": 0.9169859514687101,
+    "macro_f1": 0.9067870800427833,
+    "per_class_f1": [
+      0.8759541984732825,
+      0.9376199616122841
+    ],
+    "recall": [
+      0.9602510460251046,
+      0.8979779411764706
+    ],
+    "confusion_matrix": [
+      [
+        459,
+        19
+      ],
+      [
+        111,
+        977
+      ]
+    ]
+  },
+  {
+    "tag": "combined23",
+    "seed": 17,
+    "condition": "uniform_quarter_1",
+    "retained_point_group": "Nge3",
+    "samples": 77269,
+    "accuracy": 0.9760059014611293,
+    "macro_f1": 0.9747348641517306,
+    "per_class_f1": [
+      0.9690680369715372,
+      0.9804016913319239
+    ],
+    "recall": [
+      0.9821772802597315,
+      0.9721802935010482
+    ],
+    "confusion_matrix": [
+      [
+        29042,
+        527
+      ],
+      [
+        1327,
+        46373
+      ]
+    ]
+  },
+  {
+    "tag": "combined23",
+    "seed": 37,
+    "condition": "uniform_quarter_1",
+    "retained_point_group": "N1",
+    "samples": 1615,
+    "accuracy": 0.8823529411764706,
+    "macro_f1": 0.8734213244539193,
+    "per_class_f1": [
+      0.8397976391231029,
+      0.9070450097847358
+    ],
+    "recall": [
+      0.996,
+      0.831390134529148
+    ],
+    "confusion_matrix": [
+      [
+        498,
+        2
+      ],
+      [
+        188,
+        927
+      ]
+    ]
+  },
+  {
+    "tag": "combined23",
+    "seed": 37,
+    "condition": "uniform_quarter_1",
+    "retained_point_group": "N2",
+    "samples": 1566,
+    "accuracy": 0.9112388250319284,
+    "macro_f1": 0.900475097284982,
+    "per_class_f1": [
+      0.8677450047573739,
+      0.9332051898125902
+    ],
+    "recall": [
+      0.9539748953974896,
+      0.8924632352941176
+    ],
+    "confusion_matrix": [
+      [
+        456,
+        22
+      ],
+      [
+        117,
+        971
+      ]
+    ]
+  },
+  {
+    "tag": "combined23",
+    "seed": 37,
+    "condition": "uniform_quarter_1",
+    "retained_point_group": "Nge3",
+    "samples": 77269,
+    "accuracy": 0.9762776792762945,
+    "macro_f1": 0.9750163000455336,
+    "per_class_f1": [
+      0.969402573989684,
+      0.9806300261013833
+    ],
+    "recall": [
+      0.9820081842470154,
+      0.9727253668763103
+    ],
+    "confusion_matrix": [
+      [
+        29037,
+        532
+      ],
+      [
+        1301,
+        46399
+      ]
+    ]
+  },
+  {
+    "tag": "redundant23",
+    "seed": 7,
+    "condition": "uniform_quarter_1",
+    "retained_point_group": "N1",
+    "samples": 1615,
+    "accuracy": 0.874922600619195,
+    "macro_f1": 0.8660796387520526,
+    "per_class_f1": [
+      0.8316666666666667,
+      0.9004926108374385
+    ],
+    "recall": [
+      0.998,
+      0.8197309417040358
+    ],
+    "confusion_matrix": [
+      [
+        499,
+        1
+      ],
+      [
+        201,
+        914
+      ]
+    ]
+  },
+  {
+    "tag": "redundant23",
+    "seed": 7,
+    "condition": "uniform_quarter_1",
+    "retained_point_group": "N2",
+    "samples": 1566,
+    "accuracy": 0.9176245210727969,
+    "macro_f1": 0.9075479150067252,
+    "per_class_f1": [
+      0.877025738798856,
+      0.9380700912145943
+    ],
+    "recall": [
+      0.9623430962343096,
+      0.8979779411764706
+    ],
+    "confusion_matrix": [
+      [
+        460,
+        18
+      ],
+      [
+        111,
+        977
+      ]
+    ]
+  },
+  {
+    "tag": "redundant23",
+    "seed": 7,
+    "condition": "uniform_quarter_1",
+    "retained_point_group": "Nge3",
+    "samples": 77269,
+    "accuracy": 0.9745434779795261,
+    "macro_f1": 0.9732315513275029,
+    "per_class_f1": [
+      0.9673054867609661,
+      0.9791576158940397
+    ],
+    "recall": [
+      0.9840711556021509,
+      0.9686373165618448
+    ],
+    "confusion_matrix": [
+      [
+        29098,
+        471
+      ],
+      [
+        1496,
+        46204
+      ]
+    ]
+  },
+  {
+    "tag": "redundant23",
+    "seed": 17,
+    "condition": "uniform_quarter_1",
+    "retained_point_group": "N1",
+    "samples": 1615,
+    "accuracy": 0.8829721362229103,
+    "macro_f1": 0.8740428956083068,
+    "per_class_f1": [
+      0.8405063291139241,
+      0.9075794621026895
+    ],
+    "recall": [
+      0.996,
+      0.8322869955156951
+    ],
+    "confusion_matrix": [
+      [
+        498,
+        2
+      ],
+      [
+        187,
+        928
+      ]
+    ]
+  },
+  {
+    "tag": "redundant23",
+    "seed": 17,
+    "condition": "uniform_quarter_1",
+    "retained_point_group": "N2",
+    "samples": 1566,
+    "accuracy": 0.9144316730523627,
+    "macro_f1": 0.904368242695138,
+    "per_class_f1": [
+      0.8733459357277883,
+      0.9353905496624879
+    ],
+    "recall": [
+      0.9665271966527197,
+      0.8915441176470589
+    ],
+    "confusion_matrix": [
+      [
+        462,
+        16
+      ],
+      [
+        118,
+        970
+      ]
+    ]
+  },
+  {
+    "tag": "redundant23",
+    "seed": 17,
+    "condition": "uniform_quarter_1",
+    "retained_point_group": "Nge3",
+    "samples": 77269,
+    "accuracy": 0.9732881233094772,
+    "macro_f1": 0.9719389297178026,
+    "per_class_f1": [
+      0.9657858966283195,
+      0.9780919628072857
+    ],
+    "recall": [
+      0.9851871892860766,
+      0.9659119496855346
+    ],
+    "confusion_matrix": [
+      [
+        29131,
+        438
+      ],
+      [
+        1626,
+        46074
+      ]
+    ]
+  },
+  {
+    "tag": "redundant23",
+    "seed": 37,
+    "condition": "uniform_quarter_1",
+    "retained_point_group": "N1",
+    "samples": 1615,
+    "accuracy": 0.8842105263157894,
+    "macro_f1": 0.8752870518305864,
+    "per_class_f1": [
+      0.841927303465765,
+      0.9086468001954079
+    ],
+    "recall": [
+      0.996,
+      0.8340807174887892
+    ],
+    "confusion_matrix": [
+      [
+        498,
+        2
+      ],
+      [
+        185,
+        930
+      ]
+    ]
+  },
+  {
+    "tag": "redundant23",
+    "seed": 37,
+    "condition": "uniform_quarter_1",
+    "retained_point_group": "N2",
+    "samples": 1566,
+    "accuracy": 0.9150702426564495,
+    "macro_f1": 0.9046811836891042,
+    "per_class_f1": [
+      0.8732125834127741,
+      0.9361497839654345
+    ],
+    "recall": [
+      0.9581589958158996,
+      0.8961397058823529
+    ],
+    "confusion_matrix": [
+      [
+        458,
+        20
+      ],
+      [
+        113,
+        975
+      ]
+    ]
+  },
+  {
+    "tag": "redundant23",
+    "seed": 37,
+    "condition": "uniform_quarter_1",
+    "retained_point_group": "Nge3",
+    "samples": 77269,
+    "accuracy": 0.9753329278235774,
+    "macro_f1": 0.97400422365332,
+    "per_class_f1": [
+      0.9681270903010033,
+      0.9798813570056366
+    ],
+    "recall": [
+      0.9789644560181271,
+      0.9730817610062893
+    ],
+    "confusion_matrix": [
+      [
+        28947,
+        622
+      ],
+      [
+        1284,
+        46416
+      ]
+    ]
+  },
+  {
+    "tag": "base16",
+    "seed": 7,
+    "condition": "uniform_quarter_2",
+    "retained_point_group": "N1",
+    "samples": 1615,
+    "accuracy": 0.881733746130031,
+    "macro_f1": 0.8724364994588791,
+    "per_class_f1": [
+      0.8379983036471587,
+      0.9068746952705997
+    ],
+    "recall": [
+      0.988,
+      0.8340807174887892
+    ],
+    "confusion_matrix": [
+      [
+        494,
+        6
+      ],
+      [
+        185,
+        930
+      ]
+    ]
+  },
+  {
+    "tag": "base16",
+    "seed": 7,
+    "condition": "uniform_quarter_2",
+    "retained_point_group": "N2",
+    "samples": 1566,
+    "accuracy": 0.921455938697318,
+    "macro_f1": 0.9120961466935313,
+    "per_class_f1": [
+      0.8834123222748815,
+      0.940779971112181
+    ],
+    "recall": [
+      0.9748953974895398,
+      0.8979779411764706
+    ],
+    "confusion_matrix": [
+      [
+        466,
+        12
+      ],
+      [
+        111,
+        977
+      ]
+    ]
+  },
+  {
+    "tag": "base16",
+    "seed": 7,
+    "condition": "uniform_quarter_2",
+    "retained_point_group": "Nge3",
+    "samples": 77269,
+    "accuracy": 0.9734822503203096,
+    "macro_f1": 0.9721453519539124,
+    "per_class_f1": [
+      0.9660429890124459,
+      0.9782477148953789
+    ],
+    "recall": [
+      0.9856944773242247,
+      0.9659119496855346
+    ],
+    "confusion_matrix": [
+      [
+        29146,
+        423
+      ],
+      [
+        1626,
+        46074
+      ]
+    ]
+  },
+  {
+    "tag": "base16",
+    "seed": 17,
+    "condition": "uniform_quarter_2",
+    "retained_point_group": "N1",
+    "samples": 1615,
+    "accuracy": 0.886687306501548,
+    "macro_f1": 0.8774226086220791,
+    "per_class_f1": [
+      0.8437233134073442,
+      0.911121903836814
+    ],
+    "recall": [
+      0.988,
+      0.841255605381166
+    ],
+    "confusion_matrix": [
+      [
+        494,
+        6
+      ],
+      [
+        177,
+        938
+      ]
+    ]
+  },
+  {
+    "tag": "base16",
+    "seed": 17,
+    "condition": "uniform_quarter_2",
+    "retained_point_group": "N2",
+    "samples": 1566,
+    "accuracy": 0.9195402298850575,
+    "macro_f1": 0.9101606323304436,
+    "per_class_f1": [
+      0.8811320754716981,
+      0.9391891891891891
+    ],
+    "recall": [
+      0.9769874476987448,
+      0.8943014705882353
+    ],
+    "confusion_matrix": [
+      [
+        467,
+        11
+      ],
+      [
+        115,
+        973
+      ]
+    ]
+  },
+  {
+    "tag": "base16",
+    "seed": 17,
+    "condition": "uniform_quarter_2",
+    "retained_point_group": "Nge3",
+    "samples": 77269,
+    "accuracy": 0.9725504406683146,
+    "macro_f1": 0.9711904898206389,
+    "per_class_f1": [
+      0.9649311353978935,
+      0.9774498442433843
+    ],
+    "recall": [
+      0.9868443302106936,
+      0.9636897274633124
+    ],
+    "confusion_matrix": [
+      [
+        29180,
+        389
+      ],
+      [
+        1732,
+        45968
+      ]
+    ]
+  },
+  {
+    "tag": "base16",
+    "seed": 37,
+    "condition": "uniform_quarter_2",
+    "retained_point_group": "N1",
+    "samples": 1615,
+    "accuracy": 0.8842105263157894,
+    "macro_f1": 0.875017640016206,
+    "per_class_f1": [
+      0.8411214953271028,
+      0.9089137847053093
+    ],
+    "recall": [
+      0.99,
+      0.8367713004484305
+    ],
+    "confusion_matrix": [
+      [
+        495,
+        5
+      ],
+      [
+        182,
+        933
+      ]
+    ]
+  },
+  {
+    "tag": "base16",
+    "seed": 37,
+    "condition": "uniform_quarter_2",
+    "retained_point_group": "N2",
+    "samples": 1566,
+    "accuracy": 0.9240102171136654,
+    "macro_f1": 0.914305303852109,
+    "per_class_f1": [
+      0.8854667949951877,
+      0.9431438127090301
+    ],
+    "recall": [
+      0.9623430962343096,
+      0.9071691176470589
+    ],
+    "confusion_matrix": [
+      [
+        460,
+        18
+      ],
+      [
+        101,
+        987
+      ]
+    ]
+  },
+  {
+    "tag": "base16",
+    "seed": 37,
+    "condition": "uniform_quarter_2",
+    "retained_point_group": "Nge3",
+    "samples": 77269,
+    "accuracy": 0.9751517426134673,
+    "macro_f1": 0.9737905594973468,
+    "per_class_f1": [
+      0.9678176332551123,
+      0.9797634857395814
+    ],
+    "recall": [
+      0.9763603774223004,
+      0.9744025157232704
+    ],
+    "confusion_matrix": [
+      [
+        28870,
+        699
+      ],
+      [
+        1221,
+        46479
+      ]
+    ]
+  },
+  {
+    "tag": "geometry19",
+    "seed": 7,
+    "condition": "uniform_quarter_2",
+    "retained_point_group": "N1",
+    "samples": 1615,
+    "accuracy": 0.8780185758513932,
+    "macro_f1": 0.868523874639495,
+    "per_class_f1": [
+      0.8331922099915327,
+      0.9038555392874573
+    ],
+    "recall": [
+      0.984,
+      0.8304932735426009
+    ],
+    "confusion_matrix": [
+      [
+        492,
+        8
+      ],
+      [
+        189,
+        926
+      ]
+    ]
+  },
+  {
+    "tag": "geometry19",
+    "seed": 7,
+    "condition": "uniform_quarter_2",
+    "retained_point_group": "N2",
+    "samples": 1566,
+    "accuracy": 0.9137931034482759,
+    "macro_f1": 0.9027833278994513,
+    "per_class_f1": [
+      0.8700673724735323,
+      0.9354992833253702
+    ],
+    "recall": [
+      0.9456066945606695,
+      0.8998161764705882
+    ],
+    "confusion_matrix": [
+      [
+        452,
+        26
+      ],
+      [
+        109,
+        979
+      ]
+    ]
+  },
+  {
+    "tag": "geometry19",
+    "seed": 7,
+    "condition": "uniform_quarter_2",
+    "retained_point_group": "Nge3",
+    "samples": 77269,
+    "accuracy": 0.9738963879434185,
+    "macro_f1": 0.9725959940712903,
+    "per_class_f1": [
+      0.9666264043549482,
+      0.9785655837876325
+    ],
+    "recall": [
+      0.9878589062869898,
+      0.9652410901467505
+    ],
+    "confusion_matrix": [
+      [
+        29210,
+        359
+      ],
+      [
+        1658,
+        46042
+      ]
+    ]
+  },
+  {
+    "tag": "geometry19",
+    "seed": 17,
+    "condition": "uniform_quarter_2",
+    "retained_point_group": "N1",
+    "samples": 1615,
+    "accuracy": 0.8798761609907121,
+    "macro_f1": 0.8704795369987599,
+    "per_class_f1": [
+      0.8355932203389831,
+      0.9053658536585366
+    ],
+    "recall": [
+      0.986,
+      0.8322869955156951
+    ],
+    "confusion_matrix": [
+      [
+        493,
+        7
+      ],
+      [
+        187,
+        928
+      ]
+    ]
+  },
+  {
+    "tag": "geometry19",
+    "seed": 17,
+    "condition": "uniform_quarter_2",
+    "retained_point_group": "N2",
+    "samples": 1566,
+    "accuracy": 0.9163473818646233,
+    "macro_f1": 0.9061145493479148,
+    "per_class_f1": [
+      0.8751191611058151,
+      0.9371099375900144
+    ],
+    "recall": [
+      0.9602510460251046,
+      0.8970588235294118
+    ],
+    "confusion_matrix": [
+      [
+        459,
+        19
+      ],
+      [
+        112,
+        976
+      ]
+    ]
+  },
+  {
+    "tag": "geometry19",
+    "seed": 17,
+    "condition": "uniform_quarter_2",
+    "retained_point_group": "Nge3",
+    "samples": 77269,
+    "accuracy": 0.9744011181715824,
+    "macro_f1": 0.9730968895862666,
+    "per_class_f1": [
+      0.9671733935209772,
+      0.979020385651556
+    ],
+    "recall": [
+      0.9854577429064223,
+      0.9675471698113207
+    ],
+    "confusion_matrix": [
+      [
+        29139,
+        430
+      ],
+      [
+        1548,
+        46152
+      ]
+    ]
+  },
+  {
+    "tag": "geometry19",
+    "seed": 37,
+    "condition": "uniform_quarter_2",
+    "retained_point_group": "N1",
+    "samples": 1615,
+    "accuracy": 0.8780185758513932,
+    "macro_f1": 0.8687113779620975,
+    "per_class_f1": [
+      0.8337552742616033,
+      0.9036674816625917
+    ],
+    "recall": [
+      0.988,
+      0.8286995515695067
+    ],
+    "confusion_matrix": [
+      [
+        494,
+        6
+      ],
+      [
+        191,
+        924
+      ]
+    ]
+  },
+  {
+    "tag": "geometry19",
+    "seed": 37,
+    "condition": "uniform_quarter_2",
+    "retained_point_group": "N2",
+    "samples": 1566,
+    "accuracy": 0.9259259259259259,
+    "macro_f1": 0.9156751336898395,
+    "per_class_f1": [
+      0.8862745098039215,
+      0.9450757575757576
+    ],
+    "recall": [
+      0.9456066945606695,
+      0.9172794117647058
+    ],
+    "confusion_matrix": [
+      [
+        452,
+        26
+      ],
+      [
+        90,
+        998
+      ]
+    ]
+  },
+  {
+    "tag": "geometry19",
+    "seed": 37,
+    "condition": "uniform_quarter_2",
+    "retained_point_group": "Nge3",
+    "samples": 77269,
+    "accuracy": 0.9758247162510192,
+    "macro_f1": 0.974482560353795,
+    "per_class_f1": [
+      0.9686303486263182,
+      0.9803347720812717
+    ],
+    "recall": [
+      0.9753458013460042,
+      0.9761215932914046
+    ],
+    "confusion_matrix": [
+      [
+        28840,
+        729
+      ],
+      [
+        1139,
+        46561
+      ]
+    ]
+  },
+  {
+    "tag": "distribution20",
+    "seed": 7,
+    "condition": "uniform_quarter_2",
+    "retained_point_group": "N1",
+    "samples": 1615,
+    "accuracy": 0.8736842105263158,
+    "macro_f1": 0.8643804624878977,
+    "per_class_f1": [
+      0.8288590604026845,
+      0.8999018645731109
+    ],
+    "recall": [
+      0.988,
+      0.8224215246636771
+    ],
+    "confusion_matrix": [
+      [
+        494,
+        6
+      ],
+      [
+        198,
+        917
+      ]
+    ]
+  },
+  {
+    "tag": "distribution20",
+    "seed": 7,
+    "condition": "uniform_quarter_2",
+    "retained_point_group": "N2",
+    "samples": 1566,
+    "accuracy": 0.9163473818646233,
+    "macro_f1": 0.9043310011374177,
+    "per_class_f1": [
+      0.8704253214638972,
+      0.9382366808109383
+    ],
+    "recall": [
+      0.9205020920502092,
+      0.9145220588235294
+    ],
+    "confusion_matrix": [
+      [
+        440,
+        38
+      ],
+      [
+        93,
+        995
+      ]
+    ]
+  },
+  {
+    "tag": "distribution20",
+    "seed": 7,
+    "condition": "uniform_quarter_2",
+    "retained_point_group": "Nge3",
+    "samples": 77269,
+    "accuracy": 0.9733657741138102,
+    "macro_f1": 0.9719892688369186,
+    "per_class_f1": [
+      0.9657798470236115,
+      0.9781986906502257
+    ],
+    "recall": [
+      0.9821434610571883,
+      0.9679245283018868
+    ],
+    "confusion_matrix": [
+      [
+        29041,
+        528
+      ],
+      [
+        1530,
+        46170
+      ]
+    ]
+  },
+  {
+    "tag": "distribution20",
+    "seed": 17,
+    "condition": "uniform_quarter_2",
+    "retained_point_group": "N1",
+    "samples": 1615,
+    "accuracy": 0.8842105263157894,
+    "macro_f1": 0.8749267484599058,
+    "per_class_f1": [
+      0.8408510638297872,
+      0.9090024330900244
+    ],
+    "recall": [
+      0.988,
+      0.8376681614349776
+    ],
+    "confusion_matrix": [
+      [
+        494,
+        6
+      ],
+      [
+        181,
+        934
+      ]
+    ]
+  },
+  {
+    "tag": "distribution20",
+    "seed": 17,
+    "condition": "uniform_quarter_2",
+    "retained_point_group": "N2",
+    "samples": 1566,
+    "accuracy": 0.9227330779054917,
+    "macro_f1": 0.912949280365833,
+    "per_class_f1": [
+      0.8837656099903939,
+      0.9421329507412721
+    ],
+    "recall": [
+      0.9623430962343096,
+      0.9053308823529411
+    ],
+    "confusion_matrix": [
+      [
+        460,
+        18
+      ],
+      [
+        103,
+        985
+      ]
+    ]
+  },
+  {
+    "tag": "distribution20",
+    "seed": 17,
+    "condition": "uniform_quarter_2",
+    "retained_point_group": "Nge3",
+    "samples": 77269,
+    "accuracy": 0.9753458696242995,
+    "macro_f1": 0.9740905506478894,
+    "per_class_f1": [
+      0.9683875143127396,
+      0.9797935869830393
+    ],
+    "recall": [
+      0.9867766918056072,
+      0.9682599580712788
+    ],
+    "confusion_matrix": [
+      [
+        29178,
+        391
+      ],
+      [
+        1514,
+        46186
+      ]
+    ]
+  },
+  {
+    "tag": "distribution20",
+    "seed": 37,
+    "condition": "uniform_quarter_2",
+    "retained_point_group": "N1",
+    "samples": 1615,
+    "accuracy": 0.8755417956656347,
+    "macro_f1": 0.8662346208858024,
+    "per_class_f1": [
+      0.830950378469302,
+      0.9015188633023028
+    ],
+    "recall": [
+      0.988,
+      0.8251121076233184
+    ],
+    "confusion_matrix": [
+      [
+        494,
+        6
+      ],
+      [
+        195,
+        920
+      ]
+    ]
+  },
+  {
+    "tag": "distribution20",
+    "seed": 37,
+    "condition": "uniform_quarter_2",
+    "retained_point_group": "N2",
+    "samples": 1566,
+    "accuracy": 0.9189016602809706,
+    "macro_f1": 0.9086327157558742,
+    "per_class_f1": [
+      0.878001921229587,
+      0.9392635102821616
+    ],
+    "recall": [
+      0.9560669456066946,
+      0.9025735294117647
+    ],
+    "confusion_matrix": [
+      [
+        457,
+        21
+      ],
+      [
+        106,
+        982
+      ]
+    ]
+  },
+  {
+    "tag": "distribution20",
+    "seed": 37,
+    "condition": "uniform_quarter_2",
+    "retained_point_group": "Nge3",
+    "samples": 77269,
+    "accuracy": 0.9762517956748502,
+    "macro_f1": 0.9750248973371942,
+    "per_class_f1": [
+      0.9694893836356683,
+      0.9805604110387203
+    ],
+    "recall": [
+      0.9859650309445703,
+      0.970230607966457
+    ],
+    "confusion_matrix": [
+      [
+        29154,
+        415
+      ],
+      [
+        1420,
+        46280
+      ]
+    ]
+  },
+  {
+    "tag": "combined23",
+    "seed": 7,
+    "condition": "uniform_quarter_2",
+    "retained_point_group": "N1",
+    "samples": 1615,
+    "accuracy": 0.8798761609907121,
+    "macro_f1": 0.8704795369987599,
+    "per_class_f1": [
+      0.8355932203389831,
+      0.9053658536585366
+    ],
+    "recall": [
+      0.986,
+      0.8322869955156951
+    ],
+    "confusion_matrix": [
+      [
+        493,
+        7
+      ],
+      [
+        187,
+        928
+      ]
+    ]
+  },
+  {
+    "tag": "combined23",
+    "seed": 7,
+    "condition": "uniform_quarter_2",
+    "retained_point_group": "N2",
+    "samples": 1566,
+    "accuracy": 0.9163473818646233,
+    "macro_f1": 0.9051056162935653,
+    "per_class_f1": [
+      0.872444011684518,
+      0.9377672209026128
+    ],
+    "recall": [
+      0.9372384937238494,
+      0.9071691176470589
+    ],
+    "confusion_matrix": [
+      [
+        448,
+        30
+      ],
+      [
+        101,
+        987
+      ]
+    ]
+  },
+  {
+    "tag": "combined23",
+    "seed": 7,
+    "condition": "uniform_quarter_2",
+    "retained_point_group": "Nge3",
+    "samples": 77269,
+    "accuracy": 0.9754623458307989,
+    "macro_f1": 0.9742131118881214,
+    "per_class_f1": [
+      0.9685373867445488,
+      0.9798888370316942
+    ],
+    "recall": [
+      0.9869457878183232,
+      0.9683438155136268
+    ],
+    "confusion_matrix": [
+      [
+        29183,
+        386
+      ],
+      [
+        1510,
+        46190
+      ]
+    ]
+  },
+  {
+    "tag": "combined23",
+    "seed": 17,
+    "condition": "uniform_quarter_2",
+    "retained_point_group": "N1",
+    "samples": 1615,
+    "accuracy": 0.8804953560371517,
+    "macro_f1": 0.8711007559977155,
+    "per_class_f1": [
+      0.8363019508057676,
+      0.9058995611896635
+    ],
+    "recall": [
+      0.986,
+      0.8331838565022421
+    ],
+    "confusion_matrix": [
+      [
+        493,
+        7
+      ],
+      [
+        186,
+        929
+      ]
+    ]
+  },
+  {
+    "tag": "combined23",
+    "seed": 17,
+    "condition": "uniform_quarter_2",
+    "retained_point_group": "N2",
+    "samples": 1566,
+    "accuracy": 0.9169859514687101,
+    "macro_f1": 0.9062472368770078,
+    "per_class_f1": [
+      0.8745173745173745,
+      0.9379770992366412
+    ],
+    "recall": [
+      0.9476987447698745,
+      0.9034926470588235
+    ],
+    "confusion_matrix": [
+      [
+        453,
+        25
+      ],
+      [
+        105,
+        983
+      ]
+    ]
+  },
+  {
+    "tag": "combined23",
+    "seed": 17,
+    "condition": "uniform_quarter_2",
+    "retained_point_group": "Nge3",
+    "samples": 77269,
+    "accuracy": 0.975384695026466,
+    "macro_f1": 0.9740861313817522,
+    "per_class_f1": [
+      0.9682851997598879,
+      0.9798870630036165
+    ],
+    "recall": [
+      0.981940545841929,
+      0.9713207547169811
+    ],
+    "confusion_matrix": [
+      [
+        29035,
+        534
+      ],
+      [
+        1368,
+        46332
+      ]
+    ]
+  },
+  {
+    "tag": "combined23",
+    "seed": 37,
+    "condition": "uniform_quarter_2",
+    "retained_point_group": "N1",
+    "samples": 1615,
+    "accuracy": 0.8804953560371517,
+    "macro_f1": 0.8711934406366626,
+    "per_class_f1": [
+      0.8365791701947503,
+      0.9058077110785749
+    ],
+    "recall": [
+      0.988,
+      0.8322869955156951
+    ],
+    "confusion_matrix": [
+      [
+        494,
+        6
+      ],
+      [
+        187,
+        928
+      ]
+    ]
+  },
+  {
+    "tag": "combined23",
+    "seed": 37,
+    "condition": "uniform_quarter_2",
+    "retained_point_group": "N2",
+    "samples": 1566,
+    "accuracy": 0.9189016602809706,
+    "macro_f1": 0.90836598867948,
+    "per_class_f1": [
+      0.8772946859903382,
+      0.9394372913686219
+    ],
+    "recall": [
+      0.9497907949790795,
+      0.9053308823529411
+    ],
+    "confusion_matrix": [
+      [
+        454,
+        24
+      ],
+      [
+        103,
+        985
+      ]
+    ]
+  },
+  {
+    "tag": "combined23",
+    "seed": 37,
+    "condition": "uniform_quarter_2",
+    "retained_point_group": "Nge3",
+    "samples": 77269,
+    "accuracy": 0.976407097283516,
+    "macro_f1": 0.9751623182635214,
+    "per_class_f1": [
+      0.9696019742875723,
+      0.9807226622394705
+    ],
+    "recall": [
+      0.983259494741114,
+      0.9721593291404612
+    ],
+    "confusion_matrix": [
+      [
+        29074,
+        495
+      ],
+      [
+        1328,
+        46372
+      ]
+    ]
+  },
+  {
+    "tag": "redundant23",
+    "seed": 7,
+    "condition": "uniform_quarter_2",
+    "retained_point_group": "N1",
+    "samples": 1615,
+    "accuracy": 0.871826625386997,
+    "macro_f1": 0.8625291704789613,
+    "per_class_f1": [
+      0.8267782426778243,
+      0.8982800982800982
+    ],
+    "recall": [
+      0.988,
+      0.8197309417040358
+    ],
+    "confusion_matrix": [
+      [
+        494,
+        6
+      ],
+      [
+        201,
+        914
+      ]
+    ]
+  },
+  {
+    "tag": "redundant23",
+    "seed": 7,
+    "condition": "uniform_quarter_2",
+    "retained_point_group": "N2",
+    "samples": 1566,
+    "accuracy": 0.921455938697318,
+    "macro_f1": 0.9115104254958468,
+    "per_class_f1": [
+      0.8818443804034583,
+      0.9411764705882353
+    ],
+    "recall": [
+      0.9602510460251046,
+      0.9044117647058824
+    ],
+    "confusion_matrix": [
+      [
+        459,
+        19
+      ],
+      [
+        104,
+        984
+      ]
+    ]
+  },
+  {
+    "tag": "redundant23",
+    "seed": 7,
+    "condition": "uniform_quarter_2",
+    "retained_point_group": "Nge3",
+    "samples": 77269,
+    "accuracy": 0.9742069911607502,
+    "macro_f1": 0.9728770695411674,
+    "per_class_f1": [
+      0.9668711248524743,
+      0.9788830142298605
+    ],
+    "recall": [
+      0.9835638675640028,
+      0.9684067085953878
+    ],
+    "confusion_matrix": [
+      [
+        29083,
+        486
+      ],
+      [
+        1507,
+        46193
+      ]
+    ]
+  },
+  {
+    "tag": "redundant23",
+    "seed": 17,
+    "condition": "uniform_quarter_2",
+    "retained_point_group": "N1",
+    "samples": 1615,
+    "accuracy": 0.8798761609907121,
+    "macro_f1": 0.8704795369987599,
+    "per_class_f1": [
+      0.8355932203389831,
+      0.9053658536585366
+    ],
+    "recall": [
+      0.986,
+      0.8322869955156951
+    ],
+    "confusion_matrix": [
+      [
+        493,
+        7
+      ],
+      [
+        187,
+        928
+      ]
+    ]
+  },
+  {
+    "tag": "redundant23",
+    "seed": 17,
+    "condition": "uniform_quarter_2",
+    "retained_point_group": "N2",
+    "samples": 1566,
+    "accuracy": 0.9169859514687101,
+    "macro_f1": 0.9071367577509196,
+    "per_class_f1": [
+      0.8768939393939394,
+      0.9373795761078998
+    ],
+    "recall": [
+      0.9686192468619247,
+      0.8943014705882353
+    ],
+    "confusion_matrix": [
+      [
+        463,
+        15
+      ],
+      [
+        115,
+        973
+      ]
+    ]
+  },
+  {
+    "tag": "redundant23",
+    "seed": 17,
+    "condition": "uniform_quarter_2",
+    "retained_point_group": "Nge3",
+    "samples": 77269,
+    "accuracy": 0.9723821972589266,
+    "macro_f1": 0.9709927752447489,
+    "per_class_f1": [
+      0.9646442890751847,
+      0.977341261414313
+    ],
+    "recall": [
+      0.9845446244377558,
+      0.9648427672955975
+    ],
+    "confusion_matrix": [
+      [
+        29112,
+        457
+      ],
+      [
+        1677,
+        46023
+      ]
+    ]
+  },
+  {
+    "tag": "redundant23",
+    "seed": 37,
+    "condition": "uniform_quarter_2",
+    "retained_point_group": "N1",
+    "samples": 1615,
+    "accuracy": 0.8792569659442725,
+    "macro_f1": 0.8698586576380787,
+    "per_class_f1": [
+      0.8348856900931414,
+      0.9048316251830161
+    ],
+    "recall": [
+      0.986,
+      0.831390134529148
+    ],
+    "confusion_matrix": [
+      [
+        493,
+        7
+      ],
+      [
+        188,
+        927
+      ]
+    ]
+  },
+  {
+    "tag": "redundant23",
+    "seed": 37,
+    "condition": "uniform_quarter_2",
+    "retained_point_group": "N2",
+    "samples": 1566,
+    "accuracy": 0.9240102171136654,
+    "macro_f1": 0.9144704926090965,
+    "per_class_f1": [
+      0.8859060402684564,
+      0.9430349449497367
+    ],
+    "recall": [
+      0.9665271966527197,
+      0.9053308823529411
+    ],
+    "confusion_matrix": [
+      [
+        462,
+        16
+      ],
+      [
+        103,
+        985
+      ]
+    ]
+  },
+  {
+    "tag": "redundant23",
+    "seed": 37,
+    "condition": "uniform_quarter_2",
+    "retained_point_group": "Nge3",
+    "samples": 77269,
+    "accuracy": 0.9750352664069679,
+    "macro_f1": 0.9736991119609151,
+    "per_class_f1": [
+      0.9677710390456619,
+      0.9796271848761684
+    ],
+    "recall": [
+      0.9794717440562751,
+      0.9722851153039832
+    ],
+    "confusion_matrix": [
+      [
+        28962,
+        607
+      ],
+      [
+        1322,
+        46378
+      ]
+    ]
+  },
+  {
+    "tag": "base16",
+    "seed": 7,
+    "condition": "central_half",
+    "retained_point_group": "N2",
+    "samples": 1615,
+    "accuracy": 0.913312693498452,
+    "macro_f1": 0.9047974345413939,
+    "per_class_f1": [
+      0.8763250883392226,
+      0.9332697807435653
+    ],
+    "recall": [
+      0.992,
+      0.8780269058295964
+    ],
+    "confusion_matrix": [
+      [
+        496,
+        4
+      ],
+      [
+        136,
+        979
+      ]
+    ]
+  },
+  {
+    "tag": "base16",
+    "seed": 7,
+    "condition": "central_half",
+    "retained_point_group": "Nge3",
+    "samples": 78835,
+    "accuracy": 0.9669689858565358,
+    "macro_f1": 0.9654940335715042,
+    "per_class_f1": [
+      0.9583599846488423,
+      0.9726280824941661
+    ],
+    "recall": [
+      0.9973042233833661,
+      0.9482864638845617
+    ],
+    "confusion_matrix": [
+      [
+        29966,
+        81
+      ],
+      [
+        2523,
+        46265
+      ]
+    ]
+  },
+  {
+    "tag": "base16",
+    "seed": 17,
+    "condition": "central_half",
+    "retained_point_group": "N2",
+    "samples": 1615,
+    "accuracy": 0.9102167182662538,
+    "macro_f1": 0.9016752678501324,
+    "per_class_f1": [
+      0.8726953467954346,
+      0.9306551889048302
+    ],
+    "recall": [
+      0.994,
+      0.8726457399103139
+    ],
+    "confusion_matrix": [
+      [
+        497,
+        3
+      ],
+      [
+        142,
+        973
+      ]
+    ]
+  },
+  {
+    "tag": "base16",
+    "seed": 17,
+    "condition": "central_half",
+    "retained_point_group": "Nge3",
+    "samples": 78835,
+    "accuracy": 0.9670197247415488,
+    "macro_f1": 0.9655436379101698,
+    "per_class_f1": [
+      0.9584119773505231,
+      0.9726752984698167
+    ],
+    "recall": [
+      0.9970712550337804,
+      0.9485119291629089
+    ],
+    "confusion_matrix": [
+      [
+        29959,
+        88
+      ],
+      [
+        2512,
+        46276
+      ]
+    ]
+  },
+  {
+    "tag": "base16",
+    "seed": 37,
+    "condition": "central_half",
+    "retained_point_group": "N2",
+    "samples": 1615,
+    "accuracy": 0.9207430340557275,
+    "macro_f1": 0.9123779683489147,
+    "per_class_f1": [
+      0.8853046594982079,
+      0.9394512771996215
+    ],
+    "recall": [
+      0.988,
+      0.8905829596412556
+    ],
+    "confusion_matrix": [
+      [
+        494,
+        6
+      ],
+      [
+        122,
+        993
+      ]
+    ]
+  },
+  {
+    "tag": "base16",
+    "seed": 37,
+    "condition": "central_half",
+    "retained_point_group": "Nge3",
+    "samples": 78835,
+    "accuracy": 0.971484746622693,
+    "macro_f1": 0.9701229264855717,
+    "per_class_f1": [
+      0.9637442745629314,
+      0.976501578408212
+    ],
+    "recall": [
+      0.9943754784171465,
+      0.9573870623923916
+    ],
+    "confusion_matrix": [
+      [
+        29878,
+        169
+      ],
+      [
+        2079,
+        46709
+      ]
+    ]
+  },
+  {
+    "tag": "geometry19",
+    "seed": 7,
+    "condition": "central_half",
+    "retained_point_group": "N2",
+    "samples": 1615,
+    "accuracy": 0.913312693498452,
+    "macro_f1": 0.9048746583733861,
+    "per_class_f1": [
+      0.8765432098765432,
+      0.933206106870229
+    ],
+    "recall": [
+      0.994,
+      0.8771300448430494
+    ],
+    "confusion_matrix": [
+      [
+        497,
+        3
+      ],
+      [
+        137,
+        978
+      ]
+    ]
+  },
+  {
+    "tag": "geometry19",
+    "seed": 7,
+    "condition": "central_half",
+    "retained_point_group": "Nge3",
+    "samples": 78835,
+    "accuracy": 0.9667660303164838,
+    "macro_f1": 0.9652884752253081,
+    "per_class_f1": [
+      0.9581268978743807,
+      0.9724500525762355
+    ],
+    "recall": [
+      0.9976037541185476,
+      0.9477740427974092
+    ],
+    "confusion_matrix": [
+      [
+        29975,
+        72
+      ],
+      [
+        2548,
+        46240
+      ]
+    ]
+  },
+  {
+    "tag": "geometry19",
+    "seed": 17,
+    "condition": "central_half",
+    "retained_point_group": "N2",
+    "samples": 1615,
+    "accuracy": 0.9151702786377709,
+    "macro_f1": 0.906799541190302,
+    "per_class_f1": [
+      0.878868258178603,
+      0.9347308242020009
+    ],
+    "recall": [
+      0.994,
+      0.8798206278026905
+    ],
+    "confusion_matrix": [
+      [
+        497,
+        3
+      ],
+      [
+        134,
+        981
+      ]
+    ]
+  },
+  {
+    "tag": "geometry19",
+    "seed": 17,
+    "condition": "central_half",
+    "retained_point_group": "Nge3",
+    "samples": 78835,
+    "accuracy": 0.9706856091837381,
+    "macro_f1": 0.9693197229516616,
+    "per_class_f1": [
+      0.9628462564910532,
+      0.97579318941227
+    ],
+    "recall": [
+      0.9966053183346091,
+      0.9547224727391982
+    ],
+    "confusion_matrix": [
+      [
+        29945,
+        102
+      ],
+      [
+        2209,
+        46579
+      ]
+    ]
+  },
+  {
+    "tag": "geometry19",
+    "seed": 37,
+    "condition": "central_half",
+    "retained_point_group": "N2",
+    "samples": 1615,
+    "accuracy": 0.9188854489164087,
+    "macro_f1": 0.9103622076068301,
+    "per_class_f1": [
+      0.88272157564906,
+      0.9380028395646001
+    ],
+    "recall": [
+      0.986,
+      0.8887892376681614
+    ],
+    "confusion_matrix": [
+      [
+        493,
+        7
+      ],
+      [
+        124,
+        991
+      ]
+    ]
+  },
+  {
+    "tag": "geometry19",
+    "seed": 37,
+    "condition": "central_half",
+    "retained_point_group": "Nge3",
+    "samples": 78835,
+    "accuracy": 0.9754804338174669,
+    "macro_f1": 0.9742549354561905,
+    "per_class_f1": [
+      0.9686379492171656,
+      0.9798719216952153
+    ],
+    "recall": [
+      0.9934768862116018,
+      0.9643969828646388
+    ],
+    "confusion_matrix": [
+      [
+        29851,
+        196
+      ],
+      [
+        1737,
+        47051
+      ]
+    ]
+  },
+  {
+    "tag": "distribution20",
+    "seed": 7,
+    "condition": "central_half",
+    "retained_point_group": "N2",
+    "samples": 1615,
+    "accuracy": 0.9213622291021671,
+    "macro_f1": 0.9130992394356291,
+    "per_class_f1": [
+      0.8863025962399284,
+      0.9398958826313298
+    ],
+    "recall": [
+      0.99,
+      0.8905829596412556
+    ],
+    "confusion_matrix": [
+      [
+        495,
+        5
+      ],
+      [
+        122,
+        993
+      ]
+    ]
+  },
+  {
+    "tag": "distribution20",
+    "seed": 7,
+    "condition": "central_half",
+    "retained_point_group": "Nge3",
+    "samples": 78835,
+    "accuracy": 0.9717511257690112,
+    "macro_f1": 0.9704185978294753,
+    "per_class_f1": [
+      0.9641402186689854,
+      0.9766969769899652
+    ],
+    "recall": [
+      0.9963723499850234,
+      0.9565876854964336
+    ],
+    "confusion_matrix": [
+      [
+        29938,
+        109
+      ],
+      [
+        2118,
+        46670
+      ]
+    ]
+  },
+  {
+    "tag": "distribution20",
+    "seed": 17,
+    "condition": "central_half",
+    "retained_point_group": "N2",
+    "samples": 1615,
+    "accuracy": 0.9151702786377709,
+    "macro_f1": 0.9065695434151491,
+    "per_class_f1": [
+      0.8782222222222222,
+      0.934916864608076
+    ],
+    "recall": [
+      0.988,
+      0.8825112107623319
+    ],
+    "confusion_matrix": [
+      [
+        494,
+        6
+      ],
+      [
+        131,
+        984
+      ]
+    ]
+  },
+  {
+    "tag": "distribution20",
+    "seed": 17,
+    "condition": "central_half",
+    "retained_point_group": "Nge3",
+    "samples": 78835,
+    "accuracy": 0.9725122090442062,
+    "macro_f1": 0.9712197980391706,
+    "per_class_f1": [
+      0.9651209580067279,
+      0.9773186380716132
+    ],
+    "recall": [
+      0.9978034412753353,
+      0.9569361318356973
+    ],
+    "confusion_matrix": [
+      [
+        29981,
+        66
+      ],
+      [
+        2101,
+        46687
+      ]
+    ]
+  },
+  {
+    "tag": "distribution20",
+    "seed": 37,
+    "condition": "central_half",
+    "retained_point_group": "N2",
+    "samples": 1615,
+    "accuracy": 0.9145510835913313,
+    "macro_f1": 0.9061574711908027,
+    "per_class_f1": [
+      0.8780918727915195,
+      0.9342230695900858
+    ],
+    "recall": [
+      0.994,
+      0.8789237668161435
+    ],
+    "confusion_matrix": [
+      [
+        497,
+        3
+      ],
+      [
+        135,
+        980
+      ]
+    ]
+  },
+  {
+    "tag": "distribution20",
+    "seed": 37,
+    "condition": "central_half",
+    "retained_point_group": "Nge3",
+    "samples": 78835,
+    "accuracy": 0.9740977992008626,
+    "macro_f1": 0.9728499644919428,
+    "per_class_f1": [
+      0.9670294184131495,
+      0.9786705105707362
+    ],
+    "recall": [
+      0.9966385995274071,
+      0.9602156267934738
+    ],
+    "confusion_matrix": [
+      [
+        29946,
+        101
+      ],
+      [
+        1941,
+        46847
+      ]
+    ]
+  },
+  {
+    "tag": "combined23",
+    "seed": 7,
+    "condition": "central_half",
+    "retained_point_group": "N2",
+    "samples": 1615,
+    "accuracy": 0.9114551083591331,
+    "macro_f1": 0.9028755270047206,
+    "per_class_f1": [
+      0.8740088105726872,
+      0.9317422434367542
+    ],
+    "recall": [
+      0.992,
+      0.8753363228699551
+    ],
+    "confusion_matrix": [
+      [
+        496,
+        4
+      ],
+      [
+        139,
+        976
+      ]
+    ]
+  },
+  {
+    "tag": "combined23",
+    "seed": 7,
+    "condition": "central_half",
+    "retained_point_group": "Nge3",
+    "samples": 78835,
+    "accuracy": 0.9729054354030571,
+    "macro_f1": 0.971623995395108,
+    "per_class_f1": [
+      0.9655938919493573,
+      0.9776540988408586
+    ],
+    "recall": [
+      0.9975371917329517,
+      0.9577355087316554
+    ],
+    "confusion_matrix": [
+      [
+        29973,
+        74
+      ],
+      [
+        2062,
+        46726
+      ]
+    ]
+  },
+  {
+    "tag": "combined23",
+    "seed": 17,
+    "condition": "central_half",
+    "retained_point_group": "N2",
+    "samples": 1615,
+    "accuracy": 0.9095975232198142,
+    "macro_f1": 0.9009575351073804,
+    "per_class_f1": [
+      0.8717047451669596,
+      0.9302103250478011
+    ],
+    "recall": [
+      0.992,
+      0.8726457399103139
+    ],
+    "confusion_matrix": [
+      [
+        496,
+        4
+      ],
+      [
+        142,
+        973
+      ]
+    ]
+  },
+  {
+    "tag": "combined23",
+    "seed": 17,
+    "condition": "central_half",
+    "retained_point_group": "Nge3",
+    "samples": 78835,
+    "accuracy": 0.9740724297583561,
+    "macro_f1": 0.9728267786795203,
+    "per_class_f1": [
+      0.9670088449867648,
+      0.9786447123722758
+    ],
+    "recall": [
+      0.9969714114553866,
+      0.9599696646716406
+    ],
+    "confusion_matrix": [
+      [
+        29956,
+        91
+      ],
+      [
+        1953,
+        46835
+      ]
+    ]
+  },
+  {
+    "tag": "combined23",
+    "seed": 37,
+    "condition": "central_half",
+    "retained_point_group": "N2",
+    "samples": 1615,
+    "accuracy": 0.9188854489164087,
+    "macro_f1": 0.9106613882290842,
+    "per_class_f1": [
+      0.8835555555555555,
+      0.9377672209026128
+    ],
+    "recall": [
+      0.994,
+      0.885201793721973
+    ],
+    "confusion_matrix": [
+      [
+        497,
+        3
+      ],
+      [
+        128,
+        987
+      ]
+    ]
+  },
+  {
+    "tag": "combined23",
+    "seed": 37,
+    "condition": "central_half",
+    "retained_point_group": "Nge3",
+    "samples": 78835,
+    "accuracy": 0.9758609754550643,
+    "macro_f1": 0.9746697604038932,
+    "per_class_f1": [
+      0.9691766954437228,
+      0.9801628253640637
+    ],
+    "recall": [
+      0.9957067261290644,
+      0.963638599655653
+    ],
+    "confusion_matrix": [
+      [
+        29918,
+        129
+      ],
+      [
+        1774,
+        47014
+      ]
+    ]
+  },
+  {
+    "tag": "redundant23",
+    "seed": 7,
+    "condition": "central_half",
+    "retained_point_group": "N2",
+    "samples": 1615,
+    "accuracy": 0.9182662538699691,
+    "macro_f1": 0.9100906937668279,
+    "per_class_f1": [
+      0.8829787234042553,
+      0.9372026641294006
+    ],
+    "recall": [
+      0.996,
+      0.8834080717488789
+    ],
+    "confusion_matrix": [
+      [
+        498,
+        2
+      ],
+      [
+        130,
+        985
+      ]
+    ]
+  },
+  {
+    "tag": "redundant23",
+    "seed": 7,
+    "condition": "central_half",
+    "retained_point_group": "Nge3",
+    "samples": 78835,
+    "accuracy": 0.9676539608042113,
+    "macro_f1": 0.9661865337035542,
+    "per_class_f1": [
+      0.9591424726014228,
+      0.9732305948056856
+    ],
+    "recall": [
+      0.9961393816354378,
+      0.9501106829548249
+    ],
+    "confusion_matrix": [
+      [
+        29931,
+        116
+      ],
+      [
+        2434,
+        46354
+      ]
+    ]
+  },
+  {
+    "tag": "redundant23",
+    "seed": 17,
+    "condition": "central_half",
+    "retained_point_group": "N2",
+    "samples": 1615,
+    "accuracy": 0.9139318885448916,
+    "macro_f1": 0.9054389505507443,
+    "per_class_f1": [
+      0.8770999115826702,
+      0.9337779895188185
+    ],
+    "recall": [
+      0.992,
+      0.8789237668161435
+    ],
+    "confusion_matrix": [
+      [
+        496,
+        4
+      ],
+      [
+        135,
+        980
+      ]
+    ]
+  },
+  {
+    "tag": "redundant23",
+    "seed": 17,
+    "condition": "central_half",
+    "retained_point_group": "Nge3",
+    "samples": 78835,
+    "accuracy": 0.9666011289401916,
+    "macro_f1": 0.9651107062332112,
+    "per_class_f1": [
+      0.95789961785069,
+      0.9723217946157323
+    ],
+    "recall": [
+      0.9969048490697907,
+      0.947938017545298
+    ],
+    "confusion_matrix": [
+      [
+        29954,
+        93
+      ],
+      [
+        2540,
+        46248
+      ]
+    ]
+  },
+  {
+    "tag": "redundant23",
+    "seed": 37,
+    "condition": "central_half",
+    "retained_point_group": "N2",
+    "samples": 1615,
+    "accuracy": 0.9195046439628483,
+    "macro_f1": 0.9111585985104942,
+    "per_class_f1": [
+      0.8839285714285714,
+      0.9383886255924171
+    ],
+    "recall": [
+      0.99,
+      0.8878923766816144
+    ],
+    "confusion_matrix": [
+      [
+        495,
+        5
+      ],
+      [
+        125,
+        990
+      ]
+    ]
+  },
+  {
+    "tag": "redundant23",
+    "seed": 37,
+    "condition": "central_half",
+    "retained_point_group": "Nge3",
+    "samples": 78835,
+    "accuracy": 0.9702543286611277,
+    "macro_f1": 0.9688554068171706,
+    "per_class_f1": [
+      0.9622547362660357,
+      0.9754560773683054
+    ],
+    "recall": [
+      0.9948081339235199,
+      0.9551324096089202
+    ],
+    "confusion_matrix": [
+      [
+        29891,
+        156
+      ],
+      [
+        2189,
+        46599
+      ]
+    ]
+  },
+  {
+    "tag": "base16",
+    "seed": 7,
+    "condition": "xy_fraction6",
+    "retained_point_group": "Nge3",
+    "samples": 80450,
+    "accuracy": 0.9822125543816035,
+    "macro_f1": 0.981207266191515,
+    "per_class_f1": [
+      0.976860760312404,
+      0.985553772070626
+    ],
+    "recall": [
+      0.9888368743248109,
+      0.9781576257940404
+    ],
+    "confusion_matrix": [
+      [
+        30206,
+        341
+      ],
+      [
+        1090,
+        48813
+      ]
+    ]
+  },
+  {
+    "tag": "base16",
+    "seed": 17,
+    "condition": "xy_fraction6",
+    "retained_point_group": "Nge3",
+    "samples": 80450,
+    "accuracy": 0.9814667495338719,
+    "macro_f1": 0.98042667064233,
+    "per_class_f1": [
+      0.9759147080203537,
+      0.9849386332643063
+    ],
+    "recall": [
+      0.9888696107637411,
+      0.9769352543935235
+    ],
+    "confusion_matrix": [
+      [
+        30207,
+        340
+      ],
+      [
+        1151,
+        48752
+      ]
+    ]
+  },
+  {
+    "tag": "base16",
+    "seed": 37,
+    "condition": "xy_fraction6",
+    "retained_point_group": "Nge3",
+    "samples": 80450,
+    "accuracy": 0.9836171535114978,
+    "macro_f1": 0.9826597134618286,
+    "per_class_f1": [
+      0.978585123322393,
+      0.9867343036012641
+    ],
+    "recall": [
+      0.985825121943235,
+      0.9822655952547943
+    ],
+    "confusion_matrix": [
+      [
+        30114,
+        433
+      ],
+      [
+        885,
+        49018
+      ]
+    ]
+  },
+  {
+    "tag": "geometry19",
+    "seed": 7,
+    "condition": "xy_fraction6",
+    "retained_point_group": "Nge3",
+    "samples": 80450,
+    "accuracy": 0.9825854568054693,
+    "macro_f1": 0.9816214639604866,
+    "per_class_f1": [
+      0.9774123337363966,
+      0.9858305941845765
+    ],
+    "recall": [
+      0.9923069368514092,
+      0.9766346712622488
+    ],
+    "confusion_matrix": [
+      [
+        30312,
+        235
+      ],
+      [
+        1166,
+        48737
+      ]
+    ]
+  },
+  {
+    "tag": "geometry19",
+    "seed": 17,
+    "condition": "xy_fraction6",
+    "retained_point_group": "Nge3",
+    "samples": 80450,
+    "accuracy": 0.9827346177750156,
+    "macro_f1": 0.9817486093468586,
+    "per_class_f1": [
+      0.9775064371427183,
+      0.985990781550999
+    ],
+    "recall": [
+      0.9880184633515566,
+      0.9795002304470674
+    ],
+    "confusion_matrix": [
+      [
+        30181,
+        366
+      ],
+      [
+        1023,
+        48880
+      ]
+    ]
+  },
+  {
+    "tag": "geometry19",
+    "seed": 37,
+    "condition": "xy_fraction6",
+    "retained_point_group": "Nge3",
+    "samples": 80450,
+    "accuracy": 0.9830577998756992,
+    "macro_f1": 0.9820301194547786,
+    "per_class_f1": [
+      0.9777327604515528,
+      0.9863274784580044
+    ],
+    "recall": [
+      0.9796051985465021,
+      0.9851712321904494
+    ],
+    "confusion_matrix": [
+      [
+        29924,
+        623
+      ],
+      [
+        740,
+        49163
+      ]
+    ]
+  },
+  {
+    "tag": "distribution20",
+    "seed": 7,
+    "condition": "xy_fraction6",
+    "retained_point_group": "Nge3",
+    "samples": 80450,
+    "accuracy": 0.9853697949036668,
+    "macro_f1": 0.9845308738796743,
+    "per_class_f1": [
+      0.9809284614761403,
+      0.9881332862832082
+    ],
+    "recall": [
+      0.9908992699774118,
+      0.981985050998938
+    ],
+    "confusion_matrix": [
+      [
+        30269,
+        278
+      ],
+      [
+        899,
+        49004
+      ]
+    ]
+  },
+  {
+    "tag": "distribution20",
+    "seed": 17,
+    "condition": "xy_fraction6",
+    "retained_point_group": "Nge3",
+    "samples": 80450,
+    "accuracy": 0.9852082038533251,
+    "macro_f1": 0.984369844624623,
+    "per_class_f1": [
+      0.9807499433821865,
+      0.9879897458670596
+    ],
+    "recall": [
+      0.9923724097292697,
+      0.9808227962246758
+    ],
+    "confusion_matrix": [
+      [
+        30314,
+        233
+      ],
+      [
+        957,
+        48946
+      ]
+    ]
+  },
+  {
+    "tag": "distribution20",
+    "seed": 37,
+    "condition": "xy_fraction6",
+    "retained_point_group": "Nge3",
+    "samples": 80450,
+    "accuracy": 0.9870229956494717,
+    "macro_f1": 0.9862715438254843,
+    "per_class_f1": [
+      0.9830596482118518,
+      0.9894834394391168
+    ],
+    "recall": [
+      0.9916522080728059,
+      0.9841893272949522
+    ],
+    "confusion_matrix": [
+      [
+        30292,
+        255
+      ],
+      [
+        789,
+        49114
+      ]
+    ]
+  },
+  {
+    "tag": "combined23",
+    "seed": 7,
+    "condition": "xy_fraction6",
+    "retained_point_group": "Nge3",
+    "samples": 80450,
+    "accuracy": 0.98544437538844,
+    "macro_f1": 0.9846323490220501,
+    "per_class_f1": [
+      0.9810997950191261,
+      0.988164903024974
+    ],
+    "recall": [
+      0.9949585884047534,
+      0.9796204636995772
+    ],
+    "confusion_matrix": [
+      [
+        30393,
+        154
+      ],
+      [
+        1017,
+        48886
+      ]
+    ]
+  },
+  {
+    "tag": "combined23",
+    "seed": 17,
+    "condition": "xy_fraction6",
+    "retained_point_group": "Nge3",
+    "samples": 80450,
+    "accuracy": 0.9852827843380982,
+    "macro_f1": 0.9844505431319985,
+    "per_class_f1": [
+      0.9808531970632944,
+      0.9880478892007026
+    ],
+    "recall": [
+      0.9927979834353619,
+      0.9806825240967477
+    ],
+    "confusion_matrix": [
+      [
+        30327,
+        220
+      ],
+      [
+        964,
+        48939
+      ]
+    ]
+  },
+  {
+    "tag": "combined23",
+    "seed": 37,
+    "condition": "xy_fraction6",
+    "retained_point_group": "Nge3",
+    "samples": 80450,
+    "accuracy": 0.9865257924176507,
+    "macro_f1": 0.9857393956728597,
+    "per_class_f1": [
+      0.9823905909873615,
+      0.989088200358358
+    ],
+    "recall": [
+      0.9898517039316463,
+      0.9844899104262269
+    ],
+    "confusion_matrix": [
+      [
+        30237,
+        310
+      ],
+      [
+        774,
+        49129
+      ]
+    ]
+  },
+  {
+    "tag": "redundant23",
+    "seed": 7,
+    "condition": "xy_fraction6",
+    "retained_point_group": "Nge3",
+    "samples": 80450,
+    "accuracy": 0.982436295835923,
+    "macro_f1": 0.9814377809932662,
+    "per_class_f1": [
+      0.9771325921250668,
+      0.9857429698614657
+    ],
+    "recall": [
+      0.988280354862998,
+      0.9788589864336813
+    ],
+    "confusion_matrix": [
+      [
+        30189,
+        358
+      ],
+      [
+        1055,
+        48848
+      ]
+    ]
+  },
+  {
+    "tag": "redundant23",
+    "seed": 17,
+    "condition": "xy_fraction6",
+    "retained_point_group": "Nge3",
+    "samples": 80450,
+    "accuracy": 0.9816159105034182,
+    "macro_f1": 0.9805804381893366,
+    "per_class_f1": [
+      0.9760961970487935,
+      0.9850646793298797
+    ],
+    "recall": [
+      0.9885422463744394,
+      0.9773761096527263
+    ],
+    "confusion_matrix": [
+      [
+        30197,
+        350
+      ],
+      [
+        1129,
+        48774
+      ]
+    ]
+  },
+  {
+    "tag": "redundant23",
+    "seed": 37,
+    "condition": "xy_fraction6",
+    "retained_point_group": "Nge3",
+    "samples": 80450,
+    "accuracy": 0.9835922933499067,
+    "macro_f1": 0.9826445298375284,
+    "per_class_f1": [
+      0.9785888077858881,
+      0.9867002518891688
+    ],
+    "recall": [
+      0.9874946803286738,
+      0.9812035348576238
+    ],
+    "confusion_matrix": [
+      [
+        30165,
+        382
+      ],
+      [
+        938,
+        48965
+      ]
+    ]
+  },
+  {
+    "tag": "base16",
+    "seed": 7,
+    "condition": "xy_fraction4",
+    "retained_point_group": "Nge3",
+    "samples": 80450,
+    "accuracy": 0.982224984462399,
+    "macro_f1": 0.9812209690956544,
+    "per_class_f1": [
+      0.9768787996378218,
+      0.9855631385534871
+    ],
+    "recall": [
+      0.9889350836416014,
+      0.9781175480432038
+    ],
+    "confusion_matrix": [
+      [
+        30209,
+        338
+      ],
+      [
+        1092,
+        48811
+      ]
+    ]
+  },
+  {
+    "tag": "base16",
+    "seed": 17,
+    "condition": "xy_fraction4",
+    "retained_point_group": "Nge3",
+    "samples": 80450,
+    "accuracy": 0.9814045991298943,
+    "macro_f1": 0.9803602001677998,
+    "per_class_f1": [
+      0.9758312061779056,
+      0.9848891941576938
+    ],
+    "recall": [
+      0.98867319213016,
+      0.9769552932689417
+    ],
+    "confusion_matrix": [
+      [
+        30201,
+        346
+      ],
+      [
+        1150,
+        48753
+      ]
+    ]
+  },
+  {
+    "tag": "base16",
+    "seed": 37,
+    "condition": "xy_fraction4",
+    "retained_point_group": "Nge3",
+    "samples": 80450,
+    "accuracy": 0.9835798632691113,
+    "macro_f1": 0.9826199215092426,
+    "per_class_f1": [
+      0.9785353330191898,
+      0.9867045099992955
+    ],
+    "recall": [
+      0.9857269126264445,
+      0.9822655952547943
+    ],
+    "confusion_matrix": [
+      [
+        30111,
+        436
+      ],
+      [
+        885,
+        49018
+      ]
+    ]
+  },
+  {
+    "tag": "geometry19",
+    "seed": 7,
+    "condition": "xy_fraction4",
+    "retained_point_group": "Nge3",
+    "samples": 80450,
+    "accuracy": 0.9823865755127408,
+    "macro_f1": 0.9814104561678241,
+    "per_class_f1": [
+      0.977150689349351,
+      0.9856702229862973
+    ],
+    "recall": [
+      0.991881363145317,
+      0.9765745546359939
+    ],
+    "confusion_matrix": [
+      [
+        30299,
+        248
+      ],
+      [
+        1169,
+        48734
+      ]
+    ]
+  },
+  {
+    "tag": "geometry19",
+    "seed": 17,
+    "condition": "xy_fraction4",
+    "retained_point_group": "Nge3",
+    "samples": 80450,
+    "accuracy": 0.9826848974518334,
+    "macro_f1": 0.9816958259220516,
+    "per_class_f1": [
+      0.9774409302174935,
+      0.9859507216266099
+    ],
+    "recall": [
+      0.9879202540347661,
+      0.979480191571649
+    ],
+    "confusion_matrix": [
+      [
+        30178,
+        369
+      ],
+      [
+        1024,
+        48879
+      ]
+    ]
+  },
+  {
+    "tag": "geometry19",
+    "seed": 37,
+    "condition": "xy_fraction4",
+    "retained_point_group": "Nge3",
+    "samples": 80450,
+    "accuracy": 0.9828837787445618,
+    "macro_f1": 0.9818469157395604,
+    "per_class_f1": [
+      0.9775084527056825,
+      0.9861853787734383
+    ],
+    "recall": [
+      0.979572462107572,
+      0.9849107268100115
+    ],
+    "confusion_matrix": [
+      [
+        29923,
+        624
+      ],
+      [
+        753,
+        49150
+      ]
+    ]
+  },
+  {
+    "tag": "distribution20",
+    "seed": 7,
+    "condition": "xy_fraction4",
+    "retained_point_group": "Nge3",
+    "samples": 80450,
+    "accuracy": 0.9854692355500311,
+    "macro_f1": 0.9846354522223733,
+    "per_class_f1": [
+      0.9810562478730818,
+      0.9882146565716647
+    ],
+    "recall": [
+      0.990932006416342,
+      0.9821253231268661
+    ],
+    "confusion_matrix": [
+      [
+        30270,
+        277
+      ],
+      [
+        892,
+        49011
+      ]
+    ]
+  },
+  {
+    "tag": "distribution20",
+    "seed": 17,
+    "condition": "xy_fraction4",
+    "retained_point_group": "Nge3",
+    "samples": 80450,
+    "accuracy": 0.9852206339341206,
+    "macro_f1": 0.9843830742177317,
+    "per_class_f1": [
+      0.9807664310325305,
+      0.9879997174029329
+    ],
+    "recall": [
+      0.9924051461681999,
+      0.9808227962246758
+    ],
+    "confusion_matrix": [
+      [
+        30315,
+        232
+      ],
+      [
+        957,
+        48946
+      ]
+    ]
+  },
+  {
+    "tag": "distribution20",
+    "seed": 37,
+    "condition": "xy_fraction4",
+    "retained_point_group": "Nge3",
+    "samples": 80450,
+    "accuracy": 0.9870602858918583,
+    "macro_f1": 0.986311077638671,
+    "per_class_f1": [
+      0.9831086014700872,
+      0.9895135538072549
+    ],
+    "recall": [
+      0.9917176809506661,
+      0.9842093661703705
+    ],
+    "confusion_matrix": [
+      [
+        30294,
+        253
+      ],
+      [
+        788,
+        49115
+      ]
+    ]
+  },
+  {
+    "tag": "combined23",
+    "seed": 7,
+    "condition": "xy_fraction4",
+    "retained_point_group": "Nge3",
+    "samples": 80450,
+    "accuracy": 0.985419515226849,
+    "macro_f1": 0.9846053587499869,
+    "per_class_f1": [
+      0.9810650696540703,
+      0.9881456478459035
+    ],
+    "recall": [
+      0.9947949062101025,
+      0.9796805803258322
+    ],
+    "confusion_matrix": [
+      [
+        30388,
+        159
+      ],
+      [
+        1014,
+        48889
+      ]
+    ]
+  },
+  {
+    "tag": "combined23",
+    "seed": 17,
+    "condition": "xy_fraction4",
+    "retained_point_group": "Nge3",
+    "samples": 80450,
+    "accuracy": 0.9853573648228714,
+    "macro_f1": 0.9845300929289542,
+    "per_class_f1": [
+      0.9809526889370371,
+      0.9881074969208714
+    ],
+    "recall": [
+      0.9930271385078732,
+      0.9806624852213294
+    ],
+    "confusion_matrix": [
+      [
+        30334,
+        213
+      ],
+      [
+        965,
+        48938
+      ]
+    ]
+  },
+  {
+    "tag": "combined23",
+    "seed": 37,
+    "condition": "xy_fraction4",
+    "retained_point_group": "Nge3",
+    "samples": 80450,
+    "accuracy": 0.9865382224984462,
+    "macro_f1": 0.9857533432435687,
+    "per_class_f1": [
+      0.9824094076372083,
+      0.989097278849929
+    ],
+    "recall": [
+      0.9900153861262971,
+      0.9844097549245536
+    ],
+    "confusion_matrix": [
+      [
+        30242,
+        305
+      ],
+      [
+        778,
+        49125
+      ]
+    ]
+  },
+  {
+    "tag": "redundant23",
+    "seed": 7,
+    "condition": "xy_fraction4",
+    "retained_point_group": "Nge3",
+    "samples": 80450,
+    "accuracy": 0.9823244251087632,
+    "macro_f1": 0.9813192087668972,
+    "per_class_f1": [
+      0.9769858224898038,
+      0.9856525950439906
+    ],
+    "recall": [
+      0.9880839362294169,
+      0.9787988698074264
+    ],
+    "confusion_matrix": [
+      [
+        30183,
+        364
+      ],
+      [
+        1058,
+        48845
+      ]
+    ]
+  },
+  {
+    "tag": "redundant23",
+    "seed": 17,
+    "condition": "xy_fraction4",
+    "retained_point_group": "Nge3",
+    "samples": 80450,
+    "accuracy": 0.9815537600994406,
+    "macro_f1": 0.9805151416358797,
+    "per_class_f1": [
+      0.9760165492274873,
+      0.9850137340442721
+    ],
+    "recall": [
+      0.9885095099355092,
+      0.9772959541510531
+    ],
+    "confusion_matrix": [
+      [
+        30196,
+        351
+      ],
+      [
+        1133,
+        48770
+      ]
+    ]
+  },
+  {
+    "tag": "redundant23",
+    "seed": 37,
+    "condition": "xy_fraction4",
+    "retained_point_group": "Nge3",
+    "samples": 80450,
+    "accuracy": 0.9836420136730889,
+    "macro_f1": 0.9826973348109542,
+    "per_class_f1": [
+      0.978654382663985,
+      0.9867402869579236
+    ],
+    "recall": [
+      0.9875928896454643,
+      0.9812235737330421
+    ],
+    "confusion_matrix": [
+      [
+        30168,
+        379
+      ],
+      [
+        937,
+        48966
+      ]
+    ]
+  },
+  {
+    "tag": "base16",
+    "seed": 7,
+    "condition": "kept_single",
+    "retained_point_group": "Nge3",
+    "samples": 80450,
+    "accuracy": 0.9675574891236793,
+    "macro_f1": 0.9659040746786614,
+    "per_class_f1": [
+      0.9583957662511556,
+      0.9734123831061671
+    ],
+    "recall": [
+      0.984122827118866,
+      0.957417389736088
+    ],
+    "confusion_matrix": [
+      [
+        30062,
+        485
+      ],
+      [
+        2125,
+        47778
+      ]
+    ]
+  },
+  {
+    "tag": "base16",
+    "seed": 17,
+    "condition": "kept_single",
+    "retained_point_group": "Nge3",
+    "samples": 80450,
+    "accuracy": 0.9667992541951522,
+    "macro_f1": 0.9651614960746182,
+    "per_class_f1": [
+      0.9576078848381926,
+      0.9727151073110437
+    ],
+    "recall": [
+      0.9875928896454643,
+      0.95407089754123
+    ],
+    "confusion_matrix": [
+      [
+        30168,
+        379
+      ],
+      [
+        2292,
+        47611
+      ]
+    ]
+  },
+  {
+    "tag": "base16",
+    "seed": 37,
+    "condition": "kept_single",
+    "retained_point_group": "Nge3",
+    "samples": 80450,
+    "accuracy": 0.9690739589807333,
+    "macro_f1": 0.9674150847344056,
+    "per_class_f1": [
+      0.9600629233683264,
+      0.9747672461004848
+    ],
+    "recall": [
+      0.9789832062068288,
+      0.963008235977797
+    ],
+    "confusion_matrix": [
+      [
+        29905,
+        642
+      ],
+      [
+        1846,
+        48057
+      ]
+    ]
+  },
+  {
+    "tag": "geometry19",
+    "seed": 7,
+    "condition": "kept_single",
+    "retained_point_group": "Nge3",
+    "samples": 80450,
+    "accuracy": 0.964164077066501,
+    "macro_f1": 0.9623728444115818,
+    "per_class_f1": [
+      0.9541631556354039,
+      0.9705825331877596
+    ],
+    "recall": [
+      0.9823223229777065,
+      0.9530489148948961
+    ],
+    "confusion_matrix": [
+      [
+        30007,
+        540
+      ],
+      [
+        2343,
+        47560
+      ]
+    ]
+  },
+  {
+    "tag": "geometry19",
+    "seed": 17,
+    "condition": "kept_single",
+    "retained_point_group": "Nge3",
+    "samples": 80450,
+    "accuracy": 0.9677688004972033,
+    "macro_f1": 0.966157747332373,
+    "per_class_f1": [
+      0.9587738683879994,
+      0.9735416262767467
+    ],
+    "recall": [
+      0.9870691066225816,
+      0.9559545518305512
+    ],
+    "confusion_matrix": [
+      [
+        30152,
+        395
+      ],
+      [
+        2198,
+        47705
+      ]
+    ]
+  },
+  {
+    "tag": "geometry19",
+    "seed": 37,
+    "condition": "kept_single",
+    "retained_point_group": "Nge3",
+    "samples": 80450,
+    "accuracy": 0.9690490988191424,
+    "macro_f1": 0.9673170879500156,
+    "per_class_f1": [
+      0.9597933150331018,
+      0.9748408608669293
+    ],
+    "recall": [
+      0.9729269650047467,
+      0.9666753501793479
+    ],
+    "confusion_matrix": [
+      [
+        29720,
+        827
+      ],
+      [
+        1663,
+        48240
+      ]
+    ]
+  },
+  {
+    "tag": "distribution20",
+    "seed": 7,
+    "condition": "kept_single",
+    "retained_point_group": "Nge3",
+    "samples": 80450,
+    "accuracy": 0.9640397762585456,
+    "macro_f1": 0.9621025726088278,
+    "per_class_f1": [
+      0.9535343152214066,
+      0.970670829996249
+    ],
+    "recall": [
+      0.9717484532032605,
+      0.9593210829008276
+    ],
+    "confusion_matrix": [
+      [
+        29684,
+        863
+      ],
+      [
+        2030,
+        47873
+      ]
+    ]
+  },
+  {
+    "tag": "distribution20",
+    "seed": 17,
+    "condition": "kept_single",
+    "retained_point_group": "Nge3",
+    "samples": 80450,
+    "accuracy": 0.9656681168427594,
+    "macro_f1": 0.9639283599201196,
+    "per_class_f1": [
+      0.956006498677965,
+      0.971850221162274
+    ],
+    "recall": [
+      0.982420532294497,
+      0.9554135021942568
+    ],
+    "confusion_matrix": [
+      [
+        30010,
+        537
+      ],
+      [
+        2225,
+        47678
+      ]
+    ]
+  },
+  {
+    "tag": "distribution20",
+    "seed": 37,
+    "condition": "kept_single",
+    "retained_point_group": "Nge3",
+    "samples": 80450,
+    "accuracy": 0.9674704785581106,
+    "macro_f1": 0.9658140062183569,
+    "per_class_f1": [
+      0.9582888382397475,
+      0.9733391741969661
+    ],
+    "recall": [
+      0.984122827118866,
+      0.9572771176081598
+    ],
+    "confusion_matrix": [
+      [
+        30062,
+        485
+      ],
+      [
+        2132,
+        47771
+      ]
+    ]
+  },
+  {
+    "tag": "combined23",
+    "seed": 7,
+    "condition": "kept_single",
+    "retained_point_group": "Nge3",
+    "samples": 80450,
+    "accuracy": 0.9658172778123058,
+    "macro_f1": 0.964062747578004,
+    "per_class_f1": [
+      0.9561221559179245,
+      0.9720033392380836
+    ],
+    "recall": [
+      0.9808491832258487,
+      0.9566158347193555
+    ],
+    "confusion_matrix": [
+      [
+        29962,
+        585
+      ],
+      [
+        2165,
+        47738
+      ]
+    ]
+  },
+  {
+    "tag": "combined23",
+    "seed": 17,
+    "condition": "kept_single",
+    "retained_point_group": "Nge3",
+    "samples": 80450,
+    "accuracy": 0.9672218769422001,
+    "macro_f1": 0.9654556861272374,
+    "per_class_f1": [
+      0.9576446778778972,
+      0.9732666943765776
+    ],
+    "recall": [
+      0.9759059809473926,
+      0.9619060978297898
+    ],
+    "confusion_matrix": [
+      [
+        29811,
+        736
+      ],
+      [
+        1901,
+        48002
+      ]
+    ]
+  },
+  {
+    "tag": "combined23",
+    "seed": 37,
+    "condition": "kept_single",
+    "retained_point_group": "Nge3",
+    "samples": 80450,
+    "accuracy": 0.9681044126786824,
+    "macro_f1": 0.9664333821138211,
+    "per_class_f1": [
+      0.958944,
+      0.9739227642276422
+    ],
+    "recall": [
+      0.9810128654204996,
+      0.9602027934192333
+    ],
+    "confusion_matrix": [
+      [
+        29967,
+        580
+      ],
+      [
+        1986,
+        47917
+      ]
+    ]
+  },
+  {
+    "tag": "redundant23",
+    "seed": 7,
+    "condition": "kept_single",
+    "retained_point_group": "Nge3",
+    "samples": 80450,
+    "accuracy": 0.969160969546302,
+    "macro_f1": 0.9675609731862993,
+    "per_class_f1": [
+      0.9603566463736158,
+      0.9747652999989829
+    ],
+    "recall": [
+      0.9837627262906341,
+      0.9602228322946517
+    ],
+    "confusion_matrix": [
+      [
+        30051,
+        496
+      ],
+      [
+        1985,
+        47918
+      ]
+    ]
+  },
+  {
+    "tag": "redundant23",
+    "seed": 17,
+    "condition": "kept_single",
+    "retained_point_group": "Nge3",
+    "samples": 80450,
+    "accuracy": 0.9662026103169671,
+    "macro_f1": 0.9645310041020354,
+    "per_class_f1": [
+      0.9568309915059141,
+      0.9722310166981566
+    ],
+    "recall": [
+      0.9864471142829083,
+      0.9538103921607919
+    ],
+    "confusion_matrix": [
+      [
+        30133,
+        414
+      ],
+      [
+        2305,
+        47598
+      ]
+    ]
+  },
+  {
+    "tag": "redundant23",
+    "seed": 37,
+    "condition": "kept_single",
+    "retained_point_group": "Nge3",
+    "samples": 80450,
+    "accuracy": 0.9683157240522063,
+    "macro_f1": 0.9666411290400474,
+    "per_class_f1": [
+      0.9591670004004805,
+      0.9741152576796142
+    ],
+    "recall": [
+      0.9800635086915246,
+      0.9611245816884756
+    ],
+    "confusion_matrix": [
+      [
+        29938,
+        609
+      ],
+      [
+        1940,
+        47963
+      ]
+    ]
+  },
+  {
+    "tag": "base16",
+    "seed": 7,
+    "condition": "sparse_single",
+    "retained_point_group": "N1",
+    "samples": 58612,
+    "accuracy": 0.9509144885006483,
+    "macro_f1": 0.950133082979572,
+    "per_class_f1": [
+      0.9563753809762089,
+      0.9438907849829351
+    ],
+    "recall": [
+      0.9870422535211267,
+      0.9076213337334034
+    ],
+    "confusion_matrix": [
+      [
+        31536,
+        414
+      ],
+      [
+        2463,
+        24199
+      ]
+    ]
+  },
+  {
+    "tag": "base16",
+    "seed": 7,
+    "condition": "sparse_single",
+    "retained_point_group": "N2",
+    "samples": 39122,
+    "accuracy": 0.9610449363529472,
+    "macro_f1": 0.9610439784181263,
+    "per_class_f1": [
+      0.9612371553565978,
+      0.9608508014796547
+    ],
+    "recall": [
+      0.97856033143449,
+      0.9439733494851605
+    ],
+    "confusion_matrix": [
+      [
+        18896,
+        414
+      ],
+      [
+        1110,
+        18702
+      ]
+    ]
+  },
+  {
+    "tag": "base16",
+    "seed": 17,
+    "condition": "sparse_single",
+    "retained_point_group": "N1",
+    "samples": 58612,
+    "accuracy": 0.9527741759366682,
+    "macro_f1": 0.9520399630239674,
+    "per_class_f1": [
+      0.9579740070448196,
+      0.9461059190031152
+    ],
+    "recall": [
+      0.9874178403755869,
+      0.9112594704073212
+    ],
+    "confusion_matrix": [
+      [
+        31548,
+        402
+      ],
+      [
+        2366,
+        24296
+      ]
+    ]
+  },
+  {
+    "tag": "base16",
+    "seed": 17,
+    "condition": "sparse_single",
+    "retained_point_group": "N2",
+    "samples": 39122,
+    "accuracy": 0.9607637646337099,
+    "macro_f1": 0.9607606776214728,
+    "per_class_f1": [
+      0.9611087182345638,
+      0.9604126370083816
+    ],
+    "recall": [
+      0.9822371828068358,
+      0.9398344437714516
+    ],
+    "confusion_matrix": [
+      [
+        18967,
+        343
+      ],
+      [
+        1192,
+        18620
+      ]
+    ]
+  },
+  {
+    "tag": "base16",
+    "seed": 37,
+    "condition": "sparse_single",
+    "retained_point_group": "N1",
+    "samples": 58612,
+    "accuracy": 0.951255715553129,
+    "macro_f1": 0.9504900209946049,
+    "per_class_f1": [
+      0.956647091849896,
+      0.9443329501393137
+    ],
+    "recall": [
+      0.98660406885759,
+      0.9088965568974571
+    ],
+    "confusion_matrix": [
+      [
+        31522,
+        428
+      ],
+      [
+        2429,
+        24233
+      ]
+    ]
+  },
+  {
+    "tag": "base16",
+    "seed": 37,
+    "condition": "sparse_single",
+    "retained_point_group": "N2",
+    "samples": 39122,
+    "accuracy": 0.9612238638106436,
+    "macro_f1": 0.9612234422048433,
+    "per_class_f1": [
+      0.9610955812581745,
+      0.9613513031515121
+    ],
+    "recall": [
+      0.970378042465044,
+      0.9523016353725016
+    ],
+    "confusion_matrix": [
+      [
+        18738,
+        572
+      ],
+      [
+        945,
+        18867
+      ]
+    ]
+  },
+  {
+    "tag": "geometry19",
+    "seed": 7,
+    "condition": "sparse_single",
+    "retained_point_group": "N1",
+    "samples": 58612,
+    "accuracy": 0.9483211629017948,
+    "macro_f1": 0.9474625299754138,
+    "per_class_f1": [
+      0.9541789577187807,
+      0.9407461022320468
+    ],
+    "recall": [
+      0.9871048513302034,
+      0.901845322931513
+    ],
+    "confusion_matrix": [
+      [
+        31538,
+        412
+      ],
+      [
+        2617,
+        24045
+      ]
+    ]
+  },
+  {
+    "tag": "geometry19",
+    "seed": 7,
+    "condition": "sparse_single",
+    "retained_point_group": "N2",
+    "samples": 39122,
+    "accuracy": 0.9499514339757681,
+    "macro_f1": 0.9499478726777097,
+    "per_class_f1": [
+      0.9495256753969891,
+      0.9503700699584305
+    ],
+    "recall": [
+      0.9537545313309166,
+      0.946244700181708
+    ],
+    "confusion_matrix": [
+      [
+        18417,
+        893
+      ],
+      [
+        1065,
+        18747
+      ]
+    ]
+  },
+  {
+    "tag": "geometry19",
+    "seed": 17,
+    "condition": "sparse_single",
+    "retained_point_group": "N1",
+    "samples": 58612,
+    "accuracy": 0.9513239609636251,
+    "macro_f1": 0.9505326752176855,
+    "per_class_f1": [
+      0.9567890950397576,
+      0.9442762553956132
+    ],
+    "recall": [
+      0.9886071987480438,
+      0.9066461630785387
+    ],
+    "confusion_matrix": [
+      [
+        31586,
+        364
+      ],
+      [
+        2489,
+        24173
+      ]
+    ]
+  },
+  {
+    "tag": "geometry19",
+    "seed": 17,
+    "condition": "sparse_single",
+    "retained_point_group": "N2",
+    "samples": 39122,
+    "accuracy": 0.9576197535913297,
+    "macro_f1": 0.9576189152353476,
+    "per_class_f1": [
+      0.9578074104234527,
+      0.9574304200472424
+    ],
+    "recall": [
+      0.9745727602278612,
+      0.9410963052695336
+    ],
+    "confusion_matrix": [
+      [
+        18819,
+        491
+      ],
+      [
+        1167,
+        18645
+      ]
+    ]
+  },
+  {
+    "tag": "geometry19",
+    "seed": 37,
+    "condition": "sparse_single",
+    "retained_point_group": "N1",
+    "samples": 58612,
+    "accuracy": 0.9523647034736914,
+    "macro_f1": 0.9515935175443045,
+    "per_class_f1": [
+      0.9577033782760188,
+      0.9454836568125903
+    ],
+    "recall": [
+      0.9893270735524257,
+      0.908071412497187
+    ],
+    "confusion_matrix": [
+      [
+        31609,
+        341
+      ],
+      [
+        2451,
+        24211
+      ]
+    ]
+  },
+  {
+    "tag": "geometry19",
+    "seed": 37,
+    "condition": "sparse_single",
+    "retained_point_group": "N2",
+    "samples": 39122,
+    "accuracy": 0.9530187618219927,
+    "macro_f1": 0.9530046471040041,
+    "per_class_f1": [
+      0.9521901987306212,
+      0.953819095477387
+    ],
+    "recall": [
+      0.9478508544795443,
+      0.9580557238037553
+    ],
+    "confusion_matrix": [
+      [
+        18303,
+        1007
+      ],
+      [
+        831,
+        18981
+      ]
+    ]
+  },
+  {
+    "tag": "distribution20",
+    "seed": 7,
+    "condition": "sparse_single",
+    "retained_point_group": "N1",
+    "samples": 58612,
+    "accuracy": 0.9511704087900089,
+    "macro_f1": 0.9503984492509716,
+    "per_class_f1": [
+      0.9565863721861537,
+      0.9442105263157895
+    ],
+    "recall": [
+      0.986885758998435,
+      0.9083714650063761
+    ],
+    "confusion_matrix": [
+      [
+        31531,
+        419
+      ],
+      [
+        2443,
+        24219
+      ]
+    ]
+  },
+  {
+    "tag": "distribution20",
+    "seed": 7,
+    "condition": "sparse_single",
+    "retained_point_group": "N2",
+    "samples": 39122,
+    "accuracy": 0.9482899647257298,
+    "macro_f1": 0.9482741067757192,
+    "per_class_f1": [
+      0.9473684210526315,
+      0.9491797924988068
+    ],
+    "recall": [
+      0.9428793371310202,
+      0.9535634968705835
+    ],
+    "confusion_matrix": [
+      [
+        18207,
+        1103
+      ],
+      [
+        920,
+        18892
+      ]
+    ]
+  },
+  {
+    "tag": "distribution20",
+    "seed": 17,
+    "condition": "sparse_single",
+    "retained_point_group": "N1",
+    "samples": 58612,
+    "accuracy": 0.9529618508155326,
+    "macro_f1": 0.9522241919277966,
+    "per_class_f1": [
+      0.9581607102208058,
+      0.9462876736347874
+    ],
+    "recall": [
+      0.988075117370892,
+      0.9108844047708349
+    ],
+    "confusion_matrix": [
+      [
+        31569,
+        381
+      ],
+      [
+        2376,
+        24286
+      ]
+    ]
+  },
+  {
+    "tag": "distribution20",
+    "seed": 17,
+    "condition": "sparse_single",
+    "retained_point_group": "N2",
+    "samples": 39122,
+    "accuracy": 0.9559582843412914,
+    "macro_f1": 0.9559581551679153,
+    "per_class_f1": [
+      0.955882729484061,
+      0.9560335808517696
+    ],
+    "recall": [
+      0.966649404453651,
+      0.9455380577427821
+    ],
+    "confusion_matrix": [
+      [
+        18666,
+        644
+      ],
+      [
+        1079,
+        18733
+      ]
+    ]
+  },
+  {
+    "tag": "distribution20",
+    "seed": 37,
+    "condition": "sparse_single",
+    "retained_point_group": "N1",
+    "samples": 58612,
+    "accuracy": 0.9522623353579471,
+    "macro_f1": 0.9514886426457136,
+    "per_class_f1": [
+      0.9576150513527434,
+      0.9453622339386839
+    ],
+    "recall": [
+      0.9892957746478873,
+      0.9078838796789438
+    ],
+    "confusion_matrix": [
+      [
+        31608,
+        342
+      ],
+      [
+        2456,
+        24206
+      ]
+    ]
+  },
+  {
+    "tag": "distribution20",
+    "seed": 37,
+    "condition": "sparse_single",
+    "retained_point_group": "N2",
+    "samples": 39122,
+    "accuracy": 0.956162772864373,
+    "macro_f1": 0.9561626117534072,
+    "per_class_f1": [
+      0.9560785719773606,
+      0.9562466515294538
+    ],
+    "recall": [
+      0.966649404453651,
+      0.9459418534221684
+    ],
+    "confusion_matrix": [
+      [
+        18666,
+        644
+      ],
+      [
+        1071,
+        18741
+      ]
+    ]
+  },
+  {
+    "tag": "combined23",
+    "seed": 7,
+    "condition": "sparse_single",
+    "retained_point_group": "N1",
+    "samples": 58612,
+    "accuracy": 0.9519211083054665,
+    "macro_f1": 0.9511367414505447,
+    "per_class_f1": [
+      0.9573275992610315,
+      0.9449458836400578
+    ],
+    "recall": [
+      0.989358372456964,
+      0.9070587352786738
+    ],
+    "confusion_matrix": [
+      [
+        31610,
+        340
+      ],
+      [
+        2478,
+        24184
+      ]
+    ]
+  },
+  {
+    "tag": "combined23",
+    "seed": 7,
+    "condition": "sparse_single",
+    "retained_point_group": "N2",
+    "samples": 39122,
+    "accuracy": 0.9477020602218701,
+    "macro_f1": 0.9476983388654721,
+    "per_class_f1": [
+      0.9472571664260673,
+      0.9481395113048768
+    ],
+    "recall": [
+      0.9514759192128431,
+      0.9440238239450838
+    ],
+    "confusion_matrix": [
+      [
+        18373,
+        937
+      ],
+      [
+        1109,
+        18703
+      ]
+    ]
+  },
+  {
+    "tag": "combined23",
+    "seed": 17,
+    "condition": "sparse_single",
+    "retained_point_group": "N1",
+    "samples": 58612,
+    "accuracy": 0.9524158875315635,
+    "macro_f1": 0.9516634090544565,
+    "per_class_f1": [
+      0.9576943496397421,
+      0.9456324684691709
+    ],
+    "recall": [
+      0.9880438184663537,
+      0.9097217012977271
+    ],
+    "confusion_matrix": [
+      [
+        31568,
+        382
+      ],
+      [
+        2407,
+        24255
+      ]
+    ]
+  },
+  {
+    "tag": "combined23",
+    "seed": 17,
+    "condition": "sparse_single",
+    "retained_point_group": "N2",
+    "samples": 39122,
+    "accuracy": 0.9548591585297275,
+    "macro_f1": 0.9548589403941248,
+    "per_class_f1": [
+      0.9547597089865765,
+      0.9549581718016731
+    ],
+    "recall": [
+      0.96504401864319,
+      0.9449323642237029
+    ],
+    "confusion_matrix": [
+      [
+        18635,
+        675
+      ],
+      [
+        1091,
+        18721
+      ]
+    ]
+  },
+  {
+    "tag": "combined23",
+    "seed": 37,
+    "condition": "sparse_single",
+    "retained_point_group": "N1",
+    "samples": 58612,
+    "accuracy": 0.9527912372892923,
+    "macro_f1": 0.9520119730786132,
+    "per_class_f1": [
+      0.9581271469862744,
+      0.945896799170952
+    ],
+    "recall": [
+      0.990829420970266,
+      0.9072087615332683
+    ],
+    "confusion_matrix": [
+      [
+        31657,
+        293
+      ],
+      [
+        2474,
+        24188
+      ]
+    ]
+  },
+  {
+    "tag": "combined23",
+    "seed": 37,
+    "condition": "sparse_single",
+    "retained_point_group": "N2",
+    "samples": 39122,
+    "accuracy": 0.9572618986759368,
+    "macro_f1": 0.9572613972719086,
+    "per_class_f1": [
+      0.9571150097465887,
+      0.9574077847972284
+    ],
+    "recall": [
+      0.9662351113412739,
+      0.9485160508782556
+    ],
+    "confusion_matrix": [
+      [
+        18658,
+        652
+      ],
+      [
+        1020,
+        18792
+      ]
+    ]
+  },
+  {
+    "tag": "redundant23",
+    "seed": 7,
+    "condition": "sparse_single",
+    "retained_point_group": "N1",
+    "samples": 58612,
+    "accuracy": 0.9490377397120043,
+    "macro_f1": 0.9481771680729231,
+    "per_class_f1": [
+      0.9548552860273558,
+      0.9414990501184903
+    ],
+    "recall": [
+      0.9887010954616589,
+      0.9015077638586753
+    ],
+    "confusion_matrix": [
+      [
+        31589,
+        361
+      ],
+      [
+        2626,
+        24036
+      ]
+    ]
+  },
+  {
+    "tag": "redundant23",
+    "seed": 7,
+    "condition": "sparse_single",
+    "retained_point_group": "N2",
+    "samples": 39122,
+    "accuracy": 0.9610449363529472,
+    "macro_f1": 0.9610449359457153,
+    "per_class_f1": [
+      0.9610409530139578,
+      0.9610489188774728
+    ],
+    "recall": [
+      0.9734334541688244,
+      0.9489703210175651
+    ],
+    "confusion_matrix": [
+      [
+        18797,
+        513
+      ],
+      [
+        1011,
+        18801
+      ]
+    ]
+  },
+  {
+    "tag": "redundant23",
+    "seed": 17,
+    "condition": "sparse_single",
+    "retained_point_group": "N1",
+    "samples": 58612,
+    "accuracy": 0.9509144885006483,
+    "macro_f1": 0.9501399915604287,
+    "per_class_f1": [
+      0.9563542030128799,
+      0.9439257801079775
+    ],
+    "recall": [
+      0.9865414710485133,
+      0.9082214387517815
+    ],
+    "confusion_matrix": [
+      [
+        31520,
+        430
+      ],
+      [
+        2447,
+        24215
+      ]
+    ]
+  },
+  {
+    "tag": "redundant23",
+    "seed": 17,
+    "condition": "sparse_single",
+    "retained_point_group": "N2",
+    "samples": 39122,
+    "accuracy": 0.9595368334952201,
+    "macro_f1": 0.9595354950605737,
+    "per_class_f1": [
+      0.9597682161282944,
+      0.9593027739928529
+    ],
+    "recall": [
+      0.9778353184878301,
+      0.9417019987886129
+    ],
+    "confusion_matrix": [
+      [
+        18882,
+        428
+      ],
+      [
+        1155,
+        18657
+      ]
+    ]
+  },
+  {
+    "tag": "redundant23",
+    "seed": 37,
+    "condition": "sparse_single",
+    "retained_point_group": "N1",
+    "samples": 58612,
+    "accuracy": 0.9501808503378147,
+    "macro_f1": 0.9493465886975987,
+    "per_class_f1": [
+      0.9558472192820637,
+      0.9428459581131337
+    ],
+    "recall": [
+      0.989264475743349,
+      0.9033455854774586
+    ],
+    "confusion_matrix": [
+      [
+        31607,
+        343
+      ],
+      [
+        2577,
+        24085
+      ]
+    ]
+  },
+  {
+    "tag": "redundant23",
+    "seed": 37,
+    "condition": "sparse_single",
+    "retained_point_group": "N2",
+    "samples": 39122,
+    "accuracy": 0.9599969326721538,
+    "macro_f1": 0.9599956094566,
+    "per_class_f1": [
+      0.9597655346170656,
+      0.9602256842961344
+    ],
+    "recall": [
+      0.966649404453651,
+      0.9535130224106602
+    ],
+    "confusion_matrix": [
+      [
+        18666,
+        644
+      ],
+      [
+        921,
+        18891
+      ]
+    ]
+  },
+  {
+    "tag": "base16",
+    "seed": 7,
+    "condition": "sparse_context",
+    "retained_point_group": "N1",
+    "samples": 22887,
+    "accuracy": 0.9380871236946738,
+    "macro_f1": 0.9378946861186472,
+    "per_class_f1": [
+      0.9344376069957896,
+      0.9413517652415049
+    ],
+    "recall": [
+      0.986903831118061,
+      0.89861714737258
+    ],
+    "confusion_matrix": [
+      [
+        10098,
+        134
+      ],
+      [
+        1283,
+        11372
+      ]
+    ]
+  },
+  {
+    "tag": "base16",
+    "seed": 7,
+    "condition": "sparse_context",
+    "retained_point_group": "N2",
+    "samples": 6709,
+    "accuracy": 0.941421970487405,
+    "macro_f1": 0.9370397156430041,
+    "per_class_f1": [
+      0.9204292366875886,
+      0.9536501945984196
+    ],
+    "recall": [
+      0.9831314878892734,
+      0.9194905617466455
+    ],
+    "confusion_matrix": [
+      [
+        2273,
+        39
+      ],
+      [
+        354,
+        4043
+      ]
+    ]
+  },
+  {
+    "tag": "base16",
+    "seed": 7,
+    "condition": "sparse_context",
+    "retained_point_group": "Nge3",
+    "samples": 68138,
+    "accuracy": 0.9773694561037893,
+    "macro_f1": 0.9768860404596804,
+    "per_class_f1": [
+      0.9802287414093753,
+      0.9735433395099856
+    ],
+    "recall": [
+      0.9873179047422255,
+      0.9642784311059751
+    ],
+    "confusion_matrix": [
+      [
+        38225,
+        491
+      ],
+      [
+        1051,
+        28371
+      ]
+    ]
+  },
+  {
+    "tag": "base16",
+    "seed": 17,
+    "condition": "sparse_context",
+    "retained_point_group": "N1",
+    "samples": 22887,
+    "accuracy": 0.9418447153405863,
+    "macro_f1": 0.9416380315550208,
+    "per_class_f1": [
+      0.9381649245063879,
+      0.9451111386036538
+    ],
+    "recall": [
+      0.9868060985144644,
+      0.9054919004346108
+    ],
+    "confusion_matrix": [
+      [
+        10097,
+        135
+      ],
+      [
+        1196,
+        11459
+      ]
+    ]
+  },
+  {
+    "tag": "base16",
+    "seed": 17,
+    "condition": "sparse_context",
+    "retained_point_group": "N2",
+    "samples": 6709,
+    "accuracy": 0.9379937397525712,
+    "macro_f1": 0.9335276812389488,
+    "per_class_f1": [
+      0.9162977867203219,
+      0.9507575757575758
+    ],
+    "recall": [
+      0.9848615916955017,
+      0.9133500113713896
+    ],
+    "confusion_matrix": [
+      [
+        2277,
+        35
+      ],
+      [
+        381,
+        4016
+      ]
+    ]
+  },
+  {
+    "tag": "base16",
+    "seed": 17,
+    "condition": "sparse_context",
+    "retained_point_group": "Nge3",
+    "samples": 68138,
+    "accuracy": 0.9780739088320761,
+    "macro_f1": 0.9775969556031117,
+    "per_class_f1": [
+      0.9808657786885245,
+      0.9743281325176988
+    ],
+    "recall": [
+      0.9890742845335262,
+      0.9635986676636531
+    ],
+    "confusion_matrix": [
+      [
+        38293,
+        423
+      ],
+      [
+        1071,
+        28351
+      ]
+    ]
+  },
+  {
+    "tag": "base16",
+    "seed": 37,
+    "condition": "sparse_context",
+    "retained_point_group": "N1",
+    "samples": 22887,
+    "accuracy": 0.9399222265915148,
+    "macro_f1": 0.939720497799386,
+    "per_class_f1": [
+      0.936233362704633,
+      0.943207632894139
+    ],
+    "recall": [
+      0.9865129007036747,
+      0.9022520742789412
+    ],
+    "confusion_matrix": [
+      [
+        10094,
+        138
+      ],
+      [
+        1237,
+        11418
+      ]
+    ]
+  },
+  {
+    "tag": "base16",
+    "seed": 37,
+    "condition": "sparse_context",
+    "retained_point_group": "N2",
+    "samples": 6709,
+    "accuracy": 0.9447011477120286,
+    "macro_f1": 0.9401396707906637,
+    "per_class_f1": [
+      0.9236154004529545,
+      0.9566639411283728
+    ],
+    "recall": [
+      0.9701557093425606,
+      0.9313168069138049
+    ],
+    "confusion_matrix": [
+      [
+        2243,
+        69
+      ],
+      [
+        302,
+        4095
+      ]
+    ]
+  },
+  {
+    "tag": "base16",
+    "seed": 37,
+    "condition": "sparse_context",
+    "retained_point_group": "Nge3",
+    "samples": 68138,
+    "accuracy": 0.9773254278082715,
+    "macro_f1": 0.9769048508511309,
+    "per_class_f1": [
+      0.9800214656097656,
+      0.9737882360924961
+    ],
+    "recall": [
+      0.9787684678169233,
+      0.9754265515600571
+    ],
+    "confusion_matrix": [
+      [
+        37894,
+        822
+      ],
+      [
+        723,
+        28699
+      ]
+    ]
+  },
+  {
+    "tag": "geometry19",
+    "seed": 7,
+    "condition": "sparse_context",
+    "retained_point_group": "N1",
+    "samples": 22887,
+    "accuracy": 0.936951107615677,
+    "macro_f1": 0.9367520408203893,
+    "per_class_f1": [
+      0.9332037217053187,
+      0.9403003599354598
+    ],
+    "recall": [
+      0.9851446442533229,
+      0.8979849861714737
+    ],
+    "confusion_matrix": [
+      [
+        10080,
+        152
+      ],
+      [
+        1291,
+        11364
+      ]
+    ]
+  },
+  {
+    "tag": "geometry19",
+    "seed": 7,
+    "condition": "sparse_context",
+    "retained_point_group": "N2",
+    "samples": 6709,
+    "accuracy": 0.9375465792219406,
+    "macro_f1": 0.9326674179014155,
+    "per_class_f1": [
+      0.9145421170711809,
+      0.95079271873165
+    ],
+    "recall": [
+      0.9697231833910035,
+      0.9206277007050262
+    ],
+    "confusion_matrix": [
+      [
+        2242,
+        70
+      ],
+      [
+        349,
+        4048
+      ]
+    ]
+  },
+  {
+    "tag": "geometry19",
+    "seed": 7,
+    "condition": "sparse_context",
+    "retained_point_group": "Nge3",
+    "samples": 68138,
+    "accuracy": 0.9786316005753031,
+    "macro_f1": 0.9781562059479553,
+    "per_class_f1": [
+      0.9813786929274844,
+      0.9749337189684262
+    ],
+    "recall": [
+      0.9909856390122946,
+      0.9623750934674733
+    ],
+    "confusion_matrix": [
+      [
+        38367,
+        349
+      ],
+      [
+        1107,
+        28315
+      ]
+    ]
+  },
+  {
+    "tag": "geometry19",
+    "seed": 17,
+    "condition": "sparse_context",
+    "retained_point_group": "N1",
+    "samples": 22887,
+    "accuracy": 0.9388299034386333,
+    "macro_f1": 0.9386322151188213,
+    "per_class_f1": [
+      0.9351491569390402,
+      0.9421152732986025
+    ],
+    "recall": [
+      0.9865129007036747,
+      0.900276570525484
+    ],
+    "confusion_matrix": [
+      [
+        10094,
+        138
+      ],
+      [
+        1262,
+        11393
+      ]
+    ]
+  },
+  {
+    "tag": "geometry19",
+    "seed": 17,
+    "condition": "sparse_context",
+    "retained_point_group": "N2",
+    "samples": 6709,
+    "accuracy": 0.9384409002832017,
+    "macro_f1": 0.9339135302439505,
+    "per_class_f1": [
+      0.9166161922067434,
+      0.9512108682811578
+    ],
+    "recall": [
+      0.9818339100346021,
+      0.915624289288151
+    ],
+    "confusion_matrix": [
+      [
+        2270,
+        42
+      ],
+      [
+        371,
+        4026
+      ]
+    ]
+  },
+  {
+    "tag": "geometry19",
+    "seed": 17,
+    "condition": "sparse_context",
+    "retained_point_group": "Nge3",
+    "samples": 68138,
+    "accuracy": 0.9780445566350642,
+    "macro_f1": 0.9775879187340406,
+    "per_class_f1": [
+      0.9807870132538785,
+      0.9743888242142026
+    ],
+    "recall": [
+      0.9862589110445293,
+      0.9672354020800761
+    ],
+    "confusion_matrix": [
+      [
+        38184,
+        532
+      ],
+      [
+        964,
+        28458
+      ]
+    ]
+  },
+  {
+    "tag": "geometry19",
+    "seed": 37,
+    "condition": "sparse_context",
+    "retained_point_group": "N1",
+    "samples": 22887,
+    "accuracy": 0.9407523921877048,
+    "macro_f1": 0.940551940412712,
+    "per_class_f1": [
+      0.9370999165043139,
+      0.94400396432111
+    ],
+    "recall": [
+      0.9871970289288506,
+      0.9032003160806006
+    ],
+    "confusion_matrix": [
+      [
+        10101,
+        131
+      ],
+      [
+        1225,
+        11430
+      ]
+    ]
+  },
+  {
+    "tag": "geometry19",
+    "seed": 37,
+    "condition": "sparse_context",
+    "retained_point_group": "N2",
+    "samples": 6709,
+    "accuracy": 0.9458935757937099,
+    "macro_f1": 0.94097880682948,
+    "per_class_f1": [
+      0.9239472030169704,
+      0.9580104106419896
+    ],
+    "recall": [
+      0.953719723183391,
+      0.9417784853309075
+    ],
+    "confusion_matrix": [
+      [
+        2205,
+        107
+      ],
+      [
+        256,
+        4141
+      ]
+    ]
+  },
+  {
+    "tag": "geometry19",
+    "seed": 37,
+    "condition": "sparse_context",
+    "retained_point_group": "Nge3",
+    "samples": 68138,
+    "accuracy": 0.9744489125011007,
+    "macro_f1": 0.9740063343345524,
+    "per_class_f1": [
+      0.9773981227849251,
+      0.9706145458841798
+    ],
+    "recall": [
+      0.9723111891724352,
+      0.9772619128543267
+    ],
+    "confusion_matrix": [
+      [
+        37644,
+        1072
+      ],
+      [
+        669,
+        28753
+      ]
+    ]
+  },
+  {
+    "tag": "distribution20",
+    "seed": 7,
+    "condition": "sparse_context",
+    "retained_point_group": "N1",
+    "samples": 22887,
+    "accuracy": 0.9394852973303622,
+    "macro_f1": 0.9392827168945156,
+    "per_class_f1": [
+      0.9357755622536518,
+      0.9427898715353794
+    ],
+    "recall": [
+      0.9861219702892885,
+      0.9017779533781114
+    ],
+    "confusion_matrix": [
+      [
+        10090,
+        142
+      ],
+      [
+        1243,
+        11412
+      ]
+    ]
+  },
+  {
+    "tag": "distribution20",
+    "seed": 7,
+    "condition": "sparse_context",
+    "retained_point_group": "N2",
+    "samples": 6709,
+    "accuracy": 0.9436577731405574,
+    "macro_f1": 0.9389282964822727,
+    "per_class_f1": [
+      0.9219330855018587,
+      0.9559235074626866
+    ],
+    "recall": [
+      0.9653979238754326,
+      0.9322265180805095
+    ],
+    "confusion_matrix": [
+      [
+        2232,
+        80
+      ],
+      [
+        298,
+        4099
+      ]
+    ]
+  },
+  {
+    "tag": "distribution20",
+    "seed": 7,
+    "condition": "sparse_context",
+    "retained_point_group": "Nge3",
+    "samples": 68138,
+    "accuracy": 0.9791599401215181,
+    "macro_f1": 0.978741285672452,
+    "per_class_f1": [
+      0.9817245817245818,
+      0.9757579896203223
+    ],
+    "recall": [
+      0.9851224300030995,
+      0.9713139827340086
+    ],
+    "confusion_matrix": [
+      [
+        38140,
+        576
+      ],
+      [
+        844,
+        28578
+      ]
+    ]
+  },
+  {
+    "tag": "distribution20",
+    "seed": 17,
+    "condition": "sparse_context",
+    "retained_point_group": "N1",
+    "samples": 22887,
+    "accuracy": 0.9413204002272032,
+    "macro_f1": 0.9411081486464044,
+    "per_class_f1": [
+      0.9375726305024868,
+      0.944643666790322
+    ],
+    "recall": [
+      0.9856333072713057,
+      0.9054919004346108
+    ],
+    "confusion_matrix": [
+      [
+        10085,
+        147
+      ],
+      [
+        1196,
+        11459
+      ]
+    ]
+  },
+  {
+    "tag": "distribution20",
+    "seed": 17,
+    "condition": "sparse_context",
+    "retained_point_group": "N2",
+    "samples": 6709,
+    "accuracy": 0.9408257564465643,
+    "macro_f1": 0.9363123711992226,
+    "per_class_f1": [
+      0.9193581149705464,
+      0.9532666274278988
+    ],
+    "recall": [
+      0.9788062283737025,
+      0.9208551284967023
+    ],
+    "confusion_matrix": [
+      [
+        2263,
+        49
+      ],
+      [
+        348,
+        4049
+      ]
+    ]
+  },
+  {
+    "tag": "distribution20",
+    "seed": 17,
+    "condition": "sparse_context",
+    "retained_point_group": "Nge3",
+    "samples": 68138,
+    "accuracy": 0.9802606475094661,
+    "macro_f1": 0.9798517363906765,
+    "per_class_f1": [
+      0.9827220759200976,
+      0.9769813968612552
+    ],
+    "recall": [
+      0.9879636326066742,
+      0.970124396709945
+    ],
+    "confusion_matrix": [
+      [
+        38250,
+        466
+      ],
+      [
+        879,
+        28543
+      ]
+    ]
+  },
+  {
+    "tag": "distribution20",
+    "seed": 37,
+    "condition": "sparse_context",
+    "retained_point_group": "N1",
+    "samples": 22887,
+    "accuracy": 0.9404028487787827,
+    "macro_f1": 0.9402060561113124,
+    "per_class_f1": [
+      0.9367757485862612,
+      0.9436363636363636
+    ],
+    "recall": [
+      0.987587959343237,
+      0.9022520742789412
+    ],
+    "confusion_matrix": [
+      [
+        10105,
+        127
+      ],
+      [
+        1237,
+        11418
+      ]
+    ]
+  },
+  {
+    "tag": "distribution20",
+    "seed": 37,
+    "condition": "sparse_context",
+    "retained_point_group": "N2",
+    "samples": 6709,
+    "accuracy": 0.9430615590997168,
+    "macro_f1": 0.9386608973470346,
+    "per_class_f1": [
+      0.9222312703583062,
+      0.955090524335763
+    ],
+    "recall": [
+      0.9796712802768166,
+      0.9238116897884922
+    ],
+    "confusion_matrix": [
+      [
+        2265,
+        47
+      ],
+      [
+        335,
+        4062
+      ]
+    ]
+  },
+  {
+    "tag": "distribution20",
+    "seed": 37,
+    "condition": "sparse_context",
+    "retained_point_group": "Nge3",
+    "samples": 68138,
+    "accuracy": 0.981405383192932,
+    "macro_f1": 0.9810417296198655,
+    "per_class_f1": [
+      0.983667418627135,
+      0.978416040612596
+    ],
+    "recall": [
+      0.9854840376071908,
+      0.9760383386581469
+    ],
+    "confusion_matrix": [
+      [
+        38154,
+        562
+      ],
+      [
+        705,
+        28717
+      ]
+    ]
+  },
+  {
+    "tag": "combined23",
+    "seed": 7,
+    "condition": "sparse_context",
+    "retained_point_group": "N1",
+    "samples": 22887,
+    "accuracy": 0.9390483680692095,
+    "macro_f1": 0.9388595144261564,
+    "per_class_f1": [
+      0.9354614850798056,
+      0.9422575437725071
+    ],
+    "recall": [
+      0.9880766223612197,
+      0.8994073488739629
+    ],
+    "confusion_matrix": [
+      [
+        10110,
+        122
+      ],
+      [
+        1273,
+        11382
+      ]
+    ]
+  },
+  {
+    "tag": "combined23",
+    "seed": 7,
+    "condition": "sparse_context",
+    "retained_point_group": "N2",
+    "samples": 6709,
+    "accuracy": 0.9362050976300492,
+    "macro_f1": 0.931238965483419,
+    "per_class_f1": [
+      0.9127598858540562,
+      0.9497180451127819
+    ],
+    "recall": [
+      0.9684256055363322,
+      0.9192631339549693
+    ],
+    "confusion_matrix": [
+      [
+        2239,
+        73
+      ],
+      [
+        355,
+        4042
+      ]
+    ]
+  },
+  {
+    "tag": "combined23",
+    "seed": 7,
+    "condition": "sparse_context",
+    "retained_point_group": "Nge3",
+    "samples": 68138,
+    "accuracy": 0.9811412134198245,
+    "macro_f1": 0.9807389513913687,
+    "per_class_f1": [
+      0.9835224722703084,
+      0.9779554305124291
+    ],
+    "recall": [
+      0.9905465440644695,
+      0.9687648698253007
+    ],
+    "confusion_matrix": [
+      [
+        38350,
+        366
+      ],
+      [
+        919,
+        28503
+      ]
+    ]
+  },
+  {
+    "tag": "combined23",
+    "seed": 17,
+    "condition": "sparse_context",
+    "retained_point_group": "N1",
+    "samples": 22887,
+    "accuracy": 0.9410582426705116,
+    "macro_f1": 0.9408481459064519,
+    "per_class_f1": [
+      0.9373228639130233,
+      0.9443734278998804
+    ],
+    "recall": [
+      0.9858287724784989,
+      0.9048597392335045
+    ],
+    "confusion_matrix": [
+      [
+        10087,
+        145
+      ],
+      [
+        1204,
+        11451
+      ]
+    ]
+  },
+  {
+    "tag": "combined23",
+    "seed": 17,
+    "condition": "sparse_context",
+    "retained_point_group": "N2",
+    "samples": 6709,
+    "accuracy": 0.9393352213444627,
+    "macro_f1": 0.9346296748190435,
+    "per_class_f1": [
+      0.9170910572418007,
+      0.9521682923962863
+    ],
+    "recall": [
+      0.9736159169550173,
+      0.9213099840800546
+    ],
+    "confusion_matrix": [
+      [
+        2251,
+        61
+      ],
+      [
+        346,
+        4051
+      ]
+    ]
+  },
+  {
+    "tag": "combined23",
+    "seed": 17,
+    "condition": "sparse_context",
+    "retained_point_group": "Nge3",
+    "samples": 68138,
+    "accuracy": 0.9798350406527928,
+    "macro_f1": 0.9794245707011475,
+    "per_class_f1": [
+      0.9823307013708495,
+      0.9765184400314455
+    ],
+    "recall": [
+      0.9865172021903089,
+      0.9710420773570797
+    ],
+    "confusion_matrix": [
+      [
+        38194,
+        522
+      ],
+      [
+        852,
+        28570
+      ]
+    ]
+  },
+  {
+    "tag": "combined23",
+    "seed": 37,
+    "condition": "sparse_context",
+    "retained_point_group": "N1",
+    "samples": 22887,
+    "accuracy": 0.9404902346310132,
+    "macro_f1": 0.9402949298987364,
+    "per_class_f1": [
+      0.9368801557141533,
+      0.9437097040833196
+    ],
+    "recall": [
+      0.9878811571540266,
+      0.9021730541288029
+    ],
+    "confusion_matrix": [
+      [
+        10108,
+        124
+      ],
+      [
+        1238,
+        11417
+      ]
+    ]
+  },
+  {
+    "tag": "combined23",
+    "seed": 37,
+    "condition": "sparse_context",
+    "retained_point_group": "N2",
+    "samples": 6709,
+    "accuracy": 0.9439558801609778,
+    "macro_f1": 0.9393275216686736,
+    "per_class_f1": [
+      0.9225700164744646,
+      0.9560850268628825
+    ],
+    "recall": [
+      0.9688581314878892,
+      0.9308619513304526
+    ],
+    "confusion_matrix": [
+      [
+        2240,
+        72
+      ],
+      [
+        304,
+        4093
+      ]
+    ]
+  },
+  {
+    "tag": "combined23",
+    "seed": 37,
+    "condition": "sparse_context",
+    "retained_point_group": "Nge3",
+    "samples": 68138,
+    "accuracy": 0.9786316005753031,
+    "macro_f1": 0.9782305827459707,
+    "per_class_f1": [
+      0.981185227302096,
+      0.9752759381898455
+    ],
+    "recall": [
+      0.9806023349519578,
+      0.9760383386581469
+    ],
+    "confusion_matrix": [
+      [
+        37965,
+        751
+      ],
+      [
+        705,
+        28717
+      ]
+    ]
+  },
+  {
+    "tag": "redundant23",
+    "seed": 7,
+    "condition": "sparse_context",
+    "retained_point_group": "N1",
+    "samples": 22887,
+    "accuracy": 0.9352470834971818,
+    "macro_f1": 0.9350664885104067,
+    "per_class_f1": [
+      0.9316420664206642,
+      0.9384909106001494
+    ],
+    "recall": [
+      0.9870015637216576,
+      0.8934018174634532
+    ],
+    "confusion_matrix": [
+      [
+        10099,
+        133
+      ],
+      [
+        1349,
+        11306
+      ]
+    ]
+  },
+  {
+    "tag": "redundant23",
+    "seed": 7,
+    "condition": "sparse_context",
+    "retained_point_group": "N2",
+    "samples": 6709,
+    "accuracy": 0.9442539871813981,
+    "macro_f1": 0.9398623497353256,
+    "per_class_f1": [
+      0.9236111111111112,
+      0.95611358835954
+    ],
+    "recall": [
+      0.9779411764705882,
+      0.9265408232886059
+    ],
+    "confusion_matrix": [
+      [
+        2261,
+        51
+      ],
+      [
+        323,
+        4074
+      ]
+    ]
+  },
+  {
+    "tag": "redundant23",
+    "seed": 7,
+    "condition": "sparse_context",
+    "retained_point_group": "Nge3",
+    "samples": 68138,
+    "accuracy": 0.9782500220141478,
+    "macro_f1": 0.9777984167753303,
+    "per_class_f1": [
+      0.9809648581997534,
+      0.9746319753509072
+    ],
+    "recall": [
+      0.9863363983882633,
+      0.9676092719733532
+    ],
+    "confusion_matrix": [
+      [
+        38187,
+        529
+      ],
+      [
+        953,
+        28469
+      ]
+    ]
+  },
+  {
+    "tag": "redundant23",
+    "seed": 17,
+    "condition": "sparse_context",
+    "retained_point_group": "N1",
+    "samples": 22887,
+    "accuracy": 0.9408834709660506,
+    "macro_f1": 0.9406715090887882,
+    "per_class_f1": [
+      0.9371253311027464,
+      0.9442176870748299
+    ],
+    "recall": [
+      0.9854378420641126,
+      0.9048597392335045
+    ],
+    "confusion_matrix": [
+      [
+        10083,
+        149
+      ],
+      [
+        1204,
+        11451
+      ]
+    ]
+  },
+  {
+    "tag": "redundant23",
+    "seed": 17,
+    "condition": "sparse_context",
+    "retained_point_group": "N2",
+    "samples": 6709,
+    "accuracy": 0.9384409002832017,
+    "macro_f1": 0.9338244357384354,
+    "per_class_f1": [
+      0.9163459590844643,
+      0.9513029123924066
+    ],
+    "recall": [
+      0.9783737024221453,
+      0.9174437116215601
+    ],
+    "confusion_matrix": [
+      [
+        2262,
+        50
+      ],
+      [
+        363,
+        4034
+      ]
+    ]
+  },
+  {
+    "tag": "redundant23",
+    "seed": 17,
+    "condition": "sparse_context",
+    "retained_point_group": "Nge3",
+    "samples": 68138,
+    "accuracy": 0.9762100443218175,
+    "macro_f1": 0.9756956266536849,
+    "per_class_f1": [
+      0.9792315281034195,
+      0.9721597252039502
+    ],
+    "recall": [
+      0.9870596135964459,
+      0.961933247229964
+    ],
+    "confusion_matrix": [
+      [
+        38215,
+        501
+      ],
+      [
+        1120,
+        28302
+      ]
+    ]
+  },
+  {
+    "tag": "redundant23",
+    "seed": 37,
+    "condition": "sparse_context",
+    "retained_point_group": "N1",
+    "samples": 22887,
+    "accuracy": 0.9375628085812907,
+    "macro_f1": 0.9373789915752568,
+    "per_class_f1": [
+      0.9339862336582436,
+      0.94077174949227
+    ],
+    "recall": [
+      0.9879788897576232,
+      0.8967996839193995
+    ],
+    "confusion_matrix": [
+      [
+        10109,
+        123
+      ],
+      [
+        1306,
+        11349
+      ]
+    ]
+  },
+  {
+    "tag": "redundant23",
+    "seed": 37,
+    "condition": "sparse_context",
+    "retained_point_group": "N2",
+    "samples": 6709,
+    "accuracy": 0.9473841108958116,
+    "macro_f1": 0.9429827992147088,
+    "per_class_f1": [
+      0.9271413828689371,
+      0.9588242155604806
+    ],
+    "recall": [
+      0.9714532871972318,
+      0.934728223788947
+    ],
+    "confusion_matrix": [
+      [
+        2246,
+        66
+      ],
+      [
+        287,
+        4110
+      ]
+    ]
+  },
+  {
+    "tag": "redundant23",
+    "seed": 37,
+    "condition": "sparse_context",
+    "retained_point_group": "Nge3",
+    "samples": 68138,
+    "accuracy": 0.9778537673544865,
+    "macro_f1": 0.9774269941857323,
+    "per_class_f1": [
+      0.9805307907672856,
+      0.9743231976041791
+    ],
+    "recall": [
+      0.9814805248476082,
+      0.973081367684046
+    ],
+    "confusion_matrix": [
+      [
+        37999,
+        717
+      ],
+      [
+        792,
+        28630
+      ]
+    ]
+  }
+]

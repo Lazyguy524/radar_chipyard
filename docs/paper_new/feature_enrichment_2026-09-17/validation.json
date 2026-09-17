@@ -1,0 +1,306 @@
+{
+  "status": "PASS",
+  "decision": {
+    "conditional": "combined23",
+    "main": "A",
+    "alternative": "B"
+  },
+  "training_trajectories": 15,
+  "prediction_metric_rechecks": 273,
+  "low_point_checks_from_raw_offsets": 90,
+  "decision_rechecks": [
+    {
+      "tag": "geometry19",
+      "gate": "enrichment",
+      "failures": [
+        "sparse_single_f1",
+        "sparse_single_recall0",
+        "minimum_composite_gain",
+        "supported_group_regression"
+      ],
+      "group_failures": 5
+    },
+    {
+      "tag": "distribution20",
+      "gate": "enrichment",
+      "failures": [
+        "sparse_single_recall0",
+        "supported_group_regression"
+      ],
+      "group_failures": 2
+    },
+    {
+      "tag": "combined23",
+      "gate": "enrichment",
+      "failures": [],
+      "group_failures": 0
+    },
+    {
+      "tag": "base16",
+      "gate": "promotion",
+      "failures": [
+        "central_half",
+        "supported_group_regression"
+      ],
+      "group_failures": 1
+    },
+    {
+      "tag": "geometry19",
+      "gate": "promotion",
+      "failures": [
+        "supported_group_regression"
+      ],
+      "group_failures": 11
+    },
+    {
+      "tag": "distribution20",
+      "gate": "promotion",
+      "failures": [
+        "supported_group_regression"
+      ],
+      "group_failures": 10
+    },
+    {
+      "tag": "combined23",
+      "gate": "promotion",
+      "failures": [
+        "supported_group_regression"
+      ],
+      "group_failures": 1
+    },
+    {
+      "tag": "redundant23",
+      "gate": "promotion",
+      "failures": [
+        "central_half",
+        "supported_group_regression"
+      ],
+      "group_failures": 5
+    }
+  ],
+  "integer_bounds": [
+    {
+      "tag": "base16_seed7",
+      "absolute_accumulator_bounds": [
+        53022,
+        223838,
+        199404
+      ],
+      "requant_product_bounds": [
+        93901962,
+        91549742
+      ]
+    },
+    {
+      "tag": "base16_seed17",
+      "absolute_accumulator_bounds": [
+        114476,
+        154394,
+        241105
+      ],
+      "requant_product_bounds": [
+        130731592,
+        77351394
+      ]
+    },
+    {
+      "tag": "base16_seed37",
+      "absolute_accumulator_bounds": [
+        86233,
+        144491,
+        177080
+      ],
+      "requant_product_bounds": [
+        96925892,
+        79614541
+      ]
+    },
+    {
+      "tag": "geometry19_seed7",
+      "absolute_accumulator_bounds": [
+        82109,
+        151078,
+        221549
+      ],
+      "requant_product_bounds": [
+        134083997,
+        71308816
+      ]
+    },
+    {
+      "tag": "geometry19_seed17",
+      "absolute_accumulator_bounds": [
+        89282,
+        156767,
+        262486
+      ],
+      "requant_product_bounds": [
+        104817068,
+        80107937
+      ]
+    },
+    {
+      "tag": "geometry19_seed37",
+      "absolute_accumulator_bounds": [
+        102113,
+        113000,
+        205417
+      ],
+      "requant_product_bounds": [
+        127334911,
+        137521000
+      ]
+    },
+    {
+      "tag": "distribution20_seed7",
+      "absolute_accumulator_bounds": [
+        101030,
+        177981,
+        195619
+      ],
+      "requant_product_bounds": [
+        108708280,
+        93440025
+      ]
+    },
+    {
+      "tag": "distribution20_seed17",
+      "absolute_accumulator_bounds": [
+        82311,
+        170911,
+        225528
+      ],
+      "requant_product_bounds": [
+        103300305,
+        157238120
+      ]
+    },
+    {
+      "tag": "distribution20_seed37",
+      "absolute_accumulator_bounds": [
+        77859,
+        149305,
+        223156
+      ],
+      "requant_product_bounds": [
+        114997743,
+        129298130
+      ]
+    },
+    {
+      "tag": "combined23_seed7",
+      "absolute_accumulator_bounds": [
+        100761,
+        164889,
+        210499
+      ],
+      "requant_product_bounds": [
+        120711678,
+        78157386
+      ]
+    },
+    {
+      "tag": "combined23_seed17",
+      "absolute_accumulator_bounds": [
+        88544,
+        143162,
+        188267
+      ],
+      "requant_product_bounds": [
+        112539424,
+        112095846
+      ]
+    },
+    {
+      "tag": "combined23_seed37",
+      "absolute_accumulator_bounds": [
+        119854,
+        201588,
+        190522
+      ],
+      "requant_product_bounds": [
+        131120276,
+        134862372
+      ]
+    },
+    {
+      "tag": "redundant23_seed7",
+      "absolute_accumulator_bounds": [
+        119125,
+        200342,
+        243445
+      ],
+      "requant_product_bounds": [
+        100422375,
+        109787416
+      ]
+    },
+    {
+      "tag": "redundant23_seed17",
+      "absolute_accumulator_bounds": [
+        110100,
+        216661,
+        262317
+      ],
+      "requant_product_bounds": [
+        95126400,
+        84497790
+      ]
+    },
+    {
+      "tag": "redundant23_seed37",
+      "absolute_accumulator_bounds": [
+        156029,
+        150857,
+        240694
+      ],
+      "requant_product_bounds": [
+        133560824,
+        128831878
+      ]
+    }
+  ],
+  "previous_evidence": [
+    {
+      "package": "mechanism_convergence",
+      "files": 1807,
+      "manifest_sha256": "a754382e717985b3ea383db963f2751b6ea0b06a16cfa9abcd404cff8faf3288"
+    },
+    {
+      "package": "moment_encoding",
+      "files": 470,
+      "manifest_sha256": "10ed75cbe824b67bb130ed236a06195893f559818e1b4ef9ff43d749c287feca"
+    },
+    {
+      "package": "conditional_protection",
+      "files": 292,
+      "manifest_sha256": "f2f3e14f563ea9083d95c178a64cff6d05d5c36fcad5bc54e02d95e862c7752b"
+    },
+    {
+      "package": "representative_rtl",
+      "files": 89,
+      "manifest_sha256": "94b979abf6e5ae8bd2fa79049dac737e5e1880a0de3cbbe7ba5c0043ab132208"
+    },
+    {
+      "package": "software_convergence",
+      "files": 969,
+      "manifest_sha256": "4c13793c18d3d4bf1307fd0d625116083433ab48063246cd621428ebb7f96a2e"
+    },
+    {
+      "package": "feature_ablation",
+      "files": 676,
+      "manifest_sha256": "4aeba932b999a9184cce982a73e9b081de570177a3f835f21639f1372e724629"
+    }
+  ],
+  "runtime": {
+    "preparation_seconds": 382.7479315089877,
+    "training_seconds": 1132.4493002680247,
+    "evaluation_seconds": 70.14765326096676,
+    "package_seconds": 42.00869245699141,
+    "full_finishing_seconds": 133.67566233698744,
+    "output_bytes": 83763054
+  },
+  "original_head_index_unchanged": true,
+  "single_executor_review": true,
+  "scope": "Bounded interpretable enrichment on reused development data; independent generalization and hardware cost remain unverified"
+}

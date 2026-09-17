@@ -51,7 +51,7 @@ def main():
             entries.append((mode+' '+blob+'\t'+str(p.relative_to(ROOT))).encode()+b'\0')
         subprocess.run(['git','update-index','-z','--index-info'],input=b''.join(entries),cwd=ROOT,env=env,check=True)
         tree=git(['write-tree'],env=env,text=True).strip()
-        message='radar thesis: '+('freeze software convergence plan, reconstruction and preflight' if a.phase=='before' else 'archive bounded software convergence results and design reflection')+'\n\nSelective backup branch; original work branch and staged index preserved. Large raw data are separately indexed, not included.\n'
+        message='radar thesis: '+('freeze interpretable feature enrichment plan and preflight' if a.phase=='before' else 'archive interpretable feature enrichment results and design reflection')+'\n\nSelective backup branch; original work branch and staged index preserved. Large raw data are separately indexed, not included.\n'
         commit=git(['commit-tree',tree,'-p',old or '17869b6d5a01f2b7ea78a5c34f646c311027d7cf'],input=message,text=True).strip()
         subprocess.run(['git','update-ref',REF,commit,old or '0'*40],cwd=ROOT,check=True)
     assert git(['rev-parse','HEAD'],text=True).strip()==head and git(['symbolic-ref','HEAD'],text=True).strip()==branch and sha(index)==index_hash
