@@ -1,0 +1,150 @@
+{
+  "status": "PASS",
+  "rows": [
+    {
+      "pool": "kept",
+      "slots": [
+        3,
+        5
+      ],
+      "rows": 357780,
+      "different": 1934,
+      "different_fraction": 0.005405556487226787,
+      "max_abs_difference": 1,
+      "source_sha256": "7ada058c9d26ef6a903bfee6658a939a39d21546d779e9c5a9cf8c377c3cac71"
+    },
+    {
+      "pool": "kept",
+      "slots": [
+        4,
+        6
+      ],
+      "rows": 357780,
+      "different": 4304,
+      "different_fraction": 0.012029738945720835,
+      "max_abs_difference": 1,
+      "source_sha256": "7ada058c9d26ef6a903bfee6658a939a39d21546d779e9c5a9cf8c377c3cac71"
+    },
+    {
+      "pool": "kept",
+      "slots": [
+        6,
+        10
+      ],
+      "rows": 357780,
+      "different": 0,
+      "different_fraction": 0.0,
+      "max_abs_difference": 0,
+      "source_sha256": "7ada058c9d26ef6a903bfee6658a939a39d21546d779e9c5a9cf8c377c3cac71"
+    },
+    {
+      "pool": "quarter",
+      "slots": [
+        3,
+        5
+      ],
+      "rows": 357780,
+      "different": 2016,
+      "different_fraction": 0.00563474761026329,
+      "max_abs_difference": 1,
+      "source_sha256": "e643fcc0fdecbb982f3cc9f39cecc8886b3536bfc557996c709a412c55acf653"
+    },
+    {
+      "pool": "quarter",
+      "slots": [
+        4,
+        6
+      ],
+      "rows": 357780,
+      "different": 3944,
+      "different_fraction": 0.011023534015316675,
+      "max_abs_difference": 1,
+      "source_sha256": "e643fcc0fdecbb982f3cc9f39cecc8886b3536bfc557996c709a412c55acf653"
+    },
+    {
+      "pool": "quarter",
+      "slots": [
+        6,
+        10
+      ],
+      "rows": 357780,
+      "different": 0,
+      "different_fraction": 0.0,
+      "max_abs_difference": 0,
+      "source_sha256": "e643fcc0fdecbb982f3cc9f39cecc8886b3536bfc557996c709a412c55acf653"
+    },
+    {
+      "pool": "central",
+      "slots": [
+        3,
+        5
+      ],
+      "rows": 357780,
+      "different": 2357,
+      "different_fraction": 0.006587847280451674,
+      "max_abs_difference": 1,
+      "source_sha256": "738bc648a1158b8cf039401a9639e62bc5b7487712a8dcb5ba54ee38b9df19bb"
+    },
+    {
+      "pool": "central",
+      "slots": [
+        4,
+        6
+      ],
+      "rows": 357780,
+      "different": 4120,
+      "different_fraction": 0.011515456425736486,
+      "max_abs_difference": 1,
+      "source_sha256": "738bc648a1158b8cf039401a9639e62bc5b7487712a8dcb5ba54ee38b9df19bb"
+    },
+    {
+      "pool": "central",
+      "slots": [
+        6,
+        10
+      ],
+      "rows": 357780,
+      "different": 0,
+      "different_fraction": 0.0,
+      "max_abs_difference": 0,
+      "source_sha256": "738bc648a1158b8cf039401a9639e62bc5b7487712a8dcb5ba54ee38b9df19bb"
+    },
+    {
+      "pool": "natural_sparse",
+      "slots": [
+        3,
+        5
+      ],
+      "rows": 474582,
+      "different": 2287,
+      "different_fraction": 0.0048189775423425245,
+      "max_abs_difference": 1,
+      "source_sha256": "96a3bff84db0cbbf87611fbba9f0f4c983e94c6d7c05f894e835f29f748d1f13"
+    },
+    {
+      "pool": "natural_sparse",
+      "slots": [
+        4,
+        6
+      ],
+      "rows": 474582,
+      "different": 4210,
+      "different_fraction": 0.008870964343358998,
+      "max_abs_difference": 1,
+      "source_sha256": "96a3bff84db0cbbf87611fbba9f0f4c983e94c6d7c05f894e835f29f748d1f13"
+    },
+    {
+      "pool": "natural_sparse",
+      "slots": [
+        6,
+        10
+      ],
+      "rows": 474582,
+      "different": 0,
+      "different_fraction": 0.0,
+      "max_abs_difference": 0,
+      "source_sha256": "96a3bff84db0cbbf87611fbba9f0f4c983e94c6d7c05f894e835f29f748d1f13"
+    }
+  ],
+  "scope": "Post-training descriptive audit on train pools only. Pairs fixed from existing arithmetic definitions; no selection, new candidate or retraining. Similarity is not an integer equivalence proof except pair6/10."
+}

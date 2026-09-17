@@ -1,0 +1,296 @@
+{
+  "status": "PASS",
+  "checks": [
+    {
+      "tag": "full21",
+      "seed": 7,
+      "condition": "clean",
+      "rows": 80450,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "full21",
+      "seed": 7,
+      "condition": "sparse_single",
+      "rows": 97734,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "full21",
+      "seed": 7,
+      "condition": "sparse_context",
+      "rows": 97734,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "full21",
+      "seed": 17,
+      "condition": "clean",
+      "rows": 80450,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "full21",
+      "seed": 17,
+      "condition": "sparse_single",
+      "rows": 97734,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "full21",
+      "seed": 17,
+      "condition": "sparse_context",
+      "rows": 97734,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "full21",
+      "seed": 37,
+      "condition": "clean",
+      "rows": 80450,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "full21",
+      "seed": 37,
+      "condition": "sparse_single",
+      "rows": 97734,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "full21",
+      "seed": 37,
+      "condition": "sparse_context",
+      "rows": 97734,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "dedup20",
+      "seed": 7,
+      "condition": "clean",
+      "rows": 80450,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "dedup20",
+      "seed": 7,
+      "condition": "sparse_single",
+      "rows": 97734,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "dedup20",
+      "seed": 7,
+      "condition": "sparse_context",
+      "rows": 97734,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "dedup20",
+      "seed": 17,
+      "condition": "clean",
+      "rows": 80450,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "dedup20",
+      "seed": 17,
+      "condition": "sparse_single",
+      "rows": 97734,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "dedup20",
+      "seed": 17,
+      "condition": "sparse_context",
+      "rows": 97734,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "dedup20",
+      "seed": 37,
+      "condition": "clean",
+      "rows": 80450,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "dedup20",
+      "seed": 37,
+      "condition": "sparse_single",
+      "rows": 97734,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "dedup20",
+      "seed": 37,
+      "condition": "sparse_context",
+      "rows": 97734,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "no_rcs18",
+      "seed": 7,
+      "condition": "clean",
+      "rows": 80450,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "no_rcs18",
+      "seed": 7,
+      "condition": "sparse_single",
+      "rows": 97734,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "no_rcs18",
+      "seed": 7,
+      "condition": "sparse_context",
+      "rows": 97734,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "no_rcs18",
+      "seed": 17,
+      "condition": "clean",
+      "rows": 80450,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "no_rcs18",
+      "seed": 17,
+      "condition": "sparse_single",
+      "rows": 97734,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "no_rcs18",
+      "seed": 17,
+      "condition": "sparse_context",
+      "rows": 97734,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "no_rcs18",
+      "seed": 37,
+      "condition": "clean",
+      "rows": 80450,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "no_rcs18",
+      "seed": 37,
+      "condition": "sparse_single",
+      "rows": 97734,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "no_rcs18",
+      "seed": 37,
+      "condition": "sparse_context",
+      "rows": 97734,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "less_shape16",
+      "seed": 7,
+      "condition": "clean",
+      "rows": 80450,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "less_shape16",
+      "seed": 7,
+      "condition": "sparse_single",
+      "rows": 97734,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "less_shape16",
+      "seed": 7,
+      "condition": "sparse_context",
+      "rows": 97734,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "less_shape16",
+      "seed": 17,
+      "condition": "clean",
+      "rows": 80450,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "less_shape16",
+      "seed": 17,
+      "condition": "sparse_single",
+      "rows": 97734,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "less_shape16",
+      "seed": 17,
+      "condition": "sparse_context",
+      "rows": 97734,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "less_shape16",
+      "seed": 37,
+      "condition": "clean",
+      "rows": 80450,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "less_shape16",
+      "seed": 37,
+      "condition": "sparse_single",
+      "rows": 97734,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "less_shape16",
+      "seed": 37,
+      "condition": "sparse_context",
+      "rows": 97734,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    }
+  ],
+  "complete_point_to_logit_rows": 3311016,
+  "wall_seconds": 33.0348382780212,
+  "scope": "CPU reference exactness; no hardware measurement"
+}

@@ -1,0 +1,71 @@
+{
+  "status": "PASS",
+  "sha256": {
+    "docs/paper_new/software_convergence_2026-09-17/build_package.py": "82ef30fc40441b00fc33b558c9110bddab8c02d8d342d6bdc64d2ae9a4cedf69",
+    "docs/paper_new/software_convergence_2026-09-17/train.py": "6f4ce1f7bfd583eb9ff105723c855734298775962d22a0948a7068995894c89e",
+    "docs/paper_new/software_convergence_2026-09-17/evaluate.py": "b556b63d9ce7425a27e3a9808f964946c769d98ee6675ba55d95ecea47334cf3",
+    "docs/paper_new/software_convergence_2026-09-17/pools.py": "13030da8d7769460a4cf5abec2c049a28763dd77c5389e320424bbf2587741ee",
+    "docs/paper_new/software_convergence_2026-09-17/prepare.py": "9e260d53c70fe993f4e81231894766ec60d3b7e702dc6d2347bac9e67dcc59ec",
+    "docs/paper_new/software_convergence_2026-09-17/00_设计账本与执行前审查.md": "1545bab4aeee1805c1d5d30d85f299cbe9aac97a59227f98a800efad51a0b920",
+    "docs/paper_new/software_convergence_2026-09-17/backup_git.py": "b027e5a6672fc6f59167ce4fa4fa814f602a23911946c7ce5921c48a4e1207f4",
+    "docs/paper_new/software_convergence_2026-09-17/01_开跑前复核.md": "d89884b81e32ae1ae9501dbaa66ce5d1db4690a8fe1792e3fbf64fac7f94e6d9",
+    "docs/paper_new/software_convergence_2026-09-17/plan.json": "ec325abfabf43d20f882f73e29d5faf969b8d583871b03cf98e54965473094b9",
+    "docs/paper_new/software_convergence_2026-09-17/sw_common.py": "6c276aa61f4629a11de5162fb21fee9ab3af7d78ef1d40ec4eb2c8a991699bd9",
+    "docs/paper_new/qmlp_int8_convergence_2026-09-16/common.py": "59613000cc60a2f4cacb90b3ab2e01f6b68a422dd5ba4f1c21f522c30d641e56",
+    "docs/paper_new/qmlp_int8_convergence_2026-09-16/plan.json": "d1293be9eef179396c78e24670dcde1b2b2b0e144071be0157f59dedd51e25f0",
+    "logs/mechanism_convergence_20260916/data/scales.json": "b0825a51c07a672b5f93f6facb04e0f490b63b4a4626c2cfa3edd8eff165c17c",
+    "logs/software_convergence_20260917/training_preflight.json": "4ec7c1b2ad638f5cfd9fcc184c9e795aef5fe266ebaa3d3006d1da405db98d08",
+    "logs/software_convergence_20260917/data/matching.json": "1426555b7617f0f89da74e061a76dffffa536e9bdba1484242a4febfe8f6d38a",
+    "logs/software_convergence_20260917/data/train/natural_groups.npy": "9197dc743b93816d6ab53a0edc2c08c092496e9583f5b4eddc479ba9f18c522e",
+    "logs/software_convergence_20260917/data/train/synthetic_groups.npy": "a3b52eed76c49384d493417a6c6cbf510d659dec9e4219fdd37285b8caa2d4d8",
+    "logs/software_convergence_20260917/data/train/natural_mean.npy": "dfeac8596a00a4fdf08ce1d3c11215027964958209ca6ac525e24f5d64961a43",
+    "logs/software_convergence_20260917/data/train/synthetic_proxy.npy": "3847c74a38555b842134086fadb694c97613579de9ef4dfe301eb20d530def01",
+    "logs/software_convergence_20260917/data/train/natural_labels.npy": "e46d0100e58fc86e69ba10376b2ca52aebb33c321bc36d01e89b7f177ff477bd",
+    "logs/software_convergence_20260917/data/train/synthetic_labels.npy": "85009ded72744163a656f8a7bcccdab799e16f44b65c0d069ec018f63ccc3632",
+    "logs/software_convergence_20260917/data/train/natural_proxy.npy": "96a3bff84db0cbbf87611fbba9f0f4c983e94c6d7c05f894e835f29f748d1f13",
+    "logs/software_convergence_20260917/data/train/synthetic_mean.npy": "4438a7bf88b099dd46b03b1fe2f91b3fbde064a63befd67de8383c41519d8789",
+    "logs/mechanism_convergence_20260916/data/train/proxy.npy": "7ada058c9d26ef6a903bfee6658a939a39d21546d779e9c5a9cf8c377c3cac71",
+    "logs/mechanism_convergence_20260916/raw/train/proxy/uniform_quarter_0.npy": "e643fcc0fdecbb982f3cc9f39cecc8886b3536bfc557996c709a412c55acf653",
+    "logs/mechanism_convergence_20260916/raw/train/proxy/central_half.npy": "738bc648a1158b8cf039401a9639e62bc5b7487712a8dcb5ba54ee38b9df19bb",
+    "logs/mechanism_convergence_20260916/data/train/mean.npy": "04ea67db4774b755d97737616574ebdcaf5b04ee6ee67bf44bcb914a0aac3b99",
+    "logs/mechanism_convergence_20260916/raw/train/mean/uniform_quarter_0.npy": "72b8388f0edfbde6dfde41e9048f2dee55f305db9d11fe0fcf4be7af8fbab1d0",
+    "logs/mechanism_convergence_20260916/raw/train/mean/central_half.npy": "3578c156dab68d07fae73e60fa4859f08d6f66c823c2a4bdc3a613e1dcbe16c6",
+    "docs/paper_new/mechanism_convergence_2026-09-16/plan.json": "f02006540bd17ddec6c07e6b8a7cba5815df64cee694ba9b0d93facd1715e76e",
+    "docs/paper_new/mechanism_convergence_2026-09-16/train_fixed_v2.py": "70f6cfe6ee77c4dccfd7cdcceb4da01663d858070640c827ae8bf2b0771c0ca9",
+    "docs/paper_new/mechanism_convergence_2026-09-16/common.py": "1a28d76bfcb0d5025a2d13427420abb0bf0b9a31d935c127de38117896aa0ebc",
+    "logs/mechanism_convergence_20260916/data/val/proxy.npy": "ba6be1c48dbd72381e5db4d52576726a61b9bcaf7a3f93e7aa7d06a472a98db4",
+    "logs/mechanism_convergence_20260916/data/val/mean.npy": "acb68ef4a0e22c271533dfb3567ef49a487a99d7c0d1ae2ffc01a59da90cb2fe",
+    "logs/mechanism_convergence_20260916/data/train/shape.npy": "7eef2b8f7b57ee2c0ba414ae544f948e3e212c90c09112d056d6a2b1bb5f494c",
+    "logs/mechanism_convergence_20260916/data/val/shape.npy": "faf4134ce153d6d051aa5895289e3ee59215abf70d3b0c10a636a8598cd0b21f",
+    "logs/mechanism_convergence_20260916/data/train/moment.npy": "2f16bb6b24d83e4fbcf5f6ea26d79900194f168e53227219061076d760b75c43",
+    "logs/mechanism_convergence_20260916/data/val/moment.npy": "1b7c854ca0369b97279d0e344f52577b4312a051001116d5e55851d535299a43",
+    "logs/mechanism_convergence_20260916/data/train/labels.npy": "fa6ea251f797140175a8f5d33ea91357ee607a6c593d9cd727eb2d6eccef4272",
+    "logs/mechanism_convergence_20260916/data/val/labels.npy": "3ac1b4d33f41b71f5dd3f7c79f070781f519c9ba5bdccb4f64dd2095604b9302",
+    "logs/mechanism_convergence_20260916/raw/train/moment/uniform_quarter_0.npy": "a349244acec3c07dad7ee5c27811399a8e97628bad1151b9f7709d893293ec83",
+    "logs/mechanism_convergence_20260916/raw/train/moment/central_half.npy": "9ba56f9dd674411787ace5c3eaeb321870e741a029b7dfd117f5053e8153e33f",
+    "tests/radar-feature21-qmlp-cpu-fullchain-profile.c": "c56cc771eded98bda18ae6cddf4eb8b8452ac6f093a68a1ed0bf0187d22898a7",
+    "logs/conditional_statistics_20260916/native/kernel.c": "135051a82c63e950abff41d8cb90dcc0a7b5c9e8946bdd744b50c635b6b95d36",
+    "logs/conditional_statistics_20260916/data/output_scale_exponents.json": "142b9d1e72e9f98eeefb441341d5e673639a2c56cd33edd41da36443cac16cd4",
+    "docs/paper_new/mechanism_convergence_2026-09-16/evaluate_stage.py": "408a21cbad3be8371d196076da127cb54cd54e0f88138ee5ea52aaf9cb9412fc",
+    "docs/paper_new/conditional_statistics_2026-09-16/inference_main.c": "26c25229632d0e957f06b4d2460c7fa109b669589ec570aa3d976e714f9c77f2"
+  },
+  "manifests": [
+    {
+      "path": "logs/software_convergence_20260917/training/source_manifest.json",
+      "references_checked": 29,
+      "sha256": "9b7c6fd76f48ea47e5b4cf737f9c93f585e80bbd2feaad51646069a5de3e332d"
+    },
+    {
+      "path": "logs/mechanism_convergence_20260916/factorial_v2/source_manifest.json",
+      "references_checked": 16,
+      "sha256": "516e8da20ea4d4686bf488b84c211b8086027613aaaab7c29b312fec132b5f7c"
+    },
+    {
+      "path": "logs/mechanism_convergence_20260916/augmentation_v2/source_manifest.json",
+      "references_checked": 20,
+      "sha256": "ebfcd63e8b3532cd62f55b6f600def08a3d58a1245f0f405dcf1ab68a953e51f"
+    }
+  ],
+  "preflight_c_sources_reconstructed_exactly": true,
+  "scope": "Post-training transitive closure of existing source manifests plus exact preflight C-source reconstruction. Initial preflight verified 969 entries of the previous software package; this closure is a final audit, not claimed to have happened before training."
+}

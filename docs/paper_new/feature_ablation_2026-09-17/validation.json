@@ -1,0 +1,305 @@
+{
+  "status": "PASS",
+  "decision": {
+    "conditional_subset": "less_shape16",
+    "main": "A",
+    "alternative": "B"
+  },
+  "training_trajectories": 12,
+  "prediction_metric_rechecks": 234,
+  "runtime": {
+    "preflight_seconds": 29.244367380044423,
+    "preparation_elapsed_from_preflight_start_to_training": 151.84530188550707,
+    "training_seconds": 926.889493922994,
+    "evaluation_seconds": 80.02098554401891,
+    "package_seconds": 33.0348382780212,
+    "output_bytes": 49604266
+  },
+  "decision_rechecks": [
+    {
+      "tag": "dedup20",
+      "gate": "ablation",
+      "failures": [],
+      "group_failures": 0
+    },
+    {
+      "tag": "no_rcs18",
+      "gate": "ablation",
+      "failures": [
+        "clean_seed7",
+        "clean_seed17",
+        "clean_seed37",
+        "clean_f1",
+        "clean_recall0",
+        "clean_recall1",
+        "uniform_half_0_f1",
+        "uniform_half_0_recall0",
+        "uniform_half_0_recall1",
+        "uniform_half_1_f1",
+        "uniform_half_1_recall0",
+        "uniform_half_1_recall1",
+        "uniform_half_2_f1",
+        "uniform_half_2_recall0",
+        "uniform_half_2_recall1",
+        "uniform_quarter_0_f1",
+        "uniform_quarter_0_recall0",
+        "uniform_quarter_0_recall1",
+        "uniform_quarter_1_f1",
+        "uniform_quarter_1_recall0",
+        "uniform_quarter_1_recall1",
+        "uniform_quarter_2_f1",
+        "uniform_quarter_2_recall0",
+        "uniform_quarter_2_recall1",
+        "central_half_f1",
+        "central_half_recall1",
+        "xy_fraction6_f1",
+        "xy_fraction6_recall0",
+        "xy_fraction6_recall1",
+        "xy_fraction4_f1",
+        "xy_fraction4_recall0",
+        "xy_fraction4_recall1",
+        "kept_single_f1",
+        "kept_single_recall0",
+        "kept_single_recall1",
+        "sparse_single_f1",
+        "sparse_single_recall1",
+        "sparse_context_f1",
+        "sparse_context_recall1",
+        "composite",
+        "supported_group_regression"
+      ],
+      "group_failures": 361
+    },
+    {
+      "tag": "less_shape16",
+      "gate": "ablation",
+      "failures": [],
+      "group_failures": 0
+    },
+    {
+      "tag": "full21",
+      "gate": "promotion",
+      "failures": [
+        "clean_seed17",
+        "central_half",
+        "supported_group_regression"
+      ],
+      "group_failures": 4
+    },
+    {
+      "tag": "dedup20",
+      "gate": "promotion",
+      "failures": [
+        "central_half",
+        "supported_group_regression"
+      ],
+      "group_failures": 8
+    },
+    {
+      "tag": "no_rcs18",
+      "gate": "promotion",
+      "failures": [
+        "clean_seed7",
+        "clean_seed17",
+        "clean_seed37",
+        "quarter_mean",
+        "central_half",
+        "sparse_context",
+        "supported_group_regression",
+        "composite_gain"
+      ],
+      "group_failures": 309
+    },
+    {
+      "tag": "less_shape16",
+      "gate": "promotion",
+      "failures": [
+        "central_half",
+        "supported_group_regression"
+      ],
+      "group_failures": 1
+    }
+  ],
+  "previous_evidence": [
+    {
+      "package": "mechanism_convergence",
+      "files": 1807,
+      "manifest_sha256": "a754382e717985b3ea383db963f2751b6ea0b06a16cfa9abcd404cff8faf3288"
+    },
+    {
+      "package": "moment_encoding",
+      "files": 470,
+      "manifest_sha256": "10ed75cbe824b67bb130ed236a06195893f559818e1b4ef9ff43d749c287feca"
+    },
+    {
+      "package": "conditional_protection",
+      "files": 292,
+      "manifest_sha256": "f2f3e14f563ea9083d95c178a64cff6d05d5c36fcad5bc54e02d95e862c7752b"
+    },
+    {
+      "package": "representative_rtl",
+      "files": 89,
+      "manifest_sha256": "94b979abf6e5ae8bd2fa79049dac737e5e1880a0de3cbbe7ba5c0043ab132208"
+    },
+    {
+      "package": "software_convergence",
+      "files": 969,
+      "manifest_sha256": "4c13793c18d3d4bf1307fd0d625116083433ab48063246cd621428ebb7f96a2e"
+    },
+    {
+      "package": "research_status",
+      "files": 5,
+      "manifest_sha256": "de8dab98daa064e0e9f43954be9187249d8277563c65bc248f4da4e860dc397d"
+    }
+  ],
+  "integer_bounds": [
+    {
+      "tag": "full21_seed7",
+      "absolute_accumulator_bounds": [
+        96551,
+        141942,
+        250580
+      ],
+      "hidden_requant_product_bounds": [
+        103309570,
+        88713750
+      ]
+    },
+    {
+      "tag": "full21_seed17",
+      "absolute_accumulator_bounds": [
+        109745,
+        202085,
+        227528
+      ],
+      "hidden_requant_product_bounds": [
+        105025965,
+        124080190
+      ]
+    },
+    {
+      "tag": "full21_seed37",
+      "absolute_accumulator_bounds": [
+        90917,
+        123085,
+        219210
+      ],
+      "hidden_requant_product_bounds": [
+        108554898,
+        127639145
+      ]
+    },
+    {
+      "tag": "dedup20_seed7",
+      "absolute_accumulator_bounds": [
+        89586,
+        164665,
+        249199
+      ],
+      "hidden_requant_product_bounds": [
+        117268074,
+        101927635
+      ]
+    },
+    {
+      "tag": "dedup20_seed17",
+      "absolute_accumulator_bounds": [
+        100887,
+        224990,
+        247096
+      ],
+      "hidden_requant_product_bounds": [
+        109563282,
+        114969890
+      ]
+    },
+    {
+      "tag": "dedup20_seed37",
+      "absolute_accumulator_bounds": [
+        101230,
+        124462,
+        221245
+      ],
+      "hidden_requant_product_bounds": [
+        112162840,
+        170886326
+      ]
+    },
+    {
+      "tag": "no_rcs18_seed7",
+      "absolute_accumulator_bounds": [
+        96799,
+        156586,
+        189505
+      ],
+      "hidden_requant_product_bounds": [
+        94088628,
+        87218402
+      ]
+    },
+    {
+      "tag": "no_rcs18_seed17",
+      "absolute_accumulator_bounds": [
+        112949,
+        180727,
+        231893
+      ],
+      "hidden_requant_product_bounds": [
+        98717426,
+        209643320
+      ]
+    },
+    {
+      "tag": "no_rcs18_seed37",
+      "absolute_accumulator_bounds": [
+        85205,
+        145093,
+        261118
+      ],
+      "hidden_requant_product_bounds": [
+        110596090,
+        72401407
+      ]
+    },
+    {
+      "tag": "less_shape16_seed7",
+      "absolute_accumulator_bounds": [
+        53022,
+        223838,
+        199404
+      ],
+      "hidden_requant_product_bounds": [
+        93901962,
+        91549742
+      ]
+    },
+    {
+      "tag": "less_shape16_seed17",
+      "absolute_accumulator_bounds": [
+        114476,
+        154394,
+        241105
+      ],
+      "hidden_requant_product_bounds": [
+        130731592,
+        77351394
+      ]
+    },
+    {
+      "tag": "less_shape16_seed37",
+      "absolute_accumulator_bounds": [
+        86233,
+        144491,
+        177080
+      ],
+      "hidden_requant_product_bounds": [
+        96925892,
+        79614541
+      ]
+    }
+  ],
+  "source_manifest_verified": true,
+  "original_head_index_unchanged": true,
+  "single_executor_review": true,
+  "scope": "Feature necessity within frozen proxy/natural coverage on reused development data; no independent generalization or hardware performance claim"
+}

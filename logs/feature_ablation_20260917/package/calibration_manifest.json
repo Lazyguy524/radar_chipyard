@@ -1,0 +1,22 @@
+[
+  {
+    "tag": "full21",
+    "path": "logs/feature_ablation_20260917/package/full21_train_calibration.npz",
+    "sha256": "7ecf4b51c97aa0872a4fddabae0944717971d0a9bb8b8112efbf5d088a2eecfd"
+  },
+  {
+    "tag": "dedup20",
+    "path": "logs/feature_ablation_20260917/package/dedup20_train_calibration.npz",
+    "sha256": "e54be25b0561778a86f7bcb26acabc9e717bcf1c0ed1c4879544f88222407aab"
+  },
+  {
+    "tag": "no_rcs18",
+    "path": "logs/feature_ablation_20260917/package/no_rcs18_train_calibration.npz",
+    "sha256": "471606615fdf29704767aa75d097d7cadb6e2cd8d5b48bbf693aecf11c7561fe"
+  },
+  {
+    "tag": "less_shape16",
+    "path": "logs/feature_ablation_20260917/package/less_shape16_train_calibration.npz",
+    "sha256": "d59473a0bd34f07895bd7b223a59255bf187e20e3c322986102b7ed7d2fcba5c"
+  }
+]

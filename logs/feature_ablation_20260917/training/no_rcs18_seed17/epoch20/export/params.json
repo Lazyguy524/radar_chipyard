@@ -1,0 +1,51 @@
+{
+  "layers": [
+    {
+      "input_scale": 1.0,
+      "weight_scale": 0.0007504833808030149,
+      "output_scale": 0.056268496059745994,
+      "accumulator_abs_bound": 107716
+    },
+    {
+      "input_scale": 0.056268496059745994,
+      "weight_scale": 0.015123490273483156,
+      "output_scale": 0.048056688860278564,
+      "accumulator_abs_bound": 175782
+    },
+    {
+      "input_scale": 0.048056688860278564,
+      "weight_scale": 0.011152649488974743,
+      "output_scale": 0.0005359594064594039,
+      "accumulator_abs_bound": 223118
+    }
+  ],
+  "multipliers": [
+    874,
+    1160
+  ],
+  "shift": 16,
+  "columns": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17
+  ],
+  "input_dim": 18,
+  "kind": "trained_int8",
+  "input": "Selected frozen proxy INT8 slots; no runtime normalization",
+  "frontend": "proxy only; original shifts; no new board artifact"
+}

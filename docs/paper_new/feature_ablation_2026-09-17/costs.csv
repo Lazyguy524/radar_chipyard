@@ -1,0 +1,5 @@
+tag,dim,network_macs,mac_saved,mac_saved_fraction,int8_weight_bytes,int32_bias_bytes,input_feature_bytes,logical_sum_channels,scan_adds_per_point,extrema_comparisons_after_first,raw_input_bytes_per_point,mean_proxy_results,span_subtractions
+full21,21,3456,0,0.0,3456,392,21,4,4,10,8,4,4
+dedup20,20,3392,64,0.018518518518518517,3392,392,20,4,4,10,8,4,4
+no_rcs18,18,3264,192,0.05555555555555555,3264,392,18,3,3,8,8,3,3
+less_shape16,16,3136,320,0.09259259259259259,3136,392,16,4,4,10,8,4,4
