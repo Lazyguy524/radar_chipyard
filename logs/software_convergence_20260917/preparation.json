@@ -1,0 +1,1049 @@
+{
+  "status": "PASS",
+  "integer_cases": 156,
+  "splits": [
+    {
+      "split": "train",
+      "kept": 357780,
+      "sparse": 474582,
+      "sequences": [
+        {
+          "sequence": "sequence_1",
+          "kept": 2687,
+          "sparse": 1564
+        },
+        {
+          "sequence": "sequence_101",
+          "kept": 3978,
+          "sparse": 5137
+        },
+        {
+          "sequence": "sequence_102",
+          "kept": 4773,
+          "sparse": 6719
+        },
+        {
+          "sequence": "sequence_103",
+          "kept": 274,
+          "sparse": 802
+        },
+        {
+          "sequence": "sequence_104",
+          "kept": 2417,
+          "sparse": 2448
+        },
+        {
+          "sequence": "sequence_105",
+          "kept": 2988,
+          "sparse": 4328
+        },
+        {
+          "sequence": "sequence_106",
+          "kept": 7859,
+          "sparse": 9441
+        },
+        {
+          "sequence": "sequence_108",
+          "kept": 4894,
+          "sparse": 3787
+        },
+        {
+          "sequence": "sequence_109",
+          "kept": 5647,
+          "sparse": 5342
+        },
+        {
+          "sequence": "sequence_11",
+          "kept": 480,
+          "sparse": 290
+        },
+        {
+          "sequence": "sequence_112",
+          "kept": 6496,
+          "sparse": 7611
+        },
+        {
+          "sequence": "sequence_113",
+          "kept": 10825,
+          "sparse": 13336
+        },
+        {
+          "sequence": "sequence_114",
+          "kept": 4910,
+          "sparse": 5261
+        },
+        {
+          "sequence": "sequence_115",
+          "kept": 5301,
+          "sparse": 4900
+        },
+        {
+          "sequence": "sequence_116",
+          "kept": 311,
+          "sparse": 574
+        },
+        {
+          "sequence": "sequence_117",
+          "kept": 9353,
+          "sparse": 12823
+        },
+        {
+          "sequence": "sequence_118",
+          "kept": 5327,
+          "sparse": 3951
+        },
+        {
+          "sequence": "sequence_119",
+          "kept": 5160,
+          "sparse": 2525
+        },
+        {
+          "sequence": "sequence_12",
+          "kept": 574,
+          "sparse": 643
+        },
+        {
+          "sequence": "sequence_121",
+          "kept": 1052,
+          "sparse": 788
+        },
+        {
+          "sequence": "sequence_123",
+          "kept": 622,
+          "sparse": 343
+        },
+        {
+          "sequence": "sequence_124",
+          "kept": 2200,
+          "sparse": 1956
+        },
+        {
+          "sequence": "sequence_125",
+          "kept": 8510,
+          "sparse": 9307
+        },
+        {
+          "sequence": "sequence_126",
+          "kept": 7621,
+          "sparse": 6793
+        },
+        {
+          "sequence": "sequence_127",
+          "kept": 3222,
+          "sparse": 3133
+        },
+        {
+          "sequence": "sequence_128",
+          "kept": 4668,
+          "sparse": 4142
+        },
+        {
+          "sequence": "sequence_129",
+          "kept": 5155,
+          "sparse": 4888
+        },
+        {
+          "sequence": "sequence_13",
+          "kept": 397,
+          "sparse": 68
+        },
+        {
+          "sequence": "sequence_131",
+          "kept": 4528,
+          "sparse": 4841
+        },
+        {
+          "sequence": "sequence_132",
+          "kept": 4212,
+          "sparse": 5031
+        },
+        {
+          "sequence": "sequence_133",
+          "kept": 3579,
+          "sparse": 3865
+        },
+        {
+          "sequence": "sequence_134",
+          "kept": 2364,
+          "sparse": 3421
+        },
+        {
+          "sequence": "sequence_136",
+          "kept": 468,
+          "sparse": 395
+        },
+        {
+          "sequence": "sequence_137",
+          "kept": 4867,
+          "sparse": 4431
+        },
+        {
+          "sequence": "sequence_139",
+          "kept": 3132,
+          "sparse": 3294
+        },
+        {
+          "sequence": "sequence_141",
+          "kept": 4746,
+          "sparse": 5613
+        },
+        {
+          "sequence": "sequence_142",
+          "kept": 6088,
+          "sparse": 9878
+        },
+        {
+          "sequence": "sequence_143",
+          "kept": 5883,
+          "sparse": 5379
+        },
+        {
+          "sequence": "sequence_144",
+          "kept": 7414,
+          "sparse": 8111
+        },
+        {
+          "sequence": "sequence_145",
+          "kept": 4518,
+          "sparse": 6460
+        },
+        {
+          "sequence": "sequence_146",
+          "kept": 7664,
+          "sparse": 7924
+        },
+        {
+          "sequence": "sequence_149",
+          "kept": 1202,
+          "sparse": 2867
+        },
+        {
+          "sequence": "sequence_15",
+          "kept": 105,
+          "sparse": 31
+        },
+        {
+          "sequence": "sequence_151",
+          "kept": 319,
+          "sparse": 1128
+        },
+        {
+          "sequence": "sequence_152",
+          "kept": 51,
+          "sparse": 367
+        },
+        {
+          "sequence": "sequence_154",
+          "kept": 3,
+          "sparse": 515
+        },
+        {
+          "sequence": "sequence_156",
+          "kept": 822,
+          "sparse": 1925
+        },
+        {
+          "sequence": "sequence_157",
+          "kept": 163,
+          "sparse": 1443
+        },
+        {
+          "sequence": "sequence_158",
+          "kept": 47,
+          "sparse": 273
+        },
+        {
+          "sequence": "sequence_16",
+          "kept": 140,
+          "sparse": 52
+        },
+        {
+          "sequence": "sequence_17",
+          "kept": 177,
+          "sparse": 200
+        },
+        {
+          "sequence": "sequence_18",
+          "kept": 168,
+          "sparse": 253
+        },
+        {
+          "sequence": "sequence_2",
+          "kept": 7890,
+          "sparse": 5515
+        },
+        {
+          "sequence": "sequence_21",
+          "kept": 2008,
+          "sparse": 6219
+        },
+        {
+          "sequence": "sequence_22",
+          "kept": 5661,
+          "sparse": 7739
+        },
+        {
+          "sequence": "sequence_23",
+          "kept": 6900,
+          "sparse": 11165
+        },
+        {
+          "sequence": "sequence_25",
+          "kept": 5826,
+          "sparse": 19349
+        },
+        {
+          "sequence": "sequence_26",
+          "kept": 5454,
+          "sparse": 14763
+        },
+        {
+          "sequence": "sequence_27",
+          "kept": 7073,
+          "sparse": 12728
+        },
+        {
+          "sequence": "sequence_28",
+          "kept": 8848,
+          "sparse": 16596
+        },
+        {
+          "sequence": "sequence_29",
+          "kept": 5872,
+          "sparse": 15405
+        },
+        {
+          "sequence": "sequence_3",
+          "kept": 1050,
+          "sparse": 855
+        },
+        {
+          "sequence": "sequence_32",
+          "kept": 845,
+          "sparse": 1684
+        },
+        {
+          "sequence": "sequence_33",
+          "kept": 1128,
+          "sparse": 3495
+        },
+        {
+          "sequence": "sequence_34",
+          "kept": 257,
+          "sparse": 1464
+        },
+        {
+          "sequence": "sequence_35",
+          "kept": 220,
+          "sparse": 110
+        },
+        {
+          "sequence": "sequence_36",
+          "kept": 419,
+          "sparse": 805
+        },
+        {
+          "sequence": "sequence_37",
+          "kept": 1886,
+          "sparse": 3877
+        },
+        {
+          "sequence": "sequence_38",
+          "kept": 1416,
+          "sparse": 2253
+        },
+        {
+          "sequence": "sequence_39",
+          "kept": 2412,
+          "sparse": 2718
+        },
+        {
+          "sequence": "sequence_4",
+          "kept": 197,
+          "sparse": 263
+        },
+        {
+          "sequence": "sequence_41",
+          "kept": 3995,
+          "sparse": 5893
+        },
+        {
+          "sequence": "sequence_43",
+          "kept": 2228,
+          "sparse": 5275
+        },
+        {
+          "sequence": "sequence_44",
+          "kept": 3637,
+          "sparse": 4809
+        },
+        {
+          "sequence": "sequence_45",
+          "kept": 2685,
+          "sparse": 3014
+        },
+        {
+          "sequence": "sequence_46",
+          "kept": 3788,
+          "sparse": 10175
+        },
+        {
+          "sequence": "sequence_47",
+          "kept": 2169,
+          "sparse": 7202
+        },
+        {
+          "sequence": "sequence_49",
+          "kept": 127,
+          "sparse": 927
+        },
+        {
+          "sequence": "sequence_51",
+          "kept": 34,
+          "sparse": 199
+        },
+        {
+          "sequence": "sequence_52",
+          "kept": 73,
+          "sparse": 230
+        },
+        {
+          "sequence": "sequence_56",
+          "kept": 52,
+          "sparse": 75
+        },
+        {
+          "sequence": "sequence_57",
+          "kept": 125,
+          "sparse": 247
+        },
+        {
+          "sequence": "sequence_61",
+          "kept": 130,
+          "sparse": 394
+        },
+        {
+          "sequence": "sequence_62",
+          "kept": 3860,
+          "sparse": 5545
+        },
+        {
+          "sequence": "sequence_64",
+          "kept": 4368,
+          "sparse": 5487
+        },
+        {
+          "sequence": "sequence_65",
+          "kept": 6001,
+          "sparse": 7457
+        },
+        {
+          "sequence": "sequence_66",
+          "kept": 4817,
+          "sparse": 8087
+        },
+        {
+          "sequence": "sequence_67",
+          "kept": 4152,
+          "sparse": 4380
+        },
+        {
+          "sequence": "sequence_69",
+          "kept": 5618,
+          "sparse": 7439
+        },
+        {
+          "sequence": "sequence_7",
+          "kept": 1121,
+          "sparse": 1528
+        },
+        {
+          "sequence": "sequence_71",
+          "kept": 1419,
+          "sparse": 4646
+        },
+        {
+          "sequence": "sequence_72",
+          "kept": 3674,
+          "sparse": 2188
+        },
+        {
+          "sequence": "sequence_74",
+          "kept": 4799,
+          "sparse": 11365
+        },
+        {
+          "sequence": "sequence_75",
+          "kept": 1850,
+          "sparse": 2665
+        },
+        {
+          "sequence": "sequence_76",
+          "kept": 2272,
+          "sparse": 1267
+        },
+        {
+          "sequence": "sequence_77",
+          "kept": 1683,
+          "sparse": 3072
+        },
+        {
+          "sequence": "sequence_78",
+          "kept": 146,
+          "sparse": 130
+        },
+        {
+          "sequence": "sequence_8",
+          "kept": 4603,
+          "sparse": 5041
+        },
+        {
+          "sequence": "sequence_81",
+          "kept": 135,
+          "sparse": 227
+        },
+        {
+          "sequence": "sequence_82",
+          "kept": 680,
+          "sparse": 759
+        },
+        {
+          "sequence": "sequence_83",
+          "kept": 1534,
+          "sparse": 708
+        },
+        {
+          "sequence": "sequence_84",
+          "kept": 3504,
+          "sparse": 1611
+        },
+        {
+          "sequence": "sequence_86",
+          "kept": 1423,
+          "sparse": 792
+        },
+        {
+          "sequence": "sequence_87",
+          "kept": 3859,
+          "sparse": 2435
+        },
+        {
+          "sequence": "sequence_88",
+          "kept": 5838,
+          "sparse": 4795
+        },
+        {
+          "sequence": "sequence_9",
+          "kept": 5774,
+          "sparse": 7575
+        },
+        {
+          "sequence": "sequence_91",
+          "kept": 4250,
+          "sparse": 2173
+        },
+        {
+          "sequence": "sequence_92",
+          "kept": 1035,
+          "sparse": 341
+        },
+        {
+          "sequence": "sequence_94",
+          "kept": 5015,
+          "sparse": 3699
+        },
+        {
+          "sequence": "sequence_95",
+          "kept": 2658,
+          "sparse": 543
+        },
+        {
+          "sequence": "sequence_96",
+          "kept": 205,
+          "sparse": 99
+        },
+        {
+          "sequence": "sequence_97",
+          "kept": 2917,
+          "sparse": 4371
+        },
+        {
+          "sequence": "sequence_98",
+          "kept": 3804,
+          "sparse": 8117
+        }
+      ],
+      "binary_mixed_label_observations": 0,
+      "history_span_raw_quantiles": [
+        0.0,
+        580440.0,
+        3794914.9000000013,
+        15128150.370000001,
+        60597826.0
+      ],
+      "centroid_displacement_quantiles": [
+        0.0,
+        1.6992421746253967,
+        11.580356121063234,
+        33.25548828125,
+        90.07621002197266
+      ],
+      "future_history_violations": 0,
+      "primary_feature_mismatches": 0
+    },
+    {
+      "split": "val",
+      "kept": 80450,
+      "sparse": 97734,
+      "sequences": [
+        {
+          "sequence": "sequence_107",
+          "kept": 12806,
+          "sparse": 13563
+        },
+        {
+          "sequence": "sequence_111",
+          "kept": 708,
+          "sparse": 1189
+        },
+        {
+          "sequence": "sequence_122",
+          "kept": 230,
+          "sparse": 193
+        },
+        {
+          "sequence": "sequence_130",
+          "kept": 2564,
+          "sparse": 2395
+        },
+        {
+          "sequence": "sequence_135",
+          "kept": 3693,
+          "sparse": 6468
+        },
+        {
+          "sequence": "sequence_138",
+          "kept": 5589,
+          "sparse": 6927
+        },
+        {
+          "sequence": "sequence_14",
+          "kept": 396,
+          "sparse": 324
+        },
+        {
+          "sequence": "sequence_147",
+          "kept": 6628,
+          "sparse": 5642
+        },
+        {
+          "sequence": "sequence_148",
+          "kept": 4861,
+          "sparse": 4365
+        },
+        {
+          "sequence": "sequence_153",
+          "kept": 120,
+          "sparse": 410
+        },
+        {
+          "sequence": "sequence_155",
+          "kept": 1233,
+          "sparse": 1187
+        },
+        {
+          "sequence": "sequence_19",
+          "kept": 1300,
+          "sparse": 988
+        },
+        {
+          "sequence": "sequence_24",
+          "kept": 3679,
+          "sparse": 9070
+        },
+        {
+          "sequence": "sequence_31",
+          "kept": 409,
+          "sparse": 73
+        },
+        {
+          "sequence": "sequence_42",
+          "kept": 4001,
+          "sparse": 2923
+        },
+        {
+          "sequence": "sequence_48",
+          "kept": 2250,
+          "sparse": 2834
+        },
+        {
+          "sequence": "sequence_5",
+          "kept": 876,
+          "sparse": 3036
+        },
+        {
+          "sequence": "sequence_58",
+          "kept": 1764,
+          "sparse": 3251
+        },
+        {
+          "sequence": "sequence_6",
+          "kept": 1003,
+          "sparse": 1586
+        },
+        {
+          "sequence": "sequence_63",
+          "kept": 2212,
+          "sparse": 3996
+        },
+        {
+          "sequence": "sequence_68",
+          "kept": 4170,
+          "sparse": 4694
+        },
+        {
+          "sequence": "sequence_73",
+          "kept": 8015,
+          "sparse": 7982
+        },
+        {
+          "sequence": "sequence_79",
+          "kept": 1216,
+          "sparse": 905
+        },
+        {
+          "sequence": "sequence_85",
+          "kept": 1424,
+          "sparse": 529
+        },
+        {
+          "sequence": "sequence_89",
+          "kept": 655,
+          "sparse": 369
+        },
+        {
+          "sequence": "sequence_93",
+          "kept": 3519,
+          "sparse": 3623
+        },
+        {
+          "sequence": "sequence_99",
+          "kept": 5129,
+          "sparse": 9212
+        }
+      ],
+      "binary_mixed_label_observations": 0,
+      "history_span_raw_quantiles": [
+        0.0,
+        514059.0,
+        3790967.0000000014,
+        13531297.890000131,
+        36878413.0
+      ],
+      "centroid_displacement_quantiles": [
+        0.0,
+        1.6597736477851868,
+        11.555217647552492,
+        32.562256011962994,
+        81.88556671142578
+      ],
+      "future_history_violations": 0,
+      "primary_feature_mismatches": 0
+    }
+  ],
+  "cross_split_track_overlap": 0,
+  "source_sha256": {
+    "docs/paper_new/software_convergence_2026-09-17/plan.json": "ec325abfabf43d20f882f73e29d5faf969b8d583871b03cf98e54965473094b9",
+    "docs/paper_new/software_convergence_2026-09-17/prepare.py": "9e260d53c70fe993f4e81231894766ec60d3b7e702dc6d2347bac9e67dcc59ec",
+    "docs/paper_new/software_convergence_2026-09-17/sw_common.py": "6c276aa61f4629a11de5162fb21fee9ab3af7d78ef1d40ec4eb2c8a991699bd9",
+    "logs/training_server_recovery_20260915/dataset_audit/split_manifest.csv.gz": "8077bd35cf6e4420c9d3bf44bdc9c3684e3975e4229faba111244f90d3f912d7",
+    "logs/mechanism_convergence_20260916/native/mechanism.c": "243d0cde5058aec5f2d8ea20147e63d7dc6c1b3af4d1df927ffb486ea8594896",
+    "logs/mechanism_convergence_20260916/native/mechanism.so": "8c385914961032693979d630a8c7060a02c9350c65686c37c004c742984fd934",
+    "logs/conditional_statistics_20260916/data/output_scale_exponents.json": "142b9d1e72e9f98eeefb441341d5e673639a2c56cd33edd41da36443cac16cd4",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_1/scenes.json": "6ae6ebfd29cfd9becdcb2b3f39f4d39ff1c065726c42a24bf05ded88eb88d396",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_101/scenes.json": "b2faf962b968acda88d175720b53a1b33521742a2f8babb289e0b81fe2664759",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_102/scenes.json": "7a088e0185b34d9fca48b48455c8bac84f50371384316fd532f213b2eeb22a16",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_103/scenes.json": "67f929d877432df50f58bddd761527fc5ba2e04cb3bc4904f31dad62f0dc9ea3",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_104/scenes.json": "6abad84f71f61bf6a749d8cccb18536d94eeaee401edab23ff3e264ed2381531",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_105/scenes.json": "32b590eedacb17d6a9b86ea6aef3d123c7bd4506d49208491a33fb38c83e83b3",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_106/scenes.json": "fed74318c19640febfd7486f484b86862fcb27ae2f027d2c25ffeb49776589d4",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_108/scenes.json": "924b13f699d2da3193c7ea11aacf066378afcc77899d913fe36d30a50150f3b5",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_109/scenes.json": "75715db9192ef5cf497587213a5adb45f4f3e88dd65ec3fd7f586d9ebb44eff4",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_11/scenes.json": "242fcf0872e3d7bc053b172f87a1a61ea1eb36b675f698b6ee216bc6abf57b5e",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_112/scenes.json": "ccc332d6ee22ec866662038b6debd4a2b3bb0afaf4f26ddf6705d298501fcdc2",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_113/scenes.json": "807e35a838eb10e117b4a4cd52cc2bbbb407327dff29d3f02d4a781f67165258",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_114/scenes.json": "2813cc17cf2d6cfd20c2dbe97fa6735b8eecf920b00216f69b3750b38835f99d",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_115/scenes.json": "5ced150734580645f23d77505c9ded1c87cb574f94925ea500180840ea3b464a",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_116/scenes.json": "9a2079761b3bab4ce36e79b4fe2465538ca911164c90336b97c1734ee4f74103",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_117/scenes.json": "a82e738e26428ef8465df30587130ee64b4deb6197351330afd35fd6a9accdf4",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_118/scenes.json": "6d55c28ce080073cf5c5fea555b567ea63ef3b7e06d8fa09507cc50c200f5eff",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_119/scenes.json": "48687dff121e40a90dba3e9b95440d3a41810cb37a4459645f676166388de727",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_12/scenes.json": "d6cbe27870fe9a075c2e4027d4914592cb4a86ad5610e27fb1904a0e027c1fff",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_121/scenes.json": "48eb15ac43e0db5c142e6ac23c47a8a4595f081b20895e36dbbb0c542c4f07ac",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_123/scenes.json": "0d426758cc684a62209f62111af58321cc59c5b7b2f6d6bee161c429344a5673",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_124/scenes.json": "f6bb661122bdac9aeab8284210ae96a98c81aa7ad8500203cf4c93f753dd4136",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_125/scenes.json": "6eed4e22214e37e16b6a40f6520e5592e8531169b174f28a9786a6c1d27120cf",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_126/scenes.json": "40ea7019e087ec54e72d342103c5f24b11a008879465efce170a4b54150791ce",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_127/scenes.json": "cfebdcbcb2d3ab878cddc9ffcb0d0938e9c57bba3e5dc67643e3997d25c84b88",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_128/scenes.json": "8a5a15b93b0e200af67a190cc7a0645166ba108ed9049fe617908aaaec7885da",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_129/scenes.json": "bbf0736908394c83600ca8fbd270a663292dcc5cac7ced42ea80dd37be553ab2",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_13/scenes.json": "2acc9cd2970cfdf81368da1c5fa5f5170d78a9e95d9b15a18982805b9e581dd9",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_131/scenes.json": "76720a5f22888b0e7d28197530d4d119cf1c77fb1ee047808d8523b0f59e647d",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_132/scenes.json": "5d45d45989eb5eed471691628a3a5d4b78cc5fb1482bc537d1650026817c1e78",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_133/scenes.json": "f6ce4b6315a3609cb12c4f0b18663c868c41fcf388f7a44ed105fa9719d50527",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_134/scenes.json": "ce1b15133374aefc6cea65c8e8ef5e8b1921086e5da87a0eb5465bda1a7f3d84",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_136/scenes.json": "8ff320b62939b957a19b52af83a2925f54747d0e29a06256554d84e39e4c2fe8",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_137/scenes.json": "1ebaba4843028b4c11faab34c824074796ce3e2ef76eb0047023a5908691aa23",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_139/scenes.json": "7f187022af8dd120a57470dad287c2f60288d6c221c30ac51e68e355a5e5e707",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_141/scenes.json": "571394e21b5c5ccc669af2f34dd535f1f8f062b9927b0b293095743265694fc6",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_142/scenes.json": "32a75d85798d21192c48c1427c8167776ba833628e43bc9ceeab162fbef6ff4a",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_143/scenes.json": "29002629e5cf7f531af1d36f21a73ad28402bec1a37b183c95a3f11c602194d2",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_144/scenes.json": "dfea9a315bad0b5ab9c84f136eec29fddf4b4efcc474a96a24b734d4221532d9",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_145/scenes.json": "6f5af611cd292dc2ecf85b66c2d2169b155616be96310575b4b9138c4769d8b2",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_146/scenes.json": "45ad8aca554a03b233b3c2b1b05db16d05605beb2092febfaea774dd43dc3b94",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_149/scenes.json": "f6c80ba3e07a0f39a001a3de57163abffd89738a31f68bb335ae9fe1d843f306",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_15/scenes.json": "57b86118645640f565286482d6c8f9674085154de39daafa71a2c1c2020491a6",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_151/scenes.json": "c09a0954d219c36f2def7cecda6941652a60ee409259829947fe3b32d4977f2b",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_152/scenes.json": "1242951afe85fb0b354f056ce34eaef2aaf3844d0a6a6cbd61568dc7a4582815",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_154/scenes.json": "c4369bd01339a0f85ebb49cdf8fc0286955857e1f03e58026762743501217168",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_156/scenes.json": "d3743565134f1a5f69b1b4df155d0d39b7015c129d1af2fcfec0ff32a820328d",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_157/scenes.json": "5d808adf533e5542378be2ba2c8311b34fd55874b69096e4efb271a6851ac0d7",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_158/scenes.json": "c0185dcadf7ee04a4a6c9d9c433cabc362c563ccbb432f49fa07c5f659807de5",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_16/scenes.json": "364c83c4b0eb11233bb55b712faa5d30859261fde1825c6bee0a231abe6dc7d8",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_17/scenes.json": "af780cc156e5e95f9c2797f3552ef4b4b04fe64ae7e736053fb5fa5bc91e7edd",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_18/scenes.json": "1c461c19fb2b424557d3a60400b15382dc44869e86dbc31c0c8fa6c35f15e935",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_2/scenes.json": "114729d3575e78de78f16475b33beb024cad05b8c0f06d78460c52c1e7f1f973",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_21/scenes.json": "faaaa7358319a8074d134aae926f25ea01bbea95fe01bdd3cd877e5712b70732",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_22/scenes.json": "d3b544edd5cea9e7fc9b2450b287c5b528dca47c5d79a69b1b84500810a5454a",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_23/scenes.json": "91fd653cb1f7b6ea80971540522e1ac14402f7fcb155cae5cce495b7850edc26",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_25/scenes.json": "ad9b6551425edffa3fdd654f17c609f508794d9db1899674f9ed1d31544a2a32",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_26/scenes.json": "1f94cc376d4f89a64d8f9c9203fa1cc54b6856ca195732110b4dd9b80cb5ccf7",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_27/scenes.json": "3e1488e054764acb37e1c48056d28fa8de84f1cef590f6b1ab5f80a56496536d",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_28/scenes.json": "b0906e10e3fe69119cff4b4106ded10e627703db9c8ea531bb079c0ac8bc7233",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_29/scenes.json": "759a518b20596744eacce59226c8f5a99a1fa423396c141a1b47d61480fc90f0",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_3/scenes.json": "a33b00533c09e728e6167f3822f2abe4392cff1d9daccea11c5c76bafd025fb1",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_32/scenes.json": "b64a02af15c2a6e5611afe97e41636866dc58013c9c474c44c8f56e0b3c19a65",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_33/scenes.json": "140409a3e521b87ee9c58f6c3abe3f4596459ff3c8b49182c8ee86d5821b30ff",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_34/scenes.json": "937d2263a24c0af2776fe2bf5c149c05609dfd165b5343b71b789fd702dec1e0",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_35/scenes.json": "44f7e5bed0574a75d5855ed93847b7e67e13dbf7f516ad0217f0e95b44e815fa",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_36/scenes.json": "991a46c1bc596bb4e24cc370de56eeb693b23e7c2184eafd5d445bb6a7ceb410",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_37/scenes.json": "d4a0b3d74d8d3f63099871c76f3156d8d70dbdd363d9c9c34700013fc69c26cf",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_38/scenes.json": "5c7b031f7245ec0b53c87310016976b5a1b538294d510f77c042d61dd73f8f79",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_39/scenes.json": "d083f283dc53b3d1f8341360a7397f010c4722403938e78faaf51887fb410c74",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_4/scenes.json": "22245c80560ee3324670be6b2743edc48aafc7069bf66790bd36b7298bcfc5b8",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_41/scenes.json": "f7228e7c7a886db1acfbcb7b16f1c7584250b106149e6b2d894e52cf31bb54b0",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_43/scenes.json": "32d9059f6325915a75a1537c078068f584c2c9a21fe758c8a26c6b7c413452fb",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_44/scenes.json": "36fea844197808c31f102290e6f28f368bc43f08c27fd0bd1b62d81c0afd631a",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_45/scenes.json": "d8414ee044933362acef32d64e6c77e29bbdc4224e6b66770be7f45878a222b6",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_46/scenes.json": "c26df96bfc0c3f57eb323e4d7a50cdcf2a231fe8b1c3745eb5975309e70930e2",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_47/scenes.json": "3700e01c6c60519cd107d87dceb9a48b6dabf878633f091d44c6f10ae5cb2aeb",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_49/scenes.json": "4d9034350c4049ef7d00b429b5155031c8cab443c806e892cd22848e2e9e80be",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_51/scenes.json": "a08e7c5fb549665d17f4326fe8d0cb506f5730bd7707873401a52fa76bc8a3ba",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_52/scenes.json": "11353fc2e7a469b0b1513cb150c77ca81d765c0212246381bd638a948e51ca0a",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_56/scenes.json": "48ae40be8761b2e53e7a8473a4b9002cd0050e56bae14a6daf6569b6d9a19993",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_57/scenes.json": "ae419b59aec2ecabde2ab26ca8f48e743e7d0678e3b4f464d18f31ce205f723c",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_61/scenes.json": "0765a34385e1a1afaab2869b8bdb1f2b98ae35d061fe30c0ae759361f271bb65",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_62/scenes.json": "02c84699ca1555580b6166b68049eaddce2e1b73ae83775c021181f097e991a0",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_64/scenes.json": "d2f51b4b2e9b608a7fbad1217d17e7bc0601f63f684f33700741346b05603f67",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_65/scenes.json": "74aa68fb778cf80340cd00a1829a8a850b5782b095ff2dee18edf129a002f952",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_66/scenes.json": "5678b38eabb2bce10f2ef52726e000587fa68e93190e5b7bbb3c38a008fe16d2",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_67/scenes.json": "6b9498e470292ef4847c1fa0ccdd33ece49b2d6d38e5559ccfd5041e54ef524c",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_69/scenes.json": "9bede41e47a4778afc70bf9d85ab796f0f0ccffee306bcf10883f0df246f714c",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_7/scenes.json": "74c99e0b90e3340a4fcff753ce0f68ef318745e04a84b795352a997df9a7cfab",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_71/scenes.json": "073b9f14360d83e27d768142f2b77ed6599f8a1a8a832f0164662587898c7be5",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_72/scenes.json": "5740866ffd707095d808cac8b4b21186e3585429d05ab58702942f162d21a597",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_74/scenes.json": "b2afe13461131c1c5aa6ec09e62fae5dd42c43e557e75106372274224b68b4fa",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_75/scenes.json": "fadd7b85d45eab847457617171e9b87f5d59a5502b072a151ab5388cff50be1a",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_76/scenes.json": "29f9073416f2e86e4755c6b6a6d5109e373ecec61cbfa5007c357520a31468ac",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_77/scenes.json": "8c4903be5b1ddcb5d63f49f3495222e468bf08fc8ddf6e88a6c173827446d976",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_78/scenes.json": "e921f659a2545adb4d2376f7d06867584b0884a3df3983b38008b1b75fee555c",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_8/scenes.json": "b246d5473c3bd93f04f5c04cf5b8e12af2301dd25f1b2294a16a28ed2b81eae6",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_81/scenes.json": "c33bd76a0aa07ab3320f50f9d86d1f1f7fc9ba8d323cf30a668b39ec7a2eb559",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_82/scenes.json": "9f10d0ee7c54613677b809ae873c0062f5fd2291bafe7d81b6370fd0cd9ee5ca",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_83/scenes.json": "94ffadf506e8b189f8cac60347811af83ef38e90fbb28eddc97846e9d5e09307",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_84/scenes.json": "2cb21c2a0777fecef757ab630a2d74273b622283ab3ca3dc6c5b141fed3fb2c5",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_86/scenes.json": "323d6b3f78c99cc3829e0438948d8a9f75fa2903dd50700f8a780aa1e16a944e",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_87/scenes.json": "a82bd5ae95e6165aa9ee677038d3fde3d3e3cab6392f723488fd09c5e5ac6522",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_88/scenes.json": "0d166cd8dfcc299d49dd3d9c8f651a2d30136e9fcf1fdf09d89af6ec3af178cb",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_9/scenes.json": "63aeccf07388d025dede157732c89607f849a436026ef655a8b2c90ec7201001",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_91/scenes.json": "6ab57d02b7fb2168bdc998808d99b89e86d06a62855e87c267a40cb3519d747c",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_92/scenes.json": "1c0e36ef3a99f8d6e0d1472a5e54ac38b9f1327ab25f21ad709ce2c400483d1f",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_94/scenes.json": "37bb43a12215d3eec39664f139858ccbcb903c7f17f82c2151161998c44fbfdc",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_95/scenes.json": "be5879dff34af0b45adb778fa0ac9ed03fb702f1ddecdb5e37e38e70edcf1a0e",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_96/scenes.json": "5993d29c5cf84953a9160c774854afcb13dbf9c58bd352de9ac870ef7c856116",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_97/scenes.json": "89b8c1ce90678e08a0ede55dcbd01ace92ded66cbcaa289312beff07c622449c",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_98/scenes.json": "93d95c626da05e30d410fdddd7e61e42903f251452f0770ec100367f488142e4",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_107/scenes.json": "ee9124618b45a82d59430a1d29563afd9d73e815d6e2ce63a6729a1aa5809c50",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_111/scenes.json": "cb54e5af4628cdca6f8a215a0fec8f43e5716e5029a4d877ea09586e45eb058b",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_122/scenes.json": "a71528651f631d8594d1679a98f39abf8a7d821d58a587283800cd79123dd7f7",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_130/scenes.json": "b0ed75a8f328fd64f237920da6d370b67f3ec89efb94f1e1559fa8c61fcaea76",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_135/scenes.json": "8f6afbe27ffb418163204d62b69bee64ebbe7448fc5139ea63ae6a8f61b1f10f",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_138/scenes.json": "4509a09f5e504667c83a470a646513c24fc86df8e2b64689dd1277e230a80429",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_14/scenes.json": "51a4d5a656cfbcdcd242e95aa8b34bdf8430eec9070087fa556ccb36b04631bb",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_147/scenes.json": "03d682c7f844a8e9a84d173737586cb2f55ebaa6f34531e4b552fa5185351131",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_148/scenes.json": "5501c4750ef16179c2d27554c953f122a17f4a73bae516bdb4753c1fb5d8757e",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_153/scenes.json": "b08daa09377001f2eedfff6367af472acb33d923473138b51ed33b79f53053cb",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_155/scenes.json": "9f1bd9767ebd30aeba45d9bbe549328d3e75a82b9a109450b290c9a65db6d9e3",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_19/scenes.json": "a586ba26f4b9a273c19ea9906a781f1ac6e961d2c03235b488388a8befa9aa1c",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_24/scenes.json": "4a05f42416e64191794a4b274fa2528ff9b14488b870e1dd1d05bd18df6201c5",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_31/scenes.json": "92b0d895e547d7faddddc1ffc23a8756432987c97863b4fe715cecf222bd28fe",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_42/scenes.json": "7f88eb2de0114874071fa5c513d4557c1a7df49dcbb9612c51e98819573fccca",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_48/scenes.json": "b402161cd2247b29360a92886e7c6402b6def622a76d248d8425a170714c1235",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_5/scenes.json": "9527019ece6557c0dca9ebf02d1a097b947225302c350b12dac91bee872c1fb4",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_58/scenes.json": "6c6b2bb3a5e52255fca94a481732a41197c8a8f278ee07ac431c856bb3a491c6",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_6/scenes.json": "9334b2a9e394a4d4081202312cc3046219bbfdd1ea518e253e36d4474e7c376e",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_63/scenes.json": "f594ce33fa5854f8453e8cfbc2764c4c69bdf5a9b22d67b92bb5f3d5d5ea74e8",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_68/scenes.json": "e3a47d3153924d66a71061c493273d7f91324ac245f862873011105f382838d4",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_73/scenes.json": "e777dfa2d2d62c1a15f5a5f39238351dbce82cd2a34f28a5d6e58632522e2f34",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_79/scenes.json": "5660695838e53fea461581c840d59d13e363bbcdd3ac2e1b03ed3f7dfe585b80",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_85/scenes.json": "a0736b1d0602a1e7431862135110a225ee0fb208bbe4857b74b6c5c662b171d2",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_89/scenes.json": "0bd4f59e44bd7e1c4fcb345861e9614f58687b33a5e58e9aa6a7e9c7b221d492",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_93/scenes.json": "bace71fd3fdafc83be64120e00429344fe4df5d2949d199f4ac1b86cc00b7330",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_99/scenes.json": "44e6a6ed0715a6d16b470913da5f25b36ad0898b217c1eda4f6fbaafb2ebcf90"
+  },
+  "raw_hdf5_sha256": {
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_1/radar_data.h5": "cb26fabf6ad6bf5cdbe775f67f0e4657e1db551e0e22745469cbb8c139953698",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_101/radar_data.h5": "2918819e48e4aad3419cc8e4f22a01c05039466a2dd24d2853842a23344b40ec",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_102/radar_data.h5": "1ff853776e88a66a081ca27c9ff8f9278d94ff5e6eaeab3319e78d2678486231",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_103/radar_data.h5": "ef1abacb91f74cd6f9a11ebf7629de56a80c02435a7f9d8597963cc250db0e4d",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_104/radar_data.h5": "dc6157d0eec0cd07c4d8d3c66e7c102d71735e4b93ee09d6516aab91d126b728",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_105/radar_data.h5": "9f8509bcee681dd95e0295418ec1cf22e2bd6775718e7acdfe84404e133e3504",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_106/radar_data.h5": "99c7ec002ae995cca4063f2638509cb9ff7fef7cab190222172232525bff0edb",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_108/radar_data.h5": "bcb1e982155d14ce9b63302f2db7ae1b3f4727a55db8a917ef1411bae6f4cfcc",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_109/radar_data.h5": "3d2f7f02647ac5c73c88290a7e93180f4a15dce9e9d03b9fddea71550a16d329",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_11/radar_data.h5": "eafe000bde19213a94f278a6b89682dc22f9092a318b5600fb1aac0fcd1de699",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_112/radar_data.h5": "ea5b2e46bd7b704d5041c4d0aed403195e70c5da477a06b0a5adaf769baeecc9",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_113/radar_data.h5": "a3820c804837596026dba9386f8a3faeac9593f09c6aecd20459f6003433269d",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_114/radar_data.h5": "30ac6b6f9f965dc180909579dc7b7fca1980e38886b981221df3034d6e1437e0",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_115/radar_data.h5": "8159934563be9ab0a010de4459a86e2365df6f5bb6e62a288c4a0d3c92b3d8b8",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_116/radar_data.h5": "76ed885456726c874a7674f218f29d14c93a88b154a83d15156616bca9e2fef6",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_117/radar_data.h5": "0e60dccdef616b97fca87f421aab6df49a47b40facfc7654b569863a019d917b",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_118/radar_data.h5": "fe576cc79e49af4ce68dc34204fbd9654ac76caaee362ec34505a84c475167ab",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_119/radar_data.h5": "4f2f438ce33eb522b0a156620f6f8bf8e2da795633964b8c10ffa251430e2dac",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_12/radar_data.h5": "b1fa68a4d0054b8787cec8dfb3483c1f987ef202e6b73679e358a0c1fb789ab0",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_121/radar_data.h5": "447a12cc7ca7d9e11b711e94b9d32b32f05d6f8032510ee6366cbf0a3c457f56",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_123/radar_data.h5": "14197d6e10cb9d61d517ff76f300b377537b3dcfe75d80ebe458b2d5397f7f45",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_124/radar_data.h5": "1eb6331797bcd6fe55c23d02720b4b7ea477210bb05e36c1466309716b9fcaac",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_125/radar_data.h5": "b74fb1181ac42e79fc1f509badb613c4d41b3ea8890354a9ea9952795b263fe1",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_126/radar_data.h5": "757ce07d8a87b1581815c6a38898fc2d91c9084ebf6153e6bd69b631e9a0ea71",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_127/radar_data.h5": "b61d6559a7cb55eab610c4bfae12a6cc55ae4e2ed92efacde88c25195568f8c6",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_128/radar_data.h5": "e8bb221323dded3064feae2510a27c8594a9b6aa0d620624fe786ef3371f3082",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_129/radar_data.h5": "92db90daadd466aa890e4e82de4d92b1ea8f361eb30570a42edf3f59a3efad48",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_13/radar_data.h5": "ce1c4e1b8b632539c166860b6f8200f9863ee0d14f67d7c41cd37be22637997d",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_131/radar_data.h5": "4648127e6df5fa6e023c599b1b0ee7b8ed0d0d22855118f9d8451dc41b44130e",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_132/radar_data.h5": "3fc66d19ca8ab650ae416876c11c2d425a9d49d16adde1d88adca2a2b5e22c92",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_133/radar_data.h5": "94e70e647c16c202cdc1448914f1408c681b04375825fac5f32f70ec45f79104",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_134/radar_data.h5": "a10ea1fad4f0bbd06b72e4d92a9551882fc012c73d469b5ec1608726f10a8232",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_136/radar_data.h5": "8c5dbbe33734730b4a4f13c625928b25220ab5baa3b3164be2f189f00e09a0a8",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_137/radar_data.h5": "da33e3c3a051e9a1fc31413bae6de4868c17b6126dde88c028af82ee89dda4e9",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_139/radar_data.h5": "5a7ee9f3621c5167b980edef1a24f674f65481d66b103befba001ec369f5b1c2",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_141/radar_data.h5": "27f4911b8762e5bf8ed532e5cae938c00e40ce9c6966b27bc690fc382c738f64",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_142/radar_data.h5": "c4bfdbbf4955c2d3edfa67e21c62f89b1fd52acc8f6d448cc28f50d186a8d46f",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_143/radar_data.h5": "4451ac1538a2a874db5ad52a92b0b64a72ce939ae59d137b4d40d0e50c897be6",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_144/radar_data.h5": "0d74d7622418f5da447acac520051253712a77b29660a17b5a185368100a897c",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_145/radar_data.h5": "a693efc1eeea1b570394d16fbdb267fbbe16026bdcca0a4ece00b1b91428c49d",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_146/radar_data.h5": "63b14750dd3f5053aad75d8e20a7a56a4edbc1c7bc18bf77f754c8814b7e2aa6",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_149/radar_data.h5": "385a18e290a7626df028725825b9fbc8d546430b3444155761cc2a617e37064f",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_15/radar_data.h5": "4eaa8c7a95e179b64aea616dae704bf635443eafa9df63daf40e69050554ca47",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_151/radar_data.h5": "e030d556a32250a504a30174b14add204bcad1bbcd8fca65c144f26651d00a95",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_152/radar_data.h5": "ec0c0e6c5917555801cde801a2695b665156b3ce1df016a21ca9109dc171ea8c",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_154/radar_data.h5": "8b4b43cd563e2c61c499622a40ac5f75624347e897ebc3ae5db76a1b26f716dc",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_156/radar_data.h5": "dc5f5cbaeb5da8fcc3f2036e2f3a4774a40368778d5d21a1a90e8b90b7809fbb",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_157/radar_data.h5": "3413ac33bd0d3c0e1553b2faf331a735311b3a705650d961c956571be79c552a",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_158/radar_data.h5": "5d9076f627a47a3f212bf7f24baa8de30b3790dfd0b6a439db48fdac2675a9b6",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_16/radar_data.h5": "545b0759e312fac07be3bdfef304771fcc2e72af6719c95a2d5125b21b780859",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_17/radar_data.h5": "854a0d7c3d804edc775878dfe0a8b0418d6ca6a660abcde076207ff9f6a0ad19",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_18/radar_data.h5": "0c5a288d1577194d1ab568cae96ec40fc5c9fe345eba589fea41875596eb4f1b",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_2/radar_data.h5": "bb119fb617db738f4ef14fe2b41ebc2dfa1bda1344b0eb552b02557ed4a0dc49",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_21/radar_data.h5": "c8cf0f389867de4baf3d409a10c8cadbd60348d1aad149b916b60a6102fac897",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_22/radar_data.h5": "7780a7afe115880ef9e56ee4eab9a7b04dc1fed16ba77f47de9418de902d5d2c",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_23/radar_data.h5": "012bdb0c9420c34a89276b44d7b46f0f40283e33d6c00952bf309da880659dba",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_25/radar_data.h5": "5c5b71c2064c6161c8954da0568cd9a80a055699b4ef15edcf9e244bd663fdd5",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_26/radar_data.h5": "0ffdb90661107cb56a4258bda16ce21771b80690d6d5d5008478ae2e5bacec3e",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_27/radar_data.h5": "5c631e8e30bd71d8d78a8a1f3f3aa230412d93bad910ee45a4a59ffd46fb5f25",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_28/radar_data.h5": "dec7da698602be6fb126318145ac5a5a670cf42ca7ff700578ae3fc547d445b8",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_29/radar_data.h5": "8f46d30a52f12c937a7a6f338caea3ab214a2a7911c1af4ef7c1fe0a67a4f080",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_3/radar_data.h5": "f2572e9e732e45070fa72645bad5ed1cc2cfb6b39003e8395846f495f7018fb7",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_32/radar_data.h5": "ccddefd86f3024050769940a31726be0492e0784827e022ec2cc308b3a7e222d",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_33/radar_data.h5": "e22331053d474b8a1fddd7eedf70b2f76ffcea77cb0bd65debe3dd81280e8db1",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_34/radar_data.h5": "920412c7785b2d417d6e6f2009c644c27d32c89165b97cde012e1358a8826470",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_35/radar_data.h5": "b1b9ad1e5ca4c77dbc253c15ec1b749079be306c1e2e51fbe16a28716c5e7f8a",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_36/radar_data.h5": "ae8ac4cb84a25f9280d898ef19ab2a56159775ca1cb3596219ddb7db33a5c0ca",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_37/radar_data.h5": "1856a4dee786f4f6444a561fe814d6a84991e1752af589f72c2a870969e24382",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_38/radar_data.h5": "3c5999e3d93c5bb40c7d4a214306283904bfd58a55fbaa6c6e27a4c9c67fbdcc",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_39/radar_data.h5": "e0bb9cb086ac50bdf49ccb89816a64819ef89ec800a52ed03d7dfbd088fde639",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_4/radar_data.h5": "522fd014133da253ece3d420f805918a3e6e26157130b8b80da175ff982d1726",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_41/radar_data.h5": "96fdfc04f57f76b0901d0025f1ad38ea3ba004a429fb85d4e23fd71a08a7ff0a",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_43/radar_data.h5": "8582383e5c9363992ce5d8a50c18901988cc0f0a66a4329f6875fe992a2226de",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_44/radar_data.h5": "1f5c1eeac2b944e9f295510a2d08af91b82b13080595bf82c0e4ca5e42399a6d",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_45/radar_data.h5": "8c21d6258e4ac7821fd39ef73b1dc0c955258b2de875d6bf1595687567db0f52",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_46/radar_data.h5": "7dd867677fe8182595f1f413932416040ff624c2fc40bf5db11ad3cc75e3579f",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_47/radar_data.h5": "a2af740e30c1a1dd12bdd57606ea3b0b56829725a7c1ca504dc5be43e355be53",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_49/radar_data.h5": "764f7515ff86cce9c980739254363f847fbafac9fce807d9fe9e0b9f1b480c39",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_51/radar_data.h5": "f70dca75cbf4131e245bbf59699e80a29343562edf137071867399decf33116c",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_52/radar_data.h5": "84926069f6616efb529ee77162e59e51b5f04818205ab90ac351e932cf91defd",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_56/radar_data.h5": "6375a9f1b6f0c3318e1d1989a506e431ab1a6410665a80c570f0ec83776f4f93",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_57/radar_data.h5": "591c944f8546afaaa3cc99e0cb93fd7616fce84c064f5325de609b40c366cfc2",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_61/radar_data.h5": "793a9e8f028933a461e91188883bc71e43a097597285b8a43c65b848633b63cd",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_62/radar_data.h5": "efa1c68b33f18cb25340b6b4f5c8409ccf694f2ee623baab334062ce651c0303",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_64/radar_data.h5": "3b229ae7503f79e91542df083e7d4fa076c9e162d0df1f4c39eb651ff759204f",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_65/radar_data.h5": "0f5f577d635a8e35eddc462847b8d9fccc062bf840c74dfba99a695841d39cb6",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_66/radar_data.h5": "499c5f40e0470f66454ee2f17d3df2321a750bfd1a59025d2227c55b5aee8bd2",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_67/radar_data.h5": "add69906986f734eb6298c0adb145d70a129363f256d8cf92fb4e6588f828095",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_69/radar_data.h5": "b83284c2ed0669a4be1d8354cd9c1934040c90c340c00ed1568498421e6c9364",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_7/radar_data.h5": "435571059641b27b0295cd0ba335594be9b989ddbb87564d53049233510217b2",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_71/radar_data.h5": "ad14fa0be8d92f3606e60eda371861010e153795f32cb7a8cbd37cd8164e73dc",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_72/radar_data.h5": "b1ebd6032dd8f7bbe29192c0d52240700dd3f4463e8ee1aa7b7c0ff843cd5f99",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_74/radar_data.h5": "7b184ba521cb5c093756df5b5e28aff53c26706f1a7897fed99d3da431a377bf",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_75/radar_data.h5": "074b5bfa35615bb6bf8d900abad158a3459d462910771b9c6007458f6e07e629",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_76/radar_data.h5": "3ca82c5773c53ae198b42c59144203aa5aa43a41ac512d6bcdeceb4b13b95265",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_77/radar_data.h5": "ffe0ba454a2077ef665aed38878b8f61c090ce59b408e49b573a098085494cd3",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_78/radar_data.h5": "ef5ab07a8945116450621598d1eba4cf1680e3a0a96fc5207f9ffdc811f50715",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_8/radar_data.h5": "afb61f7011b5924990df69fa7df33f4fc4fa64c598ee27be238f1a548893aa9e",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_81/radar_data.h5": "7eac48e396a9d7aa366804a4ab9fc9169eb2af3a924751821f1728aadb8c4080",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_82/radar_data.h5": "0abe79145ffe59bb2bd852010b7b3ba0c752563936ae55141943ec55533e8fbf",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_83/radar_data.h5": "c9fd41ab5e716f755903ed33fab754c36179fcb6396f4ef1d0c405edac49036b",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_84/radar_data.h5": "b3e41aa4a237ee7eba8217bb8eb00fa8fb3371b450c5ce2bde302c5a72faf624",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_86/radar_data.h5": "a858083044e40fd0db3826e022c17432c7f37a962a6c9c0e7bdf4caae10315d6",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_87/radar_data.h5": "2c18e459d283bc4fb9d7c0181c76561a2cd1d95029d151f235d2209442da4832",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_88/radar_data.h5": "b7fb3b387d13bd676be82bc24c0d3fc56d8efdcd37b0fcee2325183ff2fa08a0",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_9/radar_data.h5": "c70c88de80fe99591ec3079f1e21faba10b3658e502dc934ada39c33607415ee",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_91/radar_data.h5": "5df0956f67f1ebaba8c1f647d3bf85c36d4828fb59387d75a6d549804e7c5293",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_92/radar_data.h5": "ab72c69d14a905d228e8f3f9d957d52ab74b660de4d85093a6c666f09cc1432a",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_94/radar_data.h5": "7cc8a50eea7234c9a19cfc90c3416ea8968e7c15cf40d3b3c8f386879d3341a4",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_95/radar_data.h5": "12b0fe577ec5124948c3f09715387cc761be92d42135b45b028c714dfb4008d1",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_96/radar_data.h5": "eeb3e804194d99d7ea1c770bb3ec6fdea3b393be229caddee4815fd243ad584d",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_97/radar_data.h5": "2e0601d5777fb80250dd876611dad0a35f82a92b4b2dd5d36ad0a9eb09af337e",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_98/radar_data.h5": "fd6ac9f746bdfe8f8b2eb48089bcce8aed1982e0496fdd5907453abc8ad147bb",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_107/radar_data.h5": "2a2fb19f0075b0c1daa376ae13fb3c5f112cb39f8a602447ca71da3179d4ed4b",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_111/radar_data.h5": "188632fc9aa9ab64b2433499d0d80ec44849483bfb80f1d396550fd1b2f5aa7d",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_122/radar_data.h5": "2c34855c1e6207d1464ca919bd7a67687f0b8910390b0a90c17f5ff4645a519d",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_130/radar_data.h5": "361cf50d880bf7a1cc3e68f88c34e8b16c327deb246b4285c3922aa7afc32a65",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_135/radar_data.h5": "33dafdd3b76b6518af20458093ac697b5ee7164fc9fee1f1405801695f0c3d33",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_138/radar_data.h5": "8529125f6b0718763c3d858a3ffa52f7deef48ca02ab9762ea08a7479cf73f78",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_14/radar_data.h5": "ac5f396e68ee72b8145c420f4f71529035b03a46777833a005abb30387ce8916",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_147/radar_data.h5": "9f76f578355ec2b06a61e69fcb78392c26b18d7336b9945ff65d94bc21339f46",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_148/radar_data.h5": "f7a6ef7085c0dd71b6cedcd97f0224b762615402c7f8bfd2e8b46dc0485a1f6e",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_153/radar_data.h5": "4daf5d2941560f64c41b45ef5c5d5b8563bc96a7d1d9b8872c603251dd749579",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_155/radar_data.h5": "bd9fea52d123735da02db142288428485e225ba02fc510649993ee605eaabeb5",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_19/radar_data.h5": "9a2a14ce20d660bc8d303956efbe2d0b28562d96d8d1b01f0173b3cd870c797e",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_24/radar_data.h5": "efb75ff68e412042755a2a8ec5ba7d9870ad94866b515a98adde9a2472b1e7d8",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_31/radar_data.h5": "48382a74377e7af59a128d088e6b9fb09c39577924cc70f2ead71af69fdcd535",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_42/radar_data.h5": "f92c88a87b2500575eb595c046fc1953cc684846b9ae6c3cf0076ad6d48ae1ec",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_48/radar_data.h5": "8bf1405672b79771546621d5f02f250f09172dfeeb202659a5cab0f0385d2621",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_5/radar_data.h5": "0e98243b2973349c4948a62dfe630c9c2e940b684ce702d6b274797f004b8e88",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_58/radar_data.h5": "91328c5bc6f05175aa0e696752aca3d925d137d3444365d781166c8d624b6a84",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_6/radar_data.h5": "5e4fed50bb698dd5c4314fc6e7fdef03242c6dff6d58e5451781258b22451e18",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_63/radar_data.h5": "3636fc3c51bcb4e99779417539a09be9bd264a61aca4a6c10c0c973a65fb4972",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_68/radar_data.h5": "18c0b07d32940d50502b7cf0835e047cd94848d12ac7069cd81e34b337122d7a",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_73/radar_data.h5": "e3d8cceca9e66de58727c59eae12a341168d04b822ab703e60d819b65ca7a975",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_79/radar_data.h5": "047b3c9a0bb6f489dc0ef4f48ef3b787b8292f4dd54eff94b099f0a77e2cdfc8",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_85/radar_data.h5": "9754af999b96f38995988e7469a1461cf15c505176ee673df62d98e4e36f84bd",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_89/radar_data.h5": "8ed5e265d5975aea48ea231092d0f64a3664abbb09d1042e569baa79b8538572",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_93/radar_data.h5": "8da7df0433720c1e8252e8bf74243697a4a595c36cc059b3fc2649634348a790",
+    "/home/soooarr/radardetect/datasets/RadarScenes/data/sequence_99/radar_data.h5": "5f639c58990c0951d110d6b1195997e047c3f31df3b228d518fc4fd18e8b8795"
+  },
+  "wall_seconds": 498.40305184799945,
+  "output_bytes": 324350351,
+  "scope": "Train/validation reconstruction only, no historical-test records loaded beyond split identity manifest; no training yet"
+}

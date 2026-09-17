@@ -1,0 +1,450 @@
+{
+  "status": "PASS",
+  "checks": [
+    {
+      "mode": "proxy",
+      "schedules": [
+        {
+          "seed": 7,
+          "epoch": 1,
+          "view_counts": [
+            178890,
+            44722,
+            44723,
+            89445
+          ],
+          "class_counts": [
+            141030,
+            216750
+          ]
+        },
+        {
+          "seed": 7,
+          "epoch": 2,
+          "view_counts": [
+            178890,
+            44723,
+            44722,
+            89445
+          ],
+          "class_counts": [
+            140662,
+            217118
+          ]
+        },
+        {
+          "seed": 7,
+          "epoch": 20,
+          "view_counts": [
+            178890,
+            44723,
+            44722,
+            89445
+          ],
+          "class_counts": [
+            140738,
+            217042
+          ]
+        },
+        {
+          "seed": 7,
+          "epoch": 21,
+          "view_counts": [
+            178890,
+            44722,
+            44723,
+            89445
+          ],
+          "class_counts": [
+            140836,
+            216944
+          ]
+        },
+        {
+          "seed": 7,
+          "epoch": 80,
+          "view_counts": [
+            178890,
+            44723,
+            44722,
+            89445
+          ],
+          "class_counts": [
+            140728,
+            217052
+          ]
+        },
+        {
+          "seed": 17,
+          "epoch": 1,
+          "view_counts": [
+            178890,
+            44722,
+            44723,
+            89445
+          ],
+          "class_counts": [
+            140893,
+            216887
+          ]
+        },
+        {
+          "seed": 17,
+          "epoch": 2,
+          "view_counts": [
+            178890,
+            44723,
+            44722,
+            89445
+          ],
+          "class_counts": [
+            140795,
+            216985
+          ]
+        },
+        {
+          "seed": 17,
+          "epoch": 20,
+          "view_counts": [
+            178890,
+            44723,
+            44722,
+            89445
+          ],
+          "class_counts": [
+            140792,
+            216988
+          ]
+        },
+        {
+          "seed": 17,
+          "epoch": 21,
+          "view_counts": [
+            178890,
+            44722,
+            44723,
+            89445
+          ],
+          "class_counts": [
+            141025,
+            216755
+          ]
+        },
+        {
+          "seed": 17,
+          "epoch": 80,
+          "view_counts": [
+            178890,
+            44723,
+            44722,
+            89445
+          ],
+          "class_counts": [
+            140905,
+            216875
+          ]
+        },
+        {
+          "seed": 37,
+          "epoch": 1,
+          "view_counts": [
+            178890,
+            44722,
+            44723,
+            89445
+          ],
+          "class_counts": [
+            140960,
+            216820
+          ]
+        },
+        {
+          "seed": 37,
+          "epoch": 2,
+          "view_counts": [
+            178890,
+            44723,
+            44722,
+            89445
+          ],
+          "class_counts": [
+            141038,
+            216742
+          ]
+        },
+        {
+          "seed": 37,
+          "epoch": 20,
+          "view_counts": [
+            178890,
+            44723,
+            44722,
+            89445
+          ],
+          "class_counts": [
+            140832,
+            216948
+          ]
+        },
+        {
+          "seed": 37,
+          "epoch": 21,
+          "view_counts": [
+            178890,
+            44722,
+            44723,
+            89445
+          ],
+          "class_counts": [
+            140867,
+            216913
+          ]
+        },
+        {
+          "seed": 37,
+          "epoch": 80,
+          "view_counts": [
+            178890,
+            44723,
+            44722,
+            89445
+          ],
+          "class_counts": [
+            140955,
+            216825
+          ]
+        }
+      ],
+      "fold_error": 5.551115123125783e-16,
+      "qat_integer_exact": true,
+      "class_weights": [
+        1.2697588010665577,
+        0.8247770595849071
+      ],
+      "calibration_sha256": "49b2ddd7d308a6e317774ed27060ea097d2d4e9ee0862e0f62b2b7b7a55fdd7b"
+    },
+    {
+      "mode": "mean",
+      "schedules": [
+        {
+          "seed": 7,
+          "epoch": 1,
+          "view_counts": [
+            178890,
+            44722,
+            44723,
+            89445
+          ],
+          "class_counts": [
+            141030,
+            216750
+          ]
+        },
+        {
+          "seed": 7,
+          "epoch": 2,
+          "view_counts": [
+            178890,
+            44723,
+            44722,
+            89445
+          ],
+          "class_counts": [
+            140662,
+            217118
+          ]
+        },
+        {
+          "seed": 7,
+          "epoch": 20,
+          "view_counts": [
+            178890,
+            44723,
+            44722,
+            89445
+          ],
+          "class_counts": [
+            140738,
+            217042
+          ]
+        },
+        {
+          "seed": 7,
+          "epoch": 21,
+          "view_counts": [
+            178890,
+            44722,
+            44723,
+            89445
+          ],
+          "class_counts": [
+            140836,
+            216944
+          ]
+        },
+        {
+          "seed": 7,
+          "epoch": 80,
+          "view_counts": [
+            178890,
+            44723,
+            44722,
+            89445
+          ],
+          "class_counts": [
+            140728,
+            217052
+          ]
+        },
+        {
+          "seed": 17,
+          "epoch": 1,
+          "view_counts": [
+            178890,
+            44722,
+            44723,
+            89445
+          ],
+          "class_counts": [
+            140893,
+            216887
+          ]
+        },
+        {
+          "seed": 17,
+          "epoch": 2,
+          "view_counts": [
+            178890,
+            44723,
+            44722,
+            89445
+          ],
+          "class_counts": [
+            140795,
+            216985
+          ]
+        },
+        {
+          "seed": 17,
+          "epoch": 20,
+          "view_counts": [
+            178890,
+            44723,
+            44722,
+            89445
+          ],
+          "class_counts": [
+            140792,
+            216988
+          ]
+        },
+        {
+          "seed": 17,
+          "epoch": 21,
+          "view_counts": [
+            178890,
+            44722,
+            44723,
+            89445
+          ],
+          "class_counts": [
+            141025,
+            216755
+          ]
+        },
+        {
+          "seed": 17,
+          "epoch": 80,
+          "view_counts": [
+            178890,
+            44723,
+            44722,
+            89445
+          ],
+          "class_counts": [
+            140905,
+            216875
+          ]
+        },
+        {
+          "seed": 37,
+          "epoch": 1,
+          "view_counts": [
+            178890,
+            44722,
+            44723,
+            89445
+          ],
+          "class_counts": [
+            140960,
+            216820
+          ]
+        },
+        {
+          "seed": 37,
+          "epoch": 2,
+          "view_counts": [
+            178890,
+            44723,
+            44722,
+            89445
+          ],
+          "class_counts": [
+            141038,
+            216742
+          ]
+        },
+        {
+          "seed": 37,
+          "epoch": 20,
+          "view_counts": [
+            178890,
+            44723,
+            44722,
+            89445
+          ],
+          "class_counts": [
+            140832,
+            216948
+          ]
+        },
+        {
+          "seed": 37,
+          "epoch": 21,
+          "view_counts": [
+            178890,
+            44722,
+            44723,
+            89445
+          ],
+          "class_counts": [
+            140867,
+            216913
+          ]
+        },
+        {
+          "seed": 37,
+          "epoch": 80,
+          "view_counts": [
+            178890,
+            44723,
+            44722,
+            89445
+          ],
+          "class_counts": [
+            140955,
+            216825
+          ]
+        }
+      ],
+      "fold_error": 2.220446049250313e-16,
+      "qat_integer_exact": true,
+      "class_weights": [
+        1.2697588010665577,
+        0.8247770595849071
+      ],
+      "calibration_sha256": "49b2ddd7d308a6e317774ed27060ea097d2d4e9ee0862e0f62b2b7b7a55fdd7b"
+    }
+  ],
+  "scope": "Train-only; no full training trajectory or validation-based decision"
+}

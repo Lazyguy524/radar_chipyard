@@ -1,0 +1,94 @@
+{
+  "scope": "Selective thesis algorithm sources, design notes, model parameters and small evidence; excludes raw arrays/data and unrelated dirty RTL/bitstreams",
+  "base_head": "122c8b68ea0a5fd69756162162f6f583339136b4",
+  "files": {
+    "docs/paper_new/00_project_requirements_and_memory.md": {
+      "sha256": "bcd19e374b7fbd34adeb83c48667518edc585762d180b7bf2a7d88ba31519d23",
+      "bytes": 17753
+    },
+    "docs/paper_new/README.md": {
+      "sha256": "91a6bf49ea071c9106bfdfa6b6c39661662fee59097d992d45fb85a6cbf7a095",
+      "bytes": 28317
+    },
+    "docs/paper_new/software_convergence_2026-09-17/00_设计账本与执行前审查.md": {
+      "sha256": "1545bab4aeee1805c1d5d30d85f299cbe9aac97a59227f98a800efad51a0b920",
+      "bytes": 3466
+    },
+    "docs/paper_new/software_convergence_2026-09-17/01_开跑前复核.md": {
+      "sha256": "d89884b81e32ae1ae9501dbaa66ce5d1db4690a8fe1792e3fbf64fac7f94e6d9",
+      "bytes": 2364
+    },
+    "docs/paper_new/software_convergence_2026-09-17/backup_git.py": {
+      "sha256": "b027e5a6672fc6f59167ce4fa4fa814f602a23911946c7ce5921c48a4e1207f4",
+      "bytes": 6717
+    },
+    "docs/paper_new/software_convergence_2026-09-17/build_package.py": {
+      "sha256": "82ef30fc40441b00fc33b558c9110bddab8c02d8d342d6bdc64d2ae9a4cedf69",
+      "bytes": 5295
+    },
+    "docs/paper_new/software_convergence_2026-09-17/evaluate.py": {
+      "sha256": "b556b63d9ce7425a27e3a9808f964946c769d98ee6675ba55d95ecea47334cf3",
+      "bytes": 12088
+    },
+    "docs/paper_new/software_convergence_2026-09-17/plan.json": {
+      "sha256": "ec325abfabf43d20f882f73e29d5faf969b8d583871b03cf98e54965473094b9",
+      "bytes": 4660
+    },
+    "docs/paper_new/software_convergence_2026-09-17/pools.py": {
+      "sha256": "13030da8d7769460a4cf5abec2c049a28763dd77c5389e320424bbf2587741ee",
+      "bytes": 5658
+    },
+    "docs/paper_new/software_convergence_2026-09-17/prepare.py": {
+      "sha256": "9e260d53c70fe993f4e81231894766ec60d3b7e702dc6d2347bac9e67dcc59ec",
+      "bytes": 11435
+    },
+    "docs/paper_new/software_convergence_2026-09-17/sw_common.py": {
+      "sha256": "6c276aa61f4629a11de5162fb21fee9ab3af7d78ef1d40ec4eb2c8a991699bd9",
+      "bytes": 3741
+    },
+    "docs/paper_new/software_convergence_2026-09-17/train.py": {
+      "sha256": "6f4ce1f7bfd583eb9ff105723c855734298775962d22a0948a7068995894c89e",
+      "bytes": 6742
+    },
+    "logs/software_convergence_20260917/baseline_review/conditional_groups.csv": {
+      "sha256": "ed49ca1daa41ce42c67f38e5bfd03e56034641871018674da66222aa0b4859f7",
+      "bytes": 419481
+    },
+    "logs/software_convergence_20260917/baseline_review/error_cases.json": {
+      "sha256": "9d6f54915b1b2527cae9be16aa515a27c311101c38b05482ad801b2b7dcf3d35",
+      "bytes": 180032
+    },
+    "logs/software_convergence_20260917/baseline_review/metrics.json": {
+      "sha256": "7c06a8989aeed88a07fa2f21f90ce9c855a6c704664c9a71ca0f307924d0d9a6",
+      "bytes": 51752
+    },
+    "logs/software_convergence_20260917/baseline_review/paired_errors.csv": {
+      "sha256": "860cb3f77521ee663921971869bf0b5c6b8ee6a0ba46f701b73561c3d825f60d",
+      "bytes": 6173
+    },
+    "logs/software_convergence_20260917/baseline_review/paired_sequence_intervals.csv": {
+      "sha256": "c8774cef2e310266bfc58e70c7ab818b217b6e55432215e63d1e1f83c0fc4ef5",
+      "bytes": 14694
+    },
+    "logs/software_convergence_20260917/baseline_review/summary.json": {
+      "sha256": "2d0910f182f1d120d81c89684c5d2c40f732cbb22a8c58c19ea8d35dcac412d4",
+      "bytes": 1048
+    },
+    "logs/software_convergence_20260917/data/matching.json": {
+      "sha256": "1426555b7617f0f89da74e061a76dffffa536e9bdba1484242a4febfe8f6d38a",
+      "bytes": 868
+    },
+    "logs/software_convergence_20260917/preparation.json": {
+      "sha256": "815334d9ef85631032984351da2d5ec9fbad4920f28010bd8c9b254d26402975",
+      "bytes": 60015
+    },
+    "logs/software_convergence_20260917/synthetic_preflight.json": {
+      "sha256": "f72e0008356ba2db84ddf910f8e596ab94248761db0e2dfd840e689397f05c86",
+      "bytes": 76
+    },
+    "logs/software_convergence_20260917/training_preflight.json": {
+      "sha256": "4ec7c1b2ad638f5cfd9fcc184c9e795aef5fe266ebaa3d3006d1da405db98d08",
+      "bytes": 8581
+    }
+  }
+}
