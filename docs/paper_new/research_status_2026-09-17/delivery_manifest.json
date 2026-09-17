@@ -1,0 +1,16 @@
+{
+  "files": {
+    "docs/paper_new/research_status_2026-09-17/feature_identity_check.json": "4caab32151dffdd7428202eb1b816aeef234d5d2da0638995987c29bb9ec32e9",
+    "docs/paper_new/research_status_2026-09-17/README.md": "036a5ffe6af49e5094d8ffa455f03d903c54fb87c0fa8ffea30b409865202ba0",
+    "docs/paper_new/research_status_2026-09-17/feature_identity_check.py": "eabfa5e3e69fa60659f4bd2b130d7860ae76617614d07d4d6689f0cdb2f6b41f",
+    "docs/paper_new/README.md": "65f9a7d9d65e55055cd622add0b3fc61c9a7268cba07571cb4e62c45161d4f46",
+    "docs/paper_new/00_project_requirements_and_memory.md": "778bcab89071c14cc430be3cf4e5744e246394a5f916bbe3a491c75115cb0b1a"
+  },
+  "mirror": "/home/soooarr/obsidian/项目/毕业论文——研究生/Chipyard论文知识库/论文写作/阶段总结与下一步_2026-09-17",
+  "mirror_files": {
+    "feature_identity_check.json": "4caab32151dffdd7428202eb1b816aeef234d5d2da0638995987c29bb9ec32e9",
+    "feature_identity_check.py": "eabfa5e3e69fa60659f4bd2b130d7860ae76617614d07d4d6689f0cdb2f6b41f",
+    "README.md": "ee58d6d28abce2edfb2a25500712c88d1df844a7a6a6b632818d2881db86ecf1"
+  },
+  "cloud_sync_verified": false
+}

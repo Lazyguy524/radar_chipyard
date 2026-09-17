@@ -1,0 +1,53 @@
+{
+  "status": "PASS",
+  "scope": "Existing proxy/mean train features only; no deletion retraining, validation scoring or optimum-dimension claim",
+  "checks": [
+    {
+      "path": "logs/mechanism_convergence_20260916/data/train/proxy.npy",
+      "sha256": "7ada058c9d26ef6a903bfee6658a939a39d21546d779e9c5a9cf8c377c3cac71",
+      "rows": 357780,
+      "columns": [
+        6,
+        10
+      ],
+      "unequal_rows": 0
+    },
+    {
+      "path": "logs/mechanism_convergence_20260916/data/train/mean.npy",
+      "sha256": "04ea67db4774b755d97737616574ebdcaf5b04ee6ee67bf44bcb914a0aac3b99",
+      "rows": 357780,
+      "columns": [
+        6,
+        10
+      ],
+      "unequal_rows": 0
+    },
+    {
+      "path": "logs/software_convergence_20260917/data/train/natural_proxy.npy",
+      "sha256": "96a3bff84db0cbbf87611fbba9f0f4c983e94c6d7c05f894e835f29f748d1f13",
+      "rows": 474582,
+      "columns": [
+        6,
+        10
+      ],
+      "unequal_rows": 0
+    },
+    {
+      "path": "logs/software_convergence_20260917/data/train/natural_mean.npy",
+      "sha256": "dfeac8596a00a4fdf08ce1d3c11215027964958209ca6ac525e24f5d64961a43",
+      "rows": 474582,
+      "columns": [
+        6,
+        10
+      ],
+      "unequal_rows": 0
+    }
+  ],
+  "code_explanation": "For FEATURE_FLAGS 0/1, output[6]=span_y and output[10]=cov=span_y; both use shift7 and identical saturation.",
+  "sources": {
+    "docs/paper_new/mechanism_convergence_2026-09-16/single_variant.c": "f542709ee0945c91ef2e796d8414103fa76cdd4e1a9b49e36545f9ab4674f6e0",
+    "logs/mechanism_convergence_20260916/data/scales.json": "b0825a51c07a672b5f93f6facb04e0f490b63b4a4626c2cfa3edd8eff165c17c",
+    "docs/paper_new/research_status_2026-09-17/feature_identity_check.py": "eabfa5e3e69fa60659f4bd2b130d7860ae76617614d07d4d6689f0cdb2f6b41f"
+  },
+  "caveat": "Equal inputs do not guarantee naive INT8 weight merging preserves quantized inference; deletion needs matched retraining/export checks. Other representations/scales require separate verification."
+}
