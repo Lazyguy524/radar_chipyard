@@ -1,0 +1,182 @@
+{
+  "scope": "Selective thesis algorithm sources, design notes, model parameters and small evidence; excludes raw arrays/data and unrelated dirty RTL/bitstreams",
+  "base_head": "122c8b68ea0a5fd69756162162f6f583339136b4",
+  "files": {
+    "docs/paper_new/00_project_requirements_and_memory.md": {
+      "sha256": "7b9d4e1e45fe2b6bab5e2abb4f253351de6d4be019ec347f080076588b6c07f2",
+      "bytes": 21333
+    },
+    "docs/paper_new/README.md": {
+      "sha256": "7253757f20d894a04814e6ccec1a14e96636c2b64c7cb3526b576589f5c20849",
+      "bytes": 30251
+    },
+    "docs/paper_new/feature_enrichment_2026-09-17/00_设计思想与执行前审查.md": {
+      "sha256": "c48bd5c0a770d0edda2a9cd9d15b7fe1b379f38b4dd102b888af8b0ac8d9420d",
+      "bytes": 3840
+    },
+    "docs/paper_new/feature_enrichment_2026-09-17/01_文献与可解释性边界.md": {
+      "sha256": "3706431cb180349975df6f7daef4b5b7e9f68ee78a085cc4c71b2d4332edff26",
+      "bytes": 1890
+    },
+    "docs/paper_new/feature_enrichment_2026-09-17/02_实现审查与解释约束.md": {
+      "sha256": "13ff2c09db41197070e5522203deb6150164e14d6d590994af469461d0bb6bfc",
+      "bytes": 2149
+    },
+    "docs/paper_new/feature_enrichment_2026-09-17/backup_git.py": {
+      "sha256": "002cfe22ee78a95d671069002a78d9b1fbce0a74e6c2cf1575aa959ea87fbcde",
+      "bytes": 6714
+    },
+    "docs/paper_new/feature_enrichment_2026-09-17/build_package.py": {
+      "sha256": "ce6cb91acbdd42bf62f69df87a720193cee91dd4e6a59efa0dce4bc051f025f3",
+      "bytes": 5015
+    },
+    "docs/paper_new/feature_enrichment_2026-09-17/evaluate.py": {
+      "sha256": "02bdb9a2a015f6797c229b9c4b437607e1c910f57f95c531f17b4fb89b9337d5",
+      "bytes": 6013
+    },
+    "docs/paper_new/feature_enrichment_2026-09-17/ex_common.py": {
+      "sha256": "623d95cfcdae2215d8a376e0f2023c3b529de71fea1aa9d8dfb7d308cbe95561",
+      "bytes": 4471
+    },
+    "docs/paper_new/feature_enrichment_2026-09-17/explain.py": {
+      "sha256": "5f9e7e2aee61e3c0f972b7708da9a5f04cffa5f3300b291e7aa28470c810ad42",
+      "bytes": 4824
+    },
+    "docs/paper_new/feature_enrichment_2026-09-17/features.c": {
+      "sha256": "38ac2b6cb6ca09abcad37530a911dfc3c0709d6ed1985d2746c80c9c4db30ccb",
+      "bytes": 2354
+    },
+    "docs/paper_new/feature_enrichment_2026-09-17/plan.json": {
+      "sha256": "0631ce95183755c5cd8df36f17582c390fe3fad85928538ef8c3d3dd6d64b6aa",
+      "bytes": 7028
+    },
+    "docs/paper_new/feature_enrichment_2026-09-17/preflight.py": {
+      "sha256": "fb669134715f1de38dbd3d0c3d433ce4cc7632c1f16f5bd1ef5d45e3049be8ac",
+      "bytes": 4475
+    },
+    "docs/paper_new/feature_enrichment_2026-09-17/prepare.py": {
+      "sha256": "8938469ddbd28f1c9cd024ea347316f52b6eab44ff15c1d89058b25dc731b67b",
+      "bytes": 5681
+    },
+    "docs/paper_new/feature_enrichment_2026-09-17/report.py": {
+      "sha256": "5f6c0bf5473ce5c36a5fbb66200363b449fdc90e969d264a10722e45087187af",
+      "bytes": 16172
+    },
+    "docs/paper_new/feature_enrichment_2026-09-17/train.py": {
+      "sha256": "72ac25a7aa360955a3ed8fc0fac00e1f7ac7ba03ebd4184d00405b4f407ebc8f",
+      "bytes": 7454
+    },
+    "docs/paper_new/feature_enrichment_2026-09-17/training_preflight.py": {
+      "sha256": "0e5b55056d1094f5454e77eefd00e883d0dbd8d8c1870507499d8b1068900a1b",
+      "bytes": 3922
+    },
+    "logs/feature_enrichment_20260917/native/features.c": {
+      "sha256": "aac1afe46186fd2b42329cbdccf0fc63811d26ec54e16f912e925f0ff4cd1641",
+      "bytes": 18194
+    },
+    "logs/feature_enrichment_20260917/preparation.json": {
+      "sha256": "9dc6f4b4957d0a2c8fdb5c47cad13e4d383766ace156901dff8f69df5a521313",
+      "bytes": 44153
+    },
+    "logs/feature_enrichment_20260917/synthetic_preflight.json": {
+      "sha256": "339aa76a3fdb568720f2280068808191342c16d9e72fb5ebef959b9921e35c2e",
+      "bytes": 8482
+    },
+    "logs/feature_enrichment_20260917/train_feature_distributions.csv": {
+      "sha256": "969401b7b7f21063fc3001d4be5636f38d9c8de10f5705709f9886dd785bf46a",
+      "bytes": 4101
+    },
+    "logs/feature_enrichment_20260917/training_preflight/base16/inference_trace.c": {
+      "sha256": "baf633adb24d2b04cc19e31e575d65302dfb18ece2921b9a66df9d546e7f4e93",
+      "bytes": 2324
+    },
+    "logs/feature_enrichment_20260917/training_preflight/base16/integer_params.npz": {
+      "sha256": "90df5751d1216b81e241846d8d42356c03e3c8013236e219f3a566e5e99b47f5",
+      "bytes": 4966
+    },
+    "logs/feature_enrichment_20260917/training_preflight/base16/params.h": {
+      "sha256": "e2da7de2a130d8f5ecfb0a8993772c05d03003b76c56738505a162c660ad3c8a",
+      "bytes": 11973
+    },
+    "logs/feature_enrichment_20260917/training_preflight/base16/params.json": {
+      "sha256": "5851d2dc8fb465ffab50411c778b13bda60bc6ba4abd944a244f0614f29582a8",
+      "bytes": 1004
+    },
+    "logs/feature_enrichment_20260917/training_preflight/calibration.npz": {
+      "sha256": "0bb26f777b7a510170aa5417d82b6bb9cbb31bcf923ac576b136e517db882954",
+      "bytes": 132468
+    },
+    "logs/feature_enrichment_20260917/training_preflight/combined23/inference_trace.c": {
+      "sha256": "baf633adb24d2b04cc19e31e575d65302dfb18ece2921b9a66df9d546e7f4e93",
+      "bytes": 2324
+    },
+    "logs/feature_enrichment_20260917/training_preflight/combined23/integer_params.npz": {
+      "sha256": "8afad7b672a120dc9b0c6ed9d5e5a89a25c6b228e40a4ad9a9fb08d93e350cb7",
+      "bytes": 5414
+    },
+    "logs/feature_enrichment_20260917/training_preflight/combined23/params.h": {
+      "sha256": "fc0eb7b7cd9e789fcb6aba5d78426eda6b30d15b9a7b81251ef057857524765c",
+      "bytes": 12869
+    },
+    "logs/feature_enrichment_20260917/training_preflight/combined23/params.json": {
+      "sha256": "0f557b1b3a0f0e6e4d05f82f20e46b41dc7eda7fd7354f0f489cd155ab9896d7",
+      "bytes": 1060
+    },
+    "logs/feature_enrichment_20260917/training_preflight/distribution20/inference_trace.c": {
+      "sha256": "baf633adb24d2b04cc19e31e575d65302dfb18ece2921b9a66df9d546e7f4e93",
+      "bytes": 2324
+    },
+    "logs/feature_enrichment_20260917/training_preflight/distribution20/integer_params.npz": {
+      "sha256": "675c8ad400f85d2d40a9032dc38d310bc241d5a20dd77f0d48b68fa4932c8027",
+      "bytes": 5222
+    },
+    "logs/feature_enrichment_20260917/training_preflight/distribution20/params.h": {
+      "sha256": "2e1ac594ff22f1e57959f8a1e095b6cb157b4093e830d6cd47746b32ce6d941f",
+      "bytes": 12485
+    },
+    "logs/feature_enrichment_20260917/training_preflight/distribution20/params.json": {
+      "sha256": "ed711b09a8713065cf401d689e666879312adde2b9f2fd3ddd5d4ad4ba222b6a",
+      "bytes": 1032
+    },
+    "logs/feature_enrichment_20260917/training_preflight/geometry19/inference_trace.c": {
+      "sha256": "baf633adb24d2b04cc19e31e575d65302dfb18ece2921b9a66df9d546e7f4e93",
+      "bytes": 2324
+    },
+    "logs/feature_enrichment_20260917/training_preflight/geometry19/integer_params.npz": {
+      "sha256": "aaa72ca00a92fb4476b5137612eb1f9da8519d2d8390beb2f9b7dd662c90b6bb",
+      "bytes": 5158
+    },
+    "logs/feature_enrichment_20260917/training_preflight/geometry19/params.h": {
+      "sha256": "f4b19477451ceaf8a556823c5a7932fa908b70ca61d2784b43ed2cfffc25f67c",
+      "bytes": 12358
+    },
+    "logs/feature_enrichment_20260917/training_preflight/geometry19/params.json": {
+      "sha256": "29ff37a55c659b9cd05fd519393e748a36b09407a396cf4fdd13df3b45683c22",
+      "bytes": 1028
+    },
+    "logs/feature_enrichment_20260917/training_preflight/invariants.json": {
+      "sha256": "57322e638cb9003c25558ac7f01a839ad3d071a80d1109b0558570e098a9579b",
+      "bytes": 708
+    },
+    "logs/feature_enrichment_20260917/training_preflight/redundant23/inference_trace.c": {
+      "sha256": "baf633adb24d2b04cc19e31e575d65302dfb18ece2921b9a66df9d546e7f4e93",
+      "bytes": 2324
+    },
+    "logs/feature_enrichment_20260917/training_preflight/redundant23/integer_params.npz": {
+      "sha256": "bed4b25db96fed68a41d5d65fffb52ff6fd68ab26d6d6423764cd74137b5f734",
+      "bytes": 5414
+    },
+    "logs/feature_enrichment_20260917/training_preflight/redundant23/params.h": {
+      "sha256": "5be3cd25977eb3383fbe2d4f99b373437647b2ca21c67c57837719a2512afb89",
+      "bytes": 12869
+    },
+    "logs/feature_enrichment_20260917/training_preflight/redundant23/params.json": {
+      "sha256": "0a7f211bf0bc540d24abc257d0a7fd83da66eb5c8c6824fcff9e225b13e82881",
+      "bytes": 1057
+    },
+    "logs/feature_enrichment_20260917/training_preflight.json": {
+      "sha256": "a3e371760b9ab874073628584c1a793d06315598591e9af966a361a2b0f40009",
+      "bytes": 3260
+    }
+  }
+}

@@ -1,0 +1,38 @@
+[
+  {
+    "n": 1,
+    "geometry_translation_scale": true,
+    "rcs_affine": true,
+    "uniform_duplication": true
+  },
+  {
+    "n": 2,
+    "geometry_translation_scale": true,
+    "rcs_affine": true,
+    "uniform_duplication": true
+  },
+  {
+    "n": 3,
+    "geometry_translation_scale": true,
+    "rcs_affine": true,
+    "uniform_duplication": true
+  },
+  {
+    "n": 7,
+    "geometry_translation_scale": true,
+    "rcs_affine": true,
+    "uniform_duplication": true
+  },
+  {
+    "n": 31,
+    "geometry_translation_scale": true,
+    "rcs_affine": true,
+    "uniform_duplication": true
+  },
+  {
+    "n": 127,
+    "geometry_translation_scale": true,
+    "rcs_affine": true,
+    "uniform_duplication": true
+  }
+]

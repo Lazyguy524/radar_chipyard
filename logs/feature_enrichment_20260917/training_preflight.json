@@ -1,0 +1,60 @@
+{
+  "status": "PASS",
+  "checks": [
+    {
+      "tag": "base16",
+      "dimension": 16,
+      "fold_error": 1.1102230246251565e-16,
+      "integer_three_implementations_exact": true
+    },
+    {
+      "tag": "geometry19",
+      "dimension": 19,
+      "fold_error": 1.6653345369377348e-16,
+      "integer_three_implementations_exact": true
+    },
+    {
+      "tag": "distribution20",
+      "dimension": 20,
+      "fold_error": 8.326672684688674e-17,
+      "integer_three_implementations_exact": true
+    },
+    {
+      "tag": "combined23",
+      "dimension": 23,
+      "fold_error": 1.942890293094024e-16,
+      "integer_three_implementations_exact": true
+    },
+    {
+      "tag": "redundant23",
+      "dimension": 23,
+      "fold_error": 1.5265566588595902e-16,
+      "integer_three_implementations_exact": true
+    }
+  ],
+  "calibration_rows": 16384,
+  "calibration_sha256": "49b2ddd7d308a6e317774ed27060ea097d2d4e9ee0862e0f62b2b7b7a55fdd7b",
+  "class_weights": [
+    1.2697588010665577,
+    0.8247770595849071
+  ],
+  "visited_per_epoch": 357780,
+  "scope": "Train-only microsteps and descriptive class distributions; not additional complete training or feature selection",
+  "source_sha256": {
+    "docs/paper_new/feature_enrichment_2026-09-17/build_package.py": "ce6cb91acbdd42bf62f69df87a720193cee91dd4e6a59efa0dce4bc051f025f3",
+    "docs/paper_new/feature_enrichment_2026-09-17/report.py": "5f6c0bf5473ce5c36a5fbb66200363b449fdc90e969d264a10722e45087187af",
+    "docs/paper_new/feature_enrichment_2026-09-17/01_文献与可解释性边界.md": "3706431cb180349975df6f7daef4b5b7e9f68ee78a085cc4c71b2d4332edff26",
+    "docs/paper_new/feature_enrichment_2026-09-17/train.py": "cfc41f12f241fb289ade19094f858ee5f276b5f6cb078bc3d2114d7c18d73d9a",
+    "docs/paper_new/feature_enrichment_2026-09-17/evaluate.py": "02bdb9a2a015f6797c229b9c4b437607e1c910f57f95c531f17b4fb89b9337d5",
+    "docs/paper_new/feature_enrichment_2026-09-17/02_实现审查与解释约束.md": "13ff2c09db41197070e5522203deb6150164e14d6d590994af469461d0bb6bfc",
+    "docs/paper_new/feature_enrichment_2026-09-17/explain.py": "5f9e7e2aee61e3c0f972b7708da9a5f04cffa5f3300b291e7aa28470c810ad42",
+    "docs/paper_new/feature_enrichment_2026-09-17/prepare.py": "8938469ddbd28f1c9cd024ea347316f52b6eab44ff15c1d89058b25dc731b67b",
+    "docs/paper_new/feature_enrichment_2026-09-17/preflight.py": "fb669134715f1de38dbd3d0c3d433ce4cc7632c1f16f5bd1ef5d45e3049be8ac",
+    "docs/paper_new/feature_enrichment_2026-09-17/00_设计思想与执行前审查.md": "c48bd5c0a770d0edda2a9cd9d15b7fe1b379f38b4dd102b888af8b0ac8d9420d",
+    "docs/paper_new/feature_enrichment_2026-09-17/features.c": "38ac2b6cb6ca09abcad37530a911dfc3c0709d6ed1985d2746c80c9c4db30ccb",
+    "docs/paper_new/feature_enrichment_2026-09-17/backup_git.py": "002cfe22ee78a95d671069002a78d9b1fbce0a74e6c2cf1575aa959ea87fbcde",
+    "docs/paper_new/feature_enrichment_2026-09-17/training_preflight.py": "0e5b55056d1094f5454e77eefd00e883d0dbd8d8c1870507499d8b1068900a1b",
+    "docs/paper_new/feature_enrichment_2026-09-17/plan.json": "0631ce95183755c5cd8df36f17582c390fe3fad85928538ef8c3d3dd6d64b6aa",
+    "docs/paper_new/feature_enrichment_2026-09-17/ex_common.py": "623d95cfcdae2215d8a376e0f2023c3b529de71fea1aa9d8dfb7d308cbe95561"
+  }
+}
