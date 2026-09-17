@@ -1,0 +1,17 @@
+{
+  "python": "3.10.14 | packaged by conda-forge | (main, Mar 20 2024, 12:45:18) [GCC 12.3.0]",
+  "numpy": "1.26.4",
+  "torch": "2.4.1+cpu",
+  "h5py": "3.11.0",
+  "machine": "x86_64",
+  "compiler": "9.4.0",
+  "scientific_cpu_threads": 2,
+  "gpu_jobs": 0,
+  "dependency_sha256": {
+    "docs/paper_new/feature_approximation_pilot_2026-09-16/pilot_common.py": "ad6f3f212a54556e08b78f592cac13a900b654864c724465cb37007e3c6320b6",
+    "docs/paper_new/qmlp_int8_convergence_2026-09-16/common.py": "59613000cc60a2f4cacb90b3ab2e01f6b68a422dd5ba4f1c21f522c30d641e56",
+    "docs/paper_new/mechanism_convergence_2026-09-16/common.py": "1a28d76bfcb0d5025a2d13427420abb0bf0b9a31d935c127de38117896aa0ebc",
+    "docs/paper_new/mechanism_convergence_2026-09-16/prepare_views.py": "7073efb6639def91438941f7d9d406c361a393f7370047085aeb7ba95b27d9f9",
+    "docs/paper_new/mechanism_convergence_2026-09-16/evaluate_stage.py": "408a21cbad3be8371d196076da127cb54cd54e0f88138ee5ea52aaf9cb9412fc"
+  }
+}

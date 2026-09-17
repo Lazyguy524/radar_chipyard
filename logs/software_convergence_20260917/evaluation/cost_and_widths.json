@@ -1,0 +1,35 @@
+{
+  "single_pass": true,
+  "network_MACs": 3456,
+  "weight_bytes": 3456,
+  "bias_bytes": 392,
+  "input_bits": 16,
+  "centered_difference_bits": 17,
+  "direct_sum_signed_bits": 25,
+  "centered_sum_signed_bits": 26,
+  "mean_additional_per_point_subtractions": 4,
+  "mean_additional_per_cluster_multiplications": 4,
+  "mean_shared_inverse_reads_per_cluster": 1,
+  "extra_per_point_second_moment_products": 0,
+  "precision": {
+    "12": {
+      "max_centered_sum_times_inverse": 283111200,
+      "signed_product_bits": 30,
+      "logical_inverse_table_bits": 6656,
+      "host_storage": "Q24/Q16 uint32[512]; Q12 integer division, not compressed ROM"
+    },
+    "16": {
+      "max_centered_sum_times_inverse": 4303093635,
+      "signed_product_bits": 34,
+      "logical_inverse_table_bits": 8704,
+      "host_storage": "Q24/Q16 uint32[512]; Q12 integer division, not compressed ROM"
+    },
+    "24": {
+      "max_centered_sum_times_inverse": 1097355591555,
+      "signed_product_bits": 41,
+      "logical_inverse_table_bits": 12800,
+      "host_storage": "Q24/Q16 uint32[512]; Q12 integer division, not compressed ROM"
+    }
+  },
+  "scope": "Logical structural counts; no FPGA resource, throughput, latency or energy result"
+}

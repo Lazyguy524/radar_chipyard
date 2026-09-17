@@ -1,0 +1,717 @@
+{
+  "stage": "final_evaluation",
+  "q24_gates": [
+    {
+      "tag": "proxy_synthetic",
+      "accepted": false,
+      "failures": [
+        "central_half",
+        "supported_group_regression",
+        "composite_gain"
+      ],
+      "clean_vs_A": [
+        0.00026202337827019306,
+        -0.00015647041957911334,
+        0.001492251576577619
+      ],
+      "difficult_vs_B": {
+        "quarter_mean": -0.0009668388422442812,
+        "central_half": -0.0037982462524290828,
+        "sparse_single": 0.0013473393802451161,
+        "sparse_context": 0.0024052646147613155
+      },
+      "composite_per_seed": [
+        0.9654538288289916,
+        0.965551100078715,
+        0.9637500659964393
+      ],
+      "composite_vs_B": [
+        -0.00020308561305182327,
+        0.00014299149078911277,
+        -0.00042614177422017896
+      ],
+      "composite_mean": 0.9649183316347152,
+      "group_failures": [
+        {
+          "condition": "uniform_half_0",
+          "axis": "N_x_original_shape",
+          "group": "5-8:compact",
+          "per_seed": [
+            -0.008264462809917328,
+            -0.016528925619834656,
+            -0.024793388429752095
+          ],
+          "mean": -0.016528925619834694,
+          "samples": 121,
+          "sequences": 18,
+          "supported": true
+        },
+        {
+          "condition": "uniform_half_2",
+          "axis": "N_x_original_shape",
+          "group": "5-8:compact",
+          "per_seed": [
+            -0.03305785123966942,
+            -0.04958677685950419,
+            -0.04132231404958686
+          ],
+          "mean": -0.04132231404958683,
+          "samples": 121,
+          "sequences": 18,
+          "supported": true
+        },
+        {
+          "condition": "uniform_quarter_0",
+          "axis": "N_x_original_shape",
+          "group": "3-4:compact",
+          "per_seed": [
+            -0.04958677685950419,
+            -0.008264462809917328,
+            -0.016528925619834767
+          ],
+          "mean": -0.024793388429752095,
+          "samples": 121,
+          "sequences": 18,
+          "supported": true
+        },
+        {
+          "condition": "uniform_quarter_2",
+          "axis": "N_x_original_shape",
+          "group": "3-4:compact",
+          "per_seed": [
+            -0.05785123966942152,
+            -0.016528925619834656,
+            -0.008264462809917328
+          ],
+          "mean": -0.027548209366391168,
+          "samples": 121,
+          "sequences": 18,
+          "supported": true
+        },
+        {
+          "condition": "central_half",
+          "axis": "N_x_original_shape",
+          "group": "5-8:compact",
+          "per_seed": [
+            -0.008264462809917439,
+            -0.016528925619834656,
+            -0.008264462809917328
+          ],
+          "mean": -0.011019283746556474,
+          "samples": 121,
+          "sequences": 18,
+          "supported": true
+        }
+      ]
+    },
+    {
+      "tag": "proxy_natural",
+      "accepted": false,
+      "failures": [
+        "clean_seed17",
+        "central_half",
+        "supported_group_regression"
+      ],
+      "clean_vs_A": [
+        0.0002704970104320248,
+        -0.0021526738704772397,
+        0.0006595927377266442
+      ],
+      "difficult_vs_B": {
+        "quarter_mean": -0.00295821239261091,
+        "central_half": -0.004051155312179071,
+        "sparse_single": 0.01195572939374038,
+        "sparse_context": 0.003976181166897204
+      },
+      "composite_per_seed": [
+        0.966553875524726,
+        0.9659704473612228,
+        0.9676276086599881
+      ],
+      "composite_vs_B": [
+        0.0008969610826826679,
+        0.0005623387732969221,
+        0.003451400889328604
+      ],
+      "composite_mean": 0.9667173105153123,
+      "group_failures": [
+        {
+          "condition": "uniform_half_2",
+          "axis": "N_x_original_shape",
+          "group": "5-8:compact",
+          "per_seed": [
+            -0.016528925619834767,
+            -0.04132231404958675,
+            -0.03305785123966942
+          ],
+          "mean": -0.030303030303030314,
+          "samples": 121,
+          "sequences": 18,
+          "supported": true
+        },
+        {
+          "condition": "uniform_quarter_0",
+          "axis": "N_x_original_shape",
+          "group": "3-4:compact",
+          "per_seed": [
+            -0.04958677685950419,
+            -0.016528925619834767,
+            -0.016528925619834767
+          ],
+          "mean": -0.02754820936639124,
+          "samples": 121,
+          "sequences": 18,
+          "supported": true
+        },
+        {
+          "condition": "uniform_quarter_1",
+          "axis": "N_x_original_shape",
+          "group": "1-2:compact",
+          "per_seed": [
+            -0.034482758620689724,
+            -0.03448275862068961,
+            -0.017241379310344862
+          ],
+          "mean": -0.028735632183908066,
+          "samples": 116,
+          "sequences": 19,
+          "supported": true
+        },
+        {
+          "condition": "uniform_quarter_2",
+          "axis": "N_x_original_shape",
+          "group": "3-4:compact",
+          "per_seed": [
+            -0.04958677685950419,
+            -0.024793388429752095,
+            -0.024793388429751984
+          ],
+          "mean": -0.03305785123966942,
+          "samples": 121,
+          "sequences": 18,
+          "supported": true
+        }
+      ]
+    },
+    {
+      "tag": "mean_synthetic",
+      "accepted": false,
+      "failures": [
+        "composite_gain"
+      ],
+      "clean_vs_A": [
+        0.0026953292860405487,
+        0.0011823996711628482,
+        0.0012206658252498226
+      ],
+      "difficult_vs_B": {
+        "quarter_mean": -0.000618577511195305,
+        "central_half": -0.0014829543011329143,
+        "sparse_single": -0.001957620476654857,
+        "sparse_context": 0.00216770207683048
+      },
+      "composite_per_seed": [
+        0.9669916837867861,
+        0.9650904681603236,
+        0.9628455795389815
+      ],
+      "composite_vs_B": [
+        0.0013347693447427478,
+        -0.00031764042760229483,
+        -0.001330628231677955
+      ],
+      "composite_mean": 0.9649759104953638,
+      "group_failures": []
+    },
+    {
+      "tag": "mean_natural",
+      "accepted": false,
+      "failures": [
+        "central_half",
+        "supported_group_regression"
+      ],
+      "clean_vs_A": [
+        0.0021423008429313217,
+        0.0009249650863227821,
+        0.0015498532276569943
+      ],
+      "difficult_vs_B": {
+        "quarter_mean": -0.0013106231498415883,
+        "central_half": -0.0031510712292613188,
+        "sparse_single": 0.012574305089794402,
+        "sparse_context": 0.005498962795926765
+      },
+      "composite_per_seed": [
+        0.9684619345734076,
+        0.9677827196064657,
+        0.9678886364123722
+      ],
+      "composite_vs_B": [
+        0.0028050201313641887,
+        0.0023746110185397518,
+        0.0037124286417127283
+      ],
+      "composite_mean": 0.968044430197415,
+      "group_failures": [
+        {
+          "condition": "uniform_half_2",
+          "axis": "N_x_original_shape",
+          "group": "5-8:compact",
+          "per_seed": [
+            -0.03305785123966942,
+            -0.016528925619834767,
+            -0.03305785123966942
+          ],
+          "mean": -0.027548209366391203,
+          "samples": 121,
+          "sequences": 18,
+          "supported": true
+        },
+        {
+          "condition": "uniform_quarter_1",
+          "axis": "N_x_original_shape",
+          "group": "1-2:compact",
+          "per_seed": [
+            -0.025862068965517238,
+            -0.025862068965517238,
+            -0.017241379310344862
+          ],
+          "mean": -0.022988505747126447,
+          "samples": 116,
+          "sequences": 19,
+          "supported": true
+        },
+        {
+          "condition": "central_half",
+          "axis": "N_x_original_shape",
+          "group": "5-8:compact",
+          "per_seed": [
+            -0.008264462809917439,
+            -0.03305785123966942,
+            -0.008264462809917328
+          ],
+          "mean": -0.01652892561983473,
+          "samples": 121,
+          "sequences": 18,
+          "supported": true
+        }
+      ]
+    }
+  ],
+  "precision": [
+    {
+      "tag": "mean_synthetic",
+      "bits": 12,
+      "accepted": true,
+      "failures": [],
+      "worst_f1_delta": -5.297991358188536e-05,
+      "worst_group_accuracy_delta": -0.0033112582781457123
+    },
+    {
+      "tag": "mean_synthetic",
+      "bits": 16,
+      "accepted": true,
+      "failures": [],
+      "worst_f1_delta": -1.3289144640160622e-05,
+      "worst_group_accuracy_delta": -0.0003762227238525151
+    },
+    {
+      "tag": "mean_natural",
+      "bits": 12,
+      "accepted": false,
+      "failures": [
+        {
+          "seed": 7,
+          "condition": "uniform_quarter_1",
+          "axis": "N_x_original_shape",
+          "group": "33-64:intermediate",
+          "delta": -0.00578034682080919
+        },
+        {
+          "seed": 37,
+          "condition": "uniform_half_0",
+          "axis": "N_x_original_shape",
+          "group": "65-511:intermediate",
+          "delta": -0.005780346820809301
+        },
+        {
+          "seed": 37,
+          "condition": "uniform_half_1",
+          "axis": "N_x_original_shape",
+          "group": "65-511:intermediate",
+          "delta": -0.00578034682080919
+        }
+      ],
+      "worst_f1_delta": -5.274282668754626e-05,
+      "worst_group_accuracy_delta": -0.005780346820809301
+    },
+    {
+      "tag": "mean_natural",
+      "bits": 16,
+      "accepted": false,
+      "failures": [
+        {
+          "seed": 37,
+          "condition": "uniform_half_0",
+          "axis": "N_x_original_shape",
+          "group": "65-511:intermediate",
+          "delta": -0.005780346820809301
+        }
+      ],
+      "worst_f1_delta": -1.3255422194657918e-05,
+      "worst_group_accuracy_delta": -0.005780346820809301
+    }
+  ],
+  "selected_mean_bits": {
+    "mean_synthetic": 12,
+    "mean_natural": 24
+  },
+  "final_gates": [
+    {
+      "tag": "proxy_synthetic",
+      "accepted": false,
+      "failures": [
+        "central_half",
+        "supported_group_regression",
+        "composite_gain"
+      ],
+      "clean_vs_A": [
+        0.00026202337827019306,
+        -0.00015647041957911334,
+        0.001492251576577619
+      ],
+      "difficult_vs_B": {
+        "quarter_mean": -0.0009668388422442812,
+        "central_half": -0.0037982462524290828,
+        "sparse_single": 0.0013473393802451161,
+        "sparse_context": 0.0024052646147613155
+      },
+      "composite_per_seed": [
+        0.9654538288289916,
+        0.965551100078715,
+        0.9637500659964393
+      ],
+      "composite_vs_B": [
+        -0.00020308561305182327,
+        0.00014299149078911277,
+        -0.00042614177422017896
+      ],
+      "composite_mean": 0.9649183316347152,
+      "group_failures": [
+        {
+          "condition": "uniform_half_0",
+          "axis": "N_x_original_shape",
+          "group": "5-8:compact",
+          "per_seed": [
+            -0.008264462809917328,
+            -0.016528925619834656,
+            -0.024793388429752095
+          ],
+          "mean": -0.016528925619834694,
+          "samples": 121,
+          "sequences": 18,
+          "supported": true
+        },
+        {
+          "condition": "uniform_half_2",
+          "axis": "N_x_original_shape",
+          "group": "5-8:compact",
+          "per_seed": [
+            -0.03305785123966942,
+            -0.04958677685950419,
+            -0.04132231404958686
+          ],
+          "mean": -0.04132231404958683,
+          "samples": 121,
+          "sequences": 18,
+          "supported": true
+        },
+        {
+          "condition": "uniform_quarter_0",
+          "axis": "N_x_original_shape",
+          "group": "3-4:compact",
+          "per_seed": [
+            -0.04958677685950419,
+            -0.008264462809917328,
+            -0.016528925619834767
+          ],
+          "mean": -0.024793388429752095,
+          "samples": 121,
+          "sequences": 18,
+          "supported": true
+        },
+        {
+          "condition": "uniform_quarter_2",
+          "axis": "N_x_original_shape",
+          "group": "3-4:compact",
+          "per_seed": [
+            -0.05785123966942152,
+            -0.016528925619834656,
+            -0.008264462809917328
+          ],
+          "mean": -0.027548209366391168,
+          "samples": 121,
+          "sequences": 18,
+          "supported": true
+        },
+        {
+          "condition": "central_half",
+          "axis": "N_x_original_shape",
+          "group": "5-8:compact",
+          "per_seed": [
+            -0.008264462809917439,
+            -0.016528925619834656,
+            -0.008264462809917328
+          ],
+          "mean": -0.011019283746556474,
+          "samples": 121,
+          "sequences": 18,
+          "supported": true
+        }
+      ],
+      "model_tag": "proxy_synthetic",
+      "mean_bits": 24
+    },
+    {
+      "tag": "proxy_natural",
+      "accepted": false,
+      "failures": [
+        "clean_seed17",
+        "central_half",
+        "supported_group_regression"
+      ],
+      "clean_vs_A": [
+        0.0002704970104320248,
+        -0.0021526738704772397,
+        0.0006595927377266442
+      ],
+      "difficult_vs_B": {
+        "quarter_mean": -0.00295821239261091,
+        "central_half": -0.004051155312179071,
+        "sparse_single": 0.01195572939374038,
+        "sparse_context": 0.003976181166897204
+      },
+      "composite_per_seed": [
+        0.966553875524726,
+        0.9659704473612228,
+        0.9676276086599881
+      ],
+      "composite_vs_B": [
+        0.0008969610826826679,
+        0.0005623387732969221,
+        0.003451400889328604
+      ],
+      "composite_mean": 0.9667173105153123,
+      "group_failures": [
+        {
+          "condition": "uniform_half_2",
+          "axis": "N_x_original_shape",
+          "group": "5-8:compact",
+          "per_seed": [
+            -0.016528925619834767,
+            -0.04132231404958675,
+            -0.03305785123966942
+          ],
+          "mean": -0.030303030303030314,
+          "samples": 121,
+          "sequences": 18,
+          "supported": true
+        },
+        {
+          "condition": "uniform_quarter_0",
+          "axis": "N_x_original_shape",
+          "group": "3-4:compact",
+          "per_seed": [
+            -0.04958677685950419,
+            -0.016528925619834767,
+            -0.016528925619834767
+          ],
+          "mean": -0.02754820936639124,
+          "samples": 121,
+          "sequences": 18,
+          "supported": true
+        },
+        {
+          "condition": "uniform_quarter_1",
+          "axis": "N_x_original_shape",
+          "group": "1-2:compact",
+          "per_seed": [
+            -0.034482758620689724,
+            -0.03448275862068961,
+            -0.017241379310344862
+          ],
+          "mean": -0.028735632183908066,
+          "samples": 116,
+          "sequences": 19,
+          "supported": true
+        },
+        {
+          "condition": "uniform_quarter_2",
+          "axis": "N_x_original_shape",
+          "group": "3-4:compact",
+          "per_seed": [
+            -0.04958677685950419,
+            -0.024793388429752095,
+            -0.024793388429751984
+          ],
+          "mean": -0.03305785123966942,
+          "samples": 121,
+          "sequences": 18,
+          "supported": true
+        }
+      ],
+      "model_tag": "proxy_natural",
+      "mean_bits": 24
+    },
+    {
+      "tag": "mean_synthetic_q12",
+      "accepted": false,
+      "failures": [
+        "composite_gain"
+      ],
+      "clean_vs_A": [
+        0.002695118361169535,
+        0.0011821891997405576,
+        0.0012600792062222865
+      ],
+      "difficult_vs_B": {
+        "quarter_mean": -0.0006127431859597311,
+        "central_half": -0.0014787064470319262,
+        "sparse_single": -0.001957620476654857,
+        "sparse_context": 0.0021849147454660414
+      },
+      "composite_per_seed": [
+        0.9669954567007469,
+        0.965107491347316,
+        0.9628489587437477
+      ],
+      "composite_vs_B": [
+        0.0013385422587035567,
+        -0.0003006172406099239,
+        -0.0013272490269118364
+      ],
+      "composite_mean": 0.9649839689306035,
+      "group_failures": [],
+      "model_tag": "mean_synthetic",
+      "mean_bits": 12
+    },
+    {
+      "tag": "mean_natural",
+      "accepted": false,
+      "failures": [
+        "central_half",
+        "supported_group_regression"
+      ],
+      "clean_vs_A": [
+        0.0021423008429313217,
+        0.0009249650863227821,
+        0.0015498532276569943
+      ],
+      "difficult_vs_B": {
+        "quarter_mean": -0.0013106231498415883,
+        "central_half": -0.0031510712292613188,
+        "sparse_single": 0.012574305089794402,
+        "sparse_context": 0.005498962795926765
+      },
+      "composite_per_seed": [
+        0.9684619345734076,
+        0.9677827196064657,
+        0.9678886364123722
+      ],
+      "composite_vs_B": [
+        0.0028050201313641887,
+        0.0023746110185397518,
+        0.0037124286417127283
+      ],
+      "composite_mean": 0.968044430197415,
+      "group_failures": [
+        {
+          "condition": "uniform_half_2",
+          "axis": "N_x_original_shape",
+          "group": "5-8:compact",
+          "per_seed": [
+            -0.03305785123966942,
+            -0.016528925619834767,
+            -0.03305785123966942
+          ],
+          "mean": -0.027548209366391203,
+          "samples": 121,
+          "sequences": 18,
+          "supported": true
+        },
+        {
+          "condition": "uniform_quarter_1",
+          "axis": "N_x_original_shape",
+          "group": "1-2:compact",
+          "per_seed": [
+            -0.025862068965517238,
+            -0.025862068965517238,
+            -0.017241379310344862
+          ],
+          "mean": -0.022988505747126447,
+          "samples": 116,
+          "sequences": 19,
+          "supported": true
+        },
+        {
+          "condition": "central_half",
+          "axis": "N_x_original_shape",
+          "group": "5-8:compact",
+          "per_seed": [
+            -0.008264462809917439,
+            -0.03305785123966942,
+            -0.008264462809917328
+          ],
+          "mean": -0.01652892561983473,
+          "samples": 121,
+          "sequences": 18,
+          "supported": true
+        }
+      ],
+      "model_tag": "mean_natural",
+      "mean_bits": 24
+    }
+  ],
+  "decision": {
+    "main": "A",
+    "mean_bits": 24,
+    "evaluation_tag": "A",
+    "alternative": "B",
+    "reason": "No new candidate passed every frozen gate; retain main A and difficult-condition alternative B"
+  },
+  "plan_sha256": "ec325abfabf43d20f882f73e29d5faf969b8d583871b03cf98e54965473094b9",
+  "status": "PASS",
+  "wall_seconds": 111.53559810295701,
+  "sequence_names": [
+    "sequence_107",
+    "sequence_111",
+    "sequence_122",
+    "sequence_130",
+    "sequence_135",
+    "sequence_138",
+    "sequence_14",
+    "sequence_147",
+    "sequence_148",
+    "sequence_153",
+    "sequence_155",
+    "sequence_19",
+    "sequence_24",
+    "sequence_31",
+    "sequence_42",
+    "sequence_48",
+    "sequence_5",
+    "sequence_58",
+    "sequence_6",
+    "sequence_63",
+    "sequence_68",
+    "sequence_73",
+    "sequence_79",
+    "sequence_85",
+    "sequence_89",
+    "sequence_93",
+    "sequence_99"
+  ],
+  "bootstrap_repetitions": 2000,
+  "bootstrap_scope": "Paired full-sequence draws shared across conditions/models; same three trained seeds held fixed, reported individually and mean; exploratory reused development set, no independent significance claim",
+  "output_bytes": 399865501
+}

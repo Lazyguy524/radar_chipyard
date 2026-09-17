@@ -1,0 +1,7 @@
+{
+  "status": "PASS",
+  "low_support_cross_equivalence": true,
+  "selection_rules_unchanged": true,
+  "post_training_summary": true,
+  "curve_rows": 12
+}

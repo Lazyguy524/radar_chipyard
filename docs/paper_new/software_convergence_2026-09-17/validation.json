@@ -1,0 +1,89 @@
+{
+  "status": "PASS",
+  "scope": "Bounded software selection complete; no independent generalization or hardware performance claim",
+  "decision": {
+    "main": "A",
+    "mean_bits": 24,
+    "evaluation_tag": "A",
+    "alternative": "B",
+    "reason": "No new candidate passed every frozen gate; retain main A and difficult-condition alternative B"
+  },
+  "training_trajectories": 12,
+  "decision_rechecks": [
+    {
+      "tag": "proxy_synthetic",
+      "failures": [
+        "central_half",
+        "supported_group_regression",
+        "composite_gain"
+      ],
+      "group_failures": 5,
+      "recomputed_from_csv": true
+    },
+    {
+      "tag": "proxy_natural",
+      "failures": [
+        "clean_seed17",
+        "central_half",
+        "supported_group_regression"
+      ],
+      "group_failures": 4,
+      "recomputed_from_csv": true
+    },
+    {
+      "tag": "mean_synthetic_q12",
+      "failures": [
+        "composite_gain"
+      ],
+      "group_failures": 0,
+      "recomputed_from_csv": true
+    },
+    {
+      "tag": "mean_natural",
+      "failures": [
+        "central_half",
+        "supported_group_regression"
+      ],
+      "group_failures": 3,
+      "recomputed_from_csv": true
+    }
+  ],
+  "previous_evidence": [
+    {
+      "package": "mechanism_convergence",
+      "files": 1807,
+      "manifest_sha256": "a754382e717985b3ea383db963f2751b6ea0b06a16cfa9abcd404cff8faf3288"
+    },
+    {
+      "package": "moment_encoding",
+      "files": 470,
+      "manifest_sha256": "10ed75cbe824b67bb130ed236a06195893f559818e1b4ef9ff43d749c287feca"
+    },
+    {
+      "package": "conditional_protection",
+      "files": 292,
+      "manifest_sha256": "f2f3e14f563ea9083d95c178a64cff6d05d5c36fcad5bc54e02d95e862c7752b"
+    },
+    {
+      "package": "representative_rtl",
+      "files": 89,
+      "manifest_sha256": "94b979abf6e5ae8bd2fa79049dac737e5e1880a0de3cbbe7ba5c0043ab132208"
+    }
+  ],
+  "runtime": {
+    "preparation_compute_seconds": 498.40305184799945,
+    "preparation_elapsed_to_training_seconds": 688.9446868896484,
+    "training_seconds": 851.0583267860347,
+    "evaluation_seconds": 111.53559810295701,
+    "package_seconds": 16.84904512402136,
+    "output_bytes": 400652266
+  },
+  "source_manifest_verified": true,
+  "single_executor_review": true,
+  "remaining_gaps": [
+    "Independent generalization confirmation",
+    "Autonomous tracking and bounded/compensated history",
+    "Matched hardware cost, timing and board measurements"
+  ],
+  "question_sha256": "f3210adbd4b430dac097d141234572257adddd64123f537a11b6dd64eb37240c"
+}

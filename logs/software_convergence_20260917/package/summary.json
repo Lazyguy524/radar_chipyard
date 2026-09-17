@@ -1,0 +1,195 @@
+{
+  "status": "PASS",
+  "decision": {
+    "main": "A",
+    "mean_bits": 24,
+    "evaluation_tag": "A",
+    "alternative": "B",
+    "reason": "No new candidate passed every frozen gate; retain main A and difficult-condition alternative B"
+  },
+  "checks": [
+    {
+      "role": "main",
+      "tag": "A",
+      "seed": 7,
+      "mean_bits": 24,
+      "condition": "clean",
+      "rows": 80450,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "role": "main",
+      "tag": "A",
+      "seed": 7,
+      "mean_bits": 24,
+      "condition": "sparse_single",
+      "rows": 97734,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "role": "main",
+      "tag": "A",
+      "seed": 7,
+      "mean_bits": 24,
+      "condition": "sparse_context",
+      "rows": 97734,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "role": "main",
+      "tag": "A",
+      "seed": 17,
+      "mean_bits": 24,
+      "condition": "clean",
+      "rows": 80450,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "role": "main",
+      "tag": "A",
+      "seed": 17,
+      "mean_bits": 24,
+      "condition": "sparse_single",
+      "rows": 97734,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "role": "main",
+      "tag": "A",
+      "seed": 17,
+      "mean_bits": 24,
+      "condition": "sparse_context",
+      "rows": 97734,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "role": "main",
+      "tag": "A",
+      "seed": 37,
+      "mean_bits": 24,
+      "condition": "clean",
+      "rows": 80450,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "role": "main",
+      "tag": "A",
+      "seed": 37,
+      "mean_bits": 24,
+      "condition": "sparse_single",
+      "rows": 97734,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "role": "main",
+      "tag": "A",
+      "seed": 37,
+      "mean_bits": 24,
+      "condition": "sparse_context",
+      "rows": 97734,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "role": "alternative",
+      "tag": "B",
+      "seed": 7,
+      "mean_bits": 24,
+      "condition": "clean",
+      "rows": 80450,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "role": "alternative",
+      "tag": "B",
+      "seed": 7,
+      "mean_bits": 24,
+      "condition": "sparse_single",
+      "rows": 97734,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "role": "alternative",
+      "tag": "B",
+      "seed": 7,
+      "mean_bits": 24,
+      "condition": "sparse_context",
+      "rows": 97734,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "role": "alternative",
+      "tag": "B",
+      "seed": 17,
+      "mean_bits": 24,
+      "condition": "clean",
+      "rows": 80450,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "role": "alternative",
+      "tag": "B",
+      "seed": 17,
+      "mean_bits": 24,
+      "condition": "sparse_single",
+      "rows": 97734,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "role": "alternative",
+      "tag": "B",
+      "seed": 17,
+      "mean_bits": 24,
+      "condition": "sparse_context",
+      "rows": 97734,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "role": "alternative",
+      "tag": "B",
+      "seed": 37,
+      "mean_bits": 24,
+      "condition": "clean",
+      "rows": 80450,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "role": "alternative",
+      "tag": "B",
+      "seed": 37,
+      "mean_bits": 24,
+      "condition": "sparse_single",
+      "rows": 97734,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "role": "alternative",
+      "tag": "B",
+      "seed": 37,
+      "mean_bits": 24,
+      "condition": "sparse_context",
+      "rows": 97734,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    }
+  ],
+  "complete_point_to_logit_rows": 1655508,
+  "wall_seconds": 16.84904512402136,
+  "scope": "CPU C reference correctness only; no new RTL/SoC/board measurement"
+}

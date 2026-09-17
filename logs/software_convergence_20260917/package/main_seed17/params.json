@@ -1,0 +1,69 @@
+{
+  "layers": [
+    {
+      "input_scale": 1.0,
+      "weight_scale": 0.0007865002685194115,
+      "output_scale": 0.055955608050663116,
+      "accumulator_abs_bound": 143416
+    },
+    {
+      "input_scale": 0.055955608050663116,
+      "weight_scale": 0.010582796231968197,
+      "output_scale": 0.08729229433230123,
+      "accumulator_abs_bound": 209739
+    },
+    {
+      "input_scale": 0.08729229433230123,
+      "weight_scale": 0.009982954798720953,
+      "output_scale": 0.0008714350285960084,
+      "accumulator_abs_bound": 234326
+    }
+  ],
+  "multipliers": [
+    921,
+    445
+  ],
+  "shift": 16,
+  "arithmetic": "row-major INT8 weight, INT32 bias/accumulator; ties-to-even shift 16; ReLU clamp 0..127; INT32 logits",
+  "status": "ISOLATED_CANDIDATE_NOT_INSTALLED_IN_RTL_OR_BITSTREAM",
+  "training_input_contract": {
+    "representation": "proxy",
+    "flags": 0,
+    "statistics_precision": [
+      24,
+      24
+    ],
+    "feature_slots": 21,
+    "scale_source": "logs/mechanism_convergence_20260916/data/scales.json",
+    "runtime_normalization": false
+  },
+  "input": {
+    "feature_flags": 0,
+    "reciprocal_bits": 24,
+    "feature_shifts": [
+      10,
+      8,
+      8,
+      6,
+      5,
+      8,
+      7,
+      8,
+      8,
+      8,
+      7,
+      6,
+      4,
+      0,
+      6,
+      7,
+      8,
+      8,
+      6,
+      5,
+      7
+    ],
+    "runtime_normalization": false
+  },
+  "source_export": "logs/mechanism_convergence_20260916/factorial_v2/proxy_seed17/epoch60/export"
+}

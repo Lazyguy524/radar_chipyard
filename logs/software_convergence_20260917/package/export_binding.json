@@ -1,0 +1,42 @@
+{
+  "status": "PASS",
+  "models": [
+    {
+      "directory": "alternative_seed17",
+      "integer_params_sha256": "132b9bb9f650b70271ea9bb0150792b5c3080974d6e36e17a31754d2ea0a72be",
+      "params_header_sha256": "9920abde4fdfb7dc046b8f5904a33f3d967e6890a0a1ed3a0b33843f05895b4b",
+      "deployment_contract_sha256": "a20e965cdd610fe266059f077d778ff9b5985556b33cd747e380724eb6a9a423"
+    },
+    {
+      "directory": "alternative_seed37",
+      "integer_params_sha256": "e6ad365225014b41569a50b064d9d9be3449d7f14daa78843ca1447442a67831",
+      "params_header_sha256": "c174aceb14a3a6f563595bf353c5e8a8c2caadd130f4c2e2a224fd5a3d153932",
+      "deployment_contract_sha256": "3ce3f5f30dbaed3b6181fbadc212aecfa61c9854488370ab19b5b76a91bc672d"
+    },
+    {
+      "directory": "alternative_seed7",
+      "integer_params_sha256": "c96f2dfdcf2d1f340ac40a2ac59f3dc0d673d1ea8336d71e3b250e53783a77e6",
+      "params_header_sha256": "49b94e74d479df24f84afe4362300afa5fabec95d5255f854ed5d6a482244a38",
+      "deployment_contract_sha256": "3a755b4d29ba3480c3a031bb68ff12f1f4ff96089630ffc43945ed18e890b097"
+    },
+    {
+      "directory": "main_seed17",
+      "integer_params_sha256": "da661bddd5e124970b5f1c30fa2309f706bb5f24d79b28b1f496908a04242743",
+      "params_header_sha256": "28039a9a78bfcc3e113262abf4237ee3fca66549bfea9eb363d01d9885e9b7d6",
+      "deployment_contract_sha256": "34f2050b6bf340ffd76f8efb92ad6ff1b29366acc51c619e7243e86a0056cadc"
+    },
+    {
+      "directory": "main_seed37",
+      "integer_params_sha256": "d50d46b51df806492a195b7bbecbfbed48159ad69db261c88ae8a62aa3ad9e8a",
+      "params_header_sha256": "77fdea6223b8f96963081a15d35ee0c7a0662de4d6b8754d9a7931a34e2eac1d",
+      "deployment_contract_sha256": "f0f7c540f6b16b3060023a2941bbcec831773d922ff6c27d961211f1035e63d7"
+    },
+    {
+      "directory": "main_seed7",
+      "integer_params_sha256": "38a53488ddf81afecaefad92506ba3a7a15ee3d19edea45e628b948537f66344",
+      "params_header_sha256": "64481534a9144dfbc59b7320a1178b05b3c18a72d88214263e99ad8c8993e59d",
+      "deployment_contract_sha256": "25135334f205a7c289cc28713a04fe8c5337bb6c56adfc8fa58cca585e6e92ab"
+    }
+  ],
+  "scope": "Portable integer model plus matched frontend; no weight changes"
+}
