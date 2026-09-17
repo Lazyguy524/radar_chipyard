@@ -1,0 +1,17 @@
+[
+  {
+    "n": 1,
+    "cases": 20,
+    "scope": "N2/N3 normalized IQR constant for nonzero range; N3 quartile asymmetry is negative median position"
+  },
+  {
+    "n": 2,
+    "cases": 20,
+    "scope": "N2/N3 normalized IQR constant for nonzero range; N3 quartile asymmetry is negative median position"
+  },
+  {
+    "n": 3,
+    "cases": 20,
+    "scope": "N2/N3 normalized IQR constant for nonzero range; N3 quartile asymmetry is negative median position"
+  }
+]

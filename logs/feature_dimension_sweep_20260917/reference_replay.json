@@ -1,0 +1,552 @@
+{
+  "status": "PASS",
+  "checks": [
+    {
+      "tag": "base16",
+      "seed": 7,
+      "condition": "clean",
+      "rows": 80450,
+      "prediction_mismatches": 0
+    },
+    {
+      "tag": "base16",
+      "seed": 7,
+      "condition": "uniform_half_0",
+      "rows": 80450,
+      "prediction_mismatches": 0
+    },
+    {
+      "tag": "base16",
+      "seed": 7,
+      "condition": "uniform_half_1",
+      "rows": 80450,
+      "prediction_mismatches": 0
+    },
+    {
+      "tag": "base16",
+      "seed": 7,
+      "condition": "uniform_half_2",
+      "rows": 80450,
+      "prediction_mismatches": 0
+    },
+    {
+      "tag": "base16",
+      "seed": 7,
+      "condition": "uniform_quarter_0",
+      "rows": 80450,
+      "prediction_mismatches": 0
+    },
+    {
+      "tag": "base16",
+      "seed": 7,
+      "condition": "uniform_quarter_1",
+      "rows": 80450,
+      "prediction_mismatches": 0
+    },
+    {
+      "tag": "base16",
+      "seed": 7,
+      "condition": "uniform_quarter_2",
+      "rows": 80450,
+      "prediction_mismatches": 0
+    },
+    {
+      "tag": "base16",
+      "seed": 7,
+      "condition": "central_half",
+      "rows": 80450,
+      "prediction_mismatches": 0
+    },
+    {
+      "tag": "base16",
+      "seed": 7,
+      "condition": "xy_fraction6",
+      "rows": 80450,
+      "prediction_mismatches": 0
+    },
+    {
+      "tag": "base16",
+      "seed": 7,
+      "condition": "xy_fraction4",
+      "rows": 80450,
+      "prediction_mismatches": 0
+    },
+    {
+      "tag": "base16",
+      "seed": 7,
+      "condition": "kept_single",
+      "rows": 80450,
+      "prediction_mismatches": 0
+    },
+    {
+      "tag": "base16",
+      "seed": 7,
+      "condition": "sparse_single",
+      "rows": 97734,
+      "prediction_mismatches": 0
+    },
+    {
+      "tag": "base16",
+      "seed": 7,
+      "condition": "sparse_context",
+      "rows": 97734,
+      "prediction_mismatches": 0
+    },
+    {
+      "tag": "base16",
+      "seed": 17,
+      "condition": "clean",
+      "rows": 80450,
+      "prediction_mismatches": 0
+    },
+    {
+      "tag": "base16",
+      "seed": 17,
+      "condition": "uniform_half_0",
+      "rows": 80450,
+      "prediction_mismatches": 0
+    },
+    {
+      "tag": "base16",
+      "seed": 17,
+      "condition": "uniform_half_1",
+      "rows": 80450,
+      "prediction_mismatches": 0
+    },
+    {
+      "tag": "base16",
+      "seed": 17,
+      "condition": "uniform_half_2",
+      "rows": 80450,
+      "prediction_mismatches": 0
+    },
+    {
+      "tag": "base16",
+      "seed": 17,
+      "condition": "uniform_quarter_0",
+      "rows": 80450,
+      "prediction_mismatches": 0
+    },
+    {
+      "tag": "base16",
+      "seed": 17,
+      "condition": "uniform_quarter_1",
+      "rows": 80450,
+      "prediction_mismatches": 0
+    },
+    {
+      "tag": "base16",
+      "seed": 17,
+      "condition": "uniform_quarter_2",
+      "rows": 80450,
+      "prediction_mismatches": 0
+    },
+    {
+      "tag": "base16",
+      "seed": 17,
+      "condition": "central_half",
+      "rows": 80450,
+      "prediction_mismatches": 0
+    },
+    {
+      "tag": "base16",
+      "seed": 17,
+      "condition": "xy_fraction6",
+      "rows": 80450,
+      "prediction_mismatches": 0
+    },
+    {
+      "tag": "base16",
+      "seed": 17,
+      "condition": "xy_fraction4",
+      "rows": 80450,
+      "prediction_mismatches": 0
+    },
+    {
+      "tag": "base16",
+      "seed": 17,
+      "condition": "kept_single",
+      "rows": 80450,
+      "prediction_mismatches": 0
+    },
+    {
+      "tag": "base16",
+      "seed": 17,
+      "condition": "sparse_single",
+      "rows": 97734,
+      "prediction_mismatches": 0
+    },
+    {
+      "tag": "base16",
+      "seed": 17,
+      "condition": "sparse_context",
+      "rows": 97734,
+      "prediction_mismatches": 0
+    },
+    {
+      "tag": "base16",
+      "seed": 37,
+      "condition": "clean",
+      "rows": 80450,
+      "prediction_mismatches": 0
+    },
+    {
+      "tag": "base16",
+      "seed": 37,
+      "condition": "uniform_half_0",
+      "rows": 80450,
+      "prediction_mismatches": 0
+    },
+    {
+      "tag": "base16",
+      "seed": 37,
+      "condition": "uniform_half_1",
+      "rows": 80450,
+      "prediction_mismatches": 0
+    },
+    {
+      "tag": "base16",
+      "seed": 37,
+      "condition": "uniform_half_2",
+      "rows": 80450,
+      "prediction_mismatches": 0
+    },
+    {
+      "tag": "base16",
+      "seed": 37,
+      "condition": "uniform_quarter_0",
+      "rows": 80450,
+      "prediction_mismatches": 0
+    },
+    {
+      "tag": "base16",
+      "seed": 37,
+      "condition": "uniform_quarter_1",
+      "rows": 80450,
+      "prediction_mismatches": 0
+    },
+    {
+      "tag": "base16",
+      "seed": 37,
+      "condition": "uniform_quarter_2",
+      "rows": 80450,
+      "prediction_mismatches": 0
+    },
+    {
+      "tag": "base16",
+      "seed": 37,
+      "condition": "central_half",
+      "rows": 80450,
+      "prediction_mismatches": 0
+    },
+    {
+      "tag": "base16",
+      "seed": 37,
+      "condition": "xy_fraction6",
+      "rows": 80450,
+      "prediction_mismatches": 0
+    },
+    {
+      "tag": "base16",
+      "seed": 37,
+      "condition": "xy_fraction4",
+      "rows": 80450,
+      "prediction_mismatches": 0
+    },
+    {
+      "tag": "base16",
+      "seed": 37,
+      "condition": "kept_single",
+      "rows": 80450,
+      "prediction_mismatches": 0
+    },
+    {
+      "tag": "base16",
+      "seed": 37,
+      "condition": "sparse_single",
+      "rows": 97734,
+      "prediction_mismatches": 0
+    },
+    {
+      "tag": "base16",
+      "seed": 37,
+      "condition": "sparse_context",
+      "rows": 97734,
+      "prediction_mismatches": 0
+    },
+    {
+      "tag": "combined23",
+      "seed": 7,
+      "condition": "clean",
+      "rows": 80450,
+      "prediction_mismatches": 0
+    },
+    {
+      "tag": "combined23",
+      "seed": 7,
+      "condition": "uniform_half_0",
+      "rows": 80450,
+      "prediction_mismatches": 0
+    },
+    {
+      "tag": "combined23",
+      "seed": 7,
+      "condition": "uniform_half_1",
+      "rows": 80450,
+      "prediction_mismatches": 0
+    },
+    {
+      "tag": "combined23",
+      "seed": 7,
+      "condition": "uniform_half_2",
+      "rows": 80450,
+      "prediction_mismatches": 0
+    },
+    {
+      "tag": "combined23",
+      "seed": 7,
+      "condition": "uniform_quarter_0",
+      "rows": 80450,
+      "prediction_mismatches": 0
+    },
+    {
+      "tag": "combined23",
+      "seed": 7,
+      "condition": "uniform_quarter_1",
+      "rows": 80450,
+      "prediction_mismatches": 0
+    },
+    {
+      "tag": "combined23",
+      "seed": 7,
+      "condition": "uniform_quarter_2",
+      "rows": 80450,
+      "prediction_mismatches": 0
+    },
+    {
+      "tag": "combined23",
+      "seed": 7,
+      "condition": "central_half",
+      "rows": 80450,
+      "prediction_mismatches": 0
+    },
+    {
+      "tag": "combined23",
+      "seed": 7,
+      "condition": "xy_fraction6",
+      "rows": 80450,
+      "prediction_mismatches": 0
+    },
+    {
+      "tag": "combined23",
+      "seed": 7,
+      "condition": "xy_fraction4",
+      "rows": 80450,
+      "prediction_mismatches": 0
+    },
+    {
+      "tag": "combined23",
+      "seed": 7,
+      "condition": "kept_single",
+      "rows": 80450,
+      "prediction_mismatches": 0
+    },
+    {
+      "tag": "combined23",
+      "seed": 7,
+      "condition": "sparse_single",
+      "rows": 97734,
+      "prediction_mismatches": 0
+    },
+    {
+      "tag": "combined23",
+      "seed": 7,
+      "condition": "sparse_context",
+      "rows": 97734,
+      "prediction_mismatches": 0
+    },
+    {
+      "tag": "combined23",
+      "seed": 17,
+      "condition": "clean",
+      "rows": 80450,
+      "prediction_mismatches": 0
+    },
+    {
+      "tag": "combined23",
+      "seed": 17,
+      "condition": "uniform_half_0",
+      "rows": 80450,
+      "prediction_mismatches": 0
+    },
+    {
+      "tag": "combined23",
+      "seed": 17,
+      "condition": "uniform_half_1",
+      "rows": 80450,
+      "prediction_mismatches": 0
+    },
+    {
+      "tag": "combined23",
+      "seed": 17,
+      "condition": "uniform_half_2",
+      "rows": 80450,
+      "prediction_mismatches": 0
+    },
+    {
+      "tag": "combined23",
+      "seed": 17,
+      "condition": "uniform_quarter_0",
+      "rows": 80450,
+      "prediction_mismatches": 0
+    },
+    {
+      "tag": "combined23",
+      "seed": 17,
+      "condition": "uniform_quarter_1",
+      "rows": 80450,
+      "prediction_mismatches": 0
+    },
+    {
+      "tag": "combined23",
+      "seed": 17,
+      "condition": "uniform_quarter_2",
+      "rows": 80450,
+      "prediction_mismatches": 0
+    },
+    {
+      "tag": "combined23",
+      "seed": 17,
+      "condition": "central_half",
+      "rows": 80450,
+      "prediction_mismatches": 0
+    },
+    {
+      "tag": "combined23",
+      "seed": 17,
+      "condition": "xy_fraction6",
+      "rows": 80450,
+      "prediction_mismatches": 0
+    },
+    {
+      "tag": "combined23",
+      "seed": 17,
+      "condition": "xy_fraction4",
+      "rows": 80450,
+      "prediction_mismatches": 0
+    },
+    {
+      "tag": "combined23",
+      "seed": 17,
+      "condition": "kept_single",
+      "rows": 80450,
+      "prediction_mismatches": 0
+    },
+    {
+      "tag": "combined23",
+      "seed": 17,
+      "condition": "sparse_single",
+      "rows": 97734,
+      "prediction_mismatches": 0
+    },
+    {
+      "tag": "combined23",
+      "seed": 17,
+      "condition": "sparse_context",
+      "rows": 97734,
+      "prediction_mismatches": 0
+    },
+    {
+      "tag": "combined23",
+      "seed": 37,
+      "condition": "clean",
+      "rows": 80450,
+      "prediction_mismatches": 0
+    },
+    {
+      "tag": "combined23",
+      "seed": 37,
+      "condition": "uniform_half_0",
+      "rows": 80450,
+      "prediction_mismatches": 0
+    },
+    {
+      "tag": "combined23",
+      "seed": 37,
+      "condition": "uniform_half_1",
+      "rows": 80450,
+      "prediction_mismatches": 0
+    },
+    {
+      "tag": "combined23",
+      "seed": 37,
+      "condition": "uniform_half_2",
+      "rows": 80450,
+      "prediction_mismatches": 0
+    },
+    {
+      "tag": "combined23",
+      "seed": 37,
+      "condition": "uniform_quarter_0",
+      "rows": 80450,
+      "prediction_mismatches": 0
+    },
+    {
+      "tag": "combined23",
+      "seed": 37,
+      "condition": "uniform_quarter_1",
+      "rows": 80450,
+      "prediction_mismatches": 0
+    },
+    {
+      "tag": "combined23",
+      "seed": 37,
+      "condition": "uniform_quarter_2",
+      "rows": 80450,
+      "prediction_mismatches": 0
+    },
+    {
+      "tag": "combined23",
+      "seed": 37,
+      "condition": "central_half",
+      "rows": 80450,
+      "prediction_mismatches": 0
+    },
+    {
+      "tag": "combined23",
+      "seed": 37,
+      "condition": "xy_fraction6",
+      "rows": 80450,
+      "prediction_mismatches": 0
+    },
+    {
+      "tag": "combined23",
+      "seed": 37,
+      "condition": "xy_fraction4",
+      "rows": 80450,
+      "prediction_mismatches": 0
+    },
+    {
+      "tag": "combined23",
+      "seed": 37,
+      "condition": "kept_single",
+      "rows": 80450,
+      "prediction_mismatches": 0
+    },
+    {
+      "tag": "combined23",
+      "seed": 37,
+      "condition": "sparse_single",
+      "rows": 97734,
+      "prediction_mismatches": 0
+    },
+    {
+      "tag": "combined23",
+      "seed": 37,
+      "condition": "sparse_context",
+      "rows": 97734,
+      "prediction_mismatches": 0
+    }
+  ],
+  "scope": "Six frozen reference models rerun without training; same reconstructed features and integer outputs"
+}

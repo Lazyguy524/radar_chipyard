@@ -1,0 +1,281 @@
+{
+  "status": "PASS",
+  "cases": 150,
+  "counterexamples": [
+    {
+      "first": [
+        [
+          256,
+          0,
+          0,
+          0
+        ],
+        [
+          256,
+          0,
+          0,
+          0
+        ],
+        [
+          256,
+          0,
+          0,
+          0
+        ],
+        [
+          256,
+          0,
+          0,
+          0
+        ],
+        [
+          256,
+          0,
+          0,
+          768
+        ],
+        [
+          256,
+          0,
+          0,
+          768
+        ],
+        [
+          256,
+          0,
+          0,
+          3072
+        ]
+      ],
+      "second": [
+        [
+          256,
+          0,
+          0,
+          0
+        ],
+        [
+          256,
+          0,
+          0,
+          0
+        ],
+        [
+          256,
+          0,
+          0,
+          0
+        ],
+        [
+          256,
+          0,
+          0,
+          256
+        ],
+        [
+          256,
+          0,
+          0,
+          256
+        ],
+        [
+          256,
+          0,
+          0,
+          1024
+        ],
+        [
+          256,
+          0,
+          0,
+          3072
+        ]
+      ],
+      "base23": [
+        2,
+        1,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        127,
+        0,
+        0,
+        0,
+        0,
+        9,
+        24,
+        24,
+        0,
+        0,
+        0,
+        0,
+        58,
+        127,
+        -73
+      ],
+      "new_first": [
+        18,
+        0,
+        0,
+        0,
+        32,
+        0,
+        0,
+        0,
+        127,
+        0,
+        0,
+        0,
+        -127
+      ],
+      "new_second": [
+        18,
+        0,
+        0,
+        0,
+        26,
+        0,
+        0,
+        0,
+        25,
+        0,
+        0,
+        0,
+        -106
+      ],
+      "class_labels_assigned": false
+    }
+  ],
+  "initialization": [
+    {
+      "tag": "core8",
+      "reference": "core8",
+      "max_error": 0.0
+    },
+    {
+      "tag": "proxy12",
+      "reference": "proxy12",
+      "max_error": 0.0
+    },
+    {
+      "tag": "distribution12",
+      "reference": "core8",
+      "max_error": 0.0
+    },
+    {
+      "tag": "combined15",
+      "reference": "core8",
+      "max_error": 0.0
+    },
+    {
+      "tag": "support17",
+      "reference": "base16",
+      "max_error": 0.0
+    },
+    {
+      "tag": "support24",
+      "reference": "base16",
+      "max_error": 0.0
+    },
+    {
+      "tag": "width28",
+      "reference": "base16",
+      "max_error": 0.0
+    },
+    {
+      "tag": "asymmetry28",
+      "reference": "base16",
+      "max_error": 0.0
+    },
+    {
+      "tag": "quantile32",
+      "reference": "base16",
+      "max_error": 0.0
+    },
+    {
+      "tag": "full36",
+      "reference": "base16",
+      "max_error": 0.0
+    },
+    {
+      "tag": "redundant36",
+      "reference": "base16",
+      "max_error": 0.0
+    }
+  ],
+  "smoke_cost": [
+    {
+      "points": 2,
+      "seconds_per_cluster": 7.2950051981024444e-06,
+      "scope": "Python call plus CPU C extraction smoke timing; not FPGA latency"
+    },
+    {
+      "points": 8,
+      "seconds_per_cluster": 5.924750003032386e-06,
+      "scope": "Python call plus CPU C extraction smoke timing; not FPGA latency"
+    },
+    {
+      "points": 32,
+      "seconds_per_cluster": 9.189255069941283e-06,
+      "scope": "Python call plus CPU C extraction smoke timing; not FPGA latency"
+    },
+    {
+      "points": 128,
+      "seconds_per_cluster": 3.111911995802075e-05,
+      "scope": "Python call plus CPU C extraction smoke timing; not FPGA latency"
+    },
+    {
+      "points": 511,
+      "seconds_per_cluster": 0.00013989143510116265,
+      "scope": "Python call plus CPU C extraction smoke timing; not FPGA latency"
+    }
+  ],
+  "finite_sample_repetition": {
+    "original": [
+      32,
+      0,
+      0,
+      0,
+      44,
+      0,
+      0,
+      0,
+      58,
+      0,
+      0,
+      0,
+      -79
+    ],
+    "duplicated": [
+      16,
+      0,
+      0,
+      0,
+      44,
+      0,
+      0,
+      0,
+      58,
+      0,
+      0,
+      0,
+      -79
+    ],
+    "scope": "Linear sample-quantile interpolation may change under repeated points; support also changes. Not independent information or a replication-invariance claim."
+  },
+  "upstream_files_verified": 4266,
+  "seconds": 6.51477856101701,
+  "source_sha256": {
+    "docs/paper_new/feature_dimension_sweep_2026-09-17/00_冻结假设与收敛规则.md": "1ee9a06e6be7467034c52234b41f21bcc05d922d99d247c8782164513d8a7e22",
+    "docs/paper_new/feature_dimension_sweep_2026-09-17/train.py": "b93381d73091a9b1a98130634b3f5a5ce39c6fe5ec478b2d59d71b5b46f22d65",
+    "docs/paper_new/feature_dimension_sweep_2026-09-17/prepare.py": "af96ec790611cdac794cefe4d0ebf627a85bee5d13e322dac0b66664632a94aa",
+    "docs/paper_new/feature_dimension_sweep_2026-09-17/preflight.py": "434c0f7b595ed8c7ac728a1d02e49d4fb6b28083f326c26553c47da3cef2841d",
+    "docs/paper_new/feature_dimension_sweep_2026-09-17/dim_common.py": "ce2d58998887f1cfc3885cd6d1ef7d8c6b291861efb1a191193df8840baaa3ae",
+    "docs/paper_new/feature_dimension_sweep_2026-09-17/dimension_features.c": "f47af9a64ca7dc82da3a8cbfdb0e290e882ad2969c7a70a89584208a8338a683",
+    "docs/paper_new/feature_dimension_sweep_2026-09-17/backup_git.py": "24421fb0e82c4e7b727419f1914600a4cfb22ccba1eaf95e3572206a1eacb21b",
+    "docs/paper_new/feature_dimension_sweep_2026-09-17/plan.json": "5615f7dd6b9d988179345b05845447ffd649be10ec1b69145d5e36c517b846ee"
+  }
+}

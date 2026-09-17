@@ -1,0 +1,98 @@
+{
+  "status": "PASS",
+  "seconds": 46.812427879020106,
+  "checks": [
+    {
+      "tag": "core8",
+      "dimension": 8,
+      "fold_error": 8.326672684688674e-17,
+      "integer_three_implementations_exact": true
+    },
+    {
+      "tag": "proxy12",
+      "dimension": 12,
+      "fold_error": 1.5265566588595902e-16,
+      "integer_three_implementations_exact": true
+    },
+    {
+      "tag": "distribution12",
+      "dimension": 12,
+      "fold_error": 5.551115123125783e-17,
+      "integer_three_implementations_exact": true
+    },
+    {
+      "tag": "combined15",
+      "dimension": 15,
+      "fold_error": 6.938893903907228e-17,
+      "integer_three_implementations_exact": true
+    },
+    {
+      "tag": "support17",
+      "dimension": 17,
+      "fold_error": 1.942890293094024e-16,
+      "integer_three_implementations_exact": true
+    },
+    {
+      "tag": "support24",
+      "dimension": 24,
+      "fold_error": 1.3877787807814457e-16,
+      "integer_three_implementations_exact": true
+    },
+    {
+      "tag": "width28",
+      "dimension": 28,
+      "fold_error": 2.220446049250313e-16,
+      "integer_three_implementations_exact": true
+    },
+    {
+      "tag": "asymmetry28",
+      "dimension": 28,
+      "fold_error": 1.6653345369377348e-16,
+      "integer_three_implementations_exact": true
+    },
+    {
+      "tag": "quantile32",
+      "dimension": 32,
+      "fold_error": 2.0816681711721685e-16,
+      "integer_three_implementations_exact": true
+    },
+    {
+      "tag": "full36",
+      "dimension": 36,
+      "fold_error": 2.220446049250313e-16,
+      "integer_three_implementations_exact": true
+    },
+    {
+      "tag": "redundant36",
+      "dimension": 36,
+      "fold_error": 2.220446049250313e-16,
+      "integer_three_implementations_exact": true
+    }
+  ],
+  "calibration_rows": 16384,
+  "calibration_sha256": "49b2ddd7d308a6e317774ed27060ea097d2d4e9ee0862e0f62b2b7b7a55fdd7b",
+  "class_weights": [
+    1.2697588010665577,
+    0.8247770595849071
+  ],
+  "visited_per_epoch": 357780,
+  "scope": "Train-only microsteps and descriptive class distributions; not additional complete training or feature selection",
+  "source_sha256": {
+    "docs/paper_new/feature_dimension_sweep_2026-09-17/00_冻结假设与收敛规则.md": "1ee9a06e6be7467034c52234b41f21bcc05d922d99d247c8782164513d8a7e22",
+    "docs/paper_new/feature_dimension_sweep_2026-09-17/build_package.py": "1f76eb058570c78bf6ab372ba7fdf97e6cb855f2802ccda4e35b292780b57f00",
+    "docs/paper_new/feature_dimension_sweep_2026-09-17/train.py": "53f015cea397384460e3386e57f5df356cda62291d43b9128e9cd7f820e3adce",
+    "docs/paper_new/feature_dimension_sweep_2026-09-17/evaluate.py": "c9328167245be060635ef110a173580313482af2659e98a37701dd794ed4428e",
+    "docs/paper_new/feature_dimension_sweep_2026-09-17/gates.py": "484319667c10ad3b70826246ddd96b27ea49d2fbb9206c1f9e77ccbe8cf168c8",
+    "docs/paper_new/feature_dimension_sweep_2026-09-17/prepare.py": "af96ec790611cdac794cefe4d0ebf627a85bee5d13e322dac0b66664632a94aa",
+    "docs/paper_new/feature_dimension_sweep_2026-09-17/preflight.py": "434c0f7b595ed8c7ac728a1d02e49d4fb6b28083f326c26553c47da3cef2841d",
+    "docs/paper_new/feature_dimension_sweep_2026-09-17/dim_common.py": "ce2d58998887f1cfc3885cd6d1ef7d8c6b291861efb1a191193df8840baaa3ae",
+    "docs/paper_new/feature_dimension_sweep_2026-09-17/dimension_features.c": "f47af9a64ca7dc82da3a8cbfdb0e290e882ad2969c7a70a89584208a8338a683",
+    "docs/paper_new/feature_dimension_sweep_2026-09-17/backup_git.py": "24421fb0e82c4e7b727419f1914600a4cfb22ccba1eaf95e3572206a1eacb21b",
+    "docs/paper_new/feature_dimension_sweep_2026-09-17/archive.py": "53a07ac91de9c06edf38dee8970405d28c9f8ebe7149a55a25f93be1c96d1bfd",
+    "docs/paper_new/feature_dimension_sweep_2026-09-17/01_数学定义与实现审查.md": "ae03d5d3172606e879731db5a7f609cd84b81f42dde74303bda3dc837536c9d4",
+    "docs/paper_new/feature_dimension_sweep_2026-09-17/training_preflight.py": "dd226ba0994e92ec30af2b2bd36a97b119c9ff91559b75b003f570feb3196982",
+    "docs/paper_new/feature_dimension_sweep_2026-09-17/plan.json": "5615f7dd6b9d988179345b05845447ffd649be10ec1b69145d5e36c517b846ee",
+    "docs/paper_new/feature_dimension_sweep_2026-09-17/finish_software.py": "e54344023ee331da1e32b68152bba0e0ccd21d4cc86f4ba8f9deba990c00ea9b"
+  },
+  "includes_reference_replay": true
+}
