@@ -1,0 +1,173 @@
+{
+  "files": {
+    "docs/paper_new/00_project_requirements_and_memory.md": {
+      "sha256": "8ce1143d3fa34266cbc9e3267909fbc0238acd99473e8053546fb505ca283599",
+      "bytes": 24343
+    },
+    "docs/paper_new/README.md": {
+      "sha256": "f8c3db613052a6526f6aeb7ccee2ba6c569765f81888f51cfe13711dcc1e2a20",
+      "bytes": 33261
+    },
+    "docs/paper_new/weekly_report_2026-09-18/01_本周工作周报.md": {
+      "sha256": "68f40c78697399e183cc06b45b50960a9fa61415a67df8213ba8509f3daf630e",
+      "bytes": 7973
+    },
+    "docs/paper_new/weekly_report_2026-09-18/02_五分钟组会内容与讲稿.md": {
+      "sha256": "e3fd8de09a95843ac60bc38488fb46836fc5ec04400d119736f8b814320ac52d",
+      "bytes": 7425
+    },
+    "docs/paper_new/weekly_report_2026-09-18/03_本次取舍与追问准备.md": {
+      "sha256": "376cf5b533f57611791f2985c4d43dcd3106970686f9610b14cd95816e5ee8e2",
+      "bytes": 5051
+    },
+    "docs/paper_new/weekly_report_2026-09-18/04_Windows_Codex生成PPT的Prompt.md": {
+      "sha256": "fa1799959b5dacb8b27d8ab0c05e65544575e102ea34977002dbc174b13e7d27",
+      "bytes": 6405
+    },
+    "docs/paper_new/weekly_report_2026-09-18/05_证据索引.md": {
+      "sha256": "18dc38ae42e3697cccb3bf6de4ec86c9a55c11bf992f4f9243c607b5876cdce6",
+      "bytes": 5924
+    },
+    "docs/paper_new/weekly_report_2026-09-18/README.md": {
+      "sha256": "386fbcf82857e49d0afe41f05a870362cd2716660523435c9ade4e49770b795b",
+      "bytes": 1818
+    },
+    "docs/paper_new/weekly_report_2026-09-18/assets/ppt_feature_comparison.pdf": {
+      "sha256": "2ed1df855fe7e2fcf1835ad9f1f4f2222b2fae4c411b0f86824df3d1e8619c19",
+      "bytes": 42030
+    },
+    "docs/paper_new/weekly_report_2026-09-18/assets/ppt_feature_comparison.png": {
+      "sha256": "60cee1ad82eba618b221704778ff4aa8621b8fae22aa1bfc22ab0caa8dac07bf",
+      "bytes": 175299
+    },
+    "docs/paper_new/weekly_report_2026-09-18/assets/ppt_feature_comparison.svg": {
+      "sha256": "4b196908f06dc8327b2d791af316721f3083ffa0a93de9014e3221beb368aa12",
+      "bytes": 101140
+    },
+    "docs/paper_new/weekly_report_2026-09-18/assets/ppt_representative_results.csv": {
+      "sha256": "0b9483d2b9f98dd641c6e89c6538fa00d5027c2ec3ad506d91069269b043568a",
+      "bytes": 1387
+    },
+    "docs/paper_new/weekly_report_2026-09-18/backup_and_sync.py": {
+      "sha256": "330178f0591abcae03b9a8ef76c8f75bda7ae19f95106afeeac642cdbe53370a",
+      "bytes": 6966
+    },
+    "docs/paper_new/weekly_report_2026-09-18/index_update.json": {
+      "sha256": "eac2b286f30baf235fcf40392bb771b91169a14bcfbc094059dab10e6e76d57b",
+      "bytes": 541
+    },
+    "docs/paper_new/weekly_report_2026-09-18/plot_for_ppt.py": {
+      "sha256": "ec10f6ac1011d710d43eac3df1fdf91048ca7fbc399695c743f0d248ea614d19",
+      "bytes": 2519
+    },
+    "docs/paper_new/weekly_report_2026-09-18/prepare_materials.py": {
+      "sha256": "65b60ef4617aa3dcda5294649c184a35629b2c264e93c5073a9107ffb31bd9f4",
+      "bytes": 8661
+    },
+    "docs/paper_new/weekly_report_2026-09-18/source_manifest.json": {
+      "sha256": "06ca413e8f56e5c4fb7bd407295e171f6e1efa5150b34e4374b50bcaca7e36c1",
+      "bytes": 7437
+    },
+    "docs/paper_new/weekly_report_2026-09-18/validation.json": {
+      "sha256": "783168c3fb0674a8fe9a3d92a38daff85cace43c87393a26098abd5e333d3e8d",
+      "bytes": 679
+    },
+    "docs/paper_new/weekly_report_2026-09-18/证据/ablation_readme.txt": {
+      "sha256": "fadc62f680e8304f4f560da378791b168bbc1562c6509e183a7dd519113eb944",
+      "bytes": 3832
+    },
+    "docs/paper_new/weekly_report_2026-09-18/证据/ablation_results.csv": {
+      "sha256": "fd7953e6a9e3a60fb52084881a5efb1f12e7c42c8e9d79f54f8e55bb34100380",
+      "bytes": 821
+    },
+    "docs/paper_new/weekly_report_2026-09-18/证据/approximation_research_readme.txt": {
+      "sha256": "e47565dc3dc1cac37dbef1cd2d5786c591e49cc359ed09079777162c3f44a42e",
+      "bytes": 4951
+    },
+    "docs/paper_new/weekly_report_2026-09-18/证据/conditional_protection_readme.txt": {
+      "sha256": "af730d8d1ba045df6f3ff4cdd07d2f92ed003b62c99182d3012eb515c4570724",
+      "bytes": 1587
+    },
+    "docs/paper_new/weekly_report_2026-09-18/证据/dimension_C_checks.json": {
+      "sha256": "d6e7177bb84f30f9ec5b6f9c369f0ab80a97dfb384f6575f1ebce0ae32f44c9c",
+      "bytes": 17048
+    },
+    "docs/paper_new/weekly_report_2026-09-18/证据/dimension_costs.csv": {
+      "sha256": "7116934640ec66e79934cef554b02a4991db101c29d7b182547af910cf9cdbc3",
+      "bytes": 1667
+    },
+    "docs/paper_new/weekly_report_2026-09-18/证据/dimension_gate_review.txt": {
+      "sha256": "87787a52d4e890df91a555372c52d9ddaa094f89571178d0bcfd758d8cc7e71e",
+      "bytes": 4071
+    },
+    "docs/paper_new/weekly_report_2026-09-18/证据/dimension_gates.json": {
+      "sha256": "89b5c9d038b6266a7ab3d58b0f692ff27927a838f3e0944654faad4afe36cf3d",
+      "bytes": 427419
+    },
+    "docs/paper_new/weekly_report_2026-09-18/证据/dimension_low_N.txt": {
+      "sha256": "e697dd7da2cfa1647350215bac5264205a6a694a958fb8c1876cbc897d47225e",
+      "bytes": 2042
+    },
+    "docs/paper_new/weekly_report_2026-09-18/证据/dimension_plan.json": {
+      "sha256": "5615f7dd6b9d988179345b05845447ffd649be10ec1b69145d5e36c517b846ee",
+      "bytes": 12993
+    },
+    "docs/paper_new/weekly_report_2026-09-18/证据/dimension_readme.txt": {
+      "sha256": "bd13a4abd77d44f15c189086966be1394482a870954366a3202921e8a6458969",
+      "bytes": 4171
+    },
+    "docs/paper_new/weekly_report_2026-09-18/证据/dimension_results.csv": {
+      "sha256": "e804f07cd24eabfff6204a923d7c0cf401bdfd3a7cbf3fe8976dd947663ac302",
+      "bytes": 3123
+    },
+    "docs/paper_new/weekly_report_2026-09-18/证据/dimension_validation.json": {
+      "sha256": "7b600c64443abe690b1c486b47ecd86ef465e05c2b45fa3f2019ef861f3313fe",
+      "bytes": 16114
+    },
+    "docs/paper_new/weekly_report_2026-09-18/证据/enrichment_plain.txt": {
+      "sha256": "bc1d87baed93a588b230782ee41fa94d39972ed88dbd297db94901046242ba24",
+      "bytes": 4382
+    },
+    "docs/paper_new/weekly_report_2026-09-18/证据/enrichment_readme.txt": {
+      "sha256": "81f0cc07bbd77c195f0444484bb8f9e02e469a24fc5bc4cc5e34c155f4c6017e",
+      "bytes": 2844
+    },
+    "docs/paper_new/weekly_report_2026-09-18/证据/enrichment_results.csv": {
+      "sha256": "084fd3eede9477379f47e511f579dc75bc689d60eb522c5b126ed8e2e4b6e07b",
+      "bytes": 1366
+    },
+    "docs/paper_new/weekly_report_2026-09-18/证据/gemmini_readme.txt": {
+      "sha256": "352ba22288509f6433dd786a4a3fbd99b669f07578f46c6ce7f9df4cfe3e0f55",
+      "bytes": 8337
+    },
+    "docs/paper_new/weekly_report_2026-09-18/证据/mechanism_review.txt": {
+      "sha256": "2304ac723b514b9b1ec09abd899526bd4a8bc05f85baf0e1eb3067c2acbad28d",
+      "bytes": 6825
+    },
+    "docs/paper_new/weekly_report_2026-09-18/证据/pmu_previous_week_readme.txt": {
+      "sha256": "cc41f4e1184fb75f1d72ba7d4f835b6bbd15dc485eb5d34cd89d3275f5dcdb4a",
+      "bytes": 11479
+    },
+    "docs/paper_new/weekly_report_2026-09-18/证据/representative_rtl_readme.txt": {
+      "sha256": "b2918a90b254c753163f5ce57732e8160ff315796402b88392524adf37a6376f",
+      "bytes": 1150
+    },
+    "docs/paper_new/weekly_report_2026-09-18/证据/scheiner_review_readme.txt": {
+      "sha256": "c882dbafddc4a6d0730c6d881a77709eb698d99f814517c4e3d505cb2115b310",
+      "bytes": 3334
+    },
+    "docs/paper_new/weekly_report_2026-09-18/证据/software_convergence_readme.txt": {
+      "sha256": "5659a71f4120976228bd00f3fc535b2b2d44cac28d0cfee166279714d2bdc174",
+      "bytes": 2587
+    },
+    "docs/paper_new/weekly_report_2026-09-18/证据/training_count_audit.json": {
+      "sha256": "719a9de143cd5220726dac8e14ef1e34039817fe68ae5c6398676e85cfe4ba88",
+      "bytes": 935
+    },
+    "docs/paper_new/weekly_report_2026-09-18/证据/training_recovery_readme.txt": {
+      "sha256": "337002945d681866a5ae1d5e4cd59269c5a4a2d96ecf034832a7cd1cdeba52e1",
+      "bytes": 3839
+    }
+  },
+  "scope": "Weekly report, five-slide brief, original-result snapshots and new presentation figures only; no experiment changes"
+}

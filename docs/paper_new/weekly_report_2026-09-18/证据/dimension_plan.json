@@ -1,0 +1,532 @@
+{
+  "status": "FROZEN_BEFORE_PREPARATION_AND_TRAINING",
+  "date": "2026-09-17",
+  "question": "在点数和目标形态变化时，哪些近似会损害分类稳定性？能否针对这些误差，用更合适的统计表示、精度分配和共享计算结构，获得优于现有实现的质量—成本取舍？",
+  "purpose": "Bounded downward/upward feature sweep, low-count support control and order-statistic representations; no global dimension optimality claim",
+  "variants": {
+    "core8": {
+      "columns": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        9,
+        13,
+        14
+      ],
+      "family": "reduction",
+      "dim": 8
+    },
+    "proxy12": {
+      "columns": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        9,
+        10,
+        13,
+        14,
+        15
+      ],
+      "family": "reduction",
+      "dim": 12
+    },
+    "distribution12": {
+      "columns": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        9,
+        13,
+        14,
+        19,
+        20,
+        21,
+        22
+      ],
+      "family": "reduction",
+      "dim": 12
+    },
+    "combined15": {
+      "columns": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        9,
+        13,
+        14,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22
+      ],
+      "family": "reduction",
+      "dim": 15
+    },
+    "support17": {
+      "columns": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        23
+      ],
+      "family": "support",
+      "dim": 17
+    },
+    "support24": {
+      "columns": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23
+      ],
+      "family": "support",
+      "dim": 24
+    },
+    "width28": {
+      "columns": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27
+      ],
+      "family": "quantile",
+      "dim": 28
+    },
+    "asymmetry28": {
+      "columns": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        28,
+        29,
+        30,
+        31
+      ],
+      "family": "quantile",
+      "dim": 28
+    },
+    "quantile32": {
+      "columns": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31
+      ],
+      "family": "quantile",
+      "dim": 32
+    },
+    "full36": {
+      "columns": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35
+      ],
+      "family": "quantile",
+      "dim": 36
+    },
+    "redundant36": {
+      "columns": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        0,
+        1,
+        2,
+        3,
+        4,
+        9,
+        13,
+        14,
+        16,
+        19,
+        21,
+        23
+      ],
+      "family": "redundant_control",
+      "dim": 36
+    }
+  },
+  "base_columns": [
+    0,
+    1,
+    2,
+    5,
+    6,
+    7,
+    8,
+    9,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20
+  ],
+  "features": {
+    "geometry": [
+      "4Var(x)/span(x)^2",
+      "4Var(y)/span(y)^2",
+      "4Cov(x,y)/(span(x)*span(y))"
+    ],
+    "distribution": [
+      "4Var(vr_compensated)/span(vr)^2",
+      "4Var(RCS)/span(RCS)^2",
+      "fraction_abs_vr_le_0.5_m_per_s",
+      "2*(mean_RCS-min_RCS)/span_RCS-1"
+    ],
+    "quantization": "Exact rational -> ties-to-even -> INT8 [-127,127]; normalized values times127, zero for zero denominator; new output ranges analytical, no validation fitted scales",
+    "low_points": "N=1 dispersion/contrast=0; N=2 range-normalized variance hits maximum if nonzero span; this degeneracy is disclosed and separately evaluated",
+    "physical_scope": "Near-zero radial speed does NOT prove stationary object; normalized covariance is NOT Pearson correlation or rotation invariant; history-fused distribution is NOT instantaneous object shape",
+    "new": [
+      "inverse_retained_count",
+      "IQR_over_range_x",
+      "IQR_over_range_y",
+      "IQR_over_range_vr",
+      "IQR_over_range_rcs",
+      "quartile_asymmetry_x",
+      "quartile_asymmetry_y",
+      "quartile_asymmetry_vr",
+      "quartile_asymmetry_rcs",
+      "median_position_x",
+      "median_position_y",
+      "median_position_vr",
+      "median_position_rcs"
+    ],
+    "definitions": {
+      "support": "1/N, quantized as round_even(127/N); N is full retained input including history, not current raw count",
+      "quantiles": "For sorted int16 a and k=1,2,3, j=floor(k*(N-1)/4), r=k*(N-1)%4: Qk_times4=(4-r)*a[j]+r*a[min(j+1,N-1)]",
+      "width": "(Q3-Q1)/(max-min)",
+      "asymmetry": "(Q3+Q1-2*Q2)/(Q3-Q1)",
+      "median_position": "2*(Q2-min)/(max-min)-1",
+      "zero_denominator": "0",
+      "range": "support/width in [0,1], asymmetry/median_position in [-1,1]; multiply127, ties-to-even"
+    },
+    "cost": "Quantile families need four channel sorts plus linear copies, not a single scan; reused quantiles feed all three groups; no FPGA inference"
+  },
+  "data": {
+    "train_sequences": 113,
+    "validation_sequences": 27,
+    "train_kept": 357780,
+    "train_natural_sparse": 474582,
+    "val_kept": 80450,
+    "val_sparse": 97734,
+    "split": "Retain audited train/validation sequence split, no new test use; validation is reused development data",
+    "representation": "Base16 frozen proxy + independently bounded distribution descriptors; current history unchanged",
+    "history": "Same sequence/sensor/GT track; current plus preceding six retained observations; sparse observations do not update history; no coordinate alignment or time expiry"
+  },
+  "training": {
+    "coverage": "natural",
+    "reference": "Reuse six frozen base16/combined23 models after full SHA/input/logit verification; do not retrain unchanged controls",
+    "seeds": [
+      7,
+      17,
+      37
+    ],
+    "trajectories": 33,
+    "visits_per_epoch": 357780,
+    "warmup_epochs": 20,
+    "qat_epochs": 60,
+    "batch_size": 1024,
+    "warmup_lr": 0.001,
+    "qat_lr": 0.0003,
+    "qat_lr_halve_every_epochs": 20,
+    "weight_decay": 0.0001,
+    "loss": "Same common class-weighted CE as software_convergence",
+    "sampling": "Exactly same per-seed/epoch natural-coverage schedule: 50% clean, 12.5% quarter,12.5% central,25% matched natural sparse; integer remainder alternates",
+    "normalization_calibration": "Reuse common train-only expected-mixture normalization and 16384 calibration row identities, project columns; frozen output scales; frozen QAT scales after warmup",
+    "initialization": "Project the previous base16 initialization for retained original columns, append zero weights for new/repeated non-base columns; repeated old columns after first24 also start at zero. Same seed/hidden layers; only matched extensions preserve initial function, pruning does not.",
+    "checkpoints": [
+      20,
+      40,
+      60
+    ],
+    "select_epoch": 60
+  },
+  "evaluation": {
+    "conditions": [
+      "clean",
+      "uniform_half_0",
+      "uniform_half_1",
+      "uniform_half_2",
+      "uniform_quarter_0",
+      "uniform_quarter_1",
+      "uniform_quarter_2",
+      "central_half",
+      "xy_fraction6",
+      "xy_fraction4",
+      "kept_single",
+      "sparse_single",
+      "sparse_context"
+    ],
+    "bootstrap": "2000 paired full-sequence draws; per-seed and three-seed mean; exploratory, not formal noninferiority or independent significance proof",
+    "group_support": {
+      "samples": 100,
+      "sequences": 3,
+      "both_classes": true
+    },
+    "relative_to": "combined23",
+    "clean_f1_max_loss_each_seed": 0.002,
+    "all_conditions_mean_f1_max_loss": 0.003,
+    "all_conditions_mean_each_class_recall_max_loss": 0.005,
+    "group_reject": "On any supported condition/group: all three accuracy deltas negative and mean below -0.01",
+    "composite": "Equal average of clean, average of three quarter repeats, central_half,sparse_single,sparse_context",
+    "A_B_guard": "Also apply unchanged software_convergence promotion rule against old A/B; any failed gate keeps A main/B alternative",
+    "composite_rule": "Reduced models: mean composite loss <=0.001. Added models: mean composite gain >=0.001 over combined23, all3 seeds positive. Other quality guards unchanged. Quantile family also requires mean gain >=0.001 over support24 with all3 positive; full36 also requires >=0.001 over redundant36 with all3 positive.",
+    "selection": "Report all, including 8/12/15/17/24/28/32/36 and reused16/23. Eligible conditional candidates plus combined23 fallback: within0.001 of best mean composite, choose no-sorting first, then fewer per-point products, then smaller network, then fewer ratios; final tie higher composite. Redundant36 is explanatory only. Promotion additionally requires unchanged A/B gate. If none pass promotion retain A main/B alternative.",
+    "comparisons": [
+      [
+        "support17",
+        "base16"
+      ],
+      [
+        "support24",
+        "combined23"
+      ],
+      [
+        "support24",
+        "support17"
+      ],
+      [
+        "distribution12",
+        "core8"
+      ],
+      [
+        "combined15",
+        "core8"
+      ],
+      [
+        "distribution12",
+        "proxy12"
+      ],
+      [
+        "combined15",
+        "distribution12"
+      ],
+      [
+        "width28",
+        "support24"
+      ],
+      [
+        "asymmetry28",
+        "support24"
+      ],
+      [
+        "quantile32",
+        "width28"
+      ],
+      [
+        "quantile32",
+        "asymmetry28"
+      ],
+      [
+        "full36",
+        "quantile32"
+      ],
+      [
+        "full36",
+        "redundant36"
+      ]
+    ]
+  },
+  "explanation": {
+    "factorial": [
+      "Quantile width/asymmetry interaction: quantile32-width28-asymmetry28+support24; mean3 paired CI, not proof of synergy"
+    ],
+    "support": "All original point/shape/cross/range/history groups, plus point-count degeneracy and train classwise feature distributions; fixed first error identities; same-base/different-distribution synthetic counterexamples with no class labels",
+    "interpretation": "Controlled retraining association, not proof of physical causality or novel standard moments; no independent generalization claim",
+    "low_N": "Report exact retained N1/N2/N3+ from raw offsets for clean/sparse views and view-adjusted count for all13; reused old failure116 rows is explicitly tracked, not a new gate or a second selection target"
+  },
+  "budget": {
+    "cpu_threads": 2,
+    "gpu_jobs": 0,
+    "hardware_jobs": 0,
+    "preparation_seconds": 1800,
+    "training_seconds": 3600,
+    "evaluation_and_package_seconds": 1800,
+    "max_output_bytes": 4294967296,
+    "reason": "User explicitly requests wider downward/upward experiments; fixed33 new trajectories, CPU2, at most60min training; preparation30min and evaluation/package30min, no new GPU/server/hardware"
+  },
+  "stop": "Exactly33 new final-epoch trajectories, no score-adaptive extra training. Numerical/data failure blocks dependent stages; timeout preserves results. Finish attribution/packaging even when no promotion succeeds.",
+  "review": "Single-executor code and Python preflight; complete upstream hash closure before training. Old frozen packages preserved; new branch backup and Obsidian local mirror.",
+  "references": {
+    "base16": "feature_enrichment/base16",
+    "combined23": "feature_enrichment/combined23",
+    "A": "old factorized baseline",
+    "B": "old augmented baseline"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "status": "PASS",
+  "source_snapshots_verified": 23,
+  "ppt_representative_rows_verified": 5,
+  "dimension_training_count": 60,
+  "newest_C_comparison_count": 9105294,
+  "slide_count": 5,
+  "target_seconds": 300,
+  "speaker_note_characters": 930,
+  "local_links_checked": 46,
+  "missing_links": [],
+  "chart_visual_inspected": true,
+  "chart_font_fix": "Registered local CJK TTC explicitly; final render log has no font warnings",
+  "factual_review": "Developer-set software scope and reused development data are disclosed; local regressions visible; no claim of optimal dimension, board gains or newly completed PMU work",
+  "new_training": false,
+  "new_hardware": false
+}

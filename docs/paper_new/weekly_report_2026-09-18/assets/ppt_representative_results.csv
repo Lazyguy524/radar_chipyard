@@ -1,0 +1,6 @@
+﻿tag,label,dim,composite_percent,clean_macro_f1_percent,seed7_composite_percent,seed17_composite_percent,seed37_composite_percent,source,scope
+core8,8维·基础量,8,95.78045045910125,97.33623647665485,95.74166431864842,95.74938455612462,95.85030250253072,证据/dimension_results.csv,"Reused development data, three-seed mean, equal average of five input-condition Macro-F1 metrics"
+base16,16维·基础表示,16,96.76295047163146,98.14311857274016,96.70255516376379,96.71152749701359,96.874768754117,证据/dimension_results.csv,"Reused development data, three-seed mean, equal average of five input-condition Macro-F1 metrics"
+combined23,23维·分布补充,23,96.96044193667144,98.49057690776286,96.87568855591634,96.95596976357504,97.04966749052296,证据/dimension_results.csv,"Reused development data, three-seed mean, equal average of five input-condition Macro-F1 metrics"
+width28,28维·四分位宽度,28,97.0595715739,98.60586071592206,97.02817569675044,97.11300400656324,97.03753501838635,证据/dimension_results.csv,"Reused development data, three-seed mean, equal average of five input-condition Macro-F1 metrics"
+full36,36维·完整分位,36,97.01117935634075,98.60942179816011,97.01848751771983,96.98610070731081,97.02894984399155,证据/dimension_results.csv,"Reused development data, three-seed mean, equal average of five input-condition Macro-F1 metrics"

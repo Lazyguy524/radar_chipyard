@@ -1,0 +1,770 @@
+{
+  "status": "PASS",
+  "decision": {
+    "conditional": "combined23",
+    "main": "A",
+    "alternative": "B"
+  },
+  "new_training_trajectories": 33,
+  "reused_reference_models": 6,
+  "metric_rechecks": 585,
+  "raw_offset_low_N_rechecks": 405,
+  "decision_rechecks": [
+    {
+      "tag": "core8",
+      "gate": "dimension",
+      "failures": [
+        "clean_seed7",
+        "clean_seed17",
+        "clean_seed37",
+        "clean_f1",
+        "clean_recall0",
+        "clean_recall1",
+        "uniform_half_0_f1",
+        "uniform_half_0_recall0",
+        "uniform_half_0_recall1",
+        "uniform_half_1_f1",
+        "uniform_half_1_recall0",
+        "uniform_half_1_recall1",
+        "uniform_half_2_f1",
+        "uniform_half_2_recall0",
+        "uniform_half_2_recall1",
+        "uniform_quarter_0_f1",
+        "uniform_quarter_0_recall0",
+        "uniform_quarter_0_recall1",
+        "uniform_quarter_1_f1",
+        "uniform_quarter_1_recall0",
+        "uniform_quarter_1_recall1",
+        "uniform_quarter_2_f1",
+        "uniform_quarter_2_recall0",
+        "uniform_quarter_2_recall1",
+        "central_half_f1",
+        "central_half_recall1",
+        "xy_fraction6_f1",
+        "xy_fraction6_recall0",
+        "xy_fraction6_recall1",
+        "xy_fraction4_f1",
+        "xy_fraction4_recall0",
+        "xy_fraction4_recall1",
+        "kept_single_f1",
+        "kept_single_recall1",
+        "sparse_context_f1",
+        "sparse_context_recall1",
+        "supported_group_regression",
+        "composite_loss"
+      ]
+    },
+    {
+      "tag": "proxy12",
+      "gate": "dimension",
+      "failures": [
+        "clean_seed7",
+        "clean_seed17",
+        "clean_seed37",
+        "clean_f1",
+        "clean_recall0",
+        "uniform_half_0_f1",
+        "uniform_half_0_recall0",
+        "uniform_half_1_f1",
+        "uniform_half_1_recall0",
+        "uniform_half_2_f1",
+        "uniform_half_2_recall0",
+        "uniform_quarter_0_f1",
+        "central_half_f1",
+        "central_half_recall1",
+        "xy_fraction6_f1",
+        "xy_fraction6_recall0",
+        "xy_fraction4_f1",
+        "xy_fraction4_recall0",
+        "sparse_context_f1",
+        "supported_group_regression",
+        "composite_loss"
+      ]
+    },
+    {
+      "tag": "distribution12",
+      "gate": "dimension",
+      "failures": [
+        "clean_seed7",
+        "clean_seed17",
+        "clean_seed37",
+        "clean_f1",
+        "uniform_half_0_f1",
+        "uniform_half_0_recall1",
+        "uniform_half_1_f1",
+        "uniform_half_1_recall1",
+        "uniform_half_2_f1",
+        "uniform_half_2_recall1",
+        "uniform_quarter_0_f1",
+        "uniform_quarter_0_recall1",
+        "uniform_quarter_1_f1",
+        "uniform_quarter_1_recall1",
+        "uniform_quarter_2_f1",
+        "uniform_quarter_2_recall1",
+        "central_half_f1",
+        "central_half_recall1",
+        "xy_fraction6_f1",
+        "xy_fraction4_f1",
+        "kept_single_f1",
+        "kept_single_recall0",
+        "kept_single_recall1",
+        "sparse_single_recall0",
+        "supported_group_regression",
+        "composite_loss"
+      ]
+    },
+    {
+      "tag": "combined15",
+      "gate": "dimension",
+      "failures": [
+        "clean_seed7",
+        "clean_seed17",
+        "clean_seed37",
+        "uniform_half_0_f1",
+        "uniform_half_1_f1",
+        "uniform_half_2_f1",
+        "uniform_half_2_recall0",
+        "uniform_quarter_0_f1",
+        "uniform_quarter_0_recall0",
+        "uniform_quarter_1_f1",
+        "uniform_quarter_1_recall0",
+        "uniform_quarter_2_f1",
+        "uniform_quarter_2_recall0",
+        "central_half_f1",
+        "central_half_recall1",
+        "kept_single_f1",
+        "kept_single_recall0",
+        "kept_single_recall1",
+        "sparse_single_f1",
+        "sparse_single_recall0",
+        "sparse_context_recall0",
+        "supported_group_regression",
+        "composite_loss"
+      ]
+    },
+    {
+      "tag": "support17",
+      "gate": "dimension",
+      "failures": [
+        "clean_seed7",
+        "clean_seed17",
+        "clean_seed37",
+        "clean_f1",
+        "uniform_half_1_f1",
+        "uniform_half_2_f1",
+        "central_half_f1",
+        "central_half_recall1",
+        "xy_fraction6_f1",
+        "xy_fraction4_f1",
+        "supported_group_regression",
+        "minimum_composite_gain"
+      ]
+    },
+    {
+      "tag": "support24",
+      "gate": "dimension",
+      "failures": [
+        "minimum_composite_gain"
+      ]
+    },
+    {
+      "tag": "width28",
+      "gate": "dimension",
+      "failures": [
+        "kept_single_recall0",
+        "supported_group_regression",
+        "minimum_composite_gain",
+        "gain_vs_support24"
+      ]
+    },
+    {
+      "tag": "asymmetry28",
+      "gate": "dimension",
+      "failures": [
+        "supported_group_regression",
+        "minimum_composite_gain",
+        "gain_vs_support24"
+      ]
+    },
+    {
+      "tag": "quantile32",
+      "gate": "dimension",
+      "failures": [
+        "supported_group_regression",
+        "minimum_composite_gain",
+        "gain_vs_support24"
+      ]
+    },
+    {
+      "tag": "full36",
+      "gate": "dimension",
+      "failures": [
+        "supported_group_regression",
+        "minimum_composite_gain",
+        "gain_vs_support24",
+        "gain_vs_redundant36"
+      ]
+    },
+    {
+      "tag": "redundant36",
+      "gate": "dimension",
+      "failures": [
+        "uniform_half_0_recall0",
+        "uniform_half_1_recall0",
+        "uniform_half_2_recall0",
+        "kept_single_recall0",
+        "control_only"
+      ]
+    },
+    {
+      "tag": "base16",
+      "gate": "promotion",
+      "failures": [
+        "central_half",
+        "supported_group_regression"
+      ]
+    },
+    {
+      "tag": "combined23",
+      "gate": "promotion",
+      "failures": [
+        "supported_group_regression"
+      ]
+    },
+    {
+      "tag": "core8",
+      "gate": "promotion",
+      "failures": [
+        "clean_seed7",
+        "clean_seed17",
+        "clean_seed37",
+        "quarter_mean",
+        "central_half",
+        "supported_group_regression",
+        "composite_gain"
+      ]
+    },
+    {
+      "tag": "proxy12",
+      "gate": "promotion",
+      "failures": [
+        "clean_seed17",
+        "central_half",
+        "supported_group_regression",
+        "composite_gain"
+      ]
+    },
+    {
+      "tag": "distribution12",
+      "gate": "promotion",
+      "failures": [
+        "quarter_mean",
+        "central_half",
+        "supported_group_regression",
+        "composite_gain"
+      ]
+    },
+    {
+      "tag": "combined15",
+      "gate": "promotion",
+      "failures": [
+        "quarter_mean",
+        "central_half",
+        "supported_group_regression",
+        "composite_gain"
+      ]
+    },
+    {
+      "tag": "support17",
+      "gate": "promotion",
+      "failures": [
+        "central_half",
+        "supported_group_regression"
+      ]
+    },
+    {
+      "tag": "support24",
+      "gate": "promotion",
+      "failures": []
+    },
+    {
+      "tag": "width28",
+      "gate": "promotion",
+      "failures": [
+        "supported_group_regression"
+      ]
+    },
+    {
+      "tag": "asymmetry28",
+      "gate": "promotion",
+      "failures": [
+        "supported_group_regression"
+      ]
+    },
+    {
+      "tag": "quantile32",
+      "gate": "promotion",
+      "failures": [
+        "supported_group_regression"
+      ]
+    },
+    {
+      "tag": "full36",
+      "gate": "promotion",
+      "failures": [
+        "supported_group_regression"
+      ]
+    },
+    {
+      "tag": "redundant36",
+      "gate": "promotion",
+      "failures": [
+        "supported_group_regression"
+      ]
+    }
+  ],
+  "integer_bounds": [
+    {
+      "tag": "core8_seed7",
+      "accumulator_bounds": [
+        30856,
+        184000,
+        278294
+      ],
+      "requantization_bounds": [
+        80719296,
+        159896000
+      ]
+    },
+    {
+      "tag": "core8_seed17",
+      "accumulator_bounds": [
+        52821,
+        166720,
+        296893
+      ],
+      "requantization_bounds": [
+        81502803,
+        106700800
+      ]
+    },
+    {
+      "tag": "core8_seed37",
+      "accumulator_bounds": [
+        39434,
+        152706,
+        211108
+      ],
+      "requantization_bounds": [
+        69206670,
+        127509510
+      ]
+    },
+    {
+      "tag": "proxy12_seed7",
+      "accumulator_bounds": [
+        72328,
+        132825,
+        187392
+      ],
+      "requantization_bounds": [
+        112542368,
+        97360725
+      ]
+    },
+    {
+      "tag": "proxy12_seed17",
+      "accumulator_bounds": [
+        69385,
+        185040,
+        246250
+      ],
+      "requantization_bounds": [
+        99706245,
+        101216880
+      ]
+    },
+    {
+      "tag": "proxy12_seed37",
+      "accumulator_bounds": [
+        57352,
+        128716,
+        217652
+      ],
+      "requantization_bounds": [
+        85454480,
+        123181212
+      ]
+    },
+    {
+      "tag": "distribution12_seed7",
+      "accumulator_bounds": [
+        47832,
+        166508,
+        246938
+      ],
+      "requantization_bounds": [
+        94372536,
+        95908608
+      ]
+    },
+    {
+      "tag": "distribution12_seed17",
+      "accumulator_bounds": [
+        61158,
+        160160,
+        251924
+      ],
+      "requantization_bounds": [
+        92899002,
+        122041920
+      ]
+    },
+    {
+      "tag": "distribution12_seed37",
+      "accumulator_bounds": [
+        53434,
+        131983,
+        189933
+      ],
+      "requantization_bounds": [
+        108471020,
+        95819658
+      ]
+    },
+    {
+      "tag": "combined15_seed7",
+      "accumulator_bounds": [
+        62699,
+        150663,
+        239636
+      ],
+      "requantization_bounds": [
+        101196186,
+        100040232
+      ]
+    },
+    {
+      "tag": "combined15_seed17",
+      "accumulator_bounds": [
+        80501,
+        140988,
+        276935
+      ],
+      "requantization_bounds": [
+        144982301,
+        113777316
+      ]
+    },
+    {
+      "tag": "combined15_seed37",
+      "accumulator_bounds": [
+        67103,
+        157489,
+        185017
+      ],
+      "requantization_bounds": [
+        92535037,
+        118904195
+      ]
+    },
+    {
+      "tag": "support17_seed7",
+      "accumulator_bounds": [
+        79242,
+        180979,
+        209199
+      ],
+      "requantization_bounds": [
+        93584802,
+        94652017
+      ]
+    },
+    {
+      "tag": "support17_seed17",
+      "accumulator_bounds": [
+        93046,
+        154447,
+        262095
+      ],
+      "requantization_bounds": [
+        113143936,
+        79231311
+      ]
+    },
+    {
+      "tag": "support17_seed37",
+      "accumulator_bounds": [
+        72233,
+        154890,
+        236283
+      ],
+      "requantization_bounds": [
+        134136681,
+        123602220
+      ]
+    },
+    {
+      "tag": "support24_seed7",
+      "accumulator_bounds": [
+        103247,
+        180794,
+        214522
+      ],
+      "requantization_bounds": [
+        113881441,
+        79549360
+      ]
+    },
+    {
+      "tag": "support24_seed17",
+      "accumulator_bounds": [
+        109053,
+        162236,
+        194609
+      ],
+      "requantization_bounds": [
+        131299812,
+        105615636
+      ]
+    },
+    {
+      "tag": "support24_seed37",
+      "accumulator_bounds": [
+        122867,
+        212044,
+        171799
+      ],
+      "requantization_bounds": [
+        123235601,
+        174936300
+      ]
+    },
+    {
+      "tag": "width28_seed7",
+      "accumulator_bounds": [
+        115177,
+        190432,
+        220014
+      ],
+      "requantization_bounds": [
+        131301780,
+        87027424
+      ]
+    },
+    {
+      "tag": "width28_seed17",
+      "accumulator_bounds": [
+        127652,
+        162918,
+        234312
+      ],
+      "requantization_bounds": [
+        158416132,
+        102475422
+      ]
+    },
+    {
+      "tag": "width28_seed37",
+      "accumulator_bounds": [
+        116858,
+        268699,
+        211990
+      ],
+      "requantization_bounds": [
+        145137636,
+        111510085
+      ]
+    },
+    {
+      "tag": "asymmetry28_seed7",
+      "accumulator_bounds": [
+        132495,
+        148378,
+        192406
+      ],
+      "requantization_bounds": [
+        142962105,
+        83536814
+      ]
+    },
+    {
+      "tag": "asymmetry28_seed17",
+      "accumulator_bounds": [
+        122884,
+        180256,
+        196454
+      ],
+      "requantization_bounds": [
+        143405628,
+        103466944
+      ]
+    },
+    {
+      "tag": "asymmetry28_seed37",
+      "accumulator_bounds": [
+        140501,
+        184541,
+        228652
+      ],
+      "requantization_bounds": [
+        148088054,
+        108879190
+      ]
+    },
+    {
+      "tag": "quantile32_seed7",
+      "accumulator_bounds": [
+        132844,
+        176095,
+        200417
+      ],
+      "requantization_bounds": [
+        155958856,
+        81884175
+      ]
+    },
+    {
+      "tag": "quantile32_seed17",
+      "accumulator_bounds": [
+        138653,
+        160075,
+        225381
+      ],
+      "requantization_bounds": [
+        175257392,
+        108370775
+      ]
+    },
+    {
+      "tag": "quantile32_seed37",
+      "accumulator_bounds": [
+        110542,
+        266531,
+        208945
+      ],
+      "requantization_bounds": [
+        127454926,
+        119139357
+      ]
+    },
+    {
+      "tag": "full36_seed7",
+      "accumulator_bounds": [
+        128552,
+        198454,
+        198039
+      ],
+      "requantization_bounds": [
+        140764440,
+        80175416
+      ]
+    },
+    {
+      "tag": "full36_seed17",
+      "accumulator_bounds": [
+        137751,
+        221001,
+        166721
+      ],
+      "requantization_bounds": [
+        193264653,
+        119340540
+      ]
+    },
+    {
+      "tag": "full36_seed37",
+      "accumulator_bounds": [
+        144549,
+        235055,
+        201219
+      ],
+      "requantization_bounds": [
+        175337937,
+        92376615
+      ]
+    },
+    {
+      "tag": "redundant36_seed7",
+      "accumulator_bounds": [
+        162515,
+        198827,
+        219375
+      ],
+      "requantization_bounds": [
+        122861340,
+        102594732
+      ]
+    },
+    {
+      "tag": "redundant36_seed17",
+      "accumulator_bounds": [
+        147021,
+        158429,
+        251850
+      ],
+      "requantization_bounds": [
+        125261892,
+        138783804
+      ]
+    },
+    {
+      "tag": "redundant36_seed37",
+      "accumulator_bounds": [
+        187890,
+        138188,
+        203740
+      ],
+      "requantization_bounds": [
+        160270170,
+        100048112
+      ]
+    }
+  ],
+  "previous_evidence": [
+    {
+      "package": "mechanism_convergence",
+      "files": 1807,
+      "manifest_sha256": "a754382e717985b3ea383db963f2751b6ea0b06a16cfa9abcd404cff8faf3288"
+    },
+    {
+      "package": "moment_encoding",
+      "files": 470,
+      "manifest_sha256": "10ed75cbe824b67bb130ed236a06195893f559818e1b4ef9ff43d749c287feca"
+    },
+    {
+      "package": "conditional_protection",
+      "files": 292,
+      "manifest_sha256": "f2f3e14f563ea9083d95c178a64cff6d05d5c36fcad5bc54e02d95e862c7752b"
+    },
+    {
+      "package": "representative_rtl",
+      "files": 89,
+      "manifest_sha256": "94b979abf6e5ae8bd2fa79049dac737e5e1880a0de3cbbe7ba5c0043ab132208"
+    },
+    {
+      "package": "software_convergence",
+      "files": 969,
+      "manifest_sha256": "4c13793c18d3d4bf1307fd0d625116083433ab48063246cd621428ebb7f96a2e"
+    },
+    {
+      "package": "feature_ablation",
+      "files": 676,
+      "manifest_sha256": "4aeba932b999a9184cce982a73e9b081de570177a3f835f21639f1372e724629"
+    },
+    {
+      "package": "feature_enrichment",
+      "files": 808,
+      "manifest_sha256": "511c6ed9515766f50f4efef060f6c42a88bc7d4f0b06e0115d8a711911e8f5c7"
+    }
+  ],
+  "runtime": {
+    "preparation_seconds": 437.36179612606065,
+    "training_seconds": 2617.7726125209592,
+    "finishing_seconds": 298.11259589501424,
+    "output_bytes": 179871114
+  },
+  "original_head_index_unchanged": true,
+  "single_executor_review": true,
+  "scope": "Finite software development sweep, not universal dimension optimality, independent generalization or hardware gain"
+}

@@ -1,0 +1,27 @@
+{
+  "status": "PASS",
+  "dimension_trajectories": 60,
+  "stages": [
+    {
+      "stage": "feature_ablation",
+      "new_trajectories": 12,
+      "source": "logs/feature_ablation_20260917/training/summary.json",
+      "sha256": "1b2577aa9db8efaa4f8fbdc34e069f49076ec6431522af39a0a4aa9aa33b2b4c"
+    },
+    {
+      "stage": "feature_enrichment",
+      "new_trajectories": 15,
+      "source": "logs/feature_enrichment_20260917/training/summary.json",
+      "sha256": "abf343f5e788ae35d476e655097e59a671bda3dd9cc878ef7c8ae212d99decf1"
+    },
+    {
+      "stage": "feature_dimension_sweep",
+      "new_trajectories": 33,
+      "source": "logs/feature_dimension_sweep_20260917/training/summary.json",
+      "sha256": "eae708197a7734dd919013ea68b9196eb1ae66ca47d6b1327d4382d0eb69c45a"
+    }
+  ],
+  "reused_models_in_latest_stage": 6,
+  "reused_not_counted_as_new": true,
+  "scope": "Dimension studies only; not total weekly training count"
+}
