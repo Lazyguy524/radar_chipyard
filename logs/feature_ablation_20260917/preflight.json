@@ -1,0 +1,308 @@
+{
+  "status": "PASS",
+  "wall_seconds": 29.244367380044423,
+  "old_manifest_files": 969,
+  "train_sequences": 113,
+  "val_sequences": 27,
+  "checks": [
+    {
+      "tag": "full21",
+      "columns": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "initialization_error": 0.0,
+      "fold_error": 1.942890293094024e-16,
+      "frontend_cases": 156,
+      "qat_numpy_c_exact": true
+    },
+    {
+      "tag": "dedup20",
+      "columns": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "initialization_error": 2.9802322387695312e-08,
+      "fold_error": 1.1102230246251565e-16,
+      "frontend_cases": 156,
+      "qat_numpy_c_exact": true
+    },
+    {
+      "tag": "no_rcs18",
+      "columns": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+      ],
+      "initialization_error": 0.0,
+      "fold_error": 2.220446049250313e-16,
+      "frontend_cases": 156,
+      "qat_numpy_c_exact": true
+    },
+    {
+      "tag": "less_shape16",
+      "columns": [
+        0,
+        1,
+        2,
+        5,
+        6,
+        7,
+        8,
+        9,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "initialization_error": 2.9802322387695312e-08,
+      "fold_error": 1.1102230246251565e-16,
+      "frontend_cases": 156,
+      "qat_numpy_c_exact": true
+    }
+  ],
+  "schedules": [
+    {
+      "seed": 7,
+      "epoch": 1,
+      "counts": [
+        178890,
+        44722,
+        44723,
+        89445
+      ]
+    },
+    {
+      "seed": 7,
+      "epoch": 2,
+      "counts": [
+        178890,
+        44723,
+        44722,
+        89445
+      ]
+    },
+    {
+      "seed": 7,
+      "epoch": 20,
+      "counts": [
+        178890,
+        44723,
+        44722,
+        89445
+      ]
+    },
+    {
+      "seed": 7,
+      "epoch": 21,
+      "counts": [
+        178890,
+        44722,
+        44723,
+        89445
+      ]
+    },
+    {
+      "seed": 7,
+      "epoch": 80,
+      "counts": [
+        178890,
+        44723,
+        44722,
+        89445
+      ]
+    },
+    {
+      "seed": 17,
+      "epoch": 1,
+      "counts": [
+        178890,
+        44722,
+        44723,
+        89445
+      ]
+    },
+    {
+      "seed": 17,
+      "epoch": 2,
+      "counts": [
+        178890,
+        44723,
+        44722,
+        89445
+      ]
+    },
+    {
+      "seed": 17,
+      "epoch": 20,
+      "counts": [
+        178890,
+        44723,
+        44722,
+        89445
+      ]
+    },
+    {
+      "seed": 17,
+      "epoch": 21,
+      "counts": [
+        178890,
+        44722,
+        44723,
+        89445
+      ]
+    },
+    {
+      "seed": 17,
+      "epoch": 80,
+      "counts": [
+        178890,
+        44723,
+        44722,
+        89445
+      ]
+    },
+    {
+      "seed": 37,
+      "epoch": 1,
+      "counts": [
+        178890,
+        44722,
+        44723,
+        89445
+      ]
+    },
+    {
+      "seed": 37,
+      "epoch": 2,
+      "counts": [
+        178890,
+        44723,
+        44722,
+        89445
+      ]
+    },
+    {
+      "seed": 37,
+      "epoch": 20,
+      "counts": [
+        178890,
+        44723,
+        44722,
+        89445
+      ]
+    },
+    {
+      "seed": 37,
+      "epoch": 21,
+      "counts": [
+        178890,
+        44722,
+        44723,
+        89445
+      ]
+    },
+    {
+      "seed": 37,
+      "epoch": 80,
+      "counts": [
+        178890,
+        44723,
+        44722,
+        89445
+      ]
+    }
+  ],
+  "duplicate": [
+    {
+      "seed": 7,
+      "rows": 17408,
+      "outside_int8": 2,
+      "min": -172,
+      "max": 102,
+      "all_layer_exact": true
+    },
+    {
+      "seed": 17,
+      "rows": 17408,
+      "outside_int8": 5,
+      "min": -225,
+      "max": 117,
+      "all_layer_exact": true
+    },
+    {
+      "seed": 37,
+      "rows": 17408,
+      "outside_int8": 2,
+      "min": -177,
+      "max": 116,
+      "all_layer_exact": true
+    }
+  ],
+  "source_sha256": {
+    "docs/paper_new/feature_ablation_2026-09-17/train.py": "0d211dbcc036248265a611eb232d38a4b657bac1d02d2ced2f10492f6680adc0",
+    "docs/paper_new/feature_ablation_2026-09-17/preflight.py": "ad68d21a76a25493632d947ea1ffac0f0b8901854911e79bd9707206567227aa",
+    "docs/paper_new/feature_ablation_2026-09-17/backup_git.py": "cf8140b7dd963309d1da5ea4914bc81d3ab8ad70459e20b252b5d59472aa9146",
+    "docs/paper_new/feature_ablation_2026-09-17/00_设计与执行前审查.md": "c3055394d6cae5f98cfe84799f81b31caa661568ea5e9ef76070bd8d4f06844a",
+    "docs/paper_new/feature_ablation_2026-09-17/plan.json": "28535d063b968047df4bd4e39cc66b0a8b2c07c3f1836c99e16d520dea1cabef",
+    "docs/paper_new/feature_ablation_2026-09-17/proxy_subset.c": "e36771e1b89be66862fe8ebe009697d08855487bbef4d615a1c114f78576d85a",
+    "docs/paper_new/feature_ablation_2026-09-17/ab_common.py": "b18db1bdc1948a0a0ebceefeede576d6fc27ee712a36930212b8f62dd2a54527"
+  },
+  "scope": "Train-only plus arithmetic boundary/random tests; no validation selection"
+}
