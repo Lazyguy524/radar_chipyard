@@ -1,0 +1,43 @@
+{
+  "status": "PASS",
+  "old_gate_support24_pass": true,
+  "new_gate_support24_pass": false,
+  "tracked_group": [
+    {
+      "seed": 7,
+      "samples": 116,
+      "sequences": 19,
+      "A_correct": 104,
+      "combined23_correct": 101,
+      "support24_correct": 101,
+      "support24_extra_errors_vs_A": 3,
+      "support24_accuracy_delta_vs_A": -0.02586206896551724
+    },
+    {
+      "seed": 17,
+      "samples": 116,
+      "sequences": 19,
+      "A_correct": 105,
+      "combined23_correct": 102,
+      "support24_correct": 101,
+      "support24_extra_errors_vs_A": 4,
+      "support24_accuracy_delta_vs_A": -0.034482758620689655
+    },
+    {
+      "seed": 37,
+      "samples": 116,
+      "sequences": 19,
+      "A_correct": 103,
+      "combined23_correct": 100,
+      "support24_correct": 103,
+      "support24_extra_errors_vs_A": 0,
+      "support24_accuracy_delta_vs_A": 0.0
+    }
+  ],
+  "decision_unchanged": {
+    "conditional": "combined23",
+    "main": "A",
+    "alternative": "B"
+  },
+  "scope": "Descriptive review of a frozen all-three-negative rule; no post-hoc replacement threshold or new training"
+}

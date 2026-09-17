@@ -1,0 +1,37 @@
+canonical_column,stable_feature_id,name,encoding,scope
+0,0,点数,Frozen raw integer shifted by 10,Selected from actual retained point view; total N may include history
+1,1,x代理均值,Frozen raw integer shifted by 8,Selected from actual retained point view; total N may include history
+2,2,y代理均值,Frozen raw integer shifted by 8,Selected from actual retained point view; total N may include history
+3,5,x跨度,Frozen raw integer shifted by 8,Selected from actual retained point view; total N may include history
+4,6,y跨度,Frozen raw integer shifted by 7,Selected from actual retained point view; total N may include history
+5,7,点距离代理最小值,Frozen raw integer shifted by 8,Selected from actual retained point view; total N may include history
+6,8,点距离代理最大值,Frozen raw integer shifted by 8,Selected from actual retained point view; total N may include history
+7,9,代理中心距离,Frozen raw integer shifted by 8,Selected from actual retained point view; total N may include history
+8,13,原LUT密度代理,Frozen raw integer shifted by 0,Selected from actual retained point view; total N may include history
+9,14,径向速度代理均值,Frozen raw integer shifted by 6,Selected from actual retained point view; total N may include history
+10,15,径向速度离散代理（跨度右移2）,Frozen raw integer shifted by 7,Selected from actual retained point view; total N may include history
+11,16,径向速度最小值,Frozen raw integer shifted by 8,Selected from actual retained point view; total N may include history
+12,17,径向速度最大值,Frozen raw integer shifted by 8,Selected from actual retained point view; total N may include history
+13,18,RCS代理均值,Frozen raw integer shifted by 6,Selected from actual retained point view; total N may include history
+14,19,RCS离散代理（跨度右移2）,Frozen raw integer shifted by 5,Selected from actual retained point view; total N may include history
+15,20,RCS最大值,Frozen raw integer shifted by 7,Selected from actual retained point view; total N may include history
+16,21,4Var(x)/span(x)^2,"Normalized analytical descriptor times127, ties-to-even",Selected from actual retained point view; total N may include history
+17,22,4Var(y)/span(y)^2,"Normalized analytical descriptor times127, ties-to-even",Selected from actual retained point view; total N may include history
+18,23,"4Cov(x,y)/(span(x)*span(y))","Normalized analytical descriptor times127, ties-to-even",Selected from actual retained point view; total N may include history
+19,24,4Var(vr_compensated)/span(vr)^2,"Normalized analytical descriptor times127, ties-to-even",Selected from actual retained point view; total N may include history
+20,25,4Var(RCS)/span(RCS)^2,"Normalized analytical descriptor times127, ties-to-even",Selected from actual retained point view; total N may include history
+21,26,fraction_abs_vr_le_0.5_m_per_s,"Normalized analytical descriptor times127, ties-to-even",Selected from actual retained point view; total N may include history
+22,27,2*(mean_RCS-min_RCS)/span_RCS-1,"Normalized analytical descriptor times127, ties-to-even",Selected from actual retained point view; total N may include history
+23,28,inverse_retained_count,"Normalized analytical descriptor times127, ties-to-even",Selected from actual retained point view; total N may include history
+24,29,IQR_over_range_x,"Normalized analytical descriptor times127, ties-to-even",Selected from actual retained point view; total N may include history
+25,30,IQR_over_range_y,"Normalized analytical descriptor times127, ties-to-even",Selected from actual retained point view; total N may include history
+26,31,IQR_over_range_vr,"Normalized analytical descriptor times127, ties-to-even",Selected from actual retained point view; total N may include history
+27,32,IQR_over_range_rcs,"Normalized analytical descriptor times127, ties-to-even",Selected from actual retained point view; total N may include history
+28,33,quartile_asymmetry_x,"Normalized analytical descriptor times127, ties-to-even",Selected from actual retained point view; total N may include history
+29,34,quartile_asymmetry_y,"Normalized analytical descriptor times127, ties-to-even",Selected from actual retained point view; total N may include history
+30,35,quartile_asymmetry_vr,"Normalized analytical descriptor times127, ties-to-even",Selected from actual retained point view; total N may include history
+31,36,quartile_asymmetry_rcs,"Normalized analytical descriptor times127, ties-to-even",Selected from actual retained point view; total N may include history
+32,37,median_position_x,"Normalized analytical descriptor times127, ties-to-even",Selected from actual retained point view; total N may include history
+33,38,median_position_y,"Normalized analytical descriptor times127, ties-to-even",Selected from actual retained point view; total N may include history
+34,39,median_position_vr,"Normalized analytical descriptor times127, ties-to-even",Selected from actual retained point view; total N may include history
+35,40,median_position_rcs,"Normalized analytical descriptor times127, ties-to-even",Selected from actual retained point view; total N may include history

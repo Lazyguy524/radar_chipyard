@@ -1,0 +1,106 @@
+[
+  {
+    "candidate": "support17",
+    "reference": "base16",
+    "composite_delta": -0.000976876860627714,
+    "low": -0.0018081460331090906,
+    "high": -0.000475457504065266,
+    "scope": "Matched software retraining contrast, fixed final epochs; no claim that individual feature contribution or physical causality is isolated"
+  },
+  {
+    "candidate": "support24",
+    "reference": "combined23",
+    "composite_delta": 6.0159419215962316e-05,
+    "low": -0.0008698319741608766,
+    "high": 0.0011423759266247294,
+    "scope": "Matched software retraining contrast, fixed final epochs; no claim that individual feature contribution or physical causality is isolated"
+  },
+  {
+    "candidate": "support24",
+    "reference": "support17",
+    "composite_delta": 0.0030119509302434975,
+    "low": 0.0010429058462950317,
+    "high": 0.006544178467498988,
+    "scope": "Matched software retraining contrast, fixed final epochs; no claim that individual feature contribution or physical causality is isolated"
+  },
+  {
+    "candidate": "distribution12",
+    "reference": "core8",
+    "composite_delta": 0.006958424887224794,
+    "low": 0.003627040891652316,
+    "high": 0.012656803387390192,
+    "scope": "Matched software retraining contrast, fixed final epochs; no claim that individual feature contribution or physical causality is isolated"
+  },
+  {
+    "candidate": "combined15",
+    "reference": "core8",
+    "composite_delta": 0.007342212118265616,
+    "low": 0.003201822057490173,
+    "high": 0.014123374338244434,
+    "scope": "Matched software retraining contrast, fixed final epochs; no claim that individual feature contribution or physical causality is isolated"
+  },
+  {
+    "candidate": "distribution12",
+    "reference": "proxy12",
+    "composite_delta": -0.0006887662842067025,
+    "low": -0.002368963675796635,
+    "high": 0.0008503278358116567,
+    "scope": "Matched software retraining contrast, fixed final epochs; no claim that individual feature contribution or physical causality is isolated"
+  },
+  {
+    "candidate": "combined15",
+    "reference": "distribution12",
+    "composite_delta": 0.0003837872310408219,
+    "low": -0.001151491633784335,
+    "high": 0.0019504307108118271,
+    "scope": "Matched software retraining contrast, fixed final epochs; no claim that individual feature contribution or physical causality is isolated"
+  },
+  {
+    "candidate": "width28",
+    "reference": "support24",
+    "composite_delta": 0.0009311369530697148,
+    "low": 0.00029342484395529224,
+    "high": 0.0018334965624199472,
+    "scope": "Matched software retraining contrast, fixed final epochs; no claim that individual feature contribution or physical causality is isolated"
+  },
+  {
+    "candidate": "asymmetry28",
+    "reference": "support24",
+    "composite_delta": -9.009371980672753e-05,
+    "low": -0.0007589424052315024,
+    "high": 0.0004010529207337465,
+    "scope": "Matched software retraining contrast, fixed final epochs; no claim that individual feature contribution or physical causality is isolated"
+  },
+  {
+    "candidate": "quantile32",
+    "reference": "width28",
+    "composite_delta": -0.0003900585278108215,
+    "low": -0.0018786714511756185,
+    "high": 0.0009059557835018407,
+    "scope": "Matched software retraining contrast, fixed final epochs; no claim that individual feature contribution or physical causality is isolated"
+  },
+  {
+    "candidate": "quantile32",
+    "reference": "asymmetry28",
+    "composite_delta": 0.0006311721450656208,
+    "low": -0.00035055818388087895,
+    "high": 0.0020220146020997845,
+    "scope": "Matched software retraining contrast, fixed final epochs; no claim that individual feature contribution or physical causality is isolated"
+  },
+  {
+    "candidate": "full36",
+    "reference": "quantile32",
+    "composite_delta": -9.386364778196654e-05,
+    "low": -0.0010767541992849636,
+    "high": 0.000801375373938003,
+    "scope": "Matched software retraining contrast, fixed final epochs; no claim that individual feature contribution or physical causality is isolated"
+  },
+  {
+    "candidate": "full36",
+    "reference": "redundant36",
+    "composite_delta": 0.0002819992238866457,
+    "low": -0.0008697881503381891,
+    "high": 0.0013545578009176956,
+    "scope": "Matched software retraining contrast, fixed final epochs; no claim that individual feature contribution or physical causality is isolated"
+  }
+]

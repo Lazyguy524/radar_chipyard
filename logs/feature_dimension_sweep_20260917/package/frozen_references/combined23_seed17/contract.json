@@ -1,0 +1,50 @@
+{
+  "tag": "combined23",
+  "seed": 17,
+  "columns": [
+    0,
+    1,
+    2,
+    5,
+    6,
+    7,
+    8,
+    9,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27
+  ],
+  "feature_plan": {
+    "geometry": [
+      "4Var(x)/span(x)^2",
+      "4Var(y)/span(y)^2",
+      "4Cov(x,y)/(span(x)*span(y))"
+    ],
+    "distribution": [
+      "4Var(vr_compensated)/span(vr)^2",
+      "4Var(RCS)/span(RCS)^2",
+      "fraction_abs_vr_le_0.5_m_per_s",
+      "2*(mean_RCS-min_RCS)/span_RCS-1"
+    ],
+    "quantization": "Exact rational -> ties-to-even -> INT8 [-127,127]; normalized values times127, zero for zero denominator; new output ranges analytical, no validation fitted scales",
+    "low_points": "N=1 dispersion/contrast=0; N=2 range-normalized variance hits maximum if nonzero span; this degeneracy is disclosed and separately evaluated",
+    "physical_scope": "Near-zero radial speed does NOT prove stationary object; normalized covariance is NOT Pearson correlation or rotation invariant; history-fused distribution is NOT instantaneous object shape"
+  },
+  "input": "1..511 points, little endian int16 [x,y,compensated radial velocity,RCS], Q8.8; upstream same-sequence/sensor/GT-track history; sparse observations do not update history",
+  "history": "Same sequence/sensor/GT track; current plus preceding six retained observations; sparse observations do not update history; no coordinate alignment or time expiry",
+  "output": "class0 labels7/8; class1 labels0/1/2/3; tie chooses0",
+  "scope": "Software candidate reference; no board measurement or deployment promotion",
+  "integer_weights": "all INT8, biases INT32; ties-to-even and ReLU saturation127"
+}

@@ -1,0 +1,14 @@
+TY  - JOUR
+AU  - Hyndman, Rob J.
+AU  - Fan, Yanan
+TI  - Sample Quantiles in Statistical Packages
+JO  - The American Statistician
+PY  - 1996
+VL  - 50
+IS  - 4
+SP  - 361
+EP  - 365
+DO  - 10.1080/00031305.1996.10473566
+UR  - https://robjhyndman.com/publications/quantiles/
+N1  - Metadata verified from the author's page and official R quantile documentation on 2026-09-17. This study uses the explicitly fixed type 7 formula; the paper's recommended type 8 is not claimed to have been tested.
+ER  -

@@ -1,0 +1,57 @@
+[
+  {
+    "tag": "core8",
+    "path": "logs/feature_dimension_sweep_20260917/package/core8_train_calibration.npz",
+    "sha256": "470a5252390db4da90bb5cbcea6b1a70c9a0c478d3e3aaf60af82908c4afaa59"
+  },
+  {
+    "tag": "proxy12",
+    "path": "logs/feature_dimension_sweep_20260917/package/proxy12_train_calibration.npz",
+    "sha256": "0bba3b7729460cf922d86b937888eb4bbeffb0a352fde9807a17302bdd5f9796"
+  },
+  {
+    "tag": "distribution12",
+    "path": "logs/feature_dimension_sweep_20260917/package/distribution12_train_calibration.npz",
+    "sha256": "856aab805131f7d56c8335341a43110f6d186dfd3bc3882636692e0a6e471ca5"
+  },
+  {
+    "tag": "combined15",
+    "path": "logs/feature_dimension_sweep_20260917/package/combined15_train_calibration.npz",
+    "sha256": "df67dc367fbd66b30e70a736abb7f62b80060aa5749c8774e4001f574a16a9dc"
+  },
+  {
+    "tag": "support17",
+    "path": "logs/feature_dimension_sweep_20260917/package/support17_train_calibration.npz",
+    "sha256": "1cb8a34f5dfbdca1a14d47b8af362c6e878a3b1fdc98e3f96c77adec8041dc2a"
+  },
+  {
+    "tag": "support24",
+    "path": "logs/feature_dimension_sweep_20260917/package/support24_train_calibration.npz",
+    "sha256": "c2cddd621a2588d13ed7224df48f0c9f36e6f564827794111a6c2fd390631477"
+  },
+  {
+    "tag": "width28",
+    "path": "logs/feature_dimension_sweep_20260917/package/width28_train_calibration.npz",
+    "sha256": "c545d7f75527e9a4e2a6e709349870d38014c0ba195ee76045590f7267045440"
+  },
+  {
+    "tag": "asymmetry28",
+    "path": "logs/feature_dimension_sweep_20260917/package/asymmetry28_train_calibration.npz",
+    "sha256": "6a9845a42fa92cae61ca62e60218df7f90a2dae71c26b7c8e58a2b3ac9cf3618"
+  },
+  {
+    "tag": "quantile32",
+    "path": "logs/feature_dimension_sweep_20260917/package/quantile32_train_calibration.npz",
+    "sha256": "01c954cceeb6c03d10706fb8751d7839b3d43d0f1e76c70558c75601e394ca7a"
+  },
+  {
+    "tag": "full36",
+    "path": "logs/feature_dimension_sweep_20260917/package/full36_train_calibration.npz",
+    "sha256": "f39f46ddf33b3271af442b653246d31ae401cd06e4302cbed20a5998e4c04d29"
+  },
+  {
+    "tag": "redundant36",
+    "path": "logs/feature_dimension_sweep_20260917/package/redundant36_train_calibration.npz",
+    "sha256": "8bb37e769e9b38190cf34b2cde51f7cfc7941e7625e4e3f2a513cc25b8d0f41e"
+  }
+]

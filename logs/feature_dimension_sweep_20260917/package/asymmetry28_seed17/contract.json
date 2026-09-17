@@ -1,0 +1,80 @@
+{
+  "tag": "asymmetry28",
+  "seed": 17,
+  "columns": [
+    0,
+    1,
+    2,
+    5,
+    6,
+    7,
+    8,
+    9,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    33,
+    34,
+    35,
+    36
+  ],
+  "feature_plan": {
+    "geometry": [
+      "4Var(x)/span(x)^2",
+      "4Var(y)/span(y)^2",
+      "4Cov(x,y)/(span(x)*span(y))"
+    ],
+    "distribution": [
+      "4Var(vr_compensated)/span(vr)^2",
+      "4Var(RCS)/span(RCS)^2",
+      "fraction_abs_vr_le_0.5_m_per_s",
+      "2*(mean_RCS-min_RCS)/span_RCS-1"
+    ],
+    "quantization": "Exact rational -> ties-to-even -> INT8 [-127,127]; normalized values times127, zero for zero denominator; new output ranges analytical, no validation fitted scales",
+    "low_points": "N=1 dispersion/contrast=0; N=2 range-normalized variance hits maximum if nonzero span; this degeneracy is disclosed and separately evaluated",
+    "physical_scope": "Near-zero radial speed does NOT prove stationary object; normalized covariance is NOT Pearson correlation or rotation invariant; history-fused distribution is NOT instantaneous object shape",
+    "new": [
+      "inverse_retained_count",
+      "IQR_over_range_x",
+      "IQR_over_range_y",
+      "IQR_over_range_vr",
+      "IQR_over_range_rcs",
+      "quartile_asymmetry_x",
+      "quartile_asymmetry_y",
+      "quartile_asymmetry_vr",
+      "quartile_asymmetry_rcs",
+      "median_position_x",
+      "median_position_y",
+      "median_position_vr",
+      "median_position_rcs"
+    ],
+    "definitions": {
+      "support": "1/N, quantized as round_even(127/N); N is full retained input including history, not current raw count",
+      "quantiles": "For sorted int16 a and k=1,2,3, j=floor(k*(N-1)/4), r=k*(N-1)%4: Qk_times4=(4-r)*a[j]+r*a[min(j+1,N-1)]",
+      "width": "(Q3-Q1)/(max-min)",
+      "asymmetry": "(Q3+Q1-2*Q2)/(Q3-Q1)",
+      "median_position": "2*(Q2-min)/(max-min)-1",
+      "zero_denominator": "0",
+      "range": "support/width in [0,1], asymmetry/median_position in [-1,1]; multiply127, ties-to-even"
+    },
+    "cost": "Quantile families need four channel sorts plus linear copies, not a single scan; reused quantiles feed all three groups; no FPGA inference"
+  },
+  "input": "1..511 points, little endian int16 [x,y,compensated radial velocity,RCS], Q8.8; upstream same-sequence/sensor/GT-track history; sparse observations do not update history",
+  "history": "Same sequence/sensor/GT track; current plus preceding six retained observations; sparse observations do not update history; no coordinate alignment or time expiry",
+  "output": "class0 labels7/8; class1 labels0/1/2/3; tie chooses0",
+  "scope": "Software candidate reference; no board measurement or deployment promotion",
+  "integer_weights": "all INT8, biases INT32; ties-to-even and ReLU saturation127"
+}

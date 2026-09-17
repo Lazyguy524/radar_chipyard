@@ -1,0 +1,41 @@
+{
+  "layers": [
+    {
+      "input_scale": 1.0,
+      "weight_scale": 0.001594058908548648,
+      "output_scale": 0.03992678258341141,
+      "accumulator_abs_bound": 30856
+    },
+    {
+      "input_scale": 0.03992678258341141,
+      "weight_scale": 0.012263424753204105,
+      "output_scale": 0.036910195088446784,
+      "accumulator_abs_bound": 184000
+    },
+    {
+      "input_scale": 0.036910195088446784,
+      "weight_scale": 0.0064461240618247685,
+      "output_scale": 0.0002379276966862832,
+      "accumulator_abs_bound": 278294
+    }
+  ],
+  "multipliers": [
+    2616,
+    869
+  ],
+  "shift": 16,
+  "columns": [
+    0,
+    1,
+    2,
+    5,
+    6,
+    14,
+    18,
+    19
+  ],
+  "input_dim": 8,
+  "kind": "trained_int8",
+  "input": "Selected frozen proxy/distribution/order-statistic INT8 descriptors; no runtime normalization",
+  "frontend": "Dimension sweep CPU reference; no hardware claim"
+}

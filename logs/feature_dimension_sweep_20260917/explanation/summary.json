@@ -1,0 +1,8 @@
+{
+  "status": "PASS",
+  "exact_count_metric_sets": 2205,
+  "annotated_cases": 1014,
+  "tracked_group_rows": 45,
+  "wall_seconds": 23.16039663599804,
+  "scope": "Post-training descriptive fine-N groups; frozen original condition/group gates remain unchanged. No new threshold, classifier, weighting or test split."
+}

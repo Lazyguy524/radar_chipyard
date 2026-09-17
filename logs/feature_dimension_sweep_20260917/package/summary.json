@@ -1,0 +1,800 @@
+{
+  "status": "PASS",
+  "checks": [
+    {
+      "tag": "core8",
+      "seed": 7,
+      "condition": "clean",
+      "rows": 80450,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "core8",
+      "seed": 7,
+      "condition": "sparse_single",
+      "rows": 97734,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "core8",
+      "seed": 7,
+      "condition": "sparse_context",
+      "rows": 97734,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "core8",
+      "seed": 17,
+      "condition": "clean",
+      "rows": 80450,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "core8",
+      "seed": 17,
+      "condition": "sparse_single",
+      "rows": 97734,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "core8",
+      "seed": 17,
+      "condition": "sparse_context",
+      "rows": 97734,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "core8",
+      "seed": 37,
+      "condition": "clean",
+      "rows": 80450,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "core8",
+      "seed": 37,
+      "condition": "sparse_single",
+      "rows": 97734,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "core8",
+      "seed": 37,
+      "condition": "sparse_context",
+      "rows": 97734,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "proxy12",
+      "seed": 7,
+      "condition": "clean",
+      "rows": 80450,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "proxy12",
+      "seed": 7,
+      "condition": "sparse_single",
+      "rows": 97734,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "proxy12",
+      "seed": 7,
+      "condition": "sparse_context",
+      "rows": 97734,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "proxy12",
+      "seed": 17,
+      "condition": "clean",
+      "rows": 80450,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "proxy12",
+      "seed": 17,
+      "condition": "sparse_single",
+      "rows": 97734,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "proxy12",
+      "seed": 17,
+      "condition": "sparse_context",
+      "rows": 97734,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "proxy12",
+      "seed": 37,
+      "condition": "clean",
+      "rows": 80450,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "proxy12",
+      "seed": 37,
+      "condition": "sparse_single",
+      "rows": 97734,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "proxy12",
+      "seed": 37,
+      "condition": "sparse_context",
+      "rows": 97734,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "distribution12",
+      "seed": 7,
+      "condition": "clean",
+      "rows": 80450,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "distribution12",
+      "seed": 7,
+      "condition": "sparse_single",
+      "rows": 97734,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "distribution12",
+      "seed": 7,
+      "condition": "sparse_context",
+      "rows": 97734,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "distribution12",
+      "seed": 17,
+      "condition": "clean",
+      "rows": 80450,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "distribution12",
+      "seed": 17,
+      "condition": "sparse_single",
+      "rows": 97734,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "distribution12",
+      "seed": 17,
+      "condition": "sparse_context",
+      "rows": 97734,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "distribution12",
+      "seed": 37,
+      "condition": "clean",
+      "rows": 80450,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "distribution12",
+      "seed": 37,
+      "condition": "sparse_single",
+      "rows": 97734,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "distribution12",
+      "seed": 37,
+      "condition": "sparse_context",
+      "rows": 97734,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "combined15",
+      "seed": 7,
+      "condition": "clean",
+      "rows": 80450,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "combined15",
+      "seed": 7,
+      "condition": "sparse_single",
+      "rows": 97734,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "combined15",
+      "seed": 7,
+      "condition": "sparse_context",
+      "rows": 97734,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "combined15",
+      "seed": 17,
+      "condition": "clean",
+      "rows": 80450,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "combined15",
+      "seed": 17,
+      "condition": "sparse_single",
+      "rows": 97734,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "combined15",
+      "seed": 17,
+      "condition": "sparse_context",
+      "rows": 97734,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "combined15",
+      "seed": 37,
+      "condition": "clean",
+      "rows": 80450,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "combined15",
+      "seed": 37,
+      "condition": "sparse_single",
+      "rows": 97734,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "combined15",
+      "seed": 37,
+      "condition": "sparse_context",
+      "rows": 97734,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "support17",
+      "seed": 7,
+      "condition": "clean",
+      "rows": 80450,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "support17",
+      "seed": 7,
+      "condition": "sparse_single",
+      "rows": 97734,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "support17",
+      "seed": 7,
+      "condition": "sparse_context",
+      "rows": 97734,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "support17",
+      "seed": 17,
+      "condition": "clean",
+      "rows": 80450,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "support17",
+      "seed": 17,
+      "condition": "sparse_single",
+      "rows": 97734,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "support17",
+      "seed": 17,
+      "condition": "sparse_context",
+      "rows": 97734,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "support17",
+      "seed": 37,
+      "condition": "clean",
+      "rows": 80450,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "support17",
+      "seed": 37,
+      "condition": "sparse_single",
+      "rows": 97734,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "support17",
+      "seed": 37,
+      "condition": "sparse_context",
+      "rows": 97734,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "support24",
+      "seed": 7,
+      "condition": "clean",
+      "rows": 80450,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "support24",
+      "seed": 7,
+      "condition": "sparse_single",
+      "rows": 97734,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "support24",
+      "seed": 7,
+      "condition": "sparse_context",
+      "rows": 97734,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "support24",
+      "seed": 17,
+      "condition": "clean",
+      "rows": 80450,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "support24",
+      "seed": 17,
+      "condition": "sparse_single",
+      "rows": 97734,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "support24",
+      "seed": 17,
+      "condition": "sparse_context",
+      "rows": 97734,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "support24",
+      "seed": 37,
+      "condition": "clean",
+      "rows": 80450,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "support24",
+      "seed": 37,
+      "condition": "sparse_single",
+      "rows": 97734,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "support24",
+      "seed": 37,
+      "condition": "sparse_context",
+      "rows": 97734,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "width28",
+      "seed": 7,
+      "condition": "clean",
+      "rows": 80450,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "width28",
+      "seed": 7,
+      "condition": "sparse_single",
+      "rows": 97734,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "width28",
+      "seed": 7,
+      "condition": "sparse_context",
+      "rows": 97734,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "width28",
+      "seed": 17,
+      "condition": "clean",
+      "rows": 80450,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "width28",
+      "seed": 17,
+      "condition": "sparse_single",
+      "rows": 97734,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "width28",
+      "seed": 17,
+      "condition": "sparse_context",
+      "rows": 97734,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "width28",
+      "seed": 37,
+      "condition": "clean",
+      "rows": 80450,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "width28",
+      "seed": 37,
+      "condition": "sparse_single",
+      "rows": 97734,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "width28",
+      "seed": 37,
+      "condition": "sparse_context",
+      "rows": 97734,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "asymmetry28",
+      "seed": 7,
+      "condition": "clean",
+      "rows": 80450,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "asymmetry28",
+      "seed": 7,
+      "condition": "sparse_single",
+      "rows": 97734,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "asymmetry28",
+      "seed": 7,
+      "condition": "sparse_context",
+      "rows": 97734,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "asymmetry28",
+      "seed": 17,
+      "condition": "clean",
+      "rows": 80450,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "asymmetry28",
+      "seed": 17,
+      "condition": "sparse_single",
+      "rows": 97734,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "asymmetry28",
+      "seed": 17,
+      "condition": "sparse_context",
+      "rows": 97734,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "asymmetry28",
+      "seed": 37,
+      "condition": "clean",
+      "rows": 80450,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "asymmetry28",
+      "seed": 37,
+      "condition": "sparse_single",
+      "rows": 97734,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "asymmetry28",
+      "seed": 37,
+      "condition": "sparse_context",
+      "rows": 97734,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "quantile32",
+      "seed": 7,
+      "condition": "clean",
+      "rows": 80450,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "quantile32",
+      "seed": 7,
+      "condition": "sparse_single",
+      "rows": 97734,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "quantile32",
+      "seed": 7,
+      "condition": "sparse_context",
+      "rows": 97734,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "quantile32",
+      "seed": 17,
+      "condition": "clean",
+      "rows": 80450,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "quantile32",
+      "seed": 17,
+      "condition": "sparse_single",
+      "rows": 97734,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "quantile32",
+      "seed": 17,
+      "condition": "sparse_context",
+      "rows": 97734,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "quantile32",
+      "seed": 37,
+      "condition": "clean",
+      "rows": 80450,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "quantile32",
+      "seed": 37,
+      "condition": "sparse_single",
+      "rows": 97734,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "quantile32",
+      "seed": 37,
+      "condition": "sparse_context",
+      "rows": 97734,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "full36",
+      "seed": 7,
+      "condition": "clean",
+      "rows": 80450,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "full36",
+      "seed": 7,
+      "condition": "sparse_single",
+      "rows": 97734,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "full36",
+      "seed": 7,
+      "condition": "sparse_context",
+      "rows": 97734,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "full36",
+      "seed": 17,
+      "condition": "clean",
+      "rows": 80450,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "full36",
+      "seed": 17,
+      "condition": "sparse_single",
+      "rows": 97734,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "full36",
+      "seed": 17,
+      "condition": "sparse_context",
+      "rows": 97734,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "full36",
+      "seed": 37,
+      "condition": "clean",
+      "rows": 80450,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "full36",
+      "seed": 37,
+      "condition": "sparse_single",
+      "rows": 97734,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "full36",
+      "seed": 37,
+      "condition": "sparse_context",
+      "rows": 97734,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "redundant36",
+      "seed": 7,
+      "condition": "clean",
+      "rows": 80450,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "redundant36",
+      "seed": 7,
+      "condition": "sparse_single",
+      "rows": 97734,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "redundant36",
+      "seed": 7,
+      "condition": "sparse_context",
+      "rows": 97734,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "redundant36",
+      "seed": 17,
+      "condition": "clean",
+      "rows": 80450,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "redundant36",
+      "seed": 17,
+      "condition": "sparse_single",
+      "rows": 97734,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "redundant36",
+      "seed": 17,
+      "condition": "sparse_context",
+      "rows": 97734,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "redundant36",
+      "seed": 37,
+      "condition": "clean",
+      "rows": 80450,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "redundant36",
+      "seed": 37,
+      "condition": "sparse_single",
+      "rows": 97734,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    },
+    {
+      "tag": "redundant36",
+      "seed": 37,
+      "condition": "sparse_context",
+      "rows": 97734,
+      "feature_mismatches": 0,
+      "logit_mismatches": 0
+    }
+  ],
+  "complete_point_to_logit_rows": 9105294,
+  "wall_seconds": 102.83026449097088,
+  "scope": "CPU reference exactness; no hardware measurement"
+}

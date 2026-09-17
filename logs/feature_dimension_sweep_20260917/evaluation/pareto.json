@@ -1,0 +1,95 @@
+[
+  {
+    "tag": "core8",
+    "non_dominated": true,
+    "dominated_by": [],
+    "scope": "Mean composite plus separate analytical cost counts; no uncertainty dominance or FPGA performance claim"
+  },
+  {
+    "tag": "proxy12",
+    "non_dominated": true,
+    "dominated_by": [],
+    "scope": "Mean composite plus separate analytical cost counts; no uncertainty dominance or FPGA performance claim"
+  },
+  {
+    "tag": "distribution12",
+    "non_dominated": false,
+    "dominated_by": [
+      "proxy12"
+    ],
+    "scope": "Mean composite plus separate analytical cost counts; no uncertainty dominance or FPGA performance claim"
+  },
+  {
+    "tag": "combined15",
+    "non_dominated": false,
+    "dominated_by": [
+      "proxy12"
+    ],
+    "scope": "Mean composite plus separate analytical cost counts; no uncertainty dominance or FPGA performance claim"
+  },
+  {
+    "tag": "base16",
+    "non_dominated": true,
+    "dominated_by": [],
+    "scope": "Mean composite plus separate analytical cost counts; no uncertainty dominance or FPGA performance claim"
+  },
+  {
+    "tag": "support17",
+    "non_dominated": false,
+    "dominated_by": [
+      "base16"
+    ],
+    "scope": "Mean composite plus separate analytical cost counts; no uncertainty dominance or FPGA performance claim"
+  },
+  {
+    "tag": "combined23",
+    "non_dominated": true,
+    "dominated_by": [],
+    "scope": "Mean composite plus separate analytical cost counts; no uncertainty dominance or FPGA performance claim"
+  },
+  {
+    "tag": "support24",
+    "non_dominated": true,
+    "dominated_by": [],
+    "scope": "Mean composite plus separate analytical cost counts; no uncertainty dominance or FPGA performance claim"
+  },
+  {
+    "tag": "width28",
+    "non_dominated": true,
+    "dominated_by": [],
+    "scope": "Mean composite plus separate analytical cost counts; no uncertainty dominance or FPGA performance claim"
+  },
+  {
+    "tag": "asymmetry28",
+    "non_dominated": false,
+    "dominated_by": [
+      "combined23",
+      "support24",
+      "width28"
+    ],
+    "scope": "Mean composite plus separate analytical cost counts; no uncertainty dominance or FPGA performance claim"
+  },
+  {
+    "tag": "quantile32",
+    "non_dominated": false,
+    "dominated_by": [
+      "width28"
+    ],
+    "scope": "Mean composite plus separate analytical cost counts; no uncertainty dominance or FPGA performance claim"
+  },
+  {
+    "tag": "full36",
+    "non_dominated": false,
+    "dominated_by": [
+      "width28",
+      "quantile32"
+    ],
+    "scope": "Mean composite plus separate analytical cost counts; no uncertainty dominance or FPGA performance claim"
+  },
+  {
+    "tag": "redundant36",
+    "non_dominated": true,
+    "dominated_by": [],
+    "scope": "Mean composite plus separate analytical cost counts; no uncertainty dominance or FPGA performance claim"
+  }
+]

@@ -1,0 +1,14 @@
+{
+  "status": "PASS",
+  "actions": [
+    "Explicitly disclose support24 old-gate pass/new-gate fail",
+    "Audit 116-row counts: support24 extra_errors_vs_A=3,4,0; no robust repair claim",
+    "Disclose width28 seed/class/group regressions beyond score rounding",
+    "Inspect quality/cost/low-count figures and fix overlapping annotations",
+    "Add count denominators to descriptive low-count plots",
+    "Clarify finite search, exact-input conflict bound, and no independent test"
+  ],
+  "training_or_gate_changed": false,
+  "bare_python_available": false,
+  "interpreter": "/tmp/radar_training_audit_20260915/bin/python"
+}

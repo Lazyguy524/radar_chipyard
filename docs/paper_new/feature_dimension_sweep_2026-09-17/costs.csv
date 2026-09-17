@@ -1,0 +1,14 @@
+tag,dim,network_macs,weight_bytes,bias_bytes,extra_products_per_point,channel_sorts,quantile_buffer_bytes_at_N511,ratio_quantizers,base_frontend
+core8,8,2624,2624,392,0,0,0,0,All base16 sums/extrema/range/density remain in C; no base scan savings claimed
+proxy12,12,2880,2880,392,0,0,0,0,All base16 sums/extrema/range/density remain in C; no base scan savings claimed
+distribution12,12,2880,2880,392,2,0,0,4,All base16 sums/extrema/range/density remain in C; no base scan savings claimed
+combined15,15,3072,3072,392,5,0,0,7,All base16 sums/extrema/range/density remain in C; no base scan savings claimed
+base16,16,3136,3136,392,0,0,0,0,All base16 sums/extrema/range/density remain in C; no base scan savings claimed
+support17,17,3200,3200,392,0,0,0,1,All base16 sums/extrema/range/density remain in C; no base scan savings claimed
+combined23,23,3584,3584,392,5,0,0,7,All base16 sums/extrema/range/density remain in C; no base scan savings claimed
+support24,24,3648,3648,392,5,0,0,8,All base16 sums/extrema/range/density remain in C; no base scan savings claimed
+width28,28,3904,3904,392,5,4,1022,12,All base16 sums/extrema/range/density remain in C; no base scan savings claimed
+asymmetry28,28,3904,3904,392,5,4,1022,12,All base16 sums/extrema/range/density remain in C; no base scan savings claimed
+quantile32,32,4160,4160,392,5,4,1022,16,All base16 sums/extrema/range/density remain in C; no base scan savings claimed
+full36,36,4416,4416,392,5,4,1022,20,All base16 sums/extrema/range/density remain in C; no base scan savings claimed
+redundant36,36,4416,4416,392,5,0,0,8,All base16 sums/extrema/range/density remain in C; no base scan savings claimed

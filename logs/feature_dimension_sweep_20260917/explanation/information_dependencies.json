@@ -1,0 +1,156 @@
+{
+  "status": "PASS",
+  "checks": [
+    {
+      "condition": "clean",
+      "retained_N": 3,
+      "rows": 1303,
+      "status": "EXACT_INTEGER_IDENTITY"
+    },
+    {
+      "condition": "uniform_half_0",
+      "retained_N": 2,
+      "rows": 1615,
+      "status": "EXACT_INTEGER_IDENTITY"
+    },
+    {
+      "condition": "uniform_half_0",
+      "retained_N": 3,
+      "rows": 1013,
+      "status": "EXACT_INTEGER_IDENTITY"
+    },
+    {
+      "condition": "uniform_half_1",
+      "retained_N": 2,
+      "rows": 1615,
+      "status": "EXACT_INTEGER_IDENTITY"
+    },
+    {
+      "condition": "uniform_half_1",
+      "retained_N": 3,
+      "rows": 1013,
+      "status": "EXACT_INTEGER_IDENTITY"
+    },
+    {
+      "condition": "uniform_half_2",
+      "retained_N": 2,
+      "rows": 1615,
+      "status": "EXACT_INTEGER_IDENTITY"
+    },
+    {
+      "condition": "uniform_half_2",
+      "retained_N": 3,
+      "rows": 1013,
+      "status": "EXACT_INTEGER_IDENTITY"
+    },
+    {
+      "condition": "uniform_quarter_0",
+      "retained_N": 1,
+      "rows": 1615,
+      "status": "EXACT_INTEGER_IDENTITY"
+    },
+    {
+      "condition": "uniform_quarter_0",
+      "retained_N": 2,
+      "rows": 1566,
+      "status": "EXACT_INTEGER_IDENTITY"
+    },
+    {
+      "condition": "uniform_quarter_0",
+      "retained_N": 3,
+      "rows": 1847,
+      "status": "EXACT_INTEGER_IDENTITY"
+    },
+    {
+      "condition": "uniform_quarter_1",
+      "retained_N": 1,
+      "rows": 1615,
+      "status": "EXACT_INTEGER_IDENTITY"
+    },
+    {
+      "condition": "uniform_quarter_1",
+      "retained_N": 2,
+      "rows": 1566,
+      "status": "EXACT_INTEGER_IDENTITY"
+    },
+    {
+      "condition": "uniform_quarter_1",
+      "retained_N": 3,
+      "rows": 1847,
+      "status": "EXACT_INTEGER_IDENTITY"
+    },
+    {
+      "condition": "uniform_quarter_2",
+      "retained_N": 1,
+      "rows": 1615,
+      "status": "EXACT_INTEGER_IDENTITY"
+    },
+    {
+      "condition": "uniform_quarter_2",
+      "retained_N": 2,
+      "rows": 1566,
+      "status": "EXACT_INTEGER_IDENTITY"
+    },
+    {
+      "condition": "uniform_quarter_2",
+      "retained_N": 3,
+      "rows": 1847,
+      "status": "EXACT_INTEGER_IDENTITY"
+    },
+    {
+      "condition": "central_half",
+      "retained_N": 2,
+      "rows": 1615,
+      "status": "EXACT_INTEGER_IDENTITY"
+    },
+    {
+      "condition": "central_half",
+      "retained_N": 3,
+      "rows": 1013,
+      "status": "EXACT_INTEGER_IDENTITY"
+    },
+    {
+      "condition": "xy_fraction6",
+      "retained_N": 3,
+      "rows": 1303,
+      "status": "EXACT_INTEGER_IDENTITY"
+    },
+    {
+      "condition": "xy_fraction4",
+      "retained_N": 3,
+      "rows": 1303,
+      "status": "EXACT_INTEGER_IDENTITY"
+    },
+    {
+      "condition": "kept_single",
+      "retained_N": 3,
+      "rows": 24694,
+      "status": "EXACT_INTEGER_IDENTITY"
+    },
+    {
+      "condition": "sparse_single",
+      "retained_N": 1,
+      "rows": 58612,
+      "status": "EXACT_INTEGER_IDENTITY"
+    },
+    {
+      "condition": "sparse_single",
+      "retained_N": 2,
+      "rows": 39122,
+      "status": "EXACT_INTEGER_IDENTITY"
+    },
+    {
+      "condition": "sparse_context",
+      "retained_N": 1,
+      "rows": 22887,
+      "status": "EXACT_INTEGER_IDENTITY"
+    },
+    {
+      "condition": "sparse_context",
+      "retained_N": 2,
+      "rows": 6709,
+      "status": "EXACT_INTEGER_IDENTITY"
+    }
+  ],
+  "scope": "N1/N2 quantile12 adds no new information given support24; N3 width4 is determined by old variances and median4 is negative asymmetry4. Performance differences on these slices can reflect shared training, parameterization and quantization, not newly observed shapes."
+}

@@ -1,0 +1,98 @@
+[
+  {
+    "tag": "base16",
+    "seed": 7,
+    "source": "logs/feature_enrichment_20260917/package/base16_seed7",
+    "sha256": {
+      "candidate.c": "dc5ff06d6ded7184a5a1600871e552ba90cb5037b17306ce2c0f05a0898d66c1",
+      "contract.json": "ef98bd2bd5214ecb940156bdc1068241dfe33c378e8c901ecfe337badfc5753b",
+      "integer_params.npz": "301d02f29d2df5efae8536c329371938c1a7679ade1ad379fbd5b342a310d68e",
+      "candidate.so": "643e247e70d1ff28af37f3441fe1b2ef79128b58c630b94dd7b237d649c1929b",
+      "params.json": "eb698d56556d049474018e87ab46c2415b51bcc981ad67a469ea6e70418390cd",
+      "candidate": "691de05a0310b25efd9b3cfa8322896b45fc8581dfe07a9340aa806c5860b8aa",
+      "params.h": "427b9434d601aaab7c76adb257b1355369de40f397171fbf6a0fa95805fec7e9",
+      "example.json": "57a9b6fb312ce62deeefafe8115e4a1b8b1019c4879c5ec760c7aa198d3c2d70",
+      "example.int16le": "ed2e6c32814eedfde184835b0a5c1f242100992987397dd19c9f5a3cc5ddbd90"
+    }
+  },
+  {
+    "tag": "base16",
+    "seed": 17,
+    "source": "logs/feature_enrichment_20260917/package/base16_seed17",
+    "sha256": {
+      "candidate.c": "dc5ff06d6ded7184a5a1600871e552ba90cb5037b17306ce2c0f05a0898d66c1",
+      "contract.json": "9aacd39deddce372a4e27672ac158ea89b456fe239c3ec6c8a6d2f70b76534a0",
+      "integer_params.npz": "d615199c897a0122ee7244ceb0954c16f33269945a8e120fe5798cebac5d8cb0",
+      "candidate.so": "d963eea6887da724ba7114b3c0847fdcf7b42fe76e022be842282d9858ad1a0c",
+      "params.json": "30930b13f552b3eba5091f7919e66641c2a3947237d50de581b796988b3ba7a6",
+      "candidate": "1538a486c8c9ebaa9a51b717eaf8edae887629988d3c8180678067bef5529fec",
+      "params.h": "4cd50ad43064d6cf4b71c8cfc6c22f2b0b66db2bd8fe3f8f5c4712d344df789e",
+      "example.json": "bf0686a8720763fd5684a792321003075bdbb03fc33c893f0358b778fa7c0da7",
+      "example.int16le": "ed2e6c32814eedfde184835b0a5c1f242100992987397dd19c9f5a3cc5ddbd90"
+    }
+  },
+  {
+    "tag": "base16",
+    "seed": 37,
+    "source": "logs/feature_enrichment_20260917/package/base16_seed37",
+    "sha256": {
+      "candidate.c": "dc5ff06d6ded7184a5a1600871e552ba90cb5037b17306ce2c0f05a0898d66c1",
+      "contract.json": "3321074ebb262c8bb710c5f54e125e0a236fb35cc11408820e0e89524c1497c3",
+      "integer_params.npz": "21db0771a716c94554773f78fd2c168821a494dc688ab1e68531e71995afac6e",
+      "candidate.so": "45e8128b63150c574e7ad3748d353bde8ee3caedc29535649c7cb06ba280664c",
+      "params.json": "b9d85d92fe2abad2704c52d33669d37f53b2a81e730b07666335c55be4359678",
+      "candidate": "d4f90bd7223f3ca30c0cacb5ac3d91d04aa23fdf7a80ea9b1794235982b1618c",
+      "params.h": "53d4eb5bc1a961440609a0732a00b76f4ab945119bf0745faaff3d5cda60888b",
+      "example.json": "9e1722e6020c47d67bef38d77b9735bf1566bef0c9aaf6a247523a907fe1d3b5",
+      "example.int16le": "ed2e6c32814eedfde184835b0a5c1f242100992987397dd19c9f5a3cc5ddbd90"
+    }
+  },
+  {
+    "tag": "combined23",
+    "seed": 7,
+    "source": "logs/feature_enrichment_20260917/package/combined23_seed7",
+    "sha256": {
+      "candidate.c": "e93b540518e4e6d66a97f14c80fd1ebece172cecd21491eec82f62ca7f1e4e3c",
+      "contract.json": "f0cb51e595745b63ffcaf514547335a1bfa03bd8b4aa58e9d9211f39cf539372",
+      "integer_params.npz": "98e624e77e34629513646c3d66500758d631bdd07373c3e3ef38b453fe7b4e78",
+      "candidate.so": "ac8edcc7b3de065a8a85c9c55273b261fd0aee817a2129203bb301024247afd4",
+      "params.json": "5f9a8b5bdc4913eea9e58c1a3858ceb4ae9c17c6f7dd5314c39fe1eeae8cd00d",
+      "candidate": "4da864be1f97e9c0c93974c061acbf81860d21ebc3f6ca11a9be2d41b73f8ae6",
+      "params.h": "b79b1f59bba9f5e0e3fb374e2e68fc169256492c046599af9ff0ba25a31257db",
+      "example.json": "2208ab6ddb136d1670a60631fa5807dd119fc619f3fd38582c42b47f436aaea7",
+      "example.int16le": "ed2e6c32814eedfde184835b0a5c1f242100992987397dd19c9f5a3cc5ddbd90"
+    }
+  },
+  {
+    "tag": "combined23",
+    "seed": 17,
+    "source": "logs/feature_enrichment_20260917/package/combined23_seed17",
+    "sha256": {
+      "candidate.c": "e93b540518e4e6d66a97f14c80fd1ebece172cecd21491eec82f62ca7f1e4e3c",
+      "contract.json": "a7af3ea7be6cc7a8b79aa1cef7d26c0355c2b774b17c114ac57d3a8c8cc9f90c",
+      "integer_params.npz": "8e28a20172439006e3e3302ea14c29286c8e2b0b71215d3e9f857ee451fa104f",
+      "candidate.so": "81a3044fe0273a7280c851646cffc5285d19ac9894344c124567fa3751d92f4c",
+      "params.json": "cf4efc50bf377a1ce90cc20b1d93abf584d69d4deb169d043b86fea1dd40dc04",
+      "candidate": "9e9213c367453cb0e62023aa4a7f6734bac729241b7e1a4b81035f2c58c14137",
+      "params.h": "6e0ae872d2601d3e6b4dc04bb1a4e6850eb81b131b294eb96740fb558ae1be3d",
+      "example.json": "6c6b792b881527317e626c44dfb2130b072e9ddab68417d48b1831edd6faf28d",
+      "example.int16le": "ed2e6c32814eedfde184835b0a5c1f242100992987397dd19c9f5a3cc5ddbd90"
+    }
+  },
+  {
+    "tag": "combined23",
+    "seed": 37,
+    "source": "logs/feature_enrichment_20260917/package/combined23_seed37",
+    "sha256": {
+      "candidate.c": "e93b540518e4e6d66a97f14c80fd1ebece172cecd21491eec82f62ca7f1e4e3c",
+      "contract.json": "c58bfe0ff237fdfe165edecd98fd076e5ceb88f7d051911f9f0c9b7dc47177a5",
+      "integer_params.npz": "42be9e983863b8110457027d9805e36094868b9fcd6f7457ea1cb5bdee14f8b3",
+      "candidate.so": "13fc1d0831e81cbe21d2cb69fb6afa7c942a137976bb59c6694cdccb51155b45",
+      "params.json": "09ed4791e552ced9f7b51b58632e60e68fe61f7c53fc41bc5ee26093a3107461",
+      "candidate": "6df0b7d98a5974ea8574f2aef850f568fa6300a898c45c57225e2b3ac8c2487f",
+      "params.h": "8ba2a4a81694c11ce0be5cbd5a76054c54584a7d99435e46782a46389bda4331",
+      "example.json": "1b7def4d52e184c086ac21a5d47677f5b4853d4c8f74686874ef0c414b30c079",
+      "example.int16le": "ed2e6c32814eedfde184835b0a5c1f242100992987397dd19c9f5a3cc5ddbd90"
+    }
+  }
+]
